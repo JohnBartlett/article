@@ -1,172 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Classic Chicago – Sunday Edition</title>
+  <title>Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background-color: #ffffff;
-      color: #222222;
-    }
-
-    a {
-      color: #b51c20;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .site-header {
-      border-bottom: 1px solid #dddddd;
-      padding: 16px 0;
-    }
-
-    .site-header-inner {
-      margin: 0 auto;
-      max-width: 980px;
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-title {
-      font-family: "Times New Roman", Georgia, serif;
-      font-size: 32px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .site-title a {
-      color: #000000;
-    }
-
-    .site-nav a {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      margin-left: 18px;
-      color: #555555;
-    }
-
-    .wrapper {
-      max-width: 980px;
-      margin: 24px auto 40px;
-      padding: 0 16px;
-    }
-
-    h1.page-heading {
-      font-size: 28px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-bottom: 1px solid #dddddd;
-      padding-bottom: 8px;
-      margin: 0 0 20px;
-    }
-
-    .intro {
-      font-size: 16px;
+      background: #fff;
+      color: #222;
       line-height: 1.6;
+    }
+
+    /* Header Styles (Synced with index.html) */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
       margin-bottom: 24px;
     }
 
-    .story-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .story {
-      border-bottom: 1px solid #eeeeee;
-      padding: 16px 0;
+    .logo-container img {
+      width: 390px;
+      height: auto;
     }
 
-    .story:last-child {
-      border-bottom: none;
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
     }
 
-    .story-title {
-      font-size: 22px;
-      margin: 0 0 6px;
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .meta {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      color: #777777;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .story p {
-      margin: 0 0 6px;
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
     }
 
-    @media (max-width: 600px) {
-      .site-header-inner,
-      .wrapper {
-        padding: 0 12px;
-      }
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
 
-      .site-title {
-        font-size: 26px;
-      }
+    /* Article Content Styles */
+    .article-wrapper {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
 
-      .story-title {
-        font-size: 20px;
-      }
+    .article-header {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    .article-title {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 20px 0 10px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .article-image {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .article-image img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #eee;
+    }
+
+    .image-caption {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      text-decoration: none;
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
     }
   </style>
 </head>
+
 <body>
-
-<header class="site-header">
-  <div class="site-header-inner">
-    <div class="site-title">
-      <a href="index.html">Classic Chicago</a>
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="logo.jpg" alt="Classic Chicago Magazine">
+      </a>
     </div>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="#">About the Town</a>
-      <a href="#">The Sporting Life</a>
-      <a href="#">Contact</a>
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html">Home</a>
+        <a href="#">Click/Click</a>
+        <a href="#">Give a Gala</a>
+        <a href="#">The Best Revenge</a>
+        <a href="#">Columns</a>
+        <a href="#">Datebook</a>
+        <a href="#">About</a>
+        <a href="#">Subscribe</a>
+        <a href="#">Advertise</a>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="wrapper">
-  <h1 class="page-heading">Sunday Edition</h1>
+  <main class="article-wrapper">
+    <div class="article-header">
+      <h1 class="article-title">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</h1>
+      <div class="article-meta">By David A. F. Sweet &nbsp;•&nbsp; February 8, 2026</div>
+    </div>
 
-  <p class="intro">
-    Welcome to a special Sunday edition of Classic Chicago, featuring new stories for our subscribers.
-  </p>
+    <div class="article-body">
+      <p>Lake Forest firefighter Samantha Hiller is used to the heat of the blaze, but this winter, she’s embracing the
+        chill of the ice. Stepping onto the world stage at the Olympic Games, Hiller has realized a lifelong dream, not
+        as a player, but as a top-tier hockey referee.</p>
 
-  <ul class="story-list">
-    <li class="story">
-      <h2 class="story-title">
-        <a href="sam-hiller.html">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</a>
-      </h2>
-      <div class="meta">By David A. F. Sweet &nbsp;•&nbsp; February 8, 2026</div>
-      <p>
-        Lake Forest firefighter Samantha Hiller realizes a long-held dream by stepping onto Olympic ice
-        as a hockey referee.
-      </p>
-      <p>
-        <a href="sam-hiller.html">Read the full story &raquo;</a>
-      </p>
-    </li>
+      <div class="article-image">
+        <img src="Hiller Referee 1.jpeg" alt="Samantha Hiller in Referee Uniform">
+        <div class="image-caption">Samantha Hiller ready for the Olympic stage.</div>
+      </div>
 
-    <!-- When you have the other four pieces ready, copy this <li> block,
-         adjust the title, meta line, teaser, and link target. -->
-  </ul>
-</main>
+      <p>For Hiller, the road to the Olympics was paved with thousands of hours on local skating rinks and a unwavering
+        dedication to the sport. Balancing her demanding career as a firefighter with the rigorous training required for
+        officiating at the highest level, she has become a symbol of excellence and versatility.</p>
 
+      <p>"It's about focus and fairness," Hiller says of her role on the ice. "In the firehouse, we rely on teamwork and
+        precision. On the ice, those same principles apply. You have to maintain your cool under pressure, whether
+        you're facing a four-alarm fire or a high-stakes breakaway."</p>
+
+      <div class="article-image">
+        <img src="Hiller Fire.jpeg" alt="Samantha Hiller as a Firefighter">
+        <div class="image-caption">Balancing the heat of the firehouse with the cool of the rink.</div>
+      </div>
+
+      <div class="article-image">
+        <img src="Hiller Referee 2.jpeg" alt="Samantha Hiller on the move">
+        <div class="image-caption">Maintaining focus during a high-speed play.</div>
+      </div>
+
+      <p>As she watches the puck drop in the Olympic arena, Hiller represents the spirit of Classic Chicago: a blend of
+        grit, grace, and an unstoppable drive to reach new heights.</p>
+
+      <div class="article-image">
+        <img src="Hiller Guitar.jpeg" alt="Samantha Hiller with her guitar">
+        <div class="image-caption">Relaxing with a guitar during much-needed downtime.</div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Back to Sunday Edition</a>
+  </main>
 </body>
+
 </html>
