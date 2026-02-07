@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example A: Classic Editorial | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #faf8f5;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    /* --- Header --- */
+    .site-header {
+      background: #fff;
+      border-bottom: 3px double #c8a96e;
+      padding: 24px 0 0;
+      text-align: center;
+    }
+    .site-header img.logo {
+      width: 340px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+    nav {
+      border-top: 1px solid #e5e0d8;
+      padding: 12px 0;
+    }
+    nav a {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #8b1a1a;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 14px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #c8a96e; }
+
+    /* --- Sponsor Strip --- */
+    .sponsor-strip {
+      background: #f3f0eb;
+      border-bottom: 1px solid #e5e0d8;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .sponsor-strip span {
+      display: inline-block;
+      margin: 0 20px;
+      color: #777;
+      font-weight: 600;
+    }
+
+    /* --- Page Layout: Article + Sidebar --- */
+    .page-layout {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 50px;
+    }
+    @media (max-width: 900px) {
+      .page-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* --- Article --- */
+    .article-header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e5e0d8;
+    }
+    .article-category {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #8b1a1a;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+    .article-meta {
+      font-size: 14px;
+      color: #888;
+    }
+    .article-meta strong { color: #555; }
+
+    .article-body p {
+      font-size: 18px;
+      margin-bottom: 24px;
+      color: #3a3a3a;
+    }
+    .article-body blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: #8b1a1a;
+      margin: 36px 0;
+      padding: 20px 24px;
+      border-left: 4px solid #c8a96e;
+      background: #fff;
+    }
+    .article-image {
+      margin: 32px 0;
+    }
+    .article-image img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #e5e0d8;
+    }
+    .image-caption {
+      font-size: 12px;
+      color: #999;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar {
+      align-self: start;
+      position: sticky;
+      top: 20px;
+    }
+    .ad-block {
+      background: #fff;
+      border: 1px solid #e5e0d8;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .ad-block .ad-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+    .ad-placeholder {
+      background: #f3f0eb;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+    .ad-placeholder.rect { width: 260px; height: 250px; margin: 0 auto; }
+    .ad-placeholder.half { width: 260px; height: 500px; margin: 0 auto; }
+
+    /* --- Footer --- */
+    footer {
+      background: #2c2321;
+      color: #d4cfc9;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      font-size: 13px;
+    }
+    footer a { color: #c8a96e; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* --- Design Label --- */
+    .design-label {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #8b1a1a;
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      z-index: 100;
+      font-family: 'Source Sans 3', sans-serif;
+    }
+    .design-label a { color: #fff; text-decoration: underline; }
+
+    .back-to-gallery {
+      display: inline-block;
+      margin: 30px 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8b1a1a;
+      text-decoration: none;
+      border-bottom: 1px dashed #8b1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="design-label">Example A: Classic Editorial &mdash; <a href="examples-gallery.html">All Examples</a></div>
+
+  <div class="site-header">
+    <img class="logo" src="logo.jpg" alt="Classic Chicago Magazine">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Click/Click</a>
+      <a href="#">Give a Gala</a>
+      <a href="#">The Best Revenge</a>
+      <a href="#">Columns</a>
+      <a href="#">Datebook</a>
+      <a href="#">About</a>
+      <a href="#">Subscribe</a>
+    </nav>
+  </div>
+
+  <!-- Sponsor Strip -->
+  <div class="sponsor-strip">
+    This edition is supported by
+    <span>Northern Trust</span> | <span>Gibsons Restaurant</span> | <span>Art Institute of Chicago</span>
+  </div>
+
+  <div class="page-layout">
+    <!-- Article Column -->
+    <main>
+      <div class="article-header">
+        <div class="article-category">Guest Stars</div>
+        <h1>Lincoln Park: History Hiding in Plain Sight</h1>
+        <div class="article-meta">By <strong>Judy Carmack Bross</strong> &nbsp;&bull;&nbsp; February 1, 2026</div>
+      </div>
+
+      <div class="article-body">
+        <div class="article-image">
+          <img src="kristin-smith.jpg" alt="Kristin Smith">
+          <div class="image-caption">Kristin Smith, producer of Forged in History: Lincoln Park, Shaping Chicago.</div>
+        </div>
+
+        <div class="article-image">
+          <img src="lincoln-park-landscape.jpg" alt="Lincoln Park Landscape">
+          <div class="image-caption">Lincoln Park landscape.</div>
+        </div>
+
+        <blockquote>
+          "Within Lincoln Park's lawns, sculptures, and tree-lined all&eacute;e live stories of Native American presence, Civil War remembrance, public health reform, immigration, and the city's recovery after the Great Chicago Fire."
+          <br>&mdash;Kristin N. Smith
+        </blockquote>
+
+        <p>Second only to New York's Central Park as the most visited urban park in the United States, Lincoln Park today spans more than 1,200 acres. What began as a 19th-century public cemetery has evolved into a living archive of Chicago's civic past.</p>
+
+        <p>Phase One included fall filming, with professional cinematographers capturing visuals of Lincoln Park that reveal both its history and artistic design. The documentary will explore overlooked narratives embedded in the park's landscape and monuments.</p>
+
+        <p>Smith previously produced David Adler: Great House Architect, which aired nationally on PBS for three years. She is donating her time and expertise to this project as part of her broader work preserving and interpreting historic and cultural heritage.</p>
+
+        <div class="article-image">
+          <img src="lincoln-statue.jpg" alt="Lincoln Statue">
+          <div class="image-caption">Statue of Abraham Lincoln in Lincoln Park.</div>
+        </div>
+
+        <p>"When the meaning of a place is understood, it's more likely to be protected," Smith said. "This film aims to reconnect people with the stories that give Lincoln Park its enduring civic value."</p>
+
+        <p>For Smith, documenting Lincoln Park now feels particularly urgent. "At a time when urban development increasingly produces interchangeable glass-and-steel skylines, and when local history is fading from classrooms and public awareness, this documentary will explore how civic landscapes help preserve the character that sets cities apart."</p>
+
+        <div class="article-image">
+          <img src="statues-sketches.jpg" alt="Lincoln Park Statues Sketches">
+          <div class="image-caption">Sketches of monuments in Lincoln Park.</div>
+        </div>
+
+        <p>"The bronzes in Lincoln Park weren't created simply as decoration," Smith explained. "They show how earlier generations chose to remember leadership, war, loss, and civic ideals."</p>
+
+        <p>Phase Two will soon focus on interviews with leading historians and conservation specialists. A preview clip on YouTube offers an early look at some of the film's visuals and historical themes.</p>
+
+        <div class="article-image">
+          <img src="grant-monument-harpers.jpg" alt="Grant Monument in Harper's Weekly">
+          <div class="image-caption">The Grant Monument as depicted in Harper's Weekly.</div>
+        </div>
+
+        <p>"Originally established as a public cemetery, the land was renamed during the city's collective mourning following the assassination of President Abraham Lincoln in 1865. From that beginning, the park evolved into a national model of civic beauty and public access to green space."</p>
+
+        <p>She noted the park's artistic legacy is equally notable. The oldest statue honors Native Americans, while sculptor Gutzon Borglum, later famed for Mount Rushmore, created both the Governor John Peter Altgeld Monument in 1915 and the General Philip Henry Sheridan Monument in 1923.</p>
+
+        <div class="article-image">
+          <img src="little-cold-water-girl.jpg" alt="The Little Cold Water Girl Statue">
+          <div class="image-caption">The Little Cold Water Girl statue close to West LaSalle Drive.</div>
+        </div>
+
+        <p>When asked how visitors should best experience Lincoln Park, Smith recommends taking time to explore it gradually. "There isn't one perfect path," she said. "I suggest a kind of grand tour: a loop that takes you past the park's monuments, gardens, zoo, lagoons, and lakeshore."</p>
+      </div>
+
+      <a href="examples-gallery.html" class="back-to-gallery">&larr; Back to Examples Gallery</a>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder rect">300 &times; 250</div>
+      </div>
+      <div class="ad-block">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder half">300 &times; 600</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</p>
+    <p style="margin-top: 8px;"><a href="#">Facebook</a> &nbsp;|&nbsp; <a href="#">Twitter</a> &nbsp;|&nbsp; <a href="#">Instagram</a> &nbsp;|&nbsp; <a href="#">Pinterest</a></p>
+  </footer>
+
+</body>
+</html>

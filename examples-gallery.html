@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Examples Gallery | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .page-header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .page-header img {
+      width: 240px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 28px;
+      font-weight: 300;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 15px;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .page-header .back-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+    }
+    .page-header .back-link:hover { color: #333; }
+
+    .gallery {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 32px;
+    }
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .card-preview {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-preview .preview-label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 3px;
+      z-index: 2;
+    }
+
+    /* Color swatches for each design */
+    .preview-a {
+      background: linear-gradient(135deg, #faf8f5 0%, #f3f0eb 50%, #8b1a1a 50%, #c8a96e 100%);
+    }
+    .preview-b {
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #c0392b 50%, #333 100%);
+    }
+    .preview-c {
+      background: linear-gradient(135deg, #1b1b1b 0%, #333 50%, #e74c3c 50%, #fff 100%);
+    }
+    .preview-d {
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1610 50%, #c8a96e 50%, #0a0a0a 100%);
+    }
+
+    .card-preview .fonts-preview {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      z-index: 1;
+    }
+    .card-preview .fonts-preview .headline-sample {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .card-preview .fonts-preview .body-sample {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* Style-specific font previews */
+    .fonts-a .headline-sample { font-family: 'Playfair Display', serif; color: #1a1a1a; font-weight: 900; }
+    .fonts-a .body-sample { font-family: 'Source Sans 3', sans-serif; color: #555; }
+    .fonts-b .headline-sample { font-family: 'DM Serif Display', serif; color: #111; font-weight: 400; }
+    .fonts-b .body-sample { font-family: 'Inter', sans-serif; color: #666; }
+    .fonts-c .headline-sample { font-family: 'Oswald', sans-serif; color: #fff; font-weight: 700; text-transform: uppercase; }
+    .fonts-c .body-sample { font-family: 'Merriweather', serif; color: #ccc; }
+    .fonts-d .headline-sample { font-family: 'Cormorant Garamond', serif; color: #f0ece4; font-weight: 600; }
+    .fonts-d .body-sample { font-family: 'Raleway', sans-serif; color: #8a8070; }
+
+    .card-body {
+      padding: 24px;
+    }
+    .card-body h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-body .subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .card-body table {
+      width: 100%;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
+    .card-body table td {
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    .card-body table td:first-child {
+      font-weight: 500;
+      color: #555;
+      width: 110px;
+    }
+    .card-body table td:last-child {
+      color: #888;
+    }
+
+    .card-body .view-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-a { background: #8b1a1a; color: #fff; }
+    .btn-a:hover { background: #a02020; }
+    .btn-b { background: #111; color: #fff; }
+    .btn-b:hover { background: #333; }
+    .btn-c { background: #e74c3c; color: #fff; }
+    .btn-c:hover { background: #c0392b; }
+    .btn-d { background: #c8a96e; color: #0f0f0f; }
+    .btn-d:hover { background: #d4b87a; }
+
+    /* Comparison table at bottom */
+    .comparison {
+      max-width: 1100px;
+      margin: 48px auto 60px;
+      padding: 0 20px;
+    }
+    .comparison h2 {
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #555;
+    }
+    .comparison table {
+      width: 100%;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .comparison th {
+      background: #fafafa;
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #777;
+      border-bottom: 1px solid #eee;
+    }
+    .comparison td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f5f5f5;
+      color: #555;
+    }
+    .comparison tr:last-child td { border-bottom: none; }
+  </style>
+  <!-- Load all fonts used in previews -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=DM+Serif+Display&family=Oswald:wght@700&family=Cormorant+Garamond:wght@600&family=Merriweather:wght@300&family=Raleway:wght@300&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="page-header">
+    <img src="logo.jpg" alt="Classic Chicago Magazine">
+    <h1>Design Examples Gallery</h1>
+    <p>Four design directions for Classic Chicago Magazine, each with tasteful ad placements. Click any card to view the full article example.</p>
+    <a href="index.html" class="back-link">&larr; Back to current site</a>
+  </div>
+
+  <div class="gallery">
+
+    <!-- Example A -->
+    <a href="example-a-classic-editorial.html" class="card">
+      <div class="card-preview preview-a">
+        <div class="preview-label">Example A</div>
+        <div class="fonts-preview fonts-a" style="background: rgba(250,248,245,0.92); height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;">
+          <div class="headline-sample">Classic Editorial</div>
+          <div class="body-sample">Playfair Display + Source Sans 3</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Classic Editorial</h2>
+        <div class="subtitle">Warm, traditional magazine feel with a sidebar</div>
+        <table>
+          <tr><td>Fonts</td><td>Playfair Display (headlines), Source Sans 3 (body)</td></tr>
+          <tr><td>Colors</td><td>Cream background, burgundy #8b1a1a, gold #c8a96e</td></tr>
+          <tr><td>Layout</td><td>Article + sidebar (2-column grid)</td></tr>
+          <tr><td>Ad Style</td><td>Sponsor strip + sidebar ads (300x250, 300x600)</td></tr>
+        </table>
+        <span class="view-btn btn-a">View Example &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Example B -->
+    <a href="example-b-modern-minimal.html" class="card">
+      <div class="card-preview preview-b">
+        <div class="preview-label">Example B</div>
+        <div class="fonts-preview fonts-b" style="background: rgba(255,255,255,0.92); height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;">
+          <div class="headline-sample">Modern Minimal</div>
+          <div class="body-sample">DM Serif Display + Inter</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Modern Minimal</h2>
+        <div class="subtitle">Clean, airy, reader-focused design</div>
+        <table>
+          <tr><td>Fonts</td><td>DM Serif Display (headlines), Inter (body)</td></tr>
+          <tr><td>Colors</td><td>Pure white, subtle gray, red accent #c0392b</td></tr>
+          <tr><td>Layout</td><td>Single column, centered (680px)</td></tr>
+          <tr><td>Ad Style</td><td>Sponsor strip + one inline leaderboard (728x90)</td></tr>
+        </table>
+        <span class="view-btn btn-b">View Example &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Example C -->
+    <a href="example-c-bold-magazine.html" class="card">
+      <div class="card-preview preview-c">
+        <div class="preview-label">Example C</div>
+        <div class="fonts-preview fonts-c" style="background: rgba(27,27,27,0.92); height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;">
+          <div class="headline-sample">Bold Magazine</div>
+          <div class="body-sample">Oswald + Merriweather</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Bold Magazine</h2>
+        <div class="subtitle">Strong visual presence with hero images</div>
+        <table>
+          <tr><td>Fonts</td><td>Oswald (headlines), Merriweather (body)</td></tr>
+          <tr><td>Colors</td><td>Dark header, white body, red #e74c3c</td></tr>
+          <tr><td>Layout</td><td>Full-bleed hero + sidebar grid</td></tr>
+          <tr><td>Ad Style</td><td>Leaderboard + sidebar + sponsored content block</td></tr>
+        </table>
+        <span class="view-btn btn-c">View Example &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Example D -->
+    <a href="example-d-dark-luxury.html" class="card">
+      <div class="card-preview preview-d">
+        <div class="preview-label">Example D</div>
+        <div class="fonts-preview fonts-d" style="background: rgba(15,15,15,0.92); height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;">
+          <div class="headline-sample">Dark Luxury</div>
+          <div class="body-sample">Cormorant Garamond + Raleway</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Dark Luxury</h2>
+        <div class="subtitle">Premium, high-end editorial experience</div>
+        <table>
+          <tr><td>Fonts</td><td>Cormorant Garamond (headlines), Raleway (body)</td></tr>
+          <tr><td>Colors</td><td>Near-black #0f0f0f, gold #c8a96e, warm grays</td></tr>
+          <tr><td>Layout</td><td>Single column, centered (740px)</td></tr>
+          <tr><td>Ad Style</td><td>Patron strip + native sponsor block + inline ad</td></tr>
+        </table>
+        <span class="view-btn btn-d">View Example &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="comparison">
+    <h2>Ad Placement Comparison</h2>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>A: Classic Editorial</th>
+        <th>B: Modern Minimal</th>
+        <th>C: Bold Magazine</th>
+        <th>D: Dark Luxury</th>
+      </tr>
+      <tr>
+        <td>Sponsor/Patron Strip</td>
+        <td>Yes (below nav)</td>
+        <td>Yes (below nav)</td>
+        <td>No</td>
+        <td>Yes (patron-style)</td>
+      </tr>
+      <tr>
+        <td>Sidebar Ads</td>
+        <td>300x250 + 300x600</td>
+        <td>None</td>
+        <td>300x250</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Inline/Leaderboard Ads</td>
+        <td>None</td>
+        <td>One 728x90</td>
+        <td>One 728x90 (below hero)</td>
+        <td>One 300x250</td>
+      </tr>
+      <tr>
+        <td>Sponsored Content</td>
+        <td>None</td>
+        <td>None</td>
+        <td>Yes (native block)</td>
+        <td>Yes (patron highlight)</td>
+      </tr>
+      <tr>
+        <td>Total Ad Density</td>
+        <td>Low-Medium</td>
+        <td>Very Low</td>
+        <td>Medium</td>
+        <td>Low</td>
+      </tr>
+      <tr>
+        <td>Video Ads</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
