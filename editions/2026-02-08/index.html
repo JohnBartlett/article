@@ -11,9 +11,9 @@
     gtag('config', 'G-5J2HWKC0B1');
   </script>
   <meta charset="UTF-8">
-  <title>Classic Chicago – Homepage Layout Review</title>
+  <title>February 8, 2026 Edition | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -23,6 +23,7 @@
       color: #222;
     }
 
+    /* Header Styles */
     header {
       padding: 20px 0;
       border-bottom: 1px solid #eee;
@@ -39,61 +40,98 @@
       height: auto;
     }
 
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
     .wrapper {
-      max-width: 720px;
-      margin: 0 auto 60px;
+      max-width: 980px;
+      margin: 0 auto 40px;
       padding: 0 16px;
     }
 
-    h1 {
+    h1.page-title {
       font-size: 28px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-align: center;
-      margin: 40px 0 16px;
+      margin: 40px 0 30px;
       color: #444;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
 
-    .subtitle {
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: #777;
-      margin-bottom: 40px;
-    }
-
-    .option-card {
-      border: 1px solid #ddd;
-      padding: 30px;
+    .story {
       margin-bottom: 24px;
-      transition: border-color 0.2s;
     }
 
-    .option-card:hover {
-      border-color: #b51c20;
+    .story-title {
+      font-size: 24px;
+      margin: 0 0 6px;
     }
 
-    .option-card h2 {
-      font-size: 22px;
-      margin: 0 0 8px;
+    .meta {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .option-card h2 a {
+    .story a {
       color: #b51c20;
       text-decoration: none;
     }
 
-    .option-card h2 a:hover {
+    .story a:hover {
       text-decoration: underline;
     }
 
-    .option-card p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-      margin: 0;
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
     }
 
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    /* Footer Styles */
     footer {
       background: #333;
       color: #fff;
@@ -133,25 +171,78 @@
 <body>
   <header>
     <div class="logo-container">
-      <a href="index.html">
-        <img src="logo.jpg" alt="Classic Chicago Magazine">
+      <a href="../../index.html">
+        <img src="../../logo.jpg" alt="Classic Chicago Magazine">
       </a>
     </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../index.html">Home</a>
+        <a href="#">Click/Click</a>
+        <a href="#">Give a Gala</a>
+        <a href="#">The Best Revenge</a>
+        <a href="#">Columns</a>
+        <a href="#">Datebook</a>
+        <a href="#">About</a>
+        <a href="#">Subscribe</a>
+        <a href="#">Advertise</a>
+      </div>
+    </nav>
   </header>
 
   <div class="wrapper">
-    <h1>Homepage Layout Review</h1>
-    <p class="subtitle">The team is comparing two homepage layout options. Click each to preview.</p>
+    <h1 class="page-title">Sunday Edition &mdash; February 8, 2026</h1>
 
-    <div class="option-card">
-      <h2><a href="index-b.html">Option B: Latest Edition as Homepage</a></h2>
-      <p>The homepage shows the current week's articles directly, just like the original site. A small "Past Editions" section appears at the bottom for archival browsing.</p>
+    <div class="story">
+      <h2 class="story-title">
+        <a href="lincoln-park.html">Lincoln Park: History Hiding in Plain Sight</a>
+      </h2>
+      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>A 19th-century public cemetery evolved into a living archive of Chicago's civic past. Filmmaker Kristin N.
+        Smith uncovers the overlooked narratives embedded in the park's landscape.</p>
     </div>
 
-    <div class="option-card">
-      <h2><a href="index-c.html">Option C: Latest + Previous Editions</a></h2>
-      <p>The homepage features a "This Week" section with current articles, followed by a prominent "Previous Editions" section that grows as new editions are published.</p>
+    <div class="story">
+      <h2 class="story-title">
+        <a href="sam-hiller.html">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</a>
+      </h2>
+      <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>A Lake Forest firefighter realizes her dream by stepping onto Olympic ice as a hockey referee.</p>
     </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="iron-lung.html">Iron Lung &ndash; An Indie Success Story</a>
+      </h2>
+      <div class="meta">By Jack LeJeune &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>YouTube creator Markiplier's debut feature film adapts the cult horror game into a claustrophobic thriller that earned $18 million on a $3 million budget.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="linda-heister.html">Biba's Favorite Things: Linda Heister</a>
+      </h2>
+      <div class="meta">By Biba Roesch &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>A glimpse into the life and inspirations of Linda Heister—fashion, friendship, and the beauty of a 100-year-old Indiana home filled with rescued treasures.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="mimosa.html">Mimosa Heralds the Oncoming of Spring</a>
+      </h2>
+      <div class="meta">By Cheryl Anderson &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>From Paris fleuristes to the C&ocirc;te d'Azur, the golden yellow mimosa flower brings winter sun and celebrates the oncoming of spring in France.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="about-the-town-february.html">About the Town</a>
+      </h2>
+      <div class="meta">By Philip Vidal &nbsp;&bull;&nbsp; February 8, 2026</div>
+      <p>From the Winter Olympics to jazz centennials, theater week to Black History Month—a guide to Chicago's milestones and celebrations this February.</p>
+    </div>
+
+    <a href="../../index.html" class="back-link">&larr; Back to Home</a>
   </div>
 
   <footer>
