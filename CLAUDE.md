@@ -7,6 +7,7 @@ This project uses a three-branch workflow:
 - **`master`** — Production. This branch is live and serves the website. Do NOT make changes directly to `master`.
 - **`staging`** — Review-ready code for team review before going to production. Merge `dev` into `staging` when changes are ready for team feedback.
 - **`dev`** — Active development. All work happens here first.
+- **`dev2`** — Experimental/spitballing branch. Used for trying out ideas before committing to `dev`.
 
 ### Workflow
 
@@ -20,21 +21,15 @@ This project uses a three-branch workflow:
 - Always start work from the `dev` branch.
 - Use `staging` as the team review step before production.
 
-## Hosting: Cloudflare Pages
+## Hosting: Vercel
 
-This site is hosted on Cloudflare Pages (Free plan). Keep within these limits:
+The `dev` branch deploys to Vercel for development previews. Production (`master`) is deployed separately.
 
-- **Max file size:** 25 MB per file — do not add files larger than this.
-- **Max file count:** 20,000 files per site.
-- **Builds:** 500 per month, 20-minute timeout per build.
-
-### Current usage (as of 2026-02-09)
-
-- 82 files, largest is 6.9 MB — well within limits.
+- **Dev URL:** https://article-git-dev-johns-projects-e5fce345.vercel.app
 
 ### Guidelines
 
-- Optimize images before adding them. Keep individual files well under 25 MB.
+- Optimize images before adding them.
 - Be mindful of file count if bulk-adding assets.
 
 ## Editions Structure
