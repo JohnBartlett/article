@@ -11,7 +11,7 @@
     gtag('config', 'G-5J2HWKC0B1');
   </script>
   <meta charset="UTF-8">
-  <title>Classic Chicago – Homepage Layout Review</title>
+  <title>Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
       color: #222;
     }
 
+    /* Header Styles */
     header {
       padding: 20px 0;
       border-bottom: 1px solid #eee;
@@ -39,61 +40,117 @@
       height: auto;
     }
 
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
     .wrapper {
-      max-width: 720px;
-      margin: 0 auto 60px;
+      max-width: 980px;
+      margin: 0 auto 40px;
       padding: 0 16px;
     }
 
-    h1 {
+    h1.page-title {
       font-size: 28px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-align: center;
-      margin: 40px 0 16px;
+      margin: 40px 0 30px;
       color: #444;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
 
-    .subtitle {
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: #777;
-      margin-bottom: 40px;
-    }
-
-    .option-card {
-      border: 1px solid #ddd;
-      padding: 30px;
+    .story {
       margin-bottom: 24px;
-      transition: border-color 0.2s;
     }
 
-    .option-card:hover {
-      border-color: #b51c20;
+    .story-title {
+      font-size: 24px;
+      margin: 0 0 6px;
     }
 
-    .option-card h2 {
-      font-size: 22px;
-      margin: 0 0 8px;
+    .meta {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .option-card h2 a {
+    .story a {
       color: #b51c20;
       text-decoration: none;
     }
 
-    .option-card h2 a:hover {
+    .story a:hover {
       text-decoration: underline;
     }
 
-    .option-card p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-      margin: 0;
+    /* Past Editions */
+    .past-editions {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
     }
 
+    .past-editions h2 {
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .past-editions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .past-editions li {
+      margin-bottom: 8px;
+    }
+
+    .past-editions a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .past-editions a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Styles */
     footer {
       background: #333;
       color: #fff;
@@ -137,20 +194,77 @@
         <img src="logo.jpg" alt="Classic Chicago Magazine">
       </a>
     </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html">Home</a>
+        <a href="#">Click/Click</a>
+        <a href="#">Give a Gala</a>
+        <a href="#">The Best Revenge</a>
+        <a href="#">Columns</a>
+        <a href="#">Datebook</a>
+        <a href="#">About</a>
+        <a href="#">Subscribe</a>
+        <a href="#">Advertise</a>
+      </div>
+    </nav>
   </header>
 
   <div class="wrapper">
-    <h1>Homepage Layout Review</h1>
-    <p class="subtitle">The team is comparing two homepage layout options. Click each to preview.</p>
+    <h1 class="page-title">Sunday Edition</h1>
 
-    <div class="option-card">
-      <h2><a href="index-b.html">Option B: Latest Edition as Homepage</a></h2>
-      <p>The homepage shows the current week's articles directly, just like the original site. A small "Past Editions" section appears at the bottom for archival browsing.</p>
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/best-restaurants-halsted-street/">Best Restaurants on Halsted Street</a>
+      </h2>
+      <div class="meta">By Bob Glaze &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>A culinary journey through Halsted Street's finest dining establishments.</p>
     </div>
 
-    <div class="option-card">
-      <h2><a href="index-c.html">Option C: Latest + Previous Editions</a></h2>
-      <p>The homepage features a "This Week" section with current articles, followed by a prominent "Previous Editions" section that grows as new editions are published.</p>
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/winter-in-antibes/">Winter in Antibes and Environs</a>
+      </h2>
+      <div class="meta">By Katherine Harvey &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>When people think of Antibes they think sun, sea and sand, but winter on the Riviera is very different from summer and presents its own kind of fun.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/my-silk-roads/">My Silk Roads</a>
+      </h2>
+      <div class="meta">By Susan Aurinko &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>30 years of magic on the world's streets &mdash; a street photographer's journey from darkroom prints to digital, capturing the poetry of ordinary life.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/alicia-ziegler/">Alicia Ziegler: The Artful Concierge</a>
+      </h2>
+      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>We continue our Chicago entrepreneur series with a conversation with Alicia Ziegler on her launch of The Artful Concierge &mdash; practical, personal help for people with full lives.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/childrens-research-fund/">Children's Research Fund Children's Ball</a>
+      </h2>
+      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>The Children's Research Fund's Children's Ball made a triumphant return to the Hilton Chicago, drawing more than 1,000 guests and raising an impressive $2.2 million for pediatric medicine research.</p>
+    </div>
+
+    <div class="story">
+      <h2 class="story-title">
+        <a href="editions/2026-02-15/boba-tea-chinatown/">Boba Tea in Chinatown</a>
+      </h2>
+      <div class="meta">By Jen Huang &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>A personal exploration of the vibrant boba tea scene along the streets of Chicago's Chinatown, from childhood memories to today's ever-changing shops.</p>
+    </div>
+
+    <div class="past-editions">
+      <h2>Past Editions</h2>
+      <ul>
+        <li><a href="editions/2026-02-08/index.html">February 8, 2026</a></li>
+      </ul>
     </div>
   </div>
 

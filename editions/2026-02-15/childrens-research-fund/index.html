@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <style>
     body {
       margin: 0;
@@ -105,15 +106,41 @@
       color: #333;
     }
 
-    .placeholder-notice {
-      background: #fff8e1;
-      border: 1px solid #ffe082;
-      border-radius: 4px;
-      padding: 20px;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      color: #666;
+    .photo-gallery {
       margin: 40px 0;
+    }
+
+    .photo-gallery h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .splide__slide figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .splide__slide img {
+        height: 300px;
+      }
     }
 
     .back-link {
@@ -187,7 +214,78 @@
       <p>This year's gala embraced the theme "Be the Spark," celebrating research's transformative power to ignite breakthrough ideas in pediatric medicine. The evening's program featured a particularly moving moment: a young patient who had been cured of sickle cell disease through a clinical trial at Lurie Children's Hospital. This living testament to the impact of research funding underscored the vital importance of the Children's Ball's mission and the real-world difference that donor support makes in advancing life-saving treatments for children.</p>
     </div>
 
+    <div class="photo-gallery">
+      <h2>Photos from the Evening</h2>
+      <div id="gala-carousel" class="splide" aria-label="Children's Ball Gala Photos">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala1/800/500" alt="Children's Ball gala photo 1">
+                <figcaption>Placeholder photo 1</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala2/800/500" alt="Children's Ball gala photo 2">
+                <figcaption>Placeholder photo 2</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala3/800/500" alt="Children's Ball gala photo 3">
+                <figcaption>Placeholder photo 3</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala4/800/500" alt="Children's Ball gala photo 4">
+                <figcaption>Placeholder photo 4</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala5/800/500" alt="Children's Ball gala photo 5">
+                <figcaption>Placeholder photo 5</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala6/800/500" alt="Children's Ball gala photo 6">
+                <figcaption>Placeholder photo 6</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala7/800/500" alt="Children's Ball gala photo 7">
+                <figcaption>Placeholder photo 7</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala8/800/500" alt="Children's Ball gala photo 8">
+                <figcaption>Placeholder photo 8</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala9/800/500" alt="Children's Ball gala photo 9">
+                <figcaption>Placeholder photo 9</figcaption>
+              </figure>
+            </li>
+            <li class="splide__slide">
+              <figure>
+                <img src="https://picsum.photos/seed/gala10/800/500" alt="Children's Ball gala photo 10">
+                <figcaption>Placeholder photo 10</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a>
+    <a href="../boba-tea-chinatown/" class="back-link" style="float: right;">Next: Boba Tea in Chinatown &rarr;</a>
   </main>
 
   <footer>
@@ -210,6 +308,30 @@
       All rights reserved.
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#gala-carousel', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 4000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        lazyLoad: 'nearby',
+        pagination: true,
+        arrows: true,
+        gap: '1rem',
+        speed: 600,
+        breakpoints: {
+          600: {
+            arrows: false
+          }
+        }
+      }).mount();
+    });
+  </script>
 
   <!-- Keyboard shortcuts -->
   <style>
@@ -247,6 +369,7 @@
       <dl>
         <dt>N</dt><dd>Next article</dd>
         <dt>P</dt><dd>Previous article</dd>
+        <dt>Space</dt><dd>Page down</dd>
         <dt>Esc</dt><dd>Close this popup</dd>
       </dl>
     </div>
