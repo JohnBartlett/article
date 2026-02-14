@@ -14,7 +14,7 @@
   <title>Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -23,11 +23,9 @@
       color: #222;
     }
 
-    /* Header Styles */
     header {
       padding: 20px 0;
       border-bottom: 1px solid #eee;
-      margin-bottom: 24px;
     }
 
     .logo-container {
@@ -72,47 +70,145 @@
       text-decoration: underline;
     }
 
+    /* Hero Section */
+    .hero {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      margin-top: 30px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 60px 40px 40px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .hero-overlay .label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #e8443a;
+      margin-bottom: 10px;
+    }
+
+    .hero-overlay h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px;
+      color: #fff;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .hero-overlay h2 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-overlay h2 a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-overlay .meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #ccc;
+      text-transform: uppercase;
+    }
+
+    .hero-overlay p {
+      color: #ddd;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 10px 0 0;
+      max-width: 600px;
+    }
+
+    /* Card Grid */
     .wrapper {
-      max-width: 980px;
-      margin: 0 auto 40px;
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 0 16px;
     }
 
     h1.page-title {
-      font-size: 28px;
-      letter-spacing: 0.05em;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      text-align: center;
-      margin: 40px 0 30px;
-      color: #444;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+      color: #999;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8443a;
+      display: inline-block;
     }
 
-    .story {
-      margin-bottom: 24px;
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
 
-    .story-title {
-      font-size: 24px;
+    .card {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 3px;
+      margin-bottom: 14px;
+      background: #f0ebe3;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
       margin: 0 0 6px;
+      line-height: 1.3;
     }
 
-    .meta {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #777;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .story a {
-      color: #b51c20;
+    .card h2 a {
+      color: #222;
       text-decoration: none;
     }
 
-    .story a:hover {
-      text-decoration: underline;
+    .card h2 a:hover {
+      color: #b51c20;
+    }
+
+    .card .meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
     }
 
     /* Past Editions */
@@ -123,10 +219,11 @@
     }
 
     .past-editions h2 {
-      font-size: 18px;
-      letter-spacing: 0.05em;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #666;
+      color: #999;
       margin-bottom: 16px;
     }
 
@@ -150,9 +247,9 @@
       text-decoration: underline;
     }
 
-    /* Footer Styles */
+    /* Footer */
     footer {
-      background: #333;
+      background: #1a1a1a;
       color: #fff;
       padding: 40px 20px;
       text-align: center;
@@ -184,6 +281,18 @@
       font-size: 14px;
       color: #aaa;
     }
+
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-overlay h2 {
+        font-size: 26px;
+      }
+      .hero-image {
+        height: 320px;
+      }
+    }
   </style>
 </head>
 
@@ -196,7 +305,7 @@
     </div>
     <nav>
       <div class="nav-inner">
-        <a href="index-b1.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="subscribe.html">Subscribe</a>
         <a href="advertise.html">Advertise</a>
@@ -204,55 +313,60 @@
     </nav>
   </header>
 
-  <div class="wrapper">
-    <h1 class="page-title">Sunday Edition</h1>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/best-restaurants-halsted-street/">Best Restaurants on Halsted Street</a>
-      </h2>
-      <div class="meta">By Bob Glaze &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>A culinary journey through Halsted Street's finest dining establishments.</p>
-    </div>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/winter-in-antibes/">Winter in Antibes and Environs</a>
-      </h2>
+  <!-- Hero Feature -->
+  <div class="hero">
+    <img class="hero-image" src="editions/2026-02-15/thumb-antibes.jpg" alt="Winter in Antibes">
+    <div class="hero-overlay">
+      <div class="label">Featured</div>
+      <h2><a href="editions/2026-02-15/winter-in-antibes/">Winter in Antibes and Environs</a></h2>
       <div class="meta">By Katherine Harvey &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>When people think of Antibes they think sun, sea and sand, but winter on the Riviera is very different from summer and presents its own kind of fun.</p>
+      <p>Winter on the Riviera presents its own kind of fun, from the Christmas Village and truffle markets to beach lunches in Cannes and the Foundation Maeght.</p>
     </div>
+  </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/my-silk-roads/">My Silk Roads</a>
-      </h2>
-      <div class="meta">By Susan Aurinko &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>30 years of magic on the world's streets &mdash; a street photographer's journey from darkroom prints to digital, capturing the poetry of ordinary life.</p>
-    </div>
+  <div class="wrapper">
+    <h1 class="page-title">More Stories</h1>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/alicia-ziegler/">Alicia Ziegler: The Artful Concierge</a>
-      </h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>We continue our Chicago entrepreneur series with a conversation with Alicia Ziegler on her launch of The Artful Concierge &mdash; practical, personal help for people with full lives.</p>
-    </div>
+    <div class="card-grid">
+      <div class="card">
+        <img class="card-image" src="editions/2026-02-15/thumb-restaurants.jpg" alt="Best Restaurants on Halsted">
+        <h2><a href="editions/2026-02-15/best-restaurants-halsted-street/">Best Restaurants on Halsted Street</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A curated guide to the best dining along one of Chicago's most vibrant restaurant corridors.</p>
+      </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/childrens-research-fund/">Children's Research Fund Children's Ball</a>
-      </h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>The Children's Research Fund's Children's Ball made a triumphant return to the Hilton Chicago, drawing more than 1,000 guests and raising an impressive $2.2 million for pediatric medicine research.</p>
-    </div>
+      <div class="card">
+        <img class="card-image" src="editions/2026-02-15/thumb-silkroads.jpg" alt="My Silk Roads">
+        <h2><a href="editions/2026-02-15/my-silk-roads/">My Silk Roads</a></h2>
+        <div class="meta">By Marcia Lazar &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A personal photographic journey through Europe's flea markets, street scenes, and quiet corners.</p>
+      </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="editions/2026-02-15/boba-tea-chinatown/">Boba Tea in Chinatown</a>
-      </h2>
-      <div class="meta">By Jen Huang &nbsp;&bull;&nbsp; February 15, 2026</div>
-      <p>A personal exploration of the vibrant boba tea scene along the streets of Chicago's Chinatown, from childhood memories to today's ever-changing shops.</p>
+      <div class="card">
+        <img class="card-image" src="editions/2026-02-15/thumb-bobatea.jpg" alt="Boba Tea in Chinatown">
+        <h2><a href="editions/2026-02-15/boba-tea-chinatown/">Boba Tea in Chinatown</a></h2>
+        <div class="meta">By Jen Huang &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A personal exploration of the vibrant boba tea scene along the streets of Chicago's Chinatown.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-02-15/thumb-ziegler.jpg" alt="Alicia Ziegler">
+        <h2><a href="editions/2026-02-15/alicia-ziegler/">Alicia Ziegler</a></h2>
+        <div class="meta">February 15, 2026</div>
+        <p>A profile in style and substance from the heart of Chicago's social scene.</p>
+      </div>
+
+      <div class="card">
+        <h2><a href="#">The Secret Gardens of Wicker Park</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>Behind iron gates and down narrow gangways, a handful of Wicker Park residents tend hidden gardens that date back over a century.</p>
+      </div>
+
+      <div class="card">
+        <h2><a href="#">About the Town</a></h2>
+        <div class="meta">By Philip Vidal &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>Restaurant Week returns, the Auto Show rolls into McCormick Place, and the CSO premieres a new commissioned work.</p>
+      </div>
     </div>
 
     <div class="past-editions">
