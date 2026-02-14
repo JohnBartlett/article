@@ -29,12 +29,27 @@
     }
 
     .logo-container {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
+      position: relative;
     }
 
     .logo-container img {
       width: 390px;
+      height: auto;
+    }
+
+    .masthead-ad {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .masthead-ad img {
+      width: 120px;
       height: auto;
     }
 
@@ -303,6 +318,9 @@
       <a href="index.html">
         <img src="logo.jpg" alt="Classic Chicago Magazine">
       </a>
+      <div class="masthead-ad">
+        <img src="editions/2026-02-15/image006.png" alt="Heritage Auctions – Prints & Multiples">
+      </div>
     </div>
     <nav>
       <div class="nav-inner">
@@ -313,11 +331,6 @@
       </div>
     </nav>
   </header>
-
-  <!-- Ad -->
-  <div style="text-align: right; max-width: 1200px; margin: 16px auto 0; padding: 0 16px;">
-    <img src="editions/2026-02-15/image006.png" alt="Heritage Auctions – Prints & Multiples" style="width: 160px; height: auto;">
-  </div>
 
   <!-- Hero Feature -->
   <div class="hero">
