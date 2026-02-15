@@ -20,22 +20,12 @@ This project uses a three-branch workflow:
 - Always start work from the `dev` branch.
 - Use `staging` as the team review step before production.
 
-## Hosting: Cloudflare Pages
+## Hosting: Vercel
 
-This site is hosted on Cloudflare Pages (Free plan). Keep within these limits:
+This site is hosted on Vercel. Deploys automatically on push.
 
-- **Max file size:** 25 MB per file — do not add files larger than this.
-- **Max file count:** 20,000 files per site.
-- **Builds:** 500 per month, 20-minute timeout per build.
-
-### Current usage (as of 2026-02-09)
-
-- 82 files, largest is 6.9 MB — well within limits.
-
-### Guidelines
-
-- Optimize images before adding them. Keep individual files well under 25 MB.
-- Be mindful of file count if bulk-adding assets.
+- **Dev URL:** `https://article-git-dev-johns-projects-e5fce345.vercel.app`
+- **Production:** deploys from `master` branch
 
 ## Editions Structure
 
@@ -43,24 +33,35 @@ Content is organized into weekly editions under `editions/YYYY-MM-DD/`.
 
 ```
 /
-├── index.html              (demo chooser — links to Option B and C)
-├── index-b.html            (Option B homepage: latest edition as homepage)
-├── index-c.html            (Option C homepage: latest + previous editions)
+├── index.html              (homepage — Sunday Edition with hero + card grid)
+├── about.html              (About page — team + writers this week)
+├── subscribe.html          (Subscribe page)
+├── advertise.html          (Advertise page)
 ├── logo.jpg, favicon.ico   (shared assets in root)
+├── ads/                    (all advertisement assets)
+│   ├── ha-ad.html          (Heritage Auctions ad page)
+│   ├── ha-ad.jpg           (Heritage Auctions ad image)
+│   └── image006.png        (Heritage Auctions banner image)
 ├── editions/
 │   ├── 2026-02-08/         (first edition)
 │   │   ├── index.html      (edition landing page)
-│   │   ├── *.html          (article files)
-│   │   └── *.jpg/jpeg/png  (article images)
-│   └── 2026-02-15/         (next edition placeholder)
-│       └── .gitkeep
+│   │   └── <article-name>/ (article folder)
+│   │       ├── index.html  (article page)
+│   │       └── *.jpg/jpeg/png (article images)
+│   └── 2026-02-15/         (second edition)
+│       ├── index.html      (edition landing page)
+│       ├── thumb-*.jpg     (article thumbnails for edition/homepage)
+│       └── <article-name>/ (article folder)
 ```
 
 ### Conventions
 
 - Each edition folder is named by publication date: `YYYY-MM-DD`
-- Article HTML and their images live together in the same edition folder
+- Each article lives in its own subfolder: `editions/YYYY-MM-DD/<article-name>/index.html`
+- Article images live in the same folder as their `index.html`
 - Shared assets (`logo.jpg`, `favicon.ico`) stay in root
-- Articles reference shared assets via `../../` (two levels up)
-- Articles reference images and sibling articles with bare filenames (same directory)
-- When adding a new edition: create the folder, add articles + images, then update the homepage files to link to it
+- Articles reference shared assets via `../../../` (three levels up from article folder)
+- Articles reference sibling articles via `../<sibling-name>/`
+- Thumbnails (`thumb-*.jpg`) live in the edition root for use by edition and homepage
+- **All ad assets go in `/ads/`** — do not store ads in edition folders
+- When adding a new edition: create the folder, add article subfolders + images, create thumbnails, then update the homepage
