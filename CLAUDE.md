@@ -1,5 +1,10 @@
 # Project: Classic Chicago Magazine
 
+> **WARNING (as of Feb 14 2026):** Vercel's Production Branch is likely set to `dev`, which means
+> every push to dev goes live on chicagoclassicmag.com immediately. Until this is fixed in the
+> Vercel Dashboard (Settings → Git → Production Branch → change to `master`), DO NOT push to
+> dev without the user's explicit approval. See TODO.md for full details and fix instructions.
+
 A weekly digital magazine about Chicago culture, dining, arts, and society. Static HTML site — no build step, no framework.
 
 ## Publication Info
