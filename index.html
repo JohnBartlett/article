@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Version 1.0 | 2026-02-06 | JFB code -->
 <html lang="en">
 
 <head>
@@ -15,7 +14,7 @@
   <title>Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -24,11 +23,9 @@
       color: #222;
     }
 
-    /* Header Styles */
     header {
       padding: 20px 0;
       border-bottom: 1px solid #eee;
-      margin-bottom: 24px;
     }
 
     .logo-container {
@@ -73,52 +70,187 @@
       text-decoration: underline;
     }
 
+    /* Hero Section */
+    .hero {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      margin-top: 30px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 60px 40px 40px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .hero-overlay .label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #e8443a;
+      margin-bottom: 10px;
+    }
+
+    .hero-overlay h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px;
+      color: #fff;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .hero-overlay h2 a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-overlay h2 a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-overlay .meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #ccc;
+      text-transform: uppercase;
+    }
+
+    .hero-overlay p {
+      color: #ddd;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 10px 0 0;
+      max-width: 600px;
+    }
+
+    /* Card Grid */
     .wrapper {
-      max-width: 980px;
-      margin: 0 auto 40px;
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 0 16px;
     }
 
     h1.page-title {
-      font-size: 28px;
-      letter-spacing: 0.05em;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      text-align: center;
-      margin: 40px 0 30px;
-      color: #444;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+      color: #999;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8443a;
+      display: inline-block;
     }
 
-    .story {
-      margin-bottom: 24px;
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
 
-    .story-title {
-      font-size: 24px;
+    .card {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-radius: 3px;
+      margin-bottom: 14px;
+      background: #f0ebe3;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
       margin: 0 0 6px;
+      line-height: 1.3;
     }
 
-    .meta {
-      font-family: Arial, sans-serif;
+    .card h2 a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .card h2 a:hover {
+      color: #b51c20;
+    }
+
+    .card .meta {
+      font-family: 'Lato', sans-serif;
       font-size: 12px;
-      color: #777;
+      color: #999;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
     }
 
-    .story a {
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+    }
+
+    /* Past Editions */
+    .past-editions {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .past-editions h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .past-editions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .past-editions li {
+      margin-bottom: 8px;
+    }
+
+    .past-editions a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
       color: #b51c20;
       text-decoration: none;
     }
 
-    .story a:hover {
+    .past-editions a:hover {
       text-decoration: underline;
     }
 
-    /* Footer Styles */
+    /* Footer */
     footer {
-      background: #333;
+      background: #1a1a1a;
       color: #fff;
       padding: 40px 20px;
       text-align: center;
@@ -150,6 +282,18 @@
       font-size: 14px;
       color: #aaa;
     }
+
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-overlay h2 {
+        font-size: 26px;
+      }
+      .hero-image {
+        height: 320px;
+      }
+    }
   </style>
 </head>
 
@@ -163,72 +307,80 @@
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
-        <a href="#">Click/Click</a>
-        <a href="#">Give a Gala</a>
-        <a href="#">The Best Revenge</a>
-        <a href="#">Columns</a>
-        <a href="#">Datebook</a>
-        <a href="#">About</a>
-        <a href="#">Subscribe</a>
-        <a href="#">Advertise</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+        <a href="advertise.html">Advertise</a>
       </div>
     </nav>
   </header>
 
+  <div style="text-align: center; padding: 30px 16px 10px;">
+    <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999;">February 15, 2026</div>
+  </div>
+
+  <!-- Hero Feature -->
+  <div class="hero">
+    <a href="editions/2026-02-15/winter-in-antibes/"><img class="hero-image" src="editions/2026-02-15/thumb-antibes.jpg" alt="Winter in Antibes"></a>
+    <div class="hero-overlay">
+      <div class="label">Featured</div>
+      <h2><a href="editions/2026-02-15/winter-in-antibes/">Winter in Antibes and Environs</a></h2>
+      <div class="meta">By Katherine Harvey &nbsp;&bull;&nbsp; February 15, 2026</div>
+      <p>Winter on the Riviera presents its own kind of fun, from the Christmas Village and truffle markets to beach lunches in Cannes and the Foundation Maeght.</p>
+    </div>
+  </div>
+
   <div class="wrapper">
-    <h1 class="page-title">Sunday Edition</h1>
+    <h1 class="page-title">More Stories</h1>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="lincoln-park.html">Lincoln Park: History Hiding in Plain Sight</a>
-      </h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;•&nbsp; February 8, 2026</div>
-      <p>A 19th-century public cemetery evolved into a living archive of Chicago’s civic past. Filmmaker Kristin N.
-        Smith uncovers the overlooked narratives embedded in the park’s landscape.</p>
+    <div class="card-grid">
+      <div class="card">
+        <a href="editions/2026-02-15/best-restaurants-halsted-street/"><img class="card-image" src="editions/2026-02-15/thumb-restaurants.jpg" alt="Best Restaurants on Halsted"></a>
+        <h2><a href="editions/2026-02-15/best-restaurants-halsted-street/">Best Restaurants on Halsted Street</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A curated guide to the best dining along one of Chicago's most vibrant restaurant corridors.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-02-15/my-silk-roads/"><img class="card-image" src="editions/2026-02-15/thumb-silkroads.jpg" alt="My Silk Roads"></a>
+        <h2><a href="editions/2026-02-15/my-silk-roads/">My Silk Roads</a></h2>
+        <div class="meta">By Marcia Lazar &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A personal photographic journey through Europe's flea markets, street scenes, and quiet corners.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-02-15/boba-tea-chinatown/"><img class="card-image" src="editions/2026-02-15/thumb-bobatea.jpg" alt="Boba Tea in Chinatown"></a>
+        <h2><a href="editions/2026-02-15/boba-tea-chinatown/">Boba Tea in Chinatown</a></h2>
+        <div class="meta">By Jen Huang &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>A personal exploration of the vibrant boba tea scene along the streets of Chicago's Chinatown.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-02-15/alicia-ziegler/"><img class="card-image" src="editions/2026-02-15/thumb-ziegler.jpg" alt="Alicia Ziegler"></a>
+        <h2><a href="editions/2026-02-15/alicia-ziegler/">Alicia Ziegler</a></h2>
+        <div class="meta">February 15, 2026</div>
+        <p>A profile in style and substance from the heart of Chicago's social scene.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-02-15/childrens-research-fund/"><img class="card-image" src="editions/2026-02-15/thumb-childrensball.jpg" alt="Children's Ball" style="object-position: center 10%"></a>
+        <h2><a href="editions/2026-02-15/childrens-research-fund/">Children's Research Fund Children's Ball</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 15, 2026</div>
+        <p>The Children's Ball made a triumphant return to the Hilton Chicago, raising $2.2 million for pediatric research.</p>
+      </div>
+
+      <div class="card" style="display: flex; align-items: center; justify-content: center; border-bottom: none;">
+        <img src="ads/image006.png" alt="Heritage Auctions – Prints & Multiples" style="max-height: 360px; width: auto;">
+      </div>
+
     </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="sam-hiller.html">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</a>
-      </h2>
-      <div class="meta">By David A. F. Sweet &nbsp;•&nbsp; February 8, 2026</div>
-      <p>A Lake Forest firefighter realizes her dream by stepping onto Olympic ice as a hockey referee.</p>
+    <div class="past-editions">
+      <h2>Past Editions</h2>
+      <ul>
+        <li><a href="editions/2026-02-08/index.html">February 8, 2026</a></li>
+      </ul>
     </div>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="iron-lung.html">Iron Lung – An Indie Success Story</a>
-      </h2>
-      <div class="meta">By Jack LeJeune &nbsp;•&nbsp; February 8, 2026</div>
-      <p>YouTube creator Markiplier's debut feature film adapts the cult horror game into a claustrophobic thriller that earned $18 million on a $3 million budget.</p>
-    </div>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="linda-heister.html">Biba's Favorite Things: Linda Heister</a>
-      </h2>
-      <div class="meta">By Biba Roesch &nbsp;•&nbsp; February 8, 2026</div>
-      <p>A glimpse into the life and inspirations of Linda Heister—fashion, friendship, and the beauty of a 100-year-old Indiana home filled with rescued treasures.</p>
-    </div>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="mimosa.html">Mimosa Heralds the Oncoming of Spring</a>
-      </h2>
-      <div class="meta">By Cheryl Anderson &nbsp;•&nbsp; February 8, 2026</div>
-      <p>From Paris fleuristes to the Côte d'Azur, the golden yellow mimosa flower brings winter sun and celebrates the oncoming of spring in France.</p>
-    </div>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="about-the-town-february.html">About the Town</a>
-      </h2>
-      <div class="meta">By Philip Vidal &nbsp;•&nbsp; February 8, 2026</div>
-      <p>From the Winter Olympics to jazz centennials, theater week to Black History Month—a guide to Chicago's milestones and celebrations this February.</p>
-    </div>
-
-    <!-- Later, add more story blocks here -->
-
   </div>
 
   <footer>
