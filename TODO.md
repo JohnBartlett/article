@@ -1,25 +1,36 @@
 # TODO — Classic Chicago Magazine
 
 ## High Priority
-- [ ] Disable Vercel Deployment Protection so preview URLs are publicly accessible (Settings → Deployment Protection)
-- [ ] Confirm Formsubmit activation emails for `subscribe@2ccmag.com` and `advertise@2ccmag.com`, then re-enable forms
-- [x] Scheduled deploy to production: Saturday Feb 14 at 11:30pm CST (GitHub Actions workflow in place)
 
-## Cleanup
-- [ ] Remove experimental homepage variants from dev/dev2: `index-b1.html`, `index-b2.html`, `index-b3.html`, `index-b4.html`, `index-b.html`, `index-c.html`
-- [ ] Decide whether to keep or remove the edition test page (`editions/2026-02-15/index.html`)
-- [ ] Review Feb 08 edition articles for nav consistency and content quality
-- [ ] Update Children's Ball placeholder on edition page (`editions/2026-02-15/index.html`) — uses purple gradient instead of real thumbnail
+- [ ] Disable Vercel Deployment Protection so preview/production URLs are publicly accessible (Vercel Dashboard → Settings → Deployment Protection → turn off)
+- [ ] Confirm Formsubmit activation emails for `subscribe@2ccmag.com` and `advertise@2ccmag.com` (check inbox, click confirmation link)
+- [ ] Re-enable Subscribe form on `subscribe.html` after Formsubmit activation confirmed
+- [ ] Re-enable Advertise form on `advertise.html` after Formsubmit activation confirmed
 
-## Forms
-- [ ] Re-enable Subscribe form after Formsubmit activation confirmed
-- [ ] Re-enable Advertise form after Formsubmit activation confirmed
+## Post-Deploy Cleanup
 
-## Content / Editorial
-- [ ] Update `about.html` "Our Writers This Week" section each edition
+- [ ] Remove `.github/workflows/scheduled-deploy.yml` after production deploy completes (was set for Feb 14 11:30pm CST)
+- [ ] Verify production site is live and all pages/images load correctly
+
+## Content / Editorial (Recurring)
+
+- [ ] Update `about.html` "Our Writers This Week" section with each new edition
 - [ ] Add new articles and editions as they come in
+- [ ] Update homepage `index.html` hero + card grid for each new edition
+- [ ] Update keyboard navigation order in all articles to match new homepage order
 
-## Infrastructure
-- [ ] Remove `scheduled-deploy.yml` workflow after production deploy completes
-- [ ] Consider automated link/asset checking (CI script to catch broken links and orphaned files)
-- [ ] Establish ad naming convention for future advertisers in `/ads/`
+## Completed
+
+- [x] Scheduled deploy to production: Saturday Feb 14 at 11:30pm CST (GitHub Actions workflow)
+- [x] Remove experimental homepage variants (`index-b.html`, `index-b1.html`, `index-c.html`)
+- [x] Remove edition test page (`editions/2026-02-15/index.html`)
+- [x] Fix all broken links across Feb 08 and Feb 15 editions (30+ fixes)
+- [x] Clean orphaned files (~6.5MB, 20 files removed)
+- [x] Create `/ads/` folder and consolidate ad assets
+- [x] Add Heritage Auctions ad to homepage and edition page
+- [x] Reorder keyboard navigation to match homepage article order
+- [x] Add PgUp/PgDn to keyboard shortcuts help popup
+- [x] Fix "Back to Sunday Edition" links across all articles
+- [x] Fix Silk Roads image splicing (zebra-gaze.jpg / poesie-affiches.jpg)
+- [x] Disable forms with "coming soon" placeholder (no emails exposed)
+- [x] Remove email addresses from subscribe and advertise pages
