@@ -1,0 +1,26 @@
+name: Scheduled Deploy to Production
+
+on:
+  schedule:
+    # 11:30 PM CST Sunday Feb 15 = 5:30 AM UTC Monday Feb 16
+    - cron: '30 5 16 2 *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge dev into master
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout master
+          git merge origin/dev --no-edit
+          git push origin master
+          echo "✅ Dev merged into master — production deployment triggered"
