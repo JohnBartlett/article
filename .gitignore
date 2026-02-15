@@ -1,0 +1,13 @@
+.gemini/
+gha-creds-*.json
+.vercel
+
+# WSL metadata artifacts
+*:Zone.Identifier
+
+# Source documents (not served on site)
+*.docx
+*.pdf
+
+# Working folders
+classicchicagomagazinebobatea/
