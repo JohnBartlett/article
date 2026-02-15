@@ -2,8 +2,8 @@ name: Scheduled Deploy to Production
 
 on:
   schedule:
-    # 11:30 PM CST Sunday Feb 15 = 5:30 AM UTC Monday Feb 16
-    - cron: '30 5 16 2 *'
+    # 11:30 PM CST Saturday Feb 14 = 5:30 AM UTC Sunday Feb 15
+    - cron: '30 5 15 2 *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
