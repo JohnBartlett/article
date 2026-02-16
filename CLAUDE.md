@@ -1,10 +1,5 @@
 # Project: Classic Chicago Magazine
 
-> **WARNING (as of Feb 14 2026):** Vercel's Production Branch is likely set to `dev`, which means
-> every push to dev goes live on chicagoclassicmag.com immediately. Until this is fixed in the
-> Vercel Dashboard (Settings → Git → Production Branch → change to `master`), DO NOT push to
-> dev without the user's explicit approval. See TODO.md for full details and fix instructions.
-
 A weekly digital magazine about Chicago culture, dining, arts, and society. Static HTML site — no build step, no framework.
 
 ## Publication Info
@@ -30,21 +25,26 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 
 Three-branch workflow:
 
-- **`master`** — Production (live site). NEVER commit directly.
-- **`staging`** — Team review before production.
-- **`dev`** — Active development. All work starts here.
+- **`master`** — Production (live site, Cloudflare). NEVER commit directly.
+- **`dev`** — Staging / review (Vercel preview). Merges to `master` when ready.
+- **`dev2`** — Spitballing / experimentation. All exploratory work starts here.
 
-Workflow: `dev` → `staging` → `master`
+Workflow: `dev2` → `dev` → `master`
 
-## Hosting: Vercel
+## Hosting
 
-Static HTML deployed automatically on push. No build step.
+### Production: Cloudflare
+- **URL:** `chicagoclassicmag.com`
+- **Deploys from:** `master` branch
 
+### Dev Preview: Vercel
 - **Dev URL:** `https://article-git-dev-johns-projects-e5fce345.vercel.app`
-- **Production:** deploys from `master` branch
+- **Deploys from:** `dev` branch (this is intentional — Vercel is the dev preview site, not production)
 - **Vercel Project ID:** `prj_hzNhpgPW5e0hcF8GtyzmkkJZnMzY`
 - **Vercel Team ID:** `team_8vNXZ20pDprMAIxBJgnZdEeM`
-- **GitHub repo:** `JohnBartlett/article`
+
+### GitHub repo
+- **Repo:** `JohnBartlett/article`
 
 ## Git Push
 
