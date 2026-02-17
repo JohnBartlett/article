@@ -78,14 +78,21 @@ git push origin dev
 │   │   ├── linda-heister/
 │   │   ├── mimosa/
 │   │   └── sam-hiller/
-│   └── 2026-02-15/           Edition 2 — February 15, 2026
-│       ├── thumb-*.jpg       Thumbnails for homepage/edition page
-│       ├── winter-in-antibes/
-│       ├── best-restaurants-halsted-street/
-│       ├── my-silk-roads/
-│       ├── boba-tea-chinatown/
-│       ├── alicia-ziegler/
-│       └── childrens-research-fund/
+│   ├── 2026-02-15/           Edition 2 — February 15, 2026
+│   │   ├── thumb-*.jpg       Thumbnails for homepage/edition page
+│   │   ├── winter-in-antibes/
+│   │   ├── best-restaurants-halsted-street/
+│   │   ├── my-silk-roads/
+│   │   ├── boba-tea-chinatown/
+│   │   ├── alicia-ziegler/
+│   │   └── childrens-research-fund/
+│   └── 2026-02-22/           Edition 3 — February 22, 2026 (placeholders)
+│       ├── article-1/        Placeholder — awaiting content
+│       ├── article-2/        Placeholder — awaiting content
+│       ├── article-3/        Placeholder — awaiting content
+│       ├── article-4/        Placeholder — awaiting content
+│       ├── article-5/        Placeholder — awaiting content
+│       └── article-6/        Placeholder — awaiting content
 ```
 
 ## Current Homepage Article Order (Feb 15 edition)
