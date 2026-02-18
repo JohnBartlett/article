@@ -70,13 +70,32 @@
       text-decoration: underline;
     }
 
+    /* Hero + Ad Row */
+    .hero-row {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 20px;
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-      margin-top: 30px;
+      flex: 3;
+      min-width: 0;
+    }
+
+    .hero-ad {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-ad img {
+      max-width: 100%;
+      height: auto;
     }
 
     .hero-image {
@@ -90,8 +109,8 @@
     .hero-overlay {
       position: absolute;
       bottom: 0;
-      left: 16px;
-      right: 16px;
+      left: 0;
+      right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,0.85));
       padding: 60px 40px 40px;
       border-radius: 0 0 4px 4px;
@@ -284,6 +303,12 @@
     }
 
     @media (max-width: 700px) {
+      .hero-row {
+        flex-direction: column;
+      }
+      .hero-ad {
+        padding: 20px 0;
+      }
       .card-grid {
         grid-template-columns: 1fr;
       }
@@ -319,14 +344,19 @@
     <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999;">February 22, 2026</div>
   </div>
 
-  <!-- Hero Feature -->
-  <div class="hero">
-    <a href="editions/2026-02-22/bag-charms/"><img class="hero-image" src="editions/2026-02-22/thumb-bagcharms.jpg" alt="Amanda Marcuson, founder of Bag Crap, with a charmed handbag"></a>
-    <div class="hero-overlay">
-      <div class="label">Featured</div>
-      <h2><a href="editions/2026-02-22/bag-charms/">Bag Charms: Humor and Play in a Serious World</a></h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>Entrepreneur Amanda Marcuson turned vintage keychains and upcycled toys into Bag Crap, a global fashion phenomenon featured in Vogue, GQ, and Cosmopolitan.</p>
+  <!-- Hero Feature + Ad -->
+  <div class="hero-row">
+    <div class="hero">
+      <a href="editions/2026-02-22/bag-charms/"><img class="hero-image" src="editions/2026-02-22/thumb-bagcharms.jpg" alt="Amanda Marcuson, founder of Bag Crap, with a charmed handbag"></a>
+      <div class="hero-overlay">
+        <div class="label">Featured</div>
+        <h2><a href="editions/2026-02-22/bag-charms/">Bag Charms: Humor and Play in a Serious World</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>Entrepreneur Amanda Marcuson turned vintage keychains and upcycled toys into Bag Crap, a global fashion phenomenon featured in Vogue, GQ, and Cosmopolitan.</p>
+      </div>
+    </div>
+    <div class="hero-ad">
+      <img src="ads/image006.png" alt="Heritage Auctions – Prints & Multiples">
     </div>
   </div>
 
@@ -363,9 +393,6 @@
         <p>Three Chicago powerhouses&mdash;Barbara Gaines, Irma Su&aacute;rez Ruiz, and Josephine Lee&mdash;are honored for advancing the arts for women and children.</p>
       </div>
 
-      <div class="card" style="display: flex; align-items: center; justify-content: center; border-bottom: none;">
-        <img src="ads/image006.png" alt="Heritage Auctions – Prints & Multiples" style="max-height: 360px; width: auto;">
-      </div>
     </div>
 
     <div class="past-editions">
