@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  <meta charset="UTF-8">
+  <title>Members Show at the Arts Club | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 24px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    .article-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 40px;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .article-body p {
+      margin-bottom: 22px;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.75;
+    }
+
+    figure {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-top: 10px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    blockquote {
+      margin: 32px 0;
+      padding: 0 0 0 24px;
+      border-left: 3px solid #d41f1f;
+    }
+
+    blockquote p {
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .photo-gallery {
+      margin: 48px 0 0;
+    }
+
+    .photo-gallery h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      background: #f5f5f5;
+    }
+
+    .splide__slide figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .article-title { font-size: 30px; }
+      .splide__slide img { height: 280px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article-wrapper">
+    <div class="article-header">
+      <div class="article-label">Arts</div>
+      <h1 class="article-title">Members Show at the Arts Club</h1>
+      <div class="article-meta">March 1, 2026 &bull; By Judy Carmack Bross</div>
+    </div>
+
+    <div class="article-body">
+
+      <figure>
+        <img src="tropea-jpgs/untitled-56.jpg" alt="92nd Exhibition of Visual Artist Members, January 23–March 7, 2026, Arts Club of Chicago">
+        <figcaption>92nd Exhibition of Visual Artist Members, January 23&ndash;March 7, 2026. Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption>
+      </figure>
+
+      <p>It&rsquo;s not too late to tour the current exhibition of works by 84 Professional Visual Artist Members of the Arts Club of Chicago at 201 East Ontario. Executive Director Janine Mileaf and photographer Michael Tropea show and tell why you should stop by before it closes March 7.</p>
+
+      <figure>
+        <img src="tropea-jpgs/untitled-55.jpg" alt="Gallery view, 92nd Exhibition of Visual Artist Members, Arts Club of Chicago">
+        <figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption>
+      </figure>
+
+      <p>Richard Rezac, whose works are in museum collections across the country and who has had 32 solo exhibitions since 2000, is one of the show&rsquo;s noted artists. Among the members who have exhibited have been Julia Thecla, Ivan Albright, Martyl Langsdorf, and more recently Christopher Williams, Julia Fish, Jessica Stockholder, and Gaylen Gerber.</p>
+
+      <figure>
+        <img src="Rezac-Singh-2024.jpeg" alt="Richard Rezac, Study for Singh, 2024. A drawing.">
+        <figcaption>Richard Rezac, Study for Singh, 2024. Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption>
+      </figure>
+
+      <p>Mileaf told us:</p>
+
+      <blockquote>
+        <p>&ldquo;The Arts Club was founded in 1916 and our second exhibition ever was a Members Exhibition. At first, it was an annual show, but for the past few decades at least, it has been a biennial. This is our 92nd exhibition. We were honored last time to have a work by Richard Hunt that he submitted just before he passed away. He had exhibited in the Members show for decades. A few years ago, we had a lecture about the 20th-century illustrator Peggy Burrows and we got to see her fabulous rendition of artists arriving at the old building with paintings in hand.</p>
+
+        <p>&ldquo;The way the exhibition works is that we accept one work of restricted dimensions from every Professional Visual Artist Member of the Arts Club. We do not judge the works or group them by theme. They are hung alphabetically. The remarkable thing, however, is that there often ends up being unintended correspondences from one work to the next. While we don&rsquo;t vet the works that our artist members submit, we do vet the applicants who apply as artists to make sure that they have an exhibition and critical history. Though there are many talented amateur artists who are members, this category is for people whose primary professional identity is that of artist. In recent years as the Member Exhibition has become more popular, we have worked with the Membership Committee to raise the bar on entry without compromising transparency and access.&rdquo;</p>
+      </blockquote>
+
+      <p>Mileaf explained that the Arts Club from its beginnings has public engagement in its mission.</p>
+
+      <blockquote>
+        <p>&ldquo;The Arts Club of Chicago was founded precisely to bring vanguard arts to the city. In the wake of backlash against the 1913 Armory exhibition, some of the city&rsquo;s arts leaders came together to encourage conversation around challenging arts and ideas. This was always meant to be an engagement with the public, as well as our members. We imagine The Arts Club as a hub for critical thought that inspires understanding.&rdquo;</p>
+      </blockquote>
+
+      <blockquote>
+        <p>&ldquo;We&rsquo;re also very proud to include the fellows of The Arts Club Chicago in the exhibition. This is a program we began about ten years ago to support recent MFA graduates and keep them connected to the city. Recently, the Holly Palmer Foundation has helped to expand the scope of the fellowships we offer. It is a thrill to see our newest members on the walls with someone like Helen Harvey Mills, who has been exhibiting in the Members exhibition since the 1970s,&rdquo; Mileaf said.</p>
+      </blockquote>
+
+      <p>Keven Wilder, who has studios in both Chicago and Door County where she has a gallery as well, talked with us about exhibiting in the show.</p>
+
+      <blockquote>
+        <p>&ldquo;It&rsquo;s an honor to participate in the Arts Club&rsquo;s Visual Artist Members&rsquo; Exhibition! Artists whose work I admire like Julia Fish and Cameron Martin also have works hanging in this show. I&rsquo;m in good company!</p>
+
+        <p>&ldquo;I enjoy looking closely at all the pieces in the show. I learn so much from the other artists&rsquo; work. I get new ideas about experimenting with different techniques, media, colors, subject matter, etc. The Arts Club curatorial staff do a great job hanging the show too.</p>
+
+        <p>&ldquo;When deciding what to submit, I think about what new painting will stand out on the wall. My entry this year &lsquo;Ferns&rsquo; has a dramatic composition and strong colors. It&rsquo;s a turbulent painting; these are turbulent times we&rsquo;re living in.&rdquo;</p>
+      </blockquote>
+
+      <p>Wilder explained creating &ldquo;Ferns&rdquo;:</p>
+
+      <blockquote>
+        <p>&ldquo;It originated from a photo I took of a contemporary floral arrangement. The composition of the painting loosely followed the photo, but then I went to town playing with colors, different brush strokes making the painting come alive. Eventually, the painting took on a life of its own.&rdquo;</p>
+      </blockquote>
+
+      <figure>
+        <img src="keven-wilder-ferns.jpg" alt="Ferns by Keven Wilder, oil on canvas, 2025, on view at the Arts Club of Chicago">
+        <figcaption><em>Ferns</em>, oil on canvas, 2025, by Keven Wilder. Photo courtesy of Michael Tropea.</figcaption>
+      </figure>
+
+      <p>Mileaf told us: &ldquo;Each year that we host a Members Exhibition, I hear from the audience that this is the best exhibition yet. This year there has been a chorus of such praise.&rdquo;</p>
+
+      <p>The Arts Club is open to the public Tuesday&ndash;Friday 11AM&ndash;6PM and Saturday 11AM&ndash;3PM. The Visual Artist Members&rsquo; Exhibition ends March 7.</p>
+
+    </div>
+
+    <div class="photo-gallery">
+      <h2>Exhibition Photos</h2>
+      <div id="arts-club-carousel" class="splide" aria-label="92nd Exhibition of Visual Artist Members">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-15.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-16.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-17.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-18.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-19.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-20.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-21.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-22.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-23.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-24.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-25.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-26.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-27.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-28.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-29.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-30.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-31.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-32.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-33.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-34.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-35.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-36.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-37.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-38.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-39.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-40.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-41.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-42.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-43.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-44.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-45.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-46.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-47.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-48.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-49.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-50.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-51.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-52.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-53.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+            <li class="splide__slide"><figure><img data-splide-lazy="tropea-jpgs/untitled-54.jpg" alt="Exhibition view, 92nd Visual Artist Members' Show at the Arts Club of Chicago"><figcaption>Courtesy of The Arts Club of Chicago. Photo by Michael Tropea.</figcaption></figure></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a href="../case-of-the-missing-caramel/" class="back-link">&larr; Previous: The Case of the Missing Caramel</a>
+    <a href="../about-the-town-march/" class="back-link" style="float: right;">Next: About the Town &rarr;</a>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#arts-club-carousel', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: false,
+        lazyLoad: 'nearby',
+        pagination: true,
+        arrows: true,
+        gap: '1rem',
+      }).mount();
+    });
+  </script>
+
+  <!-- Keyboard shortcuts -->
+  <style>
+    .shortcuts-btn {
+      position: fixed; top: 12px; left: 12px; width: 32px; height: 32px;
+      border-radius: 50%; border: 1px solid #ccc; background: #fff; color: #999;
+      font-size: 16px; cursor: pointer; z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lato', sans-serif; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .shortcuts-btn:hover { border-color: #999; color: #333; }
+    .shortcuts-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); z-index: 1001; align-items: center; justify-content: center;
+    }
+    .shortcuts-overlay.active { display: flex; }
+    .shortcuts-popup {
+      background: #fff; border-radius: 8px; padding: 24px 32px;
+      font-family: 'Lato', sans-serif; min-width: 240px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .shortcuts-popup h3 { margin: 0 0 16px; font-size: 16px; color: #333; }
+    .shortcuts-popup dl {
+      margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; align-items: center;
+    }
+    .shortcuts-popup dt {
+      background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px;
+      padding: 2px 8px; font-size: 13px; font-family: monospace; color: #333; text-align: center; min-width: 24px;
+    }
+    .shortcuts-popup dd { margin: 0; font-size: 14px; color: #555; }
+  </style>
+  <button class="shortcuts-btn" id="shortcutsBtn" title="Keyboard shortcuts">?</button>
+  <div class="shortcuts-overlay" id="shortcutsOverlay">
+    <div class="shortcuts-popup">
+      <h3>Keyboard Shortcuts</h3>
+      <dl>
+        <dt>N</dt><dd>Next article</dd>
+        <dt>P</dt><dd>Previous article</dd>
+        <dt>Space</dt><dd>Page down</dd>
+        <dt>PgDn</dt><dd>Page down</dd>
+        <dt>PgUp</dt><dd>Page up</dd>
+        <dt>Esc</dt><dd>Close this popup</dd>
+      </dl>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var prevUrl = '../case-of-the-missing-caramel/';
+    var nextUrl = '../about-the-town-march/';
+    var btn = document.getElementById('shortcutsBtn');
+    var overlay = document.getElementById('shortcutsOverlay');
+    btn.addEventListener('click', function() { overlay.classList.toggle('active'); });
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'Escape') { overlay.classList.remove('active'); return; }
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+    });
+  })();
+  </script>
+
+</body>
+
+</html>
