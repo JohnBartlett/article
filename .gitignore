@@ -11,3 +11,6 @@ gha-creds-*.json
 
 # Working folders
 classicchicagomagazinebobatea/
+
+# Large source archives
+*.zip
