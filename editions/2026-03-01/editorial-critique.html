@@ -147,28 +147,54 @@
     .suggestion-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #666;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #444;
       cursor: pointer;
-      transition: color 0.2s;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 4px;
     }
 
     .suggestion-item:hover {
-      color: #333;
+      background: #fff0f0;
+      color: #000;
     }
 
     .suggestion-item input[type="checkbox"] {
-      margin-top: 4px;
-      margin-right: 12px;
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #b51c20;
+      border-radius: 4px;
+      margin-top: 2px;
+      margin-right: 14px;
       cursor: pointer;
-      accent-color: #b51c20;
+      position: relative;
+      background: #fff;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .suggestion-item input[type="checkbox"]:checked {
+      background: #b51c20;
+    }
+
+    .suggestion-item input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      left: 3px;
+      top: -1px;
     }
 
     .suggestion-item.completed {
       text-decoration: line-through;
-      color: #ccc;
-      opacity: 0.8;
+      color: #bbb;
+      opacity: 0.7;
     }
 
     footer {
@@ -283,23 +309,28 @@
     document.addEventListener('DOMContentLoaded', () => {
       const checkboxes = document.querySelectorAll('.suggestion-item input[type="checkbox"]');
       
-      // Load states
+      const syncStates = () => {
+        checkboxes.forEach(cb => {
+          const isChecked = localStorage.getItem(cb.id) === 'true';
+          cb.checked = isChecked;
+          cb.parentElement.classList.toggle('completed', isChecked);
+        });
+      };
+
+      // Initial load
+      syncStates();
+      
+      // Handle changes
       checkboxes.forEach(cb => {
-        const isChecked = localStorage.getItem(cb.id) === 'true';
-        cb.checked = isChecked;
-        if (isChecked) {
-          cb.parentElement.classList.add('completed');
-        }
-        
-        // Save state on change
         cb.addEventListener('change', (e) => {
           localStorage.setItem(cb.id, e.target.checked);
-          if (e.target.checked) {
-            cb.parentElement.classList.add('completed');
-          } else {
-            cb.parentElement.classList.remove('completed');
-          }
+          cb.parentElement.classList.toggle('completed', e.target.checked);
         });
+      });
+
+      // Sync across tabs/windows immediately without refresh
+      window.addEventListener('storage', (e) => {
+        syncStates();
       });
     });
   </script>
