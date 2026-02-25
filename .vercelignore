@@ -1,0 +1,6 @@
+**/*.zip
+**/*.docx
+**/*.pdf
+.git
+.claude
+node_modules
