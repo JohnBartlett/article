@@ -14,7 +14,7 @@
   <title>February 22, 2026 Edition | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -26,7 +26,6 @@
     header {
       padding: 20px 0;
       border-bottom: 1px solid #eee;
-      margin-bottom: 24px;
     }
 
     .logo-container {
@@ -72,54 +71,104 @@
     }
 
     .wrapper {
-      max-width: 980px;
-      margin: 0 auto 40px;
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 0 16px;
     }
 
-    h1.page-title {
-      font-size: 28px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .edition-header {
       text-align: center;
-      margin: 40px 0 30px;
-      color: #444;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+      padding: 30px 16px 40px;
     }
 
-    .story {
-      margin-bottom: 24px;
-    }
-
-    .story-title {
-      font-size: 24px;
+    .edition-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 700;
       margin: 0 0 6px;
+      color: #222;
     }
 
-    .meta {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #777;
+    .edition-header .date {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      color: #999;
     }
 
-    .story a {
-      color: #b51c20;
+    h2.section-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8443a;
+      display: inline-block;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 30px;
+    }
+
+    .card {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-radius: 3px;
+      margin-bottom: 14px;
+      background: #f0ebe3;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+
+    .card h2 a {
+      color: #222;
       text-decoration: none;
     }
 
-    .story a:hover {
-      text-decoration: underline;
+    .card h2 a:hover {
+      color: #b51c20;
+    }
+
+    .card .meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
     }
 
     .edition-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 40px;
-      padding-top: 20px;
+      margin-top: 60px;
+      padding-top: 30px;
       border-top: 1px solid #ddd;
     }
 
@@ -130,31 +179,55 @@
       text-transform: uppercase;
       color: #b51c20;
       text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
+      font-weight: 700;
     }
 
     .back-link:hover {
       color: #d41f1f;
-      border-bottom: 1px solid #d41f1f;
+      text-decoration: underline;
     }
 
     footer {
-      background: #333;
+      background: #1a1a1a;
       color: #fff;
       padding: 40px 20px;
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
     }
 
-    .social-links { margin-bottom: 20px; }
-    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
-    .social-links a:hover { opacity: 0.7; }
-    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .social-links {
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      transition: opacity 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 0.7;
+    }
+
+    .social-links svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
 
     .copyright {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
       color: #aaa;
+    }
+
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .edition-header h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -177,67 +250,84 @@
   </header>
 
   <div class="wrapper">
-    <h1 class="page-title">Sunday Edition &mdash; February 22, 2026</h1>
-
-    <div class="story">
-      <h2 class="story-title">
-        <a href="bag-charms/">Bag Charms: Humor and Play in a Serious World</a>
-      </h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>Entrepreneur Amanda Marcuson turned vintage keychains and upcycled toys into Bag Crap, a global fashion phenomenon featured in Vogue, GQ, and Cosmopolitan.</p>
+    <div class="edition-header">
+      <h1>The Sunday Edition</h1>
+      <div class="date">February 22, 2026</div>
     </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="cynthia-safford-mulcahy/">Cynthia Safford-Mulcahy: &ldquo;The Quiet Connector&rdquo;</a>
-      </h2>
-      <div class="meta">By Jane C. Hunt &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>How one woman transformed the Woman&rsquo;s Athletic Club&rsquo;s book group into a vibrant literary community built on empathy, ideas, and friendship.</p>
-    </div>
+    <h2 class="section-title">In This Edition</h2>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="sporting-life-lfc-goalie/">Answering the Call: LFC Alum Suits Up as Blackhawks&rsquo; Goalie</a>
-      </h2>
-      <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>When the flu swept through the Blackhawks&rsquo; locker room, beer-league goalie David Nozzolillo got the call of a lifetime.</p>
-    </div>
+    <div class="card-grid">
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="sea-cloud-spirit/">Sea Cloud Spirit</a>
-      </h2>
-      <div class="meta">By Nick Wilder &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>A lifelong sailor discovers the pleasures of the Sea Cloud schooners on a week-long voyage through the British Virgin Islands.</p>
-    </div>
+      <div class="card">
+        <a href="bag-charms/">
+          <img class="card-image" src="thumb-bagcharms.jpg" alt="Bag Charms">
+        </a>
+        <h2><a href="bag-charms/">Bag Charms: Humor and Play in a Serious World</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>Entrepreneur Amanda Marcuson turned vintage keychains and upcycled toys into Bag Crap, a global fashion phenomenon featured in Vogue, GQ, and Cosmopolitan.</p>
+      </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="iwa-extraordinaire/">IWA&rsquo;s Women Extraordinaire</a>
-      </h2>
-      <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>Three Chicago powerhouses&mdash;Barbara Gaines, Irma Su&aacute;rez Ruiz, and Josephine Lee&mdash;are honored for advancing the arts for women and children.</p>
-    </div>
+      <div class="card">
+        <a href="sea-cloud-spirit/">
+          <img class="card-image" src="thumb-seacloud.jpg" alt="Sea Cloud Spirit">
+        </a>
+        <h2><a href="sea-cloud-spirit/">Sea Cloud Spirit</a></h2>
+        <div class="meta">By Nick Wilder &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>A lifelong sailor discovers the pleasures of the Sea Cloud schooners on a week-long voyage through the British Virgin Islands.</p>
+      </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="soap-opera/">Saponification: A &ldquo;Soap Opera&rdquo;</a>
-      </h2>
-      <div class="meta">By Jill Lowe &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>From ancient Babylonian oils to artisan French bars, the surprisingly dramatic 5,000-year history of humanity&rsquo;s most essential invention.</p>
-    </div>
+      <div class="card">
+        <a href="cynthia-safford-mulcahy/">
+          <img class="card-image" src="thumb-safford.jpg" alt="Cynthia Safford-Mulcahy">
+        </a>
+        <h2><a href="cynthia-safford-mulcahy/">Cynthia Safford-Mulcahy: &ldquo;The Quiet Connector&rdquo;</a></h2>
+        <div class="meta">By Jane C. Hunt &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>How one woman transformed the Woman&rsquo;s Athletic Club&rsquo;s book group into a vibrant literary community built on empathy, ideas, and friendship.</p>
+      </div>
 
-    <div class="story">
-      <h2 class="story-title">
-        <a href="downsizing/">The Downsizing Dilemma</a>
-      </h2>
-      <div class="meta">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; February 22, 2026</div>
-      <p>Four women share how they navigated the emotional and practical challenges of leaving beloved family homes&mdash;and what they discovered on the other side.</p>
+      <div class="card">
+        <a href="sporting-life-lfc-goalie/">
+          <img class="card-image" src="thumb-goalie.jpg" alt="Blackhawks Goalie">
+        </a>
+        <h2><a href="sporting-life-lfc-goalie/">Answering the Call: LFC Alum Suits Up as Blackhawks&rsquo; Goalie</a></h2>
+        <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>When the flu swept through the Blackhawks&rsquo; locker room, beer-league goalie David Nozzolillo got the call of a lifetime.</p>
+      </div>
+
+      <div class="card">
+        <a href="iwa-extraordinaire/">
+          <img class="card-image" src="iwa-extraordinaire/barbara-gaines.jpg" alt="IWA Women Extraordinaire">
+        </a>
+        <h2><a href="iwa-extraordinaire/">IWA&rsquo;s Women Extraordinaire</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>Three Chicago powerhouses&mdash;Barbara Gaines, Irma Su&aacute;rez Ruiz, and Josephine Lee&mdash;are honored for advancing the arts for women and children.</p>
+      </div>
+
+      <div class="card">
+        <a href="soap-opera/">
+          <img class="card-image" src="soap-opera/savon-marseille.jpg" alt="Soap Opera">
+        </a>
+        <h2><a href="soap-opera/">Saponification: A &ldquo;Soap Opera&rdquo;</a></h2>
+        <div class="meta">By Jill Lowe &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>From ancient Babylonian oils to artisan French bars, the surprisingly dramatic 5,000-year history of humanity&rsquo;s most essential invention.</p>
+      </div>
+
+      <div class="card">
+        <a href="downsizing/">
+          <img class="card-image" src="downsizing/downsizing-room.jpg" alt="The Downsizing Dilemma">
+        </a>
+        <h2><a href="downsizing/">The Downsizing Dilemma</a></h2>
+        <div class="meta">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; February 22, 2026</div>
+        <p>Four women share how they navigated the emotional and practical challenges of leaving beloved family homes&mdash;and what they discovered on the other side.</p>
+      </div>
+
     </div>
 
     <div class="edition-nav">
       <a href="../2026-02-15/index.html" class="back-link">&larr; Previous Week</a>
       <a href="../../index.html" class="back-link">Back to Home</a>
+      <a href="../2026-03-01/index.html" class="back-link">Next Week &rarr;</a>
     </div>
   </div>
 
