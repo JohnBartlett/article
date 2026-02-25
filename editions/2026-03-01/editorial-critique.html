@@ -137,6 +137,40 @@
       text-decoration: underline;
     }
 
+    /* Suggestion Checkbox Styles */
+    .suggestion-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #666;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .suggestion-item:hover {
+      color: #333;
+    }
+
+    .suggestion-item input[type="checkbox"] {
+      margin-top: 4px;
+      margin-right: 12px;
+      cursor: pointer;
+      accent-color: #b51c20;
+    }
+
+    .suggestion-item.completed {
+      text-decoration: line-through;
+      color: #ccc;
+      opacity: 0.8;
+    }
+
     footer {
       background: #1a1a1a;
       color: #fff;
@@ -176,10 +210,10 @@
         <p><strong>Editorial Note:</strong> The pacing in the first third is deliberate; while it effectively builds the world of the 1970s Italian household, some digital readers might prefer a slightly faster arrival at the central 'mystery' of the missing packets.</p>
         <div style="background: #fff8f8; border-left: 3px solid #b51c20; padding: 12px 16px; margin-top: 16px;">
           <strong style="font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; display: block; margin-bottom: 8px;">Actionable Suggestions:</strong>
-          <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #666;">
-            <li>Consider a "Table of Contents" or "Highlights" box for long-form memoirs to signal the narrative arc early.</li>
-            <li>Explore a serialized format for these childhood recollections to maintain a faster weekly cadence.</li>
-          </ul>
+          <div class="suggestion-list">
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-1">Consider a "Table of Contents" or "Highlights" box for long-form memoirs to signal the narrative arc early.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-2">Explore a serialized format for these childhood recollections to maintain a faster weekly cadence.</label>
+          </div>
         </div>
       </div>
     </div>
@@ -192,11 +226,11 @@
         <p><strong>Editorial Note:</strong> The headline is functional but perhaps too utilitarian. For future edition shows, we might experiment with more "hook-heavy" titles that highlight the record number of artists or the biennial nature of the event.</p>
         <div style="background: #fff8f8; border-left: 3px solid #b51c20; padding: 12px 16px; margin-top: 16px;">
           <strong style="font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; display: block; margin-bottom: 8px;">Actionable Suggestions:</strong>
-          <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #666;">
-            <li>Include a "How to Visit" sidebar with hours, location, and RSVP links to bridge the gap between reporting and reader action.</li>
-            <li>A "Curator's Top 3 Picks" feature would provide a focused entry point for casual art observers.</li>
-            <li><strong>Proposed Headline Alternatives:</strong> "Chicago's Vanguard: Inside the 92nd Arts Club Members Show" or "Final Call: 140 Artists Converge at the Arts Club."</li>
-          </ul>
+          <div class="suggestion-list">
+            <label class="suggestion-item"><input type="checkbox" id="suggest-2-1">Include a "How to Visit" sidebar with hours, location, and RSVP links to bridge the gap between reporting and reader action.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-2-2">A "Curator's Top 3 Picks" feature would provide a focused entry point for casual art observers.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-2-3"><strong>Proposed Headline Alternatives:</strong> "Chicago's Vanguard: Inside the 92nd Arts Club Members Show" or "Final Call: 140 Artists Converge at the Arts Club."</label>
+          </div>
         </div>
       </div>
     </div>
@@ -209,10 +243,10 @@
         <p><strong>Editorial Note:</strong> The sheer volume of information is high. We should ensure the formatting (bolding of dates or venues) continues to help the "skimming" reader find what they need quickly.</p>
         <div style="background: #fff8f8; border-left: 3px solid #b51c20; padding: 12px 16px; margin-top: 16px;">
           <strong style="font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; display: block; margin-bottom: 8px;">Actionable Suggestions:</strong>
-          <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #666;">
-            <li>Test a "March at a Glance" calendar widget or simple bulleted summary at the header for mobile users.</li>
-            <li>Incorporate more "Editor's Picks" icons to highlight the absolute 'must-see' events of the month.</li>
-          </ul>
+          <div class="suggestion-list">
+            <label class="suggestion-item"><input type="checkbox" id="suggest-3-1">Test a "March at a Glance" calendar widget or simple bulleted summary at the header for mobile users.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-3-2">Incorporate more "Editor's Picks" icons to highlight the absolute 'must-see' events of the month.</label>
+          </div>
         </div>
       </div>
     </div>
@@ -225,10 +259,10 @@
         <p><strong>Editorial Note:</strong> The transition between the discussion of Hemingway's Oak Park upbringing and his eventual suicide in Idaho is a heavy shift. A bridging paragraph focusing more on the "continuity of his internal struggle" might help the thematic flow.</p>
         <div style="background: #fff8f8; border-left: 3px solid #b51c20; padding: 12px 16px; margin-top: 16px;">
           <strong style="font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; display: block; margin-bottom: 8px;">Actionable Suggestions:</strong>
-          <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #666;">
-            <li>Use pull-quotes more aggressively to break up the dense scholarly text and emphasize the most dramatic insights.</li>
-            <li>Consider a "Hemingway's Chicago Map" graphic for future literary tours.</li>
-          </ul>
+          <div class="suggestion-list">
+            <label class="suggestion-item"><input type="checkbox" id="suggest-4-1">Use pull-quotes more aggressively to break up the dense scholarly text and emphasize the most dramatic insights.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-4-2">Consider a "Hemingway's Chicago Map" graphic for future literary tours.</label>
+          </div>
         </div>
       </div>
     </div>
@@ -237,6 +271,31 @@
       <a href="index.html" class="back-link">&larr; Return to March 1 Edition</a>
     </div>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('.suggestion-item input[type="checkbox"]');
+      
+      // Load states
+      checkboxes.forEach(cb => {
+        const isChecked = localStorage.getItem(cb.id) === 'true';
+        cb.checked = isChecked;
+        if (isChecked) {
+          cb.parentElement.classList.add('completed');
+        }
+        
+        // Save state on change
+        cb.addEventListener('change', (e) => {
+          localStorage.setItem(cb.id, e.target.checked);
+          if (e.target.checked) {
+            cb.parentElement.classList.add('completed');
+          } else {
+            cb.parentElement.classList.remove('completed');
+          }
+        });
+      });
+    });
+  </script>
 
   <footer>
     <div class="copyright">
