@@ -107,18 +107,31 @@
     }
 
     .photo-gallery {
-      margin: 40px 0;
+      margin: 64px 0 0;
+      padding-top: 40px;
+      border-top: 1px solid #eee;
     }
 
     .photo-gallery h2 {
       font-family: 'Lato', sans-serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: #555;
+      font-size: 14px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .gallery-instruction {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      margin-top: -16px;
+      margin-bottom: 24px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 16px;
-      text-align: center;
     }
 
     .splide__slide img {
@@ -126,16 +139,55 @@
       height: 500px;
       object-fit: contain;
       border-radius: 4px;
-      background: #f5f5f5;
+      background: #f9f9f9;
     }
 
-    .splide__slide figcaption {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #777;
-      text-align: center;
-      margin-top: 10px;
-      line-height: 1.4;
+    /* Splide Pagination Customization */
+    .splide__pagination {
+      bottom: -1.5rem;
+    }
+
+    .splide__pagination__page {
+      width: 10px;
+      height: 10px;
+      background: #ddd;
+      opacity: 1;
+      margin: 0 5px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .splide__pagination__page.is-active {
+      background: #b51c20;
+      transform: scale(1.2);
+    }
+
+    /* Splide Arrow Customization */
+    .splide__arrow {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #eee;
+      width: 3rem;
+      height: 3rem;
+      opacity: 0.8;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .splide__arrow:hover {
+      opacity: 1;
+      background: #fff;
+    }
+
+    .splide__arrow svg {
+      fill: #b51c20;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .splide__arrow--prev { left: -1.5rem; }
+    .splide__arrow--next { right: -1.5rem; }
+
+    @media (max-width: 900px) {
+      .splide__arrow--prev { left: 0; }
+      .splide__arrow--next { right: 0; }
     }
 
     @media (max-width: 600px) {
@@ -212,8 +264,9 @@
     </div>
 
     <div class="photo-gallery">
-      <h2>Photos from the Evening</h2>
-      <div id="gala-carousel" class="splide" aria-label="Children's Ball Gala Photos">
+      <h2>Children's Ball Gala Photo Gallery</h2>
+      <div class="gallery-instruction">Slide or click arrows to view more photos</div>
+      <div id="gala-carousel" class="splide" aria-label="Children's Ball Gala Gallery">
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
@@ -403,12 +456,7 @@
         pagination: true,
         arrows: true,
         gap: '1rem',
-        speed: 600,
-        breakpoints: {
-          600: {
-            arrows: false
-          }
-        }
+        speed: 600
       }).mount();
     });
   </script>
