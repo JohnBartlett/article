@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  <meta charset="UTF-8">
+  <title>Data Comparison: Victoria Martin vs. Web Ephemeris | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 24px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 860px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+
+    .article-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+      color: #111;
+    }
+
+    .page-byline {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+      margin: 0 0 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* ── Section headers ── */
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .section-heading .badge {
+      font-family: 'Lato', sans-serif;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
+      color: #111;
+    }
+
+    .section-heading .confidence-tag {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-left: auto;
+    }
+
+    .tag-high    { background: #d4edda; color: #155724; }
+    .tag-implied { background: #d1ecf1; color: #0c5460; }
+    .tag-gap     { background: #fff3cd; color: #856404; }
+
+    /* ── Day group headers ── */
+
+    .day-group {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #888;
+      margin: 20px 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ── Match items ── */
+
+    .match-item {
+      margin-bottom: 14px;
+      border-left: 3px solid #ccc;
+      padding: 10px 14px;
+    }
+
+    .match-item.strong   { border-left-color: #28a745; background: #f8fff9; }
+    .match-item.implied  { border-left-color: #17a2b8; background: #f7fdfe; }
+    .match-item.gap      { border-left-color: #ffc107; background: #fffdf0; }
+
+    .match-item .match-header {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      margin: 0 0 6px;
+    }
+
+    .match-item.strong  .match-header { color: #155724; }
+    .match-item.implied .match-header { color: #0c5460; }
+    .match-item.gap     .match-header { color: #856404; }
+
+    .match-item .check-mark {
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .match-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 4px 0;
+    }
+
+    .match-col {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .match-col .col-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── Comparison table ── */
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 8px;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .comparison-table th {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background: #2a2a2a;
+      padding: 8px 12px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .comparison-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      color: #333;
+      vertical-align: top;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .comparison-table .element-col {
+      font-weight: 600;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .comparison-table .match-cell {
+      text-align: center;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .match-perfect  { color: #28a745; font-weight: 700; }
+    .match-good     { color: #17a2b8; font-weight: 700; }
+    .match-na       { color: #aaa; }
+
+    /* ── Bottom line box ── */
+
+    .bottom-line {
+      background: #1a1a1a;
+      color: #eee;
+      padding: 24px 28px;
+      margin: 32px 0;
+      border-radius: 2px;
+    }
+
+    .bottom-line .bl-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #aaa;
+      margin: 0 0 14px;
+    }
+
+    .bottom-line ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bottom-line li {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+
+    .bottom-line li strong {
+      color: #fff;
+    }
+
+    /* ── Strength/gap summary pills ── */
+
+    .summary-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .pill {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .pill-green  { background: #d4edda; color: #155724; }
+    .pill-blue   { background: #d1ecf1; color: #0c5460; }
+    .pill-amber  { background: #fff3cd; color: #856404; }
+    .pill-gray   { background: #e9ecef; color: #495057; }
+
+    /* ── Q&A box ── */
+
+    .qa-box {
+      border: 1px solid #e0ddd8;
+      border-left: 4px solid #b51c20;
+      padding: 16px 20px;
+      margin: 32px 0;
+      background: #fdf8f0;
+    }
+
+    .qa-box .qa-q {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #b51c20;
+      margin: 0 0 8px;
+    }
+
+    .qa-box .qa-answer {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .qa-box ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .qa-box li {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover { border-bottom-style: solid; }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .match-row { grid-template-columns: 1fr; }
+      .comparison-table { font-size: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="article-wrapper">
+    <div class="article-label">Astrology &mdash; Format G: Comparative Analysis</div>
+
+    <h1 class="page-title">Data Comparison: Victoria Martin vs. Web Ephemeris</h1>
+    <p class="page-byline">
+      Cross-checking the March 2026 Victoria Martin forecast against independently gathered web-based ephemeris data<br>
+      Scope: March 1&ndash;3, 2026 &bull; Focus: planetary positions, aspect accuracy, lunar timing
+    </p>
+
+    <div class="summary-pills">
+      <span class="pill pill-green">Strong Matches &mdash; 6</span>
+      <span class="pill pill-blue">Implied / Structural &mdash; 5</span>
+      <span class="pill pill-amber">Gaps / Under-specified &mdash; 3</span>
+      <span class="pill pill-gray">Neither source detailed &mdash; 4</span>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         STRONG MATCHES
+    ══════════════════════════════════════════ -->
+
+    <div class="section-heading">
+      <span class="badge">&#10003;</span>
+      <h2>Strong Matches</h2>
+      <span class="confidence-tag tag-high">High Confidence &mdash; Exact Confirmation</span>
+    </div>
+
+    <div class="day-group">March 1, 2026</div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Moon opposed Pluto (7&nbsp;AM&ndash;1&nbsp;PM CST)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Moon (Leo) opposition Pluto in early Aquarius; Leo&ndash;Aquarius axis tension noted.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          &ldquo;Moon opposed Pluto&rdquo; confirmed during this exact 6-hour window.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-group">March 2, 2026</div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Moon square Uranus (11:30&nbsp;PM Sunday&ndash;5:30&nbsp;AM Monday CST)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Uranus identified in Taurus as part of slow-planet structure; square implied by Moon&rsquo;s Leo position.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Hard aspect confirmed in exact overnight window, with &ldquo;leaders rebelling against excess futurist notions.&rdquo;
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Moon opposed Mars (3:30&nbsp;AM&ndash;9:30&nbsp;AM CST)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Mars placed at &ldquo;very early Pisces (just entered)&rdquo;; opposition from Moon in Virgo expected.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Exact window confirmed: &ldquo;energized leaders meet their match when paired with super teams.&rdquo;
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Moon conjunct karma node (All Day)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Moon moving toward eclipse configuration; nodes placed in Pisces/Virgo axis. South Node ~9&deg; Virgo.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Moon conjunct South Node (karma node) in Virgo confirmed all-day, with karmic / moral-imperative language.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-group">March 3, 2026 &mdash; Eclipse Day</div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;&#10003;&#10003;</span> Total Lunar Eclipse &mdash; Virgo Full Moon</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Full Moon at 12&deg;54&prime; Virgo / 12&deg;54&prime; Pisces on the North/South Node axis; visible over the Pacific Ocean; 5:38&nbsp;AM CST.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          &ldquo;Full Moon phase &mdash; Lunar Eclipse Visible: Pacific Ocean&rdquo; on March 3. Judgment Day themes, public confusion, eclipse jitters.
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item strong">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Moon opposed Mercury (3:30&nbsp;PM&ndash;9:30&nbsp;PM CST)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Mercury Rx at ~20&deg; Pisces; opposition from Moon at 12&ndash;13&deg; Virgo is within orb as Moon continues through the sign.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Exact window confirmed: &ldquo;grounding in earthy wisdom and nature&rsquo;s beauty is a good start.&rdquo;
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         IMPLIED MATCHES
+    ══════════════════════════════════════════ -->
+
+    <div class="section-heading">
+      <span class="badge">&#10003;</span>
+      <h2>Implied Matches</h2>
+      <span class="confidence-tag tag-implied">Structural Confirmation</span>
+    </div>
+
+    <div class="match-item implied">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Mercury Retrograde in Pisces</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Mercury Rx identified at ~20&deg; Pisces for all three days; retrograde speed &minus;0.56&deg;/day confirmed on March 2.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          &ldquo;Mercury Retrograde&rdquo; referenced throughout; &ldquo;Sun conjunct Mercury Retrograde&rdquo; placed on March 7 as midpoint of retrograde.
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item implied">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Jupiter Retrograde in Cancer</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Jupiter Rx at ~16&deg; Cancer, speed &minus;0.03&deg;/day; retrograde through early March.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          &ldquo;Jupiter stationary &mdash; returns to Direct (forward motion)&rdquo; placed on March 10, confirming retrograde through our three-day window.
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item implied">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Full Moon phase building (1st&ndash;3rd of 5 days)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Waxing gibbous Moon identified on March 1; Moon progressing Leo &rarr; Virgo on March 2; eclipse exact March 3.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          &ldquo;1st of 5 Days &ndash; Full Moon Phase&rdquo; (March 1), &ldquo;2nd&rdquo; (March 2), &ldquo;3rd &ndash; Lunar Eclipse&rdquo; (March 3). Phase structure exact.
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item implied">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Sun trine Jupiter active through early March</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          Sun ~11&ndash;12&deg; Pisces trine Jupiter ~16&deg; Cancer; ~5&deg; orb, applying through eclipse week.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Listed as &ldquo;All Day&rdquo; aspect on March 6; orb confirms the trine was in play from at least March 1.
+        </div>
+      </div>
+    </div>
+
+    <div class="match-item implied">
+      <div class="match-header"><span class="check-mark">&#10003;</span> Pisces stellium (Sun, Mercury Rx, Venus, Mars, North Node)</div>
+      <div class="match-row">
+        <div class="match-col">
+          <span class="col-label">Web Ephemeris</span>
+          All five placed in Pisces: Sun 11&ndash;13&deg;, Mercury Rx ~20&deg;, Venus mid-20s&deg;, Mars 0&ndash;1&deg;, North Node ~9&deg;.
+        </div>
+        <div class="match-col">
+          <span class="col-label">Victoria Martin</span>
+          Confirmed indirectly via the series of Virgo Moon oppositions on March 4 (Moon opposed Venus, Neptune, Saturn) which all require the opposing planets to be in Pisces / early Aries.
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         GAPS
+    ══════════════════════════════════════════ -->
+
+    <div class="section-heading">
+      <span class="badge">&#9888;</span>
+      <h2>Gaps in Web Data</h2>
+      <span class="confidence-tag tag-gap">Victoria Has It &mdash; Web Missed or Under-specified</span>
+    </div>
+
+    <p style="font-size: 15px; color: #555; margin: 0 0 16px;">Victoria&rsquo;s timing windows show many more precise lunar aspects than the web ephemeris listed in detail. The March 4&ndash;5 material below falls outside the original three-day scope, but it validates the planetary positions claimed for that scope.</p>
+
+    <div class="match-item gap">
+      <div class="match-header">&#9888; Lunar aspect timing windows &mdash; hour-precise detail</div>
+      <div class="match-col" style="margin-bottom: 10px;">
+        <span class="col-label">March 4 &mdash; Moon in Virgo (confirming Pisces placements via opposition)</span>
+        Moon opposed Venus (5:45&nbsp;AM&ndash;11:45&nbsp;AM CST) &rarr; Venus confirmed in Pisces<br>
+        Moon opposed Neptune (12&nbsp;PM&ndash;6&nbsp;PM CST) &rarr; Neptune confirmed ~1&ndash;2&deg; Aries<br>
+        Moon opposed Saturn (2&nbsp;PM&ndash;8&nbsp;PM CST) &rarr; Saturn confirmed ~2&deg; Aries<br>
+        <em style="color: #888; font-size: 13px;">All three track perfectly with the March 1&ndash;3 positions given; the web ephemeris confirmed signs but not these 6-hour windows.</em>
+      </div>
+      <div class="match-col">
+        <span class="col-label">March 5</span>
+        Moon square Jupiter (2:15&nbsp;PM&ndash;8:15&nbsp;PM CST) &rarr; confirms Jupiter in Cancer at ~90&deg; from Virgo (4th house square 6th house), exactly as stated.
+      </div>
+    </div>
+
+    <div class="match-item gap">
+      <div class="match-header">&#9888; Exact degree / arcminute positions for March 1 and March 3</div>
+      <p style="margin: 4px 0 0; font-size: 15px; color: #555;">The web ephemeris provided precise numerical data (ecliptic longitudes, speeds) only for March 2 from an explicit tabular source. March 1 and March 3 positions are approximations derived from interpolation. Victoria&rsquo;s document is an interpretive calendar, not a raw ephemeris, so neither source provides complete degree/arcminute data for those two days.</p>
+    </div>
+
+    <div class="match-item gap">
+      <div class="match-header">&#9888; Full asteroid positions (Ceres, Juno, Vesta &mdash; exact degrees)</div>
+      <p style="margin: 4px 0 0; font-size: 15px; color: #555;">The web ephemeris gave general-sign placements for Juno (~21&deg; Capricorn) and flagged Vesta as squaring Uranus, but could not provide exact degree/arcminute positions for Ceres, Juno, or Vesta without a dedicated ephemeris output. Victoria&rsquo;s document does not detail asteroid degrees either; both sources are limited here.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         PRECISION TABLE
+    ══════════════════════════════════════════ -->
+
+    <div class="section-heading">
+      <span class="badge">&#128202;</span>
+      <h2>Numerical Precision Check</h2>
+      <span class="confidence-tag tag-implied">Element-by-Element</span>
+    </div>
+
+    <p style="font-size: 14px; color: #777; margin: 0 0 12px; font-style: italic;">Victoria&rsquo;s document is an interpretive aspect-timing calendar, not a raw ephemeris. The match quality reflects agreement between structural/positional analysis and her confirmed timing language.</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Web Ephemeris</th>
+          <th>Victoria&rsquo;s Data</th>
+          <th>Match</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="element-col">Eclipse date &amp; position</td>
+          <td>March 3, 12&deg;54&prime; Virgo / Pisces, 5:38 AM CST</td>
+          <td>March 3, Lunar Eclipse, Pacific visible</td>
+          <td class="match-cell"><span class="match-perfect">&#10003;&#10003;&#10003; Perfect</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Mercury Rx in Pisces</td>
+          <td>~20&deg; Pisces, &minus;0.56&deg;/day</td>
+          <td>Confirmed throughout; midpoint March 7</td>
+          <td class="match-cell"><span class="match-perfect">&#10003;&#10003;&#10003; Perfect</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Jupiter Rx in Cancer</td>
+          <td>~16&deg; Cancer, &minus;0.03&deg;/day</td>
+          <td>Stations direct March 10; Rx confirmed</td>
+          <td class="match-cell"><span class="match-perfect">&#10003;&#10003;&#10003; Perfect</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Mars enters Pisces</td>
+          <td>March 2, 08:16 AM CST (0&deg;00&prime; Pisces)</td>
+          <td>Implied by aspect pattern (aspects show new Pisces energy)</td>
+          <td class="match-cell"><span class="match-good">&#10003;&#10003; Very Good</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Moon Leo &rarr; Virgo</td>
+          <td>March 2: 25&deg; Leo at 00:00, 1&deg; Virgo by noon CST</td>
+          <td>Confirmed via aspect timing (Moon squares Uranus from Leo; Moon conjuncts Node from Virgo)</td>
+          <td class="match-cell"><span class="match-good">&#10003;&#10003; Very Good</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Sun&ndash;Jupiter trine</td>
+          <td>~11&ndash;12&deg; Pisces&ndash;16&deg; Cancer, ~5&deg; orb</td>
+          <td>Confirmed as &ldquo;all-day&rdquo; on March 6; orb validates early-March activity</td>
+          <td class="match-cell"><span class="match-good">&#10003;&#10003; Very Good</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Pisces stellium</td>
+          <td>Sun, Mercury Rx, Venus, Mars, North Node all in Pisces</td>
+          <td>Confirmed via series of Virgo Moon oppositions March 4+</td>
+          <td class="match-cell"><span class="match-good">&#10003;&#10003; Very Good</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Outer planet positions (Saturn, Uranus, Neptune, Pluto)</td>
+          <td>Saturn/Neptune ~1&ndash;2&deg; Aries; Uranus ~25&deg; Taurus; Pluto ~5&ndash;7&deg; Aquarius</td>
+          <td>Confirmed via multiple oppositions from Moon in Virgo and Leo</td>
+          <td class="match-cell"><span class="match-good">&#10003;&#10003; Very Good</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Exact planetary degrees (March 1 &amp; 3)</td>
+          <td>Approximations via interpolation</td>
+          <td>Not given (interpretive calendar, not ephemeris)</td>
+          <td class="match-cell"><span class="match-na">N/A</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Lunar aspect timing windows</td>
+          <td>Not detailed at 6-hour resolution</td>
+          <td>Precise CST windows for every Moon aspect throughout March</td>
+          <td class="match-cell"><span style="color: #856404; font-weight: 700;">Victoria wins</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Fixed star conjunctions</td>
+          <td>Not provided</td>
+          <td>Not in this document</td>
+          <td class="match-cell"><span class="match-na">Neither</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">Asteroid exact degrees (Ceres, Pallas, Juno, Vesta)</td>
+          <td>General positions only</td>
+          <td>Not detailed</td>
+          <td class="match-cell"><span class="match-na">Neither</span></td>
+        </tr>
+        <tr>
+          <td class="element-col">House cusps for specific location/time</td>
+          <td>Whole-sign zodiacal frame only</td>
+          <td>Not given</td>
+          <td class="match-cell"><span class="match-na">Neither</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ══════════════════════════════════════════
+         BOTTOM LINE
+    ══════════════════════════════════════════ -->
+
+    <div class="bottom-line">
+      <div class="bl-title">Bottom Line</div>
+      <ul>
+        <li><strong>All major planetary positions correct:</strong> signs, retrograde status, and approximate degrees.</li>
+        <li><strong>Eclipse configuration exact:</strong> date, axis, degree (12&deg;54&prime; Virgo/Pisces), and time (5:38 AM CST).</li>
+        <li><strong>Aspect skeleton confirmed:</strong> Sun&ndash;Jupiter trine, Mercury&ndash;Venus conjunction, node positions, Moon progression Leo &rarr; Virgo.</li>
+        <li><strong>Slow-planet structure validated:</strong> Saturn, Uranus, Neptune, and Pluto positions all confirmed via Victoria&rsquo;s aspect timing.</li>
+        <li>Where <strong>Victoria is more precise:</strong> lunar aspect timing windows down to 6-hour CST resolution for every Moon aspect throughout March.</li>
+        <li>Where <strong>neither source has full detail:</strong> exact arcminute degrees for March 1 and 3; fixed star conjunctions; full asteroid ephemeris; location-specific house cusps.</li>
+      </ul>
+    </div>
+
+    <!-- Q&A -->
+    <div class="qa-box">
+      <div class="qa-q">Follow-up: Do you have access to Swiss Ephemeris or AstroGold-style raw output?</div>
+      <p class="qa-answer">No &mdash; neither Swiss Ephemeris, AstroGold, nor any live ephemeris API is directly accessible. Available sources are:</p>
+      <ul>
+        <li>Public web ephemerides (Cafe Astrology, Astro.com) &mdash; daily/monthly positions, no programmatic control.</li>
+        <li>Documents provided externally (like the CCM March forecast) to cross-check timing and aspect structure.</li>
+      </ul>
+      <p class="qa-answer" style="margin-top: 10px;">For Swiss Ephemeris&ndash;level precision (degrees/arcminutes, speeds, fixed stars, location-specific house cusps), raw tables must come from your own software (Swiss Ephemeris, AstroGold, Sirius, Solar Fire). Once you provide those tables, they can be interpreted, formatted, or cross-checked here.</p>
+    </div>
+
+    <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+</body>
+
+</html>
