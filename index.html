@@ -70,6 +70,50 @@
       text-decoration: underline;
     }
 
+    .internal-nav {
+      background: #f9f5f0;
+      border-bottom: 1px solid #e8e0d5;
+      padding: 5px 0;
+    }
+
+    .internal-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .internal-nav-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: #bbb;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-right: 8px;
+    }
+
+    .internal-nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #aaa;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 10px;
+      padding: 3px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .internal-nav-inner a:hover {
+      color: #888;
+      text-decoration: underline;
+    }
+
     /* Hero + Ad Row */
     .hero-row {
       max-width: 1200px;
@@ -333,11 +377,17 @@
       <div class="nav-inner">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="reader-comments.html">Comments</a>
         <a href="subscribe.html">Subscribe</a>
         <a href="advertise.html">Advertise</a>
       </div>
     </nav>
+    <div class="internal-nav">
+      <div class="internal-nav-inner">
+        <span class="internal-nav-label">Internal</span>
+        <a href="reader-comments.html">Reader Comments</a>
+        <a href="editions/2026-03-08/editorial-critique.html">Editorial Critique</a>
+      </div>
+    </div>
   </header>
 
   <div style="text-align: center; padding: 30px 16px 10px;">
@@ -365,21 +415,6 @@
   </div>
 
   <div class="wrapper">
-
-    <h1 class="page-title">In This Edition</h1>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <a href="editions/2026-03-08/rebecca-tilles/">
-          <img class="card-image" src="editions/2026-03-08/thumb-tilles.jpg" alt="Dr. Rebecca Tilles: A European Soul, Born in Chicago">
-        </a>
-        <h2><a href="editions/2026-03-08/rebecca-tilles/">Dr. Rebecca Tilles: A European Soul, Born in Chicago</a></h2>
-        <div class="meta">By Dr. Robert Leo Murphy &nbsp;&bull;&nbsp; March 8, 2026</div>
-        <p>A Chicago girl at heart, Dr. Rebecca Tilles has built a remarkable career in Paris as senior project manager of exhibitions at L&rsquo;&Eacute;COLE, School of Jewelry Arts, supported by Van Cleef &amp; Arpels.</p>
-      </div>
-
-    </div>
 
     <div class="past-editions">
       <h1 class="page-title">Past Editions</h1>

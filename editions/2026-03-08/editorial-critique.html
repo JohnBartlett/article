@@ -137,6 +137,66 @@
       text-decoration: underline;
     }
 
+    /* Suggestion Checkbox Styles */
+    .suggestion-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #444;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .suggestion-item:hover {
+      background: #fff0f0;
+      color: #000;
+    }
+
+    .suggestion-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #b51c20;
+      border-radius: 4px;
+      margin-top: 2px;
+      margin-right: 14px;
+      cursor: pointer;
+      position: relative;
+      background: #fff;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .suggestion-item input[type="checkbox"]:checked {
+      background: #b51c20;
+    }
+
+    .suggestion-item input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      left: 3px;
+      top: -1px;
+    }
+
+    .suggestion-item.completed {
+      text-decoration: line-through;
+      color: #bbb;
+      opacity: 0.7;
+    }
+
     footer {
       background: #1a1a1a;
       color: #fff;
@@ -170,9 +230,21 @@
 
     <div class="article-critique">
       <h2>Dr. Rebecca Tilles: A European Soul, Born in Chicago<span>By Dr. Robert Leo Murphy</span></h2>
-      <div class="editorial-score">Rating: &mdash;</div>
+      <div class="editorial-score">Rating: Strong</div>
       <div class="critique-content">
-        <p><em>Critique to be added.</em></p>
+        <p>Murphy has assembled a genuinely illuminating portrait of a Chicagoan who has built one of the more quietly remarkable careers in the transatlantic decorative arts world. The Q&amp;A format serves the material well: Tilles is articulate and specific, and her trajectory&mdash;from the Latin School to Wellesley to Bard to the MFA Boston to Hillwood to L&rsquo;&Eacute;COLE in Paris&mdash;reads as both logical and quietly astonishing. The piece succeeds because Tilles herself is a compelling subject and Murphy gives her room to speak at length.</p>
+        <p>The strongest exchanges are those where Tilles reflects on Chicago&rsquo;s place in her formation&mdash;her description of the Art Institute as a "second home" and her affection for the city&rsquo;s undervalued decorative arts collections give the piece its emotional core. The framing of Chicago-born ambition as distinctly European in sensibility is an idea worth developing further.</p>
+        <p><strong>Editorial Note:</strong> The piece occasionally loses forward momentum in the middle section, where the Q&amp;A lingers on institutional logistics (exhibition timelines, Van Cleef &amp; Arpels partnerships) at the expense of the more personal and atmospheric passages. Readers drawn in by the portrait of a Chicago girl in Paris will want more of those vivid details&mdash;the Galerie Aveline vernissage, the Versailles gala&mdash;and less curriculum vitae recitation. Murphy might also consider a brief orienting paragraph before the interview proper: first-time readers of Classic Chicago may need a sentence or two to understand what L&rsquo;&Eacute;COLE is and why it matters.</p>
+        <div style="background: #fff8f8; border-left: 3px solid #b51c20; padding: 12px 16px; margin-top: 16px;">
+          <strong style="font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; display: block; margin-bottom: 8px;">Actionable Suggestions:</strong>
+          <ul class="suggestion-list">
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-1">Add a brief two-sentence intro paragraph before the Q&amp;A that defines L&rsquo;&Eacute;COLE and establishes Tilles&rsquo;s current role for readers unfamiliar with Van Cleef &amp; Arpels&rsquo; cultural programming.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-2">Pull the Versailles gala and Art Institute passages earlier&mdash;they are the most vivid moments in the piece and would hook readers faster if encountered in the first third.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-3">Consider a photo caption note: the Inès de la Fressange image is a standout but goes unexplained in text. One sentence of context about the encounter would reward readers who don&rsquo;t recognize the name.</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-4"><strong>Headline Alternative:</strong> &ldquo;From the Latin School to the Louvre: Rebecca Tilles and the Chicago-Paris Connection&rdquo;</label>
+            <label class="suggestion-item"><input type="checkbox" id="suggest-1-5"><strong>Headline Alternative:</strong> &ldquo;The Chicagoan in Paris: A Conversation with Dr. Rebecca Tilles&rdquo;</label>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -180,6 +252,33 @@
       <a href="index.html" class="back-link">&larr; Return to March 8 Edition</a>
     </div>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('.suggestion-item input[type="checkbox"]');
+
+      const syncStates = () => {
+        checkboxes.forEach(cb => {
+          const isChecked = localStorage.getItem(cb.id) === 'true';
+          cb.checked = isChecked;
+          cb.parentElement.classList.toggle('completed', isChecked);
+        });
+      };
+
+      syncStates();
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          localStorage.setItem(cb.id, e.target.checked);
+          cb.parentElement.classList.toggle('completed', e.target.checked);
+        });
+      });
+
+      window.addEventListener('storage', () => {
+        syncStates();
+      });
+    });
+  </script>
 
   <footer>
     <div class="copyright">
