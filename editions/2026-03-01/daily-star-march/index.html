@@ -1098,8 +1098,9 @@
             </script>
         </div>
 
-        <div style="padding-top: 24px; border-top: 1px solid #eee; margin-top: 24px;">
-            <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
+        <div style="padding-top: 24px; border-top: 1px solid #eee; margin-top: 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+            <a href="../wells-street-kitchen-juice/" class="back-link">&larr; Previous: Savory Sandwiches Served Up in Old Town</a>
+            <a href="../../../index.html" class="back-link" style="text-align: right;">Back to Sunday Edition &rarr;</a>
         </div>
     </main>
 
@@ -1169,6 +1170,14 @@
             showDay(select.options[0].value);
         })();
 
+        var prevUrl = '../wells-street-kitchen-juice/';
+        var nextUrl = '../../../index.html';
+        document.addEventListener('keydown', function (e) {
+            var tag = (e.target.tagName || '').toLowerCase();
+            if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+            if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+            if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+        });
     </script>
 </body>
 </html>
