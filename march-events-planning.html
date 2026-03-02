@@ -710,11 +710,14 @@
     </div>
   </main>
 
+  <datalist id="assignees-list"></datalist>
+
   <script>
     const UPSTASH_URL   = 'https://native-grub-61297.upstash.io';
     const UPSTASH_TOKEN = 'Ae9xAAIncDIyNzYyNDhmZDA5NjM0Mjc5YWI2ZmM2YTY0ZjNiNjNhMnAyNjEyOTc';
     const TOTAL = 50;
     const cache = {};
+    let assigneesList = [];
 
     // GET-based for reads (MGET)
     async function kvget(path) {
@@ -750,16 +753,34 @@
       else     await kvcmd('DEL', redisKey);
     }
 
+    function updateDatalist() {
+      const dl = document.getElementById('assignees-list');
+      if (dl) dl.innerHTML = assigneesList.map(n => `<option value="${n}">`).join('');
+    }
+
+    async function addAssignee(name) {
+      if (!name || assigneesList.includes(name)) return;
+      assigneesList.push(name);
+      assigneesList.sort();
+      updateDatalist();
+      kvcmd('SADD', 'march26-assignees', name);
+    }
+
     async function loadAll() {
       const n = Array.from({length: TOTAL}, (_, i) => i + 1);
-      const [votes, assigned, editions] = await Promise.all([
+      const [votes, assigned, editions, assignees] = await Promise.all([
         kvget('mget/' + n.map(i => 'march26-e' + i).join('/')),
         kvget('mget/' + n.map(i => 'march26-e' + i + '-assigned').join('/')),
-        kvget('mget/' + n.map(i => 'march26-e' + i + '-edition').join('/'))
+        kvget('mget/' + n.map(i => 'march26-e' + i + '-edition').join('/')),
+        kvget('smembers/march26-assignees')
       ]);
       if (votes.result)    votes.result.forEach((v, i)    => setCache('e' + (i+1), v));
       if (assigned.result) assigned.result.forEach((v, i) => setCache('e' + (i+1) + '-assigned', v));
       if (editions.result) editions.result.forEach((v, i) => setCache('e' + (i+1) + '-edition', v));
+      if (assignees.result && Array.isArray(assignees.result)) {
+        assigneesList = assignees.result.slice().sort();
+        updateDatalist();
+      }
     }
 
     function applyState(item) {
@@ -830,16 +851,17 @@
         const meta = document.createElement('div');
         meta.className = 'event-meta';
         meta.innerHTML =
-          '<input type="text" class="assigned-input" placeholder="Assigned to\u2026">' +
+          '<input type="text" class="assigned-input" list="assignees-list" placeholder="Assigned to\u2026">' +
           '<label class="edition-label"><input type="checkbox" class="edition-check"> <span>Edition</span></label>';
         item.appendChild(meta);
 
-        // Assigned To: save on blur
+        // Assigned To: save on blur and add name to shared list if new
         const input = meta.querySelector('.assigned-input');
         input.addEventListener('blur', () => {
           const val = input.value.trim();
           setCache(id + '-assigned', val);
           saveState(id + '-assigned', val);
+          if (val) addAssignee(val);
         });
 
         // Present in Edition: save on change
