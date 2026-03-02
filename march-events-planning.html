@@ -41,7 +41,7 @@
     }
 
     .article-wrapper {
-      max-width: 860px;
+      max-width: 900px;
       margin: 40px auto 60px;
       padding: 40px;
       background: #fff;
@@ -51,7 +51,7 @@
 
     .page-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       border-bottom: 2px solid #e8443a;
       padding-bottom: 20px;
     }
@@ -80,9 +80,29 @@
       text-transform: uppercase;
     }
 
-    .category {
-      margin-bottom: 40px;
+    /* Summary bar */
+    .summary-bar {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 36px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
     }
+
+    .summary-pill {
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .summary-pill.yes { background: #e8f5e9; color: #2e7d32; }
+    .summary-pill.no  { background: #ffebee; color: #c62828; }
+    .summary-pill.open { background: #f5f5f5; color: #777; }
+
+    /* Category */
+    .category { margin-bottom: 36px; }
 
     .category-heading {
       font-family: 'Lato', sans-serif;
@@ -91,91 +111,85 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: #b51c20;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       padding-bottom: 8px;
       border-bottom: 1px solid #eee;
     }
 
-    .event-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .count-badge {
+      font-weight: 400;
+      color: #bbb;
+      margin-left: 6px;
+      text-transform: none;
+      letter-spacing: 0;
     }
+
+    /* Event row */
+    .event-list { list-style: none; margin: 0; padding: 0; }
 
     .event-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 12px;
-      padding: 9px 10px;
-      border-radius: 3px;
-      cursor: pointer;
+      padding: 7px 8px;
+      border-radius: 4px;
       transition: background 0.15s;
     }
 
-    .event-item:hover {
-      background: #fdf5f5;
-    }
+    .event-item:hover { background: #fafafa; }
+    .event-item.state-yes { background: #f0faf0; }
+    .event-item.state-no  { background: #fff5f5; }
 
-    .event-item input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      border: 2px solid #ccc;
-      border-radius: 3px;
-      margin-top: 2px;
-      cursor: pointer;
-      position: relative;
+    /* Yes / No buttons */
+    .event-actions { display: flex; gap: 5px; flex-shrink: 0; }
+
+    .btn-vote {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 11px;
+      border-radius: 10px;
+      border: 1.5px solid #ddd;
       background: #fff;
-      flex-shrink: 0;
-      transition: all 0.15s;
-    }
-
-    .event-item input[type="checkbox"]:checked {
-      background: #b51c20;
-      border-color: #b51c20;
-    }
-
-    .event-item input[type="checkbox"]:checked::after {
-      content: '✓';
-      position: absolute;
-      color: #fff;
-      font-size: 12px;
-      font-weight: bold;
-      left: 2px;
-      top: -1px;
-    }
-
-    .event-item.done .event-text {
-      text-decoration: line-through;
       color: #bbb;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: all 0.15s;
+      line-height: 1.6;
     }
 
+    .btn-vote:hover { border-color: #aaa; color: #666; }
+
+    .btn-vote.yes.active {
+      background: #2e7d32;
+      border-color: #2e7d32;
+      color: #fff;
+    }
+
+    .btn-vote.no.active {
+      background: #c62828;
+      border-color: #c62828;
+      color: #fff;
+    }
+
+    /* Event text */
     .event-text {
       font-family: 'Lato', sans-serif;
       font-size: 15px;
       color: #333;
       line-height: 1.5;
+      flex: 1;
     }
 
-    .event-text strong {
-      color: #111;
-      font-weight: 700;
-    }
+    .event-text strong { color: #111; font-weight: 700; }
+    .event-text .venue { color: #999; font-weight: 400; }
 
-    .event-text .venue {
-      color: #888;
-      font-weight: 400;
-    }
-
-    .count-badge {
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      color: #999;
-      font-weight: 400;
-      margin-left: 6px;
-      letter-spacing: 0;
-      text-transform: none;
+    .event-item.state-no .event-text,
+    .event-item.state-no .event-text strong,
+    .event-item.state-no .event-text .venue {
+      text-decoration: line-through;
+      color: #ccc;
     }
 
     .back-link {
@@ -189,9 +203,7 @@
       font-weight: 700;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
-    }
+    .back-link:hover { text-decoration: underline; }
 
     footer {
       background: #1a1a1a;
@@ -207,8 +219,9 @@
     }
 
     @media (max-width: 600px) {
-      .article-wrapper { padding: 24px 16px; }
+      .article-wrapper { padding: 24px 14px; }
       .page-title { font-size: 26px; }
+      .btn-vote { font-size: 10px; padding: 2px 8px; }
     }
   </style>
 </head>
@@ -229,15 +242,51 @@
       <div class="page-meta">Planning Guide &mdash; 50 Items &mdash; 8 Categories</div>
     </div>
 
+    <div class="summary-bar">
+      <span class="summary-pill yes">&#10003; Yes: <span id="count-yes">0</span></span>
+      <span class="summary-pill no">&#10007; No: <span id="count-no">0</span></span>
+      <span class="summary-pill open">Open: <span id="count-open">50</span></span>
+    </div>
+
     <!-- 1 -->
     <div class="category">
       <div class="category-heading">Major Museums &amp; Exhibitions <span class="count-badge">5 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e1"><label class="event-text" for="e1"><strong>Matisse&rsquo;s Jazz: Rhythms in Color</strong> <span class="venue">&mdash; Art Institute of Chicago</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e2"><label class="event-text" for="e2"><strong>Korean National Treasures</strong> <span class="venue">&mdash; Art Institute of Chicago</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e3"><label class="event-text" for="e3"><strong>Carroll Dunham drawings survey</strong> <span class="venue">&mdash; Art Institute of Chicago</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e4"><label class="event-text" for="e4"><strong>Art Institute additional spring special and collection exhibitions</strong></label></li>
-        <li class="event-item"><input type="checkbox" id="e5"><label class="event-text" for="e5"><strong>MCA Chicago rotating contemporary exhibitions</strong> <span class="venue">&mdash; Museum of Contemporary Art</span></label></li>
+        <li class="event-item" data-id="e1">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Matisse&rsquo;s Jazz: Rhythms in Color</strong> <span class="venue">&mdash; Art Institute of Chicago</span></span>
+        </li>
+        <li class="event-item" data-id="e2">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Korean National Treasures</strong> <span class="venue">&mdash; Art Institute of Chicago</span></span>
+        </li>
+        <li class="event-item" data-id="e3">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Carroll Dunham drawings survey</strong> <span class="venue">&mdash; Art Institute of Chicago</span></span>
+        </li>
+        <li class="event-item" data-id="e4">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Art Institute additional spring special and collection exhibitions</strong></span>
+        </li>
+        <li class="event-item" data-id="e5">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>MCA Chicago rotating contemporary exhibitions</strong> <span class="venue">&mdash; Museum of Contemporary Art</span></span>
+        </li>
       </ul>
     </div>
 
@@ -245,11 +294,41 @@
     <div class="category">
       <div class="category-heading">University, Design &amp; Smaller Museums <span class="count-badge">5 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e6"><label class="event-text" for="e6"><strong>Barbara Nessim retrospective</strong> <span class="venue">&mdash; DePaul Art Museum</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e7"><label class="event-text" for="e7"><strong>&ldquo;Chair&ndash;ish&rdquo; design show</strong> <span class="venue">&mdash; Cleve Carney Museum of Art</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e8"><label class="event-text" for="e8"><strong>Black Creativity juried art exhibition</strong> <span class="venue">&mdash; Museum of Science and Industry</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e9"><label class="event-text" for="e9"><strong>Black Creativity Night Out</strong> <span class="venue">&mdash; MSI 21+ evening program</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e10"><label class="event-text" for="e10"><strong>Crafting Character: Costumes of Paul Tazewell</strong> <span class="venue">&mdash; exhibition</span></label></li>
+        <li class="event-item" data-id="e6">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Barbara Nessim retrospective</strong> <span class="venue">&mdash; DePaul Art Museum</span></span>
+        </li>
+        <li class="event-item" data-id="e7">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>&ldquo;Chair&ndash;ish&rdquo; design show</strong> <span class="venue">&mdash; Cleve Carney Museum of Art</span></span>
+        </li>
+        <li class="event-item" data-id="e8">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Black Creativity juried art exhibition</strong> <span class="venue">&mdash; Museum of Science and Industry</span></span>
+        </li>
+        <li class="event-item" data-id="e9">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Black Creativity Night Out</strong> <span class="venue">&mdash; MSI 21+ evening program</span></span>
+        </li>
+        <li class="event-item" data-id="e10">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Crafting Character: Costumes of Paul Tazewell</strong></span>
+        </li>
       </ul>
     </div>
 
@@ -257,13 +336,55 @@
     <div class="category">
       <div class="category-heading">Galleries, Photography &amp; Auctions <span class="count-badge">7 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e11"><label class="event-text" for="e11"><strong>LENS 2026 juried photography show</strong> <span class="venue">&mdash; Perspective Gallery</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e12"><label class="event-text" for="e12"><strong>Mana Contemporary Chicago Members Show</strong> <span class="venue">&mdash; 5th Floor Gallery</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e13"><label class="event-text" for="e13"><strong>Paul Rinaldi Retrospective</strong> <span class="venue">&mdash; Christopher Art Gallery, through March 5</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e14"><label class="event-text" for="e14"><strong>Chicago Gallery News March gallery openings</strong> <span class="venue">&mdash; citywide</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e15"><label class="event-text" for="e15"><strong>Picture This photography auction</strong> <span class="venue">&mdash; Potter &amp; Potter Auctions</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e16"><label class="event-text" for="e16"><strong>Joel and Margaret Chen Collection design auction</strong> <span class="venue">&mdash; Wright</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e17"><label class="event-text" for="e17"><strong>Neighborhood gallery shows</strong> <span class="venue">&mdash; Pilsen, West Loop, River North</span></label></li>
+        <li class="event-item" data-id="e11">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>LENS 2026 juried photography show</strong> <span class="venue">&mdash; Perspective Gallery</span></span>
+        </li>
+        <li class="event-item" data-id="e12">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Mana Contemporary Chicago Members Show</strong> <span class="venue">&mdash; 5th Floor Gallery</span></span>
+        </li>
+        <li class="event-item" data-id="e13">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Paul Rinaldi Retrospective</strong> <span class="venue">&mdash; Christopher Art Gallery, through March 5</span></span>
+        </li>
+        <li class="event-item" data-id="e14">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chicago Gallery News March gallery openings</strong> <span class="venue">&mdash; citywide</span></span>
+        </li>
+        <li class="event-item" data-id="e15">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Picture This photography auction</strong> <span class="venue">&mdash; Potter &amp; Potter Auctions</span></span>
+        </li>
+        <li class="event-item" data-id="e16">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Joel and Margaret Chen Collection design auction</strong> <span class="venue">&mdash; Wright</span></span>
+        </li>
+        <li class="event-item" data-id="e17">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Neighborhood gallery shows</strong> <span class="venue">&mdash; Pilsen, West Loop, River North</span></span>
+        </li>
       </ul>
     </div>
 
@@ -271,12 +392,48 @@
     <div class="category">
       <div class="category-heading">Opera, Classical &amp; Ballet <span class="count-badge">6 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e18"><label class="event-text" for="e18"><strong>Joffrey Ballet &ldquo;American Icons&rdquo;</strong> <span class="venue">&mdash; Civic Opera House</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e19"><label class="event-text" for="e19"><strong>Joffrey Ballet &ldquo;Winning Works&rdquo;</strong> <span class="venue">&mdash; choreographic competition performances</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e20"><label class="event-text" for="e20"><strong>Lyric Opera of Chicago, <em>Madama Butterfly</em></strong> <span class="venue">&mdash; new production</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e21"><label class="event-text" for="e21"><strong>Chamber Music Society: Brahms, Shostakovich, Schubert</strong> <span class="venue">&mdash; Harris Theater</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e22"><label class="event-text" for="e22"><strong>Silkroad Ensemble &ldquo;Sanctuary&rdquo;</strong> <span class="venue">&mdash; Rhiannon Giddens directing</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e23"><label class="event-text" for="e23"><strong>Chicago Symphony Orchestra March subscription concerts</strong> <span class="venue">&mdash; Symphony Center</span></label></li>
+        <li class="event-item" data-id="e18">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Joffrey Ballet &ldquo;American Icons&rdquo;</strong> <span class="venue">&mdash; Civic Opera House</span></span>
+        </li>
+        <li class="event-item" data-id="e19">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Joffrey Ballet &ldquo;Winning Works&rdquo;</strong> <span class="venue">&mdash; choreographic competition</span></span>
+        </li>
+        <li class="event-item" data-id="e20">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Lyric Opera of Chicago, <em>Madama Butterfly</em></strong> <span class="venue">&mdash; new production</span></span>
+        </li>
+        <li class="event-item" data-id="e21">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chamber Music Society: Brahms, Shostakovich, Schubert</strong> <span class="venue">&mdash; Harris Theater</span></span>
+        </li>
+        <li class="event-item" data-id="e22">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Silkroad Ensemble &ldquo;Sanctuary&rdquo;</strong> <span class="venue">&mdash; Rhiannon Giddens directing</span></span>
+        </li>
+        <li class="event-item" data-id="e23">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chicago Symphony Orchestra March subscription concerts</strong> <span class="venue">&mdash; Symphony Center</span></span>
+        </li>
       </ul>
     </div>
 
@@ -284,11 +441,41 @@
     <div class="category">
       <div class="category-heading">Film, Architecture &amp; Design Festivals <span class="count-badge">5 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e24"><label class="event-text" for="e24"><strong>Architecture &amp; Design Film Festival</strong> <span class="venue">&mdash; Siskel Film Center</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e25"><label class="event-text" for="e25"><strong>Gene Siskel Film Center March repertory and festival programs</strong></label></li>
-        <li class="event-item"><input type="checkbox" id="e26"><label class="event-text" for="e26"><strong>Chicago Architecture Biennial &ldquo;Shift&rdquo; installations</strong> <span class="venue">&mdash; Cultural Center venues</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e27"><label class="event-text" for="e27"><strong>Frank Lloyd Wright architectural walking tours</strong> <span class="venue">&mdash; highlighted for 2026</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e28"><label class="event-text" for="e28"><strong>EXPO Chicago 2026 advance programs</strong> <span class="venue">&mdash; and related city events</span></label></li>
+        <li class="event-item" data-id="e24">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Architecture &amp; Design Film Festival</strong> <span class="venue">&mdash; Siskel Film Center</span></span>
+        </li>
+        <li class="event-item" data-id="e25">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Gene Siskel Film Center March repertory and festival programs</strong></span>
+        </li>
+        <li class="event-item" data-id="e26">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chicago Architecture Biennial &ldquo;Shift&rdquo; installations</strong> <span class="venue">&mdash; Cultural Center venues</span></span>
+        </li>
+        <li class="event-item" data-id="e27">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Frank Lloyd Wright architectural walking tours</strong> <span class="venue">&mdash; highlighted for 2026</span></span>
+        </li>
+        <li class="event-item" data-id="e28">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>EXPO Chicago 2026 advance programs</strong> <span class="venue">&mdash; and related city events</span></span>
+        </li>
       </ul>
     </div>
 
@@ -296,12 +483,48 @@
     <div class="category">
       <div class="category-heading">Theater, Musical Theater &amp; Immersive <span class="count-badge">6 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e29"><label class="event-text" for="e29"><strong><em>Hamilton</em></strong> <span class="venue">&mdash; Chicago theater engagement</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e30"><label class="event-text" for="e30"><strong><em>The Wiz</em></strong> <span class="venue">&mdash; Chicago theater district</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e31"><label class="event-text" for="e31"><strong><em>Hamnet</em> stage adaptation</strong> <span class="venue">&mdash; Chicago production</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e32"><label class="event-text" for="e32"><strong><em>On Your Feet!</em> musical</strong> <span class="venue">&mdash; Chicago performances</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e33"><label class="event-text" for="e33"><strong>Theater of the Mind</strong> <span class="venue">&mdash; immersive performance run begins</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e34"><label class="event-text" for="e34"><strong>Candlelight: Rings &amp; Dragons</strong> <span class="venue">&mdash; themed live music event</span></label></li>
+        <li class="event-item" data-id="e29">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong><em>Hamilton</em></strong> <span class="venue">&mdash; Chicago theater engagement</span></span>
+        </li>
+        <li class="event-item" data-id="e30">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong><em>The Wiz</em></strong> <span class="venue">&mdash; Chicago theater district</span></span>
+        </li>
+        <li class="event-item" data-id="e31">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong><em>Hamnet</em> stage adaptation</strong> <span class="venue">&mdash; Chicago production</span></span>
+        </li>
+        <li class="event-item" data-id="e32">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong><em>On Your Feet!</em> musical</strong> <span class="venue">&mdash; Chicago performances</span></span>
+        </li>
+        <li class="event-item" data-id="e33">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Theater of the Mind</strong> <span class="venue">&mdash; immersive performance run begins</span></span>
+        </li>
+        <li class="event-item" data-id="e34">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Candlelight: Rings &amp; Dragons</strong> <span class="venue">&mdash; themed live music event</span></span>
+        </li>
       </ul>
     </div>
 
@@ -309,11 +532,41 @@
     <div class="category">
       <div class="category-heading">Contemporary, Community &amp; Cultural Centers <span class="count-badge">5 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e35"><label class="event-text" for="e35"><strong>Chicago Cultural Center visual art exhibitions</strong> <span class="venue">&mdash; free admission</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e36"><label class="event-text" for="e36"><strong>Hyde Park Art Center spring exhibitions and public programs</strong></label></li>
-        <li class="event-item"><input type="checkbox" id="e37"><label class="event-text" for="e37"><strong>Yoonshin Park &ldquo;Prompt and Prompted&rdquo;</strong> <span class="venue">&mdash; Hyde Park Art Center</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e38"><label class="event-text" for="e38"><strong>Chicago Cultural Alliance heritage museum events and talks</strong></label></li>
-        <li class="event-item"><input type="checkbox" id="e39"><label class="event-text" for="e39"><strong>Community arts programs tied to NAEA Convention</strong> <span class="venue">&mdash; at museums</span></label></li>
+        <li class="event-item" data-id="e35">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chicago Cultural Center visual art exhibitions</strong> <span class="venue">&mdash; free admission</span></span>
+        </li>
+        <li class="event-item" data-id="e36">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Hyde Park Art Center spring exhibitions and public programs</strong></span>
+        </li>
+        <li class="event-item" data-id="e37">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Yoonshin Park &ldquo;Prompt and Prompted&rdquo;</strong> <span class="venue">&mdash; Hyde Park Art Center</span></span>
+        </li>
+        <li class="event-item" data-id="e38">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Chicago Cultural Alliance heritage museum events and talks</strong></span>
+        </li>
+        <li class="event-item" data-id="e39">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Community arts programs tied to NAEA Convention</strong> <span class="venue">&mdash; at museums</span></span>
+        </li>
       </ul>
     </div>
 
@@ -321,17 +574,83 @@
     <div class="category">
       <div class="category-heading">Concerts, Performance &amp; Festivals <span class="count-badge">11 items</span></div>
       <ul class="event-list">
-        <li class="event-item"><input type="checkbox" id="e40"><label class="event-text" for="e40"><strong>Lord of the Rings in Concert</strong> <span class="venue">&mdash; Auditorium Theatre, live orchestra</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e41"><label class="event-text" for="e41"><strong>Dirty Dancing in Concert</strong> <span class="venue">&mdash; live band, Philharmonic</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e42"><label class="event-text" for="e42"><strong>Indiana Jones in Concert</strong> <span class="venue">&mdash; Chicago Philharmonic, Auditorium Theatre</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e43"><label class="event-text" for="e43"><strong>Peaches concert</strong> <span class="venue">&mdash; The Vic Theatre, performance-art-leaning pop</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e44"><label class="event-text" for="e44"><strong>FKA twigs</strong> <span class="venue">&mdash; Wintrust Arena, avant-pop performance</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e45"><label class="event-text" for="e45"><strong>Zara Larsson concert</strong> <span class="venue">&mdash; The Riviera Theatre</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e46"><label class="event-text" for="e46"><strong>Shawn Colvin</strong> <span class="venue">&mdash; Evanston SPACE, singer-songwriter evening</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e47"><label class="event-text" for="e47"><strong>Villain Arts Chicago Tattoo Festival</strong> <span class="venue">&mdash; tattoo culture and live art</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e48"><label class="event-text" for="e48"><strong>Women&rsquo;s History Month concert &ldquo;She Was&rdquo;</strong> <span class="venue">&mdash; Artemisia Vocal Trio</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e49"><label class="event-text" for="e49"><strong>MyGuideChicago curated March events</strong> <span class="venue">&mdash; including arts experiences</span></label></li>
-        <li class="event-item"><input type="checkbox" id="e50"><label class="event-text" for="e50"><strong>Jackie Wilson Story</strong> <span class="venue">&mdash; Black Ensemble Theater</span></label></li>
+        <li class="event-item" data-id="e40">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Lord of the Rings in Concert</strong> <span class="venue">&mdash; Auditorium Theatre, live orchestra</span></span>
+        </li>
+        <li class="event-item" data-id="e41">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Dirty Dancing in Concert</strong> <span class="venue">&mdash; live band, Philharmonic</span></span>
+        </li>
+        <li class="event-item" data-id="e42">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Indiana Jones in Concert</strong> <span class="venue">&mdash; Chicago Philharmonic, Auditorium Theatre</span></span>
+        </li>
+        <li class="event-item" data-id="e43">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Peaches concert</strong> <span class="venue">&mdash; The Vic Theatre, performance-art-leaning pop</span></span>
+        </li>
+        <li class="event-item" data-id="e44">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>FKA twigs</strong> <span class="venue">&mdash; Wintrust Arena, avant-pop</span></span>
+        </li>
+        <li class="event-item" data-id="e45">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Zara Larsson concert</strong> <span class="venue">&mdash; The Riviera Theatre</span></span>
+        </li>
+        <li class="event-item" data-id="e46">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Shawn Colvin</strong> <span class="venue">&mdash; Evanston SPACE, singer-songwriter evening</span></span>
+        </li>
+        <li class="event-item" data-id="e47">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Villain Arts Chicago Tattoo Festival</strong> <span class="venue">&mdash; tattoo culture and live art</span></span>
+        </li>
+        <li class="event-item" data-id="e48">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Women&rsquo;s History Month concert &ldquo;She Was&rdquo;</strong> <span class="venue">&mdash; Artemisia Vocal Trio</span></span>
+        </li>
+        <li class="event-item" data-id="e49">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>MyGuideChicago curated March events</strong> <span class="venue">&mdash; including arts experiences</span></span>
+        </li>
+        <li class="event-item" data-id="e50">
+          <div class="event-actions">
+            <button class="btn-vote yes" data-vote="yes">Yes</button>
+            <button class="btn-vote no"  data-vote="no">No</button>
+          </div>
+          <span class="event-text"><strong>Jackie Wilson Story</strong> <span class="venue">&mdash; Black Ensemble Theater</span></span>
+        </li>
       </ul>
     </div>
 
@@ -341,29 +660,92 @@
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const items = document.querySelectorAll('.event-item');
+    const UPSTASH_URL   = 'https://native-grub-61297.upstash.io';
+    const UPSTASH_TOKEN = 'Ae9xAAIncDIyNzYyNDhmZDA5NjM0Mjc5YWI2ZmM2YTY0ZjNiNjNhMnAyNjEyOTc';
+    const TOTAL = 50;
+    const cache = {};
 
-      const syncAll = () => {
-        items.forEach(item => {
-          const cb = item.querySelector('input[type="checkbox"]');
-          const checked = localStorage.getItem(cb.id) === 'true';
-          cb.checked = checked;
-          item.classList.toggle('done', checked);
+    async function kv(path) {
+      try {
+        const r = await fetch(UPSTASH_URL + '/' + path, {
+          headers: { Authorization: 'Bearer ' + UPSTASH_TOKEN }
         });
-      };
+        return r.json();
+      } catch { return { result: null }; }
+    }
 
+    function getState(id)      { return cache[id] || ''; }
+    function setCache(id, val) { cache[id] = val || ''; }
+
+    async function saveState(id, val) {
+      const key = 'march26-' + id;
+      if (val) await kv('set/' + key + '/' + val);
+      else     await kv('del/' + key);
+    }
+
+    async function loadAll() {
+      const keys = Array.from({length: TOTAL}, (_, i) => 'march26-e' + (i + 1)).join('/');
+      const data = await kv('mget/' + keys);
+      if (data.result) {
+        data.result.forEach((val, i) => setCache('e' + (i + 1), val));
+      }
+    }
+
+    function applyState(item) {
+      const id = item.dataset.id;
+      const state = getState(id);
+      const btnYes = item.querySelector('.btn-vote.yes');
+      const btnNo  = item.querySelector('.btn-vote.no');
+      item.classList.remove('state-yes', 'state-no');
+      btnYes.classList.remove('active');
+      btnNo.classList.remove('active');
+      if (state === 'yes') {
+        item.classList.add('state-yes');
+        btnYes.classList.add('active');
+      } else if (state === 'no') {
+        item.classList.add('state-no');
+        btnNo.classList.add('active');
+      }
+    }
+
+    function updateCounts() {
+      let yes = 0, no = 0;
+      document.querySelectorAll('.event-item').forEach(item => {
+        const s = getState(item.dataset.id);
+        if (s === 'yes') yes++;
+        else if (s === 'no') no++;
+      });
+      document.getElementById('count-yes').textContent  = yes;
+      document.getElementById('count-no').textContent   = no;
+      document.getElementById('count-open').textContent = TOTAL - yes - no;
+    }
+
+    function syncAll() {
+      document.querySelectorAll('.event-item').forEach(applyState);
+      updateCounts();
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadAll();
       syncAll();
 
-      items.forEach(item => {
-        const cb = item.querySelector('input[type="checkbox"]');
-        cb.addEventListener('change', () => {
-          localStorage.setItem(cb.id, cb.checked);
-          item.classList.toggle('done', cb.checked);
+      document.querySelectorAll('.event-item').forEach(item => {
+        item.querySelectorAll('.btn-vote').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const id   = item.dataset.id;
+            const vote = btn.dataset.vote;
+            const cur  = getState(id);
+            const next = cur === vote ? '' : vote;
+            setCache(id, next);   // optimistic update
+            applyState(item);
+            updateCounts();
+            saveState(id, next);  // persist to Upstash (async)
+          });
         });
       });
 
-      window.addEventListener('storage', syncAll);
+      // Poll every 30s to pick up changes from other devices
+      setInterval(async () => { await loadAll(); syncAll(); }, 30000);
     });
   </script>
 
