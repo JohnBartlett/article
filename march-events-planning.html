@@ -218,10 +218,59 @@
       color: #aaa;
     }
 
+    /* Assigned To + Edition */
+    .event-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .assigned-input {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      padding: 3px 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 110px;
+      color: #333;
+      background: #fafafa;
+    }
+
+    .assigned-input:focus {
+      outline: none;
+      border-color: #b51c20;
+      background: #fff;
+    }
+
+    .edition-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .edition-label input[type="checkbox"] {
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
+      accent-color: #b51c20;
+      margin: 0;
+    }
+
+    .edition-label.checked { color: #b51c20; font-weight: 700; }
+
     @media (max-width: 600px) {
       .article-wrapper { padding: 24px 14px; }
       .page-title { font-size: 26px; }
       .btn-vote { font-size: 10px; padding: 2px 8px; }
+      .assigned-input { width: 75px; }
+      .edition-label span { display: none; }
     }
   </style>
 </head>
@@ -665,7 +714,8 @@
     const TOTAL = 50;
     const cache = {};
 
-    async function kv(path) {
+    // GET-based for reads (MGET)
+    async function kvget(path) {
       try {
         const r = await fetch(UPSTASH_URL + '/' + path, {
           headers: { Authorization: 'Bearer ' + UPSTASH_TOKEN }
@@ -674,21 +724,40 @@
       } catch { return { result: null }; }
     }
 
-    function getState(id)      { return cache[id] || ''; }
-    function setCache(id, val) { cache[id] = val || ''; }
+    // POST-based for writes (handles spaces/special chars in values)
+    async function kvcmd(...args) {
+      try {
+        const r = await fetch(UPSTASH_URL, {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer ' + UPSTASH_TOKEN,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(args)
+        });
+        return r.json();
+      } catch { return { result: null }; }
+    }
 
-    async function saveState(id, val) {
-      const key = 'march26-' + id;
-      if (val) await kv('set/' + key + '/' + val);
-      else     await kv('del/' + key);
+    function getState(key)      { return cache[key] || ''; }
+    function setCache(key, val) { cache[key] = val || ''; }
+
+    async function saveState(key, val) {
+      const redisKey = 'march26-' + key;
+      if (val) await kvcmd('SET', redisKey, val);
+      else     await kvcmd('DEL', redisKey);
     }
 
     async function loadAll() {
-      const keys = Array.from({length: TOTAL}, (_, i) => 'march26-e' + (i + 1)).join('/');
-      const data = await kv('mget/' + keys);
-      if (data.result) {
-        data.result.forEach((val, i) => setCache('e' + (i + 1), val));
-      }
+      const n = Array.from({length: TOTAL}, (_, i) => i + 1);
+      const [votes, assigned, editions] = await Promise.all([
+        kvget('mget/' + n.map(i => 'march26-e' + i).join('/')),
+        kvget('mget/' + n.map(i => 'march26-e' + i + '-assigned').join('/')),
+        kvget('mget/' + n.map(i => 'march26-e' + i + '-edition').join('/'))
+      ]);
+      if (votes.result)    votes.result.forEach((v, i)    => setCache('e' + (i+1), v));
+      if (assigned.result) assigned.result.forEach((v, i) => setCache('e' + (i+1) + '-assigned', v));
+      if (editions.result) editions.result.forEach((v, i) => setCache('e' + (i+1) + '-edition', v));
     }
 
     function applyState(item) {
@@ -708,6 +777,24 @@
       }
     }
 
+    function applyAssigned(item) {
+      const input = item.querySelector('.assigned-input');
+      // Don't clobber a field the user is actively typing in
+      if (input && document.activeElement !== input) {
+        input.value = getState(item.dataset.id + '-assigned');
+      }
+    }
+
+    function applyEdition(item) {
+      const check = item.querySelector('.edition-check');
+      const label = item.querySelector('.edition-label');
+      if (check) {
+        const on = getState(item.dataset.id + '-edition') === '1';
+        check.checked = on;
+        label.classList.toggle('checked', on);
+      }
+    }
+
     function updateCounts() {
       let yes = 0, no = 0;
       document.querySelectorAll('.event-item').forEach(item => {
@@ -721,30 +808,63 @@
     }
 
     function syncAll() {
-      document.querySelectorAll('.event-item').forEach(applyState);
+      document.querySelectorAll('.event-item').forEach(item => {
+        applyState(item);
+        applyAssigned(item);
+        applyEdition(item);
+      });
       updateCounts();
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
+      // Inject Assigned To + Edition fields into every row
+      document.querySelectorAll('.event-item').forEach(item => {
+        const id   = item.dataset.id;
+        const meta = document.createElement('div');
+        meta.className = 'event-meta';
+        meta.innerHTML =
+          '<input type="text" class="assigned-input" placeholder="Assigned to\u2026">' +
+          '<label class="edition-label"><input type="checkbox" class="edition-check"> <span>Edition</span></label>';
+        item.appendChild(meta);
+
+        // Assigned To: save on blur
+        const input = meta.querySelector('.assigned-input');
+        input.addEventListener('blur', () => {
+          const val = input.value.trim();
+          setCache(id + '-assigned', val);
+          saveState(id + '-assigned', val);
+        });
+
+        // Present in Edition: save on change
+        const check = meta.querySelector('.edition-check');
+        check.addEventListener('change', () => {
+          const val = check.checked ? '1' : '';
+          setCache(id + '-edition', val);
+          meta.querySelector('.edition-label').classList.toggle('checked', check.checked);
+          saveState(id + '-edition', val);
+        });
+      });
+
       await loadAll();
       syncAll();
 
+      // Yes / No vote buttons
       document.querySelectorAll('.event-item').forEach(item => {
         item.querySelectorAll('.btn-vote').forEach(btn => {
-          btn.addEventListener('click', async () => {
+          btn.addEventListener('click', () => {
             const id   = item.dataset.id;
             const vote = btn.dataset.vote;
             const cur  = getState(id);
             const next = cur === vote ? '' : vote;
-            setCache(id, next);   // optimistic update
+            setCache(id, next);
             applyState(item);
             updateCounts();
-            saveState(id, next);  // persist to Upstash (async)
+            saveState(id, next);
           });
         });
       });
 
-      // Poll every 30s to pick up changes from other devices
+      // Poll every 30s for cross-device changes
       setInterval(async () => { await loadAll(); syncAll(); }, 30000);
     });
   </script>
