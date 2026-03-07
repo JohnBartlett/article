@@ -288,6 +288,84 @@
     .social-links svg { width: 18px; height: 18px; fill: #fff; }
     .copyright { color: #666; font-size: 13px; }
 
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      background: #111;
+      border-bottom: 2px solid #2a2a2a;
+      padding: 18px 40px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 0;
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row:last-of-type { margin-bottom: 0; }
+
+    .filter-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      min-width: 44px;
+    }
+
+    .filter-buttons { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .filter-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border: 1px solid #333;
+      background: transparent;
+      color: #888;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.15s;
+      line-height: 1.6;
+    }
+
+    .filter-btn:hover { border-color: #777; color: #ddd; }
+
+    .filter-btn.active {
+      background: #c9a96e;
+      border-color: #c9a96e;
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+
+    .filter-count {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+    }
+
+    .event-entry.hidden,
+    [data-month-section].hidden,
+    [data-month-events].hidden,
+    .month-separator.hidden { display: none !important; }
+
+    @media (max-width: 700px) {
+      .filter-bar { padding: 14px 20px 12px; }
+      .filter-label { min-width: 36px; }
+    }
+
     @media (max-width: 700px) {
       .datebook-title { font-size: 44px; }
       .datebook-masthead { padding: 36px 24px 32px; }
@@ -327,17 +405,50 @@
         <div class="datebook-byline">Curated by <strong>Anne Delfosse</strong></div>
       </div>
 
-      <div class="datebook-body">
+      <!-- ══ FILTER BAR ══ -->
+      <div class="filter-bar" id="filterBar">
+        <div class="filter-row">
+          <span class="filter-label">Month</span>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="month" data-value="all">All</button>
+            <button class="filter-btn" data-filter="month" data-value="march">Mar</button>
+            <button class="filter-btn" data-filter="month" data-value="april">Apr</button>
+            <button class="filter-btn" data-filter="month" data-value="may">May</button>
+            <button class="filter-btn" data-filter="month" data-value="june">Jun</button>
+            <button class="filter-btn" data-filter="month" data-value="july">Jul</button>
+            <button class="filter-btn" data-filter="month" data-value="august">Aug</button>
+            <button class="filter-btn" data-filter="month" data-value="september">Sep</button>
+            <button class="filter-btn" data-filter="month" data-value="october">Oct</button>
+            <button class="filter-btn" data-filter="month" data-value="november">Nov</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">Kind</span>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="kind" data-value="all">All</button>
+            <button class="filter-btn" data-filter="kind" data-value="gala">Gala &amp; Benefit</button>
+            <button class="filter-btn" data-filter="kind" data-value="performance">Concert &amp; Performance</button>
+            <button class="filter-btn" data-filter="kind" data-value="arts">Arts &amp; Culture</button>
+            <button class="filter-btn" data-filter="kind" data-value="lecture">Lecture &amp; Awards</button>
+            <button class="filter-btn" data-filter="kind" data-value="outdoors">Outdoors &amp; Sports</button>
+          </div>
+        </div>
+        <div class="filter-count" id="eventCount"></div>
+      </div>
+      <!-- /FILTER BAR -->
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+      <div class="datebook-body">
+        <div id="no-results" style="display:none; padding: 60px 40px; text-align: center; font-family: 'Lato', sans-serif; color: #999; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase;">No events match your selection.</div>
+
+        <figure class="month-separator" data-for-month="march" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-march.jpg" alt="Grant Park and Chicago skyline" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;">
         </figure>
 
         <!-- ══════════ MARCH ══════════ -->
-        <div class="month-header">March</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="march">March</div>
+        <div class="event-list" data-month-events="march">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">Equality Illinois</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, March 13</span>
@@ -352,7 +463,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="performance">
             <div class="event-org">Chicago Opera Theater</div>
             <div class="event-date-row">
               <span class="event-date">Friday, March 19 &ndash; Sunday, March 28</span>
@@ -366,7 +477,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">100 Club of Illinois</div>
             <div class="event-date-row">
               <span class="event-date">Friday, March 26</span>
@@ -381,7 +492,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">American Cancer Society &mdash; Illinois</div>
             <div class="event-date-row">
               <span class="event-date">Late February / Early March 2026</span>
@@ -394,7 +505,7 @@
               <span class="contact"><a href="https://discoveryballil.acsgala.org" target="_blank">discoveryballil.acsgala.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">The Ireland Funds</div>
             <div class="event-date-row">
               <span class="event-date">Friday, March 6</span>
@@ -408,7 +519,7 @@
               <span class="contact"><a href="mailto:amallaghan@irelandfunds.org">amallaghan@irelandfunds.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="lecture">
             <div class="event-org">Illinois Holocaust Museum &amp; Education Center</div>
             <div class="event-date-row">
               <span class="event-date">Tuesday, March 10</span>
@@ -422,7 +533,7 @@
               <span class="contact"><a href="mailto:dinner@ilhmec.org">847.967.4852 &nbsp;&bull;&nbsp; dinner@ilhmec.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">NHS Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, March 21</span>
@@ -436,7 +547,7 @@
               <span class="contact"><a href="https://www.ticketfalcon.com/e/nhs51/" target="_blank">nhschicago.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="march" data-kind="gala">
             <div class="event-org">Chicago Architecture Center</div>
             <div class="event-date-row">
               <span class="event-date">March 2026</span>
@@ -452,15 +563,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="april" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-april.jpg" alt="Water Tower Place and John Hancock Center, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;">
         </figure>
 
         <!-- ══════════ APRIL ══════════ -->
-        <div class="month-header">April</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="april">April</div>
+        <div class="event-list" data-month-events="april">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Enlace Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 4</span>
@@ -475,7 +586,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Ignite Promise</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 11</span>
@@ -490,7 +601,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Chicago Children&rsquo;s Museum</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, April 16</span>
@@ -505,7 +616,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Off the Street Club</div>
             <div class="event-date-row">
               <span class="event-date">Friday, April 24</span>
@@ -520,7 +631,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Mercy Home for Boys &amp; Girls</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 25</span>
@@ -535,7 +646,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="arts">
             <div class="event-org">Renaissance Society at the University of Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Wednesday, April 8</span>
@@ -549,7 +660,7 @@
               <span class="contact"><a href="https://www.renaissancesociety.org" target="_blank">renaissancesociety.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="arts">
             <div class="event-org">Intuit Art Museum</div>
             <div class="event-date-row">
               <span class="event-date">Friday, April 10</span>
@@ -563,7 +674,7 @@
               <span class="contact"><a href="https://www.art.org" target="_blank">art.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Chicago Commons</div>
             <div class="event-date-row">
               <span class="event-date">Friday, April 10</span>
@@ -577,7 +688,7 @@
               <span class="contact"><a href="https://www.chicagocommons.org/event/2026-spring-celebration/" target="_blank">chicagocommons.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Les Turner ALS Foundation</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 11</span>
@@ -591,7 +702,7 @@
               <span class="contact"><a href="https://lesturnerals.org/events/hope-through-caring-award-gala/" target="_blank">lesturnerals.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Easterseals DuPage &amp; Fox Valley</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 18</span>
@@ -605,7 +716,7 @@
               <span class="contact"><a href="https://www.eastersealsdfvr.org/gala" target="_blank">eastersealsdfvr.org/gala</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">DuSable Black History Museum and Education Center</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 18</span>
@@ -618,7 +729,7 @@
               <span class="contact"><a href="https://dusablemuseum.org/gala-65th-anniversary/" target="_blank">dusablemuseum.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="lecture">
             <div class="event-org">Chicago Children&rsquo;s Advocacy Center</div>
             <div class="event-date-row">
               <span class="event-date">Wednesday, April 22</span>
@@ -632,7 +743,7 @@
               <span class="contact"><a href="https://www.chicagochildrensadvocacycenter.org" target="_blank">chicagochildrensadvocacycenter.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Youth Job Center</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, April 23</span>
@@ -646,7 +757,7 @@
               <span class="contact"><a href="https://www.youthjobcenter.org/2026-gala" target="_blank">youthjobcenter.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">National Public Housing Museum</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, April 23</span>
@@ -660,7 +771,7 @@
               <span class="contact"><a href="https://www.nphm.org" target="_blank">nphm.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Brookfield Zoo Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, April 25</span>
@@ -674,7 +785,7 @@
               <span class="contact"><a href="https://www.brookfieldzoo.org/Whirl" target="_blank">brookfieldzoo.org/Whirl</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="april" data-kind="gala">
             <div class="event-org">Bottom Line Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Wednesday, April 29</span>
@@ -690,15 +801,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="may" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-may.jpg" alt="Field Museum of Natural History, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
         </figure>
 
         <!-- ══════════ MAY ══════════ -->
-        <div class="month-header">May</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="may">May</div>
+        <div class="event-list" data-month-events="may">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Field Museum</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 2</span>
@@ -713,7 +824,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="lecture">
             <div class="event-org">Chicago Humanities Festival</div>
             <div class="event-date-row">
               <span class="event-date">Throughout May</span>
@@ -726,7 +837,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Chicago Cultural Alliance</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 15</span>
@@ -741,7 +852,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="outdoors">
             <div class="event-org">Easterseals DuPage &amp; Fox Valley</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, May 7</span>
@@ -753,7 +864,7 @@
               <span class="contact"><a href="https://www.eastersealsdfvr.org" target="_blank">eastersealsdfvr.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Mercy Home for Boys &amp; Girls &mdash; Associate Board</div>
             <div class="event-date-row">
               <span class="event-date">Friday, May 8</span>
@@ -767,7 +878,7 @@
               <span class="contact"><a href="https://www.mercyhome.org/chicago-charity-events/have-mercy/" target="_blank">mercyhome.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">The Woman&rsquo;s Board of the Alliance Fran&ccedil;aise de Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 9</span>
@@ -780,7 +891,7 @@
               <span class="contact"><a href="https://www.af-chicago.org" target="_blank">af-chicago.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Steppenwolf Theatre Company</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 9</span>
@@ -794,7 +905,7 @@
               <span class="contact"><a href="mailto:specialevents@steppenwolf.org">312.654.5690 &nbsp;&bull;&nbsp; specialevents@steppenwolf.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Make-A-Wish Illinois</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 16</span>
@@ -808,7 +919,7 @@
               <span class="contact"><a href="https://wish.org/illinois/wish-ball" target="_blank">wish.org/illinois/wish-ball</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Ragdale Foundation</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 16</span>
@@ -821,7 +932,7 @@
               <span class="contact"><a href="mailto:marybeth@ragdale.org">847.234.1063 &nbsp;&bull;&nbsp; marybeth@ragdale.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="arts">
             <div class="event-org">Evanston Art Center</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 16</span>
@@ -835,7 +946,7 @@
               <span class="contact"><a href="https://www.evanstonartcenter.org" target="_blank">evanstonartcenter.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Music Institute of Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Monday, May 18</span>
@@ -849,7 +960,7 @@
               <span class="contact"><a href="https://www.musicinstitute.org" target="_blank">musicinstitute.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">Onward Neighborhood House</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, May 28</span>
@@ -863,7 +974,7 @@
               <span class="contact"><a href="https://www.onwardhouse.org" target="_blank">onwardhouse.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="may" data-kind="gala">
             <div class="event-org">The Joffrey Ballet</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, May 30</span>
@@ -879,15 +990,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="june" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-june.jpg" alt="Café Brauer at Lincoln Park Zoo" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         </figure>
 
         <!-- ══════════ JUNE ══════════ -->
-        <div class="month-header">June</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="june">June</div>
+        <div class="event-list" data-month-events="june">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="outdoors">
             <div class="event-org">Lincoln Park Zoo</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, June 6</span>
@@ -902,7 +1013,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="gala">
             <div class="event-org">Chicago Botanic Garden</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, June 13</span>
@@ -917,7 +1028,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="gala">
             <div class="event-org">National Hellenic Museum</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, June 18</span>
@@ -932,7 +1043,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="gala">
             <div class="event-org">Chicago Cultural Alliance</div>
             <div class="event-date-row">
               <span class="event-date">Tuesday, June 9</span>
@@ -944,7 +1055,7 @@
               <span class="contact"><a href="https://www.chicagoculturalalliance.org" target="_blank">chicagoculturalalliance.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="lecture">
             <div class="event-org">Mercy Home for Boys &amp; Girls &mdash; Leader Council</div>
             <div class="event-date-row">
               <span class="event-date">June 2026</span>
@@ -956,7 +1067,7 @@
               <span class="contact"><a href="https://www.mercyhome.org" target="_blank">mercyhome.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="june" data-kind="lecture">
             <div class="event-org">Gilda&rsquo;s Club Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, June 25</span>
@@ -972,15 +1083,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="july" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-july.jpg" alt="Art Institute of Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%;">
         </figure>
 
         <!-- ══════════ JULY ══════════ -->
-        <div class="month-header">July</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="july">July</div>
+        <div class="event-list" data-month-events="july">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="july" data-kind="gala">
             <div class="event-org">Museum of Contemporary Art Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, July 11</span>
@@ -995,7 +1106,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="july" data-kind="arts">
             <div class="event-org">Art Institute of Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, July 23</span>
@@ -1010,7 +1121,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="july" data-kind="gala">
             <div class="event-org">Lincoln Park Zoo</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, July 11</span>
@@ -1024,7 +1135,7 @@
               <span class="contact"><a href="https://www.lpzoo.org/zoo-ball" target="_blank">lpzoo.org/zoo-ball</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="july" data-kind="gala">
             <div class="event-org">Ravinia Women&rsquo;s Board</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, July 11</span>
@@ -1038,7 +1149,7 @@
               <span class="contact"><a href="https://www.ravinia.org" target="_blank">ravinia.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="july" data-kind="outdoors">
             <div class="event-org">PAWS Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, July 16</span>
@@ -1054,15 +1165,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="august" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-august.jpg" alt="Museum of Science and Industry, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
         </figure>
 
         <!-- ══════════ AUGUST ══════════ -->
-        <div class="month-header">August</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="august">August</div>
+        <div class="event-list" data-month-events="august">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="august" data-kind="arts">
             <div class="event-org">Griffin Museum of Science and Industry</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, August 1</span>
@@ -1077,7 +1188,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="august" data-kind="gala">
             <div class="event-org">Diversity Scholarship Foundation</div>
             <div class="event-date-row">
               <span class="event-date">Friday, August 21</span>
@@ -1092,7 +1203,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="august" data-kind="outdoors">
             <div class="event-org">PAWS Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, August 29</span>
@@ -1107,15 +1218,15 @@
           </div>
         </div>
 
-        <figure style="margin: 0; overflow: hidden; height: 260px;">
+        <figure class="month-separator" data-for-month="september" style="margin: 0; overflow: hidden; height: 260px;">
           <img src="db2-september.jpg" alt="Symphony Center, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
         </figure>
 
         <!-- ══════════ SEPTEMBER ══════════ -->
-        <div class="month-header">September</div>
-        <div class="event-list">
+        <div class="month-header" data-month-section="september">September</div>
+        <div class="event-list" data-month-events="september">
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="september" data-kind="performance">
             <div class="event-org">Chicago Symphony Orchestra</div>
             <div class="event-date-row">
               <span class="event-date">Throughout September 2026 &ndash; May 2027</span>
@@ -1129,7 +1240,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="september" data-kind="performance">
             <div class="event-org">Lyric Opera of Chicago</div>
             <div class="event-date-row">
               <span class="event-date">September 2026 &ndash; May 2027</span>
@@ -1143,7 +1254,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="september" data-kind="performance">
             <div class="event-org">Chicago Summer Opera</div>
             <div class="event-date-row">
               <span class="event-date">Throughout Summer 2026</span>
@@ -1156,7 +1267,7 @@
             </div>
           </div>
 
-          <div class="event-entry">
+          <div class="event-entry" data-month="september" data-kind="arts">
             <div class="event-org">CAPE &mdash; Chicago Arts Partnerships in Education</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, September 12</span>
@@ -1170,7 +1281,7 @@
               <span class="contact"><a href="https://www.capechicago.org" target="_blank">capechicago.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="september" data-kind="gala">
             <div class="event-org">Aid for Women</div>
             <div class="event-date-row">
               <span class="event-date">Thursday, September 24</span>
@@ -1188,9 +1299,9 @@
 
 
         <!-- ══════════ OCTOBER ══════════ -->
-        <div class="month-header">October</div>
-        <div class="event-list">
-          <div class="event-entry">
+        <div class="month-header" data-month-section="october">October</div>
+        <div class="event-list" data-month-events="october">
+          <div class="event-entry" data-month="october" data-kind="lecture">
             <div class="event-org">Brookfield Zoo Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Monday, October 5</span>
@@ -1204,7 +1315,7 @@
               <span class="contact"><a href="https://www.czs.org" target="_blank">czs.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="october" data-kind="gala">
             <div class="event-org">Chicago Symphony Orchestra Women&rsquo;s Board</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, October 10</span>
@@ -1218,7 +1329,7 @@
               <span class="contact"><a href="https://www.cso.org/symphony-ball" target="_blank">cso.org/symphony-ball</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="october" data-kind="arts">
             <div class="event-org">Chicago Architecture Center</div>
             <div class="event-date-row">
               <span class="event-date">October 17&ndash;18, 2026</span>
@@ -1230,7 +1341,7 @@
               <span class="contact"><a href="https://www.architecture.org/open-house-chicago" target="_blank">architecture.org/open-house-chicago</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="october" data-kind="gala">
             <div class="event-org">Freedom of Movement</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, October 17</span>
@@ -1244,7 +1355,7 @@
               <span class="contact"><a href="https://www.freedomofmovement.org" target="_blank">freedomofmovement.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="october" data-kind="gala">
             <div class="event-org">Illinois Bar Foundation</div>
             <div class="event-date-row">
               <span class="event-date">Friday, October 26</span>
@@ -1261,9 +1372,9 @@
         </div>
 
         <!-- ══════════ NOVEMBER ══════════ -->
-        <div class="month-header">November</div>
-        <div class="event-list">
-          <div class="event-entry">
+        <div class="month-header" data-month-section="november">November</div>
+        <div class="event-list" data-month-events="november">
+          <div class="event-entry" data-month="november" data-kind="lecture">
             <div class="event-org">Women&rsquo;s History Museum</div>
             <div class="event-date-row">
               <span class="event-date">Friday, November 6</span>
@@ -1277,7 +1388,7 @@
               <span class="contact"><a href="https://www.womenshistorymuseum.org" target="_blank">womenshistorymuseum.org</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="november" data-kind="gala">
             <div class="event-org">Mercy Home for Boys &amp; Girls</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, November 7</span>
@@ -1291,7 +1402,7 @@
               <span class="contact"><a href="https://www.mercyhome.org/lux-gala" target="_blank">mercyhome.org/lux-gala</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="november" data-kind="outdoors">
             <div class="event-org">Brookfield Zoo Chicago Women&rsquo;s Board</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, November 7</span>
@@ -1305,7 +1416,7 @@
               <span class="contact"><a href="https://www.czs.org/wines-in-the-wild" target="_blank">czs.org/wines-in-the-wild</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="november" data-kind="gala">
             <div class="event-org">PAWS Chicago</div>
             <div class="event-date-row">
               <span class="event-date">Friday, November 13</span>
@@ -1319,7 +1430,7 @@
               <span class="contact"><a href="https://www.pawschicago.org/fur-ball" target="_blank">pawschicago.org/fur-ball</a></span>
             </div>
           </div>
-          <div class="event-entry">
+          <div class="event-entry" data-month="november" data-kind="gala">
             <div class="event-org">Swedish Hospital Foundation &mdash; Endeavor Health</div>
             <div class="event-date-row">
               <span class="event-date">Saturday, November 14</span>
@@ -1368,6 +1479,56 @@
       All rights reserved.
     </div>
   </footer>
+
+  <script>
+    (function() {
+      var activeMonth = 'all';
+      var activeKind  = 'all';
+      var allMonths   = ['march','april','may','june','july','august','september','october','november'];
+
+      function applyFilters() {
+        var entries = document.querySelectorAll('.event-entry');
+        var count = 0;
+        entries.forEach(function(e) {
+          var ok = (activeMonth === 'all' || e.dataset.month === activeMonth) &&
+                   (activeKind  === 'all' || e.dataset.kind  === activeKind);
+          e.classList.toggle('hidden', !ok);
+          if (ok) count++;
+        });
+
+        allMonths.forEach(function(m) {
+          var vis = !!document.querySelector('.event-entry[data-month="' + m + '"]:not(.hidden)');
+          var hdr = document.querySelector('[data-month-section="' + m + '"]');
+          var lst = document.querySelector('[data-month-events="'  + m + '"]');
+          var sep = document.querySelector('.month-separator[data-for-month="' + m + '"]');
+          if (hdr) hdr.classList.toggle('hidden', !vis);
+          if (lst) lst.classList.toggle('hidden', !vis);
+          if (sep) sep.classList.toggle('hidden', !vis);
+        });
+
+        var countEl = document.getElementById('eventCount');
+        if (countEl) countEl.textContent = count + (count === 1 ? ' event' : ' events');
+
+        var nr = document.getElementById('no-results');
+        if (nr) nr.style.display = count === 0 ? 'block' : 'none';
+      }
+
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var type = this.dataset.filter;
+          var val  = this.dataset.value;
+          document.querySelectorAll('.filter-btn[data-filter="' + type + '"]')
+                  .forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          if (type === 'month') activeMonth = val;
+          else if (type === 'kind') activeKind = val;
+          applyFilters();
+        });
+      });
+
+      applyFilters();
+    })();
+  </script>
 </body>
 
 </html>
