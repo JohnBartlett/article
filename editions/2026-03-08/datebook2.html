@@ -377,6 +377,98 @@
       .datebook-title { font-size: 36px; }
       .logo-container img { width: 280px; }
     }
+
+    /* ── Contextual Ad ── */
+    .contextual-ad {
+      background: #0d0d0d;
+      padding: 4px 40px 12px;
+    }
+
+    .ad-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #3a3a3a;
+      text-align: right;
+      padding: 8px 0 4px;
+    }
+
+    .ad-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      border-radius: 3px;
+      gap: 24px;
+      transition: background 0.4s;
+    }
+
+    .ad-content { flex: 1; min-width: 0; }
+
+    .ad-tag {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+      transition: color 0.4s;
+    }
+
+    .ad-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      transition: opacity 0.3s;
+    }
+
+    .ad-body {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.65;
+      margin-bottom: 16px;
+      transition: opacity 0.3s;
+    }
+
+    .ad-cta {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.4s, opacity 0.2s;
+    }
+
+    .ad-cta:hover { opacity: 0.8; }
+
+    .ad-badge {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      font-style: italic;
+      opacity: 0.12;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.4s;
+      user-select: none;
+    }
+
+    @media (max-width: 700px) {
+      .contextual-ad { padding: 4px 20px 12px; }
+      .ad-inner { padding: 18px 20px; }
+      .ad-badge { display: none; }
+      .ad-headline { font-size: 17px; }
+    }
   </style>
 </head>
 
@@ -436,6 +528,21 @@
         <div class="filter-count" id="eventCount"></div>
       </div>
       <!-- /FILTER BAR -->
+
+      <!-- ══ CONTEXTUAL AD ══ -->
+      <div class="contextual-ad" id="contextualAd">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-inner" id="adInner">
+          <div class="ad-content">
+            <div class="ad-tag" id="adTag"></div>
+            <div class="ad-headline" id="adHeadline"></div>
+            <div class="ad-body" id="adBody"></div>
+            <a class="ad-cta" id="adCta" href="#">Learn More &rarr;</a>
+          </div>
+          <div class="ad-badge" id="adBadge"></div>
+        </div>
+      </div>
+      <!-- /CONTEXTUAL AD -->
 
       <div class="datebook-body">
         <div id="no-results" style="display:none; padding: 60px 40px; text-align: center; font-family: 'Lato', sans-serif; color: #999; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase;">No events match your selection.</div>
@@ -1486,6 +1593,143 @@
       var activeKind  = 'all';
       var allMonths   = ['march','april','may','june','july','august','september','october','november'];
 
+      // ── Ad configurations ──────────────────────────────────────
+      var adByKind = {
+        gala: {
+          tag: 'Event Style & Formal Attire',
+          headline: "Dress for Chicago’s Finest Evenings",
+          body: "Black-tie galas, benefit dinners, and grand balls — let us help you make an impression at Chicago’s most distinguished events.",
+          cta: 'Shop Evening Wear →',
+          href: '#',
+          bg: '#0d1627',
+          accent: '#b8a06e',
+          badge: 'N'
+        },
+        performance: {
+          tag: 'Chicago Symphony Orchestra',
+          headline: '2026–27 Season — Subscriptions Now Open',
+          body: 'Secure your place at Symphony Center for a full season of world-class performances on Michigan Avenue.',
+          cta: 'Explore the Season →',
+          href: '#',
+          bg: '#1a0808',
+          accent: '#b51c20',
+          badge: 'CSO'
+        },
+        arts: {
+          tag: 'Art Institute of Chicago',
+          headline: 'Unlimited Access, All Year',
+          body: 'Become a member and enjoy unlimited visits, exclusive exhibition previews, and invitations to special member events.',
+          cta: 'Join Today →',
+          href: '#',
+          bg: '#17120a',
+          accent: '#c9a96e',
+          badge: 'AIC'
+        },
+        lecture: {
+          tag: 'Seminary Co-op Bookstores',
+          headline: 'Feed Your Curiosity',
+          body: "Chicago’s legendary independent bookstore — new titles in ideas, history, and culture arriving every week.",
+          cta: 'Visit Seminary Co-op →',
+          href: '#',
+          bg: '#101a10',
+          accent: '#7ab87a',
+          badge: 'SC'
+        },
+        outdoors: {
+          tag: 'Chicago Park District',
+          headline: 'Explore 600 Parks This Season',
+          body: "From lakefront trails to neighborhood green spaces — 8,100 acres of Chicago parkland await you.",
+          cta: 'Plan Your Visit →',
+          href: '#',
+          bg: '#0a1510',
+          accent: '#5aad7a',
+          badge: 'CPD'
+        }
+      };
+
+      var adBySeason = {
+        spring: {
+          tag: 'Chicago Botanic Garden',
+          headline: 'Spring in Full Bloom',
+          body: 'Twenty-six distinct gardens coming alive for the season. Special exhibitions, guided tours, and member evenings throughout spring.',
+          cta: 'Plan Your Visit →',
+          href: '#',
+          bg: '#0f160a',
+          accent: '#8ab860',
+          badge: 'CBG'
+        },
+        summer: {
+          tag: 'Chicago Riverwalk',
+          headline: "Chicago’s Summer Begins at the Water",
+          body: "Outdoor dining, live music, and lakefront events — the Chicago Riverwalk is the city’s best summer address.",
+          cta: 'Explore the Riverwalk →',
+          href: '#',
+          bg: '#061220',
+          accent: '#4a9ed0',
+          badge: 'CRW'
+        },
+        fall: {
+          tag: 'Chicago Restaurant Week',
+          headline: "The Fall Season Is On",
+          body: "Galas, openings, award dinners — Chicago’s fall social calendar is in full swing. Reserve a table at the city’s best restaurants.",
+          cta: 'Reserve a Table →',
+          href: '#',
+          bg: '#1a0e08',
+          accent: '#d48c40',
+          badge: 'CRW'
+        }
+      };
+
+      var adDefault = {
+        tag: 'Classic Chicago Magazine',
+        headline: 'The Sunday Edition',
+        body: "Every week, the stories that define Chicago’s culture, society, and spirit — delivered free to your inbox.",
+        cta: 'Subscribe Free →',
+        href: '../../subscribe.html',
+        bg: '#1a1a1a',
+        accent: '#c9a96e',
+        badge: 'CC'
+      };
+
+      function getSeasonForMonth(m) {
+        if (['march','april','may'].indexOf(m) !== -1) return 'spring';
+        if (['june','july','august'].indexOf(m) !== -1) return 'summer';
+        if (['september','october','november'].indexOf(m) !== -1) return 'fall';
+        return null;
+      }
+
+      function updateAd() {
+        var cfg;
+        if (activeKind !== 'all' && adByKind[activeKind]) {
+          cfg = adByKind[activeKind];
+        } else if (activeMonth !== 'all') {
+          var season = getSeasonForMonth(activeMonth);
+          cfg = season ? adBySeason[season] : adDefault;
+        } else {
+          cfg = adDefault;
+        }
+
+        var inner    = document.getElementById('adInner');
+        var tagEl    = document.getElementById('adTag');
+        var headEl   = document.getElementById('adHeadline');
+        var bodyEl   = document.getElementById('adBody');
+        var ctaEl    = document.getElementById('adCta');
+        var badgeEl  = document.getElementById('adBadge');
+        if (!inner) return;
+
+        inner.style.background    = cfg.bg;
+        tagEl.textContent         = cfg.tag;
+        tagEl.style.color         = cfg.accent;
+        headEl.textContent        = cfg.headline;
+        bodyEl.textContent        = cfg.body;
+        ctaEl.textContent         = cfg.cta;
+        ctaEl.href                = cfg.href;
+        ctaEl.style.background    = cfg.accent;
+        badgeEl.textContent       = cfg.badge;
+        badgeEl.style.color       = cfg.accent;
+      }
+
+      // ── Filter logic ───────────────────────────────────────────
       function applyFilters() {
         var entries = document.querySelectorAll('.event-entry');
         var count = 0;
@@ -1511,6 +1755,8 @@
 
         var nr = document.getElementById('no-results');
         if (nr) nr.style.display = count === 0 ? 'block' : 'none';
+
+        updateAd();
       }
 
       document.querySelectorAll('.filter-btn').forEach(function(btn) {
