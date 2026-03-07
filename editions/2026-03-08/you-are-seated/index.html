@@ -14,6 +14,7 @@
   <title>Dinner Party Seating Plans: You Are Seated | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -436,6 +437,74 @@
         font-size: 17px;
       }
     }
+
+    /* ── Carousel ── */
+    .carousel-section {
+      margin: 48px 0 40px;
+    }
+
+    .carousel-section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .splide__slide figure {
+      margin: 0;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 380px;
+      object-fit: contain;
+      background: #f0ece4;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .splide__slide figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      padding: 10px 8px 4px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .splide__pagination__page {
+      background: #c9a96e;
+      opacity: 0.35;
+    }
+
+    .splide__pagination__page.is-active {
+      background: #c9a96e;
+      opacity: 1;
+      transform: scale(1.3);
+    }
+
+    .splide__arrow {
+      background: rgba(250,248,243,0.92);
+      border: 1px solid #e0dace;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    .splide__arrow:hover { background: #fff; }
+    .splide__arrow svg { fill: #c9a96e; }
+    .splide__arrow--prev { left: -0.8rem; }
+    .splide__arrow--next { right: -0.8rem; }
+
+    @media (max-width: 600px) {
+      .splide__slide img { height: 240px; }
+      .splide__arrow--prev { left: 0; }
+      .splide__arrow--next { right: 0; }
+    }
   </style>
 </head>
 
@@ -567,6 +636,28 @@
       </div>
 
 
+      <!-- Photo Carousel -->
+      <div class="carousel-section">
+        <div class="carousel-section-label">More from Jill Lowe&rsquo;s Collection</div>
+        <div class="splide" id="dining-carousel" aria-label="Dinner party photo gallery">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-sylvia-2.jpg" alt="Sylvia cartoon by Nicole Hollander: dinner table conversation rules"><figcaption>Another Sylvia gem: the acceptable topics at dinner. Cartoon: Nicole Hollander</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-1920s-intimate.jpg" alt="A 1920s dinner party: host pours wine while two guests sit at the table"><figcaption>An intimate 1920s dinner &mdash; the host pours, the guests observe</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-estate-dinner.jpg" alt="A formal estate dinner circa 1950s, guests seated at a long candlelit table in a grand room"><figcaption>A formal estate dinner, circa 1950s &mdash; protocol strictly observed at every place</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-holiday-table.jpg" alt="A long holiday dinner table with candlelight and a Christmas tree in the background"><figcaption>The long table comes into its own at the holidays &mdash; seating plan essential</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-pink-table.jpg" alt="An elegantly set home dining table with pink tablecloth, flowers, and crystal"><figcaption>A beautifully set home dining table &mdash; from Jill Lowe&rsquo;s own entertaining</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-round-table.jpg" alt="A large round table set formally with gold chairs and white linens"><figcaption>The round table encourages conversation &mdash; and removes the question of &ldquo;head of table&rdquo;</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-garden-table.jpg" alt="An outdoor garden dining table set with crystal glasses and folded napkins"><figcaption>Al fresco dining &mdash; where even a garden table deserves a seating plan</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-optimal-seating.jpg" alt="Optimal Seating chart from Real Simple magazine: personality types and where to seat them"><figcaption>Optimal Seating: a guide by personality type. Reprinted from <em>Real Simple</em>, November 2006</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-seating-diagram.jpg" alt="Seating diagram showing Host 1 and Host 2 at the ends, Guests of Honor to their right"><figcaption>The standard arrangement: hosts at the ends, Guests of Honor to their right</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-u-shaped-chart.jpg" alt="U-shaped seating chart template with labelled seats A through L"><figcaption>The U-shaped arrangement &mdash; popular for large gatherings and official functions</figcaption></figure></li>
+              <li class="splide__slide"><figure><img data-splide-lazy="carousel-tips-helen-2.jpg" alt="Tips from Helen, the almost-licensed party planner: a simple seating personality pattern"><figcaption>More wisdom from Helen: a shallow-deep-moody-shallow-deep pattern works best</figcaption></figure></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- About the Author -->
       <div style="margin: 40px 0 24px; display: flex; align-items: center; gap: 20px; padding: 20px; background: #f4f1ea; border-radius: 8px; border: 1px solid #e0dace;">
         <img src="jill-lowe.jpg" alt="Jill Lowe" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0;">
@@ -606,6 +697,21 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#dining-carousel', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: false,
+        lazyLoad: 'nearby',
+        pagination: true,
+        arrows: true,
+        gap: '1rem',
+      }).mount();
+    });
+  </script>
+
   <!-- Keyboard shortcuts -->
   <style>
     .shortcuts-btn {
@@ -634,6 +740,74 @@
       padding: 2px 8px; font-size: 13px; font-family: monospace; color: #333; text-align: center; min-width: 24px;
     }
     .shortcuts-popup dd { margin: 0; font-size: 14px; color: #555; }
+
+    /* ── Carousel ── */
+    .carousel-section {
+      margin: 48px 0 40px;
+    }
+
+    .carousel-section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .splide__slide figure {
+      margin: 0;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 380px;
+      object-fit: contain;
+      background: #f0ece4;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .splide__slide figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      padding: 10px 8px 4px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .splide__pagination__page {
+      background: #c9a96e;
+      opacity: 0.35;
+    }
+
+    .splide__pagination__page.is-active {
+      background: #c9a96e;
+      opacity: 1;
+      transform: scale(1.3);
+    }
+
+    .splide__arrow {
+      background: rgba(250,248,243,0.92);
+      border: 1px solid #e0dace;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    .splide__arrow:hover { background: #fff; }
+    .splide__arrow svg { fill: #c9a96e; }
+    .splide__arrow--prev { left: -0.8rem; }
+    .splide__arrow--next { right: -0.8rem; }
+
+    @media (max-width: 600px) {
+      .splide__slide img { height: 240px; }
+      .splide__arrow--prev { left: 0; }
+      .splide__arrow--next { right: 0; }
+    }
   </style>
   <button class="shortcuts-btn" id="shortcutsBtn" title="Keyboard shortcuts">?</button>
   <div class="shortcuts-overlay" id="shortcutsOverlay">
