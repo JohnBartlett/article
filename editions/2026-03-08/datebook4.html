@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  <meta charset="UTF-8">
+  <title>DateBook 4 | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #f5f1ea;
+      color: #2c2c2c;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-container {
+      max-width: 780px;
+      margin: 40px auto 60px;
+      padding: 0 16px;
+    }
+
+    /* ── Masthead ── */
+    .datebook-masthead {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 48px 40px 40px;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .datebook-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 14px;
+    }
+
+    .datebook-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.05em;
+      margin: 0 0 16px;
+      line-height: 1;
+    }
+
+    .datebook-dek {
+      font-size: 16px;
+      font-weight: 300;
+      color: #bbb;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .datebook-byline {
+      font-size: 13px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .datebook-byline strong {
+      color: #c9a96e;
+    }
+
+    /* ── Content wrapper ── */
+    .datebook-body {
+      background: #fff;
+      border-radius: 0 0 6px 6px;
+      padding: 0 0 48px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* ── Month Header ── */
+    .month-header {
+      background: #b51c20;
+      color: #fff;
+      padding: 18px 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── Event Entry ── */
+    .event-list {
+      padding: 16px 40px 8px;
+    }
+
+    .event-entry {
+      padding: 24px 0;
+      border-bottom: 1px solid #f0ece4;
+    }
+
+    .event-entry:last-child {
+      border-bottom: none;
+    }
+
+    .event-date-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .event-date {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #b51c20;
+      white-space: nowrap;
+    }
+
+    .event-time {
+      font-size: 13px;
+      font-weight: 400;
+      color: #999;
+      white-space: nowrap;
+    }
+
+    .event-org {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .event-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .event-description {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .event-meta {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .event-meta .venue {
+      font-weight: 700;
+      color: #444;
+    }
+
+    .event-meta .contact {
+      margin-top: 4px;
+    }
+
+    .event-meta a {
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .event-meta a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* ── Nav ── */
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding: 0 4px;
+    }
+
+    .article-nav a {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #b51c20;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .article-nav a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      padding: 30px 16px;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #333;
+      transition: background 0.2s;
+    }
+
+    .social-links a:hover { background: #555; }
+    .social-links svg { width: 18px; height: 18px; fill: #fff; }
+    .copyright { color: #666; font-size: 13px; }
+
+
+    /* ── Split Panel (sticky, 50/50) ── */
+    .split-panel {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      border-bottom: 2px solid #222;
+      background: #0d0d0d;
+    }
+
+    .split-filter {
+      width: 50%;
+      padding: 16px 24px 14px;
+      background: #111;
+      border-right: 1px solid #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .split-ad {
+      width: 50%;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Filter rows inside split panel */
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .filter-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      min-width: 38px;
+      flex-shrink: 0;
+    }
+
+    .filter-select {
+      flex: 1;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #ddd;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 2px;
+      padding: 6px 10px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23c9a96e' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+      transition: border-color 0.2s;
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: #c9a96e;
+    }
+
+    .filter-select option {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+
+    .filter-count {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    /* Ad inside split panel */
+    .ad-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #333;
+      padding: 6px 20px 2px;
+      text-align: right;
+    }
+
+    .ad-inner {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 12px 20px 14px;
+      gap: 16px;
+      transition: background 0.4s;
+    }
+
+    .ad-content { flex: 1; min-width: 0; }
+
+    .ad-tag {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      transition: color 0.4s;
+    }
+
+    .ad-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .ad-body {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #999;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .ad-cta {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.4s, opacity 0.2s;
+    }
+
+    .ad-cta:hover { opacity: 0.8; }
+
+    .ad-badge {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      font-style: italic;
+      opacity: 0.1;
+      flex-shrink: 0;
+      transition: color 0.4s;
+      user-select: none;
+    }
+
+    /* Hide helpers */
+    .event-entry.hidden,
+    [data-month-section].hidden,
+    [data-month-events].hidden,
+    .month-separator.hidden { display: none !important; }
+
+    @media (max-width: 700px) {
+      .split-panel { flex-direction: column; }
+      .split-filter, .split-ad { width: 100%; }
+      .split-filter { border-right: none; border-bottom: 1px solid #2a2a2a; }
+      .ad-badge { display: none; }
+      .ad-headline { font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../index.html"><img src="../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../index.html">Home</a>
+        <a href="../../about.html">About</a>
+        <a href="../../subscribe.html">Subscribe</a>
+        <a href="../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="article-container">
+
+      <div class="datebook-masthead">
+        <div class="datebook-kicker">Classic Chicago &mdash; March 8, 2026</div>
+        <h1 class="datebook-title">DateBook</h1>
+        <p class="datebook-dek">Galas, concerts, lectures, and celebrations &mdash; the essential guide to Chicago&rsquo;s social season</p>
+        <div class="datebook-byline">Curated by <strong>Anne Delfosse</strong></div>
+      </div>
+
+      <!-- ══ SPLIT PANEL ══ -->
+      <div class="split-panel">
+
+        <!-- Left: Filters -->
+        <div class="split-filter">
+          <div class="filter-row">
+            <span class="filter-label">Month</span>
+            <select class="filter-select" id="monthSelect">
+              <option value="all">All Months</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+            </select>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">Kind</span>
+            <select class="filter-select" id="kindSelect">
+              <option value="all">All Kinds</option>
+              <option value="gala">Gala &amp; Benefit</option>
+              <option value="performance">Concert &amp; Performance</option>
+              <option value="arts">Arts &amp; Culture</option>
+              <option value="lecture">Lecture &amp; Awards</option>
+              <option value="outdoors">Outdoors &amp; Sports</option>
+            </select>
+          </div>
+          <div class="filter-count" id="eventCount"></div>
+        </div>
+
+        <!-- Right: Contextual Ad -->
+        <div class="split-ad" id="splitAd">
+          <div class="ad-label">Advertisement</div>
+          <div class="ad-inner" id="adInner">
+            <div class="ad-content">
+              <div class="ad-tag" id="adTag"></div>
+              <div class="ad-headline" id="adHeadline"></div>
+              <div class="ad-body" id="adBody"></div>
+              <a class="ad-cta" id="adCta" href="#">Learn More &rarr;</a>
+            </div>
+            <div class="ad-badge" id="adBadge"></div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /SPLIT PANEL -->
+
+      <div class="datebook-body">
+        <div id="no-results" style="display:none; padding: 60px 40px; text-align: center; font-family: 'Lato', sans-serif; color: #999; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase;">No events match your selection.</div>
+
+        <figure class="month-separator" data-for-month="march" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-march.jpg" alt="Grant Park and Chicago skyline" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;">
+        </figure>
+
+        <!-- ══════════ MARCH ══════════ -->
+        <div class="month-header" data-month-section="march">March</div>
+        <div class="event-list" data-month-events="march">
+
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">Equality Illinois</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, March 13</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 Equality Illinois Gala</h2>
+            <p class="event-description">The state&rsquo;s oldest and largest LGBTQ+ civil rights organization celebrates its annual gala, honoring community leaders and raising funds to support advocacy, education, and coalition-building efforts across Illinois. An evening of cocktails, dinner, awards, and entertainment bringing together advocates, allies, and supporters.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.equalityillinois.org" target="_blank">equalityillinois.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="march" data-kind="performance">
+            <div class="event-org">Chicago Opera Theater</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, March 19 &ndash; Sunday, March 28</span>
+            </div>
+            <h2 class="event-name">Spring Season Opening</h2>
+            <p class="event-description">Chicago Opera Theater opens its 2025/26 season with innovative productions featuring emerging and established artists. Known for presenting opera in English with contemporary staging, COT continues its mission to make opera accessible and relevant to diverse audiences.</p>
+            <div class="event-meta">
+              <span class="venue">Studebaker Theater</span><br>
+              410 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.chicagooperatheater.org" target="_blank">chicagooperatheater.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">100 Club of Illinois</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, March 26</span>
+              <span class="event-time">Noon &ndash; 2:00 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 First Look for Charity</h2>
+            <p class="event-description">The Chicago Auto Show&rsquo;s premier charity event returns for its 32nd year, raising funds for 18 beneficiary organizations serving children, families, and individuals with special needs. VIP guests enjoy an exclusive first look at the latest vehicles, gourmet lunch, and champagne reception while supporting critical community programs. Since inception, First Look has raised over $67 million.</p>
+            <div class="event-meta">
+              <span class="venue">McCormick Place</span><br>
+              2301 South King Drive, Chicago<br>
+              <span class="contact"><a href="https://www.100clubil.org/firstlook" target="_blank">100clubil.org/firstlook</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">American Cancer Society &mdash; Illinois</div>
+            <div class="event-date-row">
+              <span class="event-date">Late February / Early March 2026</span>
+            </div>
+            <h2 class="event-name">Discovery Ball 2026</h2>
+            <p class="event-description">One of Chicago&rsquo;s premier fundraising events with national notoriety, the Discovery Ball has raised over $44 million since 2007 to support the American Cancer Society&rsquo;s mission to save lives, celebrate lives, and lead the fight for a world without cancer. Over the years, guests have been entertained by Cheap Trick, Keith Urban, and Barenaked Ladies, with celebrity emcees including Katie Couric, James Corden, and Maria Bartiromo.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://discoveryballil.acsgala.org" target="_blank">discoveryballil.acsgala.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">The Ireland Funds</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, March 6</span>
+              <span class="event-time">7:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Chicago Young Leaders Green Gala 2026</h2>
+            <p class="event-description">The Ireland Funds Young Leaders Green Gala brings together the next generation of changemakers &mdash; passionate, purpose-driven, and proud of their Irish heritage and global ambitions. Set at the storied Caf&eacute; Brauer overlooking Lincoln Park, the evening offers vibrant conversation, rich culture, and a shared commitment to philanthropy, raising vital support for The Ireland Funds&rsquo; work across Ireland and Irish communities worldwide.</p>
+            <div class="event-meta">
+              <span class="venue">Caf&eacute; Brauer, Lincoln Park Zoo</span><br>
+              2021 North Stockton Drive, Chicago<br>
+              <span class="contact"><a href="mailto:amallaghan@irelandfunds.org">amallaghan@irelandfunds.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="march" data-kind="lecture">
+            <div class="event-org">Illinois Holocaust Museum &amp; Education Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Tuesday, March 10</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 Humanitarian Awards Dinner</h2>
+            <p class="event-description">One of the largest fundraising events in Chicago, the Humanitarian Awards Dinner pays tribute to Holocaust Survivors alongside civic, community, and business leaders. This year&rsquo;s program features an in-conversation with actor Liev Schreiber, with honorees Ambassador Rahm Emanuel and Julie Smolyansky, President and CEO of Lifeway Foods. Distinguished keynote speakers address an audience of over 2,000 on the enduring lessons of history and the Museum&rsquo;s essential mission.</p>
+            <div class="event-meta">
+              <span class="venue">Illinois Holocaust Museum &amp; Education Center</span><br>
+              9603 Woods Drive, Skokie<br>
+              <span class="contact"><a href="mailto:dinner@ilhmec.org">847.967.4852 &nbsp;&bull;&nbsp; dinner@ilhmec.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">NHS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, March 21</span>
+              <span class="event-time">7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">51st Anniversary Gala</h2>
+            <p class="event-description">Neighborhood Housing Services of Chicago marks more than five decades as the city&rsquo;s leading advocate for affordable homeownership with its annual awards gala. The evening gathers civic leaders, corporate partners, and community champions to honor individuals whose work advances housing stability and economic opportunity across Chicago&rsquo;s neighborhoods &mdash; and to raise the funds that make that work possible.</p>
+            <div class="event-meta">
+              <span class="venue">Griffin Museum of Science and Industry</span><br>
+              5700 South DuSable Lake Shore Drive, Chicago<br>
+              <span class="contact"><a href="https://www.ticketfalcon.com/e/nhs51/" target="_blank">nhschicago.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="march" data-kind="gala">
+            <div class="event-org">Chicago Architecture Center</div>
+            <div class="event-date-row">
+              <span class="event-date">March 2026</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Designing Futures Gala</h2>
+            <p class="event-description">The Chicago Architecture Center gathers architecture enthusiasts, civic leaders, and design professionals for its signature benefit evening at the Epiphany Center for the Arts &mdash; a converted historic church on the edge of the West Loop. The program features presentation of the Civic Champion Award to Curt R. Bailey, the Lynn J. Osmond Legacy Award to Jen Masengarb of AIA Chicago, and the inaugural Lori Healey Rising Leader Award to Maya Bird-Murphy, Founder of Mobile Makers. A seated dinner in this stunning adaptive-reuse venue precedes remarks by Jeanne Gang and other luminaries of Chicago architecture.</p>
+            <div class="event-meta">
+              <span class="venue">Epiphany Center for the Arts</span><br>
+              201 South Ashland Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.architecture.org/events-programs/cac-designing-futures-gala" target="_blank">architecture.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="april" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-april.jpg" alt="Water Tower Place and John Hancock Center, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;">
+        </figure>
+
+        <!-- ══════════ APRIL ══════════ -->
+        <div class="month-header" data-month-section="april">April</div>
+        <div class="event-list" data-month-events="april">
+
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Enlace Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 4</span>
+              <span class="event-time">6:00 &ndash; 10:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Annual Gala 2026</h2>
+            <p class="event-description">Enlace Chicago&rsquo;s signature fundraising event celebrates the organization&rsquo;s work empowering Latino youth and families in Little Village through education, health, and community development programs. The evening features dinner, live music, awards honoring community champions, and a spirited live auction supporting programming that serves over 10,000 annually.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.enlacechicago.org/annualgala2026" target="_blank">enlacechicago.org/annualgala2026</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Ignite Promise</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 11</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Ignite &amp; Shine Gala 2026</h2>
+            <p class="event-description">Celebrating 50 years of empowering youth through education, mentorship, and career development, Ignite Promise hosts its golden anniversary gala. Honoring five decades of impact, the evening supports scholarships and programs helping underserved students achieve their academic and professional dreams.</p>
+            <div class="event-meta">
+              <span class="venue">The Ritz-Carlton Chicago</span><br>
+              160 East Pearson Street, Chicago<br>
+              <span class="contact"><a href="https://www.ignitepromise.org" target="_blank">ignitepromise.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Chicago Children&rsquo;s Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, April 16</span>
+              <span class="event-time">6:30 &ndash; 10:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Spring Gala 2026</h2>
+            <p class="event-description">Chicago Children&rsquo;s Museum celebrates another year of sparking curiosity and creativity in young minds. This family-friendly fundraiser supports the museum&rsquo;s commitment to providing accessible, hands-on learning experiences for all children, regardless of background or ability. Guests enjoy cocktails, dinner, and exclusive access to interactive exhibits.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago Children&rsquo;s Museum at Navy Pier</span><br>
+              700 East Grand Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.chicagochildrensmuseum.org/gala" target="_blank">chicagochildrensmuseum.org/gala</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Off the Street Club</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, April 24</span>
+              <span class="event-time">6:00 &ndash; 10:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Spring Benefit</h2>
+            <p class="event-description">For over a century, Off The Street Club has provided West Side youth with safe spaces, mentorship, and opportunities. This annual benefit raises funds for after-school programs, summer camps, STEM education, and athletic leagues serving 500+ children daily. An evening celebrating young people&rsquo;s achievements and the community&rsquo;s investment in their futures.</p>
+            <div class="event-meta">
+              <span class="venue">Morgan Manufacturing</span><br>
+              401 North Morgan Street, Chicago<br>
+              <span class="contact"><a href="https://www.offthestreetclub.com/events" target="_blank">offthestreetclub.com/events</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Mercy Home for Boys &amp; Girls</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 25</span>
+              <span class="event-time">6:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Evening of Hope Gala</h2>
+            <p class="event-description">Mercy Home&rsquo;s signature fundraising gala supports residential care and therapeutic services for abused, neglected, and at-risk youth. Since 1887, Mercy Home has provided safe haven, education, and healing for Chicago&rsquo;s most vulnerable children. The Evening of Hope features inspiring stories of transformation, a live auction, and elegant dinner honoring those who champion children in crisis.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.mercyhome.org" target="_blank">mercyhome.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="april" data-kind="arts">
+            <div class="event-org">Renaissance Society at the University of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, April 8</span>
+              <span class="event-time">7:00 &ndash; 10:00 p.m.</span>
+            </div>
+            <h2 class="event-name">RenBen 2026</h2>
+            <p class="event-description">Shaped by the vision of Maurizio Cattelan &mdash; known for his subversive wit and conceptual audacity &mdash; RenBen is the Renaissance Society&rsquo;s annual gala, raising a significant portion of the museum&rsquo;s budget and enabling new artistic commissions, scholarly discourse, and lasting publications. This year, Cattelan&rsquo;s &ldquo;Silent Party&rdquo; transforms two floors of the historic Chicago Athletic Association into an immersive labyrinth unlike anything the city has seen.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago Athletic Association</span><br>
+              12 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.renaissancesociety.org" target="_blank">renaissancesociety.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="arts">
+            <div class="event-org">Intuit Art Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, April 10</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Life is an Art: IAM the Party</h2>
+            <p class="event-description">Intuit Art Museum celebrates the first anniversary of its expanded galleries with a &ldquo;Life is an Art&rdquo;&ndash;themed gala, where guests are invited to dress creatively and be the artwork. Timed to coincide with EXPO Art Week, the evening is co-hosted by Kahil El&rsquo;Zabar and Tony Karman and honors artists Nick Cave and Bob Faust with the Trendsetter Award, and beloved Chicago art educator Jerry Stefl with the Visionary Award. IAM partners with the Museum of House and Gertie for an Art After Dark Dance Party featuring DJ Lady D.</p>
+            <div class="event-meta">
+              <span class="venue">City Hall Events</span><br>
+              838 West Kinzie Street, Chicago<br>
+              <span class="contact"><a href="https://www.art.org" target="_blank">art.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Chicago Commons</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, April 10</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 Spring Celebration Gala</h2>
+            <p class="event-description">Chicago Commons&rsquo; Spring Celebration brings together 400 supporters, partners, and community members to celebrate the organization&rsquo;s far-reaching mission across Chicago&rsquo;s neighborhoods. The evening features a lively silent auction, a marketplace showcasing parent entrepreneurs, a festive dinner program, and an afterparty with live music by the Chicago Players. WGN&rsquo;s Ana Belaval returns as emcee for this celebration of the children, families, and seniors served by Chicago Commons.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago Commons</span><br>
+              Chicago<br>
+              <span class="contact"><a href="https://www.chicagocommons.org/event/2026-spring-celebration/" target="_blank">chicagocommons.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Les Turner ALS Foundation</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 11</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Hope Through Caring Gala 2026</h2>
+            <p class="event-description">The Les Turner ALS Foundation&rsquo;s annual gala draws hundreds of supporters for an evening of elegance, inspiration, and generosity &mdash; raising vital funds for ALS care, support, and research across Chicagoland. A cocktail reception, dinner, live auction, and dancing frame a deeply personal program of impact speakers from Chicago&rsquo;s ALS research and care community. A special performance by Broadway and film star Aaron Lazar brings the evening&rsquo;s spirit of hope to the stage.</p>
+            <div class="event-meta">
+              <span class="venue">Radisson Blu Aqua Hotel</span><br>
+              221 North Columbus Drive, Chicago<br>
+              <span class="contact"><a href="https://lesturnerals.org/events/hope-through-caring-award-gala/" target="_blank">lesturnerals.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Easterseals DuPage &amp; Fox Valley</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 18</span>
+              <span class="event-time">6:00 &ndash; 11:30 p.m.</span>
+            </div>
+            <h2 class="event-name">48th Annual Benefit Gala</h2>
+            <p class="event-description">For 48 years, Easterseals DuPage &amp; Fox Valley has supported individuals with disabilities and their families across the Chicago region. Guests enjoy cocktails, a Michelin-starred chef&ndash;curated dinner, a highly anticipated silent auction, and dancing to the high-energy sounds of the Chicago Catz &mdash; all in support of a mission that transforms lives daily.</p>
+            <div class="event-meta">
+              <span class="venue">Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.eastersealsdfvr.org/gala" target="_blank">eastersealsdfvr.org/gala</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">DuSable Black History Museum and Education Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 18</span>
+            </div>
+            <h2 class="event-name">65th Anniversary Gala</h2>
+            <p class="event-description">The DuSable Black History Museum marks 65 years of preserving and celebrating the full arc of Black history and culture with a landmark anniversary gala. The evening opens with a champagne reception inside the breathtaking Paris in Black exhibition before moving into the Museum&rsquo;s iconic Roundhouse &mdash; the architectural masterpiece designed by Daniel Burnham for the 1893 World&rsquo;s Columbian Exposition &mdash; for dinner, dancing, and celebration in one of Chicago&rsquo;s most inspiring spaces.</p>
+            <div class="event-meta">
+              <span class="venue">DuSable Black History Museum and Education Center</span><br>
+              740 East 56th Place, Chicago<br>
+              <span class="contact"><a href="https://dusablemuseum.org/gala-65th-anniversary/" target="_blank">dusablemuseum.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="lecture">
+            <div class="event-org">Chicago Children&rsquo;s Advocacy Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, April 22</span>
+              <span class="event-time">6:00 &ndash; 9:00 p.m.</span>
+            </div>
+            <h2 class="event-name">11th Annual Luminary Award Dinner</h2>
+            <p class="event-description">The Chicago Children&rsquo;s Advocacy Center gathers the city&rsquo;s civic leaders for an evening dedicated to igniting hope and healing. This year&rsquo;s Luminary Award honors Illinois Secretary of State Alexi Giannoulias and attorney John Robak for their unwavering commitment to the protection and well-being of Chicago&rsquo;s children. Dinner, live and silent auctions, and a paddle raise follow the cocktail reception.</p>
+            <div class="event-meta">
+              <span class="venue">Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.chicagochildrensadvocacycenter.org" target="_blank">chicagochildrensadvocacycenter.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Youth Job Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, April 23</span>
+              <span class="event-time">5:30 &ndash; 9:30 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 Youth Job Center Gala</h2>
+            <p class="event-description">The Youth Job Center of Evanston hosts its annual gala at the Chicago History Museum, celebrating decades of connecting young people ages 14 to 21 with meaningful employment and career-readiness skills. A VIP reception precedes the main event, where supporters gather to honor the young people who have transformed their lives through work &mdash; and the employers and mentors who champion them.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago History Museum</span><br>
+              1601 North Clark Street, Chicago<br>
+              <span class="contact"><a href="https://www.youthjobcenter.org/2026-gala" target="_blank">youthjobcenter.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">National Public Housing Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, April 23</span>
+              <span class="event-time">5:30 &ndash; 9:00 p.m.</span>
+            </div>
+            <h2 class="event-name">A Place to Call Home &mdash; Biennial Gala 2026</h2>
+            <p class="event-description">The National Public Housing Museum&rsquo;s biennial gala returns in 2026, honoring Matthew Desmond, Pulitzer Prize&ndash;winning author of <em>Evicted</em>; Jackie Taylor, founder of the Black Ensemble Theater; and Denis Pierce &mdash; and celebrating the Museum&rsquo;s first full year as a civic anchor and cultural home on Chicago&rsquo;s Near West Side.</p>
+            <div class="event-meta">
+              <span class="venue">Bridgeport Art Center</span><br>
+              1200 West 35th Street, Chicago<br>
+              <span class="contact"><a href="https://www.nphm.org" target="_blank">nphm.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Brookfield Zoo Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, April 25</span>
+              <span class="event-time">6:00 &ndash; 11:30 p.m.</span>
+            </div>
+            <h2 class="event-name">The Whirl Gala &mdash; 45th Anniversary</h2>
+            <p class="event-description">Brookfield Zoo Chicago marks the 45th anniversary of its beloved black-tie Whirl, co-hosted by the Board of Trustees and the Women&rsquo;s Board. More than 500 leaders from Chicago&rsquo;s corporate and philanthropic communities gather for this premier evening, which has raised over $1.5 million annually since its 1981 founding. The signature fundraiser illuminates the Zoo&rsquo;s conservation, animal welfare, and education programs against a backdrop of unforgettable celebration. Event Co-chairs: Sasha Gerritson and Roxann Giovannini.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.brookfieldzoo.org/Whirl" target="_blank">brookfieldzoo.org/Whirl</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="april" data-kind="gala">
+            <div class="event-org">Bottom Line Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, April 29</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Chi Rise Up Annual Benefit 2026</h2>
+            <p class="event-description">For over a decade, Bottom Line has been at the forefront of the fight for educational equity in Chicago. This spring gathering celebrates the achievements of students navigating their path to college degrees, recognizing community leaders with a deep commitment to equity. The evening features student stories, an awards presentation, dinner, and a fund-a-future giving moment &mdash; raising critical funds to sustain individualized one-on-one advising for thousands of Chicago students.</p>
+            <div class="event-meta">
+              <span class="venue">Venue West</span><br>
+              221 North Paulina Street, Chicago<br>
+              <span class="contact"><a href="https://www.bottomline.org/chicago/" target="_blank">bottomline.org/chicago</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="may" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-may.jpg" alt="Field Museum of Natural History, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+        </figure>
+
+        <!-- ══════════ MAY ══════════ -->
+        <div class="month-header" data-month-section="may">May</div>
+        <div class="event-list" data-month-events="may">
+
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Field Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 2</span>
+              <span class="event-time">6:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">2026 Spring Gala</h2>
+            <p class="event-description">One of Chicago&rsquo;s most anticipated museum events, the Field Museum Gala transforms the iconic Stanley Field Hall into an elegant venue beneath SUE the T. rex. Guests explore world-class exhibitions, enjoy gourmet cuisine and cocktails, bid on unique auction items, and dance late into the night&mdash;all while supporting groundbreaking scientific research and educational programming reaching millions worldwide.</p>
+            <div class="event-meta">
+              <span class="venue">Field Museum</span><br>
+              1400 South Lake Shore Drive, Chicago<br>
+              <span class="contact"><a href="https://www.fieldmuseum.org/gala" target="_blank">fieldmuseum.org/gala</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="may" data-kind="lecture">
+            <div class="event-org">Chicago Humanities Festival</div>
+            <div class="event-date-row">
+              <span class="event-date">Throughout May</span>
+            </div>
+            <h2 class="event-name">Spring Festival: Ideas That Matter</h2>
+            <p class="event-description">The Chicago Humanities Festival presents its spring programming featuring renowned authors, thinkers, journalists, and artists in conversations exploring the ideas shaping our world. From intimate salon-style discussions to major public lectures, the festival brings diverse perspectives to stages across the city.</p>
+            <div class="event-meta">
+              <span class="venue">Various Venues Throughout Chicago</span><br>
+              <span class="contact"><a href="https://www.chicagohumanities.org/events" target="_blank">chicagohumanities.org/events</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Chicago Cultural Alliance</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 15</span>
+              <span class="event-time">5:00 &ndash; 9:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Cultural Connections Benefit</h2>
+            <p class="event-description">The Chicago Cultural Alliance celebrates the city&rsquo;s rich tapestry of ethnic museums and cultural centers serving diverse communities. This benefit supports the Alliance&rsquo;s work amplifying underrepresented cultural voices, building partnerships, and ensuring equitable access to arts and heritage resources across Chicago&rsquo;s neighborhoods.</p>
+            <div class="event-meta">
+              <span class="venue">National Museum of Mexican Art</span><br>
+              1852 West 19th Street, Chicago<br>
+              <span class="contact"><a href="https://www.chicagoculturalalliance.org" target="_blank">chicagoculturalalliance.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="may" data-kind="outdoors">
+            <div class="event-org">Easterseals DuPage &amp; Fox Valley</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, May 7</span>
+            </div>
+            <h2 class="event-name">Tee It Up Golf Tournament 2026</h2>
+            <p class="event-description">Easterseals DuPage &amp; Fox Valley&rsquo;s annual golf outing gathers corporate partners, community supporters, and enthusiastic amateurs for a day on the links in support of its disability services mission. A convivial afternoon of competition, camaraderie, and commitment to ensuring that every person in our community can live, learn, work, and play to their fullest potential.</p>
+            <div class="event-meta">
+              <span class="venue">Naperville, Illinois</span><br>
+              <span class="contact"><a href="https://www.eastersealsdfvr.org" target="_blank">eastersealsdfvr.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Mercy Home for Boys &amp; Girls &mdash; Associate Board</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, May 8</span>
+              <span class="event-time">8:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Have Mercy! 2026 &mdash; 18th Annual</h2>
+            <p class="event-description">The Associate Board of Mercy Home for Boys &amp; Girls hosts its 18th annual spring fundraising gala, gathering Chicago&rsquo;s young professionals for a night of dancing, entertainment, and camaraderie in support of one of the city&rsquo;s most beloved institutions serving at-risk youth. The evening&rsquo;s signature Spirit of Mercy Award honors an Associate Board member whose dedication and passion exemplifies the very best of Chicago philanthropy.</p>
+            <div class="event-meta">
+              <span class="venue">VenueWest</span><br>
+              221 North Paulina Street, Chicago<br>
+              <span class="contact"><a href="https://www.mercyhome.org/chicago-charity-events/have-mercy/" target="_blank">mercyhome.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">The Woman&rsquo;s Board of the Alliance Fran&ccedil;aise de Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 9</span>
+            </div>
+            <h2 class="event-name">Biarritz: Le Bal 2026</h2>
+            <p class="event-description">An immersive odyssey through three great pillars of French distinction &mdash; Haute Couture, Haute Gastronomie, and Grand Art &mdash; Biarritz: Le Bal pays homage to the luminous allure of the Basque Coast. This year&rsquo;s gala honors the extraordinary Horvitz Collection, gifted to the Art Institute of Chicago: nearly 2,000 drawings, 200 paintings, and 50 sculptures by French masters spanning three centuries.</p>
+            <div class="event-meta">
+              <span class="venue">The Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.af-chicago.org" target="_blank">af-chicago.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Steppenwolf Theatre Company</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 9</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Steppenwolf Gala 2026</h2>
+            <p class="event-description">Steppenwolf&rsquo;s Gala continues the theatre&rsquo;s landmark 50th Anniversary celebration at Rockwell on the River, bringing together famed ensemble artists alongside civic and business leaders. This year&rsquo;s honorees are Douglas R. Brown and Rachel E. Kraft. A star-studded progressive dinner precedes a live auction of once-in-a-lifetime experiences, followed by an after-hours lounge, DJ, and dancing. Luxe fashion-forward cocktail attire &mdash; sneakers welcome.</p>
+            <div class="event-meta">
+              <span class="venue">Rockwell on the River</span><br>
+              330 North Green Street, Chicago<br>
+              <span class="contact"><a href="mailto:specialevents@steppenwolf.org">312.654.5690 &nbsp;&bull;&nbsp; specialevents@steppenwolf.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Make-A-Wish Illinois</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 16</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Wish Ball 2026 &mdash; Celebrating 40 Years of Wishes</h2>
+            <p class="event-description">Make-A-Wish Illinois marks four decades of granting life-changing wishes to children with critical illnesses at its annual black-tie Wish Ball. Celebrity entertainment, a heartfelt testimonial from a wish family, and spirited live and silent auctions frame an evening reminding every guest why a single wish can make the future shine brighter than ever. Since 1986, Illinois has granted thousands of wishes &mdash; and counting.</p>
+            <div class="event-meta">
+              <span class="venue">Grand Ballroom, Navy Pier</span><br>
+              900 East Grand Avenue, Chicago<br>
+              <span class="contact"><a href="https://wish.org/illinois/wish-ball" target="_blank">wish.org/illinois/wish-ball</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Ragdale Foundation</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 16</span>
+            </div>
+            <h2 class="event-name">50th Jubilee Celebration</h2>
+            <p class="event-description">An entertainment-filled cocktail party, seated dinners with resident artists, and a festive afterglow on the idyllic Ragdale campus mark this milestone anniversary for one of the nation&rsquo;s premier artist residency programs. Since 1976, Ragdale has invited writers, composers, and visual artists to live and work on the historic Lake Forest estate of architect Howard Van Doren Shaw &mdash; a place where quiet and creative community have together produced extraordinary American art.</p>
+            <div class="event-meta">
+              <span class="venue">Ragdale Campus</span><br>
+              1260 North Green Bay Road, Lake Forest<br>
+              <span class="contact"><a href="mailto:marybeth@ragdale.org">847.234.1063 &nbsp;&bull;&nbsp; marybeth@ragdale.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="arts">
+            <div class="event-org">Evanston Art Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 16</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">The Art Party 2026 &mdash; 36th Annual Spring Benefit</h2>
+            <p class="event-description">The Evanston Art Center&rsquo;s beloved Art Party returns for its 36th year, with an evening of art, dinner, drinks, and live music. A curated silent and live auction features vibrant original works, hotel stays, restaurant certificates, and weekend escapes. Last year&rsquo;s event drew over 230 attendees, raising $100,000 for outreach, scholarship, and exhibition programs at one of the region&rsquo;s oldest arts institutions.</p>
+            <div class="event-meta">
+              <span class="venue">Evanston Art Center</span><br>
+              1717 Central Street, Evanston<br>
+              <span class="contact"><a href="https://www.evanstonartcenter.org" target="_blank">evanstonartcenter.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Music Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Monday, May 18</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">95th Anniversary Gala</h2>
+            <p class="event-description">The Music Institute of Chicago marks 95 years of transformative music education with an evening at the Four Seasons honoring the Lyric Opera of Chicago with the prestigious Dushkin Award, Bill Kurtis and Donna La Pietra with the Cultural Visionary Award for Chicago, and Marta Aznavoorian with the Colburn Award for Teaching Excellence. The Institute serves thousands of students annually across its Chicagoland campuses, making music accessible to learners at every stage of life.</p>
+            <div class="event-meta">
+              <span class="venue">The Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.musicinstitute.org" target="_blank">musicinstitute.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">Onward Neighborhood House</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, May 28</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Onward Neighborhood House Gala 2026</h2>
+            <p class="event-description">Since 1893, Onward Neighborhood House has served working families on Chicago&rsquo;s northwest side &mdash; in Belmont Cragin, Austin, Hanson Park, Portage Park, Logan Square, Hermosa, and Montclare. The 2026 Gala gathers civic leaders, partners, and community members to reaffirm a shared vision and collective impact. The evening opens with a cocktail reception, proceeds to a seated dinner and inspiring program, and concludes with music, movement, and connection.</p>
+            <div class="event-meta">
+              <span class="venue">Regency Inn Banquets</span><br>
+              5319 West Diversey Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.onwardhouse.org" target="_blank">onwardhouse.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="may" data-kind="gala">
+            <div class="event-org">The Joffrey Ballet</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 30</span>
+              <span class="event-time">7:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Joffrey Celebration &mdash; See You on the Dance Floor</h2>
+            <p class="event-description">Step into the spotlight at the Joffrey Celebration, Chicago&rsquo;s most anticipated fundraising event of the year. The company raises a glass to 70 years of The Joffrey Ballet and 30 years of calling Chicago home &mdash; and marks the milestone in a way only the Joffrey knows how: on the dance floor. Dress code is 70s Disco Glam. An unforgettable night of dancing, revelry, and support for one of the world&rsquo;s great dance companies.</p>
+            <div class="event-meta">
+              <span class="venue">Cinespace Chicago Film Studios</span><br>
+              1501 South Rockwell Street, Chicago<br>
+              <span class="contact"><a href="https://www.joffrey.org" target="_blank">joffrey.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="june" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-june.jpg" alt="Café Brauer at Lincoln Park Zoo" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </figure>
+
+        <!-- ══════════ JUNE ══════════ -->
+        <div class="month-header" data-month-section="june">June</div>
+        <div class="event-list" data-month-events="june">
+
+          <div class="event-entry" data-month="june" data-kind="outdoors">
+            <div class="event-org">Lincoln Park Zoo</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, June 6</span>
+              <span class="event-time">6:30 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Zoo-ologie Cocktail Party</h2>
+            <p class="event-description">The Lincoln Park Zoo Auxiliary Board&rsquo;s signature summer fundraiser transforms the historic Caf&eacute; Brauer into an elegant cocktail venue overlooking the zoo grounds. Guests sip craft cocktails, sample gourmet bites from Chicago&rsquo;s finest restaurants, and enjoy sunset views of the lagoon while supporting free zoo admission, conservation programs, and animal care excellence.</p>
+            <div class="event-meta">
+              <span class="venue">Caf&eacute; Brauer, Lincoln Park Zoo</span><br>
+              2021 North Stockton Drive, Chicago<br>
+              <span class="contact"><a href="https://www.lpzoo.org/zooologie" target="_blank">lpzoo.org/zooologie</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="june" data-kind="gala">
+            <div class="event-org">Chicago Botanic Garden</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, June 13</span>
+              <span class="event-time">6:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Summer Dinner Dance</h2>
+            <p class="event-description">The Chicago Botanic Garden&rsquo;s Auxiliary hosts its annual black-tie gala amid the Garden&rsquo;s breathtaking landscapes at peak bloom. Under elegant tents surrounded by roses and perennials, guests enjoy cocktails, fine dining, live music, and dancing beneath the stars. Proceeds support horticultural research, education programs, and conservation initiatives at one of the world&rsquo;s premier living museums.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago Botanic Garden</span><br>
+              1000 Lake Cook Road, Glencoe<br>
+              <span class="contact"><a href="https://www.chicagobotanic.org/dinnerParty" target="_blank">chicagobotanic.org/dinnerParty</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="june" data-kind="gala">
+            <div class="event-org">National Hellenic Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, June 18</span>
+              <span class="event-time">6:30 &ndash; 10:00 p.m.</span>
+            </div>
+            <h2 class="event-name">51st Anniversary Gala</h2>
+            <p class="event-description">The National Hellenic Museum celebrates Greek heritage and contemporary Hellenic culture with its annual gala honoring individuals whose leadership exemplifies Greek values of excellence, service, and philanthropy. The evening features authentic Greek cuisine, wine, entertainment, and awards supporting the museum&rsquo;s mission to share Greek history and contributions with the American public.</p>
+            <div class="event-meta">
+              <span class="venue">National Hellenic Museum</span><br>
+              333 South Halsted Street, Chicago<br>
+              <span class="contact"><a href="https://www.nationalhellenicmuseum.org" target="_blank">nationalhellenicmuseum.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="june" data-kind="gala">
+            <div class="event-org">Chicago Cultural Alliance</div>
+            <div class="event-date-row">
+              <span class="event-date">Tuesday, June 9</span>
+            </div>
+            <h2 class="event-name">MOSAIC 2026 Gala</h2>
+            <p class="event-description">MOSAIC is the annual benefit for the Chicago Cultural Alliance, expressing its mission of cultural inclusion and equity. This year&rsquo;s gala honors the John D. and Catherine T. MacArthur Foundation with the Cultural Investment Award for its enduring commitment to building a more just and inclusive Chicago. A unique gathering of the Alliance&rsquo;s diverse membership with civic and business leaders who champion the city&rsquo;s rich cultural communities.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago</span><br>
+              <span class="contact"><a href="https://www.chicagoculturalalliance.org" target="_blank">chicagoculturalalliance.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="june" data-kind="lecture">
+            <div class="event-org">Mercy Home for Boys &amp; Girls &mdash; Leader Council</div>
+            <div class="event-date-row">
+              <span class="event-date">June 2026</span>
+            </div>
+            <h2 class="event-name">Graduates&rsquo; Luncheon 2026</h2>
+            <p class="event-description">For 24 years, Mercy Home&rsquo;s Leader Council has worked to improve educational opportunities for young people in the organization&rsquo;s care. This annual luncheon celebrates the year&rsquo;s graduates &mdash; young people who have overcome extraordinary obstacles to reach this milestone &mdash; and raises funds to ensure brighter futures for even more of Mercy Home&rsquo;s kids. An intimate and moving afternoon honoring resilience in the finest tradition of Chicago philanthropy.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago</span><br>
+              <span class="contact"><a href="https://www.mercyhome.org" target="_blank">mercyhome.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="june" data-kind="lecture">
+            <div class="event-org">Gilda&rsquo;s Club Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, June 25</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">28th Annual Awards Dinner</h2>
+            <p class="event-description">Gilda&rsquo;s Club Chicago&rsquo;s Annual Awards Dinner returns for its 28th year, honoring exceptional contributors to the organization&rsquo;s mission of providing free cancer support for individuals, families, and communities touched by the disease. Named for the beloved comedian Gilda Radner, whose own cancer diagnosis inspired a community of care, Gilda&rsquo;s Club remains a place where no one faces cancer alone.</p>
+            <div class="event-meta">
+              <span class="venue">Gilda&rsquo;s Club Chicago</span><br>
+              Chicago<br>
+              <span class="contact"><a href="https://www.gildasclubchicago.org" target="_blank">gildasclubchicago.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="july" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-july.jpg" alt="Art Institute of Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%;">
+        </figure>
+
+        <!-- ══════════ JULY ══════════ -->
+        <div class="month-header" data-month-section="july">July</div>
+        <div class="event-list" data-month-events="july">
+
+          <div class="event-entry" data-month="july" data-kind="gala">
+            <div class="event-org">Museum of Contemporary Art Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, July 11</span>
+              <span class="event-time">7:00 p.m. &ndash; 1:00 a.m.</span>
+            </div>
+            <h2 class="event-name">Summer Gala &amp; Artist Ball</h2>
+            <p class="event-description">MCA Chicago&rsquo;s legendary summer gala brings together artists, collectors, curators, and contemporary art enthusiasts for an unforgettable evening of performance, installation, and celebration. Each year&rsquo;s event features commissioned works by leading contemporary artists, transforming the museum into an immersive artistic experience while raising essential funds for groundbreaking exhibitions and educational programs.</p>
+            <div class="event-meta">
+              <span class="venue">Museum of Contemporary Art Chicago</span><br>
+              220 East Chicago Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.mcachicago.org" target="_blank">mcachicago.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="july" data-kind="arts">
+            <div class="event-org">Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, July 23</span>
+              <span class="event-time">6:30 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Modern Wing Garden Party</h2>
+            <p class="event-description">Set in the stunning Modern Wing&rsquo;s outdoor sculpture terrace, this exclusive summer soir&eacute;e celebrates the Art Institute&rsquo;s world-renowned collection and commitment to artistic excellence. Against the backdrop of Millennium Park and Chicago&rsquo;s skyline, guests enjoy cocktails, gourmet fare, live music, and special exhibition access while supporting one of the world&rsquo;s greatest art museums.</p>
+            <div class="event-meta">
+              <span class="venue">Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.artic.edu/events" target="_blank">artic.edu/events</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="july" data-kind="gala">
+            <div class="event-org">Lincoln Park Zoo</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, July 11</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Zoo Ball &mdash; 49th Annual</h2>
+            <p class="event-description">Now in its 49th year, Zoo Ball is Lincoln Park Zoo&rsquo;s signature fundraiser, helping ensure the zoo remains free and open to all Chicagoans while providing critical support for animal care, global conservation initiatives, and community engagement programs. More than 600 philanthropists, wildlife enthusiasts, and animal advocates gather beneath the stars at one of the city&rsquo;s most beloved green spaces for an evening that is both spectacular and purposeful. Co-chaired by Trish Giannoulias.</p>
+            <div class="event-meta">
+              <span class="venue">Lincoln Park Zoo</span><br>
+              2001 North Clark Street, Chicago<br>
+              <span class="contact"><a href="https://www.lpzoo.org/zoo-ball" target="_blank">lpzoo.org/zoo-ball</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="july" data-kind="gala">
+            <div class="event-org">Ravinia Women&rsquo;s Board</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, July 11</span>
+              <span class="event-time">4:30 p.m.</span>
+            </div>
+            <h2 class="event-name">60th Annual Gala Evening</h2>
+            <p class="event-description">The Women&rsquo;s Board hosts Ravinia&rsquo;s Opening Night Gala, unveiling the newly renovated Hunter Pavilion to the public for the first time. A cocktail reception under the stars precedes piano prodigy Yunchan Lim performing with the Chicago Symphony Orchestra conducted by Marin Alsop. Following the concert, guests are wined and dined under a stunning Gala tent with a gorgeous three-course meal, surprise performances, and a celebration worthy of the new state-of-the-art venue.</p>
+            <div class="event-meta">
+              <span class="venue">Ravinia Festival</span><br>
+              418 Sheridan Road, Highland Park<br>
+              <span class="contact"><a href="https://www.ravinia.org" target="_blank">ravinia.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="july" data-kind="outdoors">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, July 16</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Beach Party 2026</h2>
+            <p class="event-description">Set at Offshore Rooftop at Navy Pier, Beach Party is a summer celebration for more than 500 luau guests and their canine companions. Sip festive cocktails and soak up the sun as Lake Michigan shimmers below. As the sun sets, dance the night away with an open bar, dinner, live and silent auctions, raffles, and more &mdash; all raising critical funds to ensure PAWS Chicago can continue to save and care for thousands of homeless pets each year.</p>
+            <div class="event-meta">
+              <span class="venue">Offshore Rooftop, Navy Pier</span><br>
+              1000 East Grand Avenue, Chicago<br>
+              <span class="contact"><a href="mailto:BeachParty@pawschicago.org">BeachParty@pawschicago.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="august" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-august.jpg" alt="Museum of Science and Industry, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+        </figure>
+
+        <!-- ══════════ AUGUST ══════════ -->
+        <div class="month-header" data-month-section="august">August</div>
+        <div class="event-list" data-month-events="august">
+
+          <div class="event-entry" data-month="august" data-kind="arts">
+            <div class="event-org">Griffin Museum of Science and Industry</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, August 1</span>
+              <span class="event-time">7:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Black Creativity Gala</h2>
+            <p class="event-description">The Griffin Museum of Science and Industry&rsquo;s signature Black Creativity Gala celebrates innovation, achievement, and excellence in the Black community. This black-tie celebration features live entertainment, immersive exhibits, gourmet cuisine, and awards honoring leaders advancing science, technology, engineering, and mathematics education and access.</p>
+            <div class="event-meta">
+              <span class="venue">Griffin Museum of Science and Industry</span><br>
+              5700 South DuSable Lake Shore Drive, Chicago<br>
+              <span class="contact"><a href="https://www.griffinmsi.org/blackcreativity" target="_blank">griffinmsi.org/blackcreativity</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="august" data-kind="gala">
+            <div class="event-org">Diversity Scholarship Foundation</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, August 21</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Unity Gala</h2>
+            <p class="event-description">The Diversity Scholarship Foundation&rsquo;s Unity Gala brings together business leaders, educators, and advocates supporting diversity in law and professional services. Since 2004, DSF has awarded over $3 million in scholarships to students of color pursuing legal careers. The gala celebrates scholarship recipients&rsquo; achievements and raises funds ensuring the next generation of diverse legal leaders.</p>
+            <div class="event-meta">
+              <span class="venue">Ritz-Carlton Chicago</span><br>
+              160 East Pearson Street, Chicago<br>
+              <span class="contact"><a href="https://www.diversitychicago.org" target="_blank">diversitychicago.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="august" data-kind="outdoors">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, August 29</span>
+            </div>
+            <h2 class="event-name">PAWS Chicago 5K Walk/Run for Their Lives 2026</h2>
+            <p class="event-description">Chicago&rsquo;s largest dog-friendly charity event returns to Montrose Harbor for a day of fun, dog agility courses, raffles, entertainment, treats, and more. Whether you plan to run, walk, or simply revel in the company of fellow animal lovers and their four-legged companions, the day raises critical funds to help pets in need.</p>
+            <div class="event-meta">
+              <span class="venue">Montrose Harbor &mdash; Grove 16</span><br>
+              601 West Montrose Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org" target="_blank">pawschicago.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="month-separator" data-for-month="september" style="margin: 0; overflow: hidden; height: 260px;">
+          <img src="db2-september.jpg" alt="Symphony Center, Chicago" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+        </figure>
+
+        <!-- ══════════ SEPTEMBER ══════════ -->
+        <div class="month-header" data-month-section="september">September</div>
+        <div class="event-list" data-month-events="september">
+
+          <div class="event-entry" data-month="september" data-kind="performance">
+            <div class="event-org">Chicago Symphony Orchestra</div>
+            <div class="event-date-row">
+              <span class="event-date">Throughout September 2026 &ndash; May 2027</span>
+            </div>
+            <h2 class="event-name">2026/27 Season at Symphony Center</h2>
+            <p class="event-description">The Chicago Symphony Orchestra launches its 136th season with conductor Riccardo Muti leading performances of masterworks spanning four centuries. From Beethoven and Brahms to contemporary premieres, the CSO continues its tradition of artistic excellence with performances featuring world-renowned soloists and conductors. Special gala opening night celebration honors patrons and launches a season of unforgettable musical experiences.</p>
+            <div class="event-meta">
+              <span class="venue">Symphony Center</span><br>
+              220 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.cso.org" target="_blank">cso.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="september" data-kind="performance">
+            <div class="event-org">Lyric Opera of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">September 2026 &ndash; May 2027</span>
+            </div>
+            <h2 class="event-name">2026/27 Season</h2>
+            <p class="event-description">Lyric Opera of Chicago presents its season of grand opera featuring international stars, spectacular productions, and beloved classics alongside bold new works. Opening night gala celebrates Lyric&rsquo;s commitment to making opera accessible and relevant to diverse audiences. From Wagner to contemporary commissions, Lyric&rsquo;s season exemplifies the power of opera to move, inspire, and unite.</p>
+            <div class="event-meta">
+              <span class="venue">Lyric Opera House</span><br>
+              20 North Wacker Drive, Chicago<br>
+              <span class="contact"><a href="https://www.lyricopera.org" target="_blank">lyricopera.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="september" data-kind="performance">
+            <div class="event-org">Chicago Summer Opera</div>
+            <div class="event-date-row">
+              <span class="event-date">Throughout Summer 2026</span>
+            </div>
+            <h2 class="event-name">Summer Festival Season</h2>
+            <p class="event-description">Chicago Summer Opera presents emerging artists in intimate productions showcasing the next generation of operatic talent. Productions feature fully staged operas with orchestra, performed by young professionals in smaller venues allowing audiences unprecedented proximity to performers. A celebration of artistry, training, and the future of opera in Chicago.</p>
+            <div class="event-meta">
+              <span class="venue">Various Venues, Chicago</span><br>
+              <span class="contact"><a href="https://www.chicagosummeropera.org" target="_blank">chicagosummeropera.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry" data-month="september" data-kind="arts">
+            <div class="event-org">CAPE &mdash; Chicago Arts Partnerships in Education</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 12</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">ARTJOY 2026</h2>
+            <p class="event-description">CAPE&rsquo;s signature fundraising event places creativity at center stage, with an open bar, light bites, music, and dancing alongside artists, educators, and community supporters. The night features live art and performances by CAPE teaching artists, inspiring student showcases, and a curated silent auction &mdash; all in celebration of arts-integrated learning and CAPE&rsquo;s 30-year mission of weaving the arts into the fabric of Chicago&rsquo;s public schools.</p>
+            <div class="event-meta">
+              <span class="venue">CAPE</span><br>
+              1010 West 35th Street, Chicago<br>
+              <span class="contact"><a href="https://www.capechicago.org" target="_blank">capechicago.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="september" data-kind="gala">
+            <div class="event-org">Aid for Women</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 24</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Annual Benefit Dinner 2026</h2>
+            <p class="event-description">Aid for Women gathers its community of supporters at the distinguished Union League Club for its annual benefit dinner, raising funds for the organization&rsquo;s compassionate services supporting women and children in need across Chicago. For decades, Aid for Women has provided essential resources &mdash; counseling, material support, and community &mdash; to those navigating some of life&rsquo;s most vulnerable moments.</p>
+            <div class="event-meta">
+              <span class="venue">Union League Club of Chicago</span><br>
+              65 West Jackson Boulevard, Chicago<br>
+              <span class="contact"><a href="https://www.helpaidforwomen.org" target="_blank">helpaidforwomen.org</a></span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ══════════ OCTOBER ══════════ -->
+        <div class="month-header" data-month-section="october">October</div>
+        <div class="event-list" data-month-events="october">
+          <div class="event-entry" data-month="october" data-kind="lecture">
+            <div class="event-org">Brookfield Zoo Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Monday, October 5</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Conservation Leadership Awards Dinner</h2>
+            <p class="event-description">An exclusive dinner hosted by Brookfield Zoo Chicago&rsquo;s Board of Trustees and Women&rsquo;s Board, honoring individuals and organizations for their collective impact on conservation. Recognizing leaders who inspire conservation stewardship, engage communities in wildlife protection, and restore populations of threatened species, the evening is a sophisticated and intimate tribute to those changing the relationship between people and the natural world.</p>
+            <div class="event-meta">
+              <span class="venue">Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.czs.org" target="_blank">czs.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="october" data-kind="gala">
+            <div class="event-org">Chicago Symphony Orchestra Women&rsquo;s Board</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, October 10</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Symphony Ball 2026</h2>
+            <p class="event-description">The Chicago Symphony Orchestra&rsquo;s largest annual fundraiser returns, raising vital support for the CSOA&rsquo;s artistic, educational, and community engagement programs that reach tens of thousands of people each year. VIP guests enjoy a private preconcert reception and postconcert gala dinner with a CSO Principal Chair musician or Chicago Symphony Chorus member seated at their table &mdash; an incomparably intimate evening with one of the world&rsquo;s great orchestras.</p>
+            <div class="event-meta">
+              <span class="venue">Symphony Center</span><br>
+              220 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.cso.org/symphony-ball" target="_blank">cso.org/symphony-ball</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="october" data-kind="arts">
+            <div class="event-org">Chicago Architecture Center</div>
+            <div class="event-date-row">
+              <span class="event-date">October 17&ndash;18, 2026</span>
+            </div>
+            <h2 class="event-name">Open House Chicago 2026</h2>
+            <p class="event-description">Chicago&rsquo;s beloved Open House Chicago returns for a landmark weekend, throwing open the doors of hundreds of extraordinary buildings &mdash; historic landmarks, private residences, architectural gems, and active workplaces &mdash; that are rarely, if ever, accessible to the public. Organized by the Chicago Architecture Center, this free annual festival transforms the city into an open-air museum, drawing tens of thousands of curious Chicagoans into the hidden interiors that define one of the world&rsquo;s great architectural cities.</p>
+            <div class="event-meta">
+              <span class="venue">Buildings Throughout Chicago</span><br>
+              <span class="contact"><a href="https://www.architecture.org/open-house-chicago" target="_blank">architecture.org/open-house-chicago</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="october" data-kind="gala">
+            <div class="event-org">Freedom of Movement</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, October 17</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">2026 Freedom of Movement Gala &amp; Casino Night</h2>
+            <p class="event-description">Freedom of Movement brings its annual gala and casino night to the iconic Hilton Chicago for an evening of entertainment, celebration, and fundraising in support of its mission advancing mobility, inclusion, and opportunity for individuals with physical disabilities. Guests enjoy cocktails, a gala dinner, and a spirited casino floor before bidding in a live auction.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.freedomofmovement.org" target="_blank">freedomofmovement.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="october" data-kind="gala">
+            <div class="event-org">Illinois Bar Foundation</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, October 26</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">27th Annual Black Tie Gala</h2>
+            <p class="event-description">The Illinois Bar Foundation&rsquo;s 27th annual black-tie gala raises funds for access to justice and Lawyers Care programs &mdash; providing free legal services to Illinoisans who cannot otherwise afford representation. One of the legal community&rsquo;s most distinguished evenings of the year, the gala draws judges, attorneys, and civic leaders for a celebration of the law&rsquo;s highest ideals and the practitioners who live them each day.</p>
+            <div class="event-meta">
+              <span class="venue">Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.illinoisbarfoundation.org" target="_blank">illinoisbarfoundation.org</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════ NOVEMBER ══════════ -->
+        <div class="month-header" data-month-section="november">November</div>
+        <div class="event-list" data-month-events="november">
+          <div class="event-entry" data-month="november" data-kind="lecture">
+            <div class="event-org">Women&rsquo;s History Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, November 6</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Women Making History Awards Gala 2026</h2>
+            <p class="event-description">The Women Making History Awards Gala returns to the spectacular Aon Grand Ballroom at Navy Pier, honoring women whose leadership, courage, and vision have left an indelible mark on Chicago and beyond. One of the city&rsquo;s most inspiring annual celebrations, the evening recognizes trailblazers across business, civic life, the arts, and education &mdash; and raises critical support for the preservation and telling of women&rsquo;s history for future generations.</p>
+            <div class="event-meta">
+              <span class="venue">Aon Grand Ballroom, Navy Pier</span><br>
+              600 East Grand Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.womenshistorymuseum.org" target="_blank">womenshistorymuseum.org</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="november" data-kind="gala">
+            <div class="event-org">Mercy Home for Boys &amp; Girls</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 7</span>
+              <span class="event-time">6:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Lux Gala 2026</h2>
+            <p class="event-description">Mercy Home for Boys &amp; Girls&rsquo; signature fall gala returns to the breathtaking art deco interior of Chicago&rsquo;s Old Post Office &mdash; one of the most dramatically restored event spaces in the city. An unforgettable evening of splendor raises essential funds for residential care and therapeutic services for abused, neglected, and at-risk youth. Since 1887, Mercy Home has provided safe haven and healing for Chicago&rsquo;s most vulnerable children.</p>
+            <div class="event-meta">
+              <span class="venue">The Old Post Office</span><br>
+              433 West Van Buren Street, Chicago<br>
+              <span class="contact"><a href="https://www.mercyhome.org/lux-gala" target="_blank">mercyhome.org/lux-gala</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="november" data-kind="outdoors">
+            <div class="event-org">Brookfield Zoo Chicago Women&rsquo;s Board</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 7</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Wines in the Wild 2026</h2>
+            <p class="event-description">Started in 2001, this exceptional Women&rsquo;s Board evening transforms the Discovery Center into a convivial gathering of wine and spirit tastings, a silent auction, raffle, and activities throughout the night. All proceeds support the conservation, education, and scholarship allocations made by the Women&rsquo;s Board throughout the year &mdash; a uniquely spirited and joyful way to toast one of the region&rsquo;s great conservation institutions.</p>
+            <div class="event-meta">
+              <span class="venue">Discovery Center, Brookfield Zoo Chicago</span><br>
+              3300 Golf Road, Brookfield<br>
+              <span class="contact"><a href="https://www.czs.org/wines-in-the-wild" target="_blank">czs.org/wines-in-the-wild</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="november" data-kind="gala">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, November 13</span>
+              <span class="event-time">6:00 p.m. &ndash; midnight</span>
+            </div>
+            <h2 class="event-name">Fur Ball 2026</h2>
+            <p class="event-description">Chicago&rsquo;s premier pet-friendly black-tie event returns to the legendary Drake Hotel. Guests are invited to dress their pets in four-legged formal wear and walk the red carpet for an exciting evening benefiting PAWS Chicago&rsquo;s life-saving work. Silent and live auctions, raffles, dancing, dinner buffets &mdash; and a divine dinner served in crystal goblets at the special dog buffet &mdash; make this one of the city&rsquo;s most joyful and beloved evenings of the fall social season.</p>
+            <div class="event-meta">
+              <span class="venue">The Drake Hotel</span><br>
+              140 East Walton Place, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org/fur-ball" target="_blank">pawschicago.org/fur-ball</a></span>
+            </div>
+          </div>
+          <div class="event-entry" data-month="november" data-kind="gala">
+            <div class="event-org">Swedish Hospital Foundation &mdash; Endeavor Health</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 14</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Annual Gala 2026 &mdash; A Chicago Night</h2>
+            <p class="event-description">Swedish Hospital Foundation&rsquo;s annual gala celebrates the hospital&rsquo;s deep roots in Chicago&rsquo;s North Side with a Chicago-themed evening of fine dining, live entertainment, dancing, and a live auction. Proceeds support mission-driven programs that advance patient care and medical research. Guests are transported through the city&rsquo;s history and culture in an evening as warm and distinctive as the community Swedish Hospital has served for generations.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.swedishhospitalfoundation.org/gala" target="_blank">swedishhospitalfoundation.org/gala</a></span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /datebook-body -->
+
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../about.html#annie-delfosse" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About Anne Delfosse &rarr;</a>
+      </div>
+
+      <div class="article-nav">
+        <a href="index.html">&larr; Return to March 8 Edition</a>
+        <a href="datebook/">View DateBook &rarr;</a>
+      </div>
+
+    </div><!-- /article-container -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var activeMonth = 'all';
+      var activeKind  = 'all';
+      var allMonths   = ['march','april','may','june','july','august','september','october','november'];
+
+      // ── Ad configurations ──────────────────────────────────────
+      var adByKind = {
+        gala: {
+          tag: 'Event Style & Formal Attire',
+          headline: "Dress for Chicago’s Finest Evenings",
+          body: "Black-tie galas, benefit dinners, and grand balls — let us help you make an impression at Chicago’s most distinguished events.",
+          cta: 'Shop Evening Wear →',
+          href: '#',
+          bg: '#0d1627',
+          accent: '#b8a06e',
+          badge: 'N'
+        },
+        performance: {
+          tag: 'Chicago Symphony Orchestra',
+          headline: '2026–27 Season — Subscriptions Now Open',
+          body: 'Secure your place at Symphony Center for a full season of world-class performances on Michigan Avenue.',
+          cta: 'Explore the Season →',
+          href: '#',
+          bg: '#1a0808',
+          accent: '#b51c20',
+          badge: 'CSO'
+        },
+        arts: {
+          tag: 'Art Institute of Chicago',
+          headline: 'Unlimited Access, All Year',
+          body: 'Become a member and enjoy unlimited visits, exclusive exhibition previews, and invitations to special member events.',
+          cta: 'Join Today →',
+          href: '#',
+          bg: '#17120a',
+          accent: '#c9a96e',
+          badge: 'AIC'
+        },
+        lecture: {
+          tag: 'Seminary Co-op Bookstores',
+          headline: 'Feed Your Curiosity',
+          body: "Chicago’s legendary independent bookstore — new titles in ideas, history, and culture arriving every week.",
+          cta: 'Visit Seminary Co-op →',
+          href: '#',
+          bg: '#101a10',
+          accent: '#7ab87a',
+          badge: 'SC'
+        },
+        outdoors: {
+          tag: 'Chicago Park District',
+          headline: 'Explore 600 Parks This Season',
+          body: "From lakefront trails to neighborhood green spaces — 8,100 acres of Chicago parkland await you.",
+          cta: 'Plan Your Visit →',
+          href: '#',
+          bg: '#0a1510',
+          accent: '#5aad7a',
+          badge: 'CPD'
+        }
+      };
+
+      var adBySeason = {
+        spring: {
+          tag: 'Chicago Botanic Garden',
+          headline: 'Spring in Full Bloom',
+          body: 'Twenty-six distinct gardens coming alive for the season. Special exhibitions, guided tours, and member evenings throughout spring.',
+          cta: 'Plan Your Visit →',
+          href: '#',
+          bg: '#0f160a',
+          accent: '#8ab860',
+          badge: 'CBG'
+        },
+        summer: {
+          tag: 'Chicago Riverwalk',
+          headline: "Chicago’s Summer Begins at the Water",
+          body: "Outdoor dining, live music, and lakefront events — the Chicago Riverwalk is the city’s best summer address.",
+          cta: 'Explore the Riverwalk →',
+          href: '#',
+          bg: '#061220',
+          accent: '#4a9ed0',
+          badge: 'CRW'
+        },
+        fall: {
+          tag: 'Chicago Restaurant Week',
+          headline: "The Fall Season Is On",
+          body: "Galas, openings, award dinners — Chicago’s fall social calendar is in full swing. Reserve a table at the city’s best restaurants.",
+          cta: 'Reserve a Table →',
+          href: '#',
+          bg: '#1a0e08',
+          accent: '#d48c40',
+          badge: 'CRW'
+        }
+      };
+
+      var adDefault = {
+        tag: 'Classic Chicago Magazine',
+        headline: 'The Sunday Edition',
+        body: "Every week, the stories that define Chicago’s culture, society, and spirit — delivered free to your inbox.",
+        cta: 'Subscribe Free →',
+        href: '../../subscribe.html',
+        bg: '#1a1a1a',
+        accent: '#c9a96e',
+        badge: 'CC'
+      };
+
+      function getSeasonForMonth(m) {
+        if (['march','april','may'].indexOf(m) !== -1) return 'spring';
+        if (['june','july','august'].indexOf(m) !== -1) return 'summer';
+        if (['september','october','november'].indexOf(m) !== -1) return 'fall';
+        return null;
+      }
+
+      function updateAd() {
+        var cfg;
+        if (activeKind !== 'all' && adByKind[activeKind]) {
+          cfg = adByKind[activeKind];
+        } else if (activeMonth !== 'all') {
+          var season = getSeasonForMonth(activeMonth);
+          cfg = season ? adBySeason[season] : adDefault;
+        } else {
+          cfg = adDefault;
+        }
+
+        var inner    = document.getElementById('adInner');
+        var tagEl    = document.getElementById('adTag');
+        var headEl   = document.getElementById('adHeadline');
+        var bodyEl   = document.getElementById('adBody');
+        var ctaEl    = document.getElementById('adCta');
+        var badgeEl  = document.getElementById('adBadge');
+        if (!inner) return;
+
+        inner.style.background    = cfg.bg;
+        tagEl.textContent         = cfg.tag;
+        tagEl.style.color         = cfg.accent;
+        headEl.textContent        = cfg.headline;
+        bodyEl.textContent        = cfg.body;
+        ctaEl.textContent         = cfg.cta;
+        ctaEl.href                = cfg.href;
+        ctaEl.style.background    = cfg.accent;
+        badgeEl.textContent       = cfg.badge;
+        badgeEl.style.color       = cfg.accent;
+      }
+
+      // ── Filter logic ───────────────────────────────────────────
+      function applyFilters() {
+        var entries = document.querySelectorAll('.event-entry');
+        var count = 0;
+        entries.forEach(function(e) {
+          var ok = (activeMonth === 'all' || e.dataset.month === activeMonth) &&
+                   (activeKind  === 'all' || e.dataset.kind  === activeKind);
+          e.classList.toggle('hidden', !ok);
+          if (ok) count++;
+        });
+
+        allMonths.forEach(function(m) {
+          var vis = !!document.querySelector('.event-entry[data-month="' + m + '"]:not(.hidden)');
+          var hdr = document.querySelector('[data-month-section="' + m + '"]');
+          var lst = document.querySelector('[data-month-events="'  + m + '"]');
+          var sep = document.querySelector('.month-separator[data-for-month="' + m + '"]');
+          if (hdr) hdr.classList.toggle('hidden', !vis);
+          if (lst) lst.classList.toggle('hidden', !vis);
+          if (sep) sep.classList.toggle('hidden', !vis);
+        });
+
+        var countEl = document.getElementById('eventCount');
+        if (countEl) countEl.textContent = count + (count === 1 ? ' event' : ' events');
+
+        var nr = document.getElementById('no-results');
+        if (nr) nr.style.display = count === 0 ? 'block' : 'none';
+
+        updateAd();
+      }
+
+      document.getElementById('monthSelect').addEventListener('change', function() {
+        activeMonth = this.value;
+        applyFilters();
+      });
+
+      document.getElementById('kindSelect').addEventListener('change', function() {
+        activeKind = this.value;
+        applyFilters();
+      });
+
+      applyFilters();
+    })();
+  </script>
+</body>
+
+</html>
