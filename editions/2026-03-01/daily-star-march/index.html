@@ -1068,6 +1068,7 @@
                     <input type="hidden" name="_subject" value="Classic Chicago Reader Feedback">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
                     <div style="display: flex; justify-content: center; gap: 28px; align-items: center; margin-bottom: 20px;">
                         <label style="font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #b51c20; cursor: pointer;">
                             <input type="radio" name="response" value="Yes, indeed" style="margin-right: 4px;">&#10003;&ensp;Yes, indeed
@@ -1092,6 +1093,7 @@
             <script>
                 var base = window.location.href.split('?')[0];
                 document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
                 if (window.location.search.indexOf('feedback=sent') !== -1) {
                     document.getElementById('feedbackForm').style.display = 'none';
                     document.getElementById('feedbackConfirm').style.display = 'block';
