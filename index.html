@@ -382,6 +382,11 @@
         <a href="editions/2026-03-01/daily-star-march/">Astrochart</a>
       </div>
     </nav>
+    <div style="background: #2c2c2c; text-align: center; padding: 8px 16px;">
+      <button onclick="document.getElementById('dst-popup').style.display='flex'" style="background:none; border:none; cursor:pointer; font-family:'Lato',sans-serif; font-size:13px; color:#e8443a; letter-spacing:0.08em; text-transform:uppercase; padding:0;">
+        &#x1F550; Clocks spring forward Saturday night / Sunday morning &mdash; click for details
+      </button>
+    </div>
     <div class="internal-nav">
       <div class="internal-nav-inner">
         <span class="internal-nav-label">Internal</span>
@@ -394,6 +399,17 @@
       </div>
     </div>
   </header>
+
+  <!-- DST Popup -->
+  <div id="dst-popup" onclick="if(event.target===this)this.style.display='none'" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#faf8f3; border-radius:8px; padding:36px 40px; max-width:360px; width:90%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.2);">
+      <div style="font-family:'Lato',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#c9a96e; margin-bottom:12px;">Daylight Saving Time</div>
+      <div style="font-size:48px;">&#x1F551;</div>
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:26px; font-weight:700; margin:12px 0 16px; color:#222;">Spring Forward Tonight</h2>
+      <p style="font-family:'Lato',sans-serif; font-size:15px; line-height:1.7; color:#444; margin:0 0 24px;">At <strong>2:00 AM</strong> Saturday night / Sunday morning, clocks spring forward one hour to <strong>3:00 AM</strong>. Don&rsquo;t forget to set your clocks before bed tonight!</p>
+      <button onclick="document.getElementById('dst-popup').style.display='none'" style="background:#e8443a; color:#fff; border:none; border-radius:4px; padding:10px 28px; font-family:'Lato',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.05em; cursor:pointer;">Got it</button>
+    </div>
+  </div>
 
   <div style="text-align: center; padding: 30px 16px 10px;">
     <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
