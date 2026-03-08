@@ -70,6 +70,50 @@
       text-decoration: underline;
     }
 
+    .internal-nav {
+      background: #f9f5f0;
+      border-bottom: 1px solid #e8e0d5;
+      padding: 5px 0;
+    }
+
+    .internal-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .internal-nav-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-right: 8px;
+    }
+
+    .internal-nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #666;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 10px;
+      padding: 3px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .internal-nav-inner a:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+
     /* Hero + Ad Row */
     .hero-row {
       max-width: 1200px;
@@ -122,7 +166,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #e8443a;
+      color: #fff;
       margin-bottom: 10px;
     }
 
@@ -232,49 +276,39 @@
     }
 
     /* Past Editions */
-    .past-section {
-      background: #f5f3ef;
-      padding: 40px 0 60px;
-      margin-top: 40px;
+    .past-editions {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
     }
 
-    .past-section .inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .past-section .card-image {
-      height: 180px;
-    }
-
-    .past-section .card h2 {
-      font-size: 18px;
-    }
-
-    .past-section .card h2 a {
-      color: #555;
-    }
-
-    .past-section .card h2 a:hover {
-      color: #b51c20;
-    }
-
-    .past-section .card p {
+    .past-editions h2 {
+      font-family: 'Lato', sans-serif;
       font-size: 14px;
-      color: #777;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
     }
 
-    .past-section .card .meta {
-      color: #bbb;
+    .past-editions ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .past-section .card {
-      border-bottom-color: #e0ddd8;
+    .past-editions li {
+      margin-bottom: 8px;
     }
 
-    .past-section h1.page-title {
-      color: #555;
+    .past-editions a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .past-editions a:hover {
+      text-decoration: underline;
     }
 
     /* Footer */
@@ -345,101 +379,107 @@
         <a href="about.html">About</a>
         <a href="subscribe.html">Subscribe</a>
         <a href="advertise.html">Advertise</a>
+        <a href="editions/2026-03-01/astro.html">Astrochart</a>
       </div>
     </nav>
   </header>
 
   <div style="text-align: center; padding: 30px 16px 10px;">
     <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
-    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">March 1, 2026</div>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">March 8, 2026</div>
   </div>
 
   <!-- Hero Feature + Ad -->
   <div class="hero-row">
     <div class="hero">
-      <a href="editions/2026-03-01/case-of-the-missing-caramel/"><img class="hero-image" src="editions/2026-03-01/case-of-the-missing-caramel/marie-claire.jpeg" alt="The Case of the Missing Caramel" style="object-position: center 20%;"></a>
+      <a href="editions/2026-03-08/rebecca-tilles/"><img class="hero-image" src="editions/2026-03-08/rebecca-tilles/tilles-portrait.jpeg" alt="Dr. Rebecca Tilles: A European Soul, Born in Chicago" style="object-position: center top;"></a>
       <div class="hero-overlay">
-        <div class="label">Featured</div>
-        <h2><a href="editions/2026-03-01/case-of-the-missing-caramel/">The Case of the Missing Caramel</a></h2>
-        <div class="meta">By Francesco Bianchini &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>A childhood memoir set in rural Italy, where a large family&rsquo;s monthly warehouse run and a mysteriously plundered pantry reveal the irresistible pull of stolen caramel.</p>
+        <div class="label">Chicago-Paris Connection</div>
+        <h2><a href="editions/2026-03-08/rebecca-tilles/">Dr. Rebecca Tilles: A European Soul, Born in Chicago</a></h2>
+        <div class="meta">By Dr. Robert Leo Murphy &nbsp;&bull;&nbsp; March 8, 2026</div>
+        <p>A Chicago girl at heart, Dr. Rebecca Tilles has built a remarkable career in Paris as senior project manager of exhibitions at L&rsquo;&Eacute;COLE, School of Jewelry Arts, supported by Van Cleef &amp; Arpels.</p>
       </div>
     </div>
     <div class="hero-ad">
       <div style="text-align: center;">
-<img src="ads/image006.png" alt="Heritage Auctions – Prints & Multiples">
+        <div style="font-family: 'Lato', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px;">This issue is sponsored by:</div>
+        <img src="ads/image006.png" alt="Heritage Auctions – Prints & Multiples">
       </div>
     </div>
   </div>
 
   <div class="wrapper">
 
-    <h1 class="page-title">In This Edition</h1>
-
-    <div class="card-grid">
+    <div class="card-grid" style="margin-bottom: 0;">
 
       <div class="card">
-        <a href="editions/2026-03-01/arts-club-members-show/">
-          <img class="card-image" src="editions/2026-03-01/thumb-arts-club.jpg" alt="Chicago's Vanguard: Inside the 92nd Arts Club Members Show">
+        <a href="editions/2026-03-08/national-museum-mexican-art/">
+          <img class="card-image" src="editions/2026-03-08/national-museum-mexican-art/photo-museum-website-2.jpeg" alt="Rieles y Raíces: Chicago's Mexican Railroad Heritage" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-01/arts-club-members-show/">Chicago's Vanguard: Inside the 92nd Arts Club Members Show</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>The 92nd Exhibition of Visual Artist Members at the Arts Club of Chicago closes March 7. Executive Director Janine Mileaf and artist Keven Wilder share why you should stop by before it&rsquo;s gone.</p>
+        <h2><a href="editions/2026-03-08/national-museum-mexican-art/">Rieles y Ra&iacute;ces: Chicago&rsquo;s Mexican Railroad Heritage</a></h2>
+        <div class="meta">By Sydney Armstrong &nbsp;&bull;&nbsp; Cultural Heritage</div>
+        <p>At the National Museum of Mexican Art in Pilsen, a new exhibition traces the little-known history of Mexican railroad workers whose labor shaped Chicago&rsquo;s infrastructure&mdash;and whose descendants built one of the city&rsquo;s most vibrant communities.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-01/about-the-town-march/">
-          <img class="card-image" src="editions/2026-03-01/thumb-about-the-town.jpg" alt="The Essential March Guide: From Matisse to the Cubs Home Opener">
+        <a href="editions/2026-03-08/where-care-happens/">
+          <img class="card-image" src="editions/2026-03-08/where-care-happens/cleveland-clinic.jpg" alt="Where Care Happens" style="object-position: center 70%;">
         </a>
-        <h2><a href="editions/2026-03-01/about-the-town-march/">The Essential March Guide: From Matisse to the Cubs Home Opener</a></h2>
-        <div class="meta">By Philip Vidal &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>Korean National Treasures at the Art Institute, Theater of the Mind at the Goodman, Jackie Wilson Story at Black Ensemble, St. Patrick&rsquo;s Day celebrations, dance, opera, and more&mdash;your essential guide to March in Chicago.</p>
+        <h2><a href="editions/2026-03-08/where-care-happens/">Where Care Happens</a></h2>
+        <div class="meta">By Kipper Hendrick &nbsp;&bull;&nbsp; Life &amp; Family</div>
+        <p>How living arrangements shape the emotional reality of caregiving&mdash;whether a parent lives alone, in memory care, or under your own roof.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-01/ernest-hemingway-chicago/">
-          <img class="card-image" src="editions/2026-03-01/thumb-hemingway.jpg" alt="Ernest Hemingway in Chicago">
+        <a href="editions/2026-03-08/you-are-seated/">
+          <img class="card-image" src="editions/2026-03-08/you-are-seated/dinner-party.jpeg" alt="Dinner Party Seating Plans: You Are Seated" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-01/ernest-hemingway-chicago/">Ernest Hemingway in Chicago</a></h2>
-        <div class="meta">By Scott Holleran &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>Oak Park&rsquo;s most famous son and his complicated relationship with Chicago&mdash;scholars trace the Chicagoland roots that shaped Hemingway&rsquo;s writing, his loneliness, and his end.</p>
+        <h2><a href="editions/2026-03-08/you-are-seated/">Dinner Party Seating Plans: You Are Seated at&hellip;</a></h2>
+        <div class="meta">By Jill Lowe &nbsp;&bull;&nbsp; Facts &amp; Froth</div>
+        <p>Thoughtful seating arrangements can make or break a dinner party&mdash;and the etiquette governing them has a surprisingly rich and amusing history.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-01/moneyball/">
-          <img class="card-image" src="editions/2026-03-01/thumb-moneyball.jpg" alt="How Can You Not Be Romantic About Baseball?">
+        <a href="editions/2026-03-08/aqui-en-chicago/">
+          <img class="card-image" src="editions/2026-03-08/aqui-en-chicago/cecilia-beaven-murals.jpeg" alt="Aquí en Chicago at the Chicago History Museum" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-01/moneyball/">How Can You Not Be Romantic About Baseball?</a></h2>
-        <div class="meta">By Jackson LeJeune &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>A review of <em>Moneyball</em> (2011) &mdash; the Brad Pitt film about the Oakland Athletics&rsquo; improbable 2002 season and the statistical revolution that changed baseball forever.</p>
+        <h2><a href="editions/2026-03-08/aqui-en-chicago/">Aqu&iacute; en Chicago</a></h2>
+        <div class="meta">By Darcy L. Evon &nbsp;&bull;&nbsp; Arts &amp; Culture</div>
+        <p>Two Chicago women&rsquo;s organizations celebrate the landmark <em>Aqu&iacute; en Chicago</em> exhibit at the Chicago History Museum&mdash;born from a student protest, honoring Chicago&rsquo;s Latina community.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-01/wells-street-kitchen-juice/">
-          <img class="card-image" src="editions/2026-03-01/thumb-wells-street.jpg" alt="Savory Sandwiches Served Up in Old Town">
+        <a href="editions/2026-03-08/lunar-new-year-chinatown/">
+          <img class="card-image" src="editions/2026-03-08/lunar-new-year-chinatown/parade-gate.jpg" alt="Lunar New Year Parade in Chicago's Chinatown" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-01/wells-street-kitchen-juice/">Savory Sandwiches Served Up in Old Town</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>Steven McClellan&rsquo;s Wells Street Kitchen &amp; Juice brings fresh, handcrafted sandwiches, smoothies, and Old Town warmth to 1647 N. Wells.</p>
+        <h2><a href="editions/2026-03-08/lunar-new-year-chinatown/">Chicago&rsquo;s Lunar New Year Parade</a></h2>
+        <div class="meta">By Jen Huang &nbsp;&bull;&nbsp; Chicago Culture</div>
+        <p>In the Year of the Horse, CCM intern Jen Huang reports from Chinatown&rsquo;s Lunar New Year Parade: lion dancers, dragon dancers, and a celebration that belongs to the whole city.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-01/daily-star-march/">
-          <img class="card-image" src="editions/2026-03-01/thumb-daily-star.jpg" alt="March 2026 Daily Star Astrological Forecast">
+        <a href="editions/2026-03-08/datebook/">
+          <img class="card-image" src="editions/2026-03-08/datebook/photo-april.jpg" alt="DateBook — Chicago's Social Calendar" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-01/daily-star-march/">March 2026 Daily Star Astrological Forecast</a></h2>
-        <div class="meta">By Victoria Martin &nbsp;&bull;&nbsp; March 1, 2026</div>
-        <p>Day-by-day astrological guidance for all of March &mdash; with collapsible details, a day navigator, and times in Central.</p>
+        <h2><a href="editions/2026-03-08/datebook/">DateBook</a></h2>
+        <div class="meta">By Anne Delfosse &nbsp;&bull;&nbsp; Social Calendar</div>
+        <p>Galas, concerts, lectures, and celebrations&mdash;the essential guide to Chicago&rsquo;s social season, from March through the holiday months ahead.</p>
       </div>
 
     </div>
 
-  </div>
-
-  <div class="past-section">
-    <div class="inner">
+    <div class="past-editions">
       <h1 class="page-title">Past Editions</h1>
       <div class="card-grid">
+
+        <div class="card">
+          <a href="editions/2026-03-01/index.html">
+            <img class="card-image" src="editions/2026-03-01/case-of-the-missing-caramel/marie-claire.jpeg" alt="March 1, 2026 Edition" style="object-position: center 20%;">
+          </a>
+          <h2><a href="editions/2026-03-01/index.html">March 1, 2026</a></h2>
+          <div class="meta">Sunday Edition</div>
+          <p>The Case of the Missing Caramel, Arts Club Members Show, About the Town in March, Ernest Hemingway in Chicago, and more.</p>
+        </div>
 
         <div class="card">
           <a href="editions/2026-02-22/index.html">
@@ -461,7 +501,9 @@
 
         <div class="card">
           <a href="editions/2026-02-08/index.html">
-            <img class="card-image" src="editions/2026-02-08/thumb-feb8.jpg" alt="February 8, 2026 Edition">
+            <div class="card-image" style="background: #f0ebe3; display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Lato', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #999;">February 8, 2026</span>
+            </div>
           </a>
           <h2><a href="editions/2026-02-08/index.html">February 8, 2026</a></h2>
           <div class="meta">Sunday Edition</div>

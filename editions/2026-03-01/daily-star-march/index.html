@@ -266,6 +266,7 @@
                 <a href="../../../about.html">About</a>
                 <a href="../../../subscribe.html">Subscribe</a>
                 <a href="../../../advertise.html">Advertise</a>
+        <a href="../astro.html">Astrochart</a>
             </div>
         </nav>
     </header>
@@ -274,8 +275,6 @@
         <div class="article-label">Astrology &bull; Daily Star</div>
         <h1>March 2026 Daily Star Astrological Forecast</h1>
         <p class="astro-byline">By Victoria Martin &middot; Times in Central Time (<span id="tz-indicator">CST</span>)</p>
-
-        <img src="night-sky.jpg" alt="Star constellations against a deep blue night sky" style="width: 100%; height: 170px; object-fit: cover; display: block; margin: 24px 0;">
 
         <div class="astro-nav">
             <label for="day-select">Jump to date:</label>
@@ -1098,9 +1097,8 @@
             </script>
         </div>
 
-        <div style="padding-top: 24px; border-top: 1px solid #eee; margin-top: 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
-            <a href="../wells-street-kitchen-juice/" class="back-link">&larr; Previous: Savory Sandwiches Served Up in Old Town</a>
-            <a href="../../../index.html" class="back-link" style="text-align: right;">Back to Sunday Edition &rarr;</a>
+        <div style="padding-top: 24px; border-top: 1px solid #eee; margin-top: 24px;">
+            <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
         </div>
     </main>
 
@@ -1170,14 +1168,6 @@
             showDay(select.options[0].value);
         })();
 
-        var prevUrl = '../wells-street-kitchen-juice/';
-        var nextUrl = '../../../index.html';
-        document.addEventListener('keydown', function (e) {
-            var tag = (e.target.tagName || '').toLowerCase();
-            if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
-            if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
-            if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
-        });
     </script>
 </body>
 </html>
