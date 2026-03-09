@@ -423,37 +423,6 @@
         }
       </script>
     </div>
-      <div id="feedbackForm">
-        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 16px;">Did you enjoy this article?</p>
-        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
-          <input type="hidden" name="_subject" value="Classic Chicago Reader Feedback">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="feedbackReturn">
-          <input type="hidden" name="Page" id="page-tracking">
-          <input type="hidden" name="Environment" value="dev2">
-          <div style="margin-bottom: 12px;">
-            <label style="display: inline-flex; align-items: center; margin-right: 24px; font-family: 'Lato', sans-serif; font-size: 15px; color: #444; cursor: pointer;">
-              <input type="radio" name="vote" value="Yes, indeed" style="margin-right: 8px;"> Yes, indeed
-            </label>
-            <label style="display: inline-flex; align-items: center; font-family: 'Lato', sans-serif; font-size: 15px; color: #444; cursor: pointer;">
-              <input type="radio" name="vote" value="Not so much" style="margin-right: 8px;"> Not so much
-            </label>
-          </div>
-          <textarea name="comment" placeholder="Leave a comment (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
-          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
-          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
-        </form>
-      </div>
-      <script>
-        var base = window.location.href.split('?')[0];
-        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
-        document.getElementById('page-tracking').value = document.title + ' — ' + base;
-        if (window.location.search.indexOf('feedback=sent') !== -1) {
-          document.getElementById('feedbackForm').style.display = 'none';
-          document.getElementById('feedbackConfirm').style.display = 'block';
-        }
-      </script>
-    </div>
 
     <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
       <a href="../../../about.html#jen-huang" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Jen Huang &rarr;</a>
