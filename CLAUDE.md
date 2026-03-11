@@ -132,7 +132,27 @@ Heritage Auctions ad card appears in the grid next to the Children's Ball card.
 1. Create folder: `editions/YYYY-MM-DD/`
 2. Create article subfolders with `index.html` and images
 3. Create `thumb-*.jpg` thumbnails in the edition root
-4. Update `index.html` homepage with new hero + card grid
+4. Update `index.html` homepage with new hero + card grid (see "Updating the homepage" below)
 5. Update `about.html` "Our Writers This Week" section
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
+
+### Updating the homepage for a new edition
+Edit `index.html` (root):
+1. **Date line** — change `March 8, 2026` → `March 15, 2026` (etc.)
+2. **Hero section** — update path, image, label, title, byline, and teaser for first article
+3. **Card grid** — replace all cards with the new edition's articles (title, byline, image, teaser)
+4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
+5. Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
+
+### Editors menu (Internal nav — dev2 only)
+The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master`.
+
+To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
+- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`, `comments.html`
+- Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
+- Remove any stale edition-specific links from the prior edition
+
+The comment marker convention:
+- **Active (dev2):** `<!-- dev2-only -->` followed immediately by the `<div class="internal-nav">` block (no closing `-->`)
+- **Hidden (dev/master):** wrap entire block in `<!-- dev2-only ... -->`
