@@ -283,6 +283,15 @@
       border-top: 1px solid #ddd;
     }
 
+    .past-editions .card-image {
+      filter: grayscale(80%) opacity(0.75);
+      transition: filter 0.3s ease;
+    }
+
+    .past-editions .card:hover .card-image {
+      filter: grayscale(30%) opacity(0.9);
+    }
+
     .past-editions h2 {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
