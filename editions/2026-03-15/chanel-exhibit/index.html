@@ -574,6 +574,26 @@
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
   </script>
+  <script>
+    (function() {
+      var trigger = document.getElementById('author-trigger');
+      var popup = document.getElementById('author-popup');
+      var close = document.getElementById('author-popup-close');
+      if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.toggle('open');
+        });
+        if (close) close.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.remove('open');
+        });
+        document.addEventListener('click', function() {
+          popup.classList.remove('open');
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
