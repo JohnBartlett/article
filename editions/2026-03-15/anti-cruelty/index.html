@@ -323,6 +323,80 @@
       line-height: 1;
       padding: 0;
     }
+    /* Location popup */
+    .loc-trigger {
+      cursor: pointer;
+      color: #b51c20;
+      border-bottom: 1px dashed #b51c20;
+    }
+    #loc-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 900;
+    }
+    #loc-overlay.open { display: block; }
+    #loc-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px 24px 18px;
+      width: 300px;
+      max-width: 90vw;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 1000;
+      font-family: 'Lato', sans-serif;
+    }
+    #loc-popup.open { display: block; }
+    .loc-popup-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 10px;
+      padding-right: 20px;
+      line-height: 1.3;
+    }
+    .loc-popup-detail {
+      font-size: 13px;
+      color: #555;
+      margin: 0 0 5px;
+    }
+    .loc-popup-detail span {
+      font-weight: 700;
+      color: #333;
+    }
+    .loc-popup-links {
+      margin-top: 14px;
+      display: flex;
+      gap: 16px;
+    }
+    .loc-popup-links a {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .loc-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
   </style>
 </head>
 
@@ -420,7 +494,19 @@
 
       <p class="pullquote">&ldquo;At this moment, 335 animals &mdash; each with their own story and their own hope for a brighter future &mdash; are in our care. Register for BARK today, and provide lifesaving support for these and more animals in need. Let&rsquo;s make their future a reality,&rdquo; Duggan said.</p>
 
-      <p>To register for BARK, visit <a href="https://anticruelty.org" target="_blank" style="color: #b51c20;">anticruelty.org</a>. Anti-Cruelty&rsquo;s adoption center is located at 157 West Grand.</p>
+      <p>To register for BARK, visit <span class="loc-trigger" id="loc-trigger">anticruelty.org</span>.</p>
+
+      <div id="loc-overlay"></div>
+      <div id="loc-popup">
+        <button class="loc-popup-close" id="loc-popup-close">&times;</button>
+        <div class="loc-popup-name">The Anti-Cruelty Society</div>
+        <div class="loc-popup-detail"><span>Address:</span> 157 W. Grand Ave., Chicago, IL 60654</div>
+        <div class="loc-popup-detail"><span>Hours:</span> Open daily, 10&thinsp;am&ndash;6&thinsp;pm</div>
+        <div class="loc-popup-links">
+          <a href="https://anticruelty.org" target="_blank">Visit Website &rarr;</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Anti-Cruelty+Society+157+W+Grand+Ave+Chicago+IL" target="_blank">Google Maps &rarr;</a>
+        </div>
+      </div>
 
     </div><!-- end article-body -->
 
@@ -552,6 +638,30 @@
         });
         document.addEventListener('click', function() {
           popup.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var trigger = document.getElementById('loc-trigger');
+      var overlay = document.getElementById('loc-overlay');
+      var popup = document.getElementById('loc-popup');
+      var closeBtn = document.getElementById('loc-popup-close');
+      if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.toggle('open');
+          overlay.classList.toggle('open');
+        });
+        closeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.remove('open');
+          overlay.classList.remove('open');
+        });
+        overlay.addEventListener('click', function() {
+          popup.classList.remove('open');
+          overlay.classList.remove('open');
         });
       }
     })();
