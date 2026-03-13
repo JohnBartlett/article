@@ -260,6 +260,69 @@
       h1.article-title { font-size: 28px; }
       .article-body p { font-size: 16px; }
     }
+
+    /* Author popup */
+    .author-trigger {
+      cursor: pointer;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .author-popup {
+      display: none;
+      position: absolute;
+      top: 1.8em;
+      left: 0;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 16px 20px 14px;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      z-index: 200;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #444;
+      text-align: left;
+    }
+    .author-popup.open { display: block; }
+    .author-popup-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #111;
+      margin: 0 0 2px;
+    }
+    .author-popup-role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      margin: 0 0 10px;
+    }
+    .author-popup-bio { margin: 0 0 10px; }
+    .author-popup-link {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
   </style>
 </head>
 
@@ -291,7 +354,7 @@
 
     <h1 class="article-title">Philadelphia Story: The Nation&rsquo;s First Capital Has Much to Tell About Our Origins</h1>
 
-    <div class="article-meta">By David A. F. Sweet &nbsp;&bull;&nbsp; March 15, 2026</div>
+    <div class="article-meta">By <span class="author-popup-wrap"><span class="author-trigger" id="author-trigger">David A. F. Sweet</span><div class="author-popup" id="author-popup"><button class="author-popup-close" id="author-popup-close">&times;</button><div class="author-popup-name">David A. F. Sweet</div><div class="author-popup-role">Author &amp; Historian</div><p class="author-popup-bio">David A. F. Sweet is the author of <em>Three Seconds in Munich</em>, <em>Lamar Hunt: The Gentle Giant Who Revolutionized Professional Sports</em>, <em>Onwentsia at 125</em>, and <em>Elawa Farm: A Timeless Treasure</em>.</p><a href="../../../about.html#david-sweet" class="author-popup-link">Full bio &rarr;</a></div></span> &nbsp;&bull;&nbsp; March 15, 2026</div>
 
     <figure class="hero-figure">
       <img src="Philly Independence Hall.jpeg" alt="Independence Hall, Philadelphia">
