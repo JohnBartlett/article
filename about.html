@@ -71,6 +71,52 @@
       text-decoration: underline;
     }
 
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d41f1f;
+      padding: 2px 8px;
+      margin-left: 10px;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .hamburger-btn:hover {
+      color: #b51c20;
+    }
+
+    .hamburger-menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hamburger-menu.open {
+      display: block;
+    }
+
+    .hamburger-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger-menu a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
     .wrapper {
       max-width: 800px;
       margin: 0 auto 60px;
@@ -195,6 +241,109 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Author articles popup */
+    .articles-trigger {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 0;
+      background: none;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b51c20;
+      cursor: pointer;
+      border-bottom: 1px dashed #b51c20;
+    }
+    #articles-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 900;
+    }
+    #articles-overlay.open { display: block; }
+    .articles-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 28px 28px 22px;
+      width: 500px;
+      max-width: 94vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      z-index: 1000;
+    }
+    .articles-popup.open { display: block; }
+    .articles-popup-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 20px;
+      padding-right: 24px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
+    }
+    .articles-popup-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+    .article-mini {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+    }
+    .article-mini:hover .article-mini-title { color: #b51c20; }
+    .article-mini img {
+      width: 72px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .article-mini-info { flex: 1; }
+    .article-mini-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .article-mini-date {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #999;
+    }
   </style>
 </head>
 
@@ -208,10 +357,14 @@
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
+        <a href="editions/2026-03-08/datebook/">DateBook</a>
+        <a href="editions/2026-03-01/daily-star-march/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
         <a href="about.html">About</a>
         <a href="subscribe.html">Subscribe</a>
         <a href="advertise.html">Advertise</a>
-        <a href="editions/2026-03-01/daily-star-march/">Astrochart</a>
       </div>
     </nav>
   </header>
@@ -234,51 +387,221 @@
         <div class="team-member" id="judy-carmack-bross">
           <h3>Judy Carmack Bross</h3>
           <div class="role">Editor-in-Chief &amp; Founder</div>
-          <p>A veteran Chicago journalist covering dining, social events, and the people who shape the city's cultural life.</p>
+          <p>A veteran Chicago journalist covering dining, social events, and the people who shape the city&rsquo;s cultural life. She is the author of <em>Murray Bay: The Gilded Age Resort of Tafts, Sedgwicks, Blakes, Minturns, and Their Friends</em> and co-author of <em>Charlevoix: A Tradition of Hospitality</em>.</p>
+      <button class="articles-trigger" data-popup="articles-judy-carmack-bross">Judy Carmack Bross&rsquo;s Articles &rarr;</button>
+      <div id="articles-judy-carmack-bross" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Judy Carmack Bross&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-08/lincoln-park/" class="article-mini">
+          <img src="editions/2026-02-08/lincoln-park/kristin-smith.jpg" alt="Lincoln Park: History Hiding in Plain Sight">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Lincoln Park: History Hiding in Plain Sight</span>
+            <span class="article-mini-date">February 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-15/alicia-ziegler/" class="article-mini">
+          <img src="editions/2026-02-15/alicia-ziegler/LOMZ2375.jpeg" alt="Alicia Ziegler: The Artful Concierge">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Alicia Ziegler: The Artful Concierge</span>
+            <span class="article-mini-date">February 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-15/childrens-research-fund/" class="article-mini">
+          <img src="editions/2026-02-15/childrens-research-fund/2025 Co-Chairs_Jen and Gerald Beeson.jpg" alt="Children's Research Fund Children's Ball">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Children's Research Fund Children's Ball</span>
+            <span class="article-mini-date">February 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-22/bag-charms/" class="article-mini">
+          <img src="editions/2026-02-22/bag-charms/amanda-marcuson-1.jpeg" alt="Bag Charms: Humor and Play in a Serious World">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Bag Charms: Humor and Play in a Serious World</span>
+            <span class="article-mini-date">February 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-22/iwa-extraordinaire/" class="article-mini">
+          <img src="editions/2026-02-22/iwa-extraordinaire/barbara-gaines.jpg" alt="IWA's Women Extraordinaire">
+          <span class="article-mini-info">
+            <span class="article-mini-title">IWA's Women Extraordinaire</span>
+            <span class="article-mini-date">February 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-01/arts-club-members-show/" class="article-mini">
+          <img src="editions/2026-03-01/arts-club-members-show/tropea-jpgs/untitled-56.jpg" alt="Chicago's Vanguard: Inside the 92nd Arts Club Members Show">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Chicago's Vanguard: Inside the 92nd Arts Club Members Show</span>
+            <span class="article-mini-date">March 1, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/anti-cruelty/" class="article-mini">
+          <img src="editions/2026-03-15/anti-cruelty/taffy.jpeg" alt="Taffy and Pretty Girl Celebrate Anti-Cruelty's 127th Birthday">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Taffy and Pretty Girl Celebrate Anti-Cruelty's 127th Birthday</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/ica-broadway/" class="article-mini">
+          <img src="editions/2026-03-15/ica-broadway/broadway-stars.jpeg" alt="Even an 11th Hour Site Change Didn't Stop the ICA">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Even an 11th Hour Site Change Didn't Stop the ICA</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
         </div>
         <div class="team-member">
           <h3>Megan McKinney</h3>
           <div class="role">Publisher &amp; Founder</div>
-          <p>Author and social historian.</p>
+          <p>A noted social historian, she is the author of <em>The Magnificent Medills</em>.</p>
         </div>
       </div>
 
       <h2>Our Writers This Week</h2>
       <div class="team-grid">
-        <div class="team-member" id="dr-robert-leo-murphy">
-          <h3>Dr. Robert Leo Murphy</h3>
-          <div class="role">Chicago&ndash;Paris Connection</div>
-          <p>A physician and longtime Francophile, Dr. Robert Leo Murphy writes Classic Chicago&rsquo;s &ldquo;Chicago&ndash;Paris Connection&rdquo; series, profiling Chicagoans who have built remarkable careers in Europe. He lives in Paris&rsquo;s 7th arrondissement.</p>
+        <div class="team-member" id="cheryl-anderson">
+          <h3>Cheryl Anderson</h3>
+          <div class="role">Travel &amp; Style</div>
+          <p>Chanel couture, to me, has always been the very definition of style. It&rsquo;s been my pleasure sharing her remarkable life with the readers. I&rsquo;ve stayed in Menton every year since 1994. By chance, Chanel&rsquo;s Villa La Pausa is up the hill from there. My Ville de Menton sponsored Exposition Peintures, in la Chapelle St. Jacques, is a cherished memory and will forever connect me to Menton.</p>
+      <button class="articles-trigger" data-popup="articles-cheryl-anderson">Cheryl Anderson&rsquo;s Articles &rarr;</button>
+      <div id="articles-cheryl-anderson" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Cheryl Anderson&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-08/mimosa/" class="article-mini">
+          <img src="editions/2026-02-08/mimosa/IMG_8508.jpeg" alt="Mimosa Heralds the Oncoming of Spring">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Mimosa Heralds the Oncoming of Spring</span>
+            <span class="article-mini-date">February 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/chanel-exhibit/" class="article-mini">
+          <img src="editions/2026-03-15/chanel-exhibit/monte-carlo-poster.jpeg" alt="Les Années Folles de Coco Chanel">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Les Années Folles de Coco Chanel</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
         </div>
-        <div class="team-member" id="sydney-armstrong">
-          <h3>Sydney Armstrong</h3>
-          <div class="role">Cultural Heritage</div>
-          <p>Sydney Armstrong writes about Chicago&rsquo;s cultural institutions and the communities that sustain them. This week she profiles the National Museum of Mexican Art in Pilsen.</p>
+      </div>
         </div>
-        <div class="team-member" id="kipper-hendrick">
-          <h3>Kipper Hendrick</h3>
-          <div class="role">Life &amp; Family</div>
-          <p>Kipper Hendrick is a caregiver advocate and consultant based in Palm Beach. After more than two decades helping care for aging parents and loved ones, she founded Lance Consulting to guide families through the often complex medical, emotional, and logistical challenges of caregiving. Through her writing and social media platforms (@CareWithKipper), she shares practical tools, encouragement, and real-life insights to support long-haul caregivers.</p>
+        <div class="team-member" id="bob-glaze">
+          <h3>Bob Glaze</h3>
+          <div class="role">Culinary &amp; Cultural Guide</div>
+          <p>No one captures the tastes and cultures of our Chicago neighborhoods and suburbs quite like Bob Glaze. For his often-updated travel recommendations throughout Chicago and around the world, visit <a href="https://globalphile.com/">Globalphile.com</a>.</p>
+      <button class="articles-trigger" data-popup="articles-bob-glaze">Bob Glaze&rsquo;s Articles &rarr;</button>
+      <div id="articles-bob-glaze" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Bob Glaze&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-15/best-restaurants-halsted-street/" class="article-mini">
+          <img src="editions/2026-02-15/best-restaurants-halsted-street/trattoria-gianni-1.jpg" alt="Where to Eat on N. Halsted St. in Lincoln Park">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Where to Eat on N. Halsted St. in Lincoln Park</span>
+            <span class="article-mini-date">February 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/little-village/" class="article-mini">
+          <img src="editions/2026-03-15/little-village/Little Village Arch.jpeg" alt="Visiting Little Village in Chicago">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Visiting Little Village in Chicago</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
         </div>
-        <div class="team-member" id="jill-lowe">
-          <h3>Jill Lowe</h3>
-          <div class="role">Facts &amp; Froth</div>
-          <p>Under the banner of &ldquo;Facts and Froth,&rdquo; Jill Lowe writes about the quirky and curious aspects of the ordinary and familiar parts of our everyday life. Photo of Jill by Joe Mazza, Bravelux Inc.</p>
+      </div>
         </div>
-        <div class="team-member" id="darcy-evon">
-          <h3>Darcy L. Evon</h3>
-          <div class="role">Arts &amp; Culture</div>
-          <p>Darcy L. Evon serves on the Guild of the Chicago History Museum Board of Directors. She is a nonprofit executive, book author, journalist, and former columnist for the <em>Chicago Sun-Times</em> and magazine publisher.</p>
+        <div class="team-member" id="francesco-bianchini">
+          <h3>Francesco Bianchini</h3>
+          <div class="role">Travel &amp; Memory</div>
+          <p>Born in Rome and raised in Umbria, Francesco Bianchini teaches French language and culture at the University of Perugia and writes from between Italy and France. His work explores memory, place, food, travel, and the quiet rituals that shape a life.</p>
+      <button class="articles-trigger" data-popup="articles-francesco-bianchini">Francesco Bianchini&rsquo;s Articles &rarr;</button>
+      <div id="articles-francesco-bianchini" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Francesco Bianchini&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-01/case-of-the-missing-caramel/" class="article-mini">
+          <img src="editions/2026-03-01/case-of-the-missing-caramel/marie-claire.jpeg" alt="The Case of the Missing Caramel">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Case of the Missing Caramel</span>
+            <span class="article-mini-date">March 1, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/guardian-san-pietro/" class="article-mini">
+          <img src="editions/2026-03-15/guardian-san-pietro/ascenzio-portrait.jpeg" alt="The Guardian of San Pietro">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Guardian of San Pietro</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
         </div>
-        <div class="team-member" id="jen-huang">
-          <h3>Jen Huang</h3>
-          <div class="role">CCM Intern</div>
-          <p>Jen Huang is a CCM intern and UIC student. This week she reports from Chinatown&rsquo;s Lunar New Year Parade, exploring what the celebration means to the community in the Year of the Horse.</p>
+      </div>
+        </div>
+        <div class="team-member" id="scott-holleran">
+          <h3>Scott Holleran</h3>
+          <div class="role">Short Story Editor</div>
+          <p>Classic Chicago Magazine Short Story Editor Scott Holleran lived in Chicago for 21 years and writes the non-fictional <a href="https://classicchicagomagazine.com/category/industrial-revolutions/">Industrial Revolutions</a> column as well as <a href="https://classicchicagomagazine.com/category/short-stories/">short stories</a>. Read his first book, <a href="https://books.apple.com/us/book/long-run/id6755129006"><em>Long Run: Short Stories Volume One</em></a>, and his non-fiction, <em>Autonomia</em>, at <a href="https://scottholleran.substack.com/">scottholleran.substack.com</a>. His fiction has been awarded a 2025 literary prize in Chicago&rsquo;s Col. Darron L. Wright Memorial Writing Awards.</p>
+      <button class="articles-trigger" data-popup="articles-scott-holleran">Scott Holleran&rsquo;s Articles &rarr;</button>
+      <div id="articles-scott-holleran" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Scott Holleran&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-01/ernest-hemingway-chicago/" class="article-mini">
+          <img src="logo.jpg" alt="Ernest Hemingway in Chicago">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Ernest Hemingway in Chicago</span>
+            <span class="article-mini-date">March 1, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/honey-child/" class="article-mini">
+          <img src="editions/2026-03-15/honey-child/image0.jpeg" alt="Honey Child">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Honey Child</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="david-sweet">
+          <h3>David A. F. Sweet</h3>
+          <div class="role">Author &amp; Historian</div>
+          <p>David A. F. Sweet is the author of <em>Three Seconds in Munich: The Controversial 1972 Olympic Basketball Final</em>, <em>Lamar Hunt: The Gentle Giant Who Revolutionized Professional Sports</em>, <em>Onwentsia at 125</em>, and <em>Elawa Farm: A Timeless Treasure</em>. Reach him at <a href="mailto:dafsweet@aol.com" style="color: #b51c20;">dafsweet@aol.com</a>.</p>
+      <button class="articles-trigger" data-popup="articles-david-sweet">David A. F. Sweet&rsquo;s Articles &rarr;</button>
+      <div id="articles-david-sweet" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">David A. F. Sweet&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-08/sam-hiller/" class="article-mini">
+          <img src="editions/2026-02-08/sam-hiller/Hiller Referee 1.jpeg" alt="Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</span>
+            <span class="article-mini-date">February 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-22/sporting-life-lfc-goalie/" class="article-mini">
+          <img src="editions/2026-02-22/sporting-life-lfc-goalie/LFC-Goalie-2.jpeg" alt="Answering the Call: 45-Year-Old LFC Alum Suits Up as Blackhawks' Goalie">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Answering the Call: 45-Year-Old LFC Alum Suits Up as Blackhawks' Goalie</span>
+            <span class="article-mini-date">February 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/unsung-gems-philadelphia/" class="article-mini">
+          <img src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: The Nation's First Capital">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Philadelphia Story: The Nation's First Capital</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
         </div>
         <div class="team-member" id="annie-delfosse">
-          <h3>Anne Delfosse</h3>
-          <div class="role">DateBook</div>
-          <p>Anne Delfosse curates Classic Chicago&rsquo;s DateBook, the essential guide to Chicago&rsquo;s social and cultural season&mdash;galas, concerts, lectures, and celebrations across the city and suburbs.</p>
+          <h3>Annie Delfosse</h3>
+          <div class="role">DateBook Editor</div>
+          <p>Annie Delfosse curates DateBook and welcomes all of your suggestions. She is a graduate of the University of Illinois at Chicago, a layout editor for Classic Chicago and an advocate for animals.</p>
         </div>
       </div>
 
@@ -309,6 +632,49 @@
       All rights reserved.
     </div>
   </footer>
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+  <div id="articles-overlay"></div>
+  <script>
+    (function() {
+      var overlay = document.getElementById('articles-overlay');
+      var current = null;
+      function openPopup(id) {
+        if (current) current.classList.remove('open');
+        current = document.getElementById(id);
+        if (current) { current.classList.add('open'); overlay.classList.add('open'); }
+      }
+      function closePopup() {
+        if (current) current.classList.remove('open');
+        overlay.classList.remove('open');
+        current = null;
+      }
+      document.querySelectorAll('.articles-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openPopup(btn.dataset.popup);
+        });
+      });
+      document.querySelectorAll('.articles-popup-close').forEach(function(btn) {
+        btn.addEventListener('click', function(e) { e.stopPropagation(); closePopup(); });
+      });
+      overlay.addEventListener('click', closePopup);
+    })();
+  </script>
 </body>
 
 </html>
