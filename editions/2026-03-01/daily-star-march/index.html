@@ -288,6 +288,31 @@
                 align-items: flex-start;
             }
         }
+    .shortcuts-btn {
+      position: fixed; top: 12px; left: 12px; width: 32px; height: 32px;
+      background: #fff; border: 1px solid #ddd; border-radius: 50%;
+      font-size: 15px; font-weight: 700; color: #888; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; z-index: 800;
+    }
+    .shortcuts-btn:hover { border-color: #999; color: #333; }
+    .shortcuts-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4); z-index: 900; align-items: center; justify-content: center;
+    }
+    .shortcuts-overlay.active { display: flex; }
+    .shortcuts-popup {
+      background: #fff; border-radius: 8px; padding: 24px 32px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2); min-width: 260px;
+    }
+    .shortcuts-popup h3 { margin: 0 0 16px; font-size: 16px; color: #333; }
+    .shortcuts-popup dl {
+      margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; align-items: center;
+    }
+    .shortcuts-popup dt {
+      background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px;
+      padding: 2px 8px; font-size: 13px; font-family: monospace; color: #333; text-align: center; min-width: 24px;
+    }
+    .shortcuts-popup dd { margin: 0; font-size: 14px; color: #555; }
     </style>
 </head>
 <body>
@@ -1225,6 +1250,33 @@
         })();
 
     </script>
+  <button class="shortcuts-btn" id="shortcutsBtn" title="Keyboard shortcuts">?</button>
+  <div class="shortcuts-overlay" id="shortcutsOverlay">
+    <div class="shortcuts-popup">
+      <h3>Keyboard Shortcuts</h3>
+      <dl>
+        <dt>Space</dt><dd>Page down</dd>
+        <dt>PgDn</dt><dd>Page down</dd>
+        <dt>PgUp</dt><dd>Page up</dd>
+        <dt>Esc</dt><dd>Close this popup</dd>
+      </dl>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var btn = document.getElementById('shortcutsBtn');
+    var overlay = document.getElementById('shortcutsOverlay');
+    btn.addEventListener('click', function() { overlay.classList.toggle('active'); });
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.classList.remove('active'); });
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'Escape') { overlay.classList.remove('active'); return; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  })();
+  </script>
     <script>
         (function() {
             var btn = document.getElementById('hamburger-btn');
