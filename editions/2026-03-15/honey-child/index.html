@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Honey Child | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d41f1f;
+      padding: 2px 8px;
+      margin-left: 10px;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .hamburger-btn:hover {
+      color: #b51c20;
+    }
+
+    .hamburger-menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hamburger-menu.open {
+      display: block;
+    }
+
+    .hamburger-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger-menu a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+      margin: 0 0 16px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+      font-style: italic;
+      margin: 32px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 28px; }
+      .article-body p { font-size: 16px; }
+    }
+
+    /* Author popup */
+    .author-trigger {
+      cursor: pointer;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .author-popup {
+      display: none;
+      position: absolute;
+      top: 1.8em;
+      left: 0;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 16px 20px 14px;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      z-index: 200;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #444;
+      text-align: left;
+    }
+    .author-popup.open { display: block; }
+    .author-popup-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #111;
+      margin: 0 0 2px;
+    }
+    .author-popup-role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      margin: 0 0 10px;
+    }
+    .author-popup-bio { margin: 0 0 10px; }
+    .author-popup-link {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../2026-03-08/datebook/">DateBook</a>
+        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="article-wrapper">
+    <div class="article-category">Fiction &bull; Short Story</div>
+
+    <h1 class="article-title">Honey Child</h1>
+
+    <div class="article-meta">By <span class="author-popup-wrap"><span class="author-trigger" id="author-trigger">Scott Holleran</span><div class="author-popup" id="author-popup"><button class="author-popup-close" id="author-popup-close">&times;</button><div class="author-popup-name">Scott Holleran</div><div class="author-popup-role">Short Story Editor</div><p class="author-popup-bio">Classic Chicago Magazine Short Story Editor Scott Holleran lived in Chicago for 21 years. His fiction has been awarded a 2025 literary prize in Chicago&rsquo;s Col. Darron L. Wright Memorial Writing Awards. Read his work at <a href="https://scottholleran.substack.com/" style="color:#b51c20;">scottholleran.substack.com</a>.</p><a href="../../../about.html#scott-holleran" class="author-popup-link">Full bio &rarr;</a></div></span> &nbsp;&bull;&nbsp; March 15, 2026</div>
+
+    <figure class="hero-figure">
+      <img src="image0.jpeg" alt="A school bus on a tree-lined residential street">
+      <figcaption>A school bus makes its morning rounds through a quiet neighborhood. (Images courtesy of GrokAI by X)</figcaption>
+    </figure>
+
+    <div class="article-body">
+
+      <p>Sweke walked his usual path. The pudgy, blond-haired boy kicked through fallen leaves. Pulling up the zipper on his coat, he came to the corner at 13th Street and Greenwood Avenue under an elm tree. He stood watching cars go both ways on both streets every few minutes, one by one, slowly cutting through the puddles of last night's rain filled with clusters of leaves clogging the drains. The air was cold. Soon, he would board the bus for school. Sweke checked to make sure his bus button was visible on the winter coat, which was tattered at the sleeves' edges. He didn't mind because the coat kept him warm. The puffy coat made him look pudgier. Sweke didn't mind this, either. He took comfort knowing the bus would pull up from a few blocks away after the turn on 13th at Chestnut. Sweke would step up after the doors opened, hold the guard rail and look upon the black woman seated at the steering wheel. Every morning, she held the lever to open and close the doors and instructed: "Careful stepping up."</p>
+
+      <p>The driver kept the bus warm. Every day, Sweke took a seat on the first bench behind the bus driver, waited a minute and started asking questions&mdash;question after question after question. The driver answered them all, sometimes after taking pause while driving and thinking it over. For now, Sweke straddled the top of a fire hydrant under the elm tree to sit as he waited for the bus. Trying not to think about the nightmare he'd had last night in which a Fifties movie monster accosted him at the bus stop, Sweke kept watching Chestnut with nervous anticipation.</p>
+
+      <p>Idling on Chestnut, the bus driver stepped on the brake as she picked up the receiver and pressed down on the button. "You boys settle down back there," she said, lifting her thumb from the button, waiting as she watched in the rearview mirror, slowly lifting her steel-tip booted foot off the brake only after the boys in the back of the bus&mdash;a group of athletic boys&mdash;quieted. "Don't make me stop this bus and, if I stop, I'mma let the principal know why you late for school."</p>
+
+      <p>Making her last bus stop on Chestnut, the lady opened the door. Up came chubby Carolyn, whom she knew was usually haughty and wearing the finest coat and clothes; Carolyn was the loneliest child on the bus. Carolyn took a seat beside Jenny, a tall, slim girl whose father owned a soda company. Jenny had boarded on Sheridan Road. Jenny stared out the window, smiling to herself, imagining summer camp. "Good morning," the bus driver greeted each new passenger in an even tone, as if speaking to herself. "Morning," sometimes came a reply, though most boarding passengers looked past the driver, who could see each student searching for which place to sit.</p>
+
+      <p>Politics, she thought as spindly Gau-pu Shi boarded in his thick eyeglasses and heavy book bag at Ashland Avenue behind Keith, whose manner was overbearing, whose voice was loud and who was always greeted in the back of the bus by the jocks. She'd reported Keith for beating other boys. She knew to keep an eye on Keith. Gau-pu kept to himself, talking to anyone who'd listen about science, math and meteorology in perfect English&mdash;on this day to ruddy-faced Bitsy.</p>
+
+      <p>"Good morning," the driver greeted Mary Rose, Rod, Penny Jean and Dan on Elmwood Avenue before reaching Forest Avenue, where Tina boarded in secondhand clothes and a long, wool scarf her grandmother had made. Dan was quiet; he'd been accused of stealing kids' bikes and stripping them for resale at the town bike shop. The driver had seen him riding other bikes she knew belonged to other kids. Penny Jean&mdash;whose mother Peggy June put her daughter's hair in a carefully combed pageboy haircut&mdash;spoke, like Gau-pu, with authority about everything, and with zealotry about rituals, religion and God; Penny Jean wore a large crucifix. Rod wore dirty, holy sneakers; his tall frame hunched as he talked about baseball and trading cards with Davy, Tim and Greg Milliken. The Fichtner twins&mdash;freckle-faced tough boys who had transferred from St. Ignatius to Harper Elementary School&mdash;stuck together and beat up anyone who spoke to them. Mary Rose sat alone in her long, plain, straight brown hair and braces, trying to get Davy Milliken's attention.</p>
+
+      <p>The driver at the steering wheel had clocked in at the yard before dawn. In the earliest hours of that morning, she'd walked past huddled school bus drivers gathering near the yard where the buses dispatched&mdash;past those loitering outside after punching in and the chattering types scheming for labor unions and asinine rules&mdash;and she sat down with a book bag next to Gavin.</p>
+
+      <p>"Good morning, Gavin," she said, exhaling and pulling a book out of her bag, gently bending back the binding and lifting the bookmark. "Hello," he answered while reading the sports section. That's all they said. For a while, she read a novel, conjuring its world while recalling her girlhood in the rural South. The bus driver's parents had migrated north to the city on the lake when she was 15 years old. Before that, she'd grown up in a birchwood shack in Georgia without running water or electricity. She'd seen the first white people in her life at the age of 11 when a passenger train derailed somewhere in Tennessee and was rerouted along a freight rail line through the fields near her home.</p>
+
+      <p>"The night train jumped the tracks!" Somebody yelled as she slept on a mattress under a canopy one summer. "They running white folks' trains by old George's place&hellip;" With that, children&mdash;who'd heard about sleeping compartments and tablecloth dining on passenger trains&mdash;dashed into the fields to catch sight and watch as the train went by. She ran after her older cousin Preston as the children ran and yelped with excitement. "Come on, girly, keep up!" Preston called back to her. By the time they reached the tracks, the train had stopped, backed up for miles, passengers staring out windows at the black children in overalls and holy shirts. She remembered looking up while catching her breath. Every face was white.</p>
+
+      <p>These people live in homes like I do, she recalled thinking, and they on a train with water and electricity&mdash;must be living better than I do. Standing in that field, looking up at the faces on that passenger train, she swore to herself she'd escape the South. Now, living with her husband, Pawlow, and Pawlow's sister on the city's southwest side, she knew she was better off. "We've got 15 minutes," Gavin said, glancing at his wristwatch while scanning yesterday's baseball scores. She put her book down after marking her place. Tucking the novel into her bag, she left it on the chair, standing up and walking to the bulletin board to read the new notices. Complying with posted regulations was her least favorite part of the job. As she scanned the board, the only interesting information concerned her school district route, where she'd been driving a bus to take students to school for nine years.</p>
+
+      <p>An illustration of a pockmarked face caught her eye. "Have you seen this man?" a black-and-white poster asked in bold type above the drawing of a man with menacing eyes. She read the copy: "This man has been reported on two occasions to have been propositioning children near Pontiac Elementary and Indian Wood Junior High. Local police consider him a danger to children. This man may be armed and dangerous. Do not approach him. Call police if you see this man." The driver studied the sketch, examining the picture, then closed her eyes. The likeness remained against the blackness. She opened her eyes to look and study it again.</p>
+
+      <p>"These children are troubled," she'd said to her husband last night after dinner while doing dishes. "Why's that?" Her sister-in-law, Goldie, asked while playing solitaire at the kitchen table, which shook as a nearby elevated train passed over. "They spoiled&mdash;spoiled rotten," she answered. "The kids don't play&mdash;they starved for attention&mdash;they all nerves." She knew that she liked most of the children on her school bus route. She also knew she loved children. She had four of her own, though they were living with her older sister in a city on a river in another state. "They're poor like we were," she said over her shoulder to Pawlow, who sat reading a crossword puzzle. Pawlow looked up and nodded, while shrugging. "From what you've told me, they are." His wife had described the runny noses, untied shoes, missing and overpacked lunches, bruises, obesity, grumbling stomachs and circles and bags under their eyes&mdash;signs of abuse and neglect she knew from her youth. "Their folks think money buy love, yet these children are poorer than we were."</p>
+
+      <p>A bell rang. Gavin extended her book bag. "Thanks," she said. Gavin nodded as they headed toward the yard to their buses. "See ya at the school," he said. Once on board and seated at the steering wheel on route, she drove east toward the lake as she did every day. Noticing the large, stately homes on trimmed lawns with green trees, she smiled at the sight of tricycles beside brooms and rakes on front porches, imagining her children being better off while she and Pawlow worked in government jobs to make enough money to send for them.</p>
+
+      <p>Politics, she thought to herself passing the throng of aimless or slow-moving bus drivers. "Parasites," Gavin had derisively muttered as the pair reached their buses. Finally, she came to her first stop on Lake Avenue, then another and another until she spotted tall, slim Jenny, the soda businessman's daughter standing at a stop on Sheridan Road. "'Morning, Jenny," she said warmly. "Good morning," Jenny greeted with a smile. The bus driver liked gawky Jenny, who reminded her of herself at that age. Soon, up stepped Carolyn, the chubby girl who lived on Chestnut. "What's for lunch?" The driver asked as Carolyn clutched her lunchbox before taking a seat behind the steps on the bench opposite where Sweke would take a seat. "Baloney," Carolyn replied, "and cookies I baked with Mom."</p>
+
+      <p>"No crusts." The driver said about the sandwich, mirroring the girl's preference. Carolyn looked up. "Nope. I hate crust." The driver nodded as she stopped for Gau-pu Shi, who stepped up at a stop on Ashland Avenue. "How'd you do?" She greeted him. The boy shrugged. "Ninety-eight," he answered about a test score. Without hesitation, she followed with: "I meant at yesterday's kickball." "Oh," he answered with a startled, puzzled expression. "OK, I guess," he said, taken aback. Kickball hadn't occurred to Gau-pu; this kept him thinking about a topic which he hadn't given thought.</p>
+
+      <p>When Keith stepped up, she gravely nodded as forewarning&mdash;"go easy in the back, champ," she said to the jock&mdash;before Bitsy ambled up the steps. Greeting Bitsy, she said, "best button that coat up, young lady," as she checked a sideview mirror and started to lift her boot off the brake. Mary Rose, Rod, Penny Jean and Dan boarded next at a stop on Elmwood, where the bus driver watched each child choose and take seats. When Tina got on, she asked how the recital went. Hearing Penny Jean proselytize to Rod about the Christ child, she half-turned and sharply said: "Enough, Penny&mdash;leave Rod be." She'd smiled and nodded to the boys&mdash;Davy, Tim and Greg Milliken and the Fichtner twins&mdash;whom she liked better than she let on. Then, she settled back, answering Sweke's daily inquisition.</p>
+
+      <p>As the bus approached town, a few blocks from Harper Elementary's campus on Lake Avenue, the driver idled at the stoplight, aware of her peripheral vision while watching pedestrians in the crosswalk. The women, carrying fancy purses, wore overcoats. Men in loose-fitting jackets and coats&mdash;a few wearing knit caps&mdash;walked to cars as people filed into the corner restaurant or toward the grocery store at the end of the block. Listening to the sound of passenger laughter and chatter as she contemplated one of Sweke's questions, the driver noticed a figure in a black sportcoat standing on her left. The figure hadn't moved as she waited at the stoplight. The sportcoat was incongruous&mdash;air temperature was cold enough to wear a sweater or shirt with a jacket and few were dressed in a blazer this morning&mdash;and she observed that the person was standing at the curb by the crosswalk.</p>
+
+      <p>The person stood close enough to the crosswalk that she thought the figure might be preparing to step off the curb. When the person didn't, a chill snaked her spine. The driver turned to have a look. As she did, the figure's chin slowly lowered. For the first time, she noticed the person wore a baseball cap pulled low over the eyes. She glanced at the light which stayed red, then back at the figure&mdash;back to the stoplight and back again&mdash;and, by now, she'd determined the person was a man.</p>
+
+      <p>Shuttling her eyes to the stoplight, the kids in the rearview mirror and the visored man at the curb, she saw the cap's curved brim slowly start to rise. Before the light changed&mdash;and, suddenly, it did turn green&mdash;she turned to have a look at what she could see of his face. Their eyes met in an instant and she thought she saw pockmarks. The driver couldn't be sure as a chill crept up her spine. When Sweke asked another question, her hand went up and she said in a low voice what she'd never said to the boy: "Quiet." Lifting her boot off the brake, she glanced again and the cap's brim was down. This time, it was even lower. The driver slowly accelerated the bus toward school.</p>
+
+      <p>The bus driver's name tag read: P. Tyke. The school district employee signed her logbook in long, slanted, elegant strokes in cursive handwriting she'd learned and practiced in a one-room schoolhouse in Georgia: Plutusia Tyke. "Call me Plu," she told schoolchildren who asked about pronouncing her first name. "Jus' call me Plu, Pee for short if ya want." Everyone except Sweke, who called her Mrs. Tyke, called the bus driver Plu.</p>
+
+      <p>Plutusia Tyke greeted students enrolled in the district's bus program every week day. Occasionally, she used a first aid kit she kept in a compartment beneath her seat, usually on one of the boys riding in back. "Hush and hold still," she'd tell the boys when applying medicine and bandages after somebody had done something reckless or wrong. Plu taught Carolyn how to stop a nosebleed, talked to Tina about hygiene and, on each morning, she talked about baseball with Rod. She was teaching Sweke how to tie his shoelaces with a degree of patience and perseverance. Children on Plu's bus experienced greater consistency, stability and clarity than they did in their homes, certainly more than they did in school.</p>
+
+      <p>School had ended one Thursday afternoon and Plu pulled behind Gavin's bus in front of Harper Elementary School to board her charges and take them to stops nearest to their homes. Turning the engine off, she waited for the bell to ring. Once it did, children filed out of school and came up the steps. Some were tired, others rambunctious, and most were growing. Boys tussled as they boarded. This time, she let them, figuring they'd settle down when she started the motor. Sweke paused at the door. "I lost my bus button," he shrugged. Plu gave a look. "Get on the bus child." Sweke was the last student to board. She scanned the rearview mirror, tracing up the aisle, viewing each child's face from row by row, bench by bench. By now, she knew their names, faces, postures. Satisfied she was watching over the children, Plu closed the door, started up and put the bus in drive.</p>
+
+      <p>"Still having nightmares?" She asked Sweke as he looked out the window, quieter than usual. "Not as often," the pudgy boy answered, happy she'd asked. "I haven't had one in a week." Plutusia Tyke knew she was halfway done with her route. She was thinking about what she'd make for dinner for Pawlow tonight. It would be just the two of them. Goldie was visiting an uncle and his roommate on the south side. Gavin had given Plu a cupcake he bought at a bakery for her birthday. Plu had cut it in half, saved half for her husband, wrapping it in a napkin and putting it in a brown paper bag she kept in her locker at dispatch. Soon, she'd be heading home on a city bus after taking the elevated train to the southwest side.</p>
+
+      <p>For now, as she neared the corner of 13th and Greenwood, she watched the elm tree swaying against the afternoon sky and spotted the fire hydrant Sweke straddled every morning, swinging his feet and waiting for her to pick him up and bring him to school. The day was done and she knew she'd enjoy the satisfaction of bringing the boy home, though she also knew he wasn't keen to go. Plu pulled to the curb and stopped by the fire hydrant, pulling the lever to open the doors. "Have a good night, Sweke," she said, turning to her favorite passenger.</p>
+
+      <p>The boy acted like he was tired. Plu knew he wanted to stay seated behind her; Plu sensed he didn't want to go home. "G'night Mrs. Tyke," he said. "Sorry about my bus button," "It'll turn up," Plu replied, rubbing the boy's head as he passed by. "See ya tomorrow." As he descended, Sweke turned, looked at Plu and raised his hand, then gave a slight wave.</p>
+
+      <p>Plu met his gaze as he did, searching the boy's light blue eyes before closing the doors and putting the bus in drive. She watched Sweke turn to go past the elm tree. As he did, she glimpsed a smear of black slip behind a tall hedge up the block. The bus lurched amid the sound of children's laughter. As the bus crossed Greenwood Avenue, a chill went down Plu's spine. The bus driver looked up at the rearview mirror and saw that her jaw had dropped. She slowly pulled over and looked over her right shoulder to see Sweke walking very slow, pausing, as if in thought looking down like he was about to bend down and tie his shoelaces.</p>
+
+      <p>Plu wasn't able to see behind the hedge, which was a way's up the block. Something inside Plutusia Tyke remembered her girlhood and she applied the brake, put the gear in park, pressed a dashboard button and rose from her seat, unlatching the receiver with her left hand. Holding the receiver, rising to stand in the aisle facing her students, Plu pressed on the receiver and said: "Children." The bus quieted. "I need your attention right now."</p>
+
+      <p>Once she knew she had it, Plu said: "Keith." The bully jock in a jersey tank top halted, stopped carousing with one of the Milliken boys and turned. "You in charge of this bus. Ya understand?" The boy nodded, rose from the bench and stepped forward. "Get on up here, Keith Simmons. Don't let anybody on this bus. Understand?" Before Keith could answer, she explained that she needed to investigate something off the bus. The boy nodded.</p>
+
+      <p>Pressing down on the receiver again, she said: "Mary Rose, monitor exits. Don't let anyone on or off of this bus. You twins and Milliken boys&mdash;double up on the emergency exit, the side and front doors. Children, you cooperate and stay calm. Everyone understand?" The children nodded. Bitsy started sniffling. Carolyn came over and put her arm around her. "Plu knows what she's doing," the chubby girl whispered with confidence. "Dan," the bus driver declared, "you protect private property&mdash;no one steals anything while I'm off the bus." She locked eyes with Dan who looked stunned and happy at once." "Yes, ma'am," came the response. "Gau-pu," she started to say, as the bespectacled boy stood at his seat and gave Plu a serious look, nodding. "Your watch work?" She asked. Gau-pu jerked his thumb up, which gave Plu a slight smile. "You take notes on ev'rythin happens while I'm off this bus. If I'm not back in 10 minutes, press the emergency button here. That'll lock the bus and call police. You report every detail to the policemen." Children listened. The driver pulled the lever, turned to Keith and said: "Close the doors behind me, boyh, and stand guard." Keith Simmons nodded. "Yes, Plu."</p>
+
+      <p>As Plu stepped down to exit, Penny Jean let out a shriek. The driver turned to the child in a pageboy haircut emblazoned with a cross around her. "What can I do?" Plu sharply said: "What you want. Wanna pray, pray. You leave ev'rybody alone. Don't you make no fuss." Plu shot a look to Gau-pu giving him an unspoken command to keep the child in line.</p>
+
+      <p>Plutusia Tyke stepped off the bus. As she spotted Sweke near the hedge on the other side of Greenwood Avenue, Plu lowered her stance and sprang into a sprint, the keychain around her belt loop jangling as she ran across Greenwood Avenue toward the boy who'd stopped and crouched to tie his shoe a few feet shy of the hedge. A woman walking her dog stopped and turned. A man on the front porch stood and came to the edge of the porch. Neighbors peered past curtains, drapes and blinds. Neighbors started to stir, noticing the black woman running toward a white child in a tattered coat as she called his name. Sweke looked up. The man in black stepped out from behind the hedge within a stride of the child.</p>
+
+      <p>By the time Plu reached the boy, Sweke knew he was scared and he didn't know why and he knew that he should be. The bus driver blocked the boy&mdash;"take my hand and hold on, child," she told him&mdash;and stared daggers at the eyes above the pockmarks under the baseball cap. The woman from Georgia became a girl again for a single second when she suddenly recalled what had happened to her down south. When she did, her chest slowly rose, her chin came up and her grip tightened around the boy's hand as she took a step toward the man while she unhooked the keys and wrapped them around her fist. "Not on my life, not this time." By then, neighbors were picking up phones. The man narrowed his eyes and, preparing to strike while looking at the woman before him, recalculated. The man in black dashed into a backyard.</p>
+
+      <p>In the weeks that followed, a police report was filed, a suspected predator was arrested after being caught in an alley near a drugstore. Residents on Greenwood chattered. Officials at Harper Elementary convened with parents. Gossiping, loitering bus drivers and labor union organizers met, too. None talked about the man seeking to abduct, molest and prey upon children. None spoke up about child neglect, abuse and endangerment, let alone how pervasive it is&mdash;let alone why. Instead, they chattered about a black woman disturbing the peace in the late of the day, running down an avenue with a sense of purpose and command of herself. Plutusia Tyke was reprimanded for leaving her bus, punished with a suspension, transferred to another district and re-assigned to vehicle maintenance. Plu disengaged&mdash;though not before one last trip with her kids.</p>
+
+      <p>One by one, stop by stop, Harper Elementary's schoolchildren disembarked Plu's final route after stepping down. Exactly one child turned and waved. Staring ahead several blocks toward the main avenue, Plutusia Tyke swallowed the lump in her throat. Traffic's picking up, she thought, drawing a slow, deep breath, letting tears form in her eyes, then, subside before turning to the pudgy, blond-haired, blue-eyed boy who stood waiting for her to look at him like she did every day at departure. She didn't want to tell Sweke the truth. Plu knew he'd be hurt. Because she wanted for Sweke a world of good, she said: "Next week you get a new driver named Gavin. He gonna look after you, Sweke." Then she looked at Sweke and her chest felt heavy and slow. Plu let him search her dark brown eyes with a thousand questions in his eyes. "Ask those questions," she said. "Keep thinking."</p>
+
+      <p>Plutusia could see Sweke was swirling in pain and confusion, so she looked in the sideview mirror, then in the rearview mirror and, as she put the gear in park, she glanced down to compose herself as she swept her thighs before standing up and stepping down from the bus. For the first time in her life, Plutusia felt the wealth, fortune and prosperity&mdash;the sum total of her worth, which she hadn't felt since she'd lived in the fields of Georgia. Plu crouched down, stretching her arms wide. Before she could even extend her arms, the boy slammed into her, wrapping his arms around her, locking Plu in his embrace, his head on her heart.</p>
+
+      <p>Plutusia Tyke said not a word. Sweke went silent, too, which was rare. She kept herself composed. When Plutusia started to feel the boy's body tremble, that's when she let him have it. She hugged the boy until his tremor became slow, easy breathing as soft and gentle as a kitten's purr. Plu waited, pulled back and looked Sweke in the eye. "'Tis an honor to drive you," she said before putting her lips on Sweke's cheek for a kiss, tasting the salt, warming the cold of his skin. As Plu started to rise, turning, grabbing the handle and stepping up, settling into her seat and pulling the lever, she heard his final words like a song: "I love you." Plutusia Tyke, goddess of wealth on earth, answered: "I love you, too, honey child."</p>
+
+      <p class="article-copyright"><em>&copy; Copyright 2026 Scott Holleran. All rights reserved. May not be reproduced without the permission of Scott Holleran.</em></p>
+
+    </div><!-- end article-body -->
+
+    <!-- Feedback Widget -->
+    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+      <!-- Thumbs -->
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+      </div>
+      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+      <!-- Comment Button + Popup -->
+      <button id="commentBtn" style="margin-top: 16px; padding: 8px 22px; background: none; border: 1px solid #b51c20; border-radius: 2px; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #b51c20; cursor: pointer;">&#128172; Leave a comment</button>
+
+      <div id="commentOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.3); z-index:900;"></div>
+      <div id="commentPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fdfaf7; border:1px solid #e8e0d5; border-radius:4px; padding:28px 32px; width:420px; max-width:92vw; z-index:1000; box-shadow:0 8px 32px rgba(0,0,0,0.15);">
+        <button id="commentPopupClose" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;line-height:1;padding:0;">&times;</button>
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" value="dev2">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        var base = window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        function openCommentPopup() {
+          document.getElementById('commentPopup').style.display = 'block';
+          document.getElementById('commentOverlay').style.display = 'block';
+        }
+        function closeCommentPopup() {
+          document.getElementById('commentPopup').style.display = 'none';
+          document.getElementById('commentOverlay').style.display = 'none';
+        }
+        document.getElementById('commentBtn').addEventListener('click', function(e) {
+          e.stopPropagation();
+          openCommentPopup();
+        });
+        document.getElementById('commentPopupClose').addEventListener('click', closeCommentPopup);
+        document.getElementById('commentOverlay').addEventListener('click', closeCommentPopup);
+        if (window.location.search.indexOf('feedback=sent') !== -1) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('feedbackConfirm').style.display = 'block';
+          openCommentPopup();
+        }
+        function submitVote(vote) {
+          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({
+              vote: vote,
+              Page: document.getElementById('page-tracking').value,
+              Environment: 'dev2',
+              _subject: 'Classic Chicago Quick Vote'
+            })
+          }).catch(function(){});
+          document.getElementById('thumbUp').disabled = true;
+          document.getElementById('thumbDown').disabled = true;
+          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+          document.getElementById('voteConfirm').style.display = 'block';
+        }
+      </script>
+    </div>
+
+    <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+      <a href="../../../about.html#scott-holleran" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Scott Holleran &rarr;</a>
+    </div>
+
+    <div class="edition-nav">
+      <a href="../ica-broadway/" class="back-link">&larr; Previous: A Night of Broadway</a>
+      <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+  <script>
+    var prevUrl = '../ica-broadway/';
+    var nextUrl = '../../../index.html';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+  <script>
+    (function() {
+      var trigger = document.getElementById('author-trigger');
+      var popup = document.getElementById('author-popup');
+      var close = document.getElementById('author-popup-close');
+      if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.toggle('open');
+        });
+        if (close) close.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.remove('open');
+        });
+        document.addEventListener('click', function() {
+          popup.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
