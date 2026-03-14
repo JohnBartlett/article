@@ -145,6 +145,24 @@ Edit `index.html` (root):
 4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
 5. Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
 
+### Recurring email workflow
+
+Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
+
+**Sources:**
+- Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, bio updates, photo requests, text corrections
+- FormSubmit (`submissions@formsubmit.co` → `editor@2ccmag.com`) — reader comments and Quick Votes
+
+**What to expect from FormSubmit:**
+- "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
+- "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
+- Real comments (non-empty, non-dev2) go in `reader-comments.html`
+
+**Common bio locations in `about.html`:**
+- Judy and Megan: Our Team section
+- Writers and curators: Our Writers This Week section
+- Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
+
 ### Editors menu (Internal nav — dev2 only)
 The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master`.
 
