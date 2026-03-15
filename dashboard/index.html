@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | Classic Chicago Magazine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c41e3a;
+            --bg: #fdfdfd;
+            --card-bg: #ffffff;
+            --text-muted: #666;
+            --border: #eee;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px double var(--primary);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--accent);
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Charts / Tables */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chart-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .article-row {
+            margin-bottom: 15px;
+        }
+
+        .article-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .article-path {
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+
+        .article-views {
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        .bar-bg {
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 1s ease-out;
+        }
+
+        /* Loading State */
+        #loading {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .kpi-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading">Loading magazine analytics...</div>
+
+    <div class="container">
+        <header>
+            <h1>Classic Chicago Analytics</h1>
+            <div class="subtitle">Live Dashboard &bull; Sunday Edition Performance</div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="card">
+                <span class="card-label">Last 30 Days</span>
+                <p class="card-value" id="total-users">0</p>
+                <p class="card-desc">Active Users</p>
+            </div>
+            <div class="card">
+                <span class="card-label">Last 30 Days</span>
+                <p class="card-value" id="total-views">0</p>
+                <p class="card-desc">Total Page Views</p>
+            </div>
+            <div class="card">
+                <span class="card-label">Current Edition</span>
+                <p class="card-value" id="edition-views">0</p>
+                <p class="card-desc" id="edition-date">Since publish date</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Current Edition: Top Articles</h2>
+        <div class="chart-container" id="articles-list">
+            <!-- Articles will be injected here -->
+        </div>
+
+        <footer style="margin-top: 50px; text-align: center; color: #999; font-size: 0.8rem;">
+            Data sourced from GA4 API &bull; Refreshed at <span id="fetch-time">-</span>
+        </footer>
+    </div>
+
+    <script>
+        async function fetchStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+
+                if (data.error) throw new Error(data.error);
+
+                // Update Overall
+                document.getElementById('total-users').textContent = Number(data.overall.users).toLocaleString();
+                document.getElementById('total-views').textContent = Number(data.overall.views).toLocaleString();
+                document.getElementById('fetch-time').textContent = new Date(data.fetched_at).toLocaleTimeString();
+
+                // Update Edition
+                document.getElementById('edition-views').textContent = Number(data.editionStats.totalViews).toLocaleString();
+                document.getElementById('edition-date').textContent = 'Stats for edition: ' + data.edition;
+
+                // Update Articles
+                const list = document.getElementById('articles-list');
+                list.innerHTML = '';
+
+                const maxViews = data.editionStats.topArticles[0]?.views || 1;
+
+                data.editionStats.topArticles.forEach(art => {
+                    const row = document.createElement('div');
+                    row.className = 'article-row';
+                    
+                    const cleanPath = art.path
+                        .replace('/editions/' + data.edition + '/', '')
+                        .replace(/\/$/, '') || 'Landing Page';
+
+                    const pct = (art.views / maxViews) * 100;
+
+                    row.innerHTML = `
+                        <div class="article-info">
+                            <span class="article-path">${cleanPath}</span>
+                            <span class="article-views">${art.views} views</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" style="width: ${pct}%"></div>
+                        </div>
+                    `;
+                    list.appendChild(row);
+                });
+
+                document.getElementById('loading').style.display = 'none';
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('loading').innerHTML = 
+                    '<div style="color:red; text-align:center">Error loading analytics. <br><small>' + err.message + '</small></div>';
+            }
+        }
+
+        window.onload = fetchStats;
+    </script>
+</body>
+</html>

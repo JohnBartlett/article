@@ -1,0 +1,11 @@
+{
+  "name": "classic-chicago-magazine",
+  "version": "1.0.0",
+  "description": "Static HTML magazine for Classic Chicago",
+  "dependencies": {
+    "@google-analytics/data": "^4.10.0"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
