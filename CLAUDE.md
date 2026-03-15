@@ -53,6 +53,36 @@ Pushes require a personal access token:
 git push origin dev
 ```
 
+### Analytics Reporting
+
+A script `tools/ga4_report.py` is available to collect performance stats (users, sessions, page views) from Google Analytics 4.
+
+#### Setup
+
+1.  **Find Numeric Property ID**: In Google Analytics, go to **Admin > Property Settings > Property Details**. The "Property ID" is a numeric value (e.g., `123456789`). This is **not** the `G-XXXX` Measurement ID.
+2.  **Service Account**:
+    -   Go to [Google Cloud Console](https://console.cloud.google.com/).
+    -   Enable the **Google Analytics Data API**.
+    -   Create a **Service Account** and download a **JSON Key**.
+    -   Copy the Service Account email (e.g., `my-sa@project.iam.gserviceaccount.com`).
+3.  **GA4 Permissions**: In Google Analytics, go to **Admin > Property Settings > Property Access Management** and add the service account email with **Viewer** role.
+
+#### Running the Report
+
+```bash
+# Install dependency
+pip install google-analytics-data
+
+# Set environment variables
+export GA4_PROPERTY_ID="your-numeric-id"
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key.json"
+
+# Run the script
+python3 tools/ga4_report.py
+```
+
+The script will generate a timestamped JSON file with the last 30 days of data.
+
 ## Site Structure
 
 ```
