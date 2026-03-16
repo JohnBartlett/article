@@ -59,3 +59,9 @@ git push origin dev2
 - FormSubmit sends to: `editor@2ccmag.com`
 - Empty FormSubmit comments are common — readers click the form open then close it
 - Judy often sends photo emails with short subject lines — read them even if vague
+
+## Email style (when drafting emails to Judy)
+
+- Salutation: `Dear Judy,`
+- Sign-off: `Cheers, John`
+- Write in first person — use "I/me", not "we/us"
