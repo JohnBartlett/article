@@ -102,11 +102,31 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 Edit `index.html` (root) to make this the current edition:
 
 1. **Date line** — update to the new edition date (e.g. `March 22, 2026`)
-2. **Hero section** — set to Article 1: update path, image, label, title, byline, and teaser
-3. **Card grid** — replace with Articles 2, 3, etc. (title, byline, image, teaser). The hero article does NOT also appear as a card.
-4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest if the grid exceeds 4 entries
+2. **Hero section** — wrap the entire hero (image + overlay) in a single `<a>` tag so both image and text are clickable. The hero article does NOT also appear as a card.
+```html
+<div class="hero">
+  <a href="editions/YYYY-MM-DD/article-slug/">
+    <img class="hero-image" src="..." style="object-position: center 20%;">
+    <div class="hero-overlay">
+      <div class="label">Category</div>
+      <h2>Title</h2>
+      <div class="meta">By Author · Date</div>
+      <p>Teaser...</p>
+    </div>
+  </a>
+</div>
+```
+Required CSS (add if not already present):
+```css
+.hero > a { display: block; text-decoration: none; }
+.hero > a:hover .hero-overlay h2 { text-decoration: underline; }
+```
+3. **Card grid** — replace with Articles 2, 3, etc. (title, byline, image, teaser).
+4. **Past Editions** — move the previous current edition to the top; drop the oldest if count exceeds 4.
 
 Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
+
+**object-position for portrait photos:** Portrait images in the hero often need `center 15%`–`center 25%` rather than `center top`. With `center top`, a tall portrait scaled to fill the wide hero may place the subject's face in the overlay zone. Adjust based on where the face sits in the photo.
 
 ## Step 8 — Update the dev2 internal nav
 

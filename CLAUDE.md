@@ -20,6 +20,12 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography
 - Jen Huang — Magazine Intern (UIC student)
+- Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
+
+### Contributors & Support
+- **Adrian Naves** (niceguyfatz@gmail.com) — Former intern; layout and writing; works weekends
+- **Annie Delfosse** (aedelfosse1@gmail.com) — DateBook curator; also works with writers Cheryl and Jill; bio at `id="annie-delfosse"` in `about.html`
+- **Ana Baca** (anabaca8@gmail.com) — Former Saturday publisher (WordPress); handles photos for Philip Vidal's About the Town column
 
 ## Branching Strategy
 
