@@ -1,6 +1,6 @@
 # /new-edition
 
-Set up a new edition of Classic Chicago Magazine. Searches Judy's emails for article content and photos, downloads everything, builds article HTML pages, and commits to dev2.
+Set up a new edition of Classic Chicago Magazine. Searches Judy's emails for article content and photos, downloads everything, builds article HTML pages, updates the homepage, and commits to dev2.
 
 ## Step 1 — Search for edition emails
 
@@ -91,35 +91,43 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 
 **Photo placement:** Insert `<figure>` elements after the paragraph that references each photo. Put unreferenced photos at the end of the article body. Match captions from the docx photo notes.
 
-**Navigation order:** Article 1 ← Article 2 ← Article 3. Article 1's "Previous" links to the last article of the prior edition. Article 3's "Next" links to `../../../index.html`.
+**Navigation order:** Article 1 ← Article 2 ← Article 3. Article 1's "Previous" links to `../../../index.html` (Home). Article 3's "Next" also links to `../../../index.html` (Home).
 
 **GA4:** Always enabled (uncommented) on new articles.
 
 **No popups:** Do not add author popup, location popup, or any overlay systems.
 
-## Step 7 — Add articles to the dev2 internal nav
+## Step 7 — Update the homepage
 
-The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar below the main nav. Add links to all new articles under a new edition label:
+Edit `index.html` (root) to make this the current edition:
 
-```html
-<span class="internal-nav-label" style="margin-left:12px;">Mar 22</span>
-<a href="editions/2026-03-22/chicago-chamber-music-society/">Chamber Music</a>
-<a href="editions/2026-03-22/jessie-mueller/">Jessie Mueller</a>
-<a href="editions/2026-03-22/two-sisters-and-a-piano/">Two Sisters</a>
-```
+1. **Date line** — update to the new edition date (e.g. `March 22, 2026`)
+2. **Hero section** — set to Article 1: update path, image, label, title, byline, and teaser
+3. **Card grid** — replace with Articles 2, 3, etc. (title, byline, image, teaser). The hero article does NOT also appear as a card.
+4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest if the grid exceeds 4 entries
 
-Find the existing internal nav block in `index.html` (look for `<!-- dev2-only -->`) and append the new links inside the `.internal-nav-inner` div, after the standing links.
+Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
 
-Remove any stale edition-specific links from the prior edition at the same time.
+## Step 8 — Update the dev2 internal nav
 
-## Step 8 — Commit
+The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar. Since the new articles are now on the main homepage, **do not add edition-specific links** for this edition. Instead:
+
+- Remove any stale edition-specific links from the prior edition
+- Keep only the standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
+
+## Step 9 — Commit and push
 
 ```bash
 git add editions/YYYY-MM-DD/ index.html
-git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]; update dev2 internal nav"
+git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]; update homepage"
+git push origin dev2
 ```
 
-Do NOT push — user controls push timing.
+## Email style (when drafting follow-up emails to Judy)
+
+- Salutation: `Dear Judy,`
+- Sign-off: `Cheers, John`
+- Write in first person — use "I/me", not "we/us"
 
 ## Notes
 
@@ -129,6 +137,6 @@ Do NOT push — user controls push timing.
 - Photo emails often have descriptive subject lines; use those for captions
 - "Cover photo" emails designate the hero image for an article
 - Articles marked "DRAFT" in the docx may still need Judy's editorial review — note this in your summary
-- A 5th or final photo mentioned in the docx but not received should be noted as missing
-- The homepage (`index.html`) and edition landing page are built separately — do not create them here
-- After committing, report: articles built, photos placed, any missing photos or draft flags, and what still needs to be done (homepage, article order confirmation, etc.)
+- A photo mentioned in the docx but not received should be noted as missing
+- The edition landing page (`editions/YYYY-MM-DD/index.html`) is built separately — do not create it here
+- After committing, report: articles built, photos placed, any missing photos or draft flags
