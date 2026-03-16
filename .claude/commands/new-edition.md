@@ -97,11 +97,26 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 
 **No popups:** Do not add author popup, location popup, or any overlay systems.
 
-## Step 7 — Commit
+## Step 7 — Add articles to the dev2 internal nav
+
+The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar below the main nav. Add links to all new articles under a new edition label:
+
+```html
+<span class="internal-nav-label" style="margin-left:12px;">Mar 22</span>
+<a href="editions/2026-03-22/chicago-chamber-music-society/">Chamber Music</a>
+<a href="editions/2026-03-22/jessie-mueller/">Jessie Mueller</a>
+<a href="editions/2026-03-22/two-sisters-and-a-piano/">Two Sisters</a>
+```
+
+Find the existing internal nav block in `index.html` (look for `<!-- dev2-only -->`) and append the new links inside the `.internal-nav-inner` div, after the standing links.
+
+Remove any stale edition-specific links from the prior edition at the same time.
+
+## Step 8 — Commit
 
 ```bash
-git add editions/YYYY-MM-DD/
-git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]"
+git add editions/YYYY-MM-DD/ index.html
+git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]; update dev2 internal nav"
 ```
 
 Do NOT push — user controls push timing.
