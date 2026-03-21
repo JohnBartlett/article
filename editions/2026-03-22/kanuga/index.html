@@ -43,11 +43,7 @@
     .photo-grid figure { margin: 0; }
     .photo-grid figure img { width: 100%; height: 220px; object-fit: cover; object-position: center; display: block; }
     .photo-grid figure figcaption { font-size: 11px; }
-    .author-bio { display: flex; gap: 24px; align-items: flex-start; margin: 40px 0; padding: 28px; background: #fafaf8; border: 1px solid #eee; border-radius: 2px; }
-    .author-bio img { width: 100px; height: 100px; object-fit: cover; object-position: top center; border-radius: 50%; flex-shrink: 0; }
-    .author-bio-text { font-family: 'Lato', sans-serif; font-size: 14px; color: #555; line-height: 1.6; }
-    .author-bio-text strong { font-size: 15px; color: #222; display: block; margin-bottom: 4px; }
-    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+.edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
     .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
     .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
     footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
@@ -82,7 +78,6 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <a href="../../../comments.html">Comments</a>
       </div>
     </nav>
   </header>
@@ -249,15 +244,6 @@
 
     </div><!-- end article-body -->
 
-    <!-- Author bio -->
-    <div class="author-bio">
-      <img src="images/image1.jpg" alt="Elizabeth Dunlop Richter">
-      <div class="author-bio-text">
-        <strong>Elizabeth Dunlop Richter</strong>
-        Elizabeth Dunlop Richter is a Chicago-based writer and contributing editor to Classic Chicago Magazine.
-      </div>
-    </div>
-
     <!-- Feedback Widget -->
     <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
       <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
@@ -306,6 +292,10 @@
       </script>
     </div>
 
+    <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+      <a href="../../../about.html#elizabeth-dunlop-richter" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Elizabeth Dunlop Richter &rarr;</a>
+    </div>
+
     <div class="edition-nav">
       <a href="../pokemon-fossil-museum/" class="back-link">&larr; Previous: Pok&eacute;mon Fossil Museum</a>
       <a href="../../../index.html" class="back-link">Back to Home &rarr;</a>
@@ -341,6 +331,7 @@
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
+    // Note: no nextUrl — Kanuga is the last article in this edition
   </script>
 </body>
 </html>
