@@ -78,7 +78,7 @@ with zipfile.ZipFile('/tmp/article.docx') as z:
 Use a Python script to generate all article `index.html` files at once. Follow the site template exactly:
 
 **Template structure** (see any existing article for reference, e.g. `editions/2026-03-15/little-village/index.html`):
-- `<head>`: GA4 script (enabled, not commented out), fonts, CSS
+- `<head>`: GA4 script **disabled** (use `<!-- GA4-disabled ... -->` wrapper, matching `_template/article.html`), fonts, CSS
 - `<header>`: logo, nav (Home, DateBook, Astrochart, hamburger → About/Subscribe/Advertise)
 - Article wrapper: category label, h1 title, meta (By Author · Date), hero figure
 - `<p class="article-intro">`: first paragraph in larger font
@@ -93,7 +93,7 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 
 **Navigation order:** Article 1 ← Article 2 ← Article 3. Article 1's "Previous" links to `../../../index.html` (Home). Article 3's "Next" also links to `../../../index.html` (Home).
 
-**GA4:** Always enabled (uncommented) on new articles.
+**GA4:** Always **disabled** on new articles (dev2 never runs analytics). The `/publish` skill re-enables GA4 across all files when pushing to master.
 
 **No popups:** Do not add author popup, location popup, or any overlay systems.
 
