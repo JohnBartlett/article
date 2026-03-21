@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- GA4 disabled on dev2
+  <!-- GA4-disabled
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -225,12 +225,12 @@
       line-height: 1.2;
     }
 
-    .hero-overlay h2 a {
-      color: #fff;
+    .hero > a {
+      display: block;
       text-decoration: none;
     }
 
-    .hero-overlay h2 a:hover {
+    .hero > a:hover .hero-overlay h2 {
       text-decoration: underline;
     }
 
@@ -324,9 +324,25 @@
 
     /* Past Editions */
     .past-editions {
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1px solid #ddd;
+      margin-top: 0;
+      padding: 40px 0 60px;
+      background: #f2f0ec;
+      border-top: 4px solid #d41f1f;
+    }
+
+    .past-editions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .past-editions .card-image {
+      filter: grayscale(70%) opacity(0.8);
+      transition: filter 0.3s ease;
+    }
+
+    .past-editions .card:hover .card-image {
+      filter: grayscale(20%) opacity(1);
     }
 
     .past-editions .card-image {
@@ -442,23 +458,36 @@
         <a href="advertise.html">Advertise</a>
       </div>
     </nav>
+    <!-- dev2-only
+    <div class="internal-nav">
+      <div class="internal-nav-inner">
+        <span class="internal-nav-label">Internal</span>
+        <a href="reader-comments.html">Reader Comments</a>
+        <a href="future-articles.html">Future Articles</a>
+        <a href="march-events-planning.html">March Events</a>
+
+      </div>
+    </div>
+    -->
   </header>
 
   <div style="text-align: center; padding: 30px 16px 10px;">
     <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
-    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">March 15, 2026</div>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">March 22, 2026</div>
   </div>
 
   <!-- Hero Feature + Ad -->
   <div class="hero-row">
     <div class="hero">
-      <a href="editions/2026-03-15/chanel-exhibit/"><img class="hero-image" src="editions/2026-03-15/chanel-exhibit/monte-carlo-poster.jpeg" alt="Les Années Folles de Coco Chanel" style="object-position: center center;"></a>
-      <div class="hero-overlay">
-        <div class="label">Arts &amp; Culture &bull; The Riviera</div>
-        <h2><a href="editions/2026-03-15/chanel-exhibit/">Les Ann&eacute;es Folles de Coco Chanel</a></h2>
-        <div class="meta">By Cheryl Anderson &nbsp;&bull;&nbsp; March 15, 2026</div>
-        <p>A dazzling exhibition at Villa Paloma in Monte-Carlo traces Chanel&rsquo;s revolutionary decade on the Riviera&mdash;the outdoor life, the Ballets Russes, and the invention of a new woman.</p>
-      </div>
+      <a href="editions/2026-03-22/jessie-mueller/">
+        <img class="hero-image" src="editions/2026-03-22/jessie-mueller/jessie-mueller-cover.jpeg" alt="Jessie Mueller" style="object-position: center 20%;">
+        <div class="hero-overlay">
+          <div class="label">Theatre &amp; the Arts</div>
+          <h2>Jessie Mueller: Evanston Tony Winner Sings For Season of Concern</h2>
+          <div class="meta">By Judy Bross &nbsp;&bull;&nbsp; March 22, 2026</div>
+          <p>From Chicago storefront theaters to Broadway&rsquo;s biggest stages&mdash;with Tony and Grammy awards all along the way&mdash;versatile Jessie Mueller is a testimony to the power of Chicago theatre as a launching ground for extraordinary talent.</p>
+        </div>
+      </a>
     </div>
     <div class="hero-ad">
       <div style="text-align: center;">
@@ -473,64 +502,76 @@
     <div class="card-grid" style="margin-bottom: 0;">
 
       <div class="card">
-        <a href="editions/2026-03-15/little-village/">
-          <img class="card-image" src="editions/2026-03-15/little-village/Little Village Arch.jpeg" alt="Visiting Little Village in Chicago" style="object-position: center center;">
+        <a href="editions/2026-03-22/chicago-chamber-music-society/">
+          <img class="card-image" src="editions/2026-03-22/chicago-chamber-music-society/review-images/image1.jpeg" alt="The Chicago Chamber Music Society: Reflections at 90" style="object-position: center top;">
         </a>
-        <h2><a href="editions/2026-03-15/little-village/">Visiting Little Village in Chicago &mdash; Where to Eat and What to Do</a></h2>
-        <div class="meta">By Bob Glaze &nbsp;&bull;&nbsp; Culinary &amp; Cultural Guide</div>
-        <p>La Villita is Chicago&rsquo;s vibrant Mexican American neighborhood&mdash;and one of the city&rsquo;s most rewarding destinations for food, street art, bakeries, and local life on 26th Street.</p>
+        <h2><a href="editions/2026-03-22/chicago-chamber-music-society/">The Chicago Chamber Music Society: Reflections at 90</a></h2>
+        <div class="meta">By Lee Hamilton &nbsp;&bull;&nbsp; Music</div>
+        <p>Celebrating its 90th concert season, the Chicago Chamber Music Society looks back on the vision and dedication that have sustained one of the city&rsquo;s most beloved classical music institutions.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-15/unsung-gems-philadelphia/">
-          <img class="card-image" src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: Unsung Gems" style="object-position: center center;">
+        <a href="editions/2026-03-22/unsung-gems-lfhs/">
+          <img class="card-image" src="editions/2026-03-22/unsung-gems-lfhs/lfhs-1.jpeg" alt="Lake Forest High School" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-15/unsung-gems-philadelphia/">Philadelphia Story: The Nation&rsquo;s First Capital Has Much to Tell About Our Origins</a></h2>
-        <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; Unsung Gems &bull; Travel</div>
-        <p>In this 250th year of American independence, a walk through Philadelphia&rsquo;s historic district reveals how much founding history is packed into a few remarkable city blocks.</p>
+        <h2><a href="editions/2026-03-22/unsung-gems-lfhs/">The Joys and Challenges of Renovating the Classic Lake Forest High School Building</a></h2>
+        <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; Unsung Gems</div>
+        <p>Once deemed the prettiest high school in Illinois by <em>Architectural Digest</em>, the Lake Forest High School landmark is undergoing a major renovation &mdash; and students couldn&rsquo;t be more excited.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-15/honey-child/">
-          <img class="card-image" src="editions/2026-03-15/honey-child/image0.jpeg" alt="Honey Child — a short story by Scott Holleran" style="object-position: center center;">
+        <a href="editions/2026-03-22/two-sisters-and-a-piano/">
+          <img class="card-image" src="editions/2026-03-22/two-sisters-and-a-piano/neysha-mendoza-castro-cover.jpeg" alt="Two Sisters and a Piano at Writers Theatre" style="object-position: center top;">
         </a>
-        <h2><a href="editions/2026-03-15/honey-child/">Honey Child</a></h2>
-        <div class="meta">By Scott Holleran &nbsp;&bull;&nbsp; Fiction</div>
-        <p>A school bus driver on Chicago&rsquo;s North Shore builds quiet bonds with her young passengers&mdash;until the day she must act to protect one of them.</p>
+        <h2><a href="editions/2026-03-22/two-sisters-and-a-piano/">Two Sisters and a Piano at Writers Theatre</a></h2>
+        <div class="meta">By Sophie Bross &nbsp;&bull;&nbsp; Theatre Review</div>
+        <p>For something innovative in an intimate setting, the upcoming schedule at Writers Theatre in Glencoe&mdash;called &ldquo;America&rsquo;s Finest Regional Theatre Company&rdquo; by the <em>Wall Street Journal</em>&mdash;is not to be missed.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-15/anti-cruelty/">
-          <img class="card-image" src="editions/2026-03-15/anti-cruelty/taffy.jpeg" alt="Taffy and Pretty Girl Celebrate Anti-Cruelty's 127th Birthday" style="object-position: center top;">
+        <a href="editions/2026-03-22/pokemon-fossil-museum/">
+          <img class="card-image" src="editions/2026-03-22/pokemon-fossil-museum/pokemon-1.jpeg" alt="Pokémon Fossil Museum" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-15/anti-cruelty/">Taffy and Pretty Girl Celebrate Anti-Cruelty&rsquo;s 127th Birthday</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Chicago Society</div>
-        <p>At the Anti-Cruelty Society&rsquo;s 127th anniversary brunch, beloved alumni Taffy returned to the stage as Joan Esposito, Dr. Sheldon Rubin, and other champions of animals were honored.</p>
+        <h2><a href="editions/2026-03-22/pokemon-fossil-museum/">The Pok&eacute;mon Fossil Museum Is Coming to Chicago</a></h2>
+        <div class="meta">By Adrian Naves &nbsp;&bull;&nbsp; Adrian&rsquo;s Adventures</div>
+        <p>The Field Museum hosts the North American debut of the Pok&eacute;mon Fossil Museum &mdash; where fan-favorite ancient Pok&eacute;mon like Tyrantrum meet real fossils including Sue the T. Rex. Opens May 22, 2026.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-15/guardian-san-pietro/">
-          <img class="card-image" src="editions/2026-03-15/guardian-san-pietro/ascenzio-portrait.jpeg" alt="The Guardian of San Pietro" style="object-position: center top;">
+        <a href="editions/2026-03-22/kanuga/">
+          <img class="card-image" src="editions/2026-03-22/kanuga/images/image20.jpg" alt="Kanuga: The Christmas Solution" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-15/guardian-san-pietro/">The Guardian of San Pietro</a></h2>
-        <div class="meta">By Francesco Bianchini &nbsp;&bull;&nbsp; Travel &amp; Memory</div>
-        <p>A portrait of Ascenzio, the gentle man who watched over the Umbrian hills of San Pietro for more than half his life&mdash;and the stories he told at the table.</p>
+        <h2><a href="editions/2026-03-22/kanuga/">Kanuga: The Christmas Solution</a></h2>
+        <div class="meta">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; Travel &amp; Holiday</div>
+        <p>Next Christmas, skip the city bustle and head to Kanuga &mdash; a mountain retreat in the Blue Ridge that offers hiking, homemade ornaments, s&rsquo;mores by the fire, and all meals included.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-03-15/ica-broadway/">
-          <img class="card-image" src="editions/2026-03-15/ica-broadway/broadway-stars.jpeg" alt="A Night of Broadway — ICA Gala">
+        <a href="editions/2026-03-22/building-blocks/">
+          <img class="card-image" src="editions/2026-03-22/building-blocks/cover.png" alt="Building Blocks: A Legacy to a Chicago Icon" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-03-15/ica-broadway/">A Night of Broadway</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Chicago Society</div>
-        <p>An 11th-hour venue change couldn&rsquo;t stop the Illinois Conservatory for the Arts&mdash;seven Broadway stars, a live orchestra, and record fundraising for Chicagoland youth.</p>
+        <h2><a href="editions/2026-03-22/building-blocks/">Building Blocks: A Legacy to a Chicago Icon</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Philanthropy &amp; Community</div>
+        <p>Family Focus&rsquo;s new Sensory Learning Centers honor Judy Block, the legendary Chicago philanthropist who championed children for more than five decades.</p>
       </div>
 
     </div>
 
-    <div class="past-editions">
+  </div><!-- end wrapper -->
+
+  <div class="past-editions">
+    <div class="past-editions-inner">
       <h1 class="page-title">Past Editions</h1>
       <div class="card-grid">
+
+        <div class="card">
+          <a href="editions/2026-03-15/index.html">
+            <img class="card-image" src="editions/2026-03-15/chanel-exhibit/monte-carlo-poster.jpeg" alt="March 15, 2026 Edition" style="object-position: center center;">
+          </a>
+          <h2><a href="editions/2026-03-15/index.html">March 15, 2026</a></h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Les Ann&eacute;es Folles de Coco Chanel, Little Village, Philadelphia Story, Honey Child, Anti-Cruelty&rsquo;s 127th Birthday, and more.</p>
+        </div>
 
         <div class="card">
           <a href="editions/2026-03-08/index.html">
@@ -557,15 +598,6 @@
           <h2><a href="editions/2026-02-22/index.html">February 22, 2026</a></h2>
           <div class="meta">Sunday Edition</div>
           <p>Sea Cloud Spirit, Bag Charms, Cynthia Safford-Mulcahy, IWA&rsquo;s Women Extraordinaire, and more.</p>
-        </div>
-
-        <div class="card">
-          <a href="editions/2026-02-15/index.html">
-            <img class="card-image" src="editions/2026-02-15/thumb-antibes.jpg" alt="February 15, 2026 Edition">
-          </a>
-          <h2><a href="editions/2026-02-15/index.html">February 15, 2026</a></h2>
-          <div class="meta">Sunday Edition</div>
-          <p>Winter in Antibes, Best Restaurants on Halsted Street, Boba Tea in Chinatown, and more.</p>
         </div>
 
       </div>
