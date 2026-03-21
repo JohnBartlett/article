@@ -419,7 +419,7 @@
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" id="feedbackReturn">
             <input type="hidden" name="Page" id="page-tracking">
-            <input type="hidden" name="Environment" value="dev2">
+            <input type="hidden" name="Environment" id="env-tracking">
             <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
             <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
             <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
@@ -431,6 +431,7 @@
         var base = window.location.href.split('?')[0];
         document.getElementById('feedbackReturn').value = base + '?feedback=sent';
         document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
         function openCommentPopup() {
           document.getElementById('commentPopup').style.display = 'block';
           document.getElementById('commentOverlay').style.display = 'block';
@@ -457,7 +458,7 @@
             body: JSON.stringify({
               vote: vote,
               Page: document.getElementById('page-tracking').value,
-              Environment: 'dev2',
+              Environment: (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })(),
               _subject: 'Classic Chicago Quick Vote'
             })
           }).catch(function(){});

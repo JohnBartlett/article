@@ -20,6 +20,12 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography
 - Jen Huang — Magazine Intern (UIC student)
+- Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
+
+### Contributors & Support
+- **Adrian Naves** (niceguyfatz@gmail.com) — Former intern; layout and writing; works weekends
+- **Annie Delfosse** (aedelfosse1@gmail.com) — DateBook curator; also works with writers Cheryl and Jill; bio at `id="annie-delfosse"` in `about.html`
+- **Ana Baca** (anabaca8@gmail.com) — Former Saturday publisher (WordPress); handles photos for Philip Vidal's About the Town column
 
 ## Branching Strategy
 
@@ -52,6 +58,36 @@ Pushes require a personal access token:
 ```
 git push origin dev
 ```
+
+### Analytics Reporting
+
+A script `tools/ga4_report.py` is available to collect performance stats (users, sessions, page views) from Google Analytics 4.
+
+#### Setup
+
+1.  **Find Numeric Property ID**: In Google Analytics, go to **Admin > Property Settings > Property Details**. The "Property ID" is a numeric value (e.g., `123456789`). This is **not** the `G-XXXX` Measurement ID.
+2.  **Service Account**:
+    -   Go to [Google Cloud Console](https://console.cloud.google.com/).
+    -   Enable the **Google Analytics Data API**.
+    -   Create a **Service Account** and download a **JSON Key**.
+    -   Copy the Service Account email (e.g., `my-sa@project.iam.gserviceaccount.com`).
+3.  **GA4 Permissions**: In Google Analytics, go to **Admin > Property Settings > Property Access Management** and add the service account email with **Viewer** role.
+
+#### Running the Report
+
+```bash
+# Install dependency
+pip install google-analytics-data
+
+# Set environment variables
+export GA4_PROPERTY_ID="your-numeric-id"
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key.json"
+
+# Run the script
+python3 tools/ga4_report.py
+```
+
+The script will generate a timestamped JSON file with the last 30 days of data.
 
 ## Site Structure
 
@@ -132,7 +168,45 @@ Heritage Auctions ad card appears in the grid next to the Children's Ball card.
 1. Create folder: `editions/YYYY-MM-DD/`
 2. Create article subfolders with `index.html` and images
 3. Create `thumb-*.jpg` thumbnails in the edition root
-4. Update `index.html` homepage with new hero + card grid
+4. Update `index.html` homepage with new hero + card grid (see "Updating the homepage" below)
 5. Update `about.html` "Our Writers This Week" section
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
+
+### Updating the homepage for a new edition
+Edit `index.html` (root):
+1. **Date line** — change `March 8, 2026` → `March 15, 2026` (etc.)
+2. **Hero section** — update path, image, label, title, byline, and teaser for first article
+3. **Card grid** — replace all cards with the new edition's articles (title, byline, image, teaser)
+4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
+5. Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
+
+### Recurring email workflow
+
+Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
+
+**Sources:**
+- Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, bio updates, photo requests, text corrections
+- FormSubmit (`submissions@formsubmit.co` → `editor@2ccmag.com`) — reader comments and Quick Votes
+
+**What to expect from FormSubmit:**
+- "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
+- "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
+- Real comments (non-empty, non-dev2) go in `reader-comments.html`
+
+**Common bio locations in `about.html`:**
+- Judy and Megan: Our Team section
+- Writers and curators: Our Writers This Week section
+- Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
+
+### Editors menu (Internal nav — dev2 only)
+The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master`.
+
+To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
+- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`, `comments.html`
+- Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
+- Remove any stale edition-specific links from the prior edition
+
+The comment marker convention:
+- **Active (dev2):** `<!-- dev2-only -->` followed immediately by the `<div class="internal-nav">` block (no closing `-->`)
+- **Hidden (dev/master):** wrap entire block in `<!-- dev2-only ... -->`

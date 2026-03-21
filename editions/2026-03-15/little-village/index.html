@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- GA4 disabled on dev2
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,6 +10,7 @@
     gtag('js', new Date());
     gtag('config', 'G-5J2HWKC0B1');
   </script>
+  -->
   <meta charset="UTF-8">
   <title>Visiting Little Village in Chicago — Where to Eat and What to Do | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -258,6 +260,140 @@
       .article-body p { font-size: 16px; }
     }
 
+    /* Author popup */
+    .author-trigger {
+      cursor: pointer;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .author-popup {
+      display: none;
+      position: absolute;
+      top: 1.8em;
+      left: 0;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 16px 20px 14px;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      z-index: 200;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #444;
+      text-align: left;
+    }
+    .author-popup.open { display: block; }
+    .author-popup-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #111;
+      margin: 0 0 2px;
+    }
+    .author-popup-role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      margin: 0 0 10px;
+    }
+    .author-popup-bio { margin: 0 0 10px; }
+    .author-popup-link {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .author-popup-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
+    /* Location popups */
+    .loc-trigger strong {
+      cursor: pointer;
+      border-bottom: 1px dashed #b51c20;
+    }
+    #loc-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 900;
+    }
+    #loc-overlay.open { display: block; }
+    #loc-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px 24px 18px;
+      width: 300px;
+      max-width: 90vw;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 1000;
+      font-family: 'Lato', sans-serif;
+    }
+    #loc-popup.open { display: block; }
+    .loc-popup-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 3px;
+      padding-right: 20px;
+      line-height: 1.3;
+    }
+    .loc-popup-type {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      margin: 0 0 10px;
+    }
+    .loc-popup-address {
+      font-size: 13px;
+      color: #555;
+      margin: 0 0 14px;
+    }
+    .loc-popup-maps {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+    .loc-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #aaa;
+      line-height: 1;
+      padding: 0;
+    }
   </style>
 </head>
 
@@ -284,9 +420,11 @@
   </header>
 
   <div class="article-wrapper">
+    <div class="article-category">Culinary &amp; Cultural Guide &bull; Bob Glaze</div>
+
     <h1 class="article-title">Visiting Little Village in Chicago &mdash; Where to Eat and What to Do</h1>
 
-    <div class="article-meta">By Bob Glaze &nbsp;&bull;&nbsp; March 15, 2026</div>
+    <div class="article-meta">By <span class="author-popup-wrap"><span class="author-trigger" id="author-trigger">Bob Glaze</span><div class="author-popup" id="author-popup"><button class="author-popup-close" id="author-popup-close">&times;</button><div class="author-popup-name">Bob Glaze</div><div class="author-popup-role">Culinary &amp; Cultural Guide</div><p class="author-popup-bio">No one captures the tastes and cultures of our Chicago neighborhoods quite like Bob Glaze. For travel recommendations throughout Chicago and around the world, visit <a href="https://globalphile.com/" style="color:#b51c20;">Globalphile.com</a>.</p><a href="../../../about.html#bob-glaze" class="author-popup-link">Full bio &rarr;</a></div></span> &nbsp;&bull;&nbsp; March 15, 2026</div>
 
     <figure class="hero-figure">
       <img src="Little Village Arch.jpeg" alt="The Bienvenidos a Little Village arch with clock on 26th Street">
@@ -305,39 +443,39 @@
 
       <p>My top recommendations when you visit include:</p>
 
-      <p>Start your visit at the <strong>Little Village Arch</strong>, the gateway to the neighborhood. In November 2021 the commission on Chicago Landmarks approved the recommendation to officially designate it a Chicago landmark. It is the first structure designed by an architect of Mexican descent to gain landmark status in the city. &ldquo;The landmarking of the arch proves that the Latino community, particularly the Mexican American people, are a vital part of Chicago&rsquo;s fabric.&rdquo; It can be found on 26th Street between Troy St. and Albany Ave. at the east end of the neighborhood.</p>
+      <p>Start your visit at the <span class="loc-trigger" data-name="Little Village Arch" data-type="Chicago Landmark" data-address="26th St. between Troy St. & Albany Ave." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Little+Village+Arch+26th+St.+between+Troy+St.+%26+Albany+Ave.+Chicago+IL"><strong>Little Village Arch</strong></span>, the gateway to the neighborhood. In November 2021 the commission on Chicago Landmarks approved the recommendation to officially designate it a Chicago landmark. It is the first structure designed by an architect of Mexican descent to gain landmark status in the city. &ldquo;The landmarking of the arch proves that the Latino community, particularly the Mexican American people, are a vital part of Chicago&rsquo;s fabric.&rdquo; It can be found on 26th Street between Troy St. and Albany Ave. at the east end of the neighborhood.</p>
 
-      <p><strong>La Baguette Bakery</strong>: Located at 3117 W. 26th St, this is a large, traditional Mexican bakery that specializes in made-to-order cakes plus bread and pastries. I enjoyed my sugar cookies and coconut donut that I purchased! Just as in Mexico, you grab a metal tray and tongs to use to pick your selections.</p>
+      <p><span class="loc-trigger" data-name="La Baguette Bakery" data-type="Mexican Bakery" data-address="3117 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=La+Baguette+Bakery+3117+W.+26th+St.+Chicago+IL"><strong>La Baguette Bakery</strong></span>: Located at 3117 W. 26th St, this is a large, traditional Mexican bakery that specializes in made-to-order cakes plus bread and pastries. I enjoyed my sugar cookies and coconut donut that I purchased! Just as in Mexico, you grab a metal tray and tongs to use to pick your selections.</p>
       <figure>
         <img src="la-baguette-bakery.jpg" alt="La Baguette Bakery">
         <figcaption>La Baguette Bakery &mdash; 3117 W. 26th St.</figcaption>
       </figure>
 
-      <p>I also enjoyed the nearby <strong>La Michoakana Golden Paleteria Y Nieveria</strong>. This is a traditional Mexican ice cream shop with a number of flavors and frozen yogurt along with many types of paletas or ice cream bars. The pecan ice cream was really tasty! 3125 W 26th St.</p>
+      <p>I also enjoyed the nearby <span class="loc-trigger" data-name="La Michoakana Golden Paleteria Y Nieveria" data-type="Ice Cream & Paletas" data-address="3125 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=La+Michoakana+Golden+Paleteria+Y+Nieveria+3125+W.+26th+St.+Chicago+IL"><strong>La Michoakana Golden Paleteria Y Nieveria</strong></span>. This is a traditional Mexican ice cream shop with a number of flavors and frozen yogurt along with many types of paletas or ice cream bars. The pecan ice cream was really tasty! 3125 W 26th St.</p>
       <figure>
         <img src="la-michoakana.jpg" alt="La Michoakana Golden Paleteria">
         <figcaption>La Michoakana Golden Paleter&iacute;a Y Niever&iacute;a &mdash; 3125 W. 26th St.</figcaption>
       </figure>
 
-      <p><strong>Rosy’s Bakery</strong>: Rosy&rsquo;s is a traditional Mexican bakery featuring breads, cookies, pastries, cakes and more. 3237 W 26th St.</p>
+      <p><span class="loc-trigger" data-name="Rosy's Bakery" data-type="Mexican Bakery" data-address="3237 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Rosy%27s+Bakery+3237+W.+26th+St.+Chicago+IL"><strong>Rosy’s Bakery</strong></span>: Rosy&rsquo;s is a traditional Mexican bakery featuring breads, cookies, pastries, cakes and more. 3237 W 26th St.</p>
       <figure>
         <img src="rosys-bakery.jpg" alt="Rosy's Bakery">
         <figcaption>Rosy&rsquo;s Bakery &mdash; 3237 W. 26th St.</figcaption>
       </figure>
 
-      <p><strong>Mi Tierra</strong>: For over 30 years, this is a colorful Mexican restaurant serving Mexican specialties. They also have a performance space where they feature live music. Their menu features traditional dishes along with tacos, burritos, enchiladas and fajitas plus churros, crepas and flan for dessert. Their drink menu includes margaritas, pi&ntilde;a coladas, sangr&iacute;as, martinis, micheladas plus tequila and mezcal. I would love to go back to hear authentic Mexican mariachis, live music or bands while sipping a smoky mezcal. 2528 S Kedzie</p>
+      <p><span class="loc-trigger" data-name="Mi Tierra" data-type="Mexican Restaurant" data-address="2528 S. Kedzie Ave." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Mi+Tierra+2528+S.+Kedzie+Ave.+Chicago+IL"><strong>Mi Tierra</strong></span>: For over 30 years, this is a colorful Mexican restaurant serving Mexican specialties. They also have a performance space where they feature live music. Their menu features traditional dishes along with tacos, burritos, enchiladas and fajitas plus churros, crepas and flan for dessert. Their drink menu includes margaritas, pi&ntilde;a coladas, sangr&iacute;as, martinis, micheladas plus tequila and mezcal. I would love to go back to hear authentic Mexican mariachis, live music or bands while sipping a smoky mezcal. 2528 S Kedzie</p>
       <figure>
         <img src="mi-tierra.jpg" alt="Mi Tierra">
         <figcaption>Mi Tierra &mdash; colorful Mexican restaurant and performance space at 2528 S. Kedzie.</figcaption>
       </figure>
 
-      <p><strong>Dulcelandia</strong> at 3253 W. 26th St., is a store, part of a local chain, that sells pi&ntilde;atas, children&rsquo;s party favors and a large selection of candy imported from Mexico. They have Christmas items as well as items for Day of the Dead or Dia de los Muertos.</p>
+      <p><span class="loc-trigger" data-name="Dulcelandia" data-type="Mexican Candy & Party Store" data-address="3253 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Dulcelandia+3253+W.+26th+St.+Chicago+IL"><strong>Dulcelandia</strong></span> at 3253 W. 26th St., is a store, part of a local chain, that sells pi&ntilde;atas, children&rsquo;s party favors and a large selection of candy imported from Mexico. They have Christmas items as well as items for Day of the Dead or Dia de los Muertos.</p>
       <figure>
         <img src="dulcelandia.jpg" alt="Dulcelandia">
         <figcaption>Dulcelandia &mdash; pi&ntilde;atas, party favors, and candy imported from Mexico at 3253 W. 26th St.</figcaption>
       </figure>
 
-      <p><strong>Taqueria el Milagro</strong>: This is a popular local spot for tacos and other Mexican dishes. 3050 W 26th St. The line was out the door on my recent trip. Next door is their Tortilleria el Milagro which has been making tortillas since 1950.</p>
+      <p><span class="loc-trigger" data-name="Taqueria el Milagro" data-type="Taqueria" data-address="3050 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Taqueria+el+Milagro+3050+W.+26th+St.+Chicago+IL"><strong>Taqueria el Milagro</strong></span>: This is a popular local spot for tacos and other Mexican dishes. 3050 W 26th St. The line was out the door on my recent trip. Next door is their Tortilleria el Milagro which has been making tortillas since 1950.</p>
       <figure>
         <img src="taqueria-el-milagro.jpg" alt="Taqueria el Milagro">
         <figcaption>Taqueria el Milagro &mdash; the line was out the door on Bob&rsquo;s visit. 3050 W. 26th St.</figcaption>
@@ -347,13 +485,13 @@
         <figcaption>Tortiller&iacute;a el Milagro, making tortillas since 1950 &mdash; next door to the taqueria.</figcaption>
       </figure>
 
-      <p><strong>La Chaparrita</strong>: Make sure to stop in at this small Mexican grocery store on a corner with a small, colorful cafe serving tacos, fresh juices and aguas frescas. I bought a great piece of traditional flan and loved it! 2500 S Whipple St #4138</p>
+      <p><span class="loc-trigger" data-name="La Chaparrita" data-type="Mexican Grocery & Cafe" data-address="2500 S. Whipple St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=La+Chaparrita+2500+S.+Whipple+St.+Chicago+IL"><strong>La Chaparrita</strong></span>: Make sure to stop in at this small Mexican grocery store on a corner with a small, colorful cafe serving tacos, fresh juices and aguas frescas. I bought a great piece of traditional flan and loved it! 2500 S Whipple St #4138</p>
       <figure>
         <img src="la-chaparrita.jpg" alt="La Chaparrita">
         <figcaption>La Chaparrita &mdash; corner grocery and caf&eacute; at 2500 S. Whipple St.</figcaption>
       </figure>
 
-      <p><strong>La Catedral Cafe</strong>: At 2500 S. Christiana Ave. near Kedzie and 26th St., this is a colorful restaurant specializing in Mexican breakfast and other specialties. It is one of the most fun spots I have been to in Chicago for a while! The menu is very extensive and includes coffee, drinks, hot chocolate, crepes, waffles, pancakes, French toast, desserts, chilaquiles, egg dishes, salads, wraps, paninis, sandwiches.</p>
+      <p><span class="loc-trigger" data-name="La Catedral Cafe" data-type="Mexican Breakfast & Cafe" data-address="2500 S. Christiana Ave." data-maps="https://www.google.com/maps/search/?api=1&amp;query=La+Catedral+Cafe+2500+S.+Christiana+Ave.+Chicago+IL"><strong>La Catedral Cafe</strong></span>: At 2500 S. Christiana Ave. near Kedzie and 26th St., this is a colorful restaurant specializing in Mexican breakfast and other specialties. It is one of the most fun spots I have been to in Chicago for a while! The menu is very extensive and includes coffee, drinks, hot chocolate, crepes, waffles, pancakes, French toast, desserts, chilaquiles, egg dishes, salads, wraps, paninis, sandwiches.</p>
       <figure>
         <img src="la-catedral-cafe.jpg" alt="La Catedral Cafe">
         <figcaption>La Catedral Caf&eacute; &mdash; one of the most colorful spots in Chicago, at 2500 S. Christiana Ave.</figcaption>
@@ -361,9 +499,9 @@
 
       <p>I loved my omelette and a cappuccino made with Mexican cajeta or caramel. It is owned by Chef Ambrocio Gonzalez from Guadalajara Mexico. I highly recommend it.</p>
 
-      <p>For tequila and mezcal lovers, make sure to drive west to <strong>Moreno’s Liquors</strong> which has a large selection to choose from including over 900 different tequilas and 600 kinds of Mezcal. It has been open since 1977 and moved to this larger space in 1987. On my prior visit to the area, I bought a smoky mezcal which was bottled just for them. It has been a local institution for over 40 years at 3724 W. 26th. I also read that the owners also opened <strong>Osito’s Tap</strong> in 2019. It is a &ldquo;speakeasy&rdquo; inspired bar with craft spirits, beer and cocktails. It is located behind Moreno&rsquo;s at 2553 S. Ridgeway Ave.</p>
+      <p>For tequila and mezcal lovers, make sure to drive west to <span class="loc-trigger" data-name="Moreno's Liquors" data-type="Tequila & Mezcal Shop" data-address="3724 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Moreno%27s+Liquors+3724+W.+26th+St.+Chicago+IL"><strong>Moreno’s Liquors</strong></span> which has a large selection to choose from including over 900 different tequilas and 600 kinds of Mezcal. It has been open since 1977 and moved to this larger space in 1987. On my prior visit to the area, I bought a smoky mezcal which was bottled just for them. It has been a local institution for over 40 years at 3724 W. 26th. I also read that the owners also opened <span class="loc-trigger" data-name="Osito's Tap" data-type="Craft Cocktail Bar" data-address="2553 S. Ridgeway Ave." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Osito%27s+Tap+2553+S.+Ridgeway+Ave.+Chicago+IL"><strong>Osito’s Tap</strong></span> in 2019. It is a &ldquo;speakeasy&rdquo; inspired bar with craft spirits, beer and cocktails. It is located behind Moreno&rsquo;s at 2553 S. Ridgeway Ave.</p>
 
-      <p><strong>Nuevo Leon</strong> at 3657 W. 26th St. They have a large menu of Mexican specialties for breakfast, lunch and dinner. I enjoyed their Pilsen location in the past, which did not reopen after a major fire in 2015. I was back in the neighborhood in February 2026 and went there for lunch. I had a great experience. I loved the Mexican ambiance and music along with my server and the food. I had the best fish tacos with avocado and crema along with rice and beans. They also brought me some rich rice pudding or arroz con leche with raisins and cinnamon for dessert. The owner was delightful as well and told me that his business had improved!! I highly recommend the experience.</p>
+      <p><span class="loc-trigger" data-name="Nuevo Leon" data-type="Mexican Restaurant" data-address="3657 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Nuevo+Leon+3657+W.+26th+St.+Chicago+IL"><strong>Nuevo Leon</strong></span> at 3657 W. 26th St. They have a large menu of Mexican specialties for breakfast, lunch and dinner. I enjoyed their Pilsen location in the past, which did not reopen after a major fire in 2015. I was back in the neighborhood in February 2026 and went there for lunch. I had a great experience. I loved the Mexican ambiance and music along with my server and the food. I had the best fish tacos with avocado and crema along with rice and beans. They also brought me some rich rice pudding or arroz con leche with raisins and cinnamon for dessert. The owner was delightful as well and told me that his business had improved!! I highly recommend the experience.</p>
       <figure>
         <img src="nuevo-leon.jpg" alt="Nuevo Leon">
         <figcaption>Nuevo Leon &mdash; 3657 W. 26th St.</figcaption>
@@ -373,7 +511,7 @@
         <figcaption>The best fish tacos with avocado and crema &mdash; Nuevo Leon.</figcaption>
       </figure>
 
-      <p>Nearby is <strong>Todo de Mexico Minimarket</strong> at 3751 W. 26th St. which has a large selection of candy, Mexican snacks, pi&ntilde;atas, handicrafts and religious items.</p>
+      <p>Nearby is <span class="loc-trigger" data-name="Todo de Mexico Minimarket" data-type="Mexican Market" data-address="3751 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Todo+de+Mexico+Minimarket+3751+W.+26th+St.+Chicago+IL"><strong>Todo de Mexico Minimarket</strong></span> at 3751 W. 26th St. which has a large selection of candy, Mexican snacks, pi&ntilde;atas, handicrafts and religious items.</p>
       <figure>
         <img src="todo-de-mexico.jpg" alt="Todo de Mexico Minimarket">
         <figcaption>Todo de Mexico Minimarket &mdash; 3751 W. 26th St.</figcaption>
@@ -382,19 +520,19 @@
         <img src="todo-de-mexico-2.jpg" alt="Todo de Mexico Minimarket">
       </figure>
 
-      <p><strong>Panaderia Coral</strong>, at 3807 W. 26th St., is a Mexican bakery offering a range of breads, cookies and pastries as well as tamales, tacos and tortas.</p>
+      <p><span class="loc-trigger" data-name="Panaderia Coral" data-type="Mexican Bakery" data-address="3807 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Panaderia+Coral+3807+W.+26th+St.+Chicago+IL"><strong>Panaderia Coral</strong></span>, at 3807 W. 26th St., is a Mexican bakery offering a range of breads, cookies and pastries as well as tamales, tacos and tortas.</p>
       <figure>
         <img src="panaderia-coral.jpg" alt="Panaderia Coral">
         <figcaption>Panader&iacute;a Coral &mdash; 3807 W. 26th St.</figcaption>
       </figure>
 
-      <p>Across the street at 3834 W. 26th St. is <strong>Bombon Bakery</strong>. They have a menu of custom-made cakes along with pastries and many cookies to choose from. I bought a large selection of cookies to take home and enjoyed them for several days.</p>
+      <p>Across the street at 3834 W. 26th St. is <span class="loc-trigger" data-name="Bombon Bakery" data-type="Custom Cakes & Bakery" data-address="3834 W. 26th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=Bombon+Bakery+3834+W.+26th+St.+Chicago+IL"><strong>Bombon Bakery</strong></span>. They have a menu of custom-made cakes along with pastries and many cookies to choose from. I bought a large selection of cookies to take home and enjoyed them for several days.</p>
       <figure>
         <img src="bombon-bakery.jpg" alt="Bombon Bakery">
         <figcaption>Bombon Bakery &mdash; custom cakes, pastries, and cookies at 3834 W. 26th St.</figcaption>
       </figure>
 
-      <p>After stopping in at Bombon Bakery, I then headed south to <strong>AZUCAR</strong> at 3617 W. 27th St. This is a small cafe featuring coffee, ice cream and frozen yogurt. I enjoyed a cup of tasty butter pecan. The owners were very friendly.</p>
+      <p>After stopping in at Bombon Bakery, I then headed south to <span class="loc-trigger" data-name="AZUCAR" data-type="Coffee, Ice Cream & Cafe" data-address="3617 W. 27th St." data-maps="https://www.google.com/maps/search/?api=1&amp;query=AZUCAR+3617+W.+27th+St.+Chicago+IL"><strong>AZUCAR</strong></span> at 3617 W. 27th St. This is a small cafe featuring coffee, ice cream and frozen yogurt. I enjoyed a cup of tasty butter pecan. The owners were very friendly.</p>
       <figure>
         <img src="azucar.jpg" alt="AZUCAR">
         <figcaption>AZUCAR &mdash; coffee, ice cream, and frozen yogurt at 3617 W. 27th St.</figcaption>
@@ -420,9 +558,14 @@
         <figcaption>Creamer&iacute;a La Orde&ntilde;a.</figcaption>
       </figure>
 
-
-      <p><em>For more of Bob Glaze's culinary and travel recommendations throughout Chicago and around the world, visit <a href="https://globalphile.com/" style="color:#b51c20;">Globalphile.com</a>.</em></p>
-
+    <div id="loc-overlay"></div>
+    <div id="loc-popup">
+      <button class="loc-popup-close" id="loc-popup-close">&times;</button>
+      <div class="loc-popup-name" id="loc-popup-name"></div>
+      <div class="loc-popup-type" id="loc-popup-type"></div>
+      <div class="loc-popup-address" id="loc-popup-address"></div>
+      <a class="loc-popup-maps" id="loc-popup-maps" href="#" target="_blank">View on Google Maps &rarr;</a>
+    </div>
     </div><!-- end article-body -->
 
     <!-- Feedback Widget -->
@@ -562,6 +705,50 @@
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
+  </script>
+  <script>
+    (function() {
+      var trigger = document.getElementById('author-trigger');
+      var popup = document.getElementById('author-popup');
+      var close = document.getElementById('author-popup-close');
+      if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.toggle('open');
+        });
+        if (close) close.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popup.classList.remove('open');
+        });
+        document.addEventListener('click', function() {
+          popup.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var overlay = document.getElementById('loc-overlay');
+      var popup = document.getElementById('loc-popup');
+      var closeBtn = document.getElementById('loc-popup-close');
+      function openPopup(trigger) {
+        document.getElementById('loc-popup-name').textContent = trigger.dataset.name;
+        document.getElementById('loc-popup-type').textContent = trigger.dataset.type || '';
+        document.getElementById('loc-popup-address').textContent = trigger.dataset.address;
+        document.getElementById('loc-popup-maps').href = trigger.dataset.maps;
+        popup.classList.add('open');
+        overlay.classList.add('open');
+      }
+      function closePopup() {
+        popup.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+      document.querySelectorAll('.loc-trigger').forEach(function(el) {
+        el.addEventListener('click', function(e) { e.stopPropagation(); openPopup(el); });
+      });
+      closeBtn.addEventListener('click', closePopup);
+      overlay.addEventListener('click', closePopup);
+    })();
   </script>
 </body>
 
