@@ -6,10 +6,10 @@ Push the staged dev edition to production (master → Cloudflare). Run this afte
 
 ```
 git checkout master
-git merge dev
+git merge -X theirs dev
 ```
 
-This should be a clean fast-forward since dev was already staged carefully.
+The GA4 state always differs between dev (disabled) and master (enabled), so use `-X theirs` to take dev's content for all conflicts — GA4 will be re-enabled in the next step.
 
 ## Step 2 — Re-enable GA4 on master
 
