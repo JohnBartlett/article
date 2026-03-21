@@ -61,13 +61,34 @@ git push origin master
 
 Cloudflare will detect the push and deploy automatically to `chicagoclassicmag.com`.
 
-## Step 4 — Switch back to dev2
+## Step 4 — Send publication notification emails
+
+Send an email to both Judy and John confirming the edition is live. Use the Gmail MCP tool (`mcp__gmail__send_email`) to send to each recipient.
+
+**To:** `judycbross@aol.com` and `john.bartlett@gmail.com`
+**From:** `editor@classicchicagomagazine.com`
+**Subject:** `Classic Chicago Magazine — <Edition Date> Edition Is Live`
+
+**Body:**
+```
+Dear Judy,
+
+The March 22 edition of Classic Chicago Magazine is now live at:
+
+https://chicagoclassicmag.com
+
+Cheers, John
+```
+
+Adjust the edition date and greeting appropriately. John's email uses the same body but opens with "Hi John," instead of "Dear Judy,".
+
+## Step 5 — Switch back to dev2
 
 ```
 git checkout dev2
 ```
 
-## Step 5 — Confirm deployment
+## Step 6 — Confirm deployment
 
 Return the production URL to the user:
 
