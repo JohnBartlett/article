@@ -65,8 +65,8 @@ Cloudflare will detect the push and deploy automatically to `chicagoclassicmag.c
 
 Send an email to both Judy and John confirming the edition is live. Use the Gmail MCP tool (`mcp__gmail__send_email`) to send to each recipient.
 
-**To:** `judycbross@aol.com` and `john.bartlett@gmail.com`
-**From:** `editor@classicchicagomagazine.com`
+**To:** `judycbross@aol.com`
+**CC:** `john.bartlett@gmail.com`
 **Subject:** `Classic Chicago Magazine — <Edition Date> Edition Is Live`
 
 **Body:**
@@ -80,7 +80,7 @@ https://chicagoclassicmag.com
 Cheers, John
 ```
 
-Adjust the edition date and greeting appropriately. John's email uses the same body but opens with "Hi John," instead of "Dear Judy,".
+Adjust the edition date appropriately.
 
 ## Step 5 — Switch back to dev2
 
