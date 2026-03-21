@@ -71,9 +71,11 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 git push origin dev
 ```
 
-The Vercel preview URL is: `https://article-git-dev-johns-projects-e5fce345.vercel.app`
+The Vercel preview URL is:
 
-Return this URL so Judy can review.
+**https://article-git-dev-johns-projects-e5fce345.vercel.app**
+
+Return this URL as the final output — it should be the last thing produced so it's easy to copy and send to Judy.
 
 ## Step 6 — Switch back to dev2
 
