@@ -8,12 +8,13 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - **Tagline:** "The Sunday Edition"
 - **Publishes:** Every Sunday
 - **Contact:** editor@classicchicagomagazine.com
-- **Google Analytics:** G-5J2HWKC0B1
+- **Google Analytics:** G-5J2HWKC0B1 (disabled on dev/dev2; enabled on master only)
 
 ## Team
 
-- **Judy Carmack Bross** — Editor-in-Chief & Founder
+- **Judy Carmack Bross** — Editor-in-Chief & Founder (`judycbross@aol.com`)
 - **Megan McKinney** — Publisher & Founder
+- **John Bartlett** — Developer (`john.bartlett@gmail.com`)
 
 ### Writers (update "Our Writers This Week" on about.html each edition)
 - Bob Glaze — Culinary & Cultural Guide
@@ -21,21 +22,35 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Susan Aurinko — Arts & Photography
 - Jen Huang — Magazine Intern (UIC student)
 - Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
+- Elizabeth Dunlop Richter — Travel & Culture
+- David A. F. Sweet — Unsung Gems column
+- Lee Hamilton — Music
+- Sophie Bross — Theatre Review
 
 ### Contributors & Support
 - **Adrian Naves** (niceguyfatz@gmail.com) — Former intern; layout and writing; works weekends
-- **Annie Delfosse** (aedelfosse1@gmail.com) — DateBook curator; also works with writers Cheryl and Jill; bio at `id="annie-delfosse"` in `about.html`
+- **Annie Delfosse** (aedelfosse1@gmail.com) — DateBook curator; bio at `id="annie-delfosse"` in `about.html`
 - **Ana Baca** (anabaca8@gmail.com) — Former Saturday publisher (WordPress); handles photos for Philip Vidal's About the Town column
 
 ## Branching Strategy
 
 Three-branch workflow:
 
-- **`master`** — Production (live site, Cloudflare). NEVER commit directly.
-- **`dev`** — Staging / review (Vercel preview). Merges to `master` when ready.
-- **`dev2`** — Spitballing / experimentation. All exploratory work starts here.
+- **`master`** — Production (live site, Cloudflare). NEVER commit directly. GA4 **enabled**.
+- **`dev`** — Staging / review (Vercel preview). Merges to `master` when ready. GA4 **disabled**.
+- **`dev2`** — All active work. Everything starts here. GA4 **disabled**.
 
 Workflow: `dev2` → `dev` → `master`
+
+Use `/stage` to promote dev2 → dev, and `/publish` to promote dev → master.
+
+### GA4 per branch
+GA4 is disabled on dev and dev2 to prevent skewing production analytics. The `/stage` skill comments it out when merging to dev; the `/publish` skill restores it before pushing to master.
+
+- **Disabled marker:** `<!-- GA4-disabled ... -->`
+- **Re-enabled:** original `<!-- Google tag (gtag.js) -->` block, uncommented
+
+All new articles built on dev2 should use the **disabled** form (matching `_template/article.html`).
 
 ## Hosting
 
@@ -45,49 +60,48 @@ Workflow: `dev2` → `dev` → `master`
 
 ### Dev Preview: Vercel
 - **Dev URL:** `https://article-git-dev-johns-projects-e5fce345.vercel.app`
-- **Deploys from:** `dev` branch (this is intentional — Vercel is the dev preview site, not production)
+- **Deploys from:** `dev` branch (intentional — Vercel is the staging preview, not production)
 - **Vercel Project ID:** `prj_hzNhpgPW5e0hcF8GtyzmkkJZnMzY`
 - **Vercel Team ID:** `team_8vNXZ20pDprMAIxBJgnZdEeM`
 
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
 
-## Git Push
+## Skills
 
-Pushes require a personal access token:
-```
-git push origin dev
-```
+| Skill | Purpose |
+|---|---|
+| `/check-emails` | Check Judy's emails and FormSubmit votes; apply changes; commit to dev2 |
+| `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
+| `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
+| `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push, schedule production push |
+| `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy and John |
+| `/send-update` | Draft and send a weekly site activity + reader stats update to Judy |
 
-### Analytics Reporting
+## Analytics Reporting
 
 A script `tools/ga4_report.py` is available to collect performance stats (users, sessions, page views) from Google Analytics 4.
 
-#### Setup
+### Setup
 
-1.  **Find Numeric Property ID**: In Google Analytics, go to **Admin > Property Settings > Property Details**. The "Property ID" is a numeric value (e.g., `123456789`). This is **not** the `G-XXXX` Measurement ID.
-2.  **Service Account**:
-    -   Go to [Google Cloud Console](https://console.cloud.google.com/).
-    -   Enable the **Google Analytics Data API**.
-    -   Create a **Service Account** and download a **JSON Key**.
-    -   Copy the Service Account email (e.g., `my-sa@project.iam.gserviceaccount.com`).
-3.  **GA4 Permissions**: In Google Analytics, go to **Admin > Property Settings > Property Access Management** and add the service account email with **Viewer** role.
+1. **Find Numeric Property ID**: In Google Analytics, go to **Admin > Property Settings > Property Details**. The "Property ID" is a numeric value (e.g., `123456789`). This is **not** the `G-XXXX` Measurement ID.
+2. **Service Account**:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/).
+   - Enable the **Google Analytics Data API**.
+   - Create a **Service Account** and download a **JSON Key**.
+   - Copy the Service Account email (e.g., `my-sa@project.iam.gserviceaccount.com`).
+3. **GA4 Permissions**: In Google Analytics, go to **Admin > Property Settings > Property Access Management** and add the service account email with **Viewer** role.
 
-#### Running the Report
+### Running the Report
 
 ```bash
-# Install dependency
 pip install google-analytics-data
-
-# Set environment variables
 export GA4_PROPERTY_ID="your-numeric-id"
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key.json"
-
-# Run the script
 python3 tools/ga4_report.py
 ```
 
-The script will generate a timestamped JSON file with the last 30 days of data.
+The script generates a timestamped JSON file with the last 30 days of data.
 
 ## Site Structure
 
@@ -95,47 +109,50 @@ The script will generate a timestamped JSON file with the last 30 days of data.
 /
 ├── index.html              Homepage — "The Sunday Edition" hero + card grid
 ├── about.html              About — team bios + "Our Writers This Week"
-├── subscribe.html          Subscribe — form disabled, "coming soon" placeholder
-├── advertise.html          Advertise — form disabled, "coming soon" placeholder
+├── subscribe.html          Subscribe — "coming soon" placeholder
+├── advertise.html          Advertise — "coming soon" placeholder
+├── reader-comments.html    Internal — reader votes/comments log (dev2 only)
+├── future-articles.html    Internal — unpublished article planning (dev2 only)
+├── comments.html           Internal — editorial notes (dev2 only)
 ├── logo.jpg                Shared masthead logo
 ├── favicon.ico             Favicon
+├── _template/
+│   └── article.html        Article template (GA4 disabled)
 ├── ads/                    All advertisement assets (NOT in edition folders)
 │   ├── ha-ad.html          Heritage Auctions ad click-through page
 │   ├── ha-ad.jpg           Heritage Auctions ad image
 │   └── image006.png        Heritage Auctions banner image
-├── .github/workflows/
-│   └── scheduled-deploy.yml  Cron: merge dev→master (remove after deploy)
+├── tools/                  Analytics and reporting scripts
 ├── editions/
-│   ├── 2026-02-08/           Edition 1 — February 8, 2026
-│   │   ├── index.html        Edition landing page
-│   │   ├── about-the-town-february/
-│   │   ├── iron-lung/
-│   │   ├── lincoln-park/
-│   │   ├── linda-heister/
-│   │   ├── mimosa/
-│   │   └── sam-hiller/
-│   └── 2026-02-15/           Edition 2 — February 15, 2026
-│       ├── thumb-*.jpg       Thumbnails for homepage/edition page
-│       ├── winter-in-antibes/
-│       ├── best-restaurants-halsted-street/
-│       ├── my-silk-roads/
-│       ├── boba-tea-chinatown/
-│       ├── alicia-ziegler/
-│       └── childrens-research-fund/
+│   ├── 2026-02-08/         Edition 1 — February 8, 2026
+│   ├── 2026-02-15/         Edition 2 — February 15, 2026
+│   ├── 2026-02-22/         Edition 3 — February 22, 2026
+│   ├── 2026-03-01/         Edition 4 — March 1, 2026
+│   ├── 2026-03-08/         Edition 5 — March 8, 2026
+│   ├── 2026-03-15/         Edition 6 — March 15, 2026
+│   └── 2026-03-22/         Edition 7 — March 22, 2026 (current)
+│       ├── jessie-mueller/
+│       ├── chicago-chamber-music-society/
+│       ├── unsung-gems-lfhs/
+│       ├── two-sisters-and-a-piano/
+│       ├── pokemon-fossil-museum/
+│       ├── kanuga/
+│       └── building-blocks/
 ```
 
-## Current Homepage Article Order (Feb 15 edition)
+## Current Homepage Article Order (March 22 edition)
 
 This order is used for keyboard navigation (N/P keys cycle through):
 
-1. **Winter in Antibes and Environs** — Katherine Harvey (hero)
-2. **Best Restaurants on Halsted Street** — Bob Glaze
-3. **My Silk Roads** — Susan Aurinko
-4. **Boba Tea in Chinatown** — Jen Huang
-5. **Alicia Ziegler** — profile
-6. **Children's Research Fund Children's Ball** — Judy Carmack Bross
+1. **Jessie Mueller: Evanston Tony Winner Sings For Season of Concern** — Judy Carmack Bross (hero)
+2. **The Chicago Chamber Music Society: Reflections at 90** — Lee Hamilton
+3. **The Joys and Challenges of Renovating the Classic Lake Forest High School Building** — David A. F. Sweet
+4. **Two Sisters and a Piano at Writers Theatre** — Sophie Bross
+5. **The Pokémon Fossil Museum Is Coming to Chicago** — Adrian Naves
+6. **Kanuga: The Christmas Solution** — Elizabeth Dunlop Richter
+7. **Building Blocks: A Legacy to a Chicago Icon** — Judy Carmack Bross
 
-Heritage Auctions ad card appears in the grid next to the Children's Ball card.
+Past editions in footer: March 15, March 8, March 1, February 22.
 
 ## Conventions
 
@@ -157,7 +174,7 @@ Heritage Auctions ad card appears in the grid next to the Children's Ball card.
 - Google Fonts: Playfair Display, Lato
 - Splide.js for photo carousels (CDN)
 - Keyboard shortcuts: N (next article), P (previous), Space/PgDn (page down), PgUp (page up), ? (help)
-- Google Analytics on all pages
+- Google Analytics G-5J2HWKC0B1 — disabled on dev/dev2, enabled on master
 
 ### Forms
 - Subscribe and Advertise pages have Formsubmit.co integration (currently commented out/disabled)
@@ -172,10 +189,11 @@ Heritage Auctions ad card appears in the grid next to the Children's Ball card.
 5. Update `about.html` "Our Writers This Week" section
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
+8. Use GA4 **disabled** form in new articles (matching `_template/article.html`)
 
 ### Updating the homepage for a new edition
 Edit `index.html` (root):
-1. **Date line** — change `March 8, 2026` → `March 15, 2026` (etc.)
+1. **Date line** — change `March 22, 2026` → next edition date
 2. **Hero section** — update path, image, label, title, byline, and teaser for first article
 3. **Card grid** — replace all cards with the new edition's articles (title, byline, image, teaser)
 4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
@@ -200,13 +218,17 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 - Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
 
 ### Editors menu (Internal nav — dev2 only)
-The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master`.
+The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master` (handled automatically by `/stage`).
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
-- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`, `comments.html`
+- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
 - Remove any stale edition-specific links from the prior edition
 
 The comment marker convention:
 - **Active (dev2):** `<!-- dev2-only -->` followed immediately by the `<div class="internal-nav">` block (no closing `-->`)
 - **Hidden (dev/master):** wrap entire block in `<!-- dev2-only ... -->`
+
+### Email style (Judy and notifications)
+- **To Judy:** Salutation `Dear Judy,` / Sign-off `Cheers, John` / first person (I/me, not we/us)
+- **Publication notification:** To `judycbross@aol.com`, CC `john.bartlett@gmail.com`
