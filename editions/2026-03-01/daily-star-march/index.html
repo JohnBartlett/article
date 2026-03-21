@@ -1246,7 +1246,9 @@
             prevBtn.addEventListener('click', function () { shiftDay(-1); });
             nextBtn.addEventListener('click', function () { shiftDay(1); });
 
-            showDay(select.options[0].value);
+            var todayStr = (new Date()).toISOString().slice(0, 10);
+            var todayOption = Array.from(select.options).find(function (o) { return o.value === todayStr; });
+            showDay(todayOption ? todayStr : select.options[0].value);
         })();
 
     </script>

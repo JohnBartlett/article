@@ -324,18 +324,25 @@
 
     /* Past Editions */
     .past-editions {
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1px solid #ddd;
+      margin-top: 0;
+      padding: 40px 0 60px;
+      background: #f2f0ec;
+      border-top: 4px solid #d41f1f;
+    }
+
+    .past-editions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
     }
 
     .past-editions .card-image {
-      filter: grayscale(80%) opacity(0.75);
+      filter: grayscale(70%) opacity(0.8);
       transition: filter 0.3s ease;
     }
 
     .past-editions .card:hover .card-image {
-      filter: grayscale(30%) opacity(0.9);
+      filter: grayscale(20%) opacity(1);
     }
 
     .past-editions h2 {
@@ -522,7 +529,10 @@
 
     </div>
 
-    <div class="past-editions">
+  </div><!-- end wrapper -->
+
+  <div class="past-editions">
+    <div class="past-editions-inner">
       <h1 class="page-title">Past Editions</h1>
       <div class="card-grid">
 
