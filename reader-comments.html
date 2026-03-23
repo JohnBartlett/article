@@ -763,12 +763,12 @@
       const isDark = html.classList.toggle('dark');
       document.getElementById('themeIcon').textContent  = isDark ? '☀️' : '🌙';
       document.getElementById('themeLabel').textContent = isDark ? 'Light' : 'Dark';
-      localStorage.setItem('rc-theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('cc-theme', isDark ? 'dark' : 'light');
     }
 
     // Apply saved preference on load (default: dark)
     (function() {
-      const saved = localStorage.getItem('rc-theme') || 'dark';
+      const saved = localStorage.getItem('cc-theme') || 'dark';
       if (saved === 'light') {
         document.documentElement.classList.remove('dark');
         document.getElementById('themeIcon').textContent  = '🌙';
