@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- GA4 disabled on dev2
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -8,6 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-5J2HWKC0B1');
   </script>
+  -->
   <meta charset="UTF-8">
   <title>Building Blocks: A Legacy to a Chicago Icon | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -195,8 +197,8 @@
     </div>
 
     <div class="edition-nav">
-      <a href="../two-sisters-and-a-piano/" class="back-link">&larr; Previous: Two Sisters and a Piano</a>
-      <a href="../pokemon-fossil-museum/" class="back-link">Next: Pok&eacute;mon Fossil Museum &rarr;</a>
+      <a href="../kanuga/" class="back-link">&larr; Previous: Kanuga</a>
+      <a href="../../../index.html" class="back-link">Back to Home &rarr;</a>
     </div>
   </div>
 
@@ -221,12 +223,10 @@
     })();
   </script>
   <script>
-    var prevUrl = '../two-sisters-and-a-piano/';
-    var nextUrl = '../pokemon-fossil-museum/';
+    var prevUrl = '../kanuga/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
-      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
       if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }

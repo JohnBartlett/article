@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- GA4 disabled on dev2
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -8,6 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-5J2HWKC0B1');
   </script>
+  -->
   <meta charset="UTF-8">
   <title>Kanuga: The Christmas Solution | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -298,7 +300,7 @@
 
     <div class="edition-nav">
       <a href="../pokemon-fossil-museum/" class="back-link">&larr; Previous: Pok&eacute;mon Fossil Museum</a>
-      <a href="../../../index.html" class="back-link">Back to Home &rarr;</a>
+      <a href="../building-blocks/" class="back-link">Next: Building Blocks &rarr;</a>
     </div>
   </div>
 
@@ -324,14 +326,15 @@
   </script>
   <script>
     var prevUrl = '../pokemon-fossil-museum/';
+    var nextUrl = '../building-blocks/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
       if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
-    // Note: no nextUrl — Kanuga is the last article in this edition
   </script>
 </body>
 </html>
