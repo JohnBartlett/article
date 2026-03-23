@@ -31,8 +31,8 @@
     'html.dark .card-image { opacity: 0.88; }',
 
     /* Hero text (below image) */
-    'html.dark .hero h2 { color: #e0e0e0 !important; }',
-    'html.dark .hero > a:hover h2 { color: #e05555 !important; }',
+    'html.dark .hero h2 a { color: #e0e0e0 !important; }',
+    'html.dark .hero h2 a:hover { color: #e05555 !important; }',
     'html.dark .hero .hero-label { color: #e05555 !important; }',
     'html.dark .hero .hero-meta { color: #777 !important; }',
     'html.dark .hero .hero-teaser { color: #aaa !important; }',
