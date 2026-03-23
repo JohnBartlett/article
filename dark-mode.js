@@ -49,6 +49,7 @@
     'html.dark .article-body p { color: #ccc !important; }',
     'html.dark .article-body h2 { color: #eee !important; border-color: #2a2a2a !important; }',
     'html.dark .article-body .pullquote { color: #bbb !important; }',
+    'html.dark .article-body .question { border-color: #e05555 !important; }',
     'html.dark .article-category { color: #e05555 !important; }',
     'html.dark figure figcaption, html.dark .hero-figure figcaption { color: #777 !important; }',
     'html.dark .edition-nav { border-color: #2a2a2a !important; }',
