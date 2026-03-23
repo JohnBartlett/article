@@ -30,6 +30,13 @@
     'html.dark .card p { color: #aaa !important; }',
     'html.dark .card-image { opacity: 0.88; }',
 
+    /* Hero text (below image) */
+    'html.dark .hero h2 { color: #e0e0e0 !important; }',
+    'html.dark .hero > a:hover h2 { color: #e05555 !important; }',
+    'html.dark .hero .hero-label { color: #e05555 !important; }',
+    'html.dark .hero .hero-meta { color: #777 !important; }',
+    'html.dark .hero .hero-teaser { color: #aaa !important; }',
+
     /* Past editions band */
     'html.dark .past-editions { background: #161616 !important; border-color: #b51c20 !important; }',
     'html.dark .past-editions h2 { color: #777 !important; }',
