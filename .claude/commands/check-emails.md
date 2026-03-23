@@ -4,12 +4,14 @@ Check recent emails from Judy and FormSubmit for actionable site updates, apply 
 
 ## Step 1 — Search for emails (run in parallel)
 
-- Search Gmail: `from:judy newer_than:7d` (max 10)
-- Search Gmail: `from:formsubmit newer_than:14d` (max 20)
+Use `mcp__google-workspace__search_gmail_messages` with these two queries simultaneously:
+
+- `from:judycbross@aol.com newer_than:7d` (max 10)
+- `from:submissions@formsubmit.co newer_than:14d` (max 20)
 
 ## Step 2 — Read Judy's emails
 
-Read all unread/recent emails from Judy (`judycbross@aol.com`). Look for:
+Use `mcp__google-workspace__get_gmail_messages_content_batch` to read all messages returned from the Judy search. Look for:
 - Bio updates or corrections (bios live in `about.html`)
 - Photo requests (cover photo, hero image, carousel additions)
 - Text corrections to any article
@@ -17,7 +19,11 @@ Read all unread/recent emails from Judy (`judycbross@aol.com`). Look for:
 - Questions to answer or decisions pending
 - Any other editorial instructions
 
+If a message has attachments or is part of a thread with more context, use `mcp__google-workspace__get_gmail_thread_content` to read the full thread.
+
 ## Step 3 — Read FormSubmit emails
+
+Use `mcp__google-workspace__get_gmail_messages_content_batch` to read all messages returned from the FormSubmit search.
 
 Two types arrive at `editor@2ccmag.com`:
 
@@ -51,6 +57,8 @@ git add <files>
 git commit -m "descriptive message"
 git push origin dev2
 ```
+
+If there are no actionable changes, report a summary of what was found (votes, empty submissions, etc.) and skip the commit.
 
 ## Notes
 
