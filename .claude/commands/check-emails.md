@@ -30,6 +30,7 @@ Two types arrive at `editor@2ccmag.com`:
 **"Classic Chicago Reader Comment"** — check the `comment` field:
 - If empty: no action needed (reader opened the form but didn't submit)
 - If has text: add the comment to `reader-comments.html`
+- If the comment raises an editorial concern (criticism of a feature, content question, etc.), also add it to `comments.html` under a "Reader Comments" section so the editorial team can see it
 
 **"Classic Chicago Quick Vote"** — check the `vote` field and `Page`:
 - Votes are "Yes" confirmations that readers liked the article
@@ -45,7 +46,7 @@ Common updates and where they live:
 | Judy or Megan bio update | `about.html` — Our Team section |
 | Writer bio update | `about.html` — Our Writers This Week section |
 | Annie Delfosse bio | `about.html` — id="annie-delfosse" |
-| Reader comments | `reader-comments.html` |
+| Reader comments | `reader-comments.html` (all) + `comments.html` (editorial concerns) |
 | Article text correction | `editions/YYYY-MM-DD/<slug>/index.html` |
 | Hero/cover photo swap | article `index.html` + homepage card |
 

@@ -52,4 +52,4 @@ Edit `_bios/<slug>.md` directly. If the bio text changes, also update the matchi
 | `judy-carmack-bross.md` | Judy Carmack Bross | `#judy-carmack-bross` |
 | `lee-hamilton.md` | Lee Hamilton | `#lee-hamilton` |
 | `sophie-bross.md` | Sophie Bross | `#sophie-bross` |
-| `susan-aurinko.md` | Susan Aurinko | not yet in about.html |
+| `susan-aurinko.md` | Susan Aurinko | `#susan-aurinko` |

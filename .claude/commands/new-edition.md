@@ -37,6 +37,8 @@ text = re.sub(r'\s+', ' ', text).strip()
 
 Note any photo placement instructions in parentheses within the docx text (e.g. "(Photo of X, caption: Y)") — these tell you where to insert figures in the article body.
 
+**OCR artifacts:** Docx files from Judy occasionally contain OCR artifacts — words split by spaces (e.g. "T he", "thriving office s", "Band W ith"). Clean these up when building the article HTML.
+
 ## Step 4 — Create folder structure
 
 ```
@@ -61,6 +63,8 @@ mkdir -p editions/YYYY-MM-DD/article-slug editions/YYYY-MM-DD/article-slug-2 ...
 For each photo email:
 1. Use `mcp__gmail__read_email` to get the attachment ID
 2. Use `mcp__gmail__download_attachment` to save directly into the article folder with a clean filename
+
+**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive. Then use `mcp__google-workspace__search_drive_files` to find the zip/folder, `mcp__google-workspace__get_drive_file_download_url` to get the URL, and `curl` to download it. Extract with Python `zipfile`.
 
 For articles whose docx has embedded images (large file size, e.g. >500KB), extract them:
 ```python
@@ -137,14 +141,22 @@ Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
 
 **object-position for portrait photos:** Portrait images in the hero often need `center 15%`–`center 25%` rather than `center top`. With `center top`, a tall portrait scaled to fill the wide hero may place the subject's face in the overlay zone. Adjust based on where the face sits in the photo.
 
-## Step 8 — Update the dev2 internal nav
+## Step 8 — Update future-articles.html
+
+If any article in this edition was previously listed in `future-articles.html` as a held article, remove it. If no articles remain, replace the list with a "No articles currently held" placeholder.
+
+## Step 8b — Update "Our Writers This Week" in about.html
+
+The "Our Writers This Week" section in `about.html` should reflect only the writers who have articles in the **current edition**. Update it to show only this edition's authors (remove writers from prior editions who aren't in this one).
+
+## Step 9 — Update the dev2 internal nav
 
 The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar. Since the new articles are now on the main homepage, **do not add edition-specific links** for this edition. Instead:
 
 - Remove any stale edition-specific links from the prior edition
 - Keep only the standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
 
-## Step 9 — Commit and push
+## Step 10 — Commit and push
 
 ```bash
 git add editions/YYYY-MM-DD/ index.html
