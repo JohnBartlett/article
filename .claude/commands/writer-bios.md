@@ -53,3 +53,4 @@ Edit `_bios/<slug>.md` directly. If the bio text changes, also update the matchi
 | `lee-hamilton.md` | Lee Hamilton | `#lee-hamilton` |
 | `sophie-bross.md` | Sophie Bross | `#sophie-bross` |
 | `susan-aurinko.md` | Susan Aurinko | `#susan-aurinko` |
+| `sydney-armstrong.md` | Sydney Armstrong | not yet in about.html |
