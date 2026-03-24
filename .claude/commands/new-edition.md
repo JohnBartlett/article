@@ -24,8 +24,8 @@ From the emails, determine:
 ## Step 3 — Download article content
 
 For each article docx attachment:
-1. Use `mcp__gmail__read_email` (not `mcp__claude_ai_Gmail__gmail_read_message`) to get the attachment ID
-2. Use `mcp__gmail__download_attachment` to save the docx to `/tmp/`
+1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
+2. Use `mcp__google-workspace__get_gmail_attachment_content` to save the docx to `/tmp/`
 3. Extract the text with Python:
 ```python
 import zipfile, re
@@ -61,8 +61,8 @@ mkdir -p editions/YYYY-MM-DD/article-slug editions/YYYY-MM-DD/article-slug-2 ...
 ## Step 5 — Download photos
 
 For each photo email:
-1. Use `mcp__gmail__read_email` to get the attachment ID
-2. Use `mcp__gmail__download_attachment` to save directly into the article folder with a clean filename
+1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
+2. Use `mcp__google-workspace__get_gmail_attachment_content` to save directly into the article folder with a clean filename
 
 **If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive. Then use `mcp__google-workspace__search_drive_files` to find the zip/folder, `mcp__google-workspace__get_drive_file_download_url` to get the URL, and `curl` to download it. Extract with Python `zipfile`.
 
@@ -89,7 +89,6 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 - `<div class="article-body">`: remaining paragraphs with inline `<figure>` elements
 - Attribution line (if author has one — see Writer Bios below)
 - Feedback widget (thumbs up/down + comment form, with dynamic environment detection)
-- "About the Author" link (if author is in `about.html` — see Writer Bios below)
 - Edition nav: `← Previous` and `Next →` links
 - `<footer>`: social icons + copyright
 - Scripts: hamburger toggle, keyboard nav (N/P/Space/PgDn/PgUp)
@@ -158,6 +157,8 @@ The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar. Si
 
 ## Step 10 — Commit and push
 
+Always include `index.html` in the **same commit** as the article folders — never commit articles without the homepage update.
+
 ```bash
 git add editions/YYYY-MM-DD/ index.html
 git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]; update homepage"
@@ -174,7 +175,7 @@ git push origin dev2
 
 - Always work on `dev2`
 - Judy's email: `judycbross@aol.com`
-- Use `mcp__gmail__read_email` (not `mcp__claude_ai_Gmail__gmail_read_message`) to get attachment IDs
+- Use `mcp__google-workspace__get_gmail_message_content` to get attachment IDs, `mcp__google-workspace__get_gmail_attachment_content` to download
 - Photo emails often have descriptive subject lines; use those for captions
 - "Cover photo" emails designate the hero image for an article
 - Articles marked "DRAFT" in the docx may still need Judy's editorial review — note this in your summary

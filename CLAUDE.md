@@ -19,13 +19,14 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 ### Writers (update "Our Writers This Week" on about.html each edition)
 - Bob Glaze — Culinary & Cultural Guide
 - Katherine Harvey — Travel Writer
-- Susan Aurinko — Arts & Photography
+- Susan Aurinko — Arts & Photography (My Silk Roads column)
 - Jen Huang — Magazine Intern (UIC student)
 - Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
 - Elizabeth Dunlop Richter — Travel & Culture
 - David A. F. Sweet — Unsung Gems column
 - Lee Hamilton — Music
 - Sophie Bross — Theatre Review
+- Sydney Armstrong — Contributing Writer (new March 2026)
 
 ### Contributors & Support
 - **Adrian Naves** (niceguyfatz@gmail.com) — Former intern; layout and writing; works weekends
@@ -130,29 +131,35 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │   ├── 2026-03-01/         Edition 4 — March 1, 2026
 │   ├── 2026-03-08/         Edition 5 — March 8, 2026
 │   ├── 2026-03-15/         Edition 6 — March 15, 2026
-│   └── 2026-03-22/         Edition 7 — March 22, 2026 (current)
-│       ├── jessie-mueller/
-│       ├── chicago-chamber-music-society/
-│       ├── unsung-gems-lfhs/
-│       ├── two-sisters-and-a-piano/
-│       ├── pokemon-fossil-museum/
-│       ├── kanuga/
-│       └── building-blocks/
+│   ├── 2026-03-22/         Edition 7 — March 22, 2026
+│   │   ├── jessie-mueller/
+│   │   ├── chicago-chamber-music-society/
+│   │   ├── unsung-gems-lfhs/
+│   │   ├── two-sisters-and-a-piano/
+│   │   ├── pokemon-fossil-museum/
+│   │   ├── kanuga/
+│   │   └── building-blocks/
+│   └── 2026-03-29/         Edition 8 — March 29, 2026 (current, in progress)
+│       ├── unsung-gems-backgammon/
+│       ├── an-island-idyll/
+│       ├── marwen/
+│       ├── landmarks-preservation-forward/
+│       └── american-writers-museum/
 ```
 
-## Current Homepage Article Order (March 22 edition)
+## Current Homepage Article Order (March 29 edition, in progress)
 
 This order is used for keyboard navigation (N/P keys cycle through):
 
-1. **Jessie Mueller: Evanston Tony Winner Sings For Season of Concern** — Judy Carmack Bross (hero)
-2. **The Chicago Chamber Music Society: Reflections at 90** — Lee Hamilton
-3. **The Joys and Challenges of Renovating the Classic Lake Forest High School Building** — David A. F. Sweet
-4. **Two Sisters and a Piano at Writers Theatre** — Sophie Bross
-5. **The Pokémon Fossil Museum Is Coming to Chicago** — Adrian Naves
-6. **Kanuga: The Christmas Solution** — Elizabeth Dunlop Richter
-7. **Building Blocks: A Legacy to a Chicago Icon** — Judy Carmack Bross
+1. **The Dice Keep Rolling at Trudie's Winnetka Backgammon Club** — David A. F. Sweet (hero)
+2. **An Island Idyll** — Susan Aurinko
+3. **Marwen: Fostering Creativity for the Next Generation** — Jen Huang
+4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
+5. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
 
-Past editions in footer: March 15, March 8, March 1, February 22.
+More articles incoming: Biba Roesch (Palm Springs), Judy (Driehaus Museum), Marcy Carmack (Fashion Trends), John Bartlett.
+
+Past editions in footer: March 22, March 15, March 8, March 1.
 
 ## Conventions
 
@@ -211,6 +218,7 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 - "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
 - "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
 - Real comments (non-empty, non-dev2) go in `reader-comments.html`
+- If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
