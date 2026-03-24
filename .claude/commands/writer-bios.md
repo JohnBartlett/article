@@ -24,13 +24,8 @@ The italic line that appears at the end of their articles.
 
 ## When building an article
 
-1. Check `_bios/<slug>.md` for the writer's attribution line and `about_url`.
-2. If `about_url` points to a valid anchor in `about.html`, add an "About the Author" link above the edition nav:
-```html
-<div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-  <a href="../../../about.html#slug" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Full Name &rarr;</a>
-</div>
-```
+1. Check `_bios/<slug>.md` for the writer's attribution line.
+2. Do **not** add an "About the Author" link in the article — author links belong on `about.html`, not in articles.
 3. If the writer's attribution line is not "(none — byline only)", add it as the last paragraph in `.article-body`:
 ```html
 <p style="font-size: 15px; color: #888; font-style: italic;">Attribution line here.</p>

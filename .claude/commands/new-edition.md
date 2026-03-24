@@ -99,18 +99,12 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 **No popups:** Do not add author popup, location popup, or any overlay systems.
 
 **Writer Bios:** For each article author, read `_bios/<author-slug>.md` before finalizing the HTML:
-1. If the file exists, use it to get the **attribution line** and **about_url**
-2. If the attribution line is not `(none — byline only)`, add it as the last `<p>` in `.article-body`:
+1. If the file exists and the attribution line is not `(none — byline only)`, add it as the last `<p>` in `.article-body`:
    ```html
    <p style="font-size: 15px; color: #888; font-style: italic;">Attribution line here.</p>
    ```
-3. If `about_url` points to a valid anchor in `about.html` (not `"not yet in about.html"`), add the "About the Author" link above the edition nav:
-   ```html
-   <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-     <a href="../../../about.html#slug" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Full Name &rarr;</a>
-   </div>
-   ```
-4. If no bio file exists for an author, note it in your summary and create the file using `/writer-bios` conventions.
+2. Do **not** add an "About the Author" link in the article — author links belong on `about.html`, not in articles.
+3. If no bio file exists for an author, note it in your summary and create the file using `/writer-bios` conventions.
 
 ## Step 7 — Update the homepage
 
