@@ -83,8 +83,9 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 - Article wrapper: category label, h1 title, meta (By Author · Date), hero figure
 - `<p class="article-intro">`: first paragraph in larger font
 - `<div class="article-body">`: remaining paragraphs with inline `<figure>` elements
+- Attribution line (if author has one — see Writer Bios below)
 - Feedback widget (thumbs up/down + comment form, with dynamic environment detection)
-- "About the Author" link (if author is in `about.html`)
+- "About the Author" link (if author is in `about.html` — see Writer Bios below)
 - Edition nav: `← Previous` and `Next →` links
 - `<footer>`: social icons + copyright
 - Scripts: hamburger toggle, keyboard nav (N/P/Space/PgDn/PgUp)
@@ -96,6 +97,20 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 **GA4:** Always **disabled** on new articles (dev2 never runs analytics). The `/publish` skill re-enables GA4 across all files when pushing to master.
 
 **No popups:** Do not add author popup, location popup, or any overlay systems.
+
+**Writer Bios:** For each article author, read `_bios/<author-slug>.md` before finalizing the HTML:
+1. If the file exists, use it to get the **attribution line** and **about_url**
+2. If the attribution line is not `(none — byline only)`, add it as the last `<p>` in `.article-body`:
+   ```html
+   <p style="font-size: 15px; color: #888; font-style: italic;">Attribution line here.</p>
+   ```
+3. If `about_url` points to a valid anchor in `about.html` (not `"not yet in about.html"`), add the "About the Author" link above the edition nav:
+   ```html
+   <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+     <a href="../../../about.html#slug" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Full Name &rarr;</a>
+   </div>
+   ```
+4. If no bio file exists for an author, note it in your summary and create the file using `/writer-bios` conventions.
 
 ## Step 7 — Update the homepage
 

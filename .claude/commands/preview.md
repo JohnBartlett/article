@@ -31,9 +31,11 @@ In all cases, identify:
 - Images and their captions, in document order
 - Caption text that follows each image or image group
 
-## Step 3 — Identify the article folder
+## Step 3 — Identify the article folder and author bio
 
 Find the matching article folder under `editions/` (e.g. `editions/2026-03-22/chicago-chamber-music-society/`).
+
+Also check `_bios/<author-slug>.md` for the author's attribution line and `about_url` — useful context for building the review page and for noting if the author is missing from the bio library.
 
 ## Step 4 — Build the review page
 
