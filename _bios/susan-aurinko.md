@@ -2,7 +2,7 @@
 name: Susan Aurinko
 slug: susan-aurinko
 role: My Silk Roads Columnist / Arts & Photography
-about_url: (not yet in about.html)
+about_url: about.html#susan-aurinko
 email: susanaurinko@me.com
 website: aurinkophoto.com
 ---
