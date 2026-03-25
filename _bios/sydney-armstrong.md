@@ -2,10 +2,10 @@
 name: Sydney Armstrong
 slug: sydney-armstrong
 role: Contributing Writer
-about_url: not yet in about.html
+about_url: "#sydney-armstrong"
 ---
 
-Contributing writer for Classic Chicago Magazine.
+Sydney Armstrong has lived in Chicago for many years and loves to write about all the wonderful things to do and see in this beautiful city.
 
 **Article attribution line:**
 (none — byline only)
