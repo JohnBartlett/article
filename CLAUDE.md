@@ -27,6 +27,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Lee Hamilton — Music
 - Sophie Bross — Theatre Review
 - Sydney Armstrong — Contributing Writer (new March 2026)
+- Marcy Carmack (`marcycarmack@icloud.com`) — Fashion Trends writer (new March 2026)
 
 ### Contributors & Support
 - **Adrian Naves** (niceguyfatz@gmail.com) — Former intern; layout and writing; works weekends
@@ -177,7 +178,8 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │       ├── an-island-idyll/
 │       ├── marwen/
 │       ├── landmarks-preservation-forward/
-│       └── american-writers-museum/
+│       ├── american-writers-museum/
+│       └── biba-palm-springs/          (photos only; article pending)
 ```
 
 ## Current Homepage Article Order (March 29 edition, in progress)
@@ -190,7 +192,9 @@ This order is used for keyboard navigation (N/P keys cycle through):
 4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
 5. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
 
-More articles incoming: Biba Roesch (Palm Springs), Judy (Driehaus Museum), Marcy Carmack (Fashion Trends), John Bartlett.
+More articles incoming: Biba Roesch (Palm Springs — article from Steve Marrs, Biba's contact), Judy (Driehaus Museum), Marcy Carmack (Fashion Trends), John Bartlett.
+
+Judy's preferred order once all articles arrive: Biba near top, John near top, Marwen + American Writers Museum further down, Landmarks + Driehaus further down.
 
 Past editions in footer: March 22, March 15, March 8, March 1.
 
