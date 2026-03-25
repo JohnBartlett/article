@@ -79,6 +79,39 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 | `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy and John |
 | `/send-update` | Draft and send a weekly site activity + reader stats update to Judy |
 
+## DateBook
+
+The DateBook is a curated weekly events calendar, maintained by Annie Delfosse (`aedelfosse1@gmail.com`). It lives at `editions/YYYY-MM-DD/datebook/`.
+
+### Preferred input format for DateBook events
+
+When receiving event data (from Annie, Judy, or the user), a consistent **prose block** per event is the most realistic format:
+
+```
+MARCH 29
+Event Title
+Venue Name, Address | Time
+Description of the event.
+Tickets/Info: https://...
+Price: $XX (optional)
+```
+
+Internally, convert to structured data before generating HTML. JSON is the cleanest intermediate format:
+
+```json
+{
+  "date": "March 29, 2026",
+  "title": "...",
+  "venue": "...",
+  "time": "7:30 PM",
+  "description": "...",
+  "url": "https://...",
+  "price": "$35–$175"
+}
+```
+
+**Key rule:** Whatever format events arrive in, every event must have the same fields so HTML generation is consistent.
+
 ## Analytics Reporting
 
 A script `tools/ga4_report.py` is available to collect performance stats (users, sessions, page views) from Google Analytics 4.

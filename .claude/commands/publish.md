@@ -63,7 +63,7 @@ Cloudflare will detect the push and deploy automatically to `chicagoclassicmag.c
 
 ## Step 4 — Send publication notification emails
 
-Send an email to both Judy and John confirming the edition is live. Use the Gmail MCP tool (`mcp__gmail__send_email`) to send to each recipient.
+Send an email to both Judy and John confirming the edition is live. Use `mcp__google-workspace__send_gmail_message` to send.
 
 **To:** `judycbross@aol.com`
 **CC:** `john.bartlett@gmail.com`

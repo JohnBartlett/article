@@ -5,7 +5,7 @@ Draft and send a weekly update email to Judy summarizing recent site activity an
 ## Step 1 — Check if anything has changed
 
 Find the last update email sent to Judy:
-- Search Gmail: `from:me to:judycbross@aol.com subject:"Site Update"` (max 1) to get the date of the last update
+- Use `mcp__google-workspace__search_gmail_messages`: `from:me to:judycbross@aol.com subject:"Site Update"` (max 1) to get the date of the last update
 
 Then check git for commits since that date:
 ```
@@ -49,7 +49,7 @@ Write the email in this format:
 
 Show the draft to the user and ask: **"Send this?"**
 
-If yes, use the Gmail tool to send to `judycbross@aol.com` from the current account.
+If yes, use `mcp__google-workspace__send_gmail_message` to send to `judycbross@aol.com`.
 
 ## Notes
 
