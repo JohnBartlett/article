@@ -1,0 +1,52 @@
+{
+  "property_id": "523654462",
+  "date_range": "Last 30 days",
+  "fetched_at": "2026-03-15T18:20:49.138Z",
+  "totals": {
+    "activeUsers": 5412,
+    "sessions": 7309,
+    "screenPageViews": 9101
+  },
+  "top_pages": [
+    {
+      "pagePath": "/",
+      "screenPageViews": 3401
+    },
+    {
+      "pagePath": "/editions/2026-02-15/alicia-ziegler/",
+      "screenPageViews": 394
+    },
+    {
+      "pagePath": "/index.html",
+      "screenPageViews": 275
+    },
+    {
+      "pagePath": "/editions/2026-02-22/cynthia-safford-mulcahy/",
+      "screenPageViews": 272
+    },
+    {
+      "pagePath": "/editions/2026-02-22/downsizing/",
+      "screenPageViews": 248
+    },
+    {
+      "pagePath": "/editions/2026-02-15/childrens-research-fund/",
+      "screenPageViews": 244
+    },
+    {
+      "pagePath": "/editions/2026-03-01/wells-street-kitchen-juice/",
+      "screenPageViews": 233
+    },
+    {
+      "pagePath": "/editions/2026-03-08/rebecca-tilles/",
+      "screenPageViews": 189
+    },
+    {
+      "pagePath": "/editions/2026-02-08/",
+      "screenPageViews": 177
+    },
+    {
+      "pagePath": "/about",
+      "screenPageViews": 175
+    }
+  ]
+}
