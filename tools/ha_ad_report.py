@@ -111,6 +111,20 @@ def main():
             json.dump(report, f, indent=2)
         print(f"\n✓ Saved to {filename}")
 
+        # Write summary for Editors Page display
+        summary = {
+            "total_impressions": report["total_impressions"],
+            "days": args.days,
+            "date_range": report["date_range"],
+            "updated": datetime.now().strftime("%B %d, %Y"),
+            "by_article": report["by_article"],
+        }
+        summary_path = os.path.join(os.path.dirname(__file__), "ha_ad_count.json")
+        with open(summary_path, "w", encoding="utf-8") as f:
+            json.dump(summary, f, indent=2)
+        print(f"✓ Editors Page data updated: tools/ha_ad_count.json")
+        print(f"  → Commit tools/ha_ad_count.json to dev2 to publish the updated count.")
+
     except Exception as e:
         print(f"Error fetching report: {e}")
         sys.exit(1)
