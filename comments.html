@@ -219,6 +219,17 @@
       </div>
     </div>
 
+    <!-- Heritage Auctions Ad Impressions -->
+    <div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Heritage Auctions Ad Impressions</p>
+      <p style="font-family: 'Lato', sans-serif; font-size: 15px; color: #333; margin: 0 0 12px;">Counted each time a reader loads an article containing the HA ad on production. Tracked via GA4 custom event <code style="background: #f0ebe3; padding: 1px 6px; border-radius: 3px; font-size: 13px;">ha_ad_impression</code>.</p>
+      <p style="font-family: 'Lato', sans-serif; font-size: 14px; color: #555; margin: 0 0 8px;">To pull the latest counts, run from the repo root:</p>
+      <pre style="background: #f0ebe3; padding: 14px 18px; border-radius: 4px; font-size: 13px; overflow-x: auto; margin: 0 0 12px; white-space: pre-wrap;">export GA4_PROPERTY_ID="your-numeric-id"
+export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
+python3 tools/ha_ad_report.py --days 30</pre>
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin: 0;">Impressions only accumulate on master (production) — dev/dev2 page loads are not counted.</p>
+    </div>
+
     <!-- DateBook Design Variants -->
     <div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
       <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 16px;">DateBook Design Variants</p>

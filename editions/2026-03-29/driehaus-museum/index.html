@@ -264,5 +264,8 @@
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
   </script>
+  <script>
+    if (typeof gtag === 'function') { gtag('event', 'ha_ad_impression'); }
+  </script>
 </body>
 </html>
