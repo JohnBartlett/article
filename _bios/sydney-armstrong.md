@@ -8,4 +8,4 @@ about_url: "#sydney-armstrong"
 Sydney Armstrong has lived in Chicago for many years and loves to write about all the wonderful things to do and see in this beautiful city.
 
 **Article attribution line:**
-(none — byline only)
+Sydney Armstrong is a contributing writer for Classic Chicago Magazine.
