@@ -25,10 +25,9 @@ The italic line that appears at the end of their articles.
 ## When building an article
 
 1. Check `_bios/<slug>.md` for the writer's attribution line.
-2. Do **not** add an "About the Author" link in the article — author links belong on `about.html`, not in articles.
-3. If the writer's attribution line is not "(none — byline only)", add it as the last paragraph in `.article-body`:
+2. If the writer's attribution line is not "(none — byline only)", add it as the last paragraph in `.article-body`. Link the author's name to their `about.html` anchor:
 ```html
-<p style="font-size: 15px; color: #888; font-style: italic;">Attribution line here.</p>
+<p style="font-size: 15px; color: #888; font-style: italic;"><a href="../../../about.html#slug" style="color: #b51c20;">Author Name</a> is a ... attribution line.</p>
 ```
 
 ## Adding a new writer
