@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
@@ -17,82 +16,105 @@
   <script src="../dark-mode.js"></script>
   <style>
     body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fdfaf7; color: #222; line-height: 1.6; }
-
-    header { padding: 20px 0; border-bottom: 1px solid #eee; background: #fff; }
-    .logo-container { text-align: center; margin-bottom: 20px; }
+    header { padding: 20px 0 0; border-bottom: 1px solid #eee; background: #fff; position: relative; }
+    .logo-container { text-align: center; margin-bottom: 16px; }
     .logo-container img { width: 390px; height: auto; }
+    .editors-nav { border-top: 1px solid #eee; padding: 8px 0; text-align: center; }
+    .editors-nav a { font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 16px; padding: 5px 0; }
+    .editors-nav a:hover { text-decoration: underline; }
+    .editors-nav a.active { border-bottom: 2px solid #b51c20; }
+    .editors-nav .home-link { color: #aaa; font-weight: 400; }
+    .editors-nav .home-link:hover { color: #b51c20; }
+    .wrapper { max-width: 820px; margin: 0 auto 80px; padding: 0 24px; }
 
-    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
-    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    /* Page header */
+    .page-header { text-align: center; padding: 40px 0 28px; border-bottom: 2px solid #e8443a; margin-bottom: 44px; }
+    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 8px; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: 42px; color: #111; margin: 0 0 8px; line-height: 1.15; }
+    .edition-tag { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
 
-    .wrapper { max-width: 860px; margin: 0 auto 80px; padding: 0 24px; }
+    /* Progress bar */
+    .progress-block { margin-bottom: 44px; padding: 24px 28px; background: #fff; border: 1px solid #e8e0d5; border-radius: 2px; }
+    .progress-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .progress-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; }
+    .progress-count { font-family: 'Playfair Display', serif; font-size: 28px; color: #111; line-height: 1; }
+    .progress-count span { font-family: 'Lato', sans-serif; font-size: 13px; color: #999; font-weight: 400; }
+    .progress-bar-bg { height: 6px; background: #f0ebe3; border-radius: 3px; overflow: hidden; }
+    .progress-bar-fill { height: 6px; background: #b51c20; border-radius: 3px; transition: width 0.4s; }
+    .progress-legend { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+    .legend-item { font-family: 'Lato', sans-serif; font-size: 11px; color: #999; display: flex; align-items: center; gap: 5px; }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-ready   { background: #b51c20; }
+    .dot-pending { background: #f9a825; }
+    .dot-missing { background: #ddd; }
 
-    .page-header { text-align: center; padding: 44px 0 32px; border-bottom: 2px solid #e8443a; margin-bottom: 48px; }
-    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 10px; }
-    .page-title { font-family: 'Playfair Display', serif; font-size: 44px; color: #111; margin: 0 0 10px; line-height: 1.15; }
-    .edition-tag { font-family: 'Lato', sans-serif; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
-
-    /* Section cards */
-    .section-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 48px; }
-    @media (max-width: 680px) { .section-cards { grid-template-columns: 1fr; } }
-
-    .section-card { display: block; padding: 28px 24px 24px; border: 1px solid #e0d8d0; border-top: 3px solid #b51c20; border-radius: 2px; background: #fff; text-decoration: none; transition: box-shadow 0.15s; }
-    .section-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-    .card-icon { font-size: 26px; margin-bottom: 12px; line-height: 1; }
-    .card-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; margin-bottom: 6px; }
-    .card-title { font-family: 'Playfair Display', serif; font-size: 21px; color: #111; margin: 0 0 8px; line-height: 1.25; }
-    .card-desc { font-family: 'Lato', sans-serif; font-size: 13px; color: #777; line-height: 1.5; margin: 0; }
-
-    /* Status snapshot */
+    /* Section */
     .dash-section { margin-bottom: 44px; }
-    .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
     .section-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; flex: 1; }
-    .section-action { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #b51c20; text-decoration: none; white-space: nowrap; }
+    .section-action { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #b51c20; text-decoration: none; }
     .section-action:hover { text-decoration: underline; }
 
-    /* Status mini-table */
-    .status-mini { width: 100%; border-collapse: collapse; font-family: 'Lato', sans-serif; font-size: 14px; }
-    .status-mini td { padding: 10px 8px; border-bottom: 1px solid #f0ebe3; vertical-align: middle; }
-    .status-mini tr:last-child td { border-bottom: none; }
-    .article-name { font-family: Georgia, serif; font-size: 15px; color: #222; }
-    .badge { display: inline-block; font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
-    .badge-published { background: #e8f5e9; color: #2e7d32; }
-    .badge-pending   { background: #fff8e1; color: #7a5c00; }
-    .badge-missing   { background: #f5f5f5; color: #999; }
+    /* Decision / outstanding items */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li { display: flex; align-items: flex-start; gap: 14px; padding: 13px 0; border-bottom: 1px solid #f0ebe3; font-family: 'Lato', sans-serif; font-size: 14px; color: #444; }
+    .item-list li:last-child { border-bottom: none; }
+    .item-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .dot-decision { background: #1976d2; }
+    .dot-waiting  { background: #f9a825; }
+    .item-list strong { color: #222; }
+    .item-list .item-contact { font-size: 12px; color: #999; display: block; margin-top: 2px; }
+
+    /* Nav cards (subpages) */
+    .nav-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 44px; }
+    @media (max-width: 640px) { .nav-cards { grid-template-columns: 1fr; } }
+    .nav-card { display: block; padding: 20px 20px 18px; border: 1px solid #e0d8d0; border-top: 3px solid #b51c20; background: #fff; text-decoration: none; transition: box-shadow 0.15s; }
+    .nav-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+    .nc-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: #b51c20; margin-bottom: 5px; }
+    .nc-title { font-family: 'Playfair Display', serif; font-size: 19px; color: #111; margin: 0 0 6px; line-height: 1.2; }
+    .nc-desc { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; line-height: 1.5; margin: 0; }
 
     /* Quick links */
-    .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-    .quick-link { display: block; padding: 16px 18px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fff; text-decoration: none; transition: border-color 0.15s; }
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+    .quick-link { display: block; padding: 14px 16px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fff; text-decoration: none; transition: border-color 0.15s; }
     .quick-link:hover { border-color: #b51c20; }
-    .ql-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #bbb; margin-bottom: 4px; }
-    .ql-title  { font-family: 'Lato', sans-serif; font-size: 14px; color: #b51c20; font-weight: 700; }
+    .ql-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #bbb; margin-bottom: 3px; }
+    .ql-title { font-family: 'Lato', sans-serif; font-size: 13px; color: #b51c20; font-weight: 700; }
 
-    footer { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
-    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    footer { background: #1a1a1a; color: #fff; padding: 30px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 13px; color: #aaa; }
+
+    /* Dark mode overrides for progress block */
+    html.dark .progress-block { background: #1a1a1a !important; border-color: #2a2a2a !important; }
+    html.dark .progress-count { color: #ddd !important; }
+    html.dark .progress-bar-bg { background: #2a2a2a !important; }
+    html.dark .legend-item { color: #555 !important; }
+    html.dark .dot-missing { background: #333 !important; }
+    html.dark .nav-card { background: #1a1a1a !important; border-color: #2a2a2a !important; border-top-color: #b51c20 !important; }
+    html.dark .nav-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.4) !important; }
+    html.dark .nc-title { color: #ddd !important; }
+    html.dark .nc-desc { color: #555 !important; }
+    html.dark .item-list li { border-color: #222 !important; color: #777 !important; }
+    html.dark .item-list strong { color: #bbb !important; }
+    html.dark .item-contact { color: #444 !important; }
   </style>
 </head>
-
 <body>
 
-  <!-- EDITORS BANNER -->
-  <div style="background: #b51c20; color: #fff; text-align: center; padding: 13px 24px;">
-    <div style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</div>
+  <div style="background: #b51c20; color: #fff; text-align: center; padding: 11px 24px;">
+    <span style="font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</span>
   </div>
 
   <header>
     <div class="logo-container">
       <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
     </div>
-    <nav>
-      <div class="nav-inner">
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
-        <a href="../reader-comments.html">Reader Comments</a>
-        <a href="../future-articles.html">Future Articles</a>
-        <a href="index.html">Editors&rsquo; Page</a>
-      </div>
+    <nav class="editors-nav">
+      <a href="../index.html" class="home-link">&#8592; Site</a>
+      <a href="index.html" class="active">Editors&rsquo; Page</a>
+      <a href="edition.html">Edition</a>
+      <a href="comments.html">Comments</a>
+      <a href="stats.html">Stats</a>
     </nav>
   </header>
 
@@ -104,70 +126,95 @@
       <div class="edition-tag">March 29, 2026 &mdash; Current Edition</div>
     </div>
 
-    <!-- Section cards -->
-    <div class="section-cards">
-      <a href="edition.html" class="section-card">
-        <div class="card-icon">&#128240;</div>
-        <div class="card-label">Current Build</div>
-        <div class="card-title">Edition Status</div>
-        <p class="card-desc">Article checklist, content pipeline, staging links, and pending items for the March 29 edition.</p>
-      </a>
-      <a href="../comments.html" class="section-card">
-        <div class="card-icon">&#128172;</div>
-        <div class="card-label">Reader Feedback</div>
-        <div class="card-title">Comments</div>
-        <p class="card-desc">Reader pulse, vote tallies, and editorial concerns flagged from reader submissions.</p>
-      </a>
-      <a href="stats.html" class="section-card">
-        <div class="card-icon">&#128202;</div>
-        <div class="card-label">Analytics</div>
-        <div class="card-title">Stats</div>
-        <p class="card-desc">GA4 site analytics, Heritage Auctions ad impressions, and page-level performance data.</p>
-      </a>
+    <!-- Progress -->
+    <div class="progress-block">
+      <div class="progress-header">
+        <div class="progress-label">Edition Readiness</div>
+        <div class="progress-count">6 of 8 <span>articles ready</span></div>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width: 75%;"></div>
+      </div>
+      <div class="progress-legend">
+        <div class="legend-item"><div class="legend-dot dot-ready"></div> 6 published</div>
+        <div class="legend-item"><div class="legend-dot dot-pending"></div> 1 article pending (Biba)</div>
+        <div class="legend-item"><div class="legend-dot dot-missing"></div> 1 not received (Marcy)</div>
+      </div>
     </div>
 
-    <!-- Edition status snapshot -->
+    <!-- Decisions needed -->
     <div class="dash-section">
       <div class="section-head">
-        <div class="section-title">March 29 Edition &mdash; At a Glance</div>
-        <a href="edition.html" class="section-action">Full Details &rarr;</a>
+        <div class="section-title">Decisions Needed</div>
       </div>
-      <table class="status-mini">
-        <tbody>
-          <tr>
-            <td><div class="article-name">Tiffany at the Driehaus Museum</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">The Dice Keep Rolling &mdash; Backgammon Club</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">Biba&rsquo;s Favorite Things: Palm Springs</div></td>
-            <td><span class="badge badge-pending">Article pending</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">An Island Idyll</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">Marwen: Fostering Creativity</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">Landmarks Illinois &mdash; Old Post Office</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">A Literary Adventure at the American Writers Museum</div></td>
-            <td><span class="badge badge-published">Published</span></td>
-          </tr>
-          <tr>
-            <td><div class="article-name">Fashion Trends &mdash; Marcy Carmack</div></td>
-            <td><span class="badge badge-missing">Not received</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <ul class="item-list">
+        <li>
+          <div class="item-dot dot-decision"></div>
+          <div>
+            <strong>Homepage final order</strong> &mdash; Judy&rsquo;s call once Biba and Marcy arrive. Current order: Driehaus (hero), Backgammon, Biba, Island Idyll, Marwen, Landmarks, American Writers, Fashion Trends.
+          </div>
+        </li>
+        <li>
+          <div class="item-dot dot-decision"></div>
+          <div>
+            <strong>Biba cover photo</strong> &mdash; BibaOnPalmCanyonDrive.jpeg (current) vs. palm-springs-vibe.jpg.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Waiting on -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Waiting On</div>
+      </div>
+      <ul class="item-list">
+        <li>
+          <div class="item-dot dot-waiting"></div>
+          <div>
+            <strong>Biba Palm Springs &mdash; article text</strong>
+            <span class="item-contact">Contact: Steve Marrs &mdash; photos live on dev2</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-dot dot-waiting"></div>
+          <div>
+            <strong>Fashion Trends &mdash; Marcy Carmack</strong>
+            <span class="item-contact">New writer, first article &mdash; not yet received</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-dot dot-waiting"></div>
+          <div>
+            <strong>Victoria Martin Daily Star (April)</strong>
+            <span class="item-contact">Timing TBD with Judy</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subpage nav cards -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Sections</div>
+      </div>
+      <div class="nav-cards">
+        <a href="edition.html" class="nav-card">
+          <div class="nc-label">Current Build</div>
+          <div class="nc-title">Edition</div>
+          <p class="nc-desc">Article inventory &mdash; status, writers, and dev2 links for all March 29 pieces.</p>
+        </a>
+        <a href="comments.html" class="nav-card">
+          <div class="nc-label">Reader Feedback</div>
+          <div class="nc-title">Comments</div>
+          <p class="nc-desc">Reader pulse, vote tallies, and editorial concerns from submissions.</p>
+        </a>
+        <a href="stats.html" class="nav-card">
+          <div class="nc-label">Analytics</div>
+          <div class="nc-title">Stats</div>
+          <p class="nc-desc">GA4 site analytics and Heritage Auctions ad impressions.</p>
+        </a>
+      </div>
     </div>
 
     <!-- Quick links -->
@@ -189,7 +236,7 @@
           <div class="ql-title">Homepage</div>
         </a>
         <a href="https://article-git-dev-johns-projects-e5fce345.vercel.app" target="_blank" class="quick-link">
-          <div class="ql-label">Staging &mdash; Vercel</div>
+          <div class="ql-label">Staging</div>
           <div class="ql-title">Dev Preview &#8599;</div>
         </a>
         <a href="https://chicagoclassicmag.com" target="_blank" class="quick-link">
@@ -203,24 +250,11 @@
       </div>
     </div>
 
-  </div><!-- end wrapper -->
+  </div>
 
   <footer>
     <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
   </footer>
-
-  <script>
-    (function() {
-      var btn = document.getElementById('hamburger-btn');
-      var menu = document.getElementById('hamburger-menu');
-      if (btn && menu) {
-        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
-        document.addEventListener('click', function(e) {
-          if (!btn.contains(e.target) && !menu.contains(e.target)) menu.classList.remove('open');
-        });
-      }
-    })();
-  </script>
 
 </body>
 </html>
