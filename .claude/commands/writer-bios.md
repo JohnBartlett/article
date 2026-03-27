@@ -34,7 +34,7 @@ The italic line that appears at the end of their articles.
 
 1. Create `_bios/<slug>.md` with their info.
 2. Add a `<div class="team-member" id="<slug>">` entry to the "Our Writers This Week" section of `about.html`.
-3. If they have an articles popup (most recurring writers do), add it after the team-member div following the pattern used for David Sweet, Lee Hamilton, etc.
+3. If they have an articles popup (most recurring writers do), add it after the team-member div following the pattern used for David Sweet, Susan Aurinko, Jen Huang, etc.
 
 ## Updating an existing bio
 
@@ -45,6 +45,7 @@ Edit `_bios/<slug>.md` directly. If the bio text changes, also update the matchi
 | File | Name | about.html anchor |
 |------|------|-------------------|
 | `adrian-naves.md` | Adrian Naves | `#adrian-naves` |
+| `biba-roesch.md` | Biba Roesch | `#biba-roesch` |
 | `david-sweet.md` | David A. F. Sweet | `#david-sweet` |
 | `elizabeth-dunlop-richter.md` | Elizabeth Dunlop Richter | `#elizabeth-dunlop-richter` |
 | `jen-huang.md` | Jen Huang | `#jen-huang` |
@@ -52,4 +53,4 @@ Edit `_bios/<slug>.md` directly. If the bio text changes, also update the matchi
 | `lee-hamilton.md` | Lee Hamilton | `#lee-hamilton` |
 | `sophie-bross.md` | Sophie Bross | `#sophie-bross` |
 | `susan-aurinko.md` | Susan Aurinko | `#susan-aurinko` |
-| `sydney-armstrong.md` | Sydney Armstrong | not yet in about.html |
+| `sydney-armstrong.md` | Sydney Armstrong | `#sydney-armstrong` |
