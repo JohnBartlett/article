@@ -92,6 +92,78 @@
     'html:not(.dark) #cc-theme-toggle { border: 1px solid #ddd; color: #666; }',
     'html.dark #cc-theme-toggle:hover { border-color: #e05555; color: #e05555; }',
     'html:not(.dark) #cc-theme-toggle:hover { border-color: #b51c20; color: #b51c20; }',
+
+    /* ── Editors' Pages ──────────────────────────────────────────────────── */
+    /* Page chrome */
+    'html.dark .page-header { border-color: #b51c20 !important; }',
+    'html.dark .section-head { border-color: #2a2a2a !important; }',
+    'html.dark .dash-section .section-title { color: #e05555 !important; }',
+    'html.dark .breadcrumb { color: #555 !important; }',
+    'html.dark .stage-note { color: #555 !important; }',
+    'html.dark .edition-tag { color: #666 !important; }',
+
+    /* Section cards (hub) */
+    'html.dark .section-card { background: #1a1a1a !important; border-color: #2a2a2a !important; border-top-color: #b51c20 !important; }',
+    'html.dark .section-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important; }',
+    'html.dark .card-label { color: #e05555 !important; }',
+    'html.dark .card-title { color: #ddd !important; }',
+    'html.dark .card-desc { color: #666 !important; }',
+
+    /* Edition / status tables */
+    'html.dark .edition-table th, html.dark .status-mini th { background: #1e1e1e !important; color: #555 !important; }',
+    'html.dark .edition-table td, html.dark .status-mini td { border-color: #222 !important; }',
+    'html.dark .article-name { color: #ddd !important; }',
+    'html.dark .article-sub { color: #555 !important; }',
+    'html.dark .writer-cell { color: #777 !important; }',
+    'html.dark .stage-dash { color: #444 !important; }',
+
+    /* Badges */
+    'html.dark .badge-published { background: #0d1f0e !important; color: #4caf50 !important; }',
+    'html.dark .badge-pending   { background: #1f1800 !important; color: #f9a825 !important; }',
+    'html.dark .badge-missing   { background: #1a1a1a !important; color: #555 !important; }',
+
+    /* Homepage order list */
+    'html.dark .order-list li { border-color: #222 !important; }',
+    'html.dark .order-title { color: #ddd !important; }',
+    'html.dark .order-by { color: #555 !important; }',
+    'html.dark .order-tag { color: #e05555 !important; border-color: #3a1e1e !important; }',
+    'html.dark .order-num { color: #333 !important; }',
+
+    /* Pipeline */
+    'html.dark .pipeline-list li { border-color: #222 !important; color: #777 !important; }',
+    'html.dark .pipeline-list strong { color: #bbb !important; }',
+
+    /* Stats cards */
+    'html.dark .stat-card { background: #1a1a1a !important; border-color: #2a2a2a !important; }',
+    'html.dark .stat-big { color: #e05555 !important; }',
+    'html.dark .stat-label { color: #555 !important; }',
+    'html.dark .stat-note { color: #444 !important; }',
+    'html.dark .refresh-note { color: #444 !important; }',
+    'html.dark .refresh-note code { background: #222 !important; color: #aaa !important; }',
+
+    /* Breakdown tables */
+    'html.dark .breakdown-table th { background: #1e1e1e !important; color: #555 !important; }',
+    'html.dark .breakdown-table td { border-color: #222 !important; color: #888 !important; }',
+    'html.dark .breakdown-table td.num { color: #e05555 !important; }',
+
+    /* Reader pulse */
+    'html.dark .pulse-stat.yes { background: #0d1f0e !important; border-color: #1a3d1c !important; }',
+    'html.dark .pulse-stat.no  { background: #1f0d0d !important; border-color: #3d1a1a !important; }',
+    'html.dark .pulse-stat.neutral { background: #1a1a1a !important; border-color: #2a2a2a !important; }',
+    'html.dark .pulse-lbl { color: #555 !important; }',
+
+    /* Comment cards */
+    'html.dark .comment-card { background: #1a1a1a !important; border-color: #2a2a2a !important; border-left-color: #b51c20 !important; }',
+    'html.dark .comment-card p { color: #bbb !important; }',
+    'html.dark .comment-card .meta { color: #555 !important; }',
+    'html.dark .comment-section-label { color: #e05555 !important; }',
+    'html.dark .empty-note { color: #444 !important; }',
+
+    /* Quick links */
+    'html.dark .quick-link { background: #1a1a1a !important; border-color: #2a2a2a !important; }',
+    'html.dark .quick-link:hover { border-color: #b51c20 !important; }',
+    'html.dark .ql-label { color: #444 !important; }',
+    'html.dark .ql-title { color: #e05555 !important; }',
   ].join('\n');
   document.head.appendChild(style);
 
