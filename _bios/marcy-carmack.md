@@ -7,7 +7,7 @@ email: marcycarmack@icloud.com
 website: marcycarmackstyle.com
 ---
 
-A Chicago-based fashion stylist with over 30 years of experience, Marcy Carmack brings an insider's eye to style and trends. She shares her expertise at marcycarmackstyle.com.
+Marcy Carmack is a New York–trained fashion stylist and founder of Marcy Carmack Style, where she helps clients build modern, wearable wardrobes grounded in timeless pieces. She has been a writer for Classic Chicago Magazine since its inception 12 years ago and is known for a polished yet effortless approach that makes a well-edited closet both versatile and confidence-inspiring.
 
 **Article attribution line:**
 Marcy Carmack is Classic Chicago's Fashion Trends columnist.
