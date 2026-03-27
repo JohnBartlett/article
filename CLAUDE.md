@@ -74,6 +74,7 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 | Skill | Purpose |
 |---|---|
 | `/check-emails` | Check Judy's emails and FormSubmit votes; apply changes; commit to dev2 |
+| `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
 | `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push, schedule production push |
