@@ -2,307 +2,153 @@
 <html lang="en">
 
 <head>
-  <!-- GA4 disabled on dev2
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-5J2HWKC0B1');
-  </script>
-  -->
+  </script> -->
   <meta charset="UTF-8">
-  <title>Comments – Classic Chicago Magazine</title>
+  <title>Comments &ndash; Classic Chicago Editors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fff;
-      color: #222;
-    }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fdfaf7; color: #222; line-height: 1.6; }
 
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-    }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; background: #fff; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
 
-    .logo-container {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
 
-    .logo-container img {
-      width: 390px;
-      height: auto;
-    }
+    .wrapper { max-width: 860px; margin: 0 auto 80px; padding: 0 24px; }
 
-    nav {
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-    }
+    .page-header { text-align: center; padding: 44px 0 32px; border-bottom: 2px solid #e8443a; margin-bottom: 48px; }
+    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 10px; }
+    .breadcrumb { font-family: 'Lato', sans-serif; font-size: 12px; color: #bbb; margin-bottom: 14px; }
+    .breadcrumb a { color: #b51c20; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: 44px; color: #111; margin: 0 0 10px; line-height: 1.15; }
+    .edition-tag { font-family: 'Lato', sans-serif; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
 
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .dash-section { margin-bottom: 52px; }
+    .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
+    .section-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; flex: 1; }
+    .section-action { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #b51c20; text-decoration: none; white-space: nowrap; }
+    .section-action:hover { text-decoration: underline; }
 
-    .nav-inner a {
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      color: #d41f1f;
-      text-decoration: none;
-      text-transform: uppercase;
-      margin: 0 15px;
-      padding: 5px 0;
-      letter-spacing: 0.05em;
-    }
+    /* Reader pulse */
+    .pulse-row { display: flex; gap: 20px; margin-bottom: 24px; }
+    .pulse-stat { text-align: center; padding: 20px; border-radius: 4px; flex: 1; }
+    .pulse-stat.yes { background: #f0f8f0; border: 1px solid #c8e6c9; }
+    .pulse-stat.no  { background: #fff8f8; border: 1px solid #ffcdd2; }
+    .pulse-stat.neutral { background: #fdfaf7; border: 1px solid #e8e0d5; }
+    .pulse-num { font-family: 'Playfair Display', serif; font-size: 44px; line-height: 1; }
+    .pulse-stat.yes .pulse-num { color: #2e7d32; }
+    .pulse-stat.no  .pulse-num { color: #c62828; }
+    .pulse-stat.neutral .pulse-num { color: #b51c20; }
+    .pulse-lbl { font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-top: 5px; }
+    @media (max-width: 600px) { .pulse-row { flex-direction: column; } }
 
-    .nav-inner a:hover {
-      color: #b51c20;
-      text-decoration: underline;
-    }
+    /* Comment cards */
+    .comment-section-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #b51c20; margin: 24px 0 12px; }
+    .comment-card { border: 1px solid #e8e0d5; border-left: 3px solid #b51c20; padding: 14px 18px; margin-bottom: 10px; background: #fff; border-radius: 0 4px 4px 0; }
+    .comment-card p { font-family: Georgia, serif; font-size: 15px; color: #333; margin: 0 0 6px; font-style: italic; }
+    .comment-card .meta { font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .wrapper {
-      max-width: 680px;
-      margin: 0 auto 60px;
-      padding: 0 24px;
-    }
+    .empty-note { font-family: 'Lato', sans-serif; font-size: 14px; color: #bbb; font-style: italic; padding: 12px 0; }
 
-    h1.page-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 42px;
-      font-weight: 700;
-      text-align: center;
-      margin: 50px 0 10px;
-      color: #222;
-      line-height: 1.2;
-    }
-
-    .page-subtitle {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-align: center;
-      color: #999;
-      margin-bottom: 48px;
-    }
-
-    footer {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .social-links { margin-bottom: 20px; }
-    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
-    .social-links a:hover { opacity: 0.7; }
-    .social-links svg { width: 32px; height: 32px; fill: #fff; }
-
-    .copyright {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #aaa;
-    }
+    footer { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
   </style>
-  <script src="dark-mode.js"></script>
 </head>
 
 <body>
 
-  <!-- EDITORS PAGE BANNER -->
-  <div style="background: #b51c20; color: #fff; text-align: center; padding: 18px 24px;">
-    <div style="font-family: 'Lato', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Editors Page &mdash; Not Published &mdash; Only in Dev2</div>
+  <!-- EDITORS BANNER -->
+  <div style="background: #b51c20; color: #fff; text-align: center; padding: 13px 24px;">
+    <div style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</div>
   </div>
 
   <header>
     <div class="logo-container">
-      <a href="index.html">
-        <img src="logo.jpg" alt="Classic Chicago Magazine">
-      </a>
+      <a href="index.html"><img src="logo.jpg" alt="Classic Chicago Magazine"></a>
     </div>
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="subscribe.html">Subscribe</a>
-        <a href="advertise.html">Advertise</a>
-        <a href="editions/2026-03-08/datebook/">DateBook</a>
-        <a href="editions/2026-03-01/daily-star-march/">Astrochart</a>
-        <a href="comments.html">Comments</a>
+        <a href="reader-comments.html">Reader Comments</a>
+        <a href="future-articles.html">Future Articles</a>
+        <a href="editors/index.html">Editors&rsquo; Page</a>
       </div>
     </nav>
   </header>
 
   <div class="wrapper">
-    <h1 class="page-title">Comments</h1>
-    <div class="page-subtitle">March 8, 2026 &mdash; Sunday Edition</div>
 
-    <!-- Feedback Widget -->
-    <div style="padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-
-      <!-- Thumbs -->
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this week&rsquo;s edition?</p>
-      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
-        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
-        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
-      </div>
-      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
-
-      <!-- Comment Form -->
-      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
-      </div>
-      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
-          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="feedbackReturn">
-          <input type="hidden" name="Page" id="page-tracking">
-          <input type="hidden" name="Environment" id="env-tracking">
-          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
-          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
-          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
-        </form>
-      </div>
-
-      <script>
-        var base = window.location.href.split('?')[0];
-        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
-        document.getElementById('page-tracking').value = 'March 8 Edition \u2014 Comments Page \u2014 ' + base;
-        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
-        if (window.location.search.indexOf('feedback=sent') !== -1) {
-          document.getElementById('feedbackForm').style.display = 'none';
-          document.getElementById('feedbackConfirm').style.display = 'block';
-        }
-        function submitVote(vote) {
-          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            body: JSON.stringify({
-              vote: vote,
-              Page: document.getElementById('page-tracking').value,
-              Environment: document.getElementById('env-tracking').value,
-              _subject: 'Classic Chicago Quick Vote'
-            })
-          }).catch(function(){});
-          document.getElementById('thumbUp').disabled = true;
-          document.getElementById('thumbDown').disabled = true;
-          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
-          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
-          document.getElementById('voteConfirm').style.display = 'block';
-        }
-      </script>
-    </div>
-    <!-- Reader Comments -->
-    <div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 16px;">Reader Comments</p>
-      <div style="border-left: 3px solid #b51c20; padding-left: 16px; margin-bottom: 16px;">
-        <p style="font-family: Georgia, serif; font-size: 15px; color: #333; margin: 0 0 6px;">&ldquo;Astrology feels out of place to me in this publication. I don&rsquo;t believe most people take it seriously.&rdquo;</p>
-        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: #999; margin: 0;">March 2026 Daily Star Astrological Forecast &mdash; March 24, 2026</p>
-      </div>
-      <div style="border-left: 3px solid #b51c20; padding-left: 16px; margin-bottom: 16px;">
-        <p style="font-family: Georgia, serif; font-size: 15px; color: #333; margin: 0 0 6px;">&ldquo;Really bad photography sort of killed it.&rdquo;</p>
-        <p style="font-family: 'Lato', sans-serif; font-size: 12px; color: #999; margin: 0;">Kanuga: The Christmas Solution &mdash; March 22, 2026</p>
-      </div>
+    <div class="page-header">
+      <div class="breadcrumb"><a href="editors/index.html">Editors&rsquo; Page</a> &rsaquo; Comments</div>
+      <div class="page-label">Reader Feedback &mdash; Editorial Review</div>
+      <h1 class="page-title">Comments</h1>
+      <div class="edition-tag">March 22, 2026 &mdash; Prior Edition</div>
     </div>
 
-    <!-- Heritage Auctions Ad Impressions -->
-    <div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Heritage Auctions Ad Impressions</p>
+    <!-- ══════════════════════════════════════════
+         READER PULSE
+    ══════════════════════════════════════════ -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Reader Pulse &mdash; March 22 Edition</div>
+        <a href="reader-comments.html" class="section-action">Full Vote Log &rarr;</a>
+      </div>
 
-      <div style="display: flex; gap: 32px; margin-bottom: 20px; flex-wrap: wrap;">
-        <div>
-          <div id="ha-total" style="font-family: 'Playfair Display', serif; font-size: 48px; color: #b51c20; line-height: 1;">—</div>
-          <div style="font-family: 'Lato', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-top: 4px;">Total impressions</div>
+      <div class="pulse-row">
+        <div class="pulse-stat yes">
+          <div class="pulse-num">43</div>
+          <div class="pulse-lbl">Yes, indeed</div>
         </div>
-        <div>
-          <div id="ha-period" style="font-family: 'Playfair Display', serif; font-size: 48px; color: #b51c20; line-height: 1;">—</div>
-          <div style="font-family: 'Lato', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-top: 4px;">Day window</div>
+        <div class="pulse-stat no">
+          <div class="pulse-num">1</div>
+          <div class="pulse-lbl">Not so much</div>
+        </div>
+        <div class="pulse-stat neutral">
+          <div class="pulse-num">98%</div>
+          <div class="pulse-lbl">Positive &bull; 44 total</div>
         </div>
       </div>
 
-      <table id="ha-table" style="display:none; width: 100%; border-collapse: collapse; font-family: 'Lato', sans-serif; font-size: 14px; margin-bottom: 16px;">
-        <thead>
-          <tr>
-            <th style="text-align: left; padding: 6px 0; border-bottom: 1px solid #e8e0d5; color: #888; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;">Article</th>
-            <th style="text-align: right; padding: 6px 0; border-bottom: 1px solid #e8e0d5; color: #888; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;">Impressions</th>
-          </tr>
-        </thead>
-        <tbody id="ha-rows"></tbody>
-      </table>
-
-      <p id="ha-updated" style="font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; margin: 0 0 16px;"></p>
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin: 0 0 6px;">Refresh counts by running from the repo root, then committing <code style="background: #f0ebe3; padding: 1px 5px; border-radius: 3px;">tools/ha_ad_count.json</code>:</p>
-      <pre style="background: #f0ebe3; padding: 12px 16px; border-radius: 4px; font-size: 12px; overflow-x: auto; margin: 0; white-space: pre-wrap;">export GA4_PROPERTY_ID="your-numeric-id"
-export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
-python3 tools/ha_ad_report.py --days 30</pre>
+      <p class="comment-section-label">Editorial Concerns</p>
+      <div class="comment-card">
+        <p>&ldquo;Astrology feels out of place to me in this publication. I don&rsquo;t believe most people take it seriously.&rdquo;</p>
+        <div class="meta">March 24, 2026 &bull; March 2026 Daily Star Astrological Forecast</div>
+      </div>
+      <div class="comment-card">
+        <p>&ldquo;Really bad photography sort of killed it.&rdquo;</p>
+        <div class="meta">March 22, 2026 &bull; Kanuga: The Christmas Solution</div>
+      </div>
     </div>
-    <script>
-      fetch('tools/ha_ad_count.json')
-        .then(function(r) { return r.ok ? r.json() : null; })
-        .then(function(d) {
-          if (!d) return;
-          document.getElementById('ha-total').textContent = d.total_impressions.toLocaleString();
-          document.getElementById('ha-period').textContent = d.days;
-          if (d.updated) document.getElementById('ha-updated').textContent = 'Last updated ' + d.updated;
-          var tbody = document.getElementById('ha-rows');
-          (d.by_article || []).forEach(function(row) {
-            var label = row.pagePath.replace(/^\/editions\/\d{4}-\d{2}-\d{2}\//, '').replace(/\/$/, '') || row.pagePath;
-            var tr = document.createElement('tr');
-            tr.innerHTML = '<td style="padding: 6px 0; border-bottom: 1px solid #f0ebe3; color: #333;">' + label + '</td>'
-              + '<td style="padding: 6px 0; border-bottom: 1px solid #f0ebe3; text-align: right; color: #333;">' + row.impressions.toLocaleString() + '</td>';
-            tbody.appendChild(tr);
-          });
-          if (d.by_article && d.by_article.length) document.getElementById('ha-table').style.display = 'table';
-        })
-        .catch(function() {});
-    </script>
 
-    <!-- DateBook Design Variants -->
-    <div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 16px;">DateBook Design Variants</p>
-      <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 2;">
-        <li><a href="editions/2026-03-08/datebook/" style="color: #b51c20;">DateBook (original)</a></li>
-        <li><a href="editions/2026-03-08/datebook2.html" style="color: #b51c20;">DateBook 2</a></li>
-        <li><a href="editions/2026-03-08/datebook3.html" style="color: #b51c20;">DateBook 3</a></li>
-        <li><a href="editions/2026-03-08/datebook4.html" style="color: #b51c20;">DateBook 4</a> &mdash; <em style="color: #888; font-size: 13px;">latest</em></li>
-      </ul>
+    <!-- ══════════════════════════════════════════
+         READER COMMENTS
+    ══════════════════════════════════════════ -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Reader Comments &mdash; Submitted via Form</div>
+      </div>
+      <p class="empty-note">No reader comments with editorial flags for the March 29 edition yet. Comments submitted via the article feedback form appear here when they raise a concern.</p>
     </div>
-  </div>
+
+  </div><!-- end wrapper -->
 
   <footer>
-    <div class="social-links">
-      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
-        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
-      </a>
-    </div>
-    <div class="copyright">
-      COPYRIGHT &copy; Classic Chicago Magazine.<br>
-      All rights reserved.
-    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
   </footer>
-</body>
 
+</body>
 </html>

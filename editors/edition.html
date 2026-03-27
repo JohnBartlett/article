@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script> -->
+  <meta charset="UTF-8">
+  <title>Edition Status &ndash; Classic Chicago Editors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fdfaf7; color: #222; line-height: 1.6; }
+
+    header { padding: 20px 0; border-bottom: 1px solid #eee; background: #fff; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+
+    .wrapper { max-width: 860px; margin: 0 auto 80px; padding: 0 24px; }
+
+    .page-header { text-align: center; padding: 44px 0 32px; border-bottom: 2px solid #e8443a; margin-bottom: 48px; }
+    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 10px; }
+    .breadcrumb { font-family: 'Lato', sans-serif; font-size: 12px; color: #bbb; margin-bottom: 14px; }
+    .breadcrumb a { color: #b51c20; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: 44px; color: #111; margin: 0 0 10px; line-height: 1.15; }
+    .edition-tag { font-family: 'Lato', sans-serif; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
+
+    .dash-section { margin-bottom: 52px; }
+    .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
+    .section-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; flex: 1; }
+    .btn-stage { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #b51c20; color: #fff; padding: 8px 16px; border-radius: 2px; text-decoration: none; white-space: nowrap; }
+    .btn-stage:hover { background: #8f1518; color: #fff; }
+    .stage-note { font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; font-style: italic; margin: 0 0 16px; }
+
+    /* Article table */
+    .edition-table { width: 100%; border-collapse: collapse; font-family: 'Lato', sans-serif; font-size: 14px; }
+    .edition-table th { text-align: left; padding: 8px 10px; background: #f5f0eb; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; font-weight: 700; }
+    .edition-table th:last-child { text-align: center; }
+    .edition-table td { padding: 13px 10px; border-bottom: 1px solid #f0ebe3; vertical-align: middle; }
+    .edition-table tr:last-child td { border-bottom: none; }
+    .article-name { font-family: Georgia, serif; font-size: 15px; color: #222; }
+    .article-sub { font-size: 11px; color: #bbb; margin-top: 2px; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
+    .writer-cell { font-family: 'Lato', sans-serif; font-size: 13px; color: #666; }
+    .stage-link { font-family: 'Lato', sans-serif; font-size: 12px; color: #b51c20; text-decoration: none; display: block; text-align: center; }
+    .stage-link:hover { text-decoration: underline; }
+    .stage-dash { color: #ccc; font-family: 'Lato', sans-serif; font-size: 13px; display: block; text-align: center; }
+
+    .badge { display: inline-block; font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+    .badge-published { background: #e8f5e9; color: #2e7d32; }
+    .badge-pending   { background: #fff8e1; color: #7a5c00; }
+    .badge-missing   { background: #f5f5f5; color: #999; }
+
+    /* Article order */
+    .order-list { list-style: none; margin: 0; padding: 0; }
+    .order-list li { display: flex; align-items: flex-start; gap: 16px; padding: 11px 0; border-bottom: 1px solid #f0ebe3; font-family: 'Lato', sans-serif; font-size: 14px; }
+    .order-list li:last-child { border-bottom: none; }
+    .order-num { font-family: 'Playfair Display', serif; font-size: 22px; color: #ddd; line-height: 1.1; flex-shrink: 0; width: 28px; }
+    .order-title { font-family: Georgia, serif; font-size: 15px; color: #222; }
+    .order-by { font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+    .order-tag { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid #e8c4c4; padding: 2px 7px; border-radius: 8px; margin-left: 8px; vertical-align: middle; white-space: nowrap; }
+
+    /* Pipeline */
+    .pipeline-list { list-style: none; margin: 0; padding: 0; }
+    .pipeline-list li { display: flex; align-items: flex-start; gap: 14px; padding: 13px 0; border-bottom: 1px solid #f0ebe3; font-family: 'Lato', sans-serif; font-size: 14px; color: #444; }
+    .pipeline-list li:last-child { border-bottom: none; }
+    .pipeline-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .dot-pending  { background: #f9a825; }
+    .dot-decision { background: #1976d2; }
+    .pipeline-list strong { color: #222; }
+
+    footer { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+  </style>
+</head>
+
+<body>
+
+  <!-- EDITORS BANNER -->
+  <div style="background: #b51c20; color: #fff; text-align: center; padding: 13px 24px;">
+    <div style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</div>
+  </div>
+
+  <header>
+    <div class="logo-container">
+      <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../reader-comments.html">Reader Comments</a>
+        <a href="../future-articles.html">Future Articles</a>
+        <a href="index.html">Editors&rsquo; Page</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+
+    <div class="page-header">
+      <div class="breadcrumb"><a href="index.html">Editors&rsquo; Page</a> &rsaquo; Edition Status</div>
+      <div class="page-label">Current Build</div>
+      <h1 class="page-title">Edition Status</h1>
+      <div class="edition-tag">March 29, 2026</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1: ARTICLE STATUS
+    ══════════════════════════════════════════ -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">March 29 &mdash; Article Status</div>
+        <a href="https://article-git-dev-johns-projects-e5fce345.vercel.app" target="_blank" class="btn-stage">Preview Staging &#8599;</a>
+      </div>
+      <p class="stage-note">Staging preview reflects the last /stage run. Run /stage to push dev2 changes to Vercel.</p>
+
+      <table class="edition-table">
+        <thead>
+          <tr>
+            <th style="width: 44%;">Article</th>
+            <th style="width: 20%;">Writer</th>
+            <th style="width: 18%;">Status</th>
+            <th style="width: 10%; text-align: center;">Dev2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="article-name">Tiffany at the Driehaus Museum: Chicago Can&rsquo;t Get Enough</div>
+              <div class="article-sub">Hero &mdash; Arts &amp; Culture</div>
+            </td>
+            <td class="writer-cell">Judy Carmack Bross</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/driehaus-museum/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="article-name">The Dice Keep Rolling at Trudie&rsquo;s Winnetka Backgammon Club</div>
+              <div class="article-sub">Unsung Gems</div>
+            </td>
+            <td class="writer-cell">David A. F. Sweet</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/unsung-gems-backgammon/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="article-name">Biba&rsquo;s Favorite Things: Palm Springs</div>
+              <div class="article-sub">Photos live &mdash; article from Steve Marrs</div>
+            </td>
+            <td class="writer-cell">Biba Roesch</td>
+            <td><span class="badge badge-pending">Article pending</span></td>
+            <td><a href="../editions/2026-03-29/biba-palm-springs/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td><div class="article-name">An Island Idyll</div></td>
+            <td class="writer-cell">Susan Aurinko</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/an-island-idyll/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td><div class="article-name">Marwen: Fostering Creativity for the Next Generation</div></td>
+            <td class="writer-cell">Jen Huang</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/marwen/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td><div class="article-name">Landmarks Illinois Delivers at The Old Post Office</div></td>
+            <td class="writer-cell">Judy Carmack Bross</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/landmarks-preservation-forward/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td><div class="article-name">A Literary Adventure at the American Writers Museum</div></td>
+            <td class="writer-cell">Sydney Armstrong</td>
+            <td><span class="badge badge-published">Published</span></td>
+            <td><a href="../editions/2026-03-29/american-writers-museum/" class="stage-link" target="_blank">Open &#8599;</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="article-name">Fashion Trends</div>
+              <div class="article-sub">New writer &mdash; first submission</div>
+            </td>
+            <td class="writer-cell">Marcy Carmack</td>
+            <td><span class="badge badge-missing">Not received</span></td>
+            <td><span class="stage-dash">&mdash;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 2: HOMEPAGE ORDER
+    ══════════════════════════════════════════ -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Homepage &amp; Navigation Order</div>
+      </div>
+      <ul class="order-list">
+        <li>
+          <div class="order-num">1</div>
+          <div>
+            <div class="order-title">Tiffany at the Driehaus Museum <span class="order-tag">Hero</span></div>
+            <div class="order-by">Judy Carmack Bross &bull; Arts &amp; Culture</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">2</div>
+          <div>
+            <div class="order-title">The Dice Keep Rolling &mdash; Backgammon Club</div>
+            <div class="order-by">David A. F. Sweet &bull; Unsung Gems</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">3</div>
+          <div>
+            <div class="order-title">Biba&rsquo;s Favorite Things: Palm Springs <span class="order-tag">Pending</span></div>
+            <div class="order-by">Biba Roesch</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">4</div>
+          <div>
+            <div class="order-title">An Island Idyll</div>
+            <div class="order-by">Susan Aurinko &bull; My Silk Roads</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">5</div>
+          <div>
+            <div class="order-title">Marwen: Fostering Creativity for the Next Generation</div>
+            <div class="order-by">Jen Huang</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">6</div>
+          <div>
+            <div class="order-title">Landmarks Illinois Delivers at The Old Post Office</div>
+            <div class="order-by">Judy Carmack Bross</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">7</div>
+          <div>
+            <div class="order-title">A Literary Adventure at the American Writers Museum</div>
+            <div class="order-by">Sydney Armstrong</div>
+          </div>
+        </li>
+        <li>
+          <div class="order-num">8</div>
+          <div>
+            <div class="order-title">Fashion Trends <span class="order-tag">Pending</span></div>
+            <div class="order-by">Marcy Carmack</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3: CONTENT PIPELINE
+    ══════════════════════════════════════════ -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Content Pipeline &mdash; Pending Items</div>
+      </div>
+      <ul class="pipeline-list">
+        <li>
+          <div class="pipeline-dot dot-pending"></div>
+          <div><strong>Biba Palm Springs &mdash; article text</strong><br>
+          Contact: Steve Marrs. Photos are live on dev2; awaiting the article copy.</div>
+        </li>
+        <li>
+          <div class="pipeline-dot dot-pending"></div>
+          <div><strong>Fashion Trends &mdash; Marcy Carmack</strong><br>
+          New writer, first article. Not yet received.</div>
+        </li>
+        <li>
+          <div class="pipeline-dot dot-decision"></div>
+          <div><strong>Homepage grid &mdash; final order</strong><br>
+          Pending Judy&rsquo;s call once all articles arrive. Current order: Driehaus hero, then Backgammon, Biba, Island Idyll, Marwen, Landmarks, American Writers, Fashion.</div>
+        </li>
+        <li>
+          <div class="pipeline-dot dot-decision"></div>
+          <div><strong>Victoria Martin Daily Star (April)</strong><br>
+          Timing TBD with Judy.</div>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- end wrapper -->
+
+  <footer>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
