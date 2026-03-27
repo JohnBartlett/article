@@ -70,7 +70,16 @@ git push origin dev2
 
 Run `vercel deploy --yes` from the project root. Capture the Preview URL from the output line starting with `Preview:`.
 
-## Step 7 — Return the URL
+## Step 7 — Update editors/edition.html preview URL
+
+After capturing the Preview URL, update the Dev2 Preview button in `editors/edition.html` and commit:
+
+```bash
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-03-29/driehaus-museum/\"|" editors/edition.html
+git add editors/edition.html && git commit -m "Update dev2 preview URL" && git push origin dev2
+```
+
+## Step 8 — Return the URL
 
 Return the full direct URL to the review page:
 `<preview-url>/editions/YYYY-MM-DD/<slug>/<sender>-review.html`
