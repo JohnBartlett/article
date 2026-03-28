@@ -21,7 +21,7 @@ Usage examples:
 
 ### Article pages (`editions/YYYY-MM-DD/<slug>/index.html`)
 - **Navigation links** — `← Previous` / `Next →` at bottom; `prevUrl` / `nextUrl` JS vars for keyboard nav (N/P keys)
-- **Attribution line** — last `<p>` in `.article-body`; links author name to `about.html#slug`
+- **About the Author link** — last element inside `.article-body`, before `</div><!-- end article-body -->`; links to `about.html#slug`
 - **Feedback widget** — thumbs up/down + comment form (should be present in all articles)
 - **GA4** — must be disabled on dev2 (wrapped in `<!-- GA4-disabled ... -->`)
 - **HA ad** — should not appear in articles (was removed March 2026)
@@ -46,17 +46,16 @@ Navigation rules:
 
 ---
 
-## Attribution line pattern
+## About the Author link pattern
 
-Check `_bios/<author-slug>.md` for each article's author. Apply the rule:
-- If attribution line is `(none — byline only)`: no attribution paragraph
-- Otherwise, add as the last `<p>` in `.article-body`, linking the author's name to `about.html`:
+Every article must end with an "About the Author" link as the last element inside `.article-body`, immediately before `</div><!-- end article-body -->`. The feedback widget comes after.
 
+Format — no inline bio text, no external links (those belong only in the author's `about.html` bio):
 ```html
-<p style="font-size: 15px; color: #888; font-style: italic;"><a href="../../../about.html#slug" style="color: #b51c20;">Author Name</a> is a ... rest of attribution line.</p>
+<p style="margin-top: 32px;"><a href="../../../about.html#slug" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
 ```
 
-If the attribution line begins with a name (e.g. "Susan Aurinko is a..."), wrap only the name in the link. If it begins with a role (e.g. "Unsung Gems Columnist David A. F. Sweet can be reached at..."), wrap the name where it appears. If the line is phrased as "Yours in travel, Susan. Susan Aurinko is a...", link both "Susan" and "Susan Aurinko".
+If an author has no `about.html` entry yet, note it — do not add an external link in the article. External websites, email addresses, and organizational affiliations belong in the author's bio in `about.html`, never in the article itself.
 
 ---
 
@@ -90,7 +89,7 @@ When auditing, check every article in the current edition for:
 | Navigation — next link | Points to correct following article (or Home if last) |
 | Navigation — JS vars | `prevUrl` and `nextUrl` match the link hrefs |
 | Attribution line | Present if bio file has text; absent if `(none — byline only)` |
-| Attribution link | Author name linked to `about.html#slug` |
+| About the Author link | Last element in `.article-body`; "About the Author: Name →" linked to `about.html#slug`; no inline bio text or external links |
 | GA4 | Disabled (`<!-- GA4-disabled ... -->` wrapper) |
 | HA ad | Not present in article body |
 | Feedback widget | Present |

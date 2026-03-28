@@ -101,12 +101,19 @@ Use a Python script to generate all article `index.html` files at once. Follow t
 
 **No popups:** Do not add author popup, location popup, or any overlay systems.
 
-**Writer Bios:** For each article author, read `_bios/<author-slug>.md` before finalizing the HTML:
-1. If the file exists and the attribution line is not `(none — byline only)`, add it as the last `<p>` in `.article-body`, linking the author's name to their `about.html` anchor:
-   ```html
-   <p style="font-size: 15px; color: #888; font-style: italic;"><a href="../../../about.html#slug" style="color: #b51c20;">Author Name</a> is a ... rest of attribution line.</p>
-   ```
-2. If no bio file exists for an author, note it in your summary and create the file using `/writer-bios` conventions.
+**Article structure:** Every article follows this order:
+1. Category label, h1 title, meta (By Author · Date), hero figure
+2. `<p class="article-intro">` — first paragraph
+3. `<div class="article-body">` — body paragraphs with inline figures
+4. "About the Author" link — last element inside `.article-body`, before `</div><!-- end article-body -->`
+5. Feedback widget (thumbs up/down + comment form)
+6. Edition nav (← Previous / Next →)
+
+**About the Author link:** Always the last item inside `.article-body`. Use this format — no inline bio text, no external links (those belong in the author's `about.html` bio only):
+```html
+<p style="margin-top: 32px;"><a href="../../../about.html#slug" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
+```
+If an author has no `about.html` entry yet, note it in your summary — do not add an external link in the article.
 
 ## Step 7 — Update the homepage
 
