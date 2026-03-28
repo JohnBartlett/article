@@ -1,6 +1,6 @@
 (function () {
   // ── 1. Apply theme immediately — no flash ────────────────────────────────
-  var isDark = localStorage.getItem('cc-theme') !== 'light';
+  var isDark = localStorage.getItem('cc-theme') === 'dark';
   if (isDark) document.documentElement.classList.add('dark');
 
   // ── 2. Inject CSS ─────────────────────────────────────────────────────────
