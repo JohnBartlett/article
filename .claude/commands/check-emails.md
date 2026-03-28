@@ -4,10 +4,10 @@ Check recent emails from Judy and FormSubmit for actionable site updates, apply 
 
 ## Step 1 — Search for emails (run in parallel)
 
-Use `mcp__google-workspace__search_gmail_messages` with these two queries simultaneously:
+Use `mcp__google-workspace__search_gmail_messages` with these two queries simultaneously. Always pass `user_google_email: john.bartlett@gmail.com` and use `page_size` (not `max_results`) to limit results:
 
-- `from:judycbross@aol.com newer_than:7d` (max 10)
-- `from:submissions@formsubmit.co newer_than:14d` (max 20)
+- `from:judycbross@aol.com newer_than:7d` (page_size: 10)
+- `from:submissions@formsubmit.co newer_than:14d` (page_size: 20)
 
 ## Step 2 — Read Judy's emails
 
@@ -74,3 +74,11 @@ If there are no actionable changes, report a summary of what was found (votes, e
 - Salutation: `Dear Judy,`
 - Sign-off: `Cheers, John`
 - Write in first person — use "I/me", not "we/us"
+
+## Replying to emails in-thread
+
+When sending a reply within an existing Gmail thread, always retrieve the `threadId` explicitly before calling `send_gmail_message`. Use `get_gmail_message_content` on the specific message to get its `threadId` field. Never assume the message ID and thread ID are the same value — pass the `threadId` as the `thread_id` parameter, not the message ID.
+
+## Downloading attachments
+
+Use `get_gmail_attachment_content` with only three parameters: `message_id`, `attachment_id`, and `user_google_email`. There is no `filename` parameter — the tool determines the filename automatically. Attachment IDs are ephemeral and expire quickly; if a download fails with "Invalid attachment token", call `get_gmail_message_content` on the message again to get a fresh attachment ID, then retry immediately.
