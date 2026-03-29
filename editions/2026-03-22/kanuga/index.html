@@ -61,6 +61,7 @@
       .author-bio { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 <body>
   <header>
@@ -242,6 +243,7 @@
         </figure>
       </div>
 
+      <p style="margin-top: 20px;"><a href="https://chicagoclassicmag.com/about.html#elizabeth-dunlop-richter" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Elizabeth Dunlop Richter &rarr;</a></p>
     </div><!-- end article-body -->
 
     <!-- Feedback Widget -->
@@ -292,10 +294,6 @@
       </script>
     </div>
 
-    <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-      <a href="../../../about.html#elizabeth-dunlop-richter" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Elizabeth Dunlop Richter &rarr;</a>
-    </div>
-
     <div class="edition-nav">
       <a href="../pokemon-fossil-museum/" class="back-link">&larr; Previous: Pok&eacute;mon Fossil Museum</a>
       <a href="../../../index.html" class="back-link">Back to Home &rarr;</a>
@@ -324,6 +322,7 @@
   </script>
   <script>
     var prevUrl = '../pokemon-fossil-museum/';
+    var nextUrl = '../../../index.html';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
