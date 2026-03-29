@@ -198,7 +198,7 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │       └── biba-palm-springs/          (photos only; article pending)
 ```
 
-## Current Homepage Article Order (March 29 edition, in progress)
+## Current Homepage Article Order (March 29 edition — staged, publishing 10pm March 28)
 
 This order is used for keyboard navigation (N/P keys cycle through):
 
@@ -206,11 +206,10 @@ This order is used for keyboard navigation (N/P keys cycle through):
 2. **An Island Idyll** — Susan Aurinko
 3. **Marwen: Fostering Creativity for the Next Generation** — Jen Huang
 4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
-5. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
-
-More articles incoming: Biba Roesch (Palm Springs — article from Steve Marrs, Biba's contact), Judy (Driehaus Museum), Marcy Carmack (Fashion Trends), John Bartlett.
-
-Judy's preferred order once all articles arrive: Biba near top, John near top, Marwen + American Writers Museum further down, Landmarks + Driehaus further down.
+5. **Tiffany at the Driehaus Museum: Chicago Can't Get Enough** — Judy Carmack Bross
+6. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
+7. **The Shape of Spring** — Marcy Carmack
+8. **Biba's Favorite Things: Palm Springs** — Biba Roesch
 
 Past editions in footer: March 22, March 15, March 8, March 1.
 
