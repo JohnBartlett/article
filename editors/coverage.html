@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script> -->
+  <meta charset="UTF-8">
+  <title>Coverage &ndash; Classic Chicago Editors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="../dark-mode.js"></script>
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fdfaf7; color: #222; line-height: 1.6; }
+    header { padding: 20px 0 0; border-bottom: 1px solid #eee; background: #fff; }
+    .logo-container { text-align: center; margin-bottom: 16px; }
+    .logo-container img { width: 390px; height: auto; }
+    .editors-nav { border-top: 1px solid #eee; padding: 8px 0; text-align: center; }
+    .editors-nav a { font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 12px; padding: 5px 0; }
+    .editors-nav a:hover { text-decoration: underline; }
+    .editors-nav a.active { border-bottom: 2px solid #b51c20; }
+    .editors-nav .home-link { color: #aaa; font-weight: 400; }
+    .editors-nav .home-link:hover { color: #b51c20; }
+    .wrapper { max-width: 900px; margin: 0 auto 80px; padding: 0 24px; }
+
+    .page-header { text-align: center; padding: 40px 0 28px; border-bottom: 2px solid #e8443a; margin-bottom: 44px; }
+    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 8px; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: 42px; color: #111; margin: 0 0 8px; line-height: 1.15; }
+    .edition-tag { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
+
+    .dash-section { margin-bottom: 52px; }
+    .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
+    .section-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; flex: 1; }
+    .section-note { font-family: 'Lato', sans-serif; font-size: 11px; color: #bbb; }
+
+    /* Summary cards */
+    .summary-row { display: flex; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; }
+    .summary-card { flex: 1; min-width: 120px; padding: 20px 18px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fff; text-align: center; }
+    .summary-num { font-family: 'Playfair Display', serif; font-size: 38px; color: #b51c20; line-height: 1; }
+    .summary-label { font-family: 'Lato', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-top: 6px; line-height: 1.4; }
+
+    /* Score badge */
+    .score { display: inline-block; font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+    .score-5 { background: #e8f5e9; color: #2e7d32; }
+    .score-4 { background: #e3f2fd; color: #1565c0; }
+    .score-3 { background: #fff8e1; color: #7a5c00; }
+    .score-2 { background: #fce4ec; color: #880e4f; }
+    .score-1 { background: #f5f5f5; color: #999; }
+    .score-na { background: #f5f5f5; color: #bbb; }
+    .cc-badge { display: inline-block; font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #e8f5e9; color: #2e7d32; white-space: nowrap; }
+
+    /* Coverage table */
+    .coverage-table { width: 100%; border-collapse: collapse; font-family: 'Lato', sans-serif; font-size: 13px; }
+    .coverage-table th { text-align: left; padding: 8px 10px; background: #f5f0eb; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; font-weight: 700; }
+    .coverage-table td { padding: 11px 10px; border-bottom: 1px solid #f0ebe3; vertical-align: top; }
+    .coverage-table tr:last-child td { border-bottom: none; }
+    .coverage-table tr:hover td { background: #fdfaf5; }
+    .art-title { font-family: Georgia, serif; font-size: 14px; color: #222; }
+    .art-title a { color: #b51c20; text-decoration: none; }
+    .art-title a:hover { text-decoration: underline; }
+    .art-meta { font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa; margin-top: 2px; }
+    .sources-list { font-family: 'Lato', sans-serif; font-size: 11px; color: #777; line-height: 1.5; }
+    .sources-list .none { color: #2e7d32; font-style: italic; }
+    .edition-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .filter-btn { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border: 1px solid #e0d8d0; border-radius: 2px; background: #fff; cursor: pointer; color: #888; }
+    .filter-btn:hover, .filter-btn.active { background: #b51c20; color: #fff; border-color: #b51c20; }
+
+    /* Findings */
+    .finding { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid #f0ebe3; }
+    .finding:last-child { border-bottom: none; }
+    .finding-num { font-family: 'Playfair Display', serif; font-size: 28px; color: #e8e0d5; line-height: 1; flex-shrink: 0; width: 28px; text-align: right; margin-top: 2px; }
+    .finding-body { flex: 1; }
+    .finding-title { font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; color: #222; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .finding-text { font-family: Georgia, serif; font-size: 15px; color: #555; line-height: 1.7; margin: 0; }
+    .finding-text a { color: #b51c20; text-decoration: none; }
+    .finding-text a:hover { text-decoration: underline; }
+
+    .method-note { font-family: 'Lato', sans-serif; font-size: 11px; color: #bbb; line-height: 1.6; padding: 14px 16px; border: 1px dashed #e0d8d0; border-radius: 2px; margin-top: 16px; }
+
+    footer { background: #1a1a1a; color: #fff; padding: 30px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 13px; color: #aaa; }
+  </style>
+</head>
+<body>
+
+  <div style="background: #b51c20; color: #fff; text-align: center; padding: 11px 24px;">
+    <span style="font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</span>
+  </div>
+
+  <header>
+    <div class="logo-container">
+      <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav class="editors-nav">
+      <a href="../index.html" class="home-link">&#8592; Site</a>
+      <a href="index.html">Editors&rsquo; Page</a>
+      <a href="edition.html">Edition</a>
+      <a href="comments.html">Comments</a>
+      <a href="stats.html">Stats</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="coverage.html" class="active">Coverage</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+
+    <div class="page-header">
+      <div class="page-label">Perplexity AI Search</div>
+      <h1 class="page-title">Coverage Report</h1>
+      <div class="edition-tag">All 56 Articles &mdash; April 2, 2026</div>
+    </div>
+
+    <!-- Summary -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Overview</div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-card">
+          <div class="summary-num">56</div>
+          <div class="summary-label">Articles Searched</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num" style="color:#2e7d32;">4</div>
+          <div class="summary-label">Exclusively Ours<br>(5/5 Score)</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num" style="color:#1565c0;">10</div>
+          <div class="summary-label">Mostly Unique<br>(4/5 Score)</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num" style="color:#7a5c00;">11</div>
+          <div class="summary-label">Some Competition<br>(3/5 Score)</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num" style="color:#880e4f;">11</div>
+          <div class="summary-label">High Competition<br>(2/5 Score)</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num" style="color:#aaa;">20</div>
+          <div class="summary-label">Score Unclear<br>(ambiguous)</div>
+        </div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-card">
+          <div class="summary-num">23</div>
+          <div class="summary-label">Times Classic Chicago<br>Appeared in Results</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num">3</div>
+          <div class="summary-label">Articles with<br>Zero Other Sources</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num">3.2</div>
+          <div class="summary-label">Avg Uniqueness<br>Score (of 5)</div>
+        </div>
+      </div>
+      <div class="method-note">
+        Each article was searched on Perplexity AI (sonar model, live web) with the article title as query. Perplexity was asked: (1) whether chicagoclassicmag.com appeared in results, (2) what other sources cover the same topic, and (3) to rate uniqueness 1&ndash;5 where 5 = only Classic Chicago covers it. Searches conducted April 2, 2026.
+      </div>
+    </div>
+
+    <!-- Key findings -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Key Findings</div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">1</div>
+        <div class="finding-body">
+          <div class="finding-title">The site appears in 41% of its own topic searches</div>
+          <p class="finding-text">Classic Chicago showed up in Perplexity results for 23 of 56 article searches. That means 59% of the time, a reader searching for one of our topics would not find us — they'd find other publications instead. This is a direct SEO opportunity. Better meta descriptions, a sitemap, and structured data would push that number significantly higher.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">2</div>
+        <div class="finding-body">
+          <div class="finding-title">Chicago society profiles are our most exclusive content</div>
+          <p class="finding-text">Articles profiling Chicago-area individuals &mdash; <a href="../editions/2026-02-15/alicia-ziegler/" target="_blank">Alicia Ziegler</a>, <a href="../editions/2026-03-08/rebecca-tilles/" target="_blank">Dr. Rebecca Tilles</a>, <a href="../editions/2026-02-22/cynthia-safford-mulcahy/" target="_blank">Cynthia Safford-Mulcahy</a>, <a href="../editions/2026-02-08/sam-hiller/" target="_blank">Sam Hiller</a> &mdash; scored ambiguous on the uniqueness scale but had virtually no competing coverage. When we write about a specific Chicagoan, we are almost always the only publication that has. That&rsquo;s a powerful editorial differentiator.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">3</div>
+        <div class="finding-body">
+          <div class="finding-title">Hyperlocal and niche topics score 4&ndash;5; broad topics score 2</div>
+          <p class="finding-text">Articles on Chicago-specific institutions and events &mdash; <a href="../editions/2026-03-01/arts-club-members-show/" target="_blank">Arts Club Members Show</a>, <a href="../editions/2026-03-29/unsung-gems-backgammon/" target="_blank">Trudie&rsquo;s Winnetka Backgammon Club</a>, <a href="../editions/2026-02-22/iwa-extraordinaire/" target="_blank">IWA Women Extraordinaire</a>, <a href="../editions/2026-03-29/marwen/" target="_blank">Marwen</a> &mdash; scored 4/5, with few or no competing sources. Meanwhile, broad topics like <em>Boba Tea in Chinatown</em>, <em>Ernest Hemingway in Chicago</em>, and <em>Sea Cloud Spirit</em> scored 2/5 because major publications already cover them extensively. The lesson: the more specific and local, the more irreplaceable we are.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">4</div>
+        <div class="finding-body">
+          <div class="finding-title">Three articles have zero competing web coverage</div>
+          <p class="finding-text"><a href="../editions/2026-02-08/about-the-town-february/" target="_blank">About the Town (February)</a>, <a href="../editions/2026-03-08/aqui-en-chicago/" target="_blank">Aqu&iacute; en Chicago</a>, and <a href="../editions/2026-03-15/anti-cruelty/" target="_blank">Taffy and Pretty Girl at Anti-Cruelty</a> returned no competing sources whatsoever. Classic Chicago is the entire internet on these topics. These are also the types of stories that build a publication&rsquo;s identity &mdash; nobody else is writing them.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">5</div>
+        <div class="finding-body">
+          <div class="finding-title">Dining and travel guides face the most competition</div>
+          <p class="finding-text">Articles like <a href="../editions/2026-02-15/best-restaurants-halsted-street/" target="_blank">Where to Eat on N. Halsted St.</a>, <a href="../editions/2026-02-15/boba-tea-chinatown/" target="_blank">Boba Tea in Chinatown</a>, and travel pieces on Antibes and Palm Springs compete with Infatuation, TripAdvisor, Condé Nast, and destination tourism sites. These articles still have value for our readership, but they won&rsquo;t pull in new readers via search &mdash; those readers already have go-to sources. The editorial emphasis should lean toward what only we can provide.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">6</div>
+        <div class="finding-body">
+          <div class="finding-title">Event-based articles have a short discovery window</div>
+          <p class="finding-text">Articles covering specific events &mdash; <a href="../editions/2026-03-22/pokemon-fossil-museum/" target="_blank">Pok&eacute;mon Fossil Museum</a>, <a href="../editions/2026-03-22/two-sisters-and-a-piano/" target="_blank">Two Sisters and a Piano</a>, <a href="../editions/2026-03-22/chicago-chamber-music-society/" target="_blank">Chicago Chamber Music Society</a> &mdash; are timely but compete with event listing aggregators and the venues themselves. Their search value diminishes after the event passes. Publishing these earlier in the week (giving more time before the event) would maximize their usefulness to readers.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">7</div>
+        <div class="finding-body">
+          <div class="finding-title">Strategic implication: double down on what only we do</div>
+          <p class="finding-text">The data points in one direction: Classic Chicago&rsquo;s strongest editorial position is in hyperlocal Chicago society coverage, institutional profiles, and niche community stories that no other publication considers newsworthy. The Winnetka Backgammon Club. The Anti-Cruelty Society birthday. The Lake Forest renovation. IWA. These stories matter deeply to the people involved and their networks &mdash; and we&rsquo;re the only ones telling them.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Article table -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">All Articles</div>
+        <div class="section-note">Sorted by uniqueness score &mdash; click titles to open</div>
+      </div>
+
+      <table class="coverage-table" id="coverage-table">
+        <thead>
+          <tr>
+            <th style="width:42%;">Article</th>
+            <th style="width:10%;">Score</th>
+            <th style="width:10%;">Found Us</th>
+            <th style="width:38%;">Other Sources</th>
+          </tr>
+        </thead>
+        <tbody id="coverage-tbody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+  </footer>
+
+  <script>
+    fetch('../tools/perplexity_coverage.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) {
+        if (!d) return;
+        var tbody = document.getElementById('coverage-tbody');
+        var sorted = d.articles.slice().sort(function(a, b) {
+          var sa = a.score || 0, sb = b.score || 0;
+          return sb - sa || a.edition.localeCompare(b.edition);
+        });
+        sorted.forEach(function(art) {
+          var score = art.score;
+          var scoreClass = score ? 'score-' + score : 'score-na';
+          var scoreLabel = score ? score + '/5' : '?';
+          var sources = art.other_sources && art.other_sources.length
+            ? art.other_sources.join(', ')
+            : '<span class="none">None found</span>';
+          var ccBadge = art.cc_found ? '<span class="cc-badge">&#10003; Found</span>' : '<span style="color:#ccc;font-family:Lato,sans-serif;font-size:11px;">&mdash;</span>';
+          var edLabel = art.edition.replace('2026-', '').replace('-', '/');
+          var tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td><div class="art-title"><a href="../editions/' + art.edition + '/' + art.slug + '/" target="_blank">' + art.title + '</a></div>' +
+            '<div class="art-meta">' + edLabel + ' &bull; ' + (art.category || '&mdash;') + '</div></td>' +
+            '<td><span class="score ' + scoreClass + '">' + scoreLabel + '</span></td>' +
+            '<td>' + ccBadge + '</td>' +
+            '<td><div class="sources-list">' + sources + '</div></td>';
+          tbody.appendChild(tr);
+        });
+      }).catch(function() {});
+  </script>
+
+</body>
+</html>
