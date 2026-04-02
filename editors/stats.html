@@ -194,7 +194,9 @@
           var rows = '';
           if (ed.articles && ed.articles.length) {
             rows = ed.articles.map(function(a) {
-              return '<tr><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + a.slug + '</td><td class="num">' + a.views.toLocaleString() + '</td></tr>';
+              var label = a.title || a.slug;
+              var link = '<a href="../editions/' + ed.date + '/' + a.slug + '/" target="_blank" style="color:#b51c20;text-decoration:none;">' + label + '</a>';
+              return '<tr><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + link + '</td><td class="num">' + a.views.toLocaleString() + '</td></tr>';
             }).join('');
           }
           card.innerHTML =

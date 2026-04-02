@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-tools/ga4_edition_stats.py — Per-edition page view breakdown
+tools/ga4_edition_stats.py — Per-edition page view breakdown with article titles
 
 Usage:
     export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
@@ -9,12 +9,13 @@ Usage:
 Writes tools/editions_stats.json (read by editors/stats.html).
 """
 
-import os, json
+import os, re, json
 from datetime import datetime
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import DateRange, Dimension, Metric, RunReportRequest, OrderBy
 
 PROPERTY_ID = '523654462'
+EDITIONS_ROOT = os.path.join(os.path.dirname(__file__), '..', 'editions')
 
 EDITIONS = [
     ('2026-02-08', 'February 8, 2026'),
@@ -27,6 +28,16 @@ EDITIONS = [
     ('2026-03-29', 'March 29, 2026'),
     ('2026-04-05', 'April 5, 2026'),
 ]
+
+def get_title(date, slug):
+    path = os.path.join(EDITIONS_ROOT, date, slug, 'index.html')
+    if not os.path.exists(path):
+        return slug
+    content = open(path).read()
+    m = re.search(r'<h1[^>]*class="article-title"[^>]*>(.*?)</h1>', content, re.DOTALL)
+    if m:
+        return re.sub(r'<[^>]+>', '', m.group(1)).strip()
+    return slug
 
 def main():
     client = BetaAnalyticsDataClient()
@@ -45,15 +56,28 @@ def main():
     result = []
     for date, label in EDITIONS:
         prefix = f'/editions/{date}/'
-        articles = [(k, v) for k, v in pages.items() if k.startswith(prefix) and k.count('/') >= 3]
-        articles.sort(key=lambda x: -x[1])
-        total = sum(v for _, v in articles)
-        result.append({
-            'date': date,
-            'label': label,
-            'total': total,
-            'articles': [{'slug': k.replace(prefix, '').strip('/'), 'views': v} for k, v in articles]
-        })
+        # Collect and normalize slugs (merge trailing-slash variants, skip .html files and root)
+        slug_views = {}
+        for path, views in pages.items():
+            if not path.startswith(prefix):
+                continue
+            remainder = path[len(prefix):].strip('/')
+            if not remainder or '.' in remainder or remainder == 'index.html':
+                continue
+            # Take only the first path segment (the article slug)
+            slug = remainder.split('/')[0]
+            slug_views[slug] = slug_views.get(slug, 0) + views
+
+        articles = []
+        for slug, views in sorted(slug_views.items(), key=lambda x: -x[1]):
+            articles.append({
+                'slug': slug,
+                'title': get_title(date, slug),
+                'views': views
+            })
+
+        total = sum(a['views'] for a in articles)
+        result.append({'date': date, 'label': label, 'total': total, 'articles': articles})
         print(f"{label}: {total:,} views ({len(articles)} articles)")
 
     data = {'updated': datetime.now().strftime('%Y-%m-%d %H:%M'), 'editions': result}
