@@ -57,6 +57,15 @@
     .refresh-note { font-family: 'Lato', sans-serif; font-size: 11px; color: #bbb; line-height: 1.6; }
     .refresh-note code { background: #f5f0eb; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
 
+    /* Per-edition stats */
+    .edition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 620px) { .edition-grid { grid-template-columns: 1fr; } }
+    .edition-stat-card { padding: 20px 20px 16px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fff; }
+    .edition-stat-card .card-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 4px; }
+    .edition-total { font-family: 'Playfair Display', serif; font-size: 32px; color: #b51c20; line-height: 1; margin-bottom: 14px; }
+    .edition-total span { font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa; font-weight: 400; margin-left: 4px; vertical-align: middle; }
+    .edition-no-data { font-family: 'Lato', sans-serif; font-size: 12px; color: #ccc; font-style: italic; }
+
     footer { background: #1a1a1a; color: #fff; padding: 30px 20px; text-align: center; margin-top: 60px; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 13px; color: #aaa; }
   </style>
@@ -154,6 +163,17 @@
       Analytics are from production (master branch) only. GA4 is disabled on dev and dev2.</p>
     </div>
 
+    <!-- Per-edition stats -->
+    <div class="dash-section">
+      <div class="section-head">
+        <div class="section-title">Views by Edition</div>
+      </div>
+      <div class="edition-grid" id="edition-grid">
+        <div class="stat-note">Loading&hellip;</div>
+      </div>
+      <p class="refresh-note" style="margin-top:16px;">Refresh: run <code>python3 tools/ga4_edition_stats.py</code> &rarr; commit <code>tools/editions_stats.json</code></p>
+    </div>
+
   </div>
 
   <footer>
@@ -161,6 +181,32 @@
   </footer>
 
   <script>
+    fetch('../tools/editions_stats.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) {
+        if (!d) return;
+        var grid = document.getElementById('edition-grid');
+        grid.innerHTML = '';
+        var sorted = d.editions.slice().reverse(); // newest first
+        sorted.forEach(function(ed) {
+          var card = document.createElement('div');
+          card.className = 'edition-stat-card';
+          var rows = '';
+          if (ed.articles && ed.articles.length) {
+            rows = ed.articles.map(function(a) {
+              return '<tr><td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + a.slug + '</td><td class="num">' + a.views.toLocaleString() + '</td></tr>';
+            }).join('');
+          }
+          card.innerHTML =
+            '<div class="card-title">' + ed.label + '</div>' +
+            '<div class="edition-total">' + ed.total.toLocaleString() + '<span>views</span></div>' +
+            (rows
+              ? '<table class="breakdown-table"><thead><tr><th>Article</th><th class="num">Views</th></tr></thead><tbody>' + rows + '</tbody></table>'
+              : '<div class="edition-no-data">No data yet</div>');
+          grid.appendChild(card);
+        });
+      }).catch(function() {});
+
     fetch('../tools/ha_ad_count.json')
       .then(function(r) { return r.ok ? r.json() : null; })
       .then(function(d) {

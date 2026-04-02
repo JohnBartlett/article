@@ -1,0 +1,519 @@
+{
+  "updated": "2026-04-02 10:09",
+  "editions": [
+    {
+      "date": "2026-02-08",
+      "label": "February 8, 2026",
+      "total": 346,
+      "articles": [
+        {
+          "slug": "",
+          "views": 181
+        },
+        {
+          "slug": "linda-heister",
+          "views": 52
+        },
+        {
+          "slug": "mimosa",
+          "views": 24
+        },
+        {
+          "slug": "lincoln-park",
+          "views": 23
+        },
+        {
+          "slug": "index.html",
+          "views": 17
+        },
+        {
+          "slug": "about-the-town-february",
+          "views": 16
+        },
+        {
+          "slug": "linda-heister",
+          "views": 12
+        },
+        {
+          "slug": "about-the-town-february",
+          "views": 6
+        },
+        {
+          "slug": "sam-hiller",
+          "views": 6
+        },
+        {
+          "slug": "lincoln-park",
+          "views": 5
+        },
+        {
+          "slug": "iron-lung",
+          "views": 2
+        },
+        {
+          "slug": "mimosa",
+          "views": 1
+        },
+        {
+          "slug": "sam-hiller",
+          "views": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "label": "February 15, 2026",
+      "total": 1290,
+      "articles": [
+        {
+          "slug": "alicia-ziegler",
+          "views": 410
+        },
+        {
+          "slug": "childrens-research-fund",
+          "views": 250
+        },
+        {
+          "slug": "best-restaurants-halsted-street",
+          "views": 189
+        },
+        {
+          "slug": "winter-in-antibes",
+          "views": 153
+        },
+        {
+          "slug": "",
+          "views": 116
+        },
+        {
+          "slug": "my-silk-roads",
+          "views": 105
+        },
+        {
+          "slug": "boba-tea-chinatown",
+          "views": 43
+        },
+        {
+          "slug": "index.html",
+          "views": 23
+        },
+        {
+          "slug": "secret-gardens.html",
+          "views": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "label": "February 22, 2026",
+      "total": 1204,
+      "articles": [
+        {
+          "slug": "cynthia-safford-mulcahy",
+          "views": 280
+        },
+        {
+          "slug": "downsizing",
+          "views": 251
+        },
+        {
+          "slug": "sea-cloud-spirit",
+          "views": 132
+        },
+        {
+          "slug": "iwa-extraordinaire",
+          "views": 118
+        },
+        {
+          "slug": "soap-opera",
+          "views": 115
+        },
+        {
+          "slug": "sporting-life-lfc-goalie",
+          "views": 106
+        },
+        {
+          "slug": "",
+          "views": 104
+        },
+        {
+          "slug": "bag-charms",
+          "views": 98
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "label": "March 1, 2026",
+      "total": 1182,
+      "articles": [
+        {
+          "slug": "wells-street-kitchen-juice",
+          "views": 240
+        },
+        {
+          "slug": "arts-club-members-show",
+          "views": 169
+        },
+        {
+          "slug": "ernest-hemingway-chicago",
+          "views": 167
+        },
+        {
+          "slug": "daily-star-march",
+          "views": 166
+        },
+        {
+          "slug": "case-of-the-missing-caramel",
+          "views": 127
+        },
+        {
+          "slug": "about-the-town-march",
+          "views": 99
+        },
+        {
+          "slug": "",
+          "views": 63
+        },
+        {
+          "slug": "moneyball",
+          "views": 35
+        },
+        {
+          "slug": "astro-sign-digest-march",
+          "views": 17
+        },
+        {
+          "slug": "astro-daily-stars",
+          "views": 14
+        },
+        {
+          "slug": "astro-main-star-march",
+          "views": 13
+        },
+        {
+          "slug": "astro-weather-march",
+          "views": 13
+        },
+        {
+          "slug": "astro-hybrid-march",
+          "views": 10
+        },
+        {
+          "slug": "editorial-critique.html",
+          "views": 9
+        },
+        {
+          "slug": "astro-comparison-march",
+          "views": 7
+        },
+        {
+          "slug": "astro.html",
+          "views": 7
+        },
+        {
+          "slug": "index.html",
+          "views": 7
+        },
+        {
+          "slug": "astro-technical-march",
+          "views": 6
+        },
+        {
+          "slug": "demo4",
+          "views": 5
+        },
+        {
+          "slug": "astrological-forecast-march",
+          "views": 3
+        },
+        {
+          "slug": "advertise.html",
+          "views": 1
+        },
+        {
+          "slug": "astro",
+          "views": 1
+        },
+        {
+          "slug": "demo1",
+          "views": 1
+        },
+        {
+          "slug": "demo2",
+          "views": 1
+        },
+        {
+          "slug": "demo3",
+          "views": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "label": "March 8, 2026",
+      "total": 1181,
+      "articles": [
+        {
+          "slug": "rebecca-tilles",
+          "views": 288
+        },
+        {
+          "slug": "datebook",
+          "views": 247
+        },
+        {
+          "slug": "you-are-seated",
+          "views": 175
+        },
+        {
+          "slug": "where-care-happens",
+          "views": 170
+        },
+        {
+          "slug": "aqui-en-chicago",
+          "views": 125
+        },
+        {
+          "slug": "national-museum-mexican-art",
+          "views": 64
+        },
+        {
+          "slug": "",
+          "views": 38
+        },
+        {
+          "slug": "lunar-new-year-chinatown",
+          "views": 36
+        },
+        {
+          "slug": "datebook2.html",
+          "views": 19
+        },
+        {
+          "slug": "editorial-critique.html",
+          "views": 7
+        },
+        {
+          "slug": "datebook4.html",
+          "views": 5
+        },
+        {
+          "slug": "datebook3.html",
+          "views": 4
+        },
+        {
+          "slug": "about.html",
+          "views": 1
+        },
+        {
+          "slug": "advertise.html",
+          "views": 1
+        },
+        {
+          "slug": "subscribe.html",
+          "views": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "label": "March 15, 2026",
+      "total": 813,
+      "articles": [
+        {
+          "slug": "guardian-san-pietro",
+          "views": 154
+        },
+        {
+          "slug": "honey-child",
+          "views": 132
+        },
+        {
+          "slug": "chanel-exhibit",
+          "views": 120
+        },
+        {
+          "slug": "ica-broadway",
+          "views": 114
+        },
+        {
+          "slug": "unsung-gems-philadelphia",
+          "views": 91
+        },
+        {
+          "slug": "little-village",
+          "views": 83
+        },
+        {
+          "slug": "anti-cruelty",
+          "views": 71
+        },
+        {
+          "slug": "index.html",
+          "views": 22
+        },
+        {
+          "slug": "editions/2026-03-15/index.html",
+          "views": 5
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/two-sisters-and-a-piano/editions/2026-03-22/jessie-mueller/index.html",
+          "views": 3
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks",
+          "views": 2
+        },
+        {
+          "slug": "editions/2026-03-22/jessie-mueller/editions/2026-03-22/jessie-mueller/index.html",
+          "views": 2
+        },
+        {
+          "slug": "about.html",
+          "views": 1
+        },
+        {
+          "slug": "advertise.html",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-15/editions/2026-03-08/index.html",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-15index.html",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-02-22/index.html",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller/editions/2026-03-22/unsung-gems-lfhs",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/unsung-gems-lfhs",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/two-sisters-and-a-piano",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/building-blocks/editions/2026-03-22/building-blocks/editions/2026-03-22/jessie-mueller/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/unsung-gems-lfhs/editions/2026-03-22/two-sisters-and-a-piano/editions/2026-03-22/jessie-mueller",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/jessie-mueller",
+          "views": 1
+        },
+        {
+          "slug": "editions/2026-03-22/jessie-mueller/editions/2026-03-22/jessie-mueller",
+          "views": 1
+        },
+        {
+          "slug": "subscribe.html",
+          "views": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "label": "March 22, 2026",
+      "total": 844,
+      "articles": [
+        {
+          "slug": "unsung-gems-lfhs",
+          "views": 183
+        },
+        {
+          "slug": "chicago-chamber-music-society",
+          "views": 148
+        },
+        {
+          "slug": "jessie-mueller",
+          "views": 126
+        },
+        {
+          "slug": "building-blocks",
+          "views": 121
+        },
+        {
+          "slug": "kanuga",
+          "views": 113
+        },
+        {
+          "slug": "two-sisters-and-a-piano",
+          "views": 100
+        },
+        {
+          "slug": "pokemon-fossil-museum",
+          "views": 45
+        },
+        {
+          "slug": "chicago-chamber-music-society/index-v3.html",
+          "views": 5
+        },
+        {
+          "slug": "chicago-chamber-music-society/index-v2.html",
+          "views": 3
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "label": "March 29, 2026",
+      "total": 776,
+      "articles": [
+        {
+          "slug": "biba-palm-springs",
+          "views": 169
+        },
+        {
+          "slug": "unsung-gems-backgammon",
+          "views": 143
+        },
+        {
+          "slug": "fashion-trends",
+          "views": 119
+        },
+        {
+          "slug": "driehaus-museum",
+          "views": 109
+        },
+        {
+          "slug": "landmarks-preservation-forward",
+          "views": 81
+        },
+        {
+          "slug": "an-island-idyll",
+          "views": 62
+        },
+        {
+          "slug": "american-writers-museum",
+          "views": 47
+        },
+        {
+          "slug": "marwen",
+          "views": 46
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "label": "April 5, 2026",
+      "total": 0,
+      "articles": []
+    }
+  ]
+}
