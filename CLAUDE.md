@@ -89,6 +89,7 @@ git add editors/edition.html editors/index.html && git commit -m "Update dev2 pr
 | Skill | Purpose |
 |---|---|
 | `/check-emails` | Check Judy's emails and FormSubmit votes; apply changes; commit to dev2 |
+| `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
