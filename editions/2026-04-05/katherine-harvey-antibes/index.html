@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- GA4 disabled on dev2
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
@@ -12,7 +11,7 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>About the Town | Classic Chicago</title>
+  <title>Antibes | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -29,14 +28,14 @@
     .hamburger-btn:hover { color: #b51c20; }
     .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
     .hamburger-menu.open { display: block; }
-    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
     .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
     h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
     .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
-    .article-intro { font-size: 18px; line-height: 1.75; color: #333; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
-    .placeholder-notice { background: #fff8e1; border: 1px dashed #f0c040; border-radius: 4px; padding: 16px 20px; font-family: 'Lato', sans-serif; font-size: 14px; color: #7a5c00; margin: 32px 0; text-align: center; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    .pending-notice { background: #fffbea; border: 1px solid #ffe082; border-radius: 4px; padding: 18px 22px; margin: 32px 0; font-family: 'Lato', sans-serif; font-size: 14px; color: #7a5c00; }
     .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
     .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
     .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
@@ -46,10 +45,10 @@
     .social-links a:hover { opacity: 0.7; }
     .social-links svg { width: 32px; height: 32px; fill: #fff; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) { h1.article-title { font-size: 28px; } }
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
-
 <body>
   <header>
     <div class="logo-container">
@@ -71,20 +70,22 @@
 
   <div class="article-wrapper">
 
-    <div class="article-category">About the Town</div>
-    <h1 class="article-title">[Title Pending]</h1>
-    <div class="article-meta">By Philip Vidal &nbsp;&bull;&nbsp; April 5, 2026</div>
+    <div class="article-category">Travel</div>
+    <h1 class="article-title">Antibes</h1>
+    <div class="article-meta">By Katherine Harvey &nbsp;&bull;&nbsp; April 5, 2026</div>
 
-    <div class="placeholder-notice">&#9998; Article and photos pending from Philip Vidal / Ana Baca</div>
+    <div class="pending-notice">&#9998; Article text arriving via Annie. Cover photo is in place.</div>
 
-    <p class="article-intro">[Article text coming soon.]</p>
+    <figure>
+      <img src="antibes-1.jpeg" alt="Antibes">
+    </figure>
 
     <div class="edition-nav">
-      <a href="../katherine-harvey-antibes/" class="back-link">&larr; Previous</a>
-      <a href="../concentration-rehearsal/" class="back-link">Next &rarr;</a>
+      <a href="../lyric-opera-madama-butterfly/" class="back-link">&larr; Previous</a>
+      <a href="../about-the-town/" class="back-link">Next &rarr;</a>
     </div>
 
-  </div><!-- end article-wrapper -->
+  </div>
 
   <footer>
     <div class="social-links">
@@ -99,8 +100,8 @@
     document.getElementById('hamburger-btn').addEventListener('click', function() {
       document.getElementById('hamburger-menu').classList.toggle('open');
     });
-    var prevUrl = '../katherine-harvey-antibes/';
-    var nextUrl = '../concentration-rehearsal/';
+    var prevUrl = '../lyric-opera-madama-butterfly/';
+    var nextUrl = '../about-the-town/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
@@ -110,6 +111,5 @@
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
   </script>
-
 </body>
 </html>
