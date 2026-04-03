@@ -1,17 +1,20 @@
 # /check-emails
 
-Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, then commit and push to dev2.
+Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, then commit, push to dev2, and deploy a Vercel preview.
 
 ## Step 1 — Search for emails (run in parallel)
 
-Use `mcp__google-workspace__search_gmail_messages` with these two queries simultaneously. Always pass `user_google_email: john.bartlett@gmail.com` and use `page_size` (not `max_results`) to limit results:
+Use `mcp__claude_ai_Gmail__gmail_search_messages` with these queries simultaneously:
 
-- `from:judycbross@aol.com newer_than:7d` (page_size: 10)
-- `from:submissions@formsubmit.co newer_than:14d` (page_size: 20)
+- `from:judycbross@aol.com newer_than:7d` (maxResults: 10)
+- `from:submissions@formsubmit.co newer_than:14d` (maxResults: 20)
+- `from:aedelfosse1@gmail.com newer_than:7d` (maxResults: 10)
+- `from:anabaca8@gmail.com newer_than:7d` (maxResults: 10)
+- `from:emuhl2@uic.edu newer_than:7d` (maxResults: 10)
 
-## Step 2 — Read Judy's emails
+## Step 2 — Read contributor emails
 
-Use `mcp__google-workspace__get_gmail_messages_content_batch` to read all messages returned from the Judy search. Look for:
+Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the Judy, Annie, Ana, and Emma searches. Look for:
 - Bio updates or corrections (bios live in `about.html`)
 - Photo requests (cover photo, hero image, carousel additions)
 - Text corrections to any article
@@ -19,11 +22,11 @@ Use `mcp__google-workspace__get_gmail_messages_content_batch` to read all messag
 - Questions to answer or decisions pending
 - Any other editorial instructions
 
-If a message has attachments or is part of a thread with more context, use `mcp__google-workspace__get_gmail_thread_content` to read the full thread.
+If a message has attachments or is part of a thread with more context, use `mcp__claude_ai_Gmail__gmail_read_thread` to read the full thread.
 
 ## Step 3 — Read FormSubmit emails
 
-Use `mcp__google-workspace__get_gmail_messages_content_batch` to read all messages returned from the FormSubmit search.
+Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the FormSubmit search.
 
 Two types arrive at `editor@2ccmag.com`:
 
@@ -37,7 +40,19 @@ Two types arrive at `editor@2ccmag.com`:
 - Log them to `reader-comments.html` if keeping a tally, otherwise just note them
 - `Environment: dev2` submissions are test submissions — ignore
 
-## Step 4 — Apply changes
+## Step 4 — Download all attachments
+
+For every email that has attachments (articles, photos, documents):
+- Use `tools/download_attachments.py` to download them. Update the `jobs` list in the script with the message IDs and target directories before running.
+- The script uses `~/.gmail-mcp/credentials.json` and `~/.gmail-mcp/gcp-oauth.keys.json` for auth.
+- Extract text from `.docx` files using `python3` with `python-docx` (install with `pip install python-docx --break-system-packages` if needed).
+- Copy downloaded images to the appropriate article folder under `editions/`.
+
+Attachment IDs are ephemeral — if a download fails, re-read the message to get fresh IDs and retry immediately.
+
+**Never delete any email**, read or unread, from any inbox or folder.
+
+## Step 5 — Apply changes
 
 Common updates and where they live:
 
@@ -49,8 +64,9 @@ Common updates and where they live:
 | Reader comments | `reader-comments.html` (all) + `comments.html` (editorial concerns) |
 | Article text correction | `editions/YYYY-MM-DD/<slug>/index.html` |
 | Hero/cover photo swap | article `index.html` + homepage card |
+| New article content | Build into `editions/YYYY-MM-DD/<slug>/index.html` using the template |
 
-## Step 5 — Commit and push
+## Step 6 — Commit, push, and deploy
 
 After all changes are applied:
 ```
@@ -59,15 +75,27 @@ git commit -m "descriptive message"
 git push origin dev2
 ```
 
-If there are no actionable changes, report a summary of what was found (votes, empty submissions, etc.) and skip the commit.
+Then deploy a Vercel preview and update the editors pages:
+```bash
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/<current-slug>/\"|" editors/edition.html
+sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
+git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
+```
+
+Return the preview URL to the user at the end.
+
+If there are no actionable changes, report a summary of what was found (votes, empty submissions, etc.), skip the commit, but still deploy and return the current preview URL.
 
 ## Notes
 
 - Always work on `dev2` — never commit directly to `dev` or `master`
+- **Never delete any email** — not from inbox, sent, or any folder
 - Judy's email address: `judycbross@aol.com`
 - FormSubmit sends to: `editor@2ccmag.com`
 - Empty FormSubmit comments are common — readers click the form open then close it
 - Judy often sends photo emails with short subject lines — read them even if vague
+- When Judy says "I have sent the photos separately," search for a nearby email from her with attachments
 
 ## Email style (when drafting emails to Judy)
 
@@ -77,8 +105,4 @@ If there are no actionable changes, report a summary of what was found (votes, e
 
 ## Replying to emails in-thread
 
-When sending a reply within an existing Gmail thread, always retrieve the `threadId` explicitly before calling `send_gmail_message`. Use `get_gmail_message_content` on the specific message to get its `threadId` field. Never assume the message ID and thread ID are the same value — pass the `threadId` as the `thread_id` parameter, not the message ID.
-
-## Downloading attachments
-
-Use `get_gmail_attachment_content` with only three parameters: `message_id`, `attachment_id`, and `user_google_email`. There is no `filename` parameter — the tool determines the filename automatically. Attachment IDs are ephemeral and expire quickly; if a download fails with "Invalid attachment token", call `get_gmail_message_content` on the message again to get a fresh attachment ID, then retry immediately.
+When sending a reply within an existing Gmail thread, always retrieve the `threadId` explicitly before calling the send tool. Use `gmail_read_message` on the specific message to get its `threadId` field. Never assume the message ID and thread ID are the same value — pass the `threadId` as the `thread_id` parameter, not the message ID.
