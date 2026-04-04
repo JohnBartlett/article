@@ -1,6 +1,6 @@
 # /check-emails
 
-Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, then commit, push to dev2, and deploy a Vercel preview.
+Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, update the editors' page and edition readiness page, then commit, push to dev2, and deploy a Vercel preview.
 
 ## Step 1 — Search for emails (run in parallel)
 
@@ -66,7 +66,14 @@ Common updates and where they live:
 | Hero/cover photo swap | article `index.html` + homepage card |
 | New article content | Build into `editions/YYYY-MM-DD/<slug>/index.html` using the template |
 
-## Step 6 — Commit, push, and deploy
+## Step 6 — Update editors' pages
+
+After applying all content changes, update the editors' pages to reflect current edition status:
+
+- `editors/edition.html` — Update the article inventory table: mark newly completed articles as ready, note any still pending (article text, photos, DateBook, etc.)
+- `editors/index.html` — Update the quick-status summary if the readiness state has changed
+
+## Step 7 — Commit, push, and deploy
 
 After all changes are applied:
 ```
