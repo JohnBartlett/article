@@ -21,6 +21,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography (My Silk Roads column)
 - Jen Huang — Magazine Intern (UIC student)
+- Emma Muhleman (`emuhl2@uic.edu`) — Magazine Intern (UIC student)
 - Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
 - Elizabeth Dunlop Richter — Travel & Culture
 - David A. F. Sweet — Unsung Gems column
@@ -265,6 +266,9 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 
 **Sources:**
 - Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, bio updates, photo requests, text corrections
+- Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (e.g. Katherine Harvey's articles)
+- Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town column
+- Emma Muhleman (`emuhl2@uic.edu`) — article content and photos (intern, UIC)
 - FormSubmit (`submissions@formsubmit.co` → `editor@2ccmag.com`) — reader comments and Quick Votes
 
 **What to expect from FormSubmit:**
