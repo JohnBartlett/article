@@ -19,7 +19,7 @@ GA4 was disabled on dev to prevent skewing stats. It must be re-enabled on maste
 import os, re
 
 GA4_DISABLED_PATTERN = re.compile(
-    r'\n?\s*<!-- GA4-disabled(\s*<!-- Google tag \(gtag\.js\) -->.*?</script>)\n?\s*-->',
+    r'[ \t]*<!-- GA4-disabled\s*(.*?)\s*-->',
     re.DOTALL
 )
 RESTORE = lambda m: m.group(1)

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script> -->
+  <meta charset="UTF-8">
+  <title>Hemingway | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 28px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../dark-mode.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../index.html"><img src="../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Lucia Adams</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../about.html">About</a>
+        <a href="../../subscribe.html">Subscribe</a>
+        <a href="../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="article-wrapper">
+    <div class="article-category">Classic People</div>
+    <h1 class="article-title">Hemingway</h1>
+    <div class="article-meta">By Lucia Adams &nbsp;&bull;&nbsp; July 21, 2019</div>
+
+    <figure>
+      <img src="July-21-Hemingway-thumbnail-1.jpg" alt="Hemingway">
+    </figure>
+
+    <div class="article-body">
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter wp-image-72573" src="July-21-Hemingway-thumbnail-1-300x272.jpg" alt="" width="400" height="363" />Back in Key West with Hemingway&#8217;s boat,<em> Pilar</em>.</p>
+<p>&nbsp;</p>
+<p><span style="color: #b52222"></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: #b52222">By Lucia Adams</span></p>
+<p>&nbsp;</p>
+<p>Editors’ Note: We are honored to publish an excerpt from <em>Wahoga: Bror Blixen in Africa, </em>a new book by <em>Classic Chicago</em> contributor Lucia Adams.</p>
+<p><strong>        </strong><strong> ­<br />
+</strong></p>
+<p><span style="font-size: 20px">In the summer of 1933 Bror hired Beryl for a reccie, when after three weeks he failed to find an elephant for Colonel Sir Leonard Ropner, 1st Baronet, Conservative MP for Barkston Ash, Yorkshire,  winner of the Military Cross in 1919, and owner of a merchant shipping company.  On the last day of the safari Beryl spotted four good bulls in Tsavo, scrawled their location on a pad, stuffed it into a weighted leather pouch with yellow and blue ribbbons, the Markham racing colors, and dropped it to Bror below. The next day she flew towards the signalling fire in Bror’s camp, and five hours later Ropner got his trophy. He published an article about it in the<em> London Evening Standard </em>in September,</span></p>
+<p><span style="font-size: 20px">“At Nairobi Baron von Blixen, a Swedish sportsman, joined us. The party consisted of ten Africans, three of whom were expert trackers…they had previously been poachers and one was a murderer! …One of the most amazing sights is hunting by car, but it is not very sporting. I should not indulge in it. I was trying to get an elephant for three weeks but only on the last day of my stay in the bush did I succeed”.</span></p>
+<p><span style="font-size: 20px">Like most safari memoirists he suggests his hunting skills were all- important though Bror drove the elephant to his loaded rifle making it easier to kill.        <img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72539" src="July-21-beryl-markham-02.jpg" alt="" width="470" height="592" /></span></p>
+<p style="text-align: center">Beryl Markham.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">In November 1933 Ernest Hemingway shipped out for his first safari with wife Pauline, whose uncle Gus Pfeiffer financed the costly extravaganza with a cavalcade of trucks and 20 pieces of luggage, and his friend Charles Thompson from a prominent Key West family, one of the Hemingway Mob fishing the Gulf Stream, hunting elk and bear in Wyoming, and the only one who would dare venture forth with him. Hemingway did his homework, watching rehearsals of the famous lion tamer Clyde Beatty and having a high powered custom rifle with a telescope specially made.</span></p>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72542" src="July-21-B9318317254Z.1_20150803083339_000_GLOBDE14E.2-0.jpg" alt="" width="534" height="401" /></p>
+<p style="text-align: center">Ernest and Pauline Pfeiffer Hemingway.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">By the Thirties countless tourists, opera singers, prize fighters, writers, and businessmen dressed like white hunters were invading East Africa for safaris. Hemingway was another decked out American tourist on a luxurious safari that included killing as much game as possible, lots of packaged bonhomie and camaraderie, ngomas (which Pauline paid extra for), copious praise, the works! Philip Percival was hired as their first white hunter, recommended by Hemingway’s girlfriend Jane Mason, a Pond’s model and wife of Grant Mason director of Pan Am in Havana, the epicenter of cosmopolitan sophistication for rich expats.</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72545" src="July-21-4thumbnail.jpg" alt="" width="474" height="640" /></p>
+<p style="text-align: center">Jane Mason.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">Jane Mason met Hemingway two years earlier on the <em>Ile de France </em>and at her Cuban finca became his lover. She introduced him to Dick Cooper in New York, “Those fine guys Dick Cooper so damned kindly cabled to (Tanganyika Guides) wanted more than I could pay, …. (he was)  damned nice to wire them and I want to pay him for the wire. It is fine for him to do you a favor but not to have to take on all your gory friends,” Concerned that he avoid those “no-good white hunters” in Africa, Cooper pulled strings to get Tanganyika Guides to lower their rates and Percival became the immortal Pop in <em>Green Hills of Africa.</em></span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72548" src="July-21-2-thumbnail.jpg" alt="" width="480" height="412" /></p>
+<p style="text-align: center">Hemingway and Dick Cooper.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">Since Percival was on safari u­ntil December 20 the Hemingway party waited for a week at his ostrich farm at Potha Hill in Machakos, hilly country southeast of Nairobi, where his competent wife Vivian arranged shooting excursions on the Kapiti plains. When Percival returned they all motored to Arusha and the Serengeti where Hemingway bagged two lions, a kudu and his first rhino. At Pothos he met Alfred Vanderbilt who had come over with Winston Guest now en route home after bagging two elephants. Young Vanderbilt, also a friend of the Coopers and the Masons was waiting to go on safari with Bror in January before heading home. His future obituary noted he “shot lions with Hemingway in Africa.”</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter size-large wp-image-72554" src="July-21-Hemingway-CZGuest_p046-047-1024x792.jpg" alt="" width="1024" height="792" /></p>
+<p style="text-align: center">Hemingway was Winston Guest&#8217;s best man at his 1947 wedding to C.Z. Cochrane. The two couples celebrated quietly at the Hemingways&#8217; house in Havana following the ceremony.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">When Hemingway came down with amoebic dysentery he was flown to a Nairobi hospital and while recuperating at the New Stanley Vanderbilt introduced him to Bror who introduced him to Beryl. She was obviously not impressed and he called her a first class bitch though in 1942 when <em>West with the Night </em>was published to much acclaim he said she could write rings around him. In <em>Moveable Feast </em>he wrote that he knew Bror for a long time before he met Beryl, when in fact they met at exactly the same time.</span></p>
+<p><span style="font-size: 20px">On January 14 1934 back on safari Hemingway stayed at Cooper’s and hunted kudu constantly competing with Thompson for the largest trophy. He killed four Thompson gazelles, eight Grant gazelles, seven wildebeests, seven impala, two Klipspringers, four roan, two bushbacks, two reed bucks, two oryx, four  topis, two  waterbucks, one eland, three kudus, three cheetahs, four buffaloes, two leopards, two rhinos, a serval cat, two warthogs, 13 zebras, one cobra, 41 hyenas and 84 lions, and personally dispatched numbers 23,27,64,79 plus a lioness whose neck he proudly broke.</span></p>
+<p><span style="font-size: 20px">In early February Bror hired Beryl for two weeks to scout elephants around Kilamakoy and Voi for the two-week safari of Vanderbilt. His family, a couple of generations before from the wrong side of the tracks, made a Gilded Age fortune in shipping and railroads and his father<span style="color: #000000"> Alfred Gwynne Vanderbilt</span>, third son of Cornelius Vanderbilt II, died on the <em>Lusitania</em>. His mother Margaret Emerson, daughter of the <span style="color: #000000">Bromo-Seltzer </span>inventor Isaac Emerson, would the next year give him Sagamore Farm, starting his career in thoroughbred racing at Belmont and Pimlico, with <em>Native Dancer</em> and <em>Sea Biscuit</em> in the stables.</span> <em> </em></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter wp-image-72555" src="July-21-Hemingway-xa0s80gd3yms0s3x.jpg" alt="" width="500" height="529" /></p>
+<p style="text-align: center">Alfred Gwynne Vanderbilt Jr.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">Beryl flew reccies every day, and Bror wrote they wore out many boots, smashed up an aeroplane and three cars but  only sighted one big tusker which “defied us for two and a half months” never even seeing the tip of an elephant’s tail.  The safari actually lasted just two and a half weeks and the smashing of a plane doesn’t gel with Beryl’s log book which revealed no break in operation and no record of any crashes throughout the two weeks. She was scrupulous about logging everything that took place with her airplanes — which some said was the only thing she ever wrote herself.</span></p>
+<p><span style="font-size: 20px">While looking for guinea fowl for dinner one night they were, inevitably, charged by two rhinos, Vanderbilt disappearing into the brushwood exactly where they were headed. Bror seized the gunbearer’s rifle and blasted away, and one fell stone dead two yards from Vanderbilt’s heels while the other vanished — but the client got his horn and hide. Bror said he expected dismissal every day and Vanderbilt said he would come back the next year for three months to get his elephant since “this was the most fun he ever had.” Fun is a frequent word appearing in safari recollections and memoirs.</span></p>
+<p><span style="font-size: 20px">On February 18 as planned Bror, Percival, Cooper and Vanderbilt, who paid for the trip, met Hemingway for a week’s fishing off Malindi on the northern Kenya coast, in a true meeting of the international set, an heir to America’s greatest fortune, the world’s most famous writer, two legendary white hunters, one a baron. Bror admitted he was an amateur fisherman but wished to explore the sport of deep sea fishing and commercial development off the coast of Kenya.</span></p>
+<p><span style="font-size: 20px">They stayed at the posh Palm Beach Hotel in Malindi and chartered the <em>Xanadu</em>, a hulk in disrepair constantly breaking down, nailing a plank to the roof of the cabin in the stern, cutting off the legs of two chairs and fitting them with rod sockets. Vanderbilt and Percival occupied these while Bror and Cooper maneuvered on the narrow deck. Fishing for kingfish, amberjacks, groupers, dolphin and sailfish, Bror slyly commented, “The author Ernest Hemingway, perhaps one of the best-known fishermen in America, tried a week’s fishing and <em>thought he had proof </em>of the presence of tunny, swordfish, and marlin.” Afterwards they all set off for France on the <em>Gripsholm</em> spending the days lounging around the saltwater pool, passing through the Sea of Galilee and on to Villefranche where they disembarked on March 8th and took the train to Paris. One can only imagine…</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72560" src="July-21-Hemingway-Frederick_Edward_Guest_old_photo-crop.jpg" alt="" width="555" height="708" /></p>
+<p style="text-align: center">Freddie Guest.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">Near Tanganyika elephant tracks revealed four bulls were close by so they cut their way through the bush until Simba saw them at foot of the Pares. Bror, Diana, Simba and Gondo ascended the cliffs to get a better view while Freddie Guest and Percival remained behind to cut off the elephants with cars if they tried to escape. On the cliffs they came to a flat landing and right in front of them were 25 bulls within one hundred yards. Bror pointed out one large tusker and shouted “Fire Diana” and it fell, its four legs collapsing under it while its heavy body rested against a palm tree.</span></p>
+<p><span style="font-size: 20px">The other bulls ran but Bror said this one was the best one he had ever seen and with sweeping hyperbole wrote that Diana had shot the biggest elephant “any woman had ever done”. They pulled out the luncheon basket and cold beer and when they reached the bull it took three hours for the boys working on each side to extract the tusks, carve up the carcass, cut off the trunk which took four men to carry to the car. Bror was enamored of Diana who wagered ten shillings to guess the weight of the tusks, which turned out to be 125 and 126.</span></p>
+<p><span style="font-size: 20px">Makula reported seeing three bulls and Diana and the gun bearers walked through dangerous bayonet grass and she fired, aiming high on the shoulder of one bull which with a heavy sigh sank to the ground with a broken back its hind legs folding under it.  Its tail was cut off and after two hours they reached the car with the 130 pound tusks, Bror wrote he struggled to find big tuskers ”then along comes an English miss and in two days bags these giants.”</span></p>
+<p><span style="font-size: 20px">Diana caught the train back to Nairobi, the three men staying on, rushing home to tell her friends about the fun and excitement of these two days. Then her father bagged a big bull for “the most successful three day hunt ever to have occurred “with four pairs of  gigantic tusks. All this was celebrated with the usual pink gin, the Guests having found bigger tuskers than anything Bror ever had so he said and setting a record for killing four of the biggest tuskers ever shot, an achievement said to be unsurpassed until the Fifties.</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-72582" src="July-21-Hemingway-Arnold_Gingrich.jpg" alt="" width="576" height="726" /></p>
+<p style="text-align: center">Arnold Gingrich.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">Back in America Hemingway started writing about his content-rich trip for <em>Esquire,</em> founded the year before by Arnold Gingrich, to become Jane Mason’s fourth husband, and cementing  Bror’s reputation as a larger-than-life sportsman. Hemingway elaborately praised him and Percival, greatly exaggerating the danger hunting clients like himself experienced, “ they do not get mauled and their clients get record heads, record tusks, and super lions year after year”; in the June 1934 “Second Letter from Tanganyika” he distinguished between true sport on foot, and shooting from a car or boma.</span></p>
+<p><span style="font-size: 20px">The next month in the “Third Tanganyika letter” Hemingway got in on the mythmaking writing that Bror was  a great shot “who can shoot partridges flying with a .450 No. 2 Express rifle “ or stop a charging rhino at ten yards, remarking, ”I could not let him come forever, what?” With a humorous attempt at macho sychophancy, he wrote “Bror von Blixen, if there every were any justice for elephants, would have been trampled to death at least twice.” Hemingway’s hatred of hyenas, little carrion pack dogs that clean up carcasses, revealed a sadistic streak usually reserved for sharks. Bror mischievously contradicted him writing of their devotion to family, their playfulness and charm.</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter wp-image-72564" src="July-21-Hemingway-philip-percival.jpg" alt="" width="400" height="227" /></p>
+<p style="text-align: center">Ben Fourie,  Charles Thompson, Philip Percival and Hemingway.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 20px">In <em>Green Hills </em>still euphoric from the safari Hemingway transmogrified Percival into Pop, a scatalogical killer, urging clients to “shoot the bastard” ,”I’ll bust the son of a bitch”, “shoot the damn rhino” who  taught  him to kill cleanly not inflicting more pain than necessary by placing precise bullets, another absurd myth and justification for hunting. Percival, usually broke, flattered his fee-paying clients, praising Hemingway for killing record oryx and eland but in private called him “a bullshit merchant of the first class”.  He would take Hemingway on safari again in 1954. Karen hated <em>Green Hills </em>with its violence borne of insecurity and said it reminded her of Bror. <strong>                                                           </strong></span></p>
+<p><strong>                      </strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-72527" class="share-facebook sd-button share-icon no-text" href="/hemingway/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-72527" class="share-twitter sd-button share-icon no-text" href="/hemingway/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-72527" class="share-pinterest sd-button share-icon no-text" href="/hemingway/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span></span><span class="sharing-screen-reader-text">Click to share on Pinterest (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+    </div>
+
+    <div class="edition-nav">
+      <a href="../a-giant-of-a-film/" class="back-link">&larr; A Giant of a Film</a>
+      <a href="../knole/" class="back-link">Knole &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) { if (!btn.contains(e.target) && !menu.contains(e.target)) menu.classList.remove('open'); });
+      }
+    })();
+  </script>
+</body>
+</html>

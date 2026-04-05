@@ -1,0 +1,52 @@
+{
+  "property_id": "523654462",
+  "date_range": "2026-03-03 to 2026-04-02",
+  "updated": "2026-04-02 08:45",
+  "totals": {
+    "activeUsers": 2401,
+    "sessions": 3920,
+    "screenPageViews": 7587
+  },
+  "top_pages": [
+    {
+      "pagePath": "/",
+      "screenPageViews": 2572
+    },
+    {
+      "pagePath": "/editions/2026-03-08/rebecca-tilles/",
+      "screenPageViews": 278
+    },
+    {
+      "pagePath": "/about",
+      "screenPageViews": 259
+    },
+    {
+      "pagePath": "/editions/2026-03-08/datebook/",
+      "screenPageViews": 247
+    },
+    {
+      "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
+      "screenPageViews": 183
+    },
+    {
+      "pagePath": "/editions/2026-03-08/you-are-seated/",
+      "screenPageViews": 175
+    },
+    {
+      "pagePath": "/editions/2026-03-08/where-care-happens/",
+      "screenPageViews": 170
+    },
+    {
+      "pagePath": "/editions/2026-03-29/biba-palm-springs/",
+      "screenPageViews": 168
+    },
+    {
+      "pagePath": "/editions/2026-03-15/guardian-san-pietro/",
+      "screenPageViews": 154
+    },
+    {
+      "pagePath": "/editions/2026-03-22/chicago-chamber-music-society/",
+      "screenPageViews": 148
+    }
+  ]
+}

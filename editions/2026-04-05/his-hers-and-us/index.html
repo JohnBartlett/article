@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>His, Hers and Us | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-intro { font-size: 18px; line-height: 1.75; color: #333; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 28px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-april/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="article-wrapper">
+
+    <div class="article-category">Fiction</div>
+    <h1 class="article-title">His, Hers and Us</h1>
+    <div class="article-meta">By Scott Holleran &nbsp;&bull;&nbsp; April 5, 2026</div>
+
+    <figure>
+      <img src="holleran-1.jpeg" alt="His, Hers and Us">
+    </figure>
+
+    <p class="article-intro">New fiction by Scott Holleran blends light-hearted fantasy with flirtation, love and renewal &mdash; with a married couple&rsquo;s body switch as a twist &mdash; just in time for spring.</p>
+
+    <div class="article-body">
+
+      <p>On a springtime Tuesday morning, three sunbeams radiate through clouds hovering high over the point of Pittsburgh&rsquo;s triangle &mdash; where two rivers converge into a new, mighty river. At this point, the city rises, bustles and gleams.</p>
+
+      <p>As it does, woman and man silently sit in a breakfast nook by a small, bay window inside a narrow brick house perched on a hill. Looking out the window, down at the street, river and city below is Isaac. His clean, handsome face is strong with a thick brow above intelligent eyes which are a bit intense. The brow is furrowed as if he&rsquo;s concerned. Isaac is past life&rsquo;s midpoint. Neatly dressed for work as an engineering professor at Carnegie Mellon University, and except for the bothered expression, Isaac is the ideal man. His eyes close as he braces and sighs. He slowly drinks his coffee.</p>
+
+      <p>Across from Isaac sits Heather, her legs crossed with her feet folded beneath her as she half-heartedly scrolls through a feed on her mobile device. She&rsquo;s aware of Isaac&rsquo;s presence, though she tries to avoid an appearance of interest. Heather&rsquo;s slightly older than her mate. The attractive redhead has her hair in a hastily arranged ponytail, wearing sweats and a Penguins jersey. It&rsquo;s her day off from managing a day care center. Heather, who&rsquo;s usually the one to start things off, and has grown rather tired of it, asks Isaac if he&rsquo;s ready. He nods, so Heather tosses a car key, reminding him that the sedan&rsquo;s due for an oil change.</p>
+
+      <p>They meet by the front door after he takes one more sip of coffee and she puts her arms around him, tiptoeing for a kiss on the cheek. Isaac is tall and he works out. He grabs a briefcase from the bench where he&rsquo;d left it last night when he came home from work. He reminds Heather that he teaches tonight. Heather nods and opens the door.</p>
+
+      <p>As they step out and walk to the curb, they encounter next-door neighbor Henrietta on the sidewalk. She greets the married couple with a jaunty one-hand wave while placing her walker firmly on the ground. With her hair in curlers, an unfiltered cigarette dangling from the corner of her mouth and a bathrobe about two sizes too small, coming up to her fanny, Henrietta is a feisty 77 years old. She notices them wordlessly part each others&rsquo; company and watches Isaac get into their car, pull away from the curb and drive off to work. Looking over to Heather, who&rsquo;s taken off jogging down the hill, Henrietta smiles a knowing smile.</p>
+
+      <p>Glancing around, Henrietta drags on her cigarette and exhales with panache, as if gesturing to an audience as the smoke trails and spirals in the general direction of Heather and Isaac. Henrietta expels the smoke, muttering to herself: &ldquo;His and hers, his and hers, now drift and let this union be. But switch their sex &rsquo;til flames ignite, and set this matrimony free.&rdquo;</p>
+
+      <p>Henrietta waddles back inside the house as the smoke she&rsquo;s blown wafts and dissipates. This is when the bodies switch. The switch shocks Heather and Isaac, though it is more jarring to Isaac, who finds himself in a woman&rsquo;s body running downhill. Heather, for her part, instantly becomes aware of her weight. She&rsquo;s heavier, which startles her. So begins their Tuesday.</p>
+
+      <p>Isaac and Heather proceed, however strange it might seem. Chemistry and biology prevail, factoring for free will and details of the switch, so each retains a sense of themselves in the body of the other. As Isaac jogs, for example, in his wife&rsquo;s body, he adapts to the newfound agility. Running up and down hillsides takes greater exertion of effort, but he observes that, in Heather&rsquo;s smaller body, he has more energy and endurance. To a certain extent, Isaac responds as Isaac &mdash; strictly in the context of Heather&rsquo;s lean, slender body. This includes, of course, her mind, which means that Isaac possesses his wife&rsquo;s knowledge in addition to his own. This makes the switch enticing.</p>
+
+      <p>The same goes for Heather. Driving toward the university, she experiences a power surge. When a traffic signal turns green, Heather starts to accelerate, pressing Isaac&rsquo;s foot down on the pedal. This causes the car to lurch forward as she feels Isaac&rsquo;s muscular leg flex. Having access to Isaac&rsquo;s knowledge is an unexpected reward, too. She now knows to pick up milk, grade papers and meet with a colleague. Yet, strangely, she also knows the men&rsquo;s locker room code. Isaac&rsquo;s scheduled a tennis match this morning.</p>
+
+      <p>Inside Isaac&rsquo;s body, Heather, too, maintains a sense of herself. So, she gives a voice command to call her husband from the car. When the digital assistant responds with confusion, she revises the command to &ldquo;call my wife&rdquo;. &ldquo;Calling Heather,&rdquo; responds a sensual female voice from the car&rsquo;s speaker as the car speeds to the next traffic light.</p>
+
+      <p>What comes next is another jolt.</p>
+
+      <p>&ldquo;H-hello??&rdquo; Heather hears her own voice answer tentatively and out of breath.</p>
+
+      <p>&ldquo;Isaac &mdash; is that you?&rdquo; Isaac asks.</p>
+
+      <p>&ldquo;Y-yes,&rdquo; Heather answers. &ldquo;At least I think so.&rdquo; They&rsquo;re both surprised to find that talking with yourself in the body of your spouse feels natural.</p>
+
+      <p>&ldquo;Look, I don&rsquo;t know what bizarre phenomena we&rsquo;re experiencing,&rdquo; Isaac says, taking the lead as usual, that is, as usual for Heather, &ldquo;but this is real and we obviously need to figure this out.&rdquo;</p>
+
+      <p>&ldquo;Agreed,&rdquo; Heather replies, looking over her shoulder. &ldquo;Can you finish out the day this way, so my students don&rsquo;t miss class tonight?&rdquo;</p>
+
+      <p>This is when they decide that, before strategizing about the switch, they&rsquo;ll let the day play out. For a while it does. Heather, embodying Isaac, will have her day off. Isaac, embodying Heather, will get to play tennis and teach his class. After exchanging tips, the couple agree to meet at nine o&rsquo;clock tonight in the nook by the bay window.</p>
+
+      <p>After ending the call, Heather stands by a tree and thinks about the implications. Thoughts become a flood, so she stops the thoughts. Looking down at herself, touching herself here and there as sensorial affirmation and streaming with both Heather&rsquo;s and Isaac&rsquo;s thoughts about plans for the day &mdash; Heather had counted on running, reading a book and cooking by a new recipe &mdash; Heather gamely jogs back to the house.</p>
+
+      <p>An interesting thing starts to happen during the run. It is not abundantly clear or obvious at first, and Heather with her husband inside doesn&rsquo;t outwardly act different, but it goes like this. An interior sensation &mdash; like a carbonated drink being opened, with a rush of bubbles rising to the surface &mdash; consumes her. Isaac-inside-Heather has to admit this feels good, even exhilarating.</p>
+
+      <p>That&rsquo;s when a car pulls up alongside Heather and gives a short honk as she jogs. Heather turns to see Zora from the day care center rolling down a window. &ldquo;Sorry to bother you on your day off,&rdquo; she calls as she drives at a snail&rsquo;s pace, glancing in the rear-view mirror, &ldquo;but the Silva kids from Dormont start today and I need those papers signed.&rdquo;</p>
+
+      <p>Heather is sufficiently reminded of that administrative task and nods, still jogging up the hill, calling back: &ldquo;OK, meet me up at the house.&rdquo;</p>
+
+      <p>Within minutes, she&rsquo;s out of breath and motioning Zora into the house. &ldquo;In here,&rdquo; she pants, grabbing a towel she&rsquo;d tossed on the back of a chair, and they each take a seat at the kitchen counter. &ldquo;Thanks,&rdquo; Heather says, accepting the pen Zora extends and pulling papers closer to examine. As she skims forms she&rsquo;s seen and signed a thousand times since she took over managing Carnegie Kid Care eight years ago, Heather feels Zora&rsquo;s eyes upon her.</p>
+
+      <p>&ldquo;Everything OK at work today?&rdquo; Heather asks as she skims and signs. &ldquo;Fine so far, boss,&rdquo; is the reply. Still, Heather senses Zora&rsquo;s gaze. &ldquo;All is as usual,&rdquo; Zora adds, &ldquo;except you.&rdquo; Heather looks up. Their eyes meet. &ldquo;Work isn&rsquo;t work without you.&rdquo; Relieved, Heather chuckles. &ldquo;Well, not today because, let me tell you, I&rsquo;m not myself. This day off is really off&mdash;way off.&rdquo; Heather says this as she pens her signature, same as ever, pushing the forms toward Zora.</p>
+
+      <p>&ldquo;Hmmmm,&rdquo; comes the response, which sort of hangs there for a few seconds as the women sit perfectly, silently still. Zora peers into Heather&rsquo;s eyes with what feels to Heather like a searchlight, a probe and a salve all at once. &ldquo;Nope,&rdquo; Zora finally says, leaning on the counter, &ldquo;I&rsquo;m not buying it. You are spot on today. Matter of fact,&rdquo; Zora says, &ldquo;you&rsquo;re more yourself than usual.&rdquo; As she says this, Heather blushes, because the next thing Zora does is hone in on Heather and fire up like a laser beam. &ldquo;There you are again,&rdquo; she says, flirtatiously.</p>
+
+      <p>Carefully, assuredly, looking at the signed papers as she tucks them into a case, Zora says something else. &ldquo;Heather, you are one stimulating lady.&rdquo; Zora looks up, as if pausing to catch herself before she speaks her next thoughts out loud. Collecting herself, Zora zips the case and wraps up her present business, absent-mindedly touching her Afro as she composes herself. A jolt&rsquo;s gone through Heather, too.</p>
+
+      <p>She reaches up and touches Zora&rsquo;s lips with her fingertip, which she&rsquo;s secretly wanted to do since hiring her four years ago. They say nothing, though Heather senses Zora blush and warm to the touch. The women rise together in silence. Then, with Isaac stirring inside Heather and all the sensations this implies, Heather inhales and says: &ldquo;You are the stimulant, Zora. You&rsquo;re recharging me now. But it is time to go back to work.&rdquo; Visibly interested in her loose, lightly beaded silk blouse, Zora takes firm hold of her case, bobs her head and turns to go. Craving connection, Heather grazes Zora&rsquo;s shoulder and moves closer. Zora pauses, turning an inch. They come together and kiss &mdash; a slow, deliberate and mutual kiss. They lock lips in a greedy trade and exploration. They stop in the same instant. &ldquo;See you at work tomorrow.&rdquo; It is Heather who says this as Zora nods again, turns while steadying herself and walks to the front door. Heather tells her: &ldquo;To be continued.&rdquo; Zora half-turns, looks at the floor and smiles.</p>
+
+      <p>For the rest of the day, Zora&rsquo;s presence lingers in the house. Heather tastes her on the lips. Of course, the husband inside ponders the new feeling. He knows from being in Heather&rsquo;s body that the attraction is hers and that this is real. It&rsquo;s been there, drawn by Zora&rsquo;s attention to detail, meticulous work and keen, playful self-confidence. Heather&rsquo;s body awakens. So does Isaac&rsquo;s desire. The result &mdash; sparked by Zora&rsquo;s bright individuality &mdash; is magnetic.</p>
+
+      <figure>
+        <img src="holleran-2.jpeg" alt="His, Hers and Us">
+      </figure>
+
+      <p>At the campus, Isaac&rsquo;s body with Heather inside bends down to tighten the laces of his tennis shoes. He&rsquo;s in the locker room preparing for a match with his colleague, Max. Heather realizes now that she hasn&rsquo;t fully appreciated her husband&rsquo;s body strength. Embodying his physique, she now appreciates how he centers, balances and propels his thick, muscular frame. As Isaac stands and turns before a mirror so Heather can study the newness of being a man, flexing his biceps and pulling athletic undergear before stepping into a pair of snug tennis shorts, his maleness becomes clear. Isaac, as awestruck Heather, thinks: what great beauty and responsibility.</p>
+
+      <p>Isaac feels a hand on his back. &ldquo;Hey, man.&rdquo; It&rsquo;s Max. &ldquo;Oh, hey Max,&rdquo; Isaac says, pulling on a knit shirt and grabbing his racquet. &ldquo;Ready to lose again?&rdquo; Max asks, laughing and jabbing him in the side, heading toward the indoor tennis court. Internally, Heather&rsquo;s aghast at Max&rsquo;s comment, thinking, must Isaac always contend with this? But the adrenaline churns at the challenge of athletic competition. She knows that Isaac was a star athlete in high school and college. He still holds the home run record at his alma mater &mdash; Isaac hit a game-winning grand slam at the state tournament &mdash; while he was earning a master&rsquo;s degree in electrical engineering. With a broad-chested bulk and build, Isaac rarely wins at tennis.</p>
+
+      <p>&ldquo;Right behind you,&rdquo; he counters Max.</p>
+
+      <p>Isaac watches Max toss the ball into the air and slowly reach up to deliver the first serve. Max is a programmer who teaches computer science as an adjunct professor here, Heather knows, and he split with his partner, Anthony, last spring. Isaac was on his hiring committee. They became tennis pals. Heather and Isaac went to a couple of Pirates games with Anthony and Max. After the breakup, they&rsquo;d taken Max to dinner. Max is shorter and younger than Isaac. He is sharp, lithe and goodlooking. He reminds Heather a little bit of herself.</p>
+
+      <p>This is why she feels weird as Isaac admires his form. Heather knows her husband isn&rsquo;t gay &mdash; but she senses Isaac&rsquo;s pent-up desire mixing with the thrill of physical play, pumping blood where it&rsquo;s bound to go. Isaac and Heather haven&rsquo;t been intimate in months. There&rsquo;s distance.</p>
+
+      <p>Playing tennis against Max as her husband, Heather is suddenly aware of how different this feels inside a man&rsquo;s body. As Isaac faults and takes another dive to return one of Max&rsquo;s perfect serves, it dawns on Heather, who feels both a stab of fear and fascination, that she hasn&rsquo;t been solicitous of her husband. She knows that she hasn&rsquo;t been accessible, either. As new awareness sets in, Isaac hammers back the tennis balls. He&rsquo;s all over the court, expending energy, acing points and, with his tall, muscular body darting back and forth &mdash; gaining an audience of staff and faculty watching from the upper level &mdash; Isaac performs and perspires like a champ.</p>
+
+      <p>Sweat doesn&rsquo;t just come from the sport. The game goes on for over an hour until they reach final match point. Isaac tosses the ball up, keeping his eye on frisky, nimble Max, who&rsquo;s clearly enjoying himself. As the color yellow drops into his peripheral vision, Isaac flexes his body, hardening and stretching into the best serve he&rsquo;s delivered. The sound of the racquet strings striking the ball pops as the ball shoots like a bullet over the net to Max&rsquo;s left, where it comes down an inch inside the line. Score! Isaac rejoices. That&rsquo;s game, set and match &mdash; I win!</p>
+
+      <p>Am I a jerk for feeling this way? Heather wonders. Max, spent, relaxed and wet underneath toned arms, doesn&rsquo;t appear to think so.</p>
+
+      <p>&ldquo;You did it, man. Great game,&rdquo; he says, grabbing a towel and a cold water bottle before exiting court for the men&rsquo;s locker room. &ldquo;Thanks,&rdquo; Isaac calls after him, feeling his heart thump. Heather credits this to activated endorphins, though she&rsquo;s feeling something else, too, and it&rsquo;s new. As they enter the locker room in tandem, Isaac hears the showers&rsquo; running water and the sound of men&rsquo;s voices. He plunks down on the bench in front of his locker. Max goes to his bench on the other side of the room.</p>
+
+      <p>&ldquo;Gotta give you credit,&rdquo; Max says above the din of voices in the shower, &ldquo;you outplayed me, Isaac. You earned that win.&rdquo; Max pauses, shaking his head and adding as admiration, &ldquo;damn.&rdquo;</p>
+
+      <p>Heather doesn&rsquo;t know what to say. Isaac does.</p>
+
+      <p>&ldquo;You outhustled me,&rdquo; he says, &ldquo;you did. I&rsquo;m only up on you because I&rsquo;m feeling like a pro and needed to act some of that out. You look good out there, man.&rdquo; Heather hears the words coming out of her mouth &mdash; actually, Isaac&rsquo;s mouth &mdash; and recognizes the deeper voice Isaac uses when he talks with his male pals, which is deeper when they talk about sports and deepest when they compete. Still, she can&rsquo;t quite believe that it&rsquo;s her commanding her man&rsquo;s vocal chords, indulging her own forbidden thoughts. &ldquo;You look good on court today, Max.&rdquo;</p>
+
+      <p>Then, Isaac becomes aware that the shower water has stopped as men&rsquo;s voices carry and fade into the gymnasium. Isaac hears the squeak of the locker room door closing. Max goes silent. He appears out of nowhere.</p>
+
+      <p>Isaac, bare and perspiring with sweat from head to toe, looks up at Max, standing with arms at his sides and a towel around his waist. Isaac, with Heather inside, plainly sees the blend of bemusement, innocence and desire in Max&rsquo;s warm, sensual eyes. Isaac looks down. But he wants to look up. Isaac wants to see Max looking at him. For the first time, Heather experiences what being worshipped as a man means &mdash; in that instant, when the sight of you reduces another human to pure desire. No wonder men are arrogant, she thinks. This is exhilarating. Isaac feels anticipation as he stretches, flexing his muscles. Isaac sees how Max looks at him; he lets Max look. Finally, Max speaks.</p>
+
+      <p>&ldquo;Off to the shower,&rdquo; he gently says as a reproach to himself.</p>
+
+      <p>&ldquo;Wait,&rdquo; Isaac replies.</p>
+
+      <p>As Isaac reaches for Max&rsquo;s towel, Max&rsquo;s hand meets his. &ldquo;Hold up,&rdquo; Max says, looking into Isaac&rsquo;s eyes, breathing so fast and heavily that, to Isaac, Max looks like he&rsquo;s about to buckle. &ldquo;I could want you, but not like this. You&rsquo;re married. You and Heather are good to me. I want you to be happy, Isaac. I don&rsquo;t want to be the reason you&rsquo;re not.&rdquo;</p>
+
+      <p>Isaac smiles. With Heather inside his body, the smile is hers, too. He reaches down and cradles Max&rsquo;s chin in his hand, holding his face anchored by his thumb, &ldquo;you are the best.&rdquo; At that, he looks around and slides his hand to the back of Max&rsquo;s head and neck, moving closer, as if he&rsquo;s going to strangle or overpower him. Whispering &ldquo;you&rsquo;ve earned this,&rdquo; Isaac gives Max the kiss he knows Max wants. Slow, sure and tender. &ldquo;To be continued,&rdquo; he says in his deepest voice, groggy from the tennis, the kiss and the morning. He keeps his voice low and kind.</p>
+
+      <p>Miles across the city, over the river and up the hill, Heather stands at the bay window watching Zora drive away &mdash; at the same time Isaac watches Max turn, remove the towel and walk to the showers &mdash; wife and husband in love with someone of the same, which is to say opposite, sex.</p>
+
+      <p>This happens to everyone, everyday, somewhere on earth. Meeting, wanting and loving someone comes with life. Isaac and Heather realize as they watch Max and Zora that nothing&rsquo;s wrong and everything&rsquo;s right with wanting&mdash;with desire&mdash;and that seeing in that someone qualities you admire in yourself is human. Both know that wanting to have, feel and, in a basic way, to exude with him or her is a call and response. In Zora and Max, two good people, Heather and Isaac discover rationality, pride, honesty, productiveness and integrity &mdash; virtues they know they themselves possess, however failed or faltered the execution may be.</p>
+
+      <p>Zora in her car vanishes from view. Max disappears into the steam of the men&rsquo;s shower. Isaac and Heather stand alone in each other&rsquo;s bodies, longing for love, sex and ecstasy in alignment with the virtues they seek in the body of another. In this moment, Henrietta emerges from her house with the walker, dressed, done up and ready for a trip to town. She lights a cigarette, taking a drag as she moves toward the bus stop where she&rsquo;ll board the shuttle for downtown.</p>
+
+      <p>Passing the next-door married couple&rsquo;s house, she spots Heather in the bay window. Henrietta waves. Noticing that Heather does not return the greeting, Henrietta stops walking and takes a closer look. Because her eyesight is not what it once was, she narrows her gaze and judges that the redheaded woman is lost in thought &mdash; lost in love &mdash; and Henrietta knows what this means.</p>
+
+      <p>Having done the deed she intended to do and having rendered the lesson she sought to deliver, her hair curled and smartly attired for the bus ride to town, she takes a drag on the cigarette and mutters &ldquo;so long, so long, firing up passion doesn&rsquo;t take long&rdquo;, inhaling and blowing smoke like before &mdash; this time, toward Isaac and Heather&rsquo;s narrow brick home.</p>
+
+      <p>Henrietta continues waddling with the walker down her path.</p>
+
+      <p>Like that, Isaac and Heather go back to themselves. It&rsquo;s not that they forget what&rsquo;s happened this Tuesday. Nor even that desire subsides or goes undone. Both go about their day &mdash; teaching, reading, listening, cooking, grading &mdash; and come at each other at nine o&rsquo;clock tonight with vigor, want and tenderness. They make love like it&rsquo;s the first time. As the city at sundown gleams &mdash; with puffs of goodness from Henrietta and those like her &mdash; they&rsquo;re more likely to make love last.</p>
+
+    </div><!-- end article-body -->
+
+    <!-- About the Author -->
+    <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+      <a href="../../../about.html#scott-holleran" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Scott Holleran &rarr;</a>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+      </div>
+      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+      </div>
+      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
+          <input type="hidden" name="Environment" id="env-tracking">
+          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+        </form>
+      </div>
+      <script>
+        var base = window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+        if (window.location.search.indexOf('feedback=sent') !== -1) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('feedbackConfirm').style.display = 'block';
+        }
+        function submitVote(vote) {
+          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
+          }).catch(function(){});
+          document.getElementById('thumbUp').disabled = true;
+          document.getElementById('thumbDown').disabled = true;
+          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+          document.getElementById('voteConfirm').style.display = 'block';
+        }
+      </script>
+    </div><!-- end feedback widget -->
+
+    <div class="edition-nav">
+      <a href="../maria-felix/" class="back-link">&larr; Previous</a>
+      <a href="../messages-in-wood/" class="back-link">Next &rarr;</a>
+    </div>
+
+  </div><!-- end article-wrapper -->
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      document.getElementById('hamburger-menu').classList.toggle('open');
+    });
+    var prevUrl = '../maria-felix/';
+    var nextUrl = '../messages-in-wood/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>
