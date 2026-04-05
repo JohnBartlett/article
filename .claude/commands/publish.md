@@ -11,6 +11,18 @@ git merge -X theirs dev
 
 The GA4 state always differs between dev (disabled) and master (enabled), so use `-X theirs` to take dev's content for all conflicts — GA4 will be re-enabled in the next step.
 
+## Step 1b — Verify AstroChart points to current month
+
+Before merging, check that the Astrochart link in `index.html` points to the current month's daily-star folder, not a past month's.
+
+```bash
+grep "daily-star" /home/john/article/index.html
+```
+
+The href should match the current edition month (e.g. `editions/2026-04-05/daily-star-april/` for April). If it points to a previous month (e.g. `daily-star-march`), fix it on dev2 first, then re-stage before publishing.
+
+**Do not proceed to master if the Astrochart link is stale.**
+
 ## Step 2 — Re-enable GA4 on master
 
 GA4 was disabled on dev to prevent skewing stats. It must be re-enabled on master before pushing to production. Run this Python script:
