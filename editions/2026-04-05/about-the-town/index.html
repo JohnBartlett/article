@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>About the Town in April | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-intro { font-size: 18px; line-height: 1.75; color: #333; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 28px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-april/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="article-wrapper">
+
+    <div class="article-category">About the Town</div>
+    <h1 class="article-title">About the Town in April</h1>
+    <div class="article-meta">By <a href="../../../about.html" style="color:#888;text-decoration:none;">Philip Vidal</a> &nbsp;&bull;&nbsp; April 5, 2026</div>
+
+    <figure>
+      <img src="jazz-day.jpg" alt="International Jazz Day Press Conference">
+      <figcaption>Celebrate Jazz in Chicago! UNESCO's selection of Chicago as the Global Host City for International Jazz Day 2026 means hundreds of events across the city for you to discover this month! Photo by Justin Barbin.</figcaption>
+    </figure>
+
+    <p class="article-intro">Chicago has long been and is a mecca for jazz musicians, so it was natural for UNESCO to designate Chicago as the Global Host City for International Jazz Day 2026 — which is a bit of a misnomer. The celebration in fact features a month (April 1–May 2) of hundreds of events across the city, including concerts and educational programs, all culminating in a globally broadcast concert at the Lyric Opera House on April 30.</p>
+
+    <div class="article-body">
+
+      <p>UNESCO and UNESCO Goodwill Ambassador Herbie Hancock (a Chicago native) and his Herbie Hancock Institute of Jazz have partnered with the Chicago Jazz Alliance, the City of Chicago, the Illinois Arts Council, Ravinia Festival, the State of Illinois, and others to develop programming. April is also Jazz Appreciation Month.</p>
+
+      <p>The final concert of the Chicago Chamber Music Society's 90th season is a performance by The Euclid Quartet with cellist Adrian Daurov at a private club on Michigan Avenue on April 25, followed by an optional dinner. That same evening, the Patrick F. and Shirley W. Ryan Opera Center presents "Rising Stars in Concert" at the Lyric Opera House. I attended Haymarket Opera Company's annual benefit for the first time last year as a guest. It was so much fun, I already have my reservation for their Early Opera Cabaret gala on April 30 at the Arts Club of Chicago.</p>
+
+      <figure>
+        <img src="driehaus-museum.png" alt="Chicago Symphony Orchestra and Driehaus Museum chamber concert">
+        <figcaption>The Chicago Symphony Orchestra and Driehaus Museum present a captivating quartet performance on April 28. Photo by Todd Rosenberg.</figcaption>
+      </figure>
+
+      <p>The Driehaus Museum and Chicago Symphony Orchestra Association have partnered together to present a chamber concert series that kicks off on April 28 with "The Art of Expression" in the museum's Marshall and Fox-designed Murphy Auditorium (1926).</p>
+
+      <figure>
+        <img src="brendan-fernandes.jpg" alt="Brendan Fernandes: In the Round, Driehaus Museum">
+        <figcaption>Brendan Fernandes: In the Round, Driehaus Museum, 2026. Photo by Robert Chase Heishman for Bob. Dancers: Hanna DiLorenzo, Nick Kearns, Xenia Mansour. Courtesy of the artist, Monique Meloche Gallery (Chicago), and Susan Inglett Gallery (New York).</figcaption>
+      </figure>
+
+      <p>Brendan Fernandes is the Driehaus Museum's first artist-in-residence. The world premiere performance of "Brendan Fernandes: Score for Murphy Auditorium" on April 10 is just part of the museum's programming in conjunction with "Brendan Fernandes: In the Round" (April 9–November 14), which continues the museum's "A Tale of Today" series that juxtaposes contemporary art with the art of the Gilded Age.</p>
+
+      <p>Navy Pier's Festival Hall is the place to go this spring to view contemporary art. The 13th anniversary edition of EXPO CHICAGO runs April 9–12 with over 130 galleries from the United States and around the world, and talks, on-site installations and special events. The Museum of Contemporary Art Chicago's Women's Board hosts a Vernissage 2026 brunch on opening day, April 9, that supports the museum's learning programs.</p>
+
+      <p>In contemporary theater, Chicago Shakespeare Theater presents the world premiere of Scooter Pietsch's dark comedy "Fault" April 18–May 24 with a cast that includes Enrico Colantoni and Teri Hatcher. Steppenwolf Theatre Company presents the world premiere of ensemble member Tarell Alvin McCraney's "Windfall" running April 9–May 31. If "Windfall" is successful in Chicago, it might head to Broadway as many of Steppenwolf's productions have. McCraney co-wrote the screenplay for the 2016 film "Moonlight," based on his own play, and received an Academy Award for Best Adapted Screenplay.</p>
+
+      <figure>
+        <img src="movement-you-need.png" alt="The Movement You Need: An Evening with Brendan Hunt at Steppenwolf">
+        <figcaption>Emmy and SAG Award winner Brendan Hunt presents his one-man autobiographical show "The Movement You Need: An Evening with Brendan Hunt" at Steppenwolf Theatre for a limited engagement this spring. Photo courtesy of Steppenwolf Theatre Company.</figcaption>
+      </figure>
+
+      <p>Brendan Hunt, the Emmy and SAG Award-winning co-creator and star of "Ted Lasso," performs his one-man show "The Movement You Need: An Evening with Brendan Hunt" about growing up in Chicago at Steppenwolf Theatre Company, April 19–May 10.</p>
+
+      <figure>
+        <img src="chicago-humanities.jpg" alt="Chicago Humanities Spring Festival with Rick Steves">
+        <figcaption>Don't miss exciting conversations at the Chicago Humanities Spring Festival! Some program highlights this month include author R.F. Kuang and travel writer Rick Steves. Photo courtesy of Chicago Humanities.</figcaption>
+      </figure>
+
+      <p>The Chicago Humanities Spring Festival continues through June 28. April's highlights include: "R.F. Kuang in Conversation" at First United Methodist Church at the Chicago Temple on April 11; "Michael Pollan: A World Appears" at Francis W. Parker School on April 15; and travel writer and TV host Rick Steves presents "Rick Steves: On the Hippie Trail" at Parker on April 20.</p>
+
+      <p>April 18 is Bridgeport Day with more than a dozen events including: bestselling author Dr. Ibram X. Kendi &amp; Mayor Brandon Johnson at the Ramova Theatre; Bridgeport bus tours with Shermann Dilla Thomas; and "Brick of Chicago" walking tours with Will Quam. Chicago is famous for its bricks and the publication date for Quam's new book <em>Fire and Clay: How Bricks Reveal the Hidden History of Chicago</em> (The University of Chicago Press) is April 23.</p>
+
+      <p>On the big screen, Access Contemporary Music presents the 21st annual Sound of Silent Film Festival at the Music Box Theatre on April 8 featuring new short silent films accompanied by newly-composed musical scores performed live. The 36th annual Onion City Experimental Film Festival at Chicago Filmmakers is April 9–12. The 42nd annual Chicago Latino Film Festival runs April 16–27 at the Landmark Century Centre Cinema. The 11th annual Doc10 Film Festival at the Davis Theater runs April 24–May 10. The screenings at this all-documentary film festival range from "Give Me the Ball!" about tennis legend Billie Jean King to "The Last Republican" about Adam Kinzinger, the former U.S. representative from Illinois.</p>
+
+      <p>You can also see the latest films from Chicago's future filmmakers at the "Team Deakins: Athenaeum Center's Film and Culture Festival" April 11 and 13. Filmmakers from Columbia College, DePaul University, Loyola University and the School of the Art Institute compete in the Deakins Collegiate Short Film Contest Finals. The festival also includes film screenings and other programming.</p>
+
+      <figure>
+        <img src="safronia.jpg" alt="safronia, Lyric Opera of Chicago">
+        <figcaption>2 nights only! The Lyric Opera of Chicago's "safronia" conveys the triumph and tragedy of the Great Migration. Take part in the world premiere musical work written by Chicago's first Poet Laureate avery r. young, April 17–18. Photo by Lyric Opera of Chicago.</figcaption>
+      </figure>
+
+      <p>It's National Poetry Month. Chicago is not only a jazz mecca, it's also a poetry mecca. On April 23, the Poetry Foundation hosts a reading celebrating 2021 Ruth Lilly Poetry Prize recipient and Chicago native Patricia Smith's new book "The Intentions of Thunder: New and Selected Poems," which won the 2025 National Book Award for Poetry. The Chicago Public Library celebrates National Poetry Month with dozens of workshops, performances and discussions. The Chicago Public Library Foundation presents a day of poetry with its 27th annual Poetry Fest at the Harold Washington Library Center on April 25. The keynote speaker is Chicago Poet Laureate Mayda del Valle. The Lyric Opera of Chicago presents the world premiere of the musical work "safronia," written by Chicago's first Poet Laureate avery r. young, at the Lyric Opera of Chicago, April 17–18.</p>
+
+      <p>The Newberry Library celebrates the 250th anniversary of the United States with "Free and Independent: The Declaration of Independence and the Words That Made the United States," an exhibition that runs from April 9–July 18. Among the more than two-dozen historic items on display are a rare early copy of the Declaration of Independence and the only surviving manuscript copy of Jay's <em>Federalist No. 3.</em></p>
+
+      <p>The Chicago Cubs are celebrating their 150th anniversary. The team's first National League game was April 25, 1876.</p>
+
+      <p>Get your tickets now for the "Icons &amp; Innovators: Honoring Joan W. Harris" concert and gala on May 2 at the Harris Theater, home to nearly thirty Chicago-based performing arts organizations. Emmanuel Ax and Midori are just a few of the scheduled performers. That same evening is the "Come As You Aren't Ball — A Celebration of Costume Design to Benefit Lookingglass Theatre Company" at Morgan Mfg. Founding Ensemble Member David Schwimmer and Board Member Nancy Ali are the co-chairs of the event.</p>
+
+      <p><em>Dates, times, locations and availability are subject to change.</em></p>
+
+    </div><!-- end article-body -->
+
+    <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+      <a href="../../../about.html#philip-vidal" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Philip Vidal &rarr;</a>
+    </div>
+
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST" style="display:inline;">
+            <input type="hidden" name="vote" value="Yes">
+            <input type="hidden" name="Page" value="About the Town in April | Classic Chicago">
+            <input type="hidden" name="_subject" value="Classic Chicago Quick Vote">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://chicagoclassicmag.com/editions/2026-04-05/about-the-town/">
+            <button type="submit" style="font-family:'Lato',sans-serif;font-size:22px;background:none;border:none;cursor:pointer;padding:4px 8px;" title="Yes, I enjoyed this">&#128077;</button>
+          </form>
+        </div>
+        <p style="font-family:'Lato',sans-serif;font-size:12px;color:#bbb;margin:8px 0 20px;">Your vote is anonymous and takes one click.</p>
+        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="Page" value="About the Town in April | Classic Chicago">
+          <input type="hidden" name="_next" value="https://chicagoclassicmag.com/editions/2026-04-05/about-the-town/">
+          <textarea name="comment" placeholder="Leave a comment (optional)&hellip;" rows="3" style="width:100%;font-family:Georgia,serif;font-size:15px;padding:10px 12px;border:1px solid #ddd;border-radius:2px;resize:vertical;color:#333;background:#fff;"></textarea>
+          <button type="submit" style="margin-top:10px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:#b51c20;color:#fff;border:none;padding:9px 20px;border-radius:2px;cursor:pointer;">Send Comment</button>
+        </form>
+      </div>
+    <div class="edition-nav">
+      <a href="../katherine-harvey-antibes/" class="back-link">&larr; Previous</a>
+      <a href="../concentration-rehearsal/" class="back-link">Next &rarr;</a>
+    </div>
+
+  </div><!-- end article-wrapper -->
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      document.getElementById('hamburger-menu').classList.toggle('open');
+    });
+    var prevUrl = '../katherine-harvey-antibes/';
+    var nextUrl = '../concentration-rehearsal/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>

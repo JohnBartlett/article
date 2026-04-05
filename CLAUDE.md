@@ -21,6 +21,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography (My Silk Roads column)
 - Jen Huang — Magazine Intern (UIC student)
+- Emma Muhleman (`emuhl2@uic.edu`) — Magazine Intern (UIC student)
 - Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
 - Elizabeth Dunlop Richter — Travel & Culture
 - David A. F. Sweet — Unsung Gems column
@@ -89,6 +90,7 @@ git add editors/edition.html editors/index.html && git commit -m "Update dev2 pr
 | Skill | Purpose |
 |---|---|
 | `/check-emails` | Check Judy's emails and FormSubmit votes; apply changes; commit to dev2 |
+| `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
@@ -198,7 +200,7 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │       └── biba-palm-springs/          (photos only; article pending)
 ```
 
-## Current Homepage Article Order (March 29 edition, in progress)
+## Current Homepage Article Order (March 29 edition — staged, publishing 10pm March 28)
 
 This order is used for keyboard navigation (N/P keys cycle through):
 
@@ -206,11 +208,10 @@ This order is used for keyboard navigation (N/P keys cycle through):
 2. **An Island Idyll** — Susan Aurinko
 3. **Marwen: Fostering Creativity for the Next Generation** — Jen Huang
 4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
-5. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
-
-More articles incoming: Biba Roesch (Palm Springs — article from Steve Marrs, Biba's contact), Judy (Driehaus Museum), Marcy Carmack (Fashion Trends), John Bartlett.
-
-Judy's preferred order once all articles arrive: Biba near top, John near top, Marwen + American Writers Museum further down, Landmarks + Driehaus further down.
+5. **Tiffany at the Driehaus Museum: Chicago Can't Get Enough** — Judy Carmack Bross
+6. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
+7. **The Shape of Spring** — Marcy Carmack
+8. **Biba's Favorite Things: Palm Springs** — Biba Roesch
 
 Past editions in footer: March 22, March 15, March 8, March 1.
 
@@ -265,6 +266,9 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 
 **Sources:**
 - Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, bio updates, photo requests, text corrections
+- Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (e.g. Katherine Harvey's articles)
+- Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town column
+- Emma Muhleman (`emuhl2@uic.edu`) — article content and photos (intern, UIC)
 - FormSubmit (`submissions@formsubmit.co` → `editor@2ccmag.com`) — reader comments and Quick Votes
 
 **What to expect from FormSubmit:**

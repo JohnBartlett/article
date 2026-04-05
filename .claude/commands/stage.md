@@ -20,6 +20,12 @@ git rm <conflicted-file>
 - `editions/*/datebook2.html`, `datebook3.html`, `datebook4.html` — draft datebook iterations
 - `future-articles/*/index.html` — unpublished drafts held in future-articles/
 
+**Always remove the `editors/` folder from dev — it is internal-only:**
+```
+git rm -rf editors/
+```
+The `editors/` folder contains the internal editors' hub (edition status, comments, stats pages) and must never appear on dev or master. Use `git rm -rf` to force-remove it since the merge will have staged its files.
+
 ## Step 2 — Comment out the internal-nav block in index.html
 
 The `<!-- dev2-only -->` internal editors menu must **not** appear on dev or master. After the merge, open `index.html` and wrap the block in a comment:
