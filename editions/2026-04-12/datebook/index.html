@@ -249,10 +249,10 @@
         </figure>
         <div class="event-list">
 
-          <div class="event-entry past">
+          <div class="event-entry">
             <div class="event-org">Renaissance Society</div>
             <div class="event-date-row">
-              <span class="event-date">Wednesday, April 8 <span class="past-badge">Past</span></span>
+              <span class="event-date">Wednesday, April 8</span>
               <span class="event-time">7:00 &ndash; 10:00 p.m.</span>
             </div>
             <h2 class="event-name">RenBen 2026</h2>
@@ -263,24 +263,24 @@
             </div>
           </div>
 
-          <div class="event-entry past">
+          <div class="event-entry">
             <div class="event-org">Intuit Art Museum</div>
             <div class="event-date-row">
-              <span class="event-date">Friday, April 10 <span class="past-badge">Past</span></span>
+              <span class="event-date">Friday, April 10</span>
               <span class="event-time">5:30 p.m.</span>
             </div>
             <h2 class="event-name">Life is an Art: IAM the Party</h2>
-            <p class="event-description">Intuit Art Museum (IAM) celebrates the first anniversary of its museum expansion with this &ldquo;Life is an Art&rdquo;-themed gala, where guests are invited to dress creatively and be the artwork. Timed to coincide with EXPO Art Week, the gala event is co-hosted by Kahil El&rsquo;Zabar and Tony Karman and honors internationally celebrated artists Nick Cave and Bob Faust with the Trendsetter Award, and beloved Chicago art educator Jerry Stefl with the Visionary Award.</p>
+            <p class="event-description">Intuit Art Museum (IAM) celebrates the first anniversary of its museum expansion with this &ldquo;Life is an Art&rdquo;-themed gala, where guests are invited to dress creatively and be the artwork. Timed to coincide with EXPO Art Week, the gala event is co-hosted by Kahil El&rsquo;Zabar and Tony Karman and honors internationally celebrated artists Nick Cave and Bob Faust with the Trendsetter Award, and beloved Chicago art educator Jerry Stefl with the Visionary Award. IAM partners with the Museum of House and Gertie for the &ldquo;Art After Dark Dance Party&rdquo; featuring DJ Lady D and local celebrity DJs.</p>
             <div class="event-meta">
               <span class="venue">City Hall Events</span><br>
               838 West Kinzie Street, Chicago
             </div>
           </div>
 
-          <div class="event-entry past">
+          <div class="event-entry">
             <div class="event-org">PAWS Chicago</div>
             <div class="event-date-row">
-              <span class="event-date">Friday, April 10 <span class="past-badge">Past</span></span>
+              <span class="event-date">Friday, April 10</span>
               <span class="event-time">7:00 &ndash; 11:00 p.m.</span>
             </div>
             <h2 class="event-name">Animal Magnetism</h2>
@@ -802,6 +802,27 @@
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
+  </script>
+
+  <script>
+  (function() {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('.event-entry').forEach(function(entry) {
+      var dateSpan = entry.querySelector('.event-date');
+      if (!dateSpan) return;
+      var dateText = dateSpan.textContent.trim().replace(/^[A-Za-z]+,\s*/, '');
+      var eventDate = new Date(dateText + ', ' + new Date().getFullYear());
+      eventDate.setHours(0, 0, 0, 0);
+      if (eventDate < today) {
+        entry.classList.add('past');
+        var badge = document.createElement('span');
+        badge.className = 'past-badge';
+        badge.textContent = 'Past';
+        dateSpan.appendChild(badge);
+      }
+    });
+  })();
   </script>
 
 </body>
