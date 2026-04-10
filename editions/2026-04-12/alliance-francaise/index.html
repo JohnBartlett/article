@@ -44,7 +44,10 @@
     figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
     .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
     .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; }
-    .back-link:hover .nav-label { text-decoration: underline; }
+    .back-link:hover .nav-dir { text-decoration: underline; }
+    .nav-text { display: flex; flex-direction: column; gap: 2px; }
+    .nav-dir { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-style: italic; color: #555; text-transform: none; letter-spacing: 0; line-height: 1.3; max-width: 180px; }
     .nav-thumb { width: 44px; height: 44px; object-fit: cover; border-radius: 3px; display: block; flex-shrink: 0; }
     .back-link:hover { color: #d41f1f; }
     footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
@@ -232,8 +235,8 @@
     </div><!-- end feedback widget -->
 
     <div class="edition-nav">
-      <a href="../natya-dance-theatre/" class="back-link"><img class="nav-thumb" src="../natya-dance-theatre/1 Cover Natya Dance.jpg" alt="Natya Dance Theatre"><span class="nav-label">&larr; Previous</span></a>
-      <a href="../datebook/" class="back-link"><span class="nav-label">Next &rarr;</span><img class="nav-thumb" src="../datebook/photo-april.jpg" alt="DateBook"></a>
+      <a href="../natya-dance-theatre/" class="back-link"><img class="nav-thumb" src="../natya-dance-theatre/1 Cover Natya Dance.jpg" alt="Natya Dance Theatre"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span></span></a>
+      <a href="../datebook/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">DateBook</span></span><img class="nav-thumb" src="../datebook/photo-april.jpg" alt="DateBook"></a>
     </div>
 
   </div><!-- end article-wrapper -->
