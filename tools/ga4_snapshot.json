@@ -1,52 +1,52 @@
 {
   "property_id": "523654462",
-  "date_range": "2026-03-03 to 2026-04-02",
-  "updated": "2026-04-02 08:45",
+  "date_range": "2026-03-08 to 2026-04-07",
+  "updated": "2026-04-07 13:30",
   "totals": {
-    "activeUsers": 2401,
-    "sessions": 3920,
-    "screenPageViews": 7587
+    "activeUsers": 2346,
+    "sessions": 3927,
+    "screenPageViews": 7239
   },
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": 2572
+      "screenPageViews": 2653
     },
     {
       "pagePath": "/editions/2026-03-08/rebecca-tilles/",
-      "screenPageViews": 278
+      "screenPageViews": 293
     },
     {
       "pagePath": "/about",
-      "screenPageViews": 259
+      "screenPageViews": 283
     },
     {
       "pagePath": "/editions/2026-03-08/datebook/",
-      "screenPageViews": 247
+      "screenPageViews": 246
     },
     {
       "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
-      "screenPageViews": 183
-    },
-    {
-      "pagePath": "/editions/2026-03-08/you-are-seated/",
-      "screenPageViews": 175
-    },
-    {
-      "pagePath": "/editions/2026-03-08/where-care-happens/",
-      "screenPageViews": 170
+      "screenPageViews": 184
     },
     {
       "pagePath": "/editions/2026-03-29/biba-palm-springs/",
-      "screenPageViews": 168
+      "screenPageViews": 179
+    },
+    {
+      "pagePath": "/editions/2026-03-29/fashion-trends/",
+      "screenPageViews": 169
+    },
+    {
+      "pagePath": "/editions/2026-03-08/where-care-happens/",
+      "screenPageViews": 158
+    },
+    {
+      "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
+      "screenPageViews": 157
     },
     {
       "pagePath": "/editions/2026-03-15/guardian-san-pietro/",
-      "screenPageViews": 154
-    },
-    {
-      "pagePath": "/editions/2026-03-22/chicago-chamber-music-society/",
-      "screenPageViews": 148
+      "screenPageViews": 156
     }
   ]
 }
