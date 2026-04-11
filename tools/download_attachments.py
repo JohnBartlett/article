@@ -55,8 +55,7 @@ if __name__ == "__main__":
     print("Access token obtained.\n")
 
     jobs = [
-        ("19d5a8976ca7fe52", "/tmp/maria_felix_new"),
-        ("19d5a8871905c47d", "/tmp/maria_felix_new"),
+        ("19d7d9a7a80d533e", "/tmp/fpm_haunted2"),
     ]
     for msg_id, out_dir in jobs:
         print(f"Downloading from message {msg_id} → {out_dir}")
