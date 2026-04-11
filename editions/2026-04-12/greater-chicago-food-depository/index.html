@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Serving Greater Chicago: The Greater Chicago Food Depository | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 840px; margin: 0 auto 60px; padding: 0 32px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-intro { font-size: 18px; line-height: 1.75; color: #333; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
+    .back-link { display: inline-flex; align-items: center; gap: 10px; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; }
+    .back-link:hover .nav-dir { text-decoration: underline; }
+    .nav-text { display: flex; flex-direction: column; gap: 2px; }
+    .nav-dir { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .nav-title { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-style: italic; color: #555; text-transform: none; letter-spacing: 0; line-height: 1.3; max-width: 180px; }
+    .nav-thumb { width: 80px; height: 120px; object-fit: cover; border-radius: 3px; display: block; flex-shrink: 0; transition: transform 0.2s, opacity 0.2s; }
+    .back-link:hover { color: #d41f1f; }
+    .back-link:hover .nav-thumb { transform: scale(1.04); opacity: 0.88; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      .logo-container img { width: 280px; }
+      h1.article-title { font-size: 28px; }
+      .article-wrapper { padding: 0 16px; }
+      .edition-nav { flex-direction: column; align-items: flex-start; }
+      .nav-thumb { width: 64px; height: 96px; }
+      .nav-title { max-width: 100%; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
+      </div>
+    </nav>
+    <div class="hamburger-menu">
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about.html">About</a>
+      <a href="../../../subscribe.html">Subscribe</a>
+      <a href="../../../advertise.html">Advertise</a>
+    </div>
+  </header>
+
+  <div class="article-wrapper">
+
+    <p class="article-category">Community &amp; Philanthropy</p>
+    <h1 class="article-title">Serving Greater Chicago: The Greater Chicago Food Depository</h1>
+    <p class="article-meta">By <a href="../../../about.html" style="color:#888;text-decoration:none;">Jen Huang</a></p>
+
+    <figure>
+      <img src="gcfd-1.jpg" alt="Greater Chicago Food Depository sign">
+    </figure>
+
+    <p class="article-intro">With beginnings stemming from the late 1970s, the Greater Chicago Food Depository grew from a food bank to a large complex that aims to eliminate hunger. As a nonprofit organization that has served the Greater Chicagoland area for 40 years, the GCFD recognizes the importance of having access to three meals a day.</p>
+
+    <div class="article-body">
+
+      <p>From hot meals to pantry-staple food drives and food banks, the GCFD's mission to fight hunger is serving approximately two hundred thousand families each month. Nearly one in five households in Chicago are currently experiencing food insecurity of some sort, with even more families at risk due to the loss of SNAP benefits. The GCFD's mission, however, extends beyond physical food — through advocacy, volunteers and staff alike use their voices to spread awareness of food insecurity reaching far beyond the Chicagoland area. Vulnerable populations are welcome to receive food, as a right, without fear of judgment.</p>
+
+      <p>The next goal of the GCFD is to ensure equal rights, equal access, and a secure future for food — one where nobody has to go hungry. Advocacy means planning for the future, not just the present.</p>
+
+      <figure>
+        <img src="gcfd-2.jpg" alt="Map of Chicago on the wall at the GCFD">
+        <figcaption>A map of all the areas the Greater Chicago Food Depository serves.</figcaption>
+      </figure>
+
+      <p>The GCFD employs a fleet of 80-plus vehicles to deliver food and stock food banks around the Chicagoland area, managing immense distribution, sorting, and repackaging demands. The organization purchases a large amount of food at bulk prices, utilizing monetary donations to their utmost. This purchased food, along with donated food from many locations and government programs, supplies the Chicagoland area. As the volume of food handled is enormous, volunteers are necessary to guarantee that enough food is sorted and processed in time.</p>
+
+      <figure>
+        <img src="gcfd-3.jpg" alt="Loading dock at the Greater Chicago Food Depository">
+        <figcaption>The loading dock, filled with food that needs sorting and food ready to go out.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="gcfd-4.jpg" alt="Overhead view of GCFD operations">
+        <figcaption>An overhead view of operations and pallets of food that need to be broken down.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="gcfd-5.jpg" alt="Overhead view of pallets at the GCFD">
+        <figcaption>A more direct overhead view of the pallets, soon to feed a neighbor in need.</figcaption>
+      </figure>
+
+      <p>Without volunteers, it would be much more difficult for the GCFD to supply food across the region. A typical volunteer session involves repacking food, sorting produce, or preparing boxes for pantries. Repacks generally follow one format: measuring, separating, or reorganizing existing food for ease of distribution. Sorting sessions focus on checking the quality of produce and separating good produce from bad.</p>
+
+      <p>A typical group divides into different roles — for example, a pantry-staple box session might include box-making, food packing, trash running, box taping, and pallet stacking. For those with accessibility or medical needs, roles requiring little to no lifting are available, and accommodations can be arranged by contacting the GCFD before the session.</p>
+
+      <figure>
+        <img src="gcfd-6.jpg" alt="Thank you wall at the Greater Chicago Food Depository">
+        <figcaption>The GCFD is always thankful for their many volunteers, who keep the mission possible.</figcaption>
+      </figure>
+
+      <p>Although the GCFD handles enormous quantities of sorting, repackaging, and delivering, it also operates a kitchen that prepares fresh, nutritious, and healthy meals — offering hot food for those who need it. Part of the facility is also a hydroponics lab, where fresh herbs are grown year-round. Utilizing methods that conserve water and space, the GCFD maximizes what it can produce to provide fresh meals to the Chicagoland area.</p>
+
+      <figure>
+        <img src="gcfd-7.jpg" alt="Hydroponics lab before sprouting">
+        <figcaption>The hydroponics lab, before the crops have begun to sprout.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="gcfd-8.jpg" alt="Hydroponics lab with basil and dill growing">
+        <figcaption>The hydroponics lab with basil and dill growing.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="gcfd-9.jpg" alt="Kitchen space at the GCFD">
+        <figcaption>The kitchen space where the GCFD prepares hot meals for those who need it.</figcaption>
+      </figure>
+
+      <p>Depending on the food pantry, soup kitchen, or on-site distribution point, elderly individuals and people with disabilities may be able to send a friend or family member on their behalf with a waiver — increasing the accessibility of food support. Rules and requirements for receiving assistance may differ by location, so it is always worth calling ahead.</p>
+
+      <figure>
+        <img src="gcfd-10.jpg" alt="Boxes of bread sorted and quality-checked by volunteers">
+        <figcaption>Boxes filled with bread, sorted and quality-checked by volunteers before they go out to pantries.</figcaption>
+      </figure>
+
+      <p>The Greater Chicago Food Depository is always looking for volunteers and support. Visit <a href="https://www.chicagosfoodbank.org/" style="color:#b51c20;">chicagosfoodbank.org</a> to volunteer, donate, or advocate against food insecurity — or to locate a food pantry, find cooking videos, or get help applying for SNAP or Medicaid benefits.</p>
+
+    </div><!-- end article-body -->
+
+    <div class="edition-nav">
+      <a href="../alliance-francaise/" class="back-link"><img class="nav-thumb" src="../alliance-francaise/chandler-burr-cover.png" alt="Alliance Française"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Coming to the Alliance Française — Scent: The Invisible Art</span></span></a>
+      <a href="../natya-dance-theatre/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span></span><img class="nav-thumb" src="../natya-dance-theatre/1 Cover Natya Dance.jpg" alt="Natya Dance Theatre"></a>
+    </div>
+
+  </div><!-- end article-wrapper -->
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/classicchicagomag" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomag" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+    <p class="copyright">&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') {
+        window.location.href = '../natya-dance-theatre/';
+      } else if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') {
+        window.location.href = '../alliance-francaise/';
+      } else if (e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85);
+      } else if (e.key === 'PageUp') {
+        e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85);
+      } else if (e.key === '?') {
+        alert('Keyboard shortcuts:\nN or → : Next article\nP or ← : Previous article\nSpace/PageDown: Scroll down\nPageUp: Scroll up');
+      }
+    });
+  </script>
+
+</body>
+</html>
