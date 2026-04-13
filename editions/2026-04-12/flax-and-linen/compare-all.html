@@ -170,7 +170,8 @@
       }
     `;
 
-    let syncing = false;
+    let syncTimer = null;
+    let isSyncing = false;
 
     function injectCSS(iframe) {
       try {
@@ -184,19 +185,19 @@
 
     function getScrollPct(iframe) {
       try {
+        const win = iframe.contentWindow;
         const doc = iframe.contentDocument;
-        const el = doc.scrollingElement || doc.documentElement;
-        const max = el.scrollHeight - el.clientHeight;
-        return max > 0 ? el.scrollTop / max : 0;
+        const maxScroll = doc.documentElement.scrollHeight - win.innerHeight;
+        return maxScroll > 0 ? win.scrollY / maxScroll : 0;
       } catch(e) { return 0; }
     }
 
     function setScrollPct(iframe, pct) {
       try {
+        const win = iframe.contentWindow;
         const doc = iframe.contentDocument;
-        const el = doc.scrollingElement || doc.documentElement;
-        const max = el.scrollHeight - el.clientHeight;
-        el.scrollTop = pct * max;
+        const maxScroll = doc.documentElement.scrollHeight - win.innerHeight;
+        win.scrollTo(0, pct * maxScroll);
       } catch(e) {}
     }
 
@@ -204,18 +205,18 @@
       iframe.addEventListener('load', () => {
         injectCSS(iframe);
 
-        // Attach scroll listener inside the iframe
+        // Listen on contentWindow — scroll events fire on window, not scrollingElement
         try {
-          const doc = iframe.contentDocument;
-          const el = doc.scrollingElement || doc.documentElement;
-          el.addEventListener('scroll', () => {
-            if (!syncCheck.checked || syncing) return;
-            syncing = true;
+          iframe.contentWindow.addEventListener('scroll', () => {
+            if (!syncCheck.checked || isSyncing) return;
+            isSyncing = true;
             const pct = getScrollPct(iframe);
             frames.forEach(f => {
               if (f !== iframe) setScrollPct(f, pct);
             });
-            requestAnimationFrame(() => { syncing = false; });
+            // Release lock after programmatic scrolls have settled
+            clearTimeout(syncTimer);
+            syncTimer = setTimeout(() => { isSyncing = false; }, 80);
           }, { passive: true });
         } catch(e) {}
       });
