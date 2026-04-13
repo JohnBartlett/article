@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flax Article — All 5 Versions Side by Side</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; background: #1a1a1a; }
+
+    #top-bar {
+      display: flex;
+      align-items: stretch;
+      height: 48px;
+      background: #111;
+      border-bottom: 2px solid #333;
+      flex-shrink: 0;
+    }
+    .col-label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0 6px;
+      text-align: center;
+      line-height: 1.3;
+      border-right: 1px solid #333;
+      gap: 6px;
+      cursor: default;
+    }
+    .col-label:last-child { border-right: none; }
+    .col-label .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .label-live   { color: #6ecf6e; }  .dot-live   { background: #6ecf6e; }
+    .label-import { color: #f0c040; }  .dot-import { background: #f0c040; }
+    .label-draft  { color: #6ab0f0; }  .dot-draft  { background: #6ab0f0; }
+    .label-corr   { color: #f08080; }  .dot-corr   { background: #f08080; }
+    .label-rec    { color: #c090f0; }  .dot-rec    { background: #c090f0; }
+
+    #sync-toggle {
+      display: flex; align-items: center; gap: 6px;
+      padding: 0 14px; border-right: 1px solid #333;
+      font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa;
+      white-space: nowrap; flex-shrink: 0; cursor: pointer;
+      user-select: none;
+    }
+    #sync-toggle input { cursor: pointer; }
+    #sync-toggle:hover { color: #fff; }
+
+    #back-btn {
+      display: flex; align-items: center; padding: 0 14px;
+      font-family: 'Lato', sans-serif; font-size: 11px; color: #aaa;
+      text-decoration: none; border-right: 1px solid #333;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    #back-btn:hover { color: #fff; }
+
+    #frame-row {
+      display: flex;
+      height: calc(100vh - 48px);
+      overflow: hidden;
+    }
+
+    .frame-col {
+      flex: 1;
+      border-right: 2px solid #333;
+      overflow: hidden;
+      position: relative;
+    }
+    .frame-col:last-child { border-right: none; }
+
+    .frame-col iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* color accent bar at top of each column */
+    .frame-col::before {
+      content: '';
+      display: block;
+      height: 3px;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+    }
+    .col-live::before   { background: #6ecf6e; }
+    .col-import::before { background: #f0c040; }
+    .col-draft::before  { background: #6ab0f0; }
+    .col-corr::before   { background: #f08080; }
+    .col-rec::before    { background: #c090f0; }
+  </style>
+</head>
+<body>
+
+  <div id="top-bar">
+    <a id="back-btn" href="../../../editors/flax-comparison.html">&#8592; Comparison</a>
+    <label id="sync-toggle">
+      <input type="checkbox" id="sync-check" checked>
+      Sync scroll
+    </label>
+    <div class="col-label label-live">  <span class="dot dot-live"></span>Published</div>
+    <div class="col-label label-import"><span class="dot dot-import"></span>Verbatim</div>
+    <div class="col-label label-draft"> <span class="dot dot-draft"></span>Editorial Draft</div>
+    <div class="col-label label-corr">  <span class="dot dot-corr"></span>Corrected</div>
+    <div class="col-label label-rec">   <span class="dot dot-rec"></span>&#9733; Reconciled</div>
+  </div>
+
+  <div id="frame-row">
+    <div class="frame-col col-live">
+      <iframe id="f1" src="index.html"      title="Published"></iframe>
+    </div>
+    <div class="frame-col col-import">
+      <iframe id="f2" src="import.html"     title="Verbatim Import"></iframe>
+    </div>
+    <div class="frame-col col-draft">
+      <iframe id="f3" src="draft.html"      title="Editorial Draft"></iframe>
+    </div>
+    <div class="frame-col col-corr">
+      <iframe id="f4" src="corrected.html"  title="Corrected"></iframe>
+    </div>
+    <div class="frame-col col-rec">
+      <iframe id="f5" src="reconciled.html" title="Reconciled"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const frames = [
+      document.getElementById('f1'),
+      document.getElementById('f2'),
+      document.getElementById('f3'),
+      document.getElementById('f4'),
+      document.getElementById('f5'),
+    ];
+    const syncCheck = document.getElementById('sync-check');
+
+    // CSS to inject into each iframe to strip chrome and resize images
+    const INJECTED_CSS = `
+      header, footer, .edition-nav, .draft-banner,
+      div[style*="background:#fff3cd"], div[style*="background:#e8f4e8"],
+      div[style*="background:#fde8e8"], div[style*="background:#f0e8f5"] {
+        display: none !important;
+      }
+      .article-wrapper {
+        padding: 12px 10px !important;
+        margin: 0 auto 20px !important;
+      }
+      .article-category { margin-top: 12px !important; }
+      body { overflow-y: scroll !important; }
+      figure img { width: 100% !important; height: auto !important; }
+      .figure-pair { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      h1.article-title { font-size: 22px !important; }
+      .article-intro { font-size: 15px !important; }
+      .article-body p { font-size: 14px !important; margin-bottom: 14px !important; }
+      .article-body h2 { font-size: 18px !important; margin: 24px 0 10px !important; }
+      figure { margin: 20px 0 !important; }
+      figure figcaption { font-size: 11px !important; }
+      blockquote { margin: 16px 0 !important; }
+      .article-notes { font-size: 11px !important; }
+      @media (max-width: 9999px) {
+        .figure-pair { grid-template-columns: 1fr 1fr !important; }
+      }
+    `;
+
+    let syncing = false;
+
+    function injectCSS(iframe) {
+      try {
+        const doc = iframe.contentDocument;
+        if (!doc) return;
+        const style = doc.createElement('style');
+        style.textContent = INJECTED_CSS;
+        doc.head.appendChild(style);
+      } catch(e) {}
+    }
+
+    function getScrollPct(iframe) {
+      try {
+        const doc = iframe.contentDocument;
+        const el = doc.scrollingElement || doc.documentElement;
+        const max = el.scrollHeight - el.clientHeight;
+        return max > 0 ? el.scrollTop / max : 0;
+      } catch(e) { return 0; }
+    }
+
+    function setScrollPct(iframe, pct) {
+      try {
+        const doc = iframe.contentDocument;
+        const el = doc.scrollingElement || doc.documentElement;
+        const max = el.scrollHeight - el.clientHeight;
+        el.scrollTop = pct * max;
+      } catch(e) {}
+    }
+
+    frames.forEach(iframe => {
+      iframe.addEventListener('load', () => {
+        injectCSS(iframe);
+
+        // Attach scroll listener inside the iframe
+        try {
+          const doc = iframe.contentDocument;
+          const el = doc.scrollingElement || doc.documentElement;
+          el.addEventListener('scroll', () => {
+            if (!syncCheck.checked || syncing) return;
+            syncing = true;
+            const pct = getScrollPct(iframe);
+            frames.forEach(f => {
+              if (f !== iframe) setScrollPct(f, pct);
+            });
+            requestAnimationFrame(() => { syncing = false; });
+          }, { passive: true });
+        } catch(e) {}
+      });
+    });
+  </script>
+
+</body>
+</html>
