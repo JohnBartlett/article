@@ -1,8 +1,8 @@
 {
-  "total_impressions": 883,
+  "total_impressions": 884,
   "days": 30,
-  "date_range": "2026-03-17 to 2026-04-16",
-  "updated": "April 16, 2026",
+  "date_range": "2026-03-18 to 2026-04-17",
+  "updated": "April 17, 2026",
   "by_article": [
     {
       "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
@@ -26,7 +26,7 @@
     },
     {
       "pagePath": "/editions/2026-03-29/american-writers-museum/",
-      "impressions": 58
+      "impressions": 59
     },
     {
       "pagePath": "/editions/2026-03-29/marwen/",

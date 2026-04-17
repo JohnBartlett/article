@@ -1,20 +1,20 @@
 {
   "property_id": "523654462",
-  "date_range": "2026-03-17 to 2026-04-16",
-  "updated": "2026-04-16 09:58",
+  "date_range": "2026-03-18 to 2026-04-17",
+  "updated": "2026-04-17 16:18",
   "totals": {
-    "activeUsers": 2428,
-    "sessions": 3880,
-    "screenPageViews": 6432
+    "activeUsers": 2392,
+    "sessions": 3836,
+    "screenPageViews": 6398
   },
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": 2901
+      "screenPageViews": 2944
     },
     {
       "pagePath": "/about",
-      "screenPageViews": 335
+      "screenPageViews": 341
     },
     {
       "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
@@ -26,18 +26,18 @@
     },
     {
       "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
-      "screenPageViews": 187
+      "screenPageViews": 188
     },
     {
       "pagePath": "/editions/2026-03-29/fashion-trends/",
       "screenPageViews": 173
     },
     {
-      "pagePath": "/editions/2026-03-08/datebook/",
-      "screenPageViews": 170
+      "pagePath": "/editions/2026-03-22/jessie-mueller/",
+      "screenPageViews": 168
     },
     {
-      "pagePath": "/editions/2026-03-22/jessie-mueller/",
+      "pagePath": "/editions/2026-03-08/datebook/",
       "screenPageViews": 167
     },
     {
