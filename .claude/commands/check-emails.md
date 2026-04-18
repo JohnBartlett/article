@@ -9,63 +9,18 @@ Check all editorial emails and FormSubmit votes, apply any changes, and commit t
 - Emma Muhleman (emuhl2@uic.edu) — article content and photos (intern)
 - FormSubmit (submissions@formsubmit.co) — reader comments and Quick Votes
 
-## Step 1 — Fetch emails via Python (NOT MCP — the Gmail MCP proxy is unreliable)
+## Step 1 — Fetch emails
+
+Use `tools/gmail_api.py` for all Gmail access:
 
 ```python
-import os, json, base64, email as emaillib, requests
+import sys; sys.path.insert(0, 'tools')
+from gmail_api import get_access_token, search_messages, get_metadata, get_body, list_attachments, download_attachment
 
-GMAIL_MCP_CREDS = os.path.expanduser("~/.gmail-mcp/credentials.json")
-GMAIL_MCP_KEYS  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
-
-def get_access_token():
-    with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
-    with open(GMAIL_MCP_KEYS)  as f: keys  = json.load(f)
-    web = keys.get("web") or keys.get("installed") or {}
-    resp = requests.post("https://oauth2.googleapis.com/token", data={
-        "client_id": web["client_id"], "client_secret": web["client_secret"],
-        "refresh_token": creds["refresh_token"], "grant_type": "refresh_token",
-    })
-    resp.raise_for_status()
-    return resp.json()["access_token"]
-
-def get_body(token, msg_id):
-    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
-        headers={"Authorization": f"Bearer {token}"}, params={"format": "raw"})
-    r.raise_for_status()
-    raw = base64.urlsafe_b64decode(r.json()["raw"] + "==")
-    msg = emaillib.message_from_bytes(raw)
-    for part in msg.walk():
-        if part.get_content_type() == "text/plain":
-            payload = part.get_payload(decode=True)
-            if payload:
-                return payload.decode(part.get_content_charset() or "utf-8", errors="replace")
-    return ""
-
-def list_attachments(token, msg_id):
-    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
-        headers={"Authorization": f"Bearer {token}"}, params={"format": "full"})
-    r.raise_for_status()
-    results = []
-    def walk(payload):
-        fn = payload.get("filename", "")
-        att_id = payload.get("body", {}).get("attachmentId", "")
-        if fn and att_id:
-            results.append({"filename": fn, "attachmentId": att_id})
-        for part in payload.get("parts", []):
-            walk(part)
-    walk(r.json()["payload"])
-    return results
-
-def download_attachment(token, msg_id, att_id, dest_path):
-    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}/attachments/{att_id}",
-        headers={"Authorization": f"Bearer {token}"})
-    r.raise_for_status()
-    data = base64.urlsafe_b64decode(r.json()["data"] + "==")
-    with open(dest_path, "wb") as f:
-        f.write(data)
+token = get_access_token()
+messages = search_messages(token,
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR submissions@formsubmit.co) newer_than:2d")
 ```
-
-Search: `from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR submissions@formsubmit.co) newer_than:2d`
 
 Fetch metadata first (From, Subject, Date, Snippet), then fetch full body for messages that look actionable.
 
@@ -73,7 +28,8 @@ Fetch metadata first (From, Subject, Date, Snippet), then fetch full body for me
 
 ### Judy — article text
 - Build article HTML in the correct edition folder using the standard template (GA4-disabled, keyboard nav, feedback widget)
-- Download attached photos to the article folder, name them `<slug>-cover.jpg`, `<slug>-1.jpg`, etc.
+- Download attached photos to the article folder: `download_attachment(token, msg_id, att_id, dest_path)`
+- Name photos `<slug>-cover.jpg`, `<slug>-1.jpg`, etc.
 
 ### Judy — writer bios
 - "at the end of their piece" → add bio block just above the feedback widget in the article HTML
@@ -118,4 +74,4 @@ git push origin dev2
 - Relative paths from articles: `../../../` root assets, `../<sibling>/` siblings
 - BandWith: capital W
 - Email replies: `Dear Judy,` / `Cheers, John` / first person (I/me not we/us)
-- To send email: POST to `https://gmail.googleapis.com/gmail/v1/users/me/messages/send` with base64url-encoded MIME message
+- To send email: `from gmail_api import send_email` then `send_email(token, to, subject, body, cc)`
