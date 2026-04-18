@@ -42,9 +42,14 @@
     .article-info { font-family: 'Lato', sans-serif; font-size: 13px; color: #666; margin: 32px 0 0; padding: 16px 0; border-top: 1px solid #eee; }
     .article-info a { color: #b51c20; text-decoration: none; }
     .article-info a:hover { text-decoration: underline; }
-    .nav-links { display: flex; justify-content: space-between; margin: 48px 0 0; padding: 20px 0; border-top: 1px solid #eee; font-family: 'Lato', sans-serif; font-size: 13px; }
-    .nav-links a { color: #b51c20; text-decoration: none; }
-    .nav-links a:hover { text-decoration: underline; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
+    .edition-nav .back-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%; }
+    .edition-nav .back-link:hover { color: #b51c20; }
+    .nav-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
+    .nav-text { display: flex; flex-direction: column; gap: 4px; }
+    .nav-dir { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; }
+    .nav-title { font-size: 13px; line-height: 1.3; color: #333; }
+    @media (max-width: 600px) { .edition-nav { flex-direction: column; align-items: flex-start; } }
     footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
     @media (max-width: 600px) { .logo-container img { width: 280px; } .article-wrapper { padding: 0 16px; } h1.article-title { font-size: 28px; } }
@@ -100,11 +105,13 @@
 
     </div>
 
-    <p style="margin-top: 32px; font-family: 'Lato', sans-serif; font-size: 14px; color: #666;">Soumiya Erragragui has been an ambassador of language and culture as a teacher previously and now as a cultural diversity advocate who serves as Executive Manager of the Alliance Fran&ccedil;aise de Chicago.</p>
+    <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #eee; font-family: 'Lato', sans-serif; font-size: 14px; color: #555; line-height: 1.6;">
+      <strong><a href="../../../about.html#soumiya-erragragui" style="color: #555; text-decoration: none;">Soumiya Erragragui</a></strong> &mdash; Soumiya Erragragui has been an ambassador of language and culture as a teacher previously and now as a cultural diversity advocate who serves as Executive Manager of the Alliance Fran&ccedil;aise de Chicago.
+    </div>
 
-    <div class="nav-links">
-      <a href="../junior-league-gala/">&larr; Previous</a>
-      <a href="../astrid-greve-spencer/">Next &rarr;</a>
+    <div class="edition-nav">
+      <a href="../junior-league-gala/" class="back-link"><img class="nav-thumb" src="../junior-league-gala/junior-league-cover.jpeg" alt="Junior League Gala"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Junior League of Chicago Gala</span></span></a>
+      <a href="../astrid-greve-spencer/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Leaving Your Mark on the World: Astrid Greve-Spencer</span></span><img class="nav-thumb" src="../astrid-greve-spencer/astrid-headshot.jpeg" alt="Astrid Greve-Spencer"></a>
     </div>
 
   </div>
