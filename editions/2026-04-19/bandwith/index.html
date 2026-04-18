@@ -1,50 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- GA4-disabled
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
   -->
   <meta charset="UTF-8">
-  <title>BandWith | Classic Chicago</title>
+  <title>BandWith: A New Musical Home in East Garfield Park | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    body{margin:0;font-family:Georgia,serif;background:#fff;color:#222;line-height:1.7;}
-    header{padding:20px 0;border-bottom:1px solid #eee;}
-    .logo-container{text-align:center;margin-bottom:20px;}
-    .logo-container img{width:390px;height:auto;}
-    nav{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0;}
-    .nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap;}
-    .nav-inner a{font-family:'Lato',sans-serif;font-size:16px;color:#d41f1f;text-decoration:none;text-transform:uppercase;margin:0 15px;padding:5px 0;letter-spacing:.05em;}
-    .article-wrapper{max-width:840px;margin:0 auto 60px;padding:0 32px;}
-    .article-category{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;color:#b51c20;text-transform:uppercase;letter-spacing:.2em;text-align:center;margin:40px 0 12px;}
-    h1.article-title{font-family:'Playfair Display',Georgia,serif;font-size:38px;font-weight:700;line-height:1.25;text-align:center;margin:0 0 16px;color:#111;}
-    .article-meta{font-family:'Lato',sans-serif;font-size:13px;color:#888;text-align:center;text-transform:uppercase;letter-spacing:.08em;margin-bottom:32px;border-bottom:1px solid #eee;padding-bottom:24px;}
-    figure{margin:36px 0;}figure img{width:100%;height:auto;display:block;}
-    .draft-banner{background:#fde8e8;border:1px solid #e8443a;border-radius:4px;padding:10px 16px;margin:24px 0;font-family:'Lato',sans-serif;font-size:13px;color:#7a1010;text-align:center;}
-    footer{background:#333;color:#fff;padding:40px 20px;text-align:center;margin-top:60px;}
-    .copyright{font-family:'Lato',sans-serif;font-size:14px;color:#aaa;}
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 840px; margin: 0 auto 60px; padding: 0 32px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    .article-body blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 3px solid #b51c20; font-style: italic; color: #444; font-size: 17px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin-top: 8px; text-align: center; font-style: italic; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
+    .edition-nav .back-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%; }
+    .edition-nav .back-link:hover { color: #b51c20; }
+    .nav-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
+    .nav-text { display: flex; flex-direction: column; gap: 4px; }
+    .nav-dir { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; }
+    .nav-title { font-size: 13px; line-height: 1.3; color: #333; }
+    @media (max-width: 600px) { .edition-nav { flex-direction: column; align-items: flex-start; } }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      .logo-container img { width: 280px; }
+      h1.article-title { font-size: 28px; }
+      .article-wrapper { padding: 0 16px; }
+      .article-body p { font-size: 16px; }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
-    <div class="logo-container"><a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a></div>
-    <nav><div class="nav-inner">
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
+      </div>
+    </nav>
+    <div class="hamburger-menu">
       <a href="../../../index.html">Home</a>
       <a href="../../../about.html">About</a>
       <a href="../../../subscribe.html">Subscribe</a>
       <a href="../../../advertise.html">Advertise</a>
-    </div></nav>
+    </div>
   </header>
+
   <div class="article-wrapper">
-    <div class="draft-banner">&#9998; Article in progress &mdash; arriving from Ana Baca</div>
-    <p class="article-category">Arts &amp; Culture</p>
-    <h1 class="article-title">BandWith</h1>
+
+    <p class="article-category">Arts &amp; Community</p>
+    <h1 class="article-title">BandWith: A New Musical Home in East Garfield Park</h1>
     <p class="article-meta">By Judy Carmack Bross &middot; April 19, 2026</p>
-    <figure><img src="bandwith-cover.png" alt="BandWith"></figure>
-  </div>
-  <footer><div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div></footer>
+
+    <figure>
+      <img src="bandwith-cover.jpg" alt="BandWith Chicago performing arts center">
+      <figcaption><em>&ldquo;BandWith Chicago&rsquo;s new performing arts center feels alive and hopeful, full of music, energy, and joy. When students, teachers, and community members are all here, it becomes a true creative home.&rdquo;</em> &mdash; Anna Palomino, Founder of BandWith</figcaption>
+    </figure>
+
+    <figure>
+      <img src="bandwith-mural.jpg" alt="Talented BandWith students">
+      <figcaption>Talented BandWith students</figcaption>
+    </figure>
+
+    <div class="article-body">
+
+      <p>Nothing could be more celebratory than a band of young musicians and here in Chicago the sounds from a former casket company in East Garfield Park are reverberating across our city, with dancers, singers, intergenerational community members and professional talents mixing in the mecca&rsquo;s magic as well.</p>
+
+      <p>Just two months ago BandWith Chicago moved one block in East Garfield Park from small classroom spaces to a $25,000 sq. ft. adaptive reuse of a former factory on South California. Dedicated rooms for teaching a variety of instruments, choir and dance, rehearsal rooms and performance spaces, an industry professional recording studio, a large choir space and a community caf&eacute; filled with energy and sound. Bright colors assigned to different instrument rooms, high beamed ceilings, and lots of light welcome all.</p>
+
+      <p>Already serving 250 people weekly in just two months, BandWith lives into its mission daily: <em>To promote wellness within underserved Chicago communities by providing lasting access to exceptional performing arts instruction</em>. Since 2013, BandWith has served over 800 young people, ages 5&ndash;21, connecting them with high-quality teaching artists and mentors. Year-round, no-cost music and dance instruction, ensemble training, intergenerational programs and community events and teachers who are not only educators but also professional performers as well make it a special space.</p>
+
+      <p>Anna Palomino is the Founder of BandWith and a leader who can both play most band instruments as well as build one of Chicago&rsquo;s most exciting opportunities. She took on a tour through facilities restructured by Bulley &amp; Andrews and designed by Lamar Johnson Collaborative.</p>
+
+      <figure>
+        <img src="bandwith-palomino.jpg" alt="Anna Palomino, founder of BandWith">
+        <figcaption>Anna Palomino, founder of BandWith</figcaption>
+      </figure>
+
+      <blockquote>&ldquo;It&rsquo;s a true community hub. We host First Fridays with dance and live music, a monthly Listening Series in the Music Library, intergenerational classes, and youth programs. We&rsquo;ve partnered with organizations across the city and hosted everything from Masterclasses to town halls. With the coffee shop which we have named Unison now open, we&rsquo;re excited to welcome even more of the community into our spaces.&rdquo;</blockquote>
+
+      <p>We asked Palomino, who first began the mission by asking people to donate instruments and then to attend student concerts, to tell us about BandWith&rsquo;s path to its new location.</p>
+
+      <blockquote>&ldquo;I started BandWith after my band program at LEARN Campbell was defunded. I pieced together teaching across schools while fundraising to keep the program alive. During COVID we had a moment of quiet to come together as a Board, and with guidance from incredible advisors, we clarified our vision. A series of generous donations made it possible to dream bigger, and the Loyal Casket Company became our home. The whole journey has felt like one miracle after another.&rdquo;</blockquote>
+
+      <blockquote>&ldquo;Every day we&rsquo;re working to reach more community members, expand programs, and fill gaps across ages and disciplines. By hiring exceptional staff and creating real access, we aim to build not just skills, but wellness, confidence, and community.&rdquo;</blockquote>
+
+      <blockquote>&ldquo;Our students are diverse and driven. Some want careers in music, music production, or music education; others are building confidence and finding their voice; all are discovering what&rsquo;s possible.&rdquo;</blockquote>
+
+      <blockquote>&ldquo;Beyond the many documented beneficial effects that studying music has on the mind and body, music and dance can truly change the trajectory of a young person&rsquo;s life. They build confidence, connection, a sense of belonging, and open doors that might otherwise feel out of reach.&rdquo;</blockquote>
+
+      <figure>
+        <img src="bandwith-nickhya.jpg" alt="Guitar Student Nickhya Butts">
+        <figcaption>Guitar Student Nickhya Butts</figcaption>
+      </figure>
+
+      <p>Each month BandWith&rsquo;s First Fridays series offers live music featuring talented local musicians and community dance lessons for all skill levels. April&rsquo;s event drew a lively crowd, featuring Park N Ride Band playing R&amp;B, Soul, Pop and Rock as well as Keema&rsquo;s Kickin&rsquo; Crew teaching line dancing. May&rsquo;s First Friday will feature Dill Costa, a captivating performer whose career began in the vibrant samba schools of Brazil. With deep roots in Afro-Brazilian traditions, she blends elegance, passion, and rhythmic mastery into every performance.</p>
+
+      <figure>
+        <img src="bandwith-khalila.jpg" alt="Dance Student Khalila Thomas">
+        <figcaption>Dance Student Khalila Thomas</figcaption>
+      </figure>
+
+      <p>Once a month on the third Saturday, the Music Library becomes a gathering space for music lovers, storytellers, and curious listeners. With donations from Reckless Records, Delmark Records, and the University of Illinois at Chicago, their music collection can be enjoyed by all visitors.</p>
+
+      <p>BandWith will culminate this season&rsquo;s events on May 3rd with its 10th annual Funky Brunch at the new center. What used to be a 5K run will be replaced with a block party filled with music and dance, welcoming all to attend. Adding to the day&rsquo;s festivity, BandWith will celebrate the Grand Opening of their new coffee shop, Unison.</p>
+
+      <p>We asked Palomino about summer offerings:</p>
+
+      <blockquote>&ldquo;This summer we&rsquo;re really hitting our stride with After School Matters programs in dance, choir, stage band, and drumline. For the wider community, we&rsquo;ll continue First Fridays and launch a Summer Concert Series on the patio, showcasing local talent and a wide variety of musical experiences. Not to mention, our coffee shop, Unison, is officially open and offers daily opportunities to check in with us while enjoying a delicious beverage.&rdquo;</blockquote>
+
+      <p>Kristian, a student in piano and drums, put it this way about being a part of BandWith:</p>
+
+      <blockquote>&ldquo;Music used to be just a hobby, now I see it as my future. BandWith gave me purpose and a path.&rdquo;</blockquote>
+
+      <p><em>For more information about BandWith visit: <a href="https://bandwithchicago.org" target="_blank" rel="noopener">bandwithchicago.org</a></em></p>
+
+      <p style="font-family:'Lato',sans-serif; font-size:13px; color:#999; text-align:center; margin-top:8px;">All photos courtesy of BandWith.</p>
+
+    </div>
+
+    <!-- Feedback Widget -->
+    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+      </div>
+      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+      </div>
+      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
+          <input type="hidden" name="Environment" id="env-tracking">
+          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+        </form>
+      </div>
+      <script>
+        var base = window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+        if (window.location.search.indexOf('feedback=sent') !== -1) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('feedbackConfirm').style.display = 'block';
+        }
+        function submitVote(vote) {
+          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
+          }).catch(function(){});
+          document.getElementById('thumbUp').disabled = true;
+          document.getElementById('thumbDown').disabled = true;
+          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+          document.getElementById('voteConfirm').style.display = 'block';
+        }
+      </script>
+    </div><!-- end feedback widget -->
+
+    <div class="edition-nav">
+      <a href="../daffodils/" class="back-link"><img class="nav-thumb" src="../daffodils/daffodils-cover.jpeg" alt="Daffodils"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">At last, the Daffodils</span></span></a>
+      <a href="../sporting-life-lfhs/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Game-Changers: The Impact of a North Shore High School on the World of Sports</span></span><img class="nav-thumb" src="../sporting-life-lfhs/caleb-durbin.jpeg" alt="Game-Changers"></a>
+    </div>
+
+  </div><!-- end article-wrapper -->
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    var prevUrl = '../daffodils/';
+    var nextUrl = '../sporting-life-lfhs/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+      if (e.key === '?') { alert('Keyboard shortcuts:\nN or \u2192 : Next article\nP or \u2190 : Previous article\nSpace/PageDown: Scroll down\nPageUp: Scroll up'); }
+    });
+  </script>
+
 </body>
 </html>
