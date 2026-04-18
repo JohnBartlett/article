@@ -21,7 +21,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography (My Silk Roads column)
 - Jen Huang — Magazine Intern (UIC student)
-- Emma Muhleman (`emuhl2@uic.edu`) — Magazine Intern (UIC student)
+- Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — Magazine Intern (UIC student)
 - Philip Vidal — About the Town column (comes in end of month; Ana Baca handles photos)
 - Elizabeth Dunlop Richter — Travel & Culture
 - David A. F. Sweet — Unsung Gems column

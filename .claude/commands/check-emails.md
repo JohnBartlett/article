@@ -6,7 +6,7 @@ Check all editorial emails and FormSubmit votes, apply any changes, and commit t
 - Judy Carmack Bross (judycbross@aol.com) — editorial instructions, article text, bio updates, photo requests, corrections
 - Annie Delfosse (aedelfosse1@gmail.com) — DateBook updates, article content (e.g. Cheryl Anderson articles)
 - Ana Baca (anabaca8@gmail.com) — photos and article content for BandWith / Philip Vidal's About the Town
-- Emma Muhleman (emuhl2@uic.edu) — article content and photos (intern)
+- Emma Muhleman (emuhl2@uic.edu, muhlemane2@gmail.com) — article content and photos (intern)
 - FormSubmit (submissions@formsubmit.co) — reader comments and Quick Votes
 
 ## Step 1 — Fetch emails
@@ -19,7 +19,7 @@ from gmail_api import get_access_token, search_messages, get_metadata, get_body,
 
 token = get_access_token()
 messages = search_messages(token,
-    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR submissions@formsubmit.co) newer_than:2d")
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR submissions@formsubmit.co) newer_than:2d")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then fetch full body for messages that look actionable.
