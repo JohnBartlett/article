@@ -23,12 +23,51 @@ From the emails, determine:
 
 ## Step 3 — Download article content
 
-For each article docx attachment:
-1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
-2. Use `mcp__google-workspace__get_gmail_attachment_content` to save the docx to `/tmp/`
-3. Extract the text with Python:
+Use the Python Gmail API (same credentials as `/check-emails`) to download docx attachments:
+
 ```python
-import zipfile, re
+import os, json, base64, email as emaillib, requests, zipfile, re
+
+GMAIL_MCP_CREDS = os.path.expanduser("~/.gmail-mcp/credentials.json")
+GMAIL_MCP_KEYS  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
+
+def get_access_token():
+    with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
+    with open(GMAIL_MCP_KEYS)  as f: keys  = json.load(f)
+    web = keys.get("web") or keys.get("installed") or {}
+    resp = requests.post("https://oauth2.googleapis.com/token", data={
+        "client_id": web["client_id"], "client_secret": web["client_secret"],
+        "refresh_token": creds["refresh_token"], "grant_type": "refresh_token",
+    })
+    resp.raise_for_status()
+    return resp.json()["access_token"]
+
+def list_attachments(token, msg_id):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+        headers={"Authorization": f"Bearer {token}"}, params={"format": "full"})
+    r.raise_for_status()
+    results = []
+    def walk(payload):
+        fn = payload.get("filename", "")
+        att_id = payload.get("body", {}).get("attachmentId", "")
+        if fn and att_id:
+            results.append({"filename": fn, "attachmentId": att_id})
+        for part in payload.get("parts", []):
+            walk(part)
+    walk(r.json()["payload"])
+    return results
+
+def download_attachment(token, msg_id, att_id, dest_path):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}/attachments/{att_id}",
+        headers={"Authorization": f"Bearer {token}"})
+    r.raise_for_status()
+    data = base64.urlsafe_b64decode(r.json()["data"] + "==")
+    with open(dest_path, "wb") as f:
+        f.write(data)
+```
+
+For each docx attachment, download to `/tmp/article.docx` then extract text:
+```python
 with zipfile.ZipFile('/tmp/article.docx') as z:
     xml = z.read('word/document.xml').decode('utf-8')
 text = re.sub(r'<[^>]+>', ' ', xml)
@@ -60,11 +99,11 @@ mkdir -p editions/YYYY-MM-DD/article-slug editions/YYYY-MM-DD/article-slug-2 ...
 
 ## Step 5 — Download photos
 
-For each photo email:
-1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
-2. Use `mcp__google-workspace__get_gmail_attachment_content` to save directly into the article folder with a clean filename
+For each photo email, use the same Python Gmail API functions from Step 3:
+1. Call `list_attachments(token, msg_id)` to find image attachments
+2. Call `download_attachment(token, msg_id, att_id, dest_path)` to save directly into the article folder with a clean filename (e.g. `slug-cover.jpg`, `slug-1.jpg`, etc.)
 
-**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive. Then use `mcp__google-workspace__search_drive_files` to find the zip/folder, `mcp__google-workspace__get_drive_file_download_url` to get the URL, and `curl` to download it. Extract with Python `zipfile`.
+**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive, then use the Google Drive MCP tools (`mcp__claude_ai_Google_Drive__search_files`, `mcp__claude_ai_Google_Drive__download_file_content`) or ask the user to download and place them manually.
 
 For articles whose docx has embedded images (large file size, e.g. >500KB), extract them:
 ```python
@@ -181,7 +220,7 @@ git push origin dev2
 
 - Always work on `dev2`
 - Judy's email: `judycbross@aol.com`
-- Use `mcp__google-workspace__get_gmail_message_content` to get attachment IDs, `mcp__google-workspace__get_gmail_attachment_content` to download
+- Use the Python Gmail API (OAuth2 via `~/.gmail-mcp/credentials.json`) to list and download attachments — same approach as `/check-emails`
 - Photo emails often have descriptive subject lines; use those for captions
 - "Cover photo" emails designate the hero image for an article
 - Articles marked "DRAFT" in the docx may still need Judy's editorial review — note this in your summary

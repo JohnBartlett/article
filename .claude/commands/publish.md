@@ -75,24 +75,45 @@ Cloudflare will detect the push and deploy automatically to `chicagoclassicmag.c
 
 ## Step 4 — Send publication notification emails
 
-Send an email to both Judy and John confirming the edition is live. Use `mcp__google-workspace__send_gmail_message` to send.
+Send an email to Judy confirming the edition is live. Use the Python Gmail API (same OAuth credentials as `/check-emails`):
 
-**To:** `judycbross@aol.com`
-**CC:** `john.bartlett@gmail.com`
-**Subject:** `Classic Chicago Magazine — <Edition Date> Edition Is Live`
+```python
+import os, json, base64, requests
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-**Body:**
-```
-Dear Judy,
+GMAIL_MCP_CREDS = os.path.expanduser("~/.gmail-mcp/credentials.json")
+GMAIL_MCP_KEYS  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
 
-The March 22 edition of Classic Chicago Magazine is now live at:
+def get_access_token():
+    with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
+    with open(GMAIL_MCP_KEYS)  as f: keys  = json.load(f)
+    web = keys.get("web") or keys.get("installed") or {}
+    resp = requests.post("https://oauth2.googleapis.com/token", data={
+        "client_id": web["client_id"], "client_secret": web["client_secret"],
+        "refresh_token": creds["refresh_token"], "grant_type": "refresh_token",
+    })
+    resp.raise_for_status()
+    return resp.json()["access_token"]
+
+token = get_access_token()
+msg = MIMEMultipart()
+msg['To'] = 'judycbross@aol.com'
+msg['Cc'] = 'john.bartlett@gmail.com'
+msg['Subject'] = 'Classic Chicago Magazine — <Edition Date> Edition Is Live'
+msg.attach(MIMEText("""Dear Judy,
+
+The <Month Day> edition of Classic Chicago Magazine is now live at:
 
 https://chicagoclassicmag.com
 
-Cheers, John
+Cheers, John""", 'plain'))
+raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
+requests.post('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',
+    headers={'Authorization': f'Bearer {token}'}, json={'raw': raw}).raise_for_status()
 ```
 
-Adjust the edition date appropriately.
+Adjust the edition date in Subject and body appropriately.
 
 ## Step 5 — Switch back to dev2
 
