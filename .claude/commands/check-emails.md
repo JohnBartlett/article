@@ -1,115 +1,121 @@
 # /check-emails
 
-Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, update the editors' page and edition readiness page, then commit, push to dev2, and deploy a Vercel preview.
+Check all editorial emails and FormSubmit votes, apply any changes, and commit to dev2.
 
-## Step 1 — Search for emails (run in parallel)
+## Sources to check
+- Judy Carmack Bross (judycbross@aol.com) — editorial instructions, article text, bio updates, photo requests, corrections
+- Annie Delfosse (aedelfosse1@gmail.com) — DateBook updates, article content (e.g. Cheryl Anderson articles)
+- Ana Baca (anabaca8@gmail.com) — photos and article content for BandWith / Philip Vidal's About the Town
+- Emma Muhleman (emuhl2@uic.edu) — article content and photos (intern)
+- FormSubmit (submissions@formsubmit.co) — reader comments and Quick Votes
 
-Use `mcp__claude_ai_Gmail__gmail_search_messages` with these queries simultaneously:
+## Step 1 — Fetch emails via Python (NOT MCP — the Gmail MCP proxy is unreliable)
 
-- `from:judycbross@aol.com newer_than:7d` (maxResults: 10)
-- `from:submissions@formsubmit.co newer_than:14d` (maxResults: 20)
-- `from:aedelfosse1@gmail.com newer_than:7d` (maxResults: 10)
-- `from:anabaca8@gmail.com newer_than:7d` (maxResults: 10)
-- `from:emuhl2@uic.edu newer_than:7d` (maxResults: 10)
+```python
+import os, json, base64, email as emaillib, requests
 
-## Step 2 — Read contributor emails
+GMAIL_MCP_CREDS = os.path.expanduser("~/.gmail-mcp/credentials.json")
+GMAIL_MCP_KEYS  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
 
-Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the Judy, Annie, Ana, and Emma searches. Look for:
-- Bio updates or corrections (bios live in `about.html`)
-- Photo requests (cover photo, hero image, carousel additions)
-- Text corrections to any article
-- New article content or attachments
-- Questions to answer or decisions pending
-- Any other editorial instructions
+def get_access_token():
+    with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
+    with open(GMAIL_MCP_KEYS)  as f: keys  = json.load(f)
+    web = keys.get("web") or keys.get("installed") or {}
+    resp = requests.post("https://oauth2.googleapis.com/token", data={
+        "client_id": web["client_id"], "client_secret": web["client_secret"],
+        "refresh_token": creds["refresh_token"], "grant_type": "refresh_token",
+    })
+    resp.raise_for_status()
+    return resp.json()["access_token"]
 
-If a message has attachments or is part of a thread with more context, use `mcp__claude_ai_Gmail__gmail_read_thread` to read the full thread.
+def get_body(token, msg_id):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+        headers={"Authorization": f"Bearer {token}"}, params={"format": "raw"})
+    r.raise_for_status()
+    raw = base64.urlsafe_b64decode(r.json()["raw"] + "==")
+    msg = emaillib.message_from_bytes(raw)
+    for part in msg.walk():
+        if part.get_content_type() == "text/plain":
+            payload = part.get_payload(decode=True)
+            if payload:
+                return payload.decode(part.get_content_charset() or "utf-8", errors="replace")
+    return ""
 
-## Step 3 — Read FormSubmit emails
+def list_attachments(token, msg_id):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+        headers={"Authorization": f"Bearer {token}"}, params={"format": "full"})
+    r.raise_for_status()
+    results = []
+    def walk(payload):
+        fn = payload.get("filename", "")
+        att_id = payload.get("body", {}).get("attachmentId", "")
+        if fn and att_id:
+            results.append({"filename": fn, "attachmentId": att_id})
+        for part in payload.get("parts", []):
+            walk(part)
+    walk(r.json()["payload"])
+    return results
 
-Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the FormSubmit search.
-
-Two types arrive at `editor@2ccmag.com`:
-
-**"Classic Chicago Reader Comment"** — check the `comment` field:
-- If empty: no action needed (reader opened the form but didn't submit)
-- If has text: add the comment to `reader-comments.html`
-- If the comment raises an editorial concern (criticism of a feature, content question, etc.), also add it to `comments.html` under a "Reader Comments" section so the editorial team can see it
-
-**"Classic Chicago Quick Vote"** — check the `vote` field and `Page`:
-- Votes are "Yes" confirmations that readers liked the article
-- Log them to `reader-comments.html` if keeping a tally, otherwise just note them
-- `Environment: dev2` submissions are test submissions — ignore
-
-## Step 4 — Download all attachments
-
-For every email that has attachments (articles, photos, documents):
-- Use `tools/download_attachments.py` to download them. Update the `jobs` list in the script with the message IDs and target directories before running.
-- The script uses `~/.gmail-mcp/credentials.json` and `~/.gmail-mcp/gcp-oauth.keys.json` for auth.
-- Extract text from `.docx` files using `python3` with `python-docx` (install with `pip install python-docx --break-system-packages` if needed).
-- Copy downloaded images to the appropriate article folder under `editions/`.
-
-Attachment IDs are ephemeral — if a download fails, re-read the message to get fresh IDs and retry immediately.
-
-**Never delete any email**, read or unread, from any inbox or folder.
-
-## Step 5 — Apply changes
-
-Common updates and where they live:
-
-| What | File |
-|---|---|
-| Judy or Megan bio update | `about.html` — Our Team section |
-| Writer bio update | `about.html` — Our Writers This Week section |
-| Annie Delfosse bio | `about.html` — id="annie-delfosse" |
-| Reader comments | `reader-comments.html` (all) + `comments.html` (editorial concerns) |
-| Article text correction | `editions/YYYY-MM-DD/<slug>/index.html` |
-| Hero/cover photo swap | article `index.html` + homepage card |
-| New article content | Build into `editions/YYYY-MM-DD/<slug>/index.html` using the template |
-
-## Step 6 — Update editors' pages
-
-After applying all content changes, update the editors' pages to reflect current edition status:
-
-- `editors/edition.html` — Update the article inventory table: mark newly completed articles as ready, note any still pending (article text, photos, DateBook, etc.)
-- `editors/index.html` — Update the quick-status summary if the readiness state has changed
-
-## Step 7 — Commit, push, and deploy
-
-After all changes are applied:
+def download_attachment(token, msg_id, att_id, dest_path):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}/attachments/{att_id}",
+        headers={"Authorization": f"Bearer {token}"})
+    r.raise_for_status()
+    data = base64.urlsafe_b64decode(r.json()["data"] + "==")
+    with open(dest_path, "wb") as f:
+        f.write(data)
 ```
-git add <files>
+
+Search: `from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR submissions@formsubmit.co) newer_than:2d`
+
+Fetch metadata first (From, Subject, Date, Snippet), then fetch full body for messages that look actionable.
+
+## Step 2 — Process each email type
+
+### Judy — article text
+- Build article HTML in the correct edition folder using the standard template (GA4-disabled, keyboard nav, feedback widget)
+- Download attached photos to the article folder, name them `<slug>-cover.jpg`, `<slug>-1.jpg`, etc.
+
+### Judy — writer bios
+- "at the end of their piece" → add bio block just above the feedback widget in the article HTML
+- "for Writers This Week" → also add to `about.html` Our Writers This Week section
+- Bio block format: `<div style="margin-top:32px; padding-top:20px; border-top:1px solid #eee; font-family:'Lato',sans-serif; font-size:14px; color:#555; line-height:1.6;"><strong>Name</strong> — bio text</div>`
+
+### Judy — text corrections
+- Find the relevant passage in the article HTML and apply the fix exactly as Judy specifies
+
+### Annie / Ana / Emma — article content
+- Build article HTML with photos interleaved as indicated in the email body
+- Download all photo attachments to the article folder
+
+### FormSubmit — Quick Vote
+- Skip if `Environment: dev2` (test)
+- Note votes in the editors/edition.html reader engagement section
+
+### FormSubmit — Reader Comment (non-empty `comment` field)
+- Add to `reader-comments.html`
+- If editorial concern, also add to `comments.html`
+
+### FormSubmit — "Action Required: Activate FormSubmit"
+- Ignore entirely
+
+## Step 3 — Update editors pages
+
+After applying content changes:
+- `editors/edition.html` — mark newly completed articles Ready, update pending notes
+- `editors/index.html` — update progress count and waiting-on list
+
+## Step 4 — Commit and push
+
+```bash
+git add <changed files>
 git commit -m "descriptive message"
 git push origin dev2
 ```
 
-Then deploy a Vercel preview and update the editors pages:
-```bash
-PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/<current-slug>/\"|" editors/edition.html
-sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
-git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
-```
-
-Return the preview URL to the user at the end.
-
-If there are no actionable changes, report a summary of what was found (votes, empty submissions, etc.), skip the commit, but still deploy and return the current preview URL.
-
-## Notes
-
-- Always work on `dev2` — never commit directly to `dev` or `master`
-- **Never delete any email** — not from inbox, sent, or any folder
-- Judy's email address: `judycbross@aol.com`
-- FormSubmit sends to: `editor@2ccmag.com`
-- Empty FormSubmit comments are common — readers click the form open then close it
-- Judy often sends photo emails with short subject lines — read them even if vague
-- When Judy says "I have sent the photos separately," search for a nearby email from her with attachments
-
-## Email style (when drafting emails to Judy)
-
-- Salutation: `Dear Judy,`
-- Sign-off: `Cheers, John`
-- Write in first person — use "I/me", not "we/us"
-
-## Replying to emails in-thread
-
-When sending a reply within an existing Gmail thread, always retrieve the `threadId` explicitly before calling the send tool. Use `gmail_read_message` on the specific message to get its `threadId` field. Never assume the message ID and thread ID are the same value — pass the `threadId` as the `thread_id` parameter, not the message ID.
+## Key conventions
+- Always work on dev2 — never commit to dev or master
+- GA4 disabled in all new article HTML
+- Relative paths from articles: `../../../` root assets, `../<sibling>/` siblings
+- BandWith: capital W
+- Email replies: `Dear Judy,` / `Cheers, John` / first person (I/me not we/us)
+- To send email: POST to `https://gmail.googleapis.com/gmail/v1/users/me/messages/send` with base64url-encoded MIME message
