@@ -49,44 +49,12 @@ The `<!-- dev2-only -->` internal editors menu must **not** appear on dev or mas
 
 ## Step 3 — Disable GA4 on dev
 
-Google Analytics must not fire on dev or dev2 — it skews production stats. After the merge, run this Python script to comment out all GA4 blocks across every HTML file:
-
-```python
-import os, re
-
-GA4_PATTERN = re.compile(
-    r'(\s*<!-- Google tag \(gtag\.js\) -->.*?</script>)',
-    re.DOTALL
-)
-DISABLED_WRAP = lambda m: f'\n  <!-- GA4-disabled{m.group(1)}\n  -->'
-
-root = '/home/john/article'
-changed = []
-for dirpath, _, files in os.walk(root):
-    for fname in files:
-        if not fname.endswith('.html'):
-            continue
-        fpath = os.path.join(dirpath, fname)
-        with open(fpath, 'r', encoding='utf-8') as f:
-            content = f.read()
-        if '<!-- Google tag (gtag.js) -->' not in content:
-            continue
-        if '<!-- GA4-disabled' in content:
-            continue  # already disabled
-        new_content = GA4_PATTERN.sub(DISABLED_WRAP, content)
-        if new_content != content:
-            with open(fpath, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            changed.append(fpath)
-
-print(f"Disabled GA4 in {len(changed)} files")
-```
-
-Run it, verify the count looks right (should match all HTML files in the repo), then stage the changes:
-
-```
+```bash
+python3 tools/disable_ga4.py
 git add -u
 ```
+
+Verify the file count looks right (should match all HTML files in the repo).
 
 ## Step 4 — Verify internal-only pages are not surfaced
 

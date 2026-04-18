@@ -42,15 +42,4 @@ Edit `_bios/<slug>.md` directly. If the bio text changes, also update the matchi
 
 ## Current writers
 
-| File | Name | about.html anchor |
-|------|------|-------------------|
-| `adrian-naves.md` | Adrian Naves | `#adrian-naves` |
-| `biba-roesch.md` | Biba Roesch | `#biba-roesch` |
-| `david-sweet.md` | David A. F. Sweet | `#david-sweet` |
-| `elizabeth-dunlop-richter.md` | Elizabeth Dunlop Richter | `#elizabeth-dunlop-richter` |
-| `jen-huang.md` | Jen Huang | `#jen-huang` |
-| `judy-carmack-bross.md` | Judy Carmack Bross | `#judy-carmack-bross` |
-| `lee-hamilton.md` | Lee Hamilton | `#lee-hamilton` |
-| `sophie-bross.md` | Sophie Bross | `#sophie-bross` |
-| `susan-aurinko.md` | Susan Aurinko | `#susan-aurinko` |
-| `sydney-armstrong.md` | Sydney Armstrong | `#sydney-armstrong` |
+Run `ls _bios/` to see all writer bio files. Each filename is the slug; the `about.html` anchor is `#<slug>`.

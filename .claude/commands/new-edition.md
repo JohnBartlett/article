@@ -23,12 +23,17 @@ From the emails, determine:
 
 ## Step 3 — Download article content
 
-For each article docx attachment:
-1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
-2. Use `mcp__google-workspace__get_gmail_attachment_content` to save the docx to `/tmp/`
-3. Extract the text with Python:
+Use `tools/gmail_api.py` for all Gmail access:
+
 ```python
-import zipfile, re
+import sys, zipfile, re; sys.path.insert(0, 'tools')
+from gmail_api import get_access_token, search_messages, get_metadata, get_body, list_attachments, download_attachment
+
+token = get_access_token()
+```
+
+For each docx attachment, `download_attachment(token, msg_id, att_id, '/tmp/article.docx')` then extract text:
+```python
 with zipfile.ZipFile('/tmp/article.docx') as z:
     xml = z.read('word/document.xml').decode('utf-8')
 text = re.sub(r'<[^>]+>', ' ', xml)
@@ -60,11 +65,11 @@ mkdir -p editions/YYYY-MM-DD/article-slug editions/YYYY-MM-DD/article-slug-2 ...
 
 ## Step 5 — Download photos
 
-For each photo email:
-1. Use `mcp__google-workspace__get_gmail_message_content` to get the attachment ID
-2. Use `mcp__google-workspace__get_gmail_attachment_content` to save directly into the article folder with a clean filename
+For each photo email (reuse `token` from Step 3):
+1. `list_attachments(token, msg_id)` — find image attachments
+2. `download_attachment(token, msg_id, att_id, dest_path)` — save to article folder as `slug-cover.jpg`, `slug-1.jpg`, etc.
 
-**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive. Then use `mcp__google-workspace__search_drive_files` to find the zip/folder, `mcp__google-workspace__get_drive_file_download_url` to get the URL, and `curl` to download it. Extract with Python `zipfile`.
+**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive, then use the Google Drive MCP tools (`mcp__claude_ai_Google_Drive__search_files`, `mcp__claude_ai_Google_Drive__download_file_content`) or ask the user to download and place them manually.
 
 For articles whose docx has embedded images (large file size, e.g. >500KB), extract them:
 ```python
@@ -181,7 +186,7 @@ git push origin dev2
 
 - Always work on `dev2`
 - Judy's email: `judycbross@aol.com`
-- Use `mcp__google-workspace__get_gmail_message_content` to get attachment IDs, `mcp__google-workspace__get_gmail_attachment_content` to download
+- Use the Python Gmail API (OAuth2 via `~/.gmail-mcp/credentials.json`) to list and download attachments — same approach as `/check-emails`
 - Photo emails often have descriptive subject lines; use those for captions
 - "Cover photo" emails designate the hero image for an article
 - Articles marked "DRAFT" in the docx may still need Judy's editorial review — note this in your summary
