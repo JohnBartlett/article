@@ -1,0 +1,35 @@
+{
+  "date_range": "2026-03-08 to 2026-04-07",
+  "fetched_at": "2026-04-07T13:30:13.520593",
+  "total_impressions": 705,
+  "by_article": [
+    {
+      "pagePath": "/editions/2026-03-29/biba-palm-springs/",
+      "impressions": 177
+    },
+    {
+      "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
+      "impressions": 152
+    },
+    {
+      "pagePath": "/editions/2026-03-29/driehaus-museum/",
+      "impressions": 121
+    },
+    {
+      "pagePath": "/editions/2026-03-29/landmarks-preservation-forward/",
+      "impressions": 86
+    },
+    {
+      "pagePath": "/editions/2026-03-29/an-island-idyll/",
+      "impressions": 62
+    },
+    {
+      "pagePath": "/editions/2026-03-29/american-writers-museum/",
+      "impressions": 57
+    },
+    {
+      "pagePath": "/editions/2026-03-29/marwen/",
+      "impressions": 50
+    }
+  ]
+}
