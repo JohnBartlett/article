@@ -1,0 +1,115 @@
+# /check-emails
+
+Check recent emails from Judy and FormSubmit for actionable site updates, apply any changes, update the editors' page and edition readiness page, then commit, push to dev2, and deploy a Vercel preview.
+
+## Step 1 — Search for emails (run in parallel)
+
+Use `mcp__claude_ai_Gmail__gmail_search_messages` with these queries simultaneously:
+
+- `from:judycbross@aol.com newer_than:7d` (maxResults: 10)
+- `from:submissions@formsubmit.co newer_than:14d` (maxResults: 20)
+- `from:aedelfosse1@gmail.com newer_than:7d` (maxResults: 10)
+- `from:anabaca8@gmail.com newer_than:7d` (maxResults: 10)
+- `from:emuhl2@uic.edu newer_than:7d` (maxResults: 10)
+
+## Step 2 — Read contributor emails
+
+Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the Judy, Annie, Ana, and Emma searches. Look for:
+- Bio updates or corrections (bios live in `about.html`)
+- Photo requests (cover photo, hero image, carousel additions)
+- Text corrections to any article
+- New article content or attachments
+- Questions to answer or decisions pending
+- Any other editorial instructions
+
+If a message has attachments or is part of a thread with more context, use `mcp__claude_ai_Gmail__gmail_read_thread` to read the full thread.
+
+## Step 3 — Read FormSubmit emails
+
+Use `mcp__claude_ai_Gmail__gmail_read_message` to read all messages returned from the FormSubmit search.
+
+Two types arrive at `editor@2ccmag.com`:
+
+**"Classic Chicago Reader Comment"** — check the `comment` field:
+- If empty: no action needed (reader opened the form but didn't submit)
+- If has text: add the comment to `reader-comments.html`
+- If the comment raises an editorial concern (criticism of a feature, content question, etc.), also add it to `comments.html` under a "Reader Comments" section so the editorial team can see it
+
+**"Classic Chicago Quick Vote"** — check the `vote` field and `Page`:
+- Votes are "Yes" confirmations that readers liked the article
+- Log them to `reader-comments.html` if keeping a tally, otherwise just note them
+- `Environment: dev2` submissions are test submissions — ignore
+
+## Step 4 — Download all attachments
+
+For every email that has attachments (articles, photos, documents):
+- Use `tools/download_attachments.py` to download them. Update the `jobs` list in the script with the message IDs and target directories before running.
+- The script uses `~/.gmail-mcp/credentials.json` and `~/.gmail-mcp/gcp-oauth.keys.json` for auth.
+- Extract text from `.docx` files using `python3` with `python-docx` (install with `pip install python-docx --break-system-packages` if needed).
+- Copy downloaded images to the appropriate article folder under `editions/`.
+
+Attachment IDs are ephemeral — if a download fails, re-read the message to get fresh IDs and retry immediately.
+
+**Never delete any email**, read or unread, from any inbox or folder.
+
+## Step 5 — Apply changes
+
+Common updates and where they live:
+
+| What | File |
+|---|---|
+| Judy or Megan bio update | `about.html` — Our Team section |
+| Writer bio update | `about.html` — Our Writers This Week section |
+| Annie Delfosse bio | `about.html` — id="annie-delfosse" |
+| Reader comments | `reader-comments.html` (all) + `comments.html` (editorial concerns) |
+| Article text correction | `editions/YYYY-MM-DD/<slug>/index.html` |
+| Hero/cover photo swap | article `index.html` + homepage card |
+| New article content | Build into `editions/YYYY-MM-DD/<slug>/index.html` using the template |
+
+## Step 6 — Update editors' pages
+
+After applying all content changes, update the editors' pages to reflect current edition status:
+
+- `editors/edition.html` — Update the article inventory table: mark newly completed articles as ready, note any still pending (article text, photos, DateBook, etc.)
+- `editors/index.html` — Update the quick-status summary if the readiness state has changed
+
+## Step 7 — Commit, push, and deploy
+
+After all changes are applied:
+```
+git add <files>
+git commit -m "descriptive message"
+git push origin dev2
+```
+
+Then deploy a Vercel preview and update the editors pages:
+```bash
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/<current-slug>/\"|" editors/edition.html
+sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
+git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
+```
+
+Return the preview URL to the user at the end.
+
+If there are no actionable changes, report a summary of what was found (votes, empty submissions, etc.), skip the commit, but still deploy and return the current preview URL.
+
+## Notes
+
+- Always work on `dev2` — never commit directly to `dev` or `master`
+- **Never delete any email** — not from inbox, sent, or any folder
+- Judy's email address: `judycbross@aol.com`
+- FormSubmit sends to: `editor@2ccmag.com`
+- Empty FormSubmit comments are common — readers click the form open then close it
+- Judy often sends photo emails with short subject lines — read them even if vague
+- When Judy says "I have sent the photos separately," search for a nearby email from her with attachments
+
+## Email style (when drafting emails to Judy)
+
+- Salutation: `Dear Judy,`
+- Sign-off: `Cheers, John`
+- Write in first person — use "I/me", not "we/us"
+
+## Replying to emails in-thread
+
+When sending a reply within an existing Gmail thread, always retrieve the `threadId` explicitly before calling the send tool. Use `gmail_read_message` on the specific message to get its `threadId` field. Never assume the message ID and thread ID are the same value — pass the `threadId` as the `thread_id` parameter, not the message ID.
