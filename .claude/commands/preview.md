@@ -8,7 +8,7 @@ Build a layout review page from the article content in a sender's most recent em
 
 ## Step 1 — Find the email
 
-Search Gmail for the most recent email from the named sender that contains the article. The article may be:
+Use the Python Gmail API (OAuth2 via `~/.gmail-mcp/credentials.json`) — same approach as `/check-emails`. Search for the most recent email from the named sender that contains the article. The article may be:
 - A Word doc (.docx) attachment
 - A PDF attachment
 - Plain text in the email body
@@ -72,10 +72,12 @@ Run `vercel deploy --yes` from the project root. Capture the Preview URL from th
 
 ## Step 7 — Update editors/edition.html preview URL
 
-After capturing the Preview URL, update the Dev2 Preview button in `editors/edition.html` and commit:
+After capturing the Preview URL, determine the current hero article slug from `index.html` (the first article in the homepage hero), then update both editors pages:
 
 ```bash
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-03-29/driehaus-museum/\"|" editors/edition.html
+EDITION_DATE="YYYY-MM-DD"   # current edition date
+HERO_SLUG="slug"             # hero article slug from index.html
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```

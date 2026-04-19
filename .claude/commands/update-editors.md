@@ -56,67 +56,41 @@ Also include DateBook as the last row if it exists or is pending.
 
 ## Step 5 — Refresh GA4 and HA ad stats
 
-Run both scripts (credentials are already in `tools/credentials.json`; property ID is `523654462`):
+Run both scripts in parallel (credentials in `tools/credentials.json`; property ID `523654462`):
 
 ```bash
 export GA4_PROPERTY_ID="523654462"
 export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
+python3 tools/ga4_report.py
 python3 tools/ha_ad_report.py
 ```
 
-For GA4 site analytics, run this inline (the ga4_report.py script saves to a timestamped file, not the snapshot the stats page reads):
-
-```python
-import os, json
-from datetime import datetime, timedelta
-from google.analytics.data_v1beta import BetaAnalyticsDataClient
-from google.analytics.data_v1beta.types import DateRange, Dimension, Metric, RunReportRequest, OrderBy
-
-property_id = '523654462'
-client = BetaAnalyticsDataClient()
-end_date = datetime.now().strftime('%Y-%m-%d')
-start_date = (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d')
-
-totals_resp = client.run_report(RunReportRequest(
-    property=f'properties/{property_id}',
-    dimensions=[],
-    metrics=[Metric(name='activeUsers'), Metric(name='sessions'), Metric(name='screenPageViews')],
-    date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
-))
-totals = {}
-if totals_resp.rows:
-    r = totals_resp.rows[0]
-    totals = {'activeUsers': int(r.metric_values[0].value), 'sessions': int(r.metric_values[1].value), 'screenPageViews': int(r.metric_values[2].value)}
-
-pages_resp = client.run_report(RunReportRequest(
-    property=f'properties/{property_id}',
-    dimensions=[Dimension(name='pagePath')],
-    metrics=[Metric(name='screenPageViews')],
-    date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
-    limit=10,
-    order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name='screenPageViews'), desc=True)]
-))
-top_pages = [{'pagePath': r.dimension_values[0].value, 'screenPageViews': int(r.metric_values[0].value)} for r in pages_resp.rows]
-
-data = {'property_id': property_id, 'date_range': f'{start_date} to {end_date}', 'updated': datetime.now().strftime('%Y-%m-%d %H:%M'), 'totals': totals, 'top_pages': top_pages}
-with open('tools/ga4_snapshot.json', 'w') as f:
-    json.dump(data, f, indent=2)
-print(f"GA4: {totals['screenPageViews']:,} views, {totals['activeUsers']:,} users")
+`ga4_report.py` saves a timestamped JSON. Copy the results into `tools/ga4_snapshot.json` using this format:
+```json
+{
+  "property_id": "523654462",
+  "date_range": "YYYY-MM-DD to YYYY-MM-DD",
+  "updated": "YYYY-MM-DD HH:MM",
+  "totals": { "activeUsers": N, "sessions": N, "screenPageViews": N },
+  "top_pages": [{"pagePath": "...", "screenPageViews": N}, ...]
+}
 ```
 
-Run via: `export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json" && python3 -c "<script above>"`
+`ha_ad_report.py` updates `tools/ha_ad_count.json` automatically.
 
-`editors/stats.html` has no HTML to edit — it reads the JSON files directly via JavaScript. No changes needed there.
+`editors/stats.html` reads both JSON files via JavaScript — no HTML edits needed there.
 
 ## Step 6 — Deploy new Vercel preview
 
+Determine the current hero article slug (first article in the homepage card grid), then run:
+
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-04-05/sporting-life-kenny-davis/\"|" editors/edition.html
+EDITION_DATE="YYYY-MM-DD"   # replace with current edition date
+HERO_SLUG="slug"             # replace with hero article slug
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 ```
-
-Update the slug in the edition.html URL to match the current hero article.
 
 ## Step 7 — Commit and push
 

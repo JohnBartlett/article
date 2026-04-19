@@ -15,3 +15,7 @@ classicchicagomagazinebobatea/
 # Large source archives
 *.zip
 .env
+
+# Claude Code machine-local files
+.claude/settings.local.json
+.claude/scheduled_tasks.lock

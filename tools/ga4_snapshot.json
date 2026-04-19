@@ -1,52 +1,52 @@
 {
   "property_id": "523654462",
-  "date_range": "2026-03-08 to 2026-04-07",
-  "updated": "2026-04-07 13:30",
+  "date_range": "2026-03-18 to 2026-04-17",
+  "updated": "2026-04-17 16:18",
   "totals": {
-    "activeUsers": 2346,
-    "sessions": 3927,
-    "screenPageViews": 7239
+    "activeUsers": 2392,
+    "sessions": 3836,
+    "screenPageViews": 6398
   },
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": 2653
-    },
-    {
-      "pagePath": "/editions/2026-03-08/rebecca-tilles/",
-      "screenPageViews": 293
+      "screenPageViews": 2944
     },
     {
       "pagePath": "/about",
-      "screenPageViews": 283
-    },
-    {
-      "pagePath": "/editions/2026-03-08/datebook/",
-      "screenPageViews": 246
-    },
-    {
-      "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
-      "screenPageViews": 184
-    },
-    {
-      "pagePath": "/editions/2026-03-29/biba-palm-springs/",
-      "screenPageViews": 179
-    },
-    {
-      "pagePath": "/editions/2026-03-29/fashion-trends/",
-      "screenPageViews": 169
-    },
-    {
-      "pagePath": "/editions/2026-03-08/where-care-happens/",
-      "screenPageViews": 158
+      "screenPageViews": 341
     },
     {
       "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
-      "screenPageViews": 157
+      "screenPageViews": 250
     },
     {
-      "pagePath": "/editions/2026-03-15/guardian-san-pietro/",
-      "screenPageViews": 156
+      "pagePath": "/editions/2026-03-29/biba-palm-springs/",
+      "screenPageViews": 199
+    },
+    {
+      "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
+      "screenPageViews": 188
+    },
+    {
+      "pagePath": "/editions/2026-03-29/fashion-trends/",
+      "screenPageViews": 173
+    },
+    {
+      "pagePath": "/editions/2026-03-22/jessie-mueller/",
+      "screenPageViews": 168
+    },
+    {
+      "pagePath": "/editions/2026-03-08/datebook/",
+      "screenPageViews": 167
+    },
+    {
+      "pagePath": "/editions/2026-03-22/chicago-chamber-music-society/",
+      "screenPageViews": 163
+    },
+    {
+      "pagePath": "/editions/2026-03-29/driehaus-museum/",
+      "screenPageViews": 160
     }
   ]
 }

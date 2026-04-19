@@ -4,55 +4,50 @@ Draft and send a weekly update email to Judy summarizing recent site activity an
 
 ## Step 1 — Check if anything has changed
 
-Find the last update email sent to Judy:
-- Use `mcp__google-workspace__search_gmail_messages` with `query: "from:me to:judycbross@aol.com subject:\"Site Update\""`, `user_google_email: john.bartlett@gmail.com`, `page_size: 1` to get the date of the last update
+```python
+import sys; sys.path.insert(0, 'tools')
+from gmail_api import get_access_token, search_messages
 
-Then check git for commits since that date:
+token = get_access_token()
+messages = search_messages(token,
+    'from:john.bartlett@gmail.com to:judycbross@aol.com subject:"Site Update"',
+    max_results=1)
 ```
+
+Get the date of the last update, then check git:
+```bash
 git log --oneline --after="YYYY-MM-DD"
 ```
 
-Also run `/check-emails` logic to see if there are any unprocessed emails from Judy or new FormSubmit votes since the last update.
-
-**If there are no new commits and no new votes or emails since the last update:** tell the user "Nothing has changed since the last update — no email needed." and stop.
+**If no new commits and no new votes or emails since the last update:** tell the user "Nothing has changed since the last update — no email needed." and stop.
 
 ## Step 2 — Gather activity
 
-Summarize commits since the last update email — bios added, articles published, corrections made, photos added, etc.
+Summarize commits since the last update — bios added, articles published, corrections made, photos added, etc.
 
 ## Step 3 — Pull reader stats
 
-Read `reader-comments.html` to get the current vote tallies for the most recent edition (Yes/No counts, per-article breakdown).
-
-Compare against what was reported in the last update email (if readable) to identify any new votes since then.
+Read `reader-comments.html` for current vote tallies (Yes/No counts, per-article breakdown). Compare against the last update email to identify new votes.
 
 ## Step 4 — Draft the email
 
-Write the email in this format:
-
-**To:** judycbross@aol.com
+**To:** judycbross@aol.com  
 **Subject:** Classic Chicago — Site Update
 
-**Body structure:**
-1. Brief summary of what was worked on since the last update (bios added, articles published, corrections made, etc.)
+Body:
+1. Brief summary of work done since last update
 2. Reader engagement stats — total votes, Yes/No breakdown, per-article tally
-3. Dev2 preview URL: `https://article-git-dev2-johns-projects-e5fce345.vercel.app`
-4. Any items still pending (articles not yet received, photos needed, etc.)
+3. Dev2 preview URL — read from the `href` of `class="btn-stage"` in `editors/edition.html`
+4. Pending items (articles not yet received, photos needed, etc.)
 
-**Email style:**
-- Salutation: `Dear Judy,`
-- Sign-off: `Cheers, John`
-- First person — use "I/me", not "we/us"
-- Keep it warm but concise
+Style: `Dear Judy,` / `Cheers, John` / first person / warm but concise
 
 ## Step 5 — Confirm before sending
 
-Show the draft to the user and ask: **"Send this?"**
+Show the draft. Ask **"Send this?"**
 
-If yes, use `mcp__google-workspace__send_gmail_message` to send to `judycbross@aol.com`.
-
-## Notes
-
-- Dev2 URL: `https://article-git-dev2-johns-projects-e5fce345.vercel.app`
-- Judy's email: `judycbross@aol.com`
-- Only send after user confirms
+If yes:
+```python
+from gmail_api import send_email
+send_email(token, 'judycbross@aol.com', 'Classic Chicago — Site Update', body_text)
+```
