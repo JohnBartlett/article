@@ -84,3 +84,25 @@ def send_email(token, to, subject, body, cc=None):
         headers={"Authorization": f"Bearer {token}"}, json={"raw": raw})
     r.raise_for_status()
     return r.json()
+
+def get_html_body(token, msg_id):
+    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+        headers={"Authorization": f"Bearer {token}"}, params={"format": "full"})
+    r.raise_for_status()
+    def extract_html(payload):
+        if payload.get("mimeType") == "text/html":
+            data = payload.get("body", {}).get("data", "")
+            if data:
+                return base64.urlsafe_b64decode(data + "==").decode('utf-8', errors='replace')
+        for part in payload.get("parts", []):
+            result = extract_html(part)
+            if result:
+                return result
+        return ""
+    return extract_html(r.json()["payload"])
+
+def parse_formsubmit(html):
+    import re
+    pattern = r'<strong>([^:]+):\s*</strong>\s*<br>\s*<pre[^>]*>([^<]*)</pre>'
+    matches = re.findall(pattern, html)
+    return {key.strip(): value.strip() for key, value in matches}
