@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Trains in Illinois | Classic Chicago Magazine</title>
+
+	<!-- GA4-disabled
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-5J2HWKC0B1');
+	</script>
+	GA4-disabled -->
+
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
+
+		header {
+			background: #fff;
+			padding: 20px 0;
+			border-bottom: 1px solid #e0e0e0;
+		}
+		.header-top {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 0 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.logo { width: 80px; }
+		.logo img { width: 100%; height: auto; display: block; }
+
+		nav {
+			display: flex;
+			gap: 30px;
+			list-style: none;
+		}
+		nav a {
+			text-decoration: none;
+			color: #333;
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+		nav a:hover { text-decoration: underline; }
+
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			cursor: pointer;
+		}
+		.hamburger span {
+			width: 25px;
+			height: 3px;
+			background: #333;
+			margin: 4px 0;
+			transition: 0.3s;
+		}
+
+		.nav-right {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+		}
+
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 60px;
+			right: 20px;
+			background: #fff;
+			border: 1px solid #e0e0e0;
+			border-radius: 4px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			z-index: 1000;
+			min-width: 150px;
+		}
+		.dropdown a {
+			display: block;
+			padding: 12px 16px;
+			color: #333;
+			text-decoration: none;
+			font-size: 13px;
+			border-bottom: 1px solid #f0f0f0;
+		}
+		.dropdown a:last-child { border-bottom: none; }
+		.dropdown a:hover { background: #f5f5f5; }
+
+		.article {
+			max-width: 700px;
+			margin: 40px auto;
+			padding: 0 20px;
+		}
+
+		.article-label {
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: #b51c20;
+			margin-bottom: 8px;
+		}
+
+		.article-title {
+			font-family: 'Playfair Display', serif;
+			font-size: 48px;
+			font-weight: 700;
+			line-height: 1.1;
+			margin-bottom: 16px;
+			color: #000;
+		}
+
+		.article-meta {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 32px;
+		}
+
+		.hero-figure {
+			width: 100%;
+			margin: 40px 0;
+		}
+		.hero-image { width: 100%; height: auto; display: block; }
+		.hero-caption {
+			font-size: 12px;
+			color: #999;
+			margin-top: 8px;
+			font-style: italic;
+		}
+
+		.placeholder-notice {
+			background: #f5f5f5;
+			padding: 40px;
+			text-align: center;
+			border-radius: 4px;
+			margin: 20px 0;
+		}
+		.placeholder-notice p {
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			color: #666;
+		}
+
+		.article-intro {
+			font-size: 18px;
+			line-height: 1.7;
+			margin-bottom: 24px;
+			color: #000;
+		}
+
+		.article-body {
+			font-size: 16px;
+			line-height: 1.8;
+		}
+
+		.article-body p {
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		.article-body figure {
+			margin: 32px 0;
+		}
+
+		.article-body img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.article-body figcaption {
+			font-size: 13px;
+			color: #999;
+			margin-top: 8px;
+			font-style: italic;
+		}
+
+		.article-body a {
+			color: #b51c20;
+			text-decoration: none;
+		}
+		.article-body a:hover { text-decoration: underline; }
+
+		.about-author {
+			margin-top: 32px;
+		}
+		.about-author a {
+			font-family: 'Lato', sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			color: #b51c20;
+			text-decoration: none;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+		.about-author a:hover { text-decoration: underline; }
+
+		.feedback {
+			margin-top: 48px;
+			padding-top: 24px;
+			border-top: 1px solid #e0e0e0;
+		}
+
+		.feedback-prompt {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 16px;
+		}
+
+		.feedback-buttons {
+			display: flex;
+			gap: 16px;
+			margin-bottom: 24px;
+		}
+
+		.feedback-btn {
+			background: none;
+			border: 1px solid #ddd;
+			padding: 10px 16px;
+			cursor: pointer;
+			border-radius: 4px;
+			font-size: 14px;
+			transition: all 0.2s;
+		}
+
+		.feedback-btn:hover {
+			border-color: #b51c20;
+			color: #b51c20;
+		}
+
+		.article-nav {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 48px;
+			padding: 24px 0;
+			border-top: 1px solid #e0e0e0;
+		}
+
+		.article-nav a {
+			color: #b51c20;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+
+		.article-nav a:hover { text-decoration: underline; }
+
+		footer {
+			background: #fff;
+			padding: 40px 20px;
+			text-align: center;
+			border-top: 1px solid #e0e0e0;
+			margin-top: 80px;
+		}
+
+		footer p {
+			font-size: 12px;
+			color: #999;
+			margin-bottom: 16px;
+		}
+
+		.social-icons {
+			display: flex;
+			justify-content: center;
+			gap: 16px;
+			margin-bottom: 24px;
+		}
+
+		.social-icons a {
+			color: #b51c20;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		@media (max-width: 600px) {
+			.hamburger { display: flex; }
+			nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: #fff; border-bottom: 1px solid #e0e0e0; gap: 0; }
+			nav.active { display: flex; }
+			nav a { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; }
+			.article-title { font-size: 32px; }
+			.dropdown { right: 0; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header-top">
+			<div class="logo">
+				<a href="../../../index.html">
+					<img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+				</a>
+			</div>
+			<nav id="nav-menu">
+				<a href="../../../index.html">Home</a>
+				<a href="../../../about.html">About</a>
+				<a href="../../../subscribe.html">Subscribe</a>
+				<a href="../../../advertise.html">Advertise</a>
+			</nav>
+			<div class="nav-right">
+				<button class="hamburger" id="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<article class="article">
+		<div class="article-label">Travel & Culture</div>
+		<h1 class="article-title">Trains in Illinois</h1>
+		<div class="article-meta">By Jackson LeJeune · April 26, 2026</div>
+
+		<div class="hero-figure">
+			<div class="placeholder-notice">
+				<p>Article coming soon — Jackson LeJeune is working on this piece.</p>
+			</div>
+		</div>
+
+		<p class="article-intro">[Article text coming soon]</p>
+
+		<div class="article-body">
+
+			<p style="color: #999; font-style: italic;">[Content pending]</p>
+
+			<p style="margin-top: 32px;"><a href="../../../about.html#jackson-lejeune" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Jackson LeJeune &rarr;</a></p>
+		</div>
+
+		<div class="feedback">
+			<div class="feedback-prompt">Was this article helpful?</div>
+			<div class="feedback-buttons">
+				<button class="feedback-btn" onclick="recordVote('yes')">👍 Yes</button>
+				<button class="feedback-btn" onclick="recordVote('no')">👎 No</button>
+			</div>
+		</div>
+
+		<div class="article-nav">
+			<a href="../second-presbyterian/">← Previous</a>
+			<a href="../madeira/">Next →</a>
+		</div>
+	</article>
+
+	<footer>
+		<div class="social-icons">
+			<a href="https://facebook.com" title="Facebook">f</a>
+			<a href="https://twitter.com" title="Twitter">𝕏</a>
+			<a href="https://instagram.com" title="Instagram">📷</a>
+		</div>
+		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
+	</footer>
+
+	<script>
+		const hamburger = document.getElementById('hamburger');
+		const navMenu = document.getElementById('nav-menu');
+		hamburger.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+
+		function recordVote(vote) {
+			const formData = new FormData();
+			formData.append('vote', vote);
+			formData.append('article', 'Trains in Illinois');
+			const env = (new URL(window.location)).hostname.includes('vercel') ? 'preview' : 'production';
+			formData.append('environment', env);
+		}
+
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'n' || e.key === 'N') window.location.href = '../madeira/';
+			if (e.key === 'p' || e.key === 'P') window.location.href = '../second-presbyterian/';
+			if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
+			if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
+			if (e.key === '?') alert('N: Next article, P: Previous, Space: Page down, ?: Help');
+		});
+	</script>
+</body>
+</html>
