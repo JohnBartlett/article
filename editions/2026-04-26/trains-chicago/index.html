@@ -1,386 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Trains in Illinois | Classic Chicago Magazine</title>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Chicago: An Express Train History | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
 
-	<!-- GA4-disabled
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-5J2HWKC0B1');
-	</script>
-	GA4-disabled -->
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		* { margin: 0; padding: 0; box-sizing: border-box; }
-		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
 
-		header {
-			background: #fff;
-			padding: 20px 0;
-			border-bottom: 1px solid #e0e0e0;
-		}
-		.header-top {
-			max-width: 1000px;
-			margin: 0 auto;
-			padding: 0 20px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.logo { width: 80px; }
-		.logo img { width: 100%; height: auto; display: block; }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-		nav {
-			display: flex;
-			gap: 30px;
-			list-style: none;
-		}
-		nav a {
-			text-decoration: none;
-			color: #333;
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		nav a:hover { text-decoration: underline; }
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
 
-		.hamburger {
-			display: none;
-			flex-direction: column;
-			cursor: pointer;
-		}
-		.hamburger span {
-			width: 25px;
-			height: 3px;
-			background: #333;
-			margin: 4px 0;
-			transition: 0.3s;
-		}
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
 
-		.nav-right {
-			display: flex;
-			gap: 10px;
-			align-items: center;
-		}
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-		.dropdown {
-			display: none;
-			position: absolute;
-			top: 60px;
-			right: 20px;
-			background: #fff;
-			border: 1px solid #e0e0e0;
-			border-radius: 4px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-			z-index: 1000;
-			min-width: 150px;
-		}
-		.dropdown a {
-			display: block;
-			padding: 12px 16px;
-			color: #333;
-			text-decoration: none;
-			font-size: 13px;
-			border-bottom: 1px solid #f0f0f0;
-		}
-		.dropdown a:last-child { border-bottom: none; }
-		.dropdown a:hover { background: #f5f5f5; }
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
 
-		.article {
-			max-width: 700px;
-			margin: 40px auto;
-			padding: 0 20px;
-		}
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
 
-		.article-label {
-			font-size: 12px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: #b51c20;
-			margin-bottom: 8px;
-		}
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
 
-		.article-title {
-			font-family: 'Playfair Display', serif;
-			font-size: 48px;
-			font-weight: 700;
-			line-height: 1.1;
-			margin-bottom: 16px;
-			color: #000;
-		}
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
 
-		.article-meta {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 32px;
-		}
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 8px;
+    }
 
-		.hero-figure {
-			width: 100%;
-			margin: 40px 0;
-		}
-		.hero-image { width: 100%; height: auto; display: block; }
-		.hero-caption {
-			font-size: 12px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
+    .article-byline {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
 
-		.placeholder-notice {
-			background: #f5f5f5;
-			padding: 40px;
-			text-align: center;
-			border-radius: 4px;
-			margin: 20px 0;
-		}
-		.placeholder-notice p {
-			font-family: 'Lato', sans-serif;
-			font-size: 16px;
-			color: #666;
-		}
+    .article-body {
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-		.article-intro {
-			font-size: 18px;
-			line-height: 1.7;
-			margin-bottom: 24px;
-			color: #000;
-		}
+    .article-body p {
+      margin: 0 0 20px 0;
+    }
 
-		.article-body {
-			font-size: 16px;
-			line-height: 1.8;
-		}
+    .article-body figure {
+      margin: 40px 0;
+      padding: 0;
+    }
 
-		.article-body p {
-			margin-bottom: 20px;
-			color: #333;
-		}
+    .article-body img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-		.article-body figure {
-			margin: 32px 0;
-		}
+    .article-body figcaption {
+      font-size: 13px;
+      color: #999;
+      margin-top: 10px;
+      font-style: italic;
+    }
 
-		.article-body img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+    }
 
-		.article-body figcaption {
-			font-size: 13px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
+    .author-bio {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
 
-		.article-body a {
-			color: #b51c20;
-			text-decoration: none;
-		}
-		.article-body a:hover { text-decoration: underline; }
+    .author-bio a {
+      color: #d41f1f;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-		.about-author {
-			margin-top: 32px;
-		}
-		.about-author a {
-			font-family: 'Lato', sans-serif;
-			font-size: 14px;
-			font-weight: 700;
-			color: #b51c20;
-			text-decoration: none;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		.about-author a:hover { text-decoration: underline; }
+    .author-bio a:hover {
+      text-decoration: underline;
+    }
 
-		.feedback {
-			margin-top: 48px;
-			padding-top: 24px;
-			border-top: 1px solid #e0e0e0;
-		}
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-		.feedback-prompt {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 16px;
-		}
+    .nav-links a {
+      color: #d41f1f;
+      text-decoration: none;
+    }
 
-		.feedback-buttons {
-			display: flex;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
 
-		.feedback-btn {
-			background: none;
-			border: 1px solid #ddd;
-			padding: 10px 16px;
-			cursor: pointer;
-			border-radius: 4px;
-			font-size: 14px;
-			transition: all 0.2s;
-		}
-
-		.feedback-btn:hover {
-			border-color: #b51c20;
-			color: #b51c20;
-		}
-
-		.article-nav {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 48px;
-			padding: 24px 0;
-			border-top: 1px solid #e0e0e0;
-		}
-
-		.article-nav a {
-			color: #b51c20;
-			text-decoration: none;
-			font-weight: 700;
-			font-size: 14px;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-
-		.article-nav a:hover { text-decoration: underline; }
-
-		footer {
-			background: #fff;
-			padding: 40px 20px;
-			text-align: center;
-			border-top: 1px solid #e0e0e0;
-			margin-top: 80px;
-		}
-
-		footer p {
-			font-size: 12px;
-			color: #999;
-			margin-bottom: 16px;
-		}
-
-		.social-icons {
-			display: flex;
-			justify-content: center;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
-
-		.social-icons a {
-			color: #b51c20;
-			text-decoration: none;
-			font-size: 18px;
-		}
-
-		@media (max-width: 600px) {
-			.hamburger { display: flex; }
-			nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: #fff; border-bottom: 1px solid #e0e0e0; gap: 0; }
-			nav.active { display: flex; }
-			nav a { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; }
-			.article-title { font-size: 32px; }
-			.dropdown { right: 0; }
-		}
-	</style>
+    footer {
+      border-top: 1px solid #eee;
+      padding: 40px 0;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      margin-top: 60px;
+    }
+  </style>
 </head>
+
 <body>
-	<header>
-		<div class="header-top">
-			<div class="logo">
-				<a href="../../../index.html">
-					<img src="../../../logo.jpg" alt="Classic Chicago Magazine">
-				</a>
-			</div>
-			<nav id="nav-menu">
-				<a href="../../../index.html">Home</a>
-				<a href="../../../about.html">About</a>
-				<a href="../../../subscribe.html">Subscribe</a>
-				<a href="../../../advertise.html">Advertise</a>
-			</nav>
-			<div class="nav-right">
-				<button class="hamburger" id="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</header>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine – The Sunday Edition"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
 
-	<article class="article">
-		<div class="article-label">Travel & Culture</div>
-		<h1 class="article-title">Trains in Illinois</h1>
-		<div class="article-meta">By Jackson LeJeune · April 26, 2026</div>
+  <article class="article-wrapper">
+    <div class="article-category">Chicago History</div>
+    <h1 class="article-title">Chicago: An Express Train History</h1>
+    <div class="article-byline">By Jackson LeJeune | April 26, 2026 — Part 1 of 3</div>
 
-		<div class="hero-figure">
-			<div class="placeholder-notice">
-				<p>Article coming soon — Jackson LeJeune is working on this piece.</p>
-			</div>
-		</div>
+    <div class="article-body">
+      <p>As most Midwesterners (and certainly all Chicagoans) know, Chicago was a city built on and defined by rail. In this three-part history, releasing weekly, I aim to tell its story in a unique way by focusing on its railways and other transit links.</p>
 
-		<p class="article-intro">[Article text coming soon]</p>
+      <h2>Prehistory</h2>
 
-		<div class="article-body">
+      <figure>
+        <img src="photo-01.jpg" alt="Chicago's natural rivers and portages">
+        <figcaption>Chicago's natural rivers and portages</figcaption>
+      </figure>
 
-			<p style="color: #999; font-style: italic;">[Content pending]</p>
+      <p>Ever since this continent's first people crossed the Bering strait's ice bridge 15,000 years ago, the area was valued for its transport links. The Chicago River passed a mere five miles from the Des Plaines river, which eventually led into the Mississippi, meaning a short hike was all that kept boats from connecting the Great Lakes to the Gulf of Mexico. However, the land was never home to a major settlement by the locals, due to the land's poor drainage and temperamental weather.</p>
 
-			<p style="margin-top: 32px;"><a href="../../../about.html#jackson-lejeune" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Jackson LeJeune &rarr;</a></p>
-		</div>
+      <p>When French missionaries and trappers "discovered" Chigagou ("wild garlic place") in 1675, they too saw worth in its location and transit potential. It was an ideal mid-point between the French holdings in Canada and those in Louisiana, and the Mississippi river meant they could completely bypass the British colonies on the East Coast to connect the two. However, given that the French did not intend to establish settler colonies, Chigagou's initial European population remained tiny, a frontier outpost surrounded by marsh.</p>
 
-		<div class="feedback">
-			<div class="feedback-prompt">Was this article helpful?</div>
-			<div class="feedback-buttons">
-				<button class="feedback-btn" onclick="recordVote('yes')">👍 Yes</button>
-				<button class="feedback-btn" onclick="recordVote('no')">👎 No</button>
-			</div>
-		</div>
+      <p>Not much changed in the region beyond its passing to the British after the Seven Years' War, and then the Americans' after the Revolutionary War. While relations with the local Potawatomi population were initially friendly, the federal government's hunger for territory would shatter this peace. 1795 saw the Battle of Fallen Timbers, the battle of Tippecanoe in 1811, and finally the Black Hawk war in 1833 saw ruinous defeats for the natives, compelling them to sign unequal treaties that deported them west of the Mississippi, "freeing" Chigagou (and Illinois as a whole) for rapid settlement.</p>
 
-		<div class="article-nav">
-			<a href="../second-presbyterian/">← Previous</a>
-			<a href="../madeira/">Next →</a>
-		</div>
-	</article>
+      <figure>
+        <img src="photo-02.jpg" alt="Illustration of Chicago in 1820">
+        <figcaption>Illustration of Chicago in 1820</figcaption>
+      </figure>
 
-	<footer>
-		<div class="social-icons">
-			<a href="https://facebook.com" title="Facebook">f</a>
-			<a href="https://twitter.com" title="Twitter">𝕏</a>
-			<a href="https://instagram.com" title="Instagram">📷</a>
-		</div>
-		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
-	</footer>
+      <p>When Illinois incorporated as a state in 1818, its population resided primarily in the south, where the land was far more favorable to farming. Chicago was still little more than a dozen sparse buildings surrounding Fort Dearborn, but change was on the wind. Swept up in the "canal fever" of the time, stemming from the East Coast, the Illinois Congress authorized the Illinois and Michigan canal to connect the Mississippi and Lake Michigan, which began construction in 1836. The work on the canal, as well as the Black Hawk War's soldiers, and the recently finished harbor in Lake Michigan helped to swell Chicago's population to 4,170 by the time it was incorporated in 1837. With the canal in progress, further waves of settlers on their way, and a growing economy, Chicago was on the way to something big.</p>
 
-	<script>
-		const hamburger = document.getElementById('hamburger');
-		const navMenu = document.getElementById('nav-menu');
-		hamburger.addEventListener('click', () => {
-			navMenu.classList.toggle('active');
-		});
+      <h2>Getting On Track</h2>
 
-		function recordVote(vote) {
-			const formData = new FormData();
-			formData.append('vote', vote);
-			formData.append('article', 'Trains in Illinois');
-			const env = (new URL(window.location)).hostname.includes('vercel') ? 'preview' : 'production';
-			formData.append('environment', env);
-		}
+      <figure>
+        <img src="photo-03.jpg" alt="The Chicago and Galena Railroad's West Side Depot, built in 1852">
+        <figcaption>The Chicago and Galena Railroad's West Side Depot, built in 1852</figcaption>
+      </figure>
 
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'n' || e.key === 'N') window.location.href = '../madeira/';
-			if (e.key === 'p' || e.key === 'P') window.location.href = '../second-presbyterian/';
-			if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
-			if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
-			if (e.key === '?') alert('N: Next article, P: Previous, Space: Page down, ?: Help');
-		});
-	</script>
+      <p>Unfortunately, the Illinois Canal was a disappointment, and while it did do good work, it was closed at the turn of the century. It cost six million dollars, requiring significant capital from the US government and British investors despite the sale of the land surrounding it. Furthermore, after a four-year delay, its opening in 1848 also marked the beginning of the transportation that would render it obsolete. The Galena & Chicago Railroad had laid its first eight miles of track, to connect the namesake cities, and began shipping wheat to the city. Chicago's position on Lake Michigan was already a critical link between East and West; raw materials were loaded onto ships and sent to the East Coast via the Erie Canal, and finished goods were unloaded and distributed to the west for sale. Railroads would increase the volume at which this exchange took place.</p>
+
+      <p>Several other entities sought to capitalize on this innovation, including the Illinois State Legislature. They passed a bill that same year to build 1,300 miles of state-owned railroads, including the Illinois Central Railroad, but the project was abandoned before a single mile of track was constructed. Private enterprise had all but given up, and rail transport in Illinois may have become a footnote if not for the efforts of Senator Stephen A. Douglas, using his political weight to get things back on track by 1850.</p>
+
+      <p>Of course, trains weren't the only things developing in Chicago at the time. Its population growth was driven by economic reasons, and a major cylinder of the city's economic engine was starting to spin up around this time. 1826 saw a 300-hog-capacity pigpen constructed, partly as an effort to quell the rampant issue of wandering livestock, and the city's first packed meat was processed and shipped to Detroit in 1832.</p>
+
+      <figure>
+        <img src="photo-04.jpg" alt="Chicago, 1853">
+        <figcaption>Chicago, 1853</figcaption>
+      </figure>
+
+      <p>By 1850, Chicago's population reached thirty thousand, and the state's railroad mileage had jumped to 110 by that same year. A further construction boom saw a staggering increase to 2,800 miles in Illinois, second only to Ohio. With this extensive mileage, and access to the Atlantic via the Erie Canal, Chicago served as a key destination for bulk goods to be sent back east: grain, lumber, and meat.</p>
+
+      <p>Meat would soon become the dominant force among these three, and saw many important firsts during this time. It was desirable as a commodity because it allowed farmers to concentrate the value of bulk crops like corn into a form much easier to transport. 1844 saw the first international sale of meat, and the first livestock market opened four years later. The marriage of meat and train was not far behind; Sherman's market became the first in the nation to transport stock by train to Chicago in 1852.</p>
+
+      <p>The Civil War, despite bringing considerable destruction to most of the country, was a considerable boon for Illinois and Chicago. The state's transportation links, especially Chicago's railroads and the Mississippi river once again played a key role in its fate. Chicago was far enough away from the front and possessed a large stock of labor, so it was flooded with government-funded industrialization. Its connections to the countryside meant it rapidly became a key food supplier for the Union army, with meat being a key demand. The southern edges of the state were near enough the fighting, however, to become critical supply depots and staging points for campaigns in the South.</p>
+
+      <figure>
+        <img src="photo-05.jpg" alt="The Union Stock Yards as it was in 1878">
+        <figcaption>The Union Stock Yards as it was in 1878. In the foreground, the pens, and the rails on the right, in the background, the packinghouses.</figcaption>
+      </figure>
+
+      <p>As the Civil War was winding down, the meat industry in Chicago was only heating up. Throughout the 1850s, new markets and slaughterhouses popped up all over the city to service the ever-increasing flow of livestock to the city. The end of the war increased the flow of animals to a torrent, as Chicago became the port of call for ranchers in former Confederate states who could now sell their animals to the North. On Christmas Day, 1865, the most (in)famous livestock plant in Chicago would open, defining the industry and altering the city's future for decades to come: The Union Stock Yard. Founded by Chicago's nine largest railroads, it boasted fifteen miles of rail on nine tracks, a hotel, a bank, all on 560 acres square in the middle of the city. Tourists would flock to see the beacon of industrial progress and stunning efficiency; even the heir apparent to the Russian throne, Alexander III, visited in 1872.</p>
+
+      <p>This is where we will end for this installment; look for part two next week, where we will cover up until the end of World War II, and watch as Chicago becomes the most significant city in the nation, second only to New York.</p>
+
+      <div class="author-bio">
+        <a href="../../../about.html">About Jackson LeJeune →</a>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="../rush-hospital/">← Previous</a>
+      <a href="../second-presbyterian/">Next →</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Classic Chicago Magazine</p>
+  </footer>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'n' || e.key === 'N') window.location.href = '../second-presbyterian/';
+      if (e.key === 'p' || e.key === 'P') window.location.href = '../rush-hospital/';
+      if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
+      if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
+      if (e.key === '?') alert('Keyboard shortcuts: N=Next, P=Previous, Space/PgDn=Scroll down, PgUp=Scroll up, ?=Help');
+    });
+  </script>
 </body>
+
 </html>

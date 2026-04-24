@@ -1,386 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Second Presbyterian Church 20th Anniversary | Classic Chicago Magazine</title>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Celebrating Twenty Years of Preservation Stewardship | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
 
-	<!-- GA4-disabled
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-5J2HWKC0B1');
-	</script>
-	GA4-disabled -->
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		* { margin: 0; padding: 0; box-sizing: border-box; }
-		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
 
-		header {
-			background: #fff;
-			padding: 20px 0;
-			border-bottom: 1px solid #e0e0e0;
-		}
-		.header-top {
-			max-width: 1000px;
-			margin: 0 auto;
-			padding: 0 20px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.logo { width: 80px; }
-		.logo img { width: 100%; height: auto; display: block; }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-		nav {
-			display: flex;
-			gap: 30px;
-			list-style: none;
-		}
-		nav a {
-			text-decoration: none;
-			color: #333;
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		nav a:hover { text-decoration: underline; }
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
 
-		.hamburger {
-			display: none;
-			flex-direction: column;
-			cursor: pointer;
-		}
-		.hamburger span {
-			width: 25px;
-			height: 3px;
-			background: #333;
-			margin: 4px 0;
-			transition: 0.3s;
-		}
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
 
-		.nav-right {
-			display: flex;
-			gap: 10px;
-			align-items: center;
-		}
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-		.dropdown {
-			display: none;
-			position: absolute;
-			top: 60px;
-			right: 20px;
-			background: #fff;
-			border: 1px solid #e0e0e0;
-			border-radius: 4px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-			z-index: 1000;
-			min-width: 150px;
-		}
-		.dropdown a {
-			display: block;
-			padding: 12px 16px;
-			color: #333;
-			text-decoration: none;
-			font-size: 13px;
-			border-bottom: 1px solid #f0f0f0;
-		}
-		.dropdown a:last-child { border-bottom: none; }
-		.dropdown a:hover { background: #f5f5f5; }
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
 
-		.article {
-			max-width: 700px;
-			margin: 40px auto;
-			padding: 0 20px;
-		}
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
 
-		.article-label {
-			font-size: 12px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: #b51c20;
-			margin-bottom: 8px;
-		}
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
 
-		.article-title {
-			font-family: 'Playfair Display', serif;
-			font-size: 48px;
-			font-weight: 700;
-			line-height: 1.1;
-			margin-bottom: 16px;
-			color: #000;
-		}
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
 
-		.article-meta {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 32px;
-		}
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 8px;
+    }
 
-		.hero-figure {
-			width: 100%;
-			margin: 40px 0;
-		}
-		.hero-image { width: 100%; height: auto; display: block; }
-		.hero-caption {
-			font-size: 12px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
+    .article-byline {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
 
-		.placeholder-notice {
-			background: #f5f5f5;
-			padding: 40px;
-			text-align: center;
-			border-radius: 4px;
-			margin: 20px 0;
-		}
-		.placeholder-notice p {
-			font-family: 'Lato', sans-serif;
-			font-size: 16px;
-			color: #666;
-		}
+    .article-body {
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-		.article-intro {
-			font-size: 18px;
-			line-height: 1.7;
-			margin-bottom: 24px;
-			color: #000;
-		}
+    .article-body p {
+      margin: 0 0 20px 0;
+    }
 
-		.article-body {
-			font-size: 16px;
-			line-height: 1.8;
-		}
+    .article-body figure {
+      margin: 40px 0;
+      padding: 0;
+    }
 
-		.article-body p {
-			margin-bottom: 20px;
-			color: #333;
-		}
+    .article-body img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-		.article-body figure {
-			margin: 32px 0;
-		}
+    .article-body figcaption {
+      font-size: 13px;
+      color: #999;
+      margin-top: 10px;
+      font-style: italic;
+    }
 
-		.article-body img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
+    .author-bio {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
 
-		.article-body figcaption {
-			font-size: 13px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
+    .author-bio a {
+      color: #d41f1f;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-		.article-body a {
-			color: #b51c20;
-			text-decoration: none;
-		}
-		.article-body a:hover { text-decoration: underline; }
+    .author-bio a:hover {
+      text-decoration: underline;
+    }
 
-		.about-author {
-			margin-top: 32px;
-		}
-		.about-author a {
-			font-family: 'Lato', sans-serif;
-			font-size: 14px;
-			font-weight: 700;
-			color: #b51c20;
-			text-decoration: none;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		.about-author a:hover { text-decoration: underline; }
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-		.feedback {
-			margin-top: 48px;
-			padding-top: 24px;
-			border-top: 1px solid #e0e0e0;
-		}
+    .nav-links a {
+      color: #d41f1f;
+      text-decoration: none;
+    }
 
-		.feedback-prompt {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 16px;
-		}
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
 
-		.feedback-buttons {
-			display: flex;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
-
-		.feedback-btn {
-			background: none;
-			border: 1px solid #ddd;
-			padding: 10px 16px;
-			cursor: pointer;
-			border-radius: 4px;
-			font-size: 14px;
-			transition: all 0.2s;
-		}
-
-		.feedback-btn:hover {
-			border-color: #b51c20;
-			color: #b51c20;
-		}
-
-		.article-nav {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 48px;
-			padding: 24px 0;
-			border-top: 1px solid #e0e0e0;
-		}
-
-		.article-nav a {
-			color: #b51c20;
-			text-decoration: none;
-			font-weight: 700;
-			font-size: 14px;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-
-		.article-nav a:hover { text-decoration: underline; }
-
-		footer {
-			background: #fff;
-			padding: 40px 20px;
-			text-align: center;
-			border-top: 1px solid #e0e0e0;
-			margin-top: 80px;
-		}
-
-		footer p {
-			font-size: 12px;
-			color: #999;
-			margin-bottom: 16px;
-		}
-
-		.social-icons {
-			display: flex;
-			justify-content: center;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
-
-		.social-icons a {
-			color: #b51c20;
-			text-decoration: none;
-			font-size: 18px;
-		}
-
-		@media (max-width: 600px) {
-			.hamburger { display: flex; }
-			nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: #fff; border-bottom: 1px solid #e0e0e0; gap: 0; }
-			nav.active { display: flex; }
-			nav a { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; }
-			.article-title { font-size: 32px; }
-			.dropdown { right: 0; }
-		}
-	</style>
+    footer {
+      border-top: 1px solid #eee;
+      padding: 40px 0;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      margin-top: 60px;
+    }
+  </style>
 </head>
+
 <body>
-	<header>
-		<div class="header-top">
-			<div class="logo">
-				<a href="../../../index.html">
-					<img src="../../../logo.jpg" alt="Classic Chicago Magazine">
-				</a>
-			</div>
-			<nav id="nav-menu">
-				<a href="../../../index.html">Home</a>
-				<a href="../../../about.html">About</a>
-				<a href="../../../subscribe.html">Subscribe</a>
-				<a href="../../../advertise.html">Advertise</a>
-			</nav>
-			<div class="nav-right">
-				<button class="hamburger" id="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</header>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine – The Sunday Edition"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
 
-	<article class="article">
-		<div class="article-label">Religion & Community</div>
-		<h1 class="article-title">Second Presbyterian Church 20th Anniversary</h1>
-		<div class="article-meta">By Annie Delfosse and Ana Baca · April 26, 2026</div>
+  <article class="article-wrapper">
+    <div class="article-category">Religion & Community</div>
+    <h1 class="article-title">Celebrating Twenty Years of Preservation Stewardship</h1>
+    <div class="article-byline">By Linda P. Miller | April 26, 2026</div>
 
-		<div class="hero-figure">
-			<div class="placeholder-notice">
-				<p>Article coming soon — Annie Delfosse and Ana Baca are working on this piece.</p>
-			</div>
-		</div>
+    <div class="article-body">
+      <p>In March 2006, a small group of volunteers founded an organization with a mission to restore the Arts & Crafts sanctuary of Second Presbyterian Church of Chicago (1936 S. Michigan Avenue), Chicago's only individually listed National Historic Landmark church. On March 21, 2026, a capacity crowd gathered to celebrate that group, Friends of Historic Second Church (Friends), and its many accomplishments over those twenty years. These accomplishments are notable, and in 2025, Friends was awarded the Richard H. Driehaus Foundation Preservation Award for Stewardship by Landmarks Illinois for its ongoing work.</p>
 
-		<p class="article-intro">[Article text coming soon]</p>
+      <figure>
+        <img src="photo-01.jpg" alt="John Cramer, Joan Stinton, Bill Tyre">
+        <figcaption>John Cramer, Joan Stinton, Bill Tyre</figcaption>
+      </figure>
 
-		<div class="article-body">
+      <p>It was a beautiful spring day, with sunshine pouring through the twenty stained-glass windows, some fully restored and some in desperate need of attention. It was a perfect day for a celebration. There was a buzz in the air as the Thaddeus Tukes Duo started things off with a set on the vibraphone and piano. An organ fanfare by Michael Shawgo, church music director, called attendees to their seats. Remarks were given by Friends' President, Nate Lielasus, and Executive Director Andy Pierce. Bonnie McDonald, President and CEO of Landmarks Illinois, spoke about the importance of historic preservation and the work of Friends. Bill Tyre, Executive Director and Curator of Glessner House, summarized the twenty years of preservation work, including the restoration of four monumental Tiffany stained-glass windows, the massive Tree of Life mural and six smaller murals by Frederic Clay Bartlett, the replacement of the 1901 electrical wiring and restoration of all the light fixtures, as well as plaster repair and painting. In all, Friends has invested more than $4 million in restoration work.</p>
 
-			<p style="color: #999; font-style: italic;">[Content pending]</p>
+      <figure>
+        <img src="photo-02.jpg" alt="Tom Venturella, Rick Peloquin, Mary Bucaro">
+        <figcaption>Tom Venturella, Rick Peloquin, Mary Bucaro</figcaption>
+      </figure>
 
-			<p style="margin-top: 32px;"><a href="../../../about.html#annie-delfosse" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Authors &rarr;</a></p>
-		</div>
+      <p>Friends thanked its visionary lead donors: Barbi and Tom Donnelley, Richard H. Driehaus, the Richard H. Driehaus Foundation, William Hinchliff, and Marshall Field V.</p>
 
-		<div class="feedback">
-			<div class="feedback-prompt">Was this article helpful?</div>
-			<div class="feedback-buttons">
-				<button class="feedback-btn" onclick="recordVote('yes')">👍 Yes</button>
-				<button class="feedback-btn" onclick="recordVote('no')">👎 No</button>
-			</div>
-		</div>
+      <p>Friends' founding board member Ann Belletire invited everyone in attendance to join in the 20th anniversary campaign, "Securing the Future, Preserving the Past." The campaign seeks support for the conservation of the remaining Bartlett murals and for the annual fund to ensure the future of the organization.</p>
 
-		<div class="article-nav">
-			<a href="../sig/">← Previous</a>
-			<a href="../trains-chicago/">Next →</a>
-		</div>
-	</article>
+      <figure>
+        <img src="photo-03.jpg" alt="Ann Belletire, Janelle Hoekstra">
+        <figcaption>Ann Belletire, Janelle Hoekstra</figcaption>
+      </figure>
 
-	<footer>
-		<div class="social-icons">
-			<a href="https://facebook.com" title="Facebook">f</a>
-			<a href="https://twitter.com" title="Twitter">𝕏</a>
-			<a href="https://instagram.com" title="Instagram">📷</a>
-		</div>
-		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
-	</footer>
+      <p>A reception followed with a second set by the Tukes Duo, a champagne toast, and conversation over passed appetizers.</p>
 
-	<script>
-		const hamburger = document.getElementById('hamburger');
-		const navMenu = document.getElementById('nav-menu');
-		hamburger.addEventListener('click', () => {
-			navMenu.classList.toggle('active');
-		});
+      <figure>
+        <img src="photo-04.jpg" alt="Peter Schoenmann, Elizabeth Kendall, Ewa Devereux, John Sahlus, Bonnie McDonald">
+        <figcaption>Peter Schoenmann, Elizabeth Kendall, Ewa Devereux, John Sahlus, Bonnie McDonald</figcaption>
+      </figure>
 
-		function recordVote(vote) {
-			const formData = new FormData();
-			formData.append('vote', vote);
-			formData.append('article', 'Second Presbyterian Church 20th Anniversary');
-			const env = (new URL(window.location)).hostname.includes('vercel') ? 'preview' : 'production';
-			formData.append('environment', env);
-		}
+      <figure>
+        <img src="photo-05.jpg" alt="Thaddeus Tukes on the vibraphone">
+        <figcaption>Thaddeus Tukes on the vibraphone</figcaption>
+      </figure>
 
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'n' || e.key === 'N') window.location.href = '../trains-chicago/';
-			if (e.key === 'p' || e.key === 'P') window.location.href = '../sig/';
-			if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
-			if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
-			if (e.key === '?') alert('N: Next article, P: Previous, Space: Page down, ?: Help');
-		});
-	</script>
+      <p>Friends continues its 20th Anniversary celebration with free tours every weekend and programs throughout the year. Programs include:</p>
+
+      <p style="margin-left: 20px;">
+        • Cocktails with Tiffany, an Arts & Crafts Flower Show<br>
+        • Arts & Crafts Jewelry and Metalwork, 1890–1940, with viewing of the newly restored Tiffany Jeweled window after its reinstallation<br>
+        • A South Michigan Avenue free community Block Fest<br>
+        • A Basement to Belfry Tour
+      </p>
+
+      <figure>
+        <img src="photo-06.jpg" alt="Michael Shawgo playing the organ fanfare">
+        <figcaption>Michael Shawgo playing the organ fanfare</figcaption>
+      </figure>
+
+      <figure>
+        <img src="photo-07.jpg" alt="Audience congratulating Friends of Historic Second Church docents">
+        <figcaption>Audience congratulating Friends of Historic Second Church docents</figcaption>
+      </figure>
+
+      <figure>
+        <img src="photo-08.jpg" alt="Tree of Life mural">
+        <figcaption>Tree of Life mural</figcaption>
+      </figure>
+
+      <p>For details, please visit the Friends of Historic Second Church website at <a href="http://www.historicsecondchurch.org/" target="_blank">historicsecondchurch.org</a></p>
+
+      <div class="author-bio">
+        <a href="../../../about.html">About Linda P. Miller →</a>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="../trains-chicago/">← Previous</a>
+      <a href="../biba-favorites/">Next →</a>
+    </div>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Classic Chicago Magazine</p>
+  </footer>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'n' || e.key === 'N') window.location.href = '../biba-favorites/';
+      if (e.key === 'p' || e.key === 'P') window.location.href = '../trains-chicago/';
+      if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
+      if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
+      if (e.key === '?') alert('Keyboard shortcuts: N=Next, P=Previous, Space/PgDn=Scroll down, PgUp=Scroll up, ?=Help');
+    });
+  </script>
 </body>
+
 </html>
