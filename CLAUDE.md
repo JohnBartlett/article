@@ -85,6 +85,35 @@ git add editors/edition.html editors/index.html && git commit -m "Update dev2 pr
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
 
+## Verification & Deployment
+
+**CRITICAL:** Never claim article status or deployment success without verification.
+
+### Before claiming any status, run:
+```bash
+python3 tools/verify_edition.py YYYY-MM-DD
+```
+
+This checks ACTUAL state: what has content, what has photos, what's placeholder.
+
+### Article Status Definitions
+- **Ready** = content + photos both exist
+- **Text Only** = content exists, no photos
+- **In Progress** = partial (has one but not both)
+- **Placeholder** = no real content
+- **Missing** = folder doesn't exist or no index.html
+
+See `VERIFICATION.md` for full definitions and workflow.
+
+### Deployment Workflow
+After `vercel deploy --yes`:
+1. Run verification script to record actual state
+2. Check `DEPLOYMENT-CHECKLIST.md` (verify each article loads, nav works, etc.)
+3. Update editors pages with new preview URL
+4. Include verification output in commit message
+
+See `DEPLOYMENT-CHECKLIST.md` for detailed steps.
+
 ## Skills
 
 | Skill | Purpose |
