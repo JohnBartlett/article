@@ -19,3 +19,6 @@ classicchicagomagazinebobatea/
 # Claude Code machine-local files
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
+tools/credentials.json
+exif-mcp/
+tools/__pycache__/
