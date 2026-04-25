@@ -289,6 +289,51 @@ Edit `index.html` (root):
 4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
 5. Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
 
+### Article Extraction from Contributor Emails
+
+**CRITICAL:** Articles and photos arrive in contributor emails to `john.bartlett@gmail.com`, not via shared folders or Drive links.
+
+**Workflow:**
+1. Check contributor inboxes for emails with article text and photo attachments
+2. Identify the Gmail message ID (format: `19db1b467e7a53dd`)
+3. Use `tools/extract_article_photos.py` to extract attachments to article folder
+4. For PDF articles: setup venv with PyPDF2, manually extract and format text
+5. Create article HTML from `_template/article.html` with extracted content
+6. Add Splide.js photo carousel for images
+7. Run `verify_edition.py YYYY-MM-DD` to confirm photos and content
+8. Update homepage card with article image
+9. Deploy to Vercel and verify preview
+
+**Email Sources by Contributor:**
+- `judycbross@aol.com` — Editor-in-Chief (articles, editorial instructions, photo requests)
+- `anabaca8@gmail.com` — Photos and articles (Ana Baca - layout editor, photographer)
+- `aedelfosse1@gmail.com` — Annie Delfosse (DateBook, article content)
+- `muhlemane2@gmail.com` — Emma Muhleman (intern - coordinator for submissions)
+- `sigalina@aol.com` — Sigalina Zetouni (sends articles directly to John)
+
+**Tools:**
+- `tools/extract_article_photos.py` — Extract JPEG/PNG attachments from Gmail messages
+- `tools/verify_edition.py` — Confirm article content + photo counts
+- `.venv/` — Python virtual environment (required for PyPDF2, requests)
+
+**Setup for New Session:**
+```bash
+# First time only
+python3 -m venv .venv
+source .venv/bin/activate
+pip install PyPDF2 requests
+
+# For future sessions, just activate
+source .venv/bin/activate
+```
+
+**Common Mistakes to Avoid:**
+1. **Don't use Google Drive download links** — Shortcuts download as HTML, not images. Use email attachments instead.
+2. **Check emails FIRST** — Before assuming an article is missing, search john.bartlett@gmail.com for contributor emails.
+3. **Track message IDs** — Document which emails contain which articles for reference.
+4. **Always verify** — Run `verify_edition.py` after extraction to confirm article status.
+5. **Update homepage last** — Only add article cards after verification passes with all photos.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
