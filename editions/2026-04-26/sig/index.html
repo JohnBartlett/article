@@ -17,6 +17,7 @@
 	GA4-disabled -->
 
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/css/splide.min.css">
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
@@ -136,18 +137,6 @@
 			font-style: italic;
 		}
 
-		.placeholder-notice {
-			background: #f5f5f5;
-			padding: 40px;
-			text-align: center;
-			border-radius: 4px;
-			margin: 20px 0;
-		}
-		.placeholder-notice p {
-			font-family: 'Lato', sans-serif;
-			font-size: 16px;
-			color: #666;
-		}
 
 		.article-intro {
 			font-size: 18px;
@@ -317,23 +306,30 @@
 	</header>
 
 	<article class="article">
-		<div class="article-label">Design</div>
-		<h1 class="article-title">Textiles</h1>
-		<div class="article-meta">By Sig · April 26, 2026</div>
-
-		<div class="hero-figure">
-			<div class="placeholder-notice">
-				<p>Article coming soon — Sig is working on this piece.</p>
-			</div>
-		</div>
-
-		<p class="article-intro">[Article text coming soon]</p>
+		<div class="article-label">Art & Culture</div>
+		<h1 class="article-title">Textiles at Fondazione Antonio Ratti</h1>
+		<div class="article-meta">By Sigalina Zetouni · April 26, 2026</div>
 
 		<div class="article-body">
+			<p>In Como, Italy, overlooking Lake Como, Fondazione Antonio Ratti (FAR) is located in Villa Sucota. On a visit in March of 2026, I saw several superb pieces from Antonio Ratti's antique textile collection that were exhibited with contemporary works in "Animal Stories," that is currently on view. It was magnificent to be surrounded by historical fabrics that featured animals, and understand the dialogue with contemporary art that has been focusing on the role of animals. The exhibition is on view until June 14, 2026.</p>
 
-			<p style="color: #999; font-style: italic;">[Content pending]</p>
+			<div class="hero-figure">
+				<div class="splide" role="region" aria-label="Photo carousel">
+					<div class="splide__track">
+						<ul class="splide__list">
+							<li class="splide__slide"><img src="photo-01.jpeg" alt="Animal Stories exhibition"></li>
+							<li class="splide__slide"><img src="photo-02.jpeg" alt="Animal Stories exhibition"></li>
+							<li class="splide__slide"><img src="photo-03.jpeg" alt="Animal Stories exhibition"></li>
+							<li class="splide__slide"><img src="photo-04.jpeg" alt="Animal Stories exhibition"></li>
+							<li class="splide__slide"><img src="photo-05.jpeg" alt="Animal Stories exhibition"></li>
+							<li class="splide__slide"><img src="photo-06.jpeg" alt="Animal Stories exhibition"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="hero-caption">Installation View: "Animal Stories" · Fondazione Antonio Ratti · Como, Italy · Photo: S. Zetouni</div>
+			</div>
 
-			<p style="margin-top: 32px;"><a href="../../../about.html#sig" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Sig &rarr;</a></p>
+			<p style="margin-top: 32px;"><a href="../../../about.html#sigalina-zetouni" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Sigalina Zetouni &rarr;</a></p>
 		</div>
 
 		<div class="feedback">
@@ -346,7 +342,7 @@
 
 		<div class="article-nav">
 			<a href="../silk-roads/">← Previous</a>
-			<a href="../second-presbyterian/">Next →</a>
+			<a href="../madeira/">Next →</a>
 		</div>
 	</article>
 
@@ -359,12 +355,21 @@
 		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
 	</footer>
 
+	<script src="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/js/splide.min.js"></script>
 	<script>
 		const hamburger = document.getElementById('hamburger');
 		const navMenu = document.getElementById('nav-menu');
 		hamburger.addEventListener('click', () => {
 			navMenu.classList.toggle('active');
 		});
+
+		// Initialize Splide carousel
+		new Splide('.splide', {
+			perPage: 1,
+			rewind: true,
+			arrows: true,
+			pagination: true,
+		}).mount();
 
 		function recordVote(vote) {
 			const formData = new FormData();
@@ -375,7 +380,7 @@
 		}
 
 		document.addEventListener('keydown', function(e) {
-			if (e.key === 'n' || e.key === 'N') window.location.href = '../second-presbyterian/';
+			if (e.key === 'n' || e.key === 'N') window.location.href = '../madeira/';
 			if (e.key === 'p' || e.key === 'P') window.location.href = '../silk-roads/';
 			if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
 			if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
