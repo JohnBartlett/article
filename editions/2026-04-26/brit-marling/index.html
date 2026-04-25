@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- GA4-disabled
+  <!-- GA4 disabled on dev2
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,13 +12,12 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>Brit Marling: A Film Force | Classic Chicago</title>
+  <title>Brit Marling: A Film Force | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/css/splide.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; }
     header { padding: 20px 0; border-bottom: 1px solid #eee; }
     .logo-container { text-align: center; margin-bottom: 20px; }
     .logo-container img { width: 390px; height: auto; }
@@ -32,15 +31,26 @@
     .hamburger-menu.open { display: block; }
     .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
-    .article-wrapper { max-width: 840px; margin: 0 auto 60px; padding: 0 32px; }
-    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
-    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
-    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
-    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
-    .article-body blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 3px solid #b51c20; font-style: italic; color: #444; font-size: 17px; }
-    .editor-note { font-family: 'Lato', sans-serif; font-size: 14px; font-style: italic; color: #666; text-align: center; margin: 0 0 32px; padding: 12px 20px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-    figure { margin: 36px 0; }
+    .internal-nav { background: #f9f5f0; border-bottom: 1px solid #e8e0d5; padding: 5px 0; }
+    .internal-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .internal-nav-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-right: 8px; }
+    .internal-nav-inner a { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 400; color: #666; text-decoration: none; text-transform: uppercase; margin: 0 10px; padding: 3px 0; letter-spacing: 0.05em; }
+    .internal-nav-inner a:hover { color: #333; text-decoration: underline; }
+    .article-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.1; margin: 0 0 16px; color: #000; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 15px; color: #666; margin: 0 0 32px; }
+    .article-meta a { color: #b51c20; text-decoration: none; }
+    .article-meta a:hover { text-decoration: underline; }
+    .editor-note { font-family: 'Lato', sans-serif; font-size: 13px; color: #999; font-style: italic; margin-bottom: 24px; }
+    figure { margin: 32px 0; }
     figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .article-body { font-size: 17px; line-height: 1.75; color: #222; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body blockquote { font-size: 18px; font-style: italic; margin: 28px 0; padding: 0 28px; border-left: 4px solid #b51c20; color: #555; line-height: 1.8; }
+    .article-body a { color: #b51c20; text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
     .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
     .edition-nav .back-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%; }
     .edition-nav .back-link:hover { color: #b51c20; }
@@ -48,7 +58,6 @@
     .nav-text { display: flex; flex-direction: column; gap: 4px; }
     .nav-dir { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; }
     .nav-title { font-size: 13px; line-height: 1.3; color: #333; }
-    @media (max-width: 600px) { .edition-nav { flex-direction: column; align-items: flex-start; } }
     footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
     .social-links { margin-bottom: 20px; }
     .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
@@ -60,6 +69,7 @@
       h1.article-title { font-size: 28px; }
       .article-wrapper { padding: 0 16px; }
       .article-body p { font-size: 16px; }
+      .edition-nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -87,6 +97,16 @@
       <a href="../../../subscribe.html">Subscribe</a>
       <a href="../../../advertise.html">Advertise</a>
     </div>
+    <!-- dev2-only -->
+    <div class="internal-nav">
+      <div class="internal-nav-inner">
+        <span class="internal-nav-label">Editors</span>
+        <a href="../../../editors/index.html">Dev Preview</a>
+        <a href="../../../editors/edition.html">April 26 Edition</a>
+        <a href="../../../reader-comments.html">Comments</a>
+      </div>
+    </div>
+    <!-- dev2-only -->
   </header>
 
   <div class="article-wrapper">
@@ -95,16 +115,10 @@
     <h1 class="article-title">Brit Marling: A Film Force</h1>
     <p class="article-meta">By <a href="../../../about.html#judy-carmack-bross">Judy Carmack Bross</a> &middot; April 26, 2026</p>
 
-    <div class="splide" role="region" aria-label="Photo carousel">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide"><img src="photo-01.jpeg" alt="Brit Marling"></li>
-          <li class="splide__slide"><img src="photo-02.jpeg" alt="Brit Marling"></li>
-          <li class="splide__slide"><img src="photo-03.jpeg" alt="Brit Marling"></li>
-          <li class="splide__slide"><img src="photo-04.jpg" alt="Brit Marling"></li>
-        </ul>
-      </div>
-    </div>
+    <figure>
+      <img src="photo-01.jpeg" alt="Brit Marling">
+      <figcaption>Brit Marling, actress, writer, director, and producer</figcaption>
+    </figure>
 
     <p class="editor-note">Editor&rsquo;s Note: This is a first of a series of articles on Brit Marling.</p>
 
@@ -119,7 +133,8 @@
       <blockquote>&ldquo;The last few years have been such a powerful time for women telling stories. I have loved going to the theatre and watching a drama told from a point of view I haven&rsquo;t seen before &mdash; Shakespeare&rsquo;s wife in <em>Hamnet</em>, or the female author in <em>Anatomy of a Fall</em>, or young girls across multiple generations in <em>Sound of Falling</em>. When a work is written and then lensed by women the gaze fundamentally changes. It&rsquo;s such an exciting time to tell stories and to be in the audience. You get the sense that the audience is hungry for the new.&rdquo;</blockquote>
 
       <figure>
-        <img src="brit-marling-1.jpg" alt="Brit Marling">
+        <img src="photo-02.jpeg" alt="Brit Marling in conversation">
+        <figcaption>Brit Marling</figcaption>
       </figure>
 
       <p>Following the success of her FX limited series <em>A Murder at the End of the World</em> which she co-created, co-wrote, directed and starred in and was nominated for a Critics Choice Award, Marling is currently working on film and television projects in Los Angeles with her creative partner Zal Batmanglij for the production company Sister.</p>
@@ -129,7 +144,8 @@
       <p>To Marling, story-telling is all. &ldquo;I think my favorite part of filmmaking is that it&rsquo;s a choral art &mdash; it&rsquo;s a bunch of voices coming together to author something. Everybody works in service to the story. On <em>A Murder at the End of the World</em> I would come on set and constantly be moved by the work our production designer had done, or a shot our director of photography had in mind, or a location our Icelandic team had found. Our scouts there were truly adventurous. We were often suiting up into climbing gear and repelling to the bottom of icy ravines to find locations no one had yet put on screen.&rdquo; Filming shots along frozen Icelandic terrains all day in sub-zero weather hearkens back to Lilian Gish, pioneer actress who directed her sister Dorothy in movies and floated for hours on a frozen river in Maine in &ldquo;Way Down East.&rdquo;</p>
 
       <figure>
-        <img src="brit-marling-2.jpg" alt="Brit Marling">
+        <img src="photo-03.jpeg" alt="Brit Marling in profile">
+        <figcaption>Brit Marling</figcaption>
       </figure>
 
       <p>As a student at Georgetown University, she studied economics and photography. Her sophomore year she began writing and starring in friends&rsquo; films. She took a leave of absence to move to Havana to co-direct the documentary <em>Boxers and Ballerinas</em> with fellow alumna Mike Cahill about young athletes and artists working there.</p>
@@ -137,6 +153,11 @@
       <p>&ldquo;At Georgetown I studied with Professor Bernard Cook who heads the film program and Professor Roberto Bocci who founded the digital arts lab. I was lucky to be there at the beginning of the film movement on campus. We happened to come of age at a time where SLR cameras were able to shoot something that mimicked film&rsquo;s 24 frame aesthetic and you could edit footage yourself on Final Cut Pro on your laptop in your dorm room. Those tools were game changers. You didn&rsquo;t have to go to film school anymore to make a film. When I was at Georgetown as a freshman it had its first ever film festival &mdash; the curiosity and demand was following the technology.&rdquo;</p>
 
       <p>After graduating valedictorian from Georgetown she turned down a banking job at Goldman Sachs to move to Los Angeles to make movies. &ldquo;In retrospect, it was a wild leap of faith. But I think I had lived my back-up plan first and saw no other way forward.&rdquo;</p>
+
+      <figure>
+        <img src="photo-04.jpg" alt="Brit Marling at an event">
+        <figcaption>Brit Marling</figcaption>
+      </figure>
 
       <p>At the 2011 Sundance Film Festival, she made history as the first female actor and writer to have two films premiere side by side, her first feature length narrative film <em>Another Earth</em> with Cahill as director, and <em>Sound of My Voice</em> with Zal Batmanglij, both of which she starred in, co-wrote and co-produced. Not only was she highly recognized by Robert Redford but also Fox Searchlight acquired both films. Marling was nominated for Independent Spirit Awards for both which also won the esteemed Alfred P. Sloan Prize.</p>
 
@@ -149,8 +170,6 @@
       <p>When asked whether she preferred acting to writing or directing to acting or what she will lean into next, Marling responded, &ldquo;When I am acting I miss the writing and find the flipside true, too. I love fusing it all. Storytelling is an amazing catharsis. In acting, you feel that you are abandoning the past and future to live only in the moment. In directing, I feel you take in a lot of the history of the craft and try to play it forward. And writing &mdash; writing is always the future to me. What&rsquo;s coming. Or what I hope to call in.&rdquo;</p>
 
     </div>
-
-    <div style="margin-top:32px; padding-top:20px; border-top:1px solid #eee; font-family:'Lato',sans-serif; font-size:14px; color:#555; line-height:1.6;"><strong>Judy Carmack Bross</strong> — A veteran Chicago journalist covering dining, social events, and the people who shape the city&rsquo;s cultural life. She is the author of <em>Murray Bay: The Gilded Age Resort of Tafts, Sedgwicks, Blakes, Minturns, and Their Friends</em> and co-author of <em>Charlevoix: A Tradition of Hospitality</em>. Judy studies silent films with a particular interest in learning about pioneering women filmmakers.</div>
 
     <!-- Feedback Widget -->
     <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
@@ -201,8 +220,8 @@
     </div><!-- end feedback widget -->
 
     <div class="edition-nav">
-      <a href="../../../index.html" class="back-link"><span class="nav-text"><span class="nav-dir">&larr; Home</span><span class="nav-title">Classic Chicago Magazine</span></span></a>
-      <a href="../../../index.html" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Classic Chicago Magazine</span></span></a>
+      <a href="../madeira/" class="back-link"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Descent to Heaven</span></span><img class="nav-thumb" src="../madeira/madeira-1.jpeg" alt="Descent to Heaven"></a>
+      <a href="../biba-favorites/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Biba's Favorite Things: Palm Springs</span></span><img class="nav-thumb" src="../biba-favorites/photo-05.jpeg" alt="Biba's Favorite Things"></a>
     </div>
 
   </div><!-- end article-wrapper -->
@@ -217,8 +236,8 @@
   </footer>
 
   <script>
-    var prevUrl = '../../../index.html';
-    var nextUrl = '../../../index.html';
+    var prevUrl = '../madeira/';
+    var nextUrl = '../biba-favorites/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
@@ -231,4 +250,5 @@
   </script>
 
 </body>
+
 </html>

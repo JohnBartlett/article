@@ -1,407 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Silk Roads | Classic Chicago Magazine</title>
-
-	<!-- GA4-disabled
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-5J2HWKC0B1');
-	</script>
-	GA4-disabled -->
-
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/css/splide.min.css">
-	<style>
-		* { margin: 0; padding: 0; box-sizing: border-box; }
-		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
-
-		header {
-			background: #fff;
-			padding: 20px 0;
-			border-bottom: 1px solid #e0e0e0;
-		}
-		.header-top {
-			max-width: 1000px;
-			margin: 0 auto;
-			padding: 0 20px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.logo { width: 80px; }
-		.logo img { width: 100%; height: auto; display: block; }
-
-		nav {
-			display: flex;
-			gap: 30px;
-			list-style: none;
-		}
-		nav a {
-			text-decoration: none;
-			color: #333;
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		nav a:hover { text-decoration: underline; }
-
-		.hamburger {
-			display: none;
-			flex-direction: column;
-			cursor: pointer;
-		}
-		.hamburger span {
-			width: 25px;
-			height: 3px;
-			background: #333;
-			margin: 4px 0;
-			transition: 0.3s;
-		}
-
-		.nav-right {
-			display: flex;
-			gap: 10px;
-			align-items: center;
-		}
-
-		.dropdown {
-			display: none;
-			position: absolute;
-			top: 60px;
-			right: 20px;
-			background: #fff;
-			border: 1px solid #e0e0e0;
-			border-radius: 4px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-			z-index: 1000;
-			min-width: 150px;
-		}
-		.dropdown a {
-			display: block;
-			padding: 12px 16px;
-			color: #333;
-			text-decoration: none;
-			font-size: 13px;
-			border-bottom: 1px solid #f0f0f0;
-		}
-		.dropdown a:last-child { border-bottom: none; }
-		.dropdown a:hover { background: #f5f5f5; }
-
-		.article {
-			max-width: 700px;
-			margin: 40px auto;
-			padding: 0 20px;
-		}
-
-		.article-label {
-			font-size: 12px;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: #b51c20;
-			margin-bottom: 8px;
-		}
-
-		.article-title {
-			font-family: 'Playfair Display', serif;
-			font-size: 48px;
-			font-weight: 700;
-			line-height: 1.1;
-			margin-bottom: 16px;
-			color: #000;
-		}
-
-		.article-meta {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 32px;
-		}
-
-		.hero-figure {
-			width: 100%;
-			margin: 40px 0;
-		}
-		.hero-image { width: 100%; height: auto; display: block; }
-		.hero-caption {
-			font-size: 12px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
-
-		.article-intro {
-			font-size: 18px;
-			line-height: 1.7;
-			margin-bottom: 24px;
-			color: #000;
-		}
-
-		.article-body {
-			font-size: 16px;
-			line-height: 1.8;
-		}
-
-		.article-body p {
-			margin-bottom: 20px;
-			color: #333;
-		}
-
-		.article-body figure {
-			margin: 32px 0;
-		}
-
-		.article-body img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-
-		.article-body figcaption {
-			font-size: 13px;
-			color: #999;
-			margin-top: 8px;
-			font-style: italic;
-		}
-
-		.article-body a {
-			color: #b51c20;
-			text-decoration: none;
-		}
-		.article-body a:hover { text-decoration: underline; }
-
-		.about-author {
-			margin-top: 32px;
-		}
-		.about-author a {
-			font-family: 'Lato', sans-serif;
-			font-size: 14px;
-			font-weight: 700;
-			color: #b51c20;
-			text-decoration: none;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		.about-author a:hover { text-decoration: underline; }
-
-		.feedback {
-			margin-top: 48px;
-			padding-top: 24px;
-			border-top: 1px solid #e0e0e0;
-		}
-
-		.feedback-prompt {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 16px;
-		}
-
-		.feedback-buttons {
-			display: flex;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
-
-		.feedback-btn {
-			background: none;
-			border: 1px solid #ddd;
-			padding: 10px 16px;
-			cursor: pointer;
-			border-radius: 4px;
-			font-size: 14px;
-			transition: all 0.2s;
-		}
-
-		.feedback-btn:hover {
-			border-color: #b51c20;
-			color: #b51c20;
-		}
-
-		.article-nav {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 48px;
-			padding: 24px 0;
-			border-top: 1px solid #e0e0e0;
-		}
-
-		.article-nav a {
-			color: #b51c20;
-			text-decoration: none;
-			font-weight: 700;
-			font-size: 14px;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-
-		.article-nav a:hover { text-decoration: underline; }
-
-		footer {
-			background: #fff;
-			padding: 40px 20px;
-			text-align: center;
-			border-top: 1px solid #e0e0e0;
-			margin-top: 80px;
-		}
-
-		footer p {
-			font-size: 12px;
-			color: #999;
-			margin-bottom: 16px;
-		}
-
-		.social-icons {
-			display: flex;
-			justify-content: center;
-			gap: 16px;
-			margin-bottom: 24px;
-		}
-
-		.social-icons a {
-			color: #b51c20;
-			text-decoration: none;
-			font-size: 18px;
-		}
-
-		@media (max-width: 600px) {
-			.hamburger { display: flex; }
-			nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: #fff; border-bottom: 1px solid #e0e0e0; gap: 0; }
-			nav.active { display: flex; }
-			nav a { padding: 16px 20px; border-bottom: 1px solid #f0f0f0; }
-			.article-title { font-size: 32px; }
-			.dropdown { right: 0; }
-		}
-	</style>
+  <!-- GA4 disabled on dev2
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>My Silk Roads | Classic Chicago Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .internal-nav { background: #f9f5f0; border-bottom: 1px solid #e8e0d5; padding: 5px 0; }
+    .internal-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .internal-nav-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-right: 8px; }
+    .internal-nav-inner a { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 400; color: #666; text-decoration: none; text-transform: uppercase; margin: 0 10px; padding: 3px 0; letter-spacing: 0.05em; }
+    .internal-nav-inner a:hover { color: #333; text-decoration: underline; }
+    .article-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.1; margin: 0 0 16px; color: #000; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 15px; color: #666; margin: 0 0 32px; }
+    .article-meta a { color: #b51c20; text-decoration: none; }
+    .article-meta a:hover { text-decoration: underline; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .article-body { font-size: 17px; line-height: 1.75; color: #222; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body strong { font-weight: 700; }
+    .article-body a { color: #b51c20; text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
+    .edition-nav .back-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%; }
+    .edition-nav .back-link:hover { color: #b51c20; }
+    .nav-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
+    .nav-text { display: flex; flex-direction: column; gap: 4px; }
+    .nav-dir { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; }
+    .nav-title { font-size: 13px; line-height: 1.3; color: #333; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      .logo-container img { width: 280px; }
+      h1.article-title { font-size: 28px; }
+      .article-wrapper { padding: 0 16px; }
+      .article-body p { font-size: 16px; }
+      .edition-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
+
 <body>
-	<header>
-		<div class="header-top">
-			<div class="logo">
-				<a href="../../../index.html">
-					<img src="../../../logo.jpg" alt="Classic Chicago Magazine">
-				</a>
-			</div>
-			<nav id="nav-menu">
-				<a href="../../../index.html">Home</a>
-				<a href="../../../about.html">About</a>
-				<a href="../../../subscribe.html">Subscribe</a>
-				<a href="../../../advertise.html">Advertise</a>
-			</nav>
-			<div class="nav-right">
-				<button class="hamburger" id="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</header>
 
-	<article class="article">
-		<div class="article-label">Fashion & Style</div>
-		<h1 class="article-title">My Silk Roads</h1>
-		<div class="article-meta">By Susan Aurinko · April 26, 2026</div>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
+      </div>
+    </nav>
+    <div class="hamburger-menu">
+      <a href="../../../index.html">Home</a>
+      <a href="../../../about.html">About</a>
+      <a href="../../../subscribe.html">Subscribe</a>
+      <a href="../../../advertise.html">Advertise</a>
+    </div>
+    <!-- dev2-only -->
+    <div class="internal-nav">
+      <div class="internal-nav-inner">
+        <span class="internal-nav-label">Editors</span>
+        <a href="../../../editors/index.html">Dev Preview</a>
+        <a href="../../../editors/edition.html">April 26 Edition</a>
+        <a href="../../../reader-comments.html">Comments</a>
+      </div>
+    </div>
+    <!-- dev2-only -->
+  </header>
 
-		<div class="article-body">
-			<p><strong>New Scarves for Spring!</strong></p>
+  <div class="article-wrapper">
 
-			<p>I've always considered my friends a blessing, and when they are also artists who love the idea of collaboration, I am doubly blessed! When I founded LensFlair Editions, I began by collaborating with a friend, and as time has gone on, I've continued that tradition. If anything is better than something beautiful made from one artist's work, it's something created from two artists working together. For the most part, my scarves are pretty strong on color, but as spring approached, I started thinking about the pastels of magnolia trees, hyacinths and easter decorations. I collaborated with artist Maggie Meiners, taking five of the pastel images from her Silhouettes Series, arranging them into a fun geometric pattern and adding both my signature border in her shades with double strands of beads like those in her images. We played with titles and ultimately named it Sugar-Coated. It's great with any of its individual colors and really pops against white!</p>
+    <p class="article-category">Fashion &amp; Style</p>
+    <h1 class="article-title">My Silk Roads</h1>
+    <p class="article-meta">By <a href="../../../about.html#susan-aurinko">Susan Aurinko</a> &middot; April 26, 2026</p>
 
-			<div class="hero-figure">
-				<div class="splide" role="region" aria-label="Photo carousel">
-					<div class="splide__track">
-						<ul class="splide__list">
-							<li class="splide__slide"><img src="photo-01.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-02.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-03.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-04.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-05.jpg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-06.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-07.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-08.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-09.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-10.jpeg" alt="Scarf design"></li>
-							<li class="splide__slide"><img src="photo-11.jpeg" alt="Scarf design"></li>
-						</ul>
-					</div>
-				</div>
-				<div class="hero-caption">Susan Aurinko's spring scarf collection · LensFlair Editions</div>
-			</div>
+    <figure>
+      <img src="photo-01.jpeg" alt="LensFlair scarf design">
+      <figcaption>Susan Aurinko's spring scarf collection</figcaption>
+    </figure>
 
-			<p>Spring wouldn't be spring without violets and lilacs, so I decided to create a spring version of my One Way Olive scarf, calling it One Way Violet. It's made from one of the few images I have made in Chicago – a torn advertising poster off Lawrence Avenue a couple of years ago. I increased the photo's grain and turned it a lovely lilac-violet, bisected and surrounded by a cobalt border, naming it for the One Way street sign that shows up in the reflection.</p>
+    <div class="article-body">
 
-			<p>The pale, pristine quality of my friend Robin Malpass's painting Mauve Over inspired me to add macro photographs of wonderfully textured white crepe paper roses that I photographed in my Chicago studio to the ends. I named this delicate, pale scarf Floréal. It's so neutral that depending on what you wear it with, it can be either minimal, refined, or striking.</p>
+      <p><strong>New Scarves for Spring!</strong></p>
 
-			<p>And last, but certainly not least, are the pink scarves – those that benefit the Lynn Sage Breast Cancer Foundation. The first is a collaboration with artist Caren Helene Rudman. Caren's layered paintings on acetate can be moved around, one on top of the other, to create a final single image. I played with these transparent layers in her studio until I was satisfied and with the addition of my signature border in matching hues, we created the final scarf that we named Hope. I also created another pink scarf to benefit the Lynn Sage Foundation and called it Lynn's Rose. I photographed roses for almost a year until I found the most perfect one to design the scarf around. The final rose was captured in the Jardin des Plantes in Paris and was just the right rose for the scarf. A three-row signature border surrounds the rose floating in the center. Upon the sale of either of these two scarves LensFlair Editions donates 20% of the proceeds to the Foundation.</p>
+      <p>I've always considered my friends a blessing, and when they are also artists who love the idea of collaboration, I am doubly blessed! When I founded LensFlair Editions, I began by collaborating with a friend, and as time has gone on, I've continued that tradition. If anything is better than something beautiful made from one artist's work, it's something created from two artists working together. For the most part, my scarves are pretty strong on color, but as spring approached, I started thinking about the pastels of magnolia trees, hyacinths and easter decorations. I collaborated with artist Maggie Meiners, taking five of the pastel images from her Silhouettes Series, arranging them into a fun geometric pattern and adding both my signature border in her shades with double strands of beads like those in her images. We played with titles and ultimately named it Sugar-Coated. It's great with any of its individual colors and really pops against white!</p>
 
-			<p>The pleasure of designing is that I'm constantly inspired by things I see, and that includes the work of other artists. My photographs form the basis for the scarves, and when I collaborate with an artist, their painting or photograph is layered or arranged in tandem with mine. I cannot imagine a more perfect union than two artists working together to create something enchanting to wear – it's almost like magic, and when it works well, voila! a fabulous new scarf emerges like a butterfly from a chrysalis!</p>
+      <figure>
+        <img src="photo-02.jpeg" alt="LensFlair scarf design">
+        <figcaption>LensFlair Editions scarf design</figcaption>
+      </figure>
 
-			<p>Have a lovely month and stay tuned for my May column on elegance!</p>
+      <p>Spring wouldn't be spring without violets and lilacs, so I decided to create a spring version of my One Way Olive scarf, calling it One Way Violet. It's made from one of the few images I have made in Chicago – a torn advertising poster off Lawrence Avenue a couple of years ago. I increased the photo's grain and turned it a lovely lilac-violet, bisected and surrounded by a cobalt border, naming it for the One Way street sign that shows up in the reflection.</p>
 
-			<p style="margin-top: 32px;"><a href="../../../about.html#susan-aurinko" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Susan Aurinko &rarr;</a></p>
-		</div>
+      <figure>
+        <img src="photo-03.jpeg" alt="LensFlair scarf design">
+        <figcaption>LensFlair Editions scarf design</figcaption>
+      </figure>
 
-		<div class="feedback">
-			<div class="feedback-prompt">Was this article helpful?</div>
-			<div class="feedback-buttons">
-				<button class="feedback-btn" onclick="recordVote('yes')">👍 Yes</button>
-				<button class="feedback-btn" onclick="recordVote('no')">👎 No</button>
-			</div>
-		</div>
+      <p>The pale, pristine quality of my friend Robin Malpass's painting Mauve Over inspired me to add macro photographs of wonderfully textured white crepe paper roses that I photographed in my Chicago studio to the ends. I named this delicate, pale scarf Floréal. It's so neutral that depending on what you wear it with, it can be either minimal, refined, or striking.</p>
 
-		<div class="article-nav">
-			<a href="../biba-favorites/">← Previous</a>
-			<a href="../sig/">Next →</a>
-		</div>
-	</article>
+      <figure>
+        <img src="photo-04.jpeg" alt="LensFlair scarf design">
+        <figcaption>LensFlair Editions scarf design</figcaption>
+      </figure>
 
-	<footer>
-		<div class="social-icons">
-			<a href="https://facebook.com" title="Facebook">f</a>
-			<a href="https://twitter.com" title="Twitter">𝕏</a>
-			<a href="https://instagram.com" title="Instagram">📷</a>
-		</div>
-		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
-	</footer>
+      <p>And last, but certainly not least, are the pink scarves – those that benefit the Lynn Sage Breast Cancer Foundation. The first is a collaboration with artist Caren Helene Rudman. Caren's layered paintings on acetate can be moved around, one on top of the other, to create a final single image. I played with these transparent layers in her studio until I was satisfied and with the addition of my signature border in matching hues, we created the final scarf that we named Hope. I also created another pink scarf to benefit the Lynn Sage Foundation and called it Lynn's Rose. I photographed roses for almost a year until I found the most perfect one to design the scarf around. The final rose was captured in the Jardin des Plantes in Paris and was just the right rose for the scarf. A three-row signature border surrounds the rose floating in the center. Upon the sale of either of these two scarves LensFlair Editions donates 20% of the proceeds to the Foundation.</p>
 
-	<script src="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/js/splide.min.js"></script>
-	<script>
-		const hamburger = document.getElementById('hamburger');
-		const navMenu = document.getElementById('nav-menu');
-		hamburger.addEventListener('click', () => {
-			navMenu.classList.toggle('active');
-		});
+      <figure>
+        <img src="photo-05.jpg" alt="LensFlair scarf design">
+        <figcaption>LensFlair Editions scarf design</figcaption>
+      </figure>
 
-		// Initialize Splide carousel
-		new Splide('.splide', {
-			perPage: 1,
-			rewind: true,
-			arrows: true,
-			pagination: true,
-		}).mount();
+      <p>The pleasure of designing is that I'm constantly inspired by things I see, and that includes the work of other artists. My photographs form the basis for the scarves, and when I collaborate with an artist, their painting or photograph is layered or arranged in tandem with mine. I cannot imagine a more perfect union than two artists working together to create something enchanting to wear – it's almost like magic, and when it works well, voila! a fabulous new scarf emerges like a butterfly from a chrysalis!</p>
 
-		function recordVote(vote) {
-			const formData = new FormData();
-			formData.append('vote', vote);
-			formData.append('article', 'My Silk Roads');
-			const env = (new URL(window.location)).hostname.includes('vercel') ? 'preview' : 'production';
-			formData.append('environment', env);
-		}
+      <figure>
+        <img src="photo-06.jpeg" alt="LensFlair scarf design">
+        <figcaption>LensFlair Editions scarf design</figcaption>
+      </figure>
 
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'n' || e.key === 'N') window.location.href = '../sig/';
-			if (e.key === 'p' || e.key === 'P') window.location.href = '../biba-favorites/';
-			if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
-			if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
-			if (e.key === '?') alert('N: Next article, P: Previous, Space: Page down, ?: Help');
-		});
-	</script>
+      <p>Have a lovely month and stay tuned for my May column on elegance!</p>
+
+    </div>
+
+    <!-- Feedback Widget -->
+    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+      </div>
+      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+      </div>
+      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
+          <input type="hidden" name="Environment" id="env-tracking">
+          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+        </form>
+      </div>
+      <script>
+        var base = window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+        if (window.location.search.indexOf('feedback=sent') !== -1) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('feedbackConfirm').style.display = 'block';
+        }
+        function submitVote(vote) {
+          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
+          }).catch(function(){});
+          document.getElementById('thumbUp').disabled = true;
+          document.getElementById('thumbDown').disabled = true;
+          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+          document.getElementById('voteConfirm').style.display = 'block';
+        }
+      </script>
+    </div><!-- end feedback widget -->
+
+    <div class="edition-nav">
+      <a href="../rush-hospital/" class="back-link"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Doris Kearns Goodwin at Rush Spring Luncheon</span></span><img class="nav-thumb" src="../rush-hospital/photo-02.jpg" alt="Rush Hospital"></a>
+      <a href="../sig/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Textiles at Fondazione Antonio Ratti</span></span><img class="nav-thumb" src="../sig/photo-04.jpeg" alt="Textiles"></a>
+    </div>
+
+  </div><!-- end article-wrapper -->
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    var prevUrl = '../rush-hospital/';
+    var nextUrl = '../sig/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+      if (e.key === '?') { alert('Keyboard shortcuts:\nN or → : Next article\nP or ← : Previous article\nSpace/PageDown: Scroll down\nPageUp: Scroll up'); }
+    });
+  </script>
+
 </body>
+
 </html>
