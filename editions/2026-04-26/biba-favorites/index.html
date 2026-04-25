@@ -17,6 +17,7 @@
 	GA4-disabled -->
 
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/css/splide.min.css">
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
 		body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; background: #fafaf8; }
@@ -322,16 +323,45 @@
 		<div class="article-meta">By Biba Roesch · April 26, 2026</div>
 
 		<div class="hero-figure">
-			<div class="placeholder-notice">
-				<p>Article coming soon — Biba Roesch is working on this piece.</p>
+			<div class="splide" role="region" aria-label="Photo carousel">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide"><img src="photo-01.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-02.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-03.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-04.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-05.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-06.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-07.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-08.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-09.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-10.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-11.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-12.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-13.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-14.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-15.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-16.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-17.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-18.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-19.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-20.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-21.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-22.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-23.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-24.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-25.jpeg" alt="Palm Springs"></li>
+						<li class="splide__slide"><img src="photo-26.jpeg" alt="Palm Springs"></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
-		<p class="article-intro">[Article text coming soon]</p>
+		<p class="article-intro">Biba Roesch shares her favorite things from Palm Springs, a collection of curated discoveries from this iconic desert destination.</p>
 
 		<div class="article-body">
 
-			<p style="color: #999; font-style: italic;">[Content pending]</p>
+			<p style="color: #999; font-style: italic;">Photography by Biba Roesch. Article content pending.</p>
 
 			<p style="margin-top: 32px;"><a href="../../../about.html#biba-roesch" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Biba Roesch &rarr;</a></p>
 		</div>
@@ -359,12 +389,21 @@
 		<p>&copy; 2026 Classic Chicago Magazine. All rights reserved.</p>
 	</footer>
 
+	<script src="https://cdn.jsdelivr.net/npm/splide@4.1.4/dist/js/splide.min.js"></script>
 	<script>
 		const hamburger = document.getElementById('hamburger');
 		const navMenu = document.getElementById('nav-menu');
 		hamburger.addEventListener('click', () => {
 			navMenu.classList.toggle('active');
 		});
+
+		// Initialize Splide carousel
+		new Splide('.splide', {
+			perPage: 1,
+			rewind: true,
+			arrows: true,
+			pagination: true,
+		}).mount();
 
 		function recordVote(vote) {
 			const formData = new FormData();

@@ -52,8 +52,10 @@ ARTICLE_EMAIL_MAP = {
     },
     'emma': {
         'email': 'muhlemane2@gmail.com',
-        'messages': [],
-        'articles': [],
+        'messages': [
+            '19dc34fdab298b4b',  # Biba's favorite things - Palm Springs
+        ],
+        'articles': ['biba-favorites'],
     },
 }
 
