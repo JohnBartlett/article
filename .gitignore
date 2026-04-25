@@ -22,3 +22,4 @@ classicchicagomagazinebobatea/
 tools/credentials.json
 exif-mcp/
 tools/__pycache__/
+.venv/
