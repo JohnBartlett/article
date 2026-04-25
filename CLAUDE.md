@@ -327,12 +327,55 @@ pip install PyPDF2 requests
 source .venv/bin/activate
 ```
 
+**Critical: Email is the ONLY source of truth.** Articles and photos are sent to john.bartlett@gmail.com by contributors, NOT shared via folders or Drive links. Always check emails first.
+
+**Article Structure (Required for All Articles):**
+- **Hero image:** photo-01 placed in `<figure>` right after byline (not in carousel)
+- **Inline figures:** Remaining photos as `<figure>` elements throughout article body
+- **Image sizing:** Use `width: 100%; height: auto;` to prevent distortion
+- **Author link:** In byline only: `By <a href="../../../about.html#author-id">Author Name</a>`
+- **NO author bio in article** — bio is linked from About section only
+- **Previous/Next nav:** With thumbnail images at bottom (not just text links)
+- **Internal nav:** On dev2 only (marked with `<!-- dev2-only -->` comments)
+
+**Photo Extraction Methods:**
+
+1. **From Gmail Attachments (✅ BEST):**
+   ```bash
+   source .venv/bin/activate
+   python3 tools/extract_article_photos.py 2026-04-26 --contributor ana
+   ```
+   Photos normalize to photo-01.jpeg, photo-02.jpeg, etc.
+
+2. **From Windows Downloads Folder:**
+   ```bash
+   cp "/mnt/c/Users/johnb/Downloads/article-folder/*.jpeg" editions/2026-04-26/article-slug/
+   # Then rename files to photo-01.jpeg, photo-02.jpeg, etc.
+   ```
+
+3. **From PDF Articles:**
+   ```bash
+   source .venv/bin/activate
+   python3 << 'EOF'
+   import PyPDF2
+   reader = PyPDF2.PdfReader("article.pdf")
+   for page in reader.pages:
+       print(page.extract_text())
+   EOF
+   ```
+
+**Message ID Tracking:**
+Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Create/update `ARTICLE_EMAIL_MAP` in extract script for future reference.
+
 **Common Mistakes to Avoid:**
-1. **Don't use Google Drive download links** — Shortcuts download as HTML, not images. Use email attachments instead.
-2. **Check emails FIRST** — Before assuming an article is missing, search john.bartlett@gmail.com for contributor emails.
-3. **Track message IDs** — Document which emails contain which articles for reference.
-4. **Always verify** — Run `verify_edition.py` after extraction to confirm article status.
-5. **Update homepage last** — Only add article cards after verification passes with all photos.
+1. **Google Drive shortcuts download as HTML, not images** — Don't use shortcuts. Ask for real files or email attachments.
+2. **Assume articles are missing BEFORE checking email** — john.bartlett@gmail.com is always the source of truth. Search for contributor names and dates first.
+3. **Forget to install PyPDF2 for PDF articles** — Setup venv first: `python3 -m venv .venv && source .venv/bin/activate && pip install PyPDF2`
+4. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
+5. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
+6. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
+7. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
+8. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
 
 ### Recurring email workflow
 
