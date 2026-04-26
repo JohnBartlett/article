@@ -4,6 +4,8 @@ Draft and send a weekly update email to Judy summarizing recent site activity an
 
 ## Step 1 — Check if anything has changed
 
+**Gmail access:** requires `~/.gmail-mcp/credentials.json`. If missing, use `mcp__claude_ai_Gmail__search_threads` as a fallback for searching, and `mcp__claude_ai_Gmail__create_draft` for sending (then ask user to send the draft).
+
 ```python
 import sys; sys.path.insert(0, 'tools')
 from gmail_api import get_access_token, search_messages

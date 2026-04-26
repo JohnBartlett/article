@@ -16,7 +16,7 @@ The GA4 state always differs between dev (disabled) and master (enabled), so use
 Before merging, check that the Astrochart link in `index.html` points to the current month's daily-star folder, not a past month's.
 
 ```bash
-grep "daily-star" /home/john/article/index.html
+grep "daily-star" index.html
 ```
 
 The href should match the current edition month (e.g. `editions/2026-04-05/daily-star-april/` for April). If it points to a previous month (e.g. `daily-star-march`), fix it on dev2 first, then re-stage before publishing.
@@ -25,24 +25,36 @@ The href should match the current edition month (e.g. `editions/2026-04-05/daily
 
 ## Step 2 — Re-enable GA4 on master
 
-GA4 was disabled on dev to prevent skewing stats. Re-enable it before pushing to production:
+GA4 was disabled on dev to prevent skewing stats. Re-enable it before pushing to production.
+The script handles both disable comment forms (`<!-- GA4-disabled` and `<!-- GA4 disabled on dev2`):
 
 ```bash
 python3 tools/enable_ga4.py
 ```
 
-Verify the file count printed looks right (should match all HTML files in the repo).
+Verify the file count is non-zero and plausible (should match total HTML files in the repo).
+If it prints 0, check that the merge brought in files with a GA4 comment — it may mean
+`-X theirs` resolved files in favor of master's already-enabled form (safe to proceed).
 
 ## Step 3 — Commit and push to master
 
-```
+Only run `git add -u` and create a separate GA4 commit if `enable_ga4.py` changed files.
+If 0 files changed, skip the extra commit — the merge commit already covers the push.
+
+```bash
+# Only if enable_ga4.py reported changes:
 git add -u
 git commit -m "Publish <edition date> edition to production
 
 Re-enables GA4 for production deployment.
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>"
 
+git push origin master
+```
+
+If no GA4 changes were needed, just push:
+```bash
 git push origin master
 ```
 
@@ -50,6 +62,7 @@ Cloudflare will detect the push and deploy automatically to `chicagoclassicmag.c
 
 ## Step 4 — Send publication notification emails
 
+**Option A — Python script** (requires `~/.gmail-mcp/credentials.json`):
 ```python
 import sys; sys.path.insert(0, 'tools')
 from gmail_api import get_access_token, send_email
@@ -61,6 +74,9 @@ send_email(token,
     body='Dear Judy,\n\nThe <Month Day> edition of Classic Chicago Magazine is now live at:\n\nhttps://chicagoclassicmag.com\n\nCheers, John',
     cc='john.bartlett@gmail.com')
 ```
+
+**Option B — Gmail MCP fallback** (if credentials.json is missing):
+Use `mcp__claude_ai_Gmail__create_draft` to create the draft, then ask the user to send it from Gmail.
 
 Adjust the edition date in subject and body.
 

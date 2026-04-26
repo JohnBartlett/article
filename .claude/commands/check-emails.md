@@ -21,7 +21,11 @@ Check all editorial emails and FormSubmit votes, apply any changes, and commit t
 
 ## Step 1 — Fetch emails
 
-Use `tools/gmail_api.py` for all Gmail access:
+**Gmail access — two options:**
+- **Python script** (requires `~/.gmail-mcp/credentials.json`): use `tools/gmail_api.py` as below
+- **MCP fallback** (if credentials.json missing): use `mcp__claude_ai_Gmail__search_threads` and `mcp__claude_ai_Gmail__get_thread` directly — they work without credentials
+
+Use `tools/gmail_api.py` for all Gmail access when credentials are present:
 
 ```python
 import sys; sys.path.insert(0, 'tools')

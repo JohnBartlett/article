@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Wrap all GA4 script blocks in <!-- GA4-disabled ... --> comments."""
+"""Wrap GA4 script blocks in <!-- GA4-disabled ... --> comments.
+
+Matches the two-script GA4 block (async loader + config) whether or not
+it has a preceding <!-- Google tag --> comment, and wraps it uniformly.
+"""
 
 import os, re
 
-GA4_PATTERN = re.compile(
-    r'(\s*<!-- Google tag \(gtag\.js\) -->.*?</script>)',
+# Matches the async gtag loader + inline config script, regardless of indentation
+PATTERN = re.compile(
+    r'([ \t]*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=[^"]*"[^>]*></script>\s*<script>.*?</script>)',
     re.DOTALL
 )
-DISABLED_WRAP = lambda m: f'\n  <!-- GA4-disabled{m.group(1)}\n  -->'
 
 changed = []
 for dirpath, _, files in os.walk('.'):
@@ -17,9 +21,11 @@ for dirpath, _, files in os.walk('.'):
         fpath = os.path.join(dirpath, fname)
         with open(fpath, 'r', encoding='utf-8') as f:
             content = f.read()
-        if '<!-- Google tag (gtag.js) -->' not in content or '<!-- GA4-disabled' in content:
+        if 'googletagmanager.com/gtag' not in content:
             continue
-        new_content = GA4_PATTERN.sub(DISABLED_WRAP, content)
+        if '<!-- GA4' in content:  # already disabled
+            continue
+        new_content = PATTERN.sub(lambda m: f'  <!-- GA4-disabled\n{m.group(1)}\n  -->', content)
         if new_content != content:
             with open(fpath, 'w', encoding='utf-8') as f:
                 f.write(new_content)

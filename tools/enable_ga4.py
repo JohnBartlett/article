@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-"""Remove <!-- GA4-disabled ... --> wrappers to re-enable GA4 for production."""
+"""Remove GA4-disabled comment wrappers to re-enable GA4 for production.
+
+Handles both comment forms used in the repo:
+  <!-- GA4-disabled ... -->
+  <!-- GA4 disabled on dev2 ... -->
+"""
 
 import os, re
 
-GA4_DISABLED_PATTERN = re.compile(
-    r'[ \t]*<!-- GA4-disabled\s*(.*?)\s*-->',
+# Matches either form: "GA4-disabled" or "GA4 disabled on dev2" (or any text after "disabled")
+PATTERN = re.compile(
+    r'[ \t]*<!-- GA4[ -]disabled[^\n]*\n(.*?)[ \t]*-->',
     re.DOTALL
 )
 
@@ -16,9 +22,9 @@ for dirpath, _, files in os.walk('.'):
         fpath = os.path.join(dirpath, fname)
         with open(fpath, 'r', encoding='utf-8') as f:
             content = f.read()
-        if '<!-- GA4-disabled' not in content:
+        if '<!-- GA4' not in content:
             continue
-        new_content = GA4_DISABLED_PATTERN.sub(lambda m: m.group(1), content)
+        new_content = PATTERN.sub(lambda m: m.group(1), content)
         if new_content != content:
             with open(fpath, 'w', encoding='utf-8') as f:
                 f.write(new_content)

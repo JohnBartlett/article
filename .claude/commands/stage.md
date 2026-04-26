@@ -77,7 +77,7 @@ git commit -m "Stage <edition date> edition for dev preview
 Merges dev2 into dev: <brief list of what's new>
 Removes dev2-only experimental files; comments out internal-nav; disables GA4.
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>"
 
 git push origin dev
 ```
