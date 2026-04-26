@@ -45,7 +45,12 @@ Also include DateBook as the last row if it exists or is pending.
 - Additional photos requested but not received
 - Any editorial question raised by Judy
 
-**Waiting On:** List every article or asset not yet received. Include who it's coming from and any deadline. Remove items that have arrived.
+**Waiting On:** List every article or asset not yet received. This should be populated from Judy's most recent "article list" email (which specifies who is responsible for each article and what's pending). For each article:
+- Article name
+- What's missing: story only, photos only, or both
+- Who is providing it (Judy, Emma, Ana, Annie, Sig, etc.)
+
+Remove items from this list once they have arrived and the article is built.
 
 ## Step 4 — Update `editors/comments.html`
 

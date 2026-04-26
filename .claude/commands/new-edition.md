@@ -21,6 +21,28 @@ From the emails, determine:
 - Which photos belong to which article, and which is the cover/hero photo
 - Any notes Judy has added (e.g. "DRAFT", "needs editing", missing photos)
 
+## Step 2a — Build all placeholders immediately (dev2 workflow)
+
+**Important:** In dev2, we build **placeholder articles for all articles immediately**, even before content arrives. This allows the homepage to be updated and layouts to be reviewed early.
+
+For each article in the edition (even those without content yet):
+
+1. Create the article folder: `mkdir -p editions/YYYY-MM-DD/<article-slug>/`
+2. Build a placeholder `index.html` using the site template:
+   - Fill in: article title, author name, edition date, category (if known)
+   - Replace the hero image with a `<div class="placeholder-notice">`:
+     ```html
+     <div class="placeholder-notice" style="background:#f5f5f5; padding:40px; text-align:center; border-radius:4px; margin:20px 0;">
+       <p style="font-family:'Lato',sans-serif; font-size:16px; color:#666;">Article coming soon — [Author Name] is working on this piece.</p>
+     </div>
+     ```
+   - Body content: `<p style="color:#999; font-style:italic;">[Article text coming soon]</p>`
+   - Navigation links (prev/next) stubbed in with correct slugs (even if those articles are also placeholders)
+   - "About the Author" link to `../../../about.html#<slug>`
+   - GA4 **disabled** (matching `_template/article.html`)
+
+This means the homepage can list all articles immediately (with placeholders visible to editors), and the layout/navigation can be reviewed before final content arrives.
+
 ## Step 3 — Download article content
 
 Use `tools/gmail_api.py` for all Gmail access:
