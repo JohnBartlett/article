@@ -12,7 +12,7 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>Doris Kearns Goodwin at the Rush Spring Luncheon | Classic Chicago – Sunday Edition</title>
+  <title>Doris Kearns Goodwin Keynotes the Rush Spring Luncheon | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -98,101 +98,156 @@
       font-weight: 700;
       line-height: 1.2;
       text-align: center;
-      margin: 0 0 8px;
+      margin: 0 0 14px;
+      color: #111;
     }
 
-    .article-byline {
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
       font-family: 'Lato', sans-serif;
       font-size: 13px;
-      color: #999;
+      color: #888;
       text-align: center;
-      margin-bottom: 40px;
-      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
     }
 
-    .article-body {
-      font-size: 16px;
+    .article-intro {
+      font-size: 18px;
       line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
     }
 
     .article-body p {
-      margin: 0 0 20px 0;
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
     }
 
-    .article-body figure {
-      margin: 40px 0;
-      padding: 0;
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
     }
 
-    .article-body img {
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .article-body figcaption {
-      font-size: 13px;
-      color: #999;
-      margin-top: 10px;
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
       font-style: italic;
     }
 
-    .author-bio {
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-
-    .author-bio a {
-      color: #d41f1f;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .author-bio a:hover {
-      text-decoration: underline;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .nav-links a {
-      color: #d41f1f;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
     footer {
-      border-top: 1px solid #eee;
-      padding: 40px 0;
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      color: #999;
       margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
     }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 
 <body>
   <header>
     <div class="logo-container">
-      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine – The Sunday Edition"></a>
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
     </div>
     <nav>
       <div class="nav-inner">
@@ -200,152 +255,226 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
+        <a href="../../2026-03-08/datebook/">DateBook</a>
+        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
       </div>
     </nav>
   </header>
 
-  <article class="article-wrapper">
-    <div class="article-category">Healthcare & Society</div>
-    <h1 class="article-title">Doris Kearns Goodwin Keynotes the Rush Spring Luncheon</h1>
-    <div class="article-byline">By Ana Baca &middot; April 26, 2026</div>
+  <main>
+    <div class="article-wrapper">
 
-    <figure style="margin: 36px 0;">
-      <img src="photo-01.jpeg" alt="Cindi Brankin and Kate Peterson" style="width: 100%; height: auto; display: block;">
-      <figcaption style="font-size: 13px; color: #999; margin-top: 10px; font-style: italic;">Cindi Brankin, left, chairs the Woman's Board of Rush University Medical Center's 31st Annual Spring Luncheon and Kate Peterson serves as Woman's Board President.</figcaption>
-    </figure>
+      <div class="article-category">Community & Philanthropy</div>
 
-    <div class="article-body">
-      <p>As civic and cultural organizations across the country plan their salutes to America's 250th birthday, the Woman's Board of Rush University Medical Center has chosen once again a most timely and preeminent speaker to address their soon-to-be sold out 31st Annual Spring Luncheon May 11. Pulitzer Prize-winning presidential historian Doris Kearns Goodwin will lead a fireside chat entitled "Leadership for a More Perfect Union: Lessons from America at 250" at the Four Seasons Chicago where 500 guests are expected to attend.</p>
+      <h1 class="article-title">Doris Kearns Goodwin Keynotes the Rush Spring Luncheon</h1>
+      <p class="article-subtitle">Renowned presidential historian to share lessons on leadership and unity at the Four Seasons Chicago.</p>
 
-      <p>We learned more from Luncheon Chair Cindi Brankin and Kate Peterson, presiding in the final year of her term as Board President.</p>
+      <div class="article-meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; April 26, 2026</div>
 
-      <p>Peterson told us: "Ms. Kearns Goodwin will reflect on the remarkable journey of the United States—from the ideals of 1776 to the challenges and triumphs each generation has faced along the way—and will explore how leadership, courage, and a shared sense of purpose have helped guide the country through times of division and change."</p>
-
-      <figure>
-        <img src="photo-02.jpeg" alt="Historian Doris Kearns Goodwin">
-        <figcaption>Historian Doris Kearns Goodwin will speak at the Woman's Board of Rush University Medical Center's Annual Spring Luncheon. Photo by Annie Leibovitz.</figcaption>
+      <figure class="hero-figure">
+        <img src="rush-cover.jpg" alt="Doris Kearns Goodwin Keynotes the Rush Spring Luncheon">
+        <figcaption>Cindi Brankin, 2026 Spring Luncheon chairman, and Kate Peterson, Woman’s Board president.</figcaption>
       </figure>
 
-      <p>Together, Brankin and Peterson have curated a program that reflects both the moment and the mission. Moderated by Rush archivist Nathalie Wheaton, the discussion will explore how America's courage and shared sense of purpose have helped guide it through times of division and change.</p>
+      <p class="article-intro">As civic and cultural organizations across the country plan their salutes to America’s 250th birthday, the Woman’s Board of Rush University Medical Center has chosen once again a most timely and preeminent speaker to address their soon-to-be sold out 31st Annual Spring Luncheon May 11.</p>
 
-      <p>Brankin told us: "We wanted to celebrate the 250th anniversary of the United States in a way that felt meaningful, but not political. Through her extensive knowledge of American history, Doris Kearns Goodwin will reflect on how, as a country, there is more that unites us than divides us."</p>
+      <div class="article-body">
 
-      <p>For Brankin, who has ancestors who fought in the Civil War, World War II, and family members currently serving in the military, the idea of honoring the nation's history and its shared values feels especially significant. "We want guests to come away from the Spring Luncheon feeling inspired, having learned from one of our country's great historians. Doris is such a prolific storyteller and teacher. It's not just about dates, it's about the personalities she weaves into her stories."</p>
+        
+<p>Pulitzer Prize-winning presidential historian Doris Kearns Goodwin will lead a fireside chat entitled “Leadership for a More Perfect Union: Lessons from America at 250” at the Four Seasons Chicago where 500 guests are expected to attend.</p>
 
-      <figure>
-        <img src="photo-03.jpeg" alt="Attendees at the 2025 Spring Luncheon">
-        <figcaption>Elizabeth Moore, Emily Sturgess, Margaret Nelson, and Lindsay Wishart at the 2025 Spring Luncheon</figcaption>
-      </figure>
+<figure>
+  <img src="photo-02.jpg" alt="Doris Kearns Goodwin">
+  <figcaption>Historian Doris Kearns Goodwin to speak May 11 at the Woman’s Board of Rush University Medical Center’s Annual Spring Luncheon.</figcaption>
+</figure>
 
-      <p>Peterson, who has been a member of the Woman's Board for more than two decades, emphasized the thoughtful balance behind the choice: "Doris is not political, she's historical. Our guests are very intelligent people—they want to learn and come away feeling enriched and uplifted."</p>
+<p>We learned more from Luncheon Chair Cindi Brankin and Kate Peterson, presiding in the final year of her term as Board President.</p>
 
-      <p>The Woman's Board has raised $50 million since its founding in 1884. Proceeds benefit the Woman's Board Endowed Fund for Research and Clinical Trials at Rush—a critical source of support for innovation in patient care, from cancer treatment to mental health programs. The Board, 250 members strong, has committed to contributing $500,000 annually to fund research. There are currently more than 1,600 research studies underway at Rush. "Research is so important, because if we can't fund the research, then we can't find the cure," Peterson noted.</p>
+<p>Peterson told us: “Ms. Kearns Goodwin will reflect on the remarkable journey of the United States - from the ideals of 1776 to the challenges and triumphs each generation has faced along the way - and will explore how leadership, courage, and a shared sense of purpose have helped guide the country through times of division and change.”</p>
 
-      <p>The Woman's Board also supports community outreach initiatives providing medical care and supplies, mental health programs for veterans and families, and educational services for children with autism and emotional disabilities.</p>
+<p>Together, Brankin and Peterson have curated a program that reflects both the moment and the mission. Moderated by Rush archivist Nathalie Wheaton, the discussion will explore how America’s courage and shared sense of purpose have helped guide it through times of division and change.</p>
 
-      <figure>
-        <img src="photo-04.jpeg" alt="Women at the 2025 Spring Luncheon">
-        <figcaption>Linda Levine, April Schink, Robin Tebbe, and Jessica LaGrange at the 2025 Spring Luncheon</figcaption>
-      </figure>
+<p>Brankin told us: “We wanted to celebrate the 250th anniversary of the United States in a way that felt meaningful, but not political. Through her extensive knowledge of American history, Doris Kearns Goodwin will reflect on how, as a country, there is more that unites us than divides us.”</p>
 
-      <p>Annual Luncheon guests will also look forward to remarks from Dr. Omar Lateef, President and CEO of Rush University System for Health, whose warmth and humor have become a beloved tradition of the day. Those lucky enough to have attended last year's Spring Luncheon will remember how he raved about the pretzel rolls and soon guests were passing them to the podium. "Dr. Lateef loves to go off script…it's always a treat. For so many reasons, we are lucky to have him at the helm," Peterson added.</p>
+<p>For Brankin, who has ancestors who fought in the Civil War, World War II and family members currently serving in the military, the idea of honoring the nation’s history and its shared values feels especially significant. “We want guests to come away from the Spring Luncheon feeling inspired, having learned from one of our country’s great historians. Doris is such a prolific storyteller and teacher. It’s not just about dates, it about the personalities she weaves into her stories.”</p>
 
-      <figure>
-        <img src="photo-05.jpeg" alt="More attendees at the 2025 Spring Luncheon">
-        <figcaption>Megan Roberts, Sally Brown Thilman, and Katie Comstock at the 2025 Spring Luncheon</figcaption>
-      </figure>
+<p>Peterson, who has been a member of the Woman’s Board for more than two decades, emphasized the thoughtful balance behind the choice: “Doris is not political, she’s historical. Our guests are very intelligent people – they want to learn and come away feeling enriched and uplifted.”</p>
 
-      <p>Brankin added: "As with every Spring Luncheon, the event is as much about connection as it is about cause—a gathering of individuals united by a shared belief in the power of healthcare, research, and community. As the nation approaches its 250th anniversary, the message feels particularly timely: that leadership, compassion, and a sense of common purpose remain the foundation for progress—both in medicine and beyond."</p>
+<p>The Woman’s Board has raised $50 million since its founding in 1884. Proceeds benefit the Woman’s Board Endowed Fund for Research and Clinical Trials at Rush - a critical source of support for innovation in patient care, from cancer treatment to mental health programs. The Board, 250 members strong, has committed to contributing $500,000 annually to the fund research. There are currently more than 1,600 research studies underway at Rush. “Research is so important, because if we can’t fund the research, then we can’t find the cure,” Peterson noted.</p>
 
-      <figure>
-        <img src="photo-06.jpeg" alt="More guests at the 2025 Spring Luncheon">
-        <figcaption>Anne Loucks and Jenny Brown at the 2025 Spring Luncheon</figcaption>
-      </figure>
+<p>The Woman’s Board also supports community outreach initiatives providing medical care and supplies, mental health programs for veterans and families, and educational services for children with autism and emotional disabilities.</p>
 
-      <p>The Spring Luncheon has welcomed an extraordinary roster of voices over the years—from Madeleine Albright and Laura Bush to Brooke Shields, Geena Davis, and Anne Lamott—each offering perspective and inspiration tailored to the times. We love looking at photos from past Rush Spring Luncheons, always with just the right speaker for that day.</p>
+<p>Annual Luncheon guests will also look forward to remarks from Dr. Omar Lateef, President and CEO of Rush University System for Health, whose warmth and humor have become a beloved tradition of the day. Those lucky enough to have attended last year’s Spring Luncheon will remember how he raved about the pretzel rolls and soon guests were passing them to the podium. “Dr. Lateef loves to go off script…it’s always a treat. For so many reasons, we are lucky to have him at the helm,” Peterson added.</p>
 
-      <figure>
-        <img src="photo-07.jpeg" alt="Cynthia Brankin and Melissa Hennessy">
-        <figcaption>Cynthia Brankin and Melissa Hennessy at the 2025 Spring Luncheon</figcaption>
-      </figure>
+<p>Brankin added: “As with every Spring Luncheon, the event is as much about connection as it is about cause - a gathering of individuals united by a shared belief in the power of healthcare, research, and community. As the nation approaches its 250th anniversary, the message feels particularly timely: that leadership, compassion, and a sense of common purpose remain the foundation for progress - both in medicine and beyond.”</p>
 
-      <figure>
-        <img src="photo-08.jpeg" alt="Dr. Omar Lateef, Brooke Shields, and Dr. Najia Shakoor">
-        <figcaption>Dr. Omar Lateef (Rush CEO), Brooke Shields, and Dr. Najia Shakoor at the 2024 Spring Luncheon</figcaption>
-      </figure>
+<p>The Spring Luncheon has welcomed an extraordinary roster of voices over the years - from Madeleine Albright and Laura Bush to Brooke Shields, Geena Davis, and Anne Lamott - each offering perspective and inspiration tailored to the times.</p>
 
-      <div class="author-bio">
-        <a href="../../../about.html">About Ana Baca →</a>
+<p>We love looking at photos from past Rush Spring Luncheons, always with just the right speaker for that day.</p>
+
+<figure>
+  <img src="photo-03.jpg" alt="2025 Spring Luncheon">
+  <figcaption>Elizabeth Moore, Emily Sturgess, Margaret Nelson and Lindsay Wishart at the 2025 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-04.jpg" alt="2025 Spring Luncheon">
+  <figcaption>Linda Levine, April Schink, Robin Tebbe and Jessica LaGrange at the 2025 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-05.jpg" alt="2025 Spring Luncheon">
+  <figcaption>Megan Roberts, Sally Brown Thilman, and Katie Comstock at the 2025 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-06.jpg" alt="2025 Spring Luncheon">
+  <figcaption>Anne Loucks and Jenny Brown at the 2025 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-07.jpg" alt="2025 Spring Luncheon">
+  <figcaption>Cynthia Brankin and Melissa Hennessy at the 2025 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-09.jpg" alt="2023 Spring Luncheon">
+  <figcaption>Steffie Madigan, Wendy Herb, Geena Davis, Sharon Hayes at the 2023 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-10.jpg" alt="2022 Spring Luncheon">
+  <figcaption>Ali Wentworth and Cindy Mancillas at the 2022 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-11.jpg" alt="2017 Spring Luncheon">
+  <figcaption>Author Mel Robbins at the 2017 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-12.jpg" alt="2014 Spring Luncheon">
+  <figcaption>Journalist Cokie Roberts at the 2014 Spring Luncheon</figcaption>
+</figure>
+
+<figure>
+  <img src="photo-15.jpg" alt="Nathalie Wheaton">
+  <figcaption>Nathalie Wheaton, Rush archivist</figcaption>
+</figure>
+
+<p>For more information about the Annual Spring Luncheon and the Woman’s Board please visit <a href="https://thewomansboard.org" target="_blank">thewomansboard.org</a>.</p>
+
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Judy Carmack Bross &rarr;</a>
       </div>
-    </div>
 
-    <!-- Feedback Widget -->
-    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
-      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
-        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
-        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
-      </div>
-      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
-      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
-      </div>
-      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
-          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="feedbackReturn">
-          <input type="hidden" name="Page" id="page-tracking">
-          <input type="hidden" name="Environment" id="env-tracking">
-          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
-          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
-          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
-        </form>
-      </div>
-      <script>
-        var base = window.location.href.split('?')[0];
-        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
-        document.getElementById('page-tracking').value = document.title + ' — ' + base;
-        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
-        if (window.location.search.indexOf('feedback=sent') !== -1) {
-          document.getElementById('feedbackForm').style.display = 'none';
-          document.getElementById('feedbackConfirm').style.display = 'block';
-        }
-        function submitVote(vote) {
-          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
-          }).catch(function(){});
-          document.getElementById('thumbUp').disabled = true;
-          document.getElementById('thumbDown').disabled = true;
-          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
-          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
-          document.getElementById('voteConfirm').style.display = 'block';
-        }
-      </script>
-    </div><!-- end feedback widget -->
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
 
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px;">
-      <a href="../silk-roads/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%;"><img src="../silk-roads/photo-01.jpeg" alt="My Silk Roads" style="width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0;"><span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20;">← Previous</span><span style="font-size: 13px; line-height: 1.3; color: #333;">My Silk Roads</span></span></a>
-      <a href="../sig/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%;"><span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20;">Next →</span><span style="font-size: 13px; line-height: 1.3; color: #333;">Textiles at Fondazione Antonio Ratti</span></span><img src="../sig/photo-01.jpeg" alt="Textiles at Fondazione Antonio Ratti" style="width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0;"></a>
-    </div>
-  </article>
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — order must match homepage card order -->
+      <div class="edition-nav">
+        <a href="../biba-favorites/" class="back-link">&larr; Previous: Biba’s Favorite Things: Palm Springs</a>
+        <a href="../silk-roads/" class="back-link">Next: Celebrating Partnerships and Pastels &rarr;</a>
+      </div>
+      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+
+    </div><!-- end article-wrapper -->
+  </main>
 
   <footer>
-    <p>&copy; 2026 Classic Chicago Magazine</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
   </footer>
 
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
+    var prevUrl = '../biba-favorites/';
+    var nextUrl = '../silk-roads/';
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'n' || e.key === 'N') window.location.href = '../sig/';
-      if (e.key === 'p' || e.key === 'P') window.location.href = '../silk-roads/';
-      if (e.key === ' ' || e.key === 'PageDown') window.scrollBy(0, window.innerHeight);
-      if (e.key === 'PageUp') window.scrollBy(0, -window.innerHeight);
-      if (e.key === '?') alert('Keyboard shortcuts: N=Next, P=Previous, Space/PgDn=Scroll down, PgUp=Scroll up, ?=Help');
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
   </script>
-</body>
 
+</body>
 </html>

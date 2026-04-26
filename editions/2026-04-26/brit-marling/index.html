@@ -12,70 +12,237 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>Brit Marling: A Film Force | Classic Chicago Magazine</title>
+  <title>Brit Marling: A Film Force | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; }
-    header { padding: 20px 0; border-bottom: 1px solid #eee; }
-    .logo-container { text-align: center; margin-bottom: 20px; }
-    .logo-container img { width: 390px; height: auto; }
-    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
-    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
-    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
-    .hamburger-btn:hover { color: #b51c20; }
-    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
-    .hamburger-menu.open { display: block; }
-    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
-    .internal-nav { background: #f9f5f0; border-bottom: 1px solid #e8e0d5; padding: 5px 0; }
-    .internal-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6px; }
-    .internal-nav-label { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-right: 8px; }
-    .internal-nav-inner a { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 400; color: #666; text-decoration: none; text-transform: uppercase; margin: 0 10px; padding: 3px 0; letter-spacing: 0.05em; }
-    .internal-nav-inner a:hover { color: #333; text-decoration: underline; }
-    .article-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    .article-category { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px; }
-    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.1; margin: 0 0 16px; color: #000; }
-    .article-meta { font-family: 'Lato', sans-serif; font-size: 15px; color: #666; margin: 0 0 32px; }
-    .article-meta a { color: #b51c20; text-decoration: none; }
-    .article-meta a:hover { text-decoration: underline; }
-    .editor-note { font-family: 'Lato', sans-serif; font-size: 13px; color: #999; font-style: italic; margin-bottom: 24px; }
-    figure { margin: 32px 0; }
-    figure img { width: 100%; height: auto; display: block; }
-    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
-    .article-body { font-size: 17px; line-height: 1.75; color: #222; }
-    .article-body p { margin-bottom: 20px; }
-    .article-body blockquote { font-size: 18px; font-style: italic; margin: 28px 0; padding: 0 28px; border-left: 4px solid #b51c20; color: #555; line-height: 1.8; }
-    .article-body a { color: #b51c20; text-decoration: none; }
-    .article-body a:hover { text-decoration: underline; }
-    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding: 24px 28px; background: #fdfaf7; border: 1px solid #e8e0d5; border-radius: 4px; gap: 16px; }
-    .edition-nav .back-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #333; font-family: 'Lato', sans-serif; font-size: 14px; max-width: 45%; }
-    .edition-nav .back-link:hover { color: #b51c20; }
-    .nav-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
-    .nav-text { display: flex; flex-direction: column; gap: 4px; }
-    .nav-dir { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #b51c20; }
-    .nav-title { font-size: 13px; line-height: 1.3; color: #333; }
-    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
     .social-links { margin-bottom: 20px; }
     .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
     .social-links a:hover { opacity: 0.7; }
     .social-links svg { width: 32px; height: 32px; fill: #fff; }
-    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
     @media (max-width: 600px) {
-      .logo-container img { width: 280px; }
-      h1.article-title { font-size: 28px; }
-      .article-wrapper { padding: 0 16px; }
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
-      .edition-nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 
 <body>
-
   <header>
     <div class="logo-container">
       <a href="../../../index.html">
@@ -88,157 +255,176 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
+        <a href="../../2026-03-08/datebook/">DateBook</a>
+        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
       </div>
     </nav>
-    <div class="hamburger-menu">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../about.html">About</a>
-      <a href="../../../subscribe.html">Subscribe</a>
-      <a href="../../../advertise.html">Advertise</a>
-    </div>
-    <!-- dev2-only -->
-    <div class="internal-nav">
-      <div class="internal-nav-inner">
-        <span class="internal-nav-label">Editors</span>
-        <a href="../../../editors/index.html">Dev Preview</a>
-        <a href="../../../editors/edition.html">April 26 Edition</a>
-        <a href="../../../reader-comments.html">Comments</a>
-      </div>
-    </div>
-    <!-- dev2-only -->
   </header>
 
-  <div class="article-wrapper">
+  <main>
+    <div class="article-wrapper">
 
-    <p class="article-category">Arts &amp; Film</p>
-    <h1 class="article-title">Brit Marling: A Film Force</h1>
-    <p class="article-meta">By <a href="../../../about.html#judy-carmack-bross">Judy Carmack Bross</a> &middot; April 26, 2026</p>
+      <div class="article-category">Film & Arts</div>
 
-    <figure>
-      <img src="photo-01.jpeg" alt="Brit Marling">
-      <figcaption>Brit Marling, actress, writer, director, and producer</figcaption>
-    </figure>
+      <h1 class="article-title">Brit Marling: A Film Force</h1>
+      <p class="article-subtitle">Chicago-born actress and creator Brit Marling reflects on place, storytelling, and the future of film.</p>
 
-    <p class="editor-note">Editor&rsquo;s Note: This is a first of a series of articles on Brit Marling.</p>
+      <div class="article-meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; April 26, 2026</div>
 
-    <div class="article-body">
-
-      <p>Chicago born actress Brit Marling is our best definition of a multi-hyphenate, a life-embracing talent whose films reflect her passion and abilities on both sides of the camera, with film credits including creator, writer, actor, director and producer&mdash;often all on the same film or television series.</p>
-
-      <p>Valedictorian at Georgetown with significant investment banking options at graduation, Marling defines the new wave of emerging leadership of women in film in many ways taking film back to the silent era when women were in charge. Combining the skills of Chicago-educated pioneer polymath Jeanie Macpherson who acted, wrote and directed numerous early movies and helped found the Academy of Arts and Sciences and the mid-century beauty and serenity of Grace Kelly, Marling is helping define filmmaking in the future.</p>
-
-      <p>Here recently to visit family with her parents, former Chicago real estate executives Heidi and John Marling and sister Morgan, a health and wellness specialist, Marling explored her old Gold Coast neighborhood and reflected on how women are changing Hollywood today.</p>
-
-      <blockquote>&ldquo;The last few years have been such a powerful time for women telling stories. I have loved going to the theatre and watching a drama told from a point of view I haven&rsquo;t seen before &mdash; Shakespeare&rsquo;s wife in <em>Hamnet</em>, or the female author in <em>Anatomy of a Fall</em>, or young girls across multiple generations in <em>Sound of Falling</em>. When a work is written and then lensed by women the gaze fundamentally changes. It&rsquo;s such an exciting time to tell stories and to be in the audience. You get the sense that the audience is hungry for the new.&rdquo;</blockquote>
-
-      <figure style="max-width: 50%; margin: 32px auto;">
-        <img src="photo-02.jpeg" alt="Brit Marling" style="width: 100%; height: auto; display: block;">
-        <figcaption>Brit Marling</figcaption>
+      <figure class="hero-figure">
+        <img src="brit-cover.jpg" alt="Brit Marling: A Film Force">
+        <figcaption>Brit Marling. Photo by Annie Leibovitz.</figcaption>
       </figure>
 
-      <p>Following the success of her FX limited series <em>A Murder at the End of the World</em> which she co-created, co-wrote, directed and starred in and was nominated for a Critics Choice Award, Marling is currently working on film and television projects in Los Angeles with her creative partner Zal Batmanglij for the production company Sister.</p>
+      <p class="article-intro">Chicago born actress Brit Marling, is our best definition of a multi-hyphenate, a life-embracing talent whose films reflect her passion and abilities on both sides of the camera, with film credits including creator, writer, actor, director and producer—often all on the same film or television series.</p>
 
-      <p>Marling says she has always been telling stories. &ldquo;I remember growing up in Winnetka and recruiting my friends to put on small plays in Nick Corwan park or in our backyards. My sister and I got pretty industrious about it. We would charge the parents of all the kids in the play to come watch. It was not a bad business model,&rdquo; she laughs.</p>
+      <div class="article-body">
 
-      <p>To Marling, story-telling is all. &ldquo;I think my favorite part of filmmaking is that it&rsquo;s a choral art &mdash; it&rsquo;s a bunch of voices coming together to author something. Everybody works in service to the story. On <em>A Murder at the End of the World</em> I would come on set and constantly be moved by the work our production designer had done, or a shot our director of photography had in mind, or a location our Icelandic team had found. Our scouts there were truly adventurous. We were often suiting up into climbing gear and repelling to the bottom of icy ravines to find locations no one had yet put on screen.&rdquo; Filming shots along frozen Icelandic terrains all day in sub-zero weather hearkens back to Lilian Gish, pioneer actress who directed her sister Dorothy in movies and floated for hours on a frozen river in Maine in &ldquo;Way Down East.&rdquo;</p>
+        
+<p>Valedictorian at Georgetown with significant investment banking options at graduation, Marling defines the new wave of emerging leadership of women in film in many ways taking film back to the silent era when women were in charge. Combining the skills of Chicago-educated pioneer polymath Jeanie Macpherson who acted, wrote and directed numerous early movies and helped found the Academy of Arts and Sciences and the mid-century beauty and serenity of Grace Kelly, Marling is helping define filmmaking in the future.</p>
 
-      <figure>
-        <img src="photo-03.jpeg" alt="Brit Marling">
-        <figcaption>Brit Marling</figcaption>
-      </figure>
+<p>Here recently to visit family with her parents, former Chicago real estate executives Heidi and John Marling and sister Morgan, a health and wellness specialist, Marling explored her old Gold Coast neighborhood and reflected on how women are changing Hollywood today.</p>
 
-      <p>As a student at Georgetown University, she studied economics and photography. Her sophomore year she began writing and starring in friends&rsquo; films. She took a leave of absence to move to Havana to co-direct the documentary <em>Boxers and Ballerinas</em> with fellow alumna Mike Cahill about young athletes and artists working there.</p>
+<p>“The last few years have been such a powerful time for women telling stories. I have loved going to the theatre and watching a drama told from a point of view I haven’t seen before — Shakespeare’s wife in <em>Hamnet</em>, or the female author in <em>Anatomy of a Fall</em>, or young girls across multiple generations in <em>Sound of Falling</em>. When a work is written and then lensed by women the gaze fundamentally changes. It’s such an exciting time to tell stories and to be in the audience. You get the sense that the audience is hungry for the new.”</p>
 
-      <p>&ldquo;At Georgetown I studied with Professor Bernard Cook who heads the film program and Professor Roberto Bocci who founded the digital arts lab. I was lucky to be there at the beginning of the film movement on campus. We happened to come of age at a time where SLR cameras were able to shoot something that mimicked film&rsquo;s 24 frame aesthetic and you could edit footage yourself on Final Cut Pro on your laptop in your dorm room. Those tools were game changers. You didn&rsquo;t have to go to film school anymore to make a film. When I was at Georgetown as a freshman it had its first ever film festival &mdash; the curiosity and demand was following the technology.&rdquo;</p>
+<figure>
+  <img src="brit-1.jpeg" alt="Brit Marling">
+  <figcaption>Brit Marling</figcaption>
+</figure>
 
-      <p>After graduating valedictorian from Georgetown she turned down a banking job at Goldman Sachs to move to Los Angeles to make movies. &ldquo;In retrospect, it was a wild leap of faith. But I think I had lived my back-up plan first and saw no other way forward.&rdquo;</p>
+<p>Following the success of her FX limited series <em>A Murder at the End of the World</em> which she co-created, co-wrote, directed and starred in and was nominated for a Critics Choice Award, Marling is currently working on film and television projects in Los Angeles with her creative partner Zal Batmanglij for the production company Sister.</p>
 
-      <figure style="max-width: 50%; margin: 32px auto;">
-        <img src="photo-04.jpeg" alt="Brit Marling" style="width: 100%; height: auto; display: block;">
-        <figcaption>Brit Marling</figcaption>
-      </figure>
+<p>Marling says she has always been telling stories. “I remember growing up in Winnetka and recruiting my friends to put on small plays in Nick Corwan park or in our backyards. My sister and I got pretty industrious about it. We would charge the parents of all the kids in the play to come watch. It was not a bad business model,” she laughs.</p>
 
-      <p>At the 2011 Sundance Film Festival, she made history as the first female actor and writer to have two films premiere side by side, her first feature length narrative film <em>Another Earth</em> with Cahill as director, and <em>Sound of My Voice</em> with Zal Batmanglij, both of which she starred in, co-wrote and co-produced. Not only was she highly recognized by Robert Redford but also Fox Searchlight acquired both films. Marling was nominated for Independent Spirit Awards for both which also won the esteemed Alfred P. Sloan Prize.</p>
+<p>To Marling, story-telling is all. “I think my favorite part of filmmaking is that it’s a choral art — it’s a bunch of voices coming together to author something. Everybody works in service to the story. On <em>A Murder at the End of the World</em> I would come on set and constantly be moved by the work our production designer had done, or a shot our director of photography had in mind, or a location our Icelandic team had found. Our scouts there were truly adventurous. We were often suiting up into climbing gear and repelling to the bottom of icy ravines to find locations no one had yet put on screen.” Filming shots along frozen Icelandic terrains all day in sub-zero weather hearkens back to Lilian Gish, pioneer actress who directed her sister Dorothy in movies and floated for hours on a frozen river in Maine in “Way Down East”.</p>
 
-      <p>Marling went on to star in Redford&rsquo;s <em>The Company You Keep</em>, Nick Jarecki&rsquo;s &ldquo;Arbitrage,&rdquo; and Jesse Armstrong and Sam Bain&rsquo;s series &ldquo;Babylon.&rdquo; She then teamed with Batmanglij to make the critically acclaimed series for Netflix <em>The OA</em>. She spoke of how technology is again shifting the world of film.</p>
+<figure>
+  <img src="brit-2.jpeg" alt="Brit Marling">
+  <figcaption>Brit Marling</figcaption>
+</figure>
 
-      <blockquote>&ldquo;I think the early streaming era was really exciting for independent film makers because there was a Silicon Valley mentality that came to Hollywood and believed in taking creative risks. I think <em>The OA</em> and a lot of other form breaking narratives were born from that period of technological upheaval. And the landscape is still constantly changing. YouTube and TikTok and other forms of more micro storytelling are changing tastes, attention spans. But I feel there will always be room for a good story well told. We might just have to dig harder for it, because going to the movie theatre or gathering around a television set for appointment viewing is no longer a given. There&rsquo;s a lot to compete with.&rdquo;</blockquote>
+<p>As a student at Georgetown University, she studied economics and photography. Her sophomore year she began writing and staring in friends’ films. She took a leave of absence to move to Havana to co-direct the documentary <em>Boxers and Ballerinas</em> with fellow alumn Mike Cahill about young athletes and artists working there.</p>
 
-      <p>Returning to Chicago after a long time away had a powerful effect on Marling. &ldquo;I&rsquo;ve been thinking a lot about place &mdash; knowing a place deeply and what kinds of stories are born from that. I&rsquo;ve also been thinking a lot about the stories that shaped me when I was a child here at Hubbard Woods Elementary &mdash; like Madeleine L&rsquo;Engle&rsquo;s <em>A Wrinkle in Time</em>. Perhaps I&rsquo;m thinking a lot about source &mdash; where stories come from and why and what makes them essential.&rdquo;</p>
+<p>“At Georgetown I studied with Professor Bernard Cook who heads the film program and Professor Roberto Bocci who founded the digital arts lab. I was lucky to be there at the beginning of the film movement on campus. We happened to come of age at a time where SLR cameras were able to shoot something that mimicked film’s 24 frame aesthetic and you could edit footage yourself on Final Cut Pro on your laptop in your dorm room. Those tools were game changers. You didn’t have to go to film school anymore to make a film. When I was at Georgetown as a freshman it had its first ever film festival — the curiosity and demand was following the technology.”</p>
 
-      <p>When asked whether she preferred acting to writing or directing to acting or what she will lean into next, Marling responded, &ldquo;When I am acting I miss the writing and find the flipside true, too. I love fusing it all. Storytelling is an amazing catharsis. In acting, you feel that you are abandoning the past and future to live only in the moment. In directing, I feel you take in a lot of the history of the craft and try to play it forward. And writing &mdash; writing is always the future to me. What&rsquo;s coming. Or what I hope to call in.&rdquo;</p>
+<p>After graduating valedictorian from Georgetown she turned down a banking job at Goldman Sachs to move to Los Angeles to make movies. “In retrospect, it was a wild leap of faith. But I think I had lived my back-up plan first and saw no other way forward.”</p>
 
-      <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #eee; font-family: 'Lato', sans-serif; font-size: 14px; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;"><a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none;">About the Author: Judy Carmack Bross →</a></div>
+<figure>
+  <img src="brit-3.jpeg" alt="Brit Marling in Another Earth">
+  <figcaption>Brit Marling in <em>Another Earth</em></figcaption>
+</figure>
 
-    </div>
+<p>At the 2011 Sundance Film Festival, she made history as the first female actor and writer to have two films premiere side by side, her first feature length narrative film <em>Another Earth</em> with Cahill as director, and <em>Sound of my Voice</em> with Zal Batmanglij, both of which she starred in, co-wrote and co-produced. Not only was she highly recognized by Robert Redford but also Fox Searchlight acquired both films. Marling was nominated for Independent Spirit Awards for both which also won the esteemed Alfred P. Sloan Prize.</p>
 
-    <!-- Feedback Widget -->
-    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
-      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
-        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
-        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+<p>Marling went on to star in Redford’s <em>The Company You Keep</em>, Nick Jarecki’s “Arbitrage,” and Jesse Armstrong and Sam Bain’s series “Babylon.” She then teamed with Batmanglij to make the critically acclaimed series for Netflix <em>The OA</em>. She spoke of how technology is again shifting the world of film.</p>
+
+<p>“I think the early streaming era was really exciting for independent film makers because there was a Silicon Valley mentality that came to Hollywood and believed in taking creative risks. I think <em>The OA</em> and a lot of other form breaking narratives were born from that period of technological upheaval. And the landscape is still constantly changing. You Tube and Tik Tok and other forms of more micro storytelling are changing tastes, attention spans. But I feel there will always be room for a good story well told. We might just have to dig harder for it, because going to the movie theatre or gathering around a television set for appointment viewing is no longer a given. There’s a lot to compete with.”</p>
+
+<p>Returning to Chicago after a long time away had a powerful effect on Marling. “I’ve been thinking a lot about place — knowing a place deeply and what kinds of stories are born from that. I’ve also been thinking a lot about the stories that shaped me when I was a child here at Hubbard Woods Elementary — like Madeleine L’Engle’s <em>A Wrinkle in Time</em>. Perhaps I’m thinking a lot about source — where stories come from and why and what makes them essential.”</p>
+
+<p>When asked whether she preferred acting to writing or directing to acting or what she will lean into next, Marling responded, “When I am acting I miss the writing and find the flipside true, too. I love fusing it all. Storytelling is an amazing catharsis. In acting, you feel that you are abandoning the past and future to live only in the moment. In directing, I feel you take in a lot of the history of the craft and try to play it forward. And writing — writing is always the future to me. What’s coming. Or what I hope to call in.”</p>
+
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Judy Carmack Bross &rarr;</a>
       </div>
-      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
-      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
-      </div>
-      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
-        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
-          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="feedbackReturn">
-          <input type="hidden" name="Page" id="page-tracking">
-          <input type="hidden" name="Environment" id="env-tracking">
-          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
-          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
-          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
-        </form>
-      </div>
-      <script>
-        var base = window.location.href.split('?')[0];
-        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
-        document.getElementById('page-tracking').value = document.title + ' — ' + base;
-        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
-        if (window.location.search.indexOf('feedback=sent') !== -1) {
-          document.getElementById('feedbackForm').style.display = 'none';
-          document.getElementById('feedbackConfirm').style.display = 'block';
-        }
-        function submitVote(vote) {
-          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
-          }).catch(function(){});
-          document.getElementById('thumbUp').disabled = true;
-          document.getElementById('thumbDown').disabled = true;
-          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
-          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
-          document.getElementById('voteConfirm').style.display = 'block';
-        }
-      </script>
-    </div><!-- end feedback widget -->
 
-    <div class="edition-nav">
-      <a href="../madeira/" class="back-link"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Descent to Heaven</span></span><img class="nav-thumb" src="../madeira/madeira-1.jpeg" alt="Descent to Heaven"></a>
-      <a href="../biba-favorites/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Biba's Favorite Things: Palm Springs</span></span><img class="nav-thumb" src="../biba-favorites/photo-05.jpeg" alt="Biba's Favorite Things"></a>
-    </div>
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
 
-  </div><!-- end article-wrapper -->
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — order must match homepage card order -->
+      <div class="edition-nav">
+        <a href="../../../index.html" class="back-link">&larr; Previous: Home</a>
+        <a href="../biba-favorites/" class="back-link">Next: Biba’s Favorite Things &rarr;</a>
+      </div>
+      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+
+    </div><!-- end article-wrapper -->
+  </main>
 
   <footer>
     <div class="social-links">
-      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
     </div>
-    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
   </footer>
 
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
-    var prevUrl = '../madeira/';
+    var prevUrl = '../../../index.html';
     var nextUrl = '../biba-favorites/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
@@ -247,10 +433,8 @@
       if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
-      if (e.key === '?') { alert('Keyboard shortcuts:\nN or → : Next article\nP or ← : Previous article\nSpace/PageDown: Scroll down\nPageUp: Scroll up'); }
     });
   </script>
 
 </body>
-
 </html>
