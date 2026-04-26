@@ -1,0 +1,29 @@
+Vercel CLI 50.23.2
+Retrieving project…
+Deploying johns-projects-e5fce345/article
+Uploading [--------------------] (0.0B/92.4KB)
+Uploading [=====---------------] (25.3KB/92.4KB)
+Uploading [==========----------] (48.0KB/92.4KB)
+Uploading [================----] (78.3KB/92.4KB)
+Uploading [====================] (92.4KB/92.4KB)
+Inspect: https://vercel.com/johns-projects-e5fce345/article/84T9KLmy14FwE1vG17AzvD9fE8q4 [6s]
+Preview: https://article-l69leqhu6-johns-projects-e5fce345.vercel.app [6s]
+https://article-l69leqhu6-johns-projects-e5fce345.vercel.appBuilding...
+Building...
+Building: Running build in Washington, D.C., USA (East) – iad1 (Turbo Build Machine)
+Building: Build machine configuration: 30 cores, 60 GB
+Building: Retrieving list of deployment files...
+Building: Downloading 1351 deployment files...
+Building: Restored build cache from previous deployment (W8Uv12DtLM7bKRReo2QyGHD2arq2)
+Building: Running "vercel build"
+Building: Vercel CLI 51.6.1
+Building: Build Completed in /vercel/output [1s]
+Building: Deploying outputs...
+[2K[1A[2K[GPreview: https://article-l69leqhu6-johns-projects-e5fce345.vercel.app [20s]
+Completing...
+To deploy to production (article-kappa-silk.vercel.app), run `vercel --prod`
+
+Common next commands:
+- `vercel inspect article-l69leqhu6-johns-projects-e5fce345.vercel.app --logs`
+- `vercel redeploy article-l69leqhu6-johns-projects-e5fce345.vercel.app`
+- `vercel deploy --prod`
