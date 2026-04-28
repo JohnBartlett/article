@@ -123,6 +123,7 @@ See `DEPLOYMENT-CHECKLIST.md` for detailed steps.
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
+| `/edition-checks` | Run after every new edition: fix dark-mode, nav-thumbs, update about.html author popups and "Our Writers This Week" |
 | `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push, schedule production push |
 | `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy and John |
 | `/send-update` | Draft and send a weekly site activity + reader stats update to Judy |
