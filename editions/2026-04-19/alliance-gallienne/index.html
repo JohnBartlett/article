@@ -26,7 +26,6 @@
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
     .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
-    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
     .article-wrapper { max-width: 840px; margin: 0 auto 60px; padding: 0 32px; }
     .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
     h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
@@ -71,14 +70,8 @@
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
         <a href="../../2026-04-12/datebook/">DateBook</a>
-        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
       </div>
     </nav>
-    <div class="hamburger-menu" style="display:none; background:#fff; border-bottom:1px solid #eee; text-align:center; padding:10px 0;">
-      <a href="../index.html" style="font-family:'Lato',sans-serif;font-size:15px;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;">Home</a>
-      <a href="../../../about.html" style="font-family:'Lato',sans-serif;font-size:15px;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;">About</a>
-      <a href="../../2026-04-12/datebook/" style="font-family:'Lato',sans-serif;font-size:15px;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;">DateBook</a>
-    </div>
   </header>
 
   <div class="article-wrapper">
@@ -121,10 +114,7 @@
   </footer>
 
   <script>
-    document.querySelector('.hamburger-btn').addEventListener('click', function() {
-      var m = document.querySelector('.hamburger-menu');
-      m.style.display = m.style.display === 'block' ? 'none' : 'block';
-    });
+    document.querySelector(');
 
     const prevUrl = '../junior-league-gala/';
     const nextUrl = '../astrid-greve-spencer/';
