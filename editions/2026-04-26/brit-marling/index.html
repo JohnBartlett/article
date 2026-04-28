@@ -244,13 +244,13 @@
 <body>
   <header>
     <div class="logo-container">
-      <a href="../../../index.html">
+      <a href="../index.html">
         <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
       </a>
     </div>
     <nav>
       <div class="nav-inner">
-        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
@@ -390,12 +390,12 @@
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation — order must match homepage card order -->
-      <div class="edition-nav">
-        <a href="../../../index.html" class="back-link">&larr; Previous: Home</a>
-        <a href="../biba-favorites/" class="back-link">Next: Biba’s Favorite Things &rarr;</a>
-      </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+          <div class="edition-nav">
+      <a href="../index.html" class="back-link"><span class="nav-text"><span class="nav-dir">&larr; Home</span><span class="nav-title">Classic Chicago Magazine</span></span></a>
+      <a href="../biba-favorites/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Biba’s Favorite Things: Palm Springs</span></span><img class="nav-thumb" src="../biba-favorites/backstreet-art-walk-1.jpg" alt="Biba’s Favorite Things: Palm Springs"></a>
+    </div>
+<!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
@@ -423,7 +423,7 @@
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
-    var prevUrl = '../../../index.html';
+    var prevUrl = '../index.html';
     var nextUrl = '../biba-favorites/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();

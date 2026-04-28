@@ -244,13 +244,13 @@
 <body>
   <header>
     <div class="logo-container">
-      <a href="../../../index.html">
+      <a href="../index.html">
         <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
       </a>
     </div>
     <nav>
       <div class="nav-inner">
-        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
@@ -396,12 +396,12 @@
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation — order must match homepage card order -->
-      <div class="edition-nav">
-        <a href="../second-presbyterian/" class="back-link">&larr; Previous: Celebrating Twenty Years of Preservation Stewardship</a>
-        <a href="../../../index.html" class="back-link">Next: Home &rarr;</a>
-      </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+          <div class="edition-nav">
+      <a href="../second-presbyterian/" class="back-link"><img class="nav-thumb" src="../second-presbyterian/second-cover.jpg" alt="Celebrating Twenty Years of Preservation Stewardship"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">Celebrating Twenty Years of Preservation Stewardship</span></span></a>
+      <a href="../../2026-04-19/" class="back-link"><span class="nav-text"><span class="nav-dir">Previous Edition &rarr;</span><span class="nav-title">April 19, 2026</span></span><img class="nav-thumb" src="../../2026-04-19/daffodils/daffodils-cover.jpeg" alt="April 4-19"></a>
+    </div>
+<!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
@@ -430,7 +430,7 @@
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
     var prevUrl = '../second-presbyterian/';
-    var nextUrl = '../../../index.html';
+    var nextUrl = '../../2026-04-19/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
