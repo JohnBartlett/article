@@ -25,12 +25,6 @@
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
     .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
-    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
-    .hamburger-btn:hover { color: #b51c20; }
-    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
-    .hamburger-menu.open { display: block; }
-    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
     .article-wrapper { max-width: 840px; margin: 0 auto 60px; padding: 0 32px; }
     .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
     h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
@@ -72,25 +66,18 @@
 
   <header>
     <div class="logo-container">
-      <a href="../../../index.html">
+      <a href="../index.html">
         <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
       </a>
     </div>
     <nav>
       <div class="nav-inner">
-        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <button class="hamburger-btn" onclick="document.querySelector('.hamburger-menu').classList.toggle('open')">&#9776;</button>
       </div>
     </nav>
-    <div class="hamburger-menu">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../about.html">About</a>
-      <a href="../../../subscribe.html">Subscribe</a>
-      <a href="../../../advertise.html">Advertise</a>
-    </div>
   </header>
 
   <div class="article-wrapper">
@@ -172,12 +159,11 @@
 
     </div><!-- end article-body -->
 
-    <div class="edition-nav">
-      <a href="../flax-and-linen/" class="back-link"><img class="nav-thumb" src="../flax-and-linen/Jill-1.png" alt="Flax and Linen"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">From Field to Linen: In the Beginning, Flax</span></span></a>
-      <a href="../natya-dance-theatre/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span></span><img class="nav-thumb" src="../natya-dance-theatre/1 Cover Natya Dance.jpg" alt="Natya Dance Theatre"></a>
+        <div class="edition-nav">
+      <a href="../flax-and-linen/" class="back-link"><img class="nav-thumb" src="../flax-and-linen/Jill-1.png" alt="From field to linen: In the beginning flax"><span class="nav-text"><span class="nav-dir">&larr; Previous</span><span class="nav-title">From field to linen: In the beginning flax</span></span></a>
+      <a href="../natya-dance-theatre/" class="back-link"><span class="nav-text"><span class="nav-dir">Next &rarr;</span><span class="nav-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span></span><img class="nav-thumb" src="../natya-dance-theatre/2 Founder of Natya Dance Hema Rajagopalan.jpeg" alt="Natya Dance Theatre Celebrates Fiftieth Anniversary"></a>
     </div>
-
-  </div><!-- end article-wrapper -->
+<!-- end article-wrapper -->
 
   <footer>
     <div class="social-links">
