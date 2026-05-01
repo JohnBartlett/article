@@ -12,10 +12,11 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>Fashion Trends | Classic Chicago – Sunday Edition</title>
+  <title>Stephane St Jaymes | Classic Chicago – Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -125,29 +126,10 @@
       padding-bottom: 24px;
     }
 
-    .article-intro {
-      font-size: 18px;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #eee;
-    }
-
     .article-body p {
       font-size: 17px;
       color: #333;
       margin-bottom: 20px;
-    }
-
-    .article-body h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #111;
-      margin: 40px 0 16px;
-      padding-top: 8px;
-      border-top: 1px solid #eee;
     }
 
     .article-body .pullquote {
@@ -159,59 +141,109 @@
       margin: 30px 0;
     }
 
-    .edition-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-    }
-
-    .back-link {
-      display: inline-block;
+    .article-body .committee-credit {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
-      text-transform: uppercase;
+      color: #666;
+      font-style: italic;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+      margin-top: 24px;
+    }
+
+    /* Splide carousel */
+    .photo-carousel-section {
+      margin: 48px 0;
+      border-top: 1px solid #eee;
+      padding-top: 32px;
+    }
+
+    .photo-carousel-section h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
       color: #b51c20;
-      text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 0 0 24px;
     }
 
-    .back-link:hover {
-      color: #d41f1f;
-      border-bottom: 1px solid #d41f1f;
-    }
-
-    .hero-figure {
-      margin: 0 0 36px;
-    }
-
-    .hero-figure img {
+    .splide__slide img {
       width: 100%;
-      height: auto;
+      height: 520px;
+      object-fit: contain;
+      background: #f5f2ee;
       display: block;
     }
 
-    figure {
-      margin: 36px 0;
-    }
-
-    figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-figure figcaption,
-    figure figcaption {
+    .splide__caption {
       font-family: 'Lato', sans-serif;
       font-size: 12px;
       color: #888;
       text-align: center;
-      margin-top: 8px;
       font-style: italic;
+      margin-top: 10px;
+      padding: 0 8px;
     }
+
+    .photo-credit-note {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+      font-style: italic;
+      margin-top: 12px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      gap: 16px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      flex-direction: column;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b51c20;
+      text-decoration: none;
+      max-width: 45%;
+    }
+
+    .back-link:hover { color: #d41f1f; }
+
+    .back-link .nav-dir {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+
+    .back-link .nav-title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .back-link:hover .nav-title { color: #b51c20; }
+
+    .nav-thumb {
+      width: 80px;
+      height: 56px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 6px;
+      border-radius: 2px;
+    }
+
+    .back-link.next-link { text-align: right; align-items: flex-end; }
 
     footer {
       background: #333;
@@ -235,8 +267,8 @@
     @media (max-width: 600px) {
       h1.article-title { font-size: 32px; }
       .article-subtitle { font-size: 17px; }
-      .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
+      .splide__slide img { height: 300px; }
     }
   </style>
   <script src="../../../dark-mode.js"></script>
@@ -255,8 +287,8 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <a href="../../2026-03-08/datebook/">DateBook</a>
-        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
       </div>
     </nav>
   </header>
@@ -264,35 +296,92 @@
   <main>
     <div class="article-wrapper">
 
-      <div class="article-category">CATEGORY</div>
+      <div class="article-category">Fashion</div>
 
-      <h1 class="article-title">Fashion Trends</h1>
-      <p class="article-subtitle">ARTICLE_SUBTITLE</p>
+      <h1 class="article-title">Stephane St Jaymes</h1>
+      <p class="article-subtitle">A London-trained couturier quietly building Chicago's fashion future — one exquisite custom piece at a time</p>
 
-      <div class="article-meta">By AUTHOR_NAME &nbsp;&bull;&nbsp; EDITION_DATE</div>
-
-      <figure class="hero-figure">
-        <img src="HERO_IMAGE.jpg" alt="HERO_ALT">
-        <figcaption>HERO_CAPTION</figcaption>
-      </figure>
-
-      <p class="article-intro">INTRO_PARAGRAPH</p>
+      <div class="article-meta">By <a href="../../../about.html#marcy-carmack" style="color:#b51c20; text-decoration:none;">Marcy Carmack</a> &nbsp;&bull;&nbsp; May 3, 2026</div>
 
       <div class="article-body">
 
-        <p>BODY_CONTENT</p>
+        <p>Stephane St Jaymes previewed his latest work last Tuesday at Lookingglass Theatre Company, set inside the iconic Chicago Water Tower, built in 1869. The space brought a charged, almost cinematic energy to the presentation — exactly the kind of setting that reminds you fashion isn't just seen, it's experienced. If you're going to succeed in fashion, you have to engage all the senses, and this did.</p>
+
+        <p>Born in West London and raised in East London, Stephane credits his mother as his first teacher before refining his craft at the London College of Fashion. His most significant influence came from a Lebanese couturier who imparted the discipline of true couture — precision, masterful handwork, and the kind of exacting, luxurious finishing that defines his custom pieces today.</p>
+
+        <p>Over the past 14 years in Chicago, Stephane has quietly built a devoted clientele while maintaining his usual low profile. And it's clear — he has fallen in love with his clients. He designs with a deep respect for women, favoring elegance over vulgarity. As he puts it, <em>"Women should be admired and protected."</em></p>
+
+        <p>A designer-in-residence at Apparel Industry Board, Inc. (AIBI), Stephane partnered with the organization for this event, marking his second show with them in the past year. With the momentum of the Lookingglass presentation, he's stepping into a broader spotlight — on his own terms.</p>
+
+        <p>Stephane also has clear-eyed views on Chicago fashion — its frustrations as well as its promise. He believes the city has the talent and the influence to move forward, but only if those in positions of power are willing to set ego aside. With his unmistakable English accent and charm he simply states that they need to <em>"put egos in a basket"</em> and get on with it.</p>
+
+        <p class="committee-credit">A round of applause for the planning committee: DeAnna Spoerl, John Rogers, Marci Mazur, Nicole Ruiz and Suzet McKinney.</p>
 
       </div><!-- end article-body -->
 
+      <!-- Photo Carousel -->
+      <div class="photo-carousel-section">
+        <h2>Photo Gallery</h2>
+
+        <div id="fashion-carousel" class="splide" aria-label="Stephane St Jaymes Fashion Show">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="photo-01.jpeg" alt="Stephane St Jaymes fashion show at Lookingglass Theatre">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-02.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-03.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-04.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-05.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-06.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-07.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-08.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-09.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-10.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-11.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-12.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-13.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+              <li class="splide__slide">
+                <img src="photo-14.jpeg" alt="Stephane St Jaymes collection">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="photo-credit-note">Photo credits to be confirmed by Marcy Carmack.</p>
+      </div>
+
       <!-- About the Author -->
       <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-        <a href="../../../about.html#AUTHOR_ANCHOR" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: AUTHOR_NAME &rarr;</a>
+        <a href="../../../about.html#marcy-carmack" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Marcy Carmack &rarr;</a>
       </div>
 
       <!-- Feedback Widget -->
       <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
 
-        <!-- Thumbs -->
         <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
         <div style="display: flex; gap: 12px; margin-bottom: 8px;">
           <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
@@ -300,7 +389,6 @@
         </div>
         <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
 
-        <!-- Comment Form -->
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
           <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
         </div>
@@ -347,16 +435,29 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation — order must match homepage card order -->
+      <!-- Article Navigation -->
       <div class="edition-nav">
-        <a href="../origami/" class="back-link">&larr; Previous: Origami</a>
-        <a href="../train-history-part-two/" class="back-link">Next: Chicago: An Express History Part Two &rarr;</a>
+        <a href="../origami/" class="back-link">
+          <span class="nav-dir">&larr; Previous</span>
+          <img src="../origami/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Origami</span>
+        </a>
+        <a href="../train-history-part-two/" class="back-link next-link">
+          <span class="nav-dir">Next &rarr;</span>
+          <img src="../train-history-part-two/photo-06.jpg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Chicago: An Express History Part Two</span>
+        </a>
       </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
+
+  <!-- dev2-only -->
+  <div class="internal-nav" style="background:#f9f5f0; border-top:1px solid #e8e0d5; padding:6px 0; text-align:center; font-family:'Lato',sans-serif; font-size:12px;">
+    <a href="../../../reader-comments.html" style="color:#666; margin:0 12px;">Reader Comments</a>
+    <a href="../../../future-articles.html" style="color:#666; margin:0 12px;">Future Articles</a>
+    <a href="../index.html" style="color:#666; margin:0 12px;">May 3 Edition</a>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -379,7 +480,18 @@
     </div>
   </footer>
 
-  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    new Splide('#fashion-carousel', {
+      type: 'loop',
+      perPage: 1,
+      arrows: true,
+      pagination: true,
+      autoplay: false,
+      lazyLoad: 'nearby',
+    }).mount();
+  </script>
+
   <script>
     var prevUrl = '../origami/';
     var nextUrl = '../train-history-part-two/';
