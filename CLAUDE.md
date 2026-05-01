@@ -116,17 +116,25 @@ See `DEPLOYMENT-CHECKLIST.md` for detailed steps.
 
 ## Skills
 
+Skills run in this order each week:
+
+| Phase | Skill | Purpose |
+|---|---|---|
+| 0 | `/check-emails` | Run at session start: check Judy's emails and FormSubmit votes; apply changes; feeds into whichever phase is active |
+| 1 | `/prep-edition` | When Judy sends article list: create folder skeleton, stubs, nav chain, homepage shell, editors pages — before any content arrives |
+| 2 | `/new-edition` | Fill in articles and photos as contributor emails arrive; runs repeatedly until all articles are Ready |
+| 3 | `/edition-checks` | Quality gate before staging: fix dark-mode, nav-thumbs, about.html popups, "Our Writers This Week", verify nav chain |
+| 4 | `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push to Vercel staging preview |
+| 5 | `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy |
+| 6 | `/send-update` | After publish: pull GA4 stats and vote tallies, draft and send weekly update to Judy |
+
+Other skills:
+
 | Skill | Purpose |
 |---|---|
-| `/check-emails` | Check Judy's emails and FormSubmit votes; apply changes; commit to dev2 |
 | `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
-| `/new-edition` | Build a new edition from Judy's emails; create article HTML; update homepage |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
-| `/edition-checks` | Run after every new edition: fix dark-mode, nav-thumbs, update about.html author popups and "Our Writers This Week" |
-| `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push, schedule production push |
-| `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy and John |
-| `/send-update` | Draft and send a weekly site activity + reader stats update to Judy |
 
 ## DateBook
 

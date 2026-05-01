@@ -1,101 +1,73 @@
 # /new-edition
 
-Set up a new edition of Classic Chicago Magazine. Searches Judy's emails for article content and photos, downloads everything, builds article HTML pages, updates the homepage, and commits to dev2.
+Fill in article content and photos for the current edition as contributor emails arrive.
+Runs repeatedly — once per batch of content — until all articles are Ready.
 
-## Step 1 — Search for edition emails
+**Prerequisite:** `/prep-edition` has already run. Folder structure, stubs, and nav chain
+already exist. This skill fills them in, not creates them.
 
-Search Gmail for recent emails from Judy that contain article content:
-- `from:judycbross@aol.com newer_than:14d` (max 20)
+## Step 1 — Check emails
 
-Read all results. Identify emails that contain:
-- Article docx attachments ("here is our first/second/third article for [date]")
-- Photo attachments for articles (subject lines often name the article and describe the photo)
-- A cover photo designation ("Cover photo for...")
-- Photo captions in the subject line
-
-## Step 2 — Identify the articles
-
-From the emails, determine:
-- Edition date (e.g. March 22, 2026 → folder `editions/2026-03-22/`)
-- Article titles, authors, and order (Judy often numbers them: "second article", "third article")
-- Which photos belong to which article, and which is the cover/hero photo
-- Any notes Judy has added (e.g. "DRAFT", "needs editing", missing photos)
-
-## Step 2a — Build all placeholders immediately (dev2 workflow)
-
-**Important:** In dev2, we build **placeholder articles for all articles immediately**, even before content arrives. This allows the homepage to be updated and layouts to be reviewed early.
-
-For each article in the edition (even those without content yet):
-
-1. Create the article folder: `mkdir -p editions/YYYY-MM-DD/<article-slug>/`
-2. Build a placeholder `index.html` using the site template:
-   - Fill in: article title, author name, edition date, category (if known)
-   - Replace the hero image with a `<div class="placeholder-notice">`:
-     ```html
-     <div class="placeholder-notice" style="background:#f5f5f5; padding:40px; text-align:center; border-radius:4px; margin:20px 0;">
-       <p style="font-family:'Lato',sans-serif; font-size:16px; color:#666;">Article coming soon — [Author Name] is working on this piece.</p>
-     </div>
-     ```
-   - Body content: `<p style="color:#999; font-style:italic;">[Article text coming soon]</p>`
-   - Navigation links (prev/next) stubbed in with correct slugs (even if those articles are also placeholders)
-   - "About the Author" link to `../../../about.html#<slug>`
-   - GA4 **disabled** (matching `_template/article.html`)
-
-This means the homepage can list all articles immediately (with placeholders visible to editors), and the layout/navigation can be reviewed before final content arrives.
-
-## Step 3 — Download article content
-
-Use `tools/gmail_api.py` for all Gmail access:
+Search `john.bartlett@gmail.com` for contributor emails since the last build pass:
 
 ```python
-import sys, zipfile, re; sys.path.insert(0, 'tools')
+import sys; sys.path.insert(0, 'tools')
 from gmail_api import get_access_token, search_messages, get_metadata, get_body, list_attachments, download_attachment
 
 token = get_access_token()
+messages = search_messages(token,
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR niceguyfatz@gmail.com) newer_than:7d")
 ```
 
-For each docx attachment, `download_attachment(token, msg_id, att_id, '/tmp/article.docx')` then extract text:
+Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
+
+## Step 2 — Identify content per article
+
+For each email, determine:
+- Which article it belongs to (match contributor + working title)
+- What it contains: article text (docx/PDF/inline), photos (attachments), or both
+- Any photo placement instructions in the text (e.g. "(Photo of X, caption: Y)")
+- Whether Judy has marked any article as held, replaced, or deferred
+
+## Step 3 — Download and place photos
+
+For each photo attachment:
+
 ```python
+attachments = list_attachments(token, msg_id)
+for att in attachments:
+    download_attachment(token, msg_id, att['id'],
+        f'editions/YYYY-MM-DD/slug/photo-{n:02d}.jpeg')
+```
+
+Normalize filenames to `photo-01.jpeg`, `photo-02.jpeg`, etc.
+
+If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
+ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
+
+## Step 4 — Extract article text
+
+**From docx attachment:**
+```python
+import zipfile, re
 with zipfile.ZipFile('/tmp/article.docx') as z:
     xml = z.read('word/document.xml').decode('utf-8')
 text = re.sub(r'<[^>]+>', ' ', xml)
 text = re.sub(r'\s+', ' ', text).strip()
 ```
 
-Note any photo placement instructions in parentheses within the docx text (e.g. "(Photo of X, caption: Y)") — these tell you where to insert figures in the article body.
-
-**OCR artifacts:** Docx files from Judy occasionally contain OCR artifacts — words split by spaces (e.g. "T he", "thriving office s", "Band W ith"). Clean these up when building the article HTML.
-
-## Step 4 — Create folder structure
-
-```
-editions/YYYY-MM-DD/
-  article-slug/
-    index.html
-    photo1.jpg
-    photo2.jpg
-  article-slug-2/
-    index.html
-    ...
-```
-
-Slugs are lowercase, hyphenated versions of the article title.
-
-```bash
-mkdir -p editions/YYYY-MM-DD/article-slug editions/YYYY-MM-DD/article-slug-2 ...
-```
-
-## Step 5 — Download photos
-
-For each photo email (reuse `token` from Step 3):
-1. `list_attachments(token, msg_id)` — find image attachments
-2. `download_attachment(token, msg_id, att_id, dest_path)` — save to article folder as `slug-cover.jpg`, `slug-1.jpg`, etc.
-
-**If photos were sent via Hightail** (a file-sharing service) and can't be downloaded directly: ask the user to save the files to Google Drive, then use the Google Drive MCP tools (`mcp__claude_ai_Google_Drive__search_files`, `mcp__claude_ai_Google_Drive__download_file_content`) or ask the user to download and place them manually.
-
-For articles whose docx has embedded images (large file size, e.g. >500KB), extract them:
+**From PDF attachment:**
 ```python
-import zipfile, os
+source .venv/bin/activate  # if not already active
+import PyPDF2
+reader = PyPDF2.PdfReader('/tmp/article.pdf')
+text = '\n'.join(page.extract_text() for page in reader.pages)
+```
+
+**OCR artifacts:** Clean up split words (e.g. "T he" → "The", "Band W ith" → "Bandwidth").
+
+**From docx with embedded images:**
+```python
 with zipfile.ZipFile('/tmp/article.docx') as z:
     for name in z.namelist():
         if name.startswith('word/media/'):
@@ -104,114 +76,107 @@ with zipfile.ZipFile('/tmp/article.docx') as z:
                 f.write(data)
 ```
 
-## Step 6 — Build article HTML pages
+## Step 5 — Build article HTML
 
-Use a Python script to generate all article `index.html` files at once. Follow the site template exactly:
+Fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`. Do not recreate from
+scratch — the nav chain, GA4 state, and internal nav block are already correct.
 
-**Template structure** (see any existing article for reference, e.g. `editions/2026-03-15/little-village/index.html`):
-- `<head>`: GA4 script **disabled** (use `<!-- GA4-disabled ... -->` wrapper, matching `_template/article.html`), fonts, CSS
-- `<header>`: logo, nav (Home, DateBook, Astrochart, hamburger → About/Subscribe/Advertise)
-- Article wrapper: category label, h1 title, meta (By Author · Date), hero figure
-- `<p class="article-intro">`: first paragraph in larger font
-- `<div class="article-body">`: remaining paragraphs with inline `<figure>` elements
-- Attribution line (if author has one — see Writer Bios below)
-- Feedback widget (thumbs up/down + comment form, with dynamic environment detection)
-- Edition nav: `← Previous` and `Next →` links
-- `<footer>`: social icons + copyright
-- Scripts: hamburger toggle, keyboard nav (N/P/Space/PgDn/PgUp)
+**Article structure (required order):**
+1. Category label, `<h1>` title, meta (By Author · Date)
+2. Hero `<figure>` — `photo-01.jpeg` placed right after byline (not in carousel)
+3. `<p class="article-intro">` — first paragraph in larger font
+4. `<div class="article-body">` — body paragraphs with inline `<figure>` elements for remaining photos
+5. About the Author link — last element inside `.article-body`:
+   ```html
+   <p style="margin-top: 32px;"><a href="../../../about.html#author-id" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
+   ```
+6. Feedback widget (thumbs up/down + comment form, with dynamic environment detection)
+7. Edition nav (← Previous / Next →) with nav-thumb images
 
-**Photo placement:** Insert `<figure>` elements after the paragraph that references each photo. Put unreferenced photos at the end of the article body. Match captions from the docx photo notes.
+**Image sizing:** `width: 100%; height: auto;` — never fixed pixel dimensions.
 
-**Navigation order:** Article 1 ← Article 2 ← Article 3. Article 1's "Previous" links to `../../../index.html` (Home). Article 3's "Next" also links to `../../../index.html` (Home).
+**No author bio in article body** — name links to about.html only.
 
-**GA4:** Always **disabled** on new articles (dev2 never runs analytics). The `/publish` skill re-enables GA4 across all files when pushing to master.
+**No carousels** — all photos are inline `<figure>` elements.
 
-**No popups:** Do not add author popup, location popup, or any overlay systems.
+## Step 6 — Update homepage card
 
-**Article structure:** Every article follows this order:
-1. Category label, h1 title, meta (By Author · Date), hero figure
-2. `<p class="article-intro">` — first paragraph
-3. `<div class="article-body">` — body paragraphs with inline figures
-4. "About the Author" link — last element inside `.article-body`, before `</div><!-- end article-body -->`
-5. Feedback widget (thumbs up/down + comment form)
-6. Edition nav (← Previous / Next →)
+Replace the placeholder card in root `index.html` for this article with the real cover image
+and teaser text. If this is the hero (article #1), update the hero section.
 
-**About the Author link:** Always the last item inside `.article-body`. Use this format — no inline bio text, no external links (those belong in the author's `about.html` bio only):
-```html
-<p style="margin-top: 32px;"><a href="../../../about.html#slug" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
-```
-If an author has no `about.html` entry yet, note it in your summary — do not add an external link in the article.
+## Step 7 — Handle held or pulled articles
 
-## Step 7 — Update the homepage
+**Article newly held (Judy says "hold this for later"):**
+- If folder already exists: remove it
+- Rewire nav chain: update predecessor's "next" link and successor's "prev" link
+- Remove card from edition homepage and root `index.html`
+- Log in `future-articles.html` as Held with reason
 
-Edit `index.html` (root) to make this the current edition:
+**Held article cleared (Judy says "include it after all"):**
+- Create folder, add stub with correct nav position
+- Rewire nav chain for predecessor and successor
+- Add card to edition homepage and root `index.html`
+- Update `future-articles.html` status: Held → Active
 
-1. **Date line** — update to the new edition date (e.g. `March 22, 2026`)
-2. **Hero section** — wrap the entire hero (image + overlay) in a single `<a>` tag so both image and text are clickable. The hero article does NOT also appear as a card.
-```html
-<div class="hero">
-  <a href="editions/YYYY-MM-DD/article-slug/">
-    <img class="hero-image" src="..." style="object-position: center 20%;">
-    <div class="hero-overlay">
-      <div class="label">Category</div>
-      <h2>Title</h2>
-      <div class="meta">By Author · Date</div>
-      <p>Teaser...</p>
-    </div>
-  </a>
-</div>
-```
-Required CSS (add if not already present):
-```css
-.hero > a { display: block; text-decoration: none; }
-.hero > a:hover .hero-overlay h2 { text-decoration: underline; }
-```
-3. **Card grid** — replace with Articles 2, 3, etc. (title, byline, image, teaser).
-4. **Past Editions** — move the previous current edition to the top; drop the oldest if count exceeds 4.
+## Step 8 — DateBook (always last)
 
-Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
+When Annie's DateBook content arrives, build `editions/YYYY-MM-DD/datebook/index.html`:
 
-**object-position for portrait photos:** Portrait images in the hero often need `center 15%`–`center 25%` rather than `center top`. With `center top`, a tall portrait scaled to fill the wide hero may place the subject's face in the overlay zone. Adjust based on where the face sits in the photo.
+1. Parse Annie's prose-block input into JSON internally:
+   ```json
+   { "date": "May 3, 2026", "title": "...", "venue": "...", "time": "7:30 PM",
+     "description": "...", "url": "https://...", "price": "$35" }
+   ```
+2. Generate HTML from the structured data — consistent fields for every event
+3. Past events: use JS auto-detection (not hardcoded HTML classes)
 
-## Step 8 — Update future-articles.html
-
-If any article in this edition was previously listed in `future-articles.html` as a held article, remove it. If no articles remain, replace the list with a "No articles currently held" placeholder.
-
-## Step 8b — Update "Our Writers This Week" in about.html
-
-The "Our Writers This Week" section in `about.html` should reflect only the writers who have articles in the **current edition**. Update it to show only this edition's authors (remove writers from prior editions who aren't in this one).
-
-## Step 9 — Update the dev2 internal nav
-
-The dev2 homepage (`index.html`) has a `<!-- dev2-only -->` internal nav bar. Since the new articles are now on the main homepage, **do not add edition-specific links** for this edition. Instead:
-
-- Remove any stale edition-specific links from the prior edition
-- Keep only the standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
-
-## Step 10 — Commit and push
-
-Always include `index.html` in the **same commit** as the article folders — never commit articles without the homepage update.
+## Step 9 — Verify
 
 ```bash
-git add editions/YYYY-MM-DD/ index.html
-git commit -m "Add [Month Day] edition: [Article 1], [Article 2], [Article 3]; update homepage"
+python3 tools/verify_edition.py YYYY-MM-DD
+```
+
+Confirm actual state — content + photos — before claiming any article is Ready.
+Never mark an article Ready without running this.
+
+## Step 10 — Update editors pages
+
+After each build pass:
+
+**`editors/edition.html`:**
+- Update badge for each newly completed article: Pending → Text Only → Ready
+- Update article subtitle with photo count (e.g. "content built; 6 photos")
+- Append new reader votes to Reader Quick Votes section (from `/check-emails` if run)
+- Update Dev2 Preview button URL
+
+**`editors/index.html`:**
+- Update progress count and bar: "N of M articles ready", bar width = N/M × 100%
+- Update Decisions Needed: note any held articles or blocked content
+- Update Dev Preview quick link URL
+
+## Step 11 — Commit and push
+
+Always include `index.html` in the same commit as article folders:
+
+```bash
+git add editions/YYYY-MM-DD/ index.html future-articles.html editors/
+git commit -m "YYYY-MM-DD edition: add [article], [article]; N of M articles ready"
 git push origin dev2
 ```
 
-## Email style (when drafting follow-up emails to Judy)
+## Step 12 — Deploy Vercel preview
 
-- Salutation: `Dear Judy,`
-- Sign-off: `Cheers, John`
-- Write in first person — use "I/me", not "we/us"
+```bash
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+```
+
+Update both editors pages with the new URL, commit, push, return URL to user.
 
 ## Notes
 
-- Always work on `dev2`
-- Judy's email: `judycbross@aol.com`
-- Use the Python Gmail API (OAuth2 via `~/.gmail-mcp/credentials.json`) to list and download attachments — same approach as `/check-emails`
-- Photo emails often have descriptive subject lines; use those for captions
-- "Cover photo" emails designate the hero image for an article
-- Articles marked "DRAFT" in the docx may still need Judy's editorial review — note this in your summary
-- A photo mentioned in the docx but not received should be noted as missing
-- The edition landing page (`editions/YYYY-MM-DD/index.html`) is built separately — do not create it here
-- After committing, report: articles built, photos placed, any missing photos or draft flags
+- Always work on dev2 — never commit to dev or master
+- GA4 is already disabled in stubs — do not change it
+- Relative paths from articles: `../../../` root assets, `../<sibling>/` siblings, `../../../ads/` ads
+- Run `/check-emails` first if Judy may have sent instructions since the last session
+- Repeat this skill as many times as needed — once per content batch — until all articles are Ready
+- Report at end: articles completed, photos placed, articles still pending, any held changes
