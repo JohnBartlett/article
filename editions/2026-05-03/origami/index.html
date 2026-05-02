@@ -18,226 +18,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fff;
-      color: #222;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .logo-container {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .logo-container img {
-      width: 390px;
-      height: auto;
-    }
-
-    nav {
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-inner a {
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      color: #d41f1f;
-      text-decoration: none;
-      text-transform: uppercase;
-      margin: 0 15px;
-      padding: 5px 0;
-      letter-spacing: 0.05em;
-    }
-
-    .nav-inner a:hover {
-      color: #b51c20;
-      text-decoration: underline;
-    }
-
-    .article-wrapper {
-      max-width: 780px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .article-category {
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      color: #b51c20;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      text-align: center;
-      margin: 40px 0 12px;
-    }
-
-    h1.article-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 42px;
-      font-weight: 700;
-      line-height: 1.2;
-      text-align: center;
-      margin: 0 0 14px;
-      color: #111;
-    }
-
-    .article-subtitle {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px;
-      font-style: italic;
-      font-weight: 400;
-      text-align: center;
-      color: #666;
-      margin: 0 0 20px;
-      line-height: 1.4;
-    }
-
-    .article-meta {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #888;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 32px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 24px;
-    }
-
-    .article-intro {
-      font-size: 18px;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .article-body p {
-      font-size: 17px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .article-body h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #111;
-      margin: 40px 0 16px;
-      padding-top: 8px;
-      border-top: 1px solid #eee;
-    }
-
-    .article-body .pullquote {
-      font-size: 22px;
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #b51c20;
-      padding: 10px 20px;
-      margin: 30px 0;
-    }
-
-    .edition-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-    }
-
-    .back-link {
-      display: inline-block;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      text-transform: uppercase;
-      color: #b51c20;
-      text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
-    }
-
-    .back-link:hover {
-      color: #d41f1f;
-      border-bottom: 1px solid #d41f1f;
-    }
-
-    .hero-figure {
-      margin: 0 0 36px;
-    }
-
-    .hero-figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    figure {
-      margin: 36px 0;
-    }
-
-    figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-figure figcaption,
-    figure figcaption {
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      color: #888;
-      text-align: center;
-      margin-top: 8px;
-      font-style: italic;
-    }
-
-    footer {
-      background: #333;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 60px;
-    }
-
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; font-style: italic; text-align: center; margin-top: 8px; line-height: 1.5; }
+    .photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+    .photo-pair figure { margin: 0; }
+    @media (max-width: 600px) { .photo-pair { grid-template-columns: 1fr; } }
+    .edition-nav { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; gap: 16px; }
+    .back-link { display: inline-flex; flex-direction: column; font-family: 'Lato', sans-serif; font-size: 13px; color: #b51c20; text-decoration: none; max-width: 45%; }
+    .back-link:hover { color: #d41f1f; }
+    .back-link .nav-dir { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 4px; }
+    .back-link .nav-title { font-size: 14px; color: #333; }
+    .back-link:hover .nav-title { color: #b51c20; }
+    .nav-thumb { width: 80px; height: 56px; object-fit: cover; display: block; margin-bottom: 6px; border-radius: 2px; }
+    .back-link.next-link { text-align: right; align-items: flex-end; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
     .social-links { margin-bottom: 20px; }
     .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
     .social-links a:hover { opacity: 0.7; }
     .social-links svg { width: 32px; height: 32px; fill: #fff; }
-
-    .copyright {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    @media (max-width: 600px) {
-      h1.article-title { font-size: 32px; }
-      .article-subtitle { font-size: 17px; }
-      .article-intro { font-size: 16px; }
-      .article-body p { font-size: 16px; }
-    }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) { h1.article-title { font-size: 32px; } .article-body p { font-size: 16px; } }
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
@@ -256,7 +70,6 @@
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
         <a href="../datebook/">DateBook</a>
-        <a href="../daily-star-may/">Astrochart</a>
       </div>
     </nav>
   </header>
@@ -268,76 +81,70 @@
 
       <h1 class="article-title">Origami for Families: Creating Artwork One Step at a Time</h1>
 
-      <div class="article-meta">By <a href="../../../about.html#jen-huang" style="color:#b51c20;text-decoration:none;">Jen Huang</a> &nbsp;&bull;&nbsp; May 3, 2026</div>
+      <div class="article-meta">By <a href="../../../about.html#jen-huang" style="color:#b51c20; text-decoration:none;">Jen Huang</a> &nbsp;&bull;&nbsp; May 3, 2026</div>
 
-      <figure class="hero-figure">
-        <img src="origami-1.jpg" alt="Cutting squares from A4 paper for origami">
+      <figure>
+        <img src="photo-01.jpeg" alt="Cutting squares from A4 paper — pink triangle method">
       </figure>
-
-      <p class="article-intro">Origami is a craft that requires two things: paper and patience. The core essence of origami lies in folding the paper in different ways to create a piece of artwork. I&rsquo;ve loved origami since fifth grade, ever since a guest speaker taught us how to make a paper crane.</p>
 
       <div class="article-body">
 
-        <p>Little did I know, that catapulted me into the world of origami &ndash; while I have yet to explore the depth of complex origami, there are many pieces that I have made along the years that I have loved making with friends and family. While these crafts have a particular age range as a recommendation, it is by no means a requirement &ndash; I have made all of these crafts at varying times, and they&rsquo;re always a wonder when you put them on display.</p>
+        <p>Origami is a craft that requires two things: paper and patience. The core essence of origami lies in folding the paper in different ways to create a piece of artwork. I've loved origami since fifth grade, ever since a guest speaker taught us how to make a paper crane. Little did I know, that catapulted me into the world of origami — while I have yet to explore the depth of complex origami, there are many pieces that I have made along the years that I have loved making with friends and family. While these crafts have a particular age range as a recommendation, it is by no means a requirement — I have made all of these crafts at varying times, and they're always a wonder when you put them on display.</p>
 
-        <p>Origami paper can be expensive, but there are many alternatives, such as construction paper (suitable for the simpler crafts), printer paper (more versatile), and even parchment paper. I personally used printer paper, folded into a triangle, and then cut into a square (demonstrated below) for origami that requires a square to start with. As a child, I couldn&rsquo;t afford to ask for expensive imported paper (although many craft stores should carry basic origami paper), so I made do with what we had at home.</p>
+        <p>Origami paper can be expensive, but there are many alternatives, such as construction paper (suitable for the simpler crafts), printer paper (more versatile), and even parchment paper. I personally used printer paper, folded into a triangle, and then cut into a square (demonstrated below) for origami that requires a square to start with. As a child, I couldn't afford to ask for expensive imported paper (although many craft stores should carry basic origami paper), so I made do with what we had at home.</p>
 
-        <p>Different origami instructions may require different starting paper shapes or sizes &ndash; harder pieces tend to require larger paper, at least to first start off with. For all the pieces demonstrated in this article, size A4 printer paper cut into a square will do the trick. All pieces will be made with a square-cut size A4 paper. Certain pieces may utilize two colors, if the paper was double sided (two different colors on each side), but that usually lies in origami paper. For the crafts below, most were all folded using A4 paper, cut into a square.</p>
+        <p>Different origami instructions may require different starting paper shapes or sizes — harder pieces tend to require larger paper, at least to first start off with. For all the pieces demonstrated in this article, size A4 printer paper cut into a square will do the trick. All pieces will be made with a square-cut size A4 paper. Certain pieces may utilize two colors, if the paper was double sided (two different colors on each side), but that usually lies in origami paper. For the crafts below, most were all folded using A4 paper, cut into a square.</p>
 
-        <div style="display:flex; gap:12px; margin:36px 0;">
-          <figure style="margin:0; flex:1;">
-            <img src="origami-1.jpg" alt="Pink triangles cut from paper" style="width:100%;height:auto;">
+        <div class="photo-pair">
+          <figure>
+            <img src="photo-01.jpeg" alt="Pink triangle — cutting method for A4 paper">
           </figure>
-          <figure style="margin:0; flex:1;">
-            <img src="origami-2.jpg" alt="Green squares cut from A4 paper" style="width:100%;height:auto;">
+          <figure>
+            <img src="photo-02.jpeg" alt="Green squares cut from A4 paper">
             <figcaption>Cutting squares out of A4 paper means folding a triangle using one edge.</figcaption>
           </figure>
         </div>
 
         <p>For younger children, origami crafts which include coloring and adding details to the piece may be great for adding multiple levels of creativity. Some of them are just folding animal heads, such as a cat or a dog, and coloring in the faces.</p>
 
-        <p>When it comes to making art together, families or friends can make separate pieces or work together to make a single piece &ndash; spending time together to make something new. I believe children will enjoy coloring the pieces however they&rsquo;d like, adding in cute little designs for the animals, such as a spotted puppy or a purple cat.</p>
+        <p>When it comes to making art together, families or friends can make separate pieces or work together to make a single piece — spending time together to make something new. I believe children will enjoy coloring the pieces however they'd like, adding in cute little designs for the animals, such as a spotted puppy or a purple cat.</p>
 
         <figure>
-          <img src="origami-5.jpg" alt="Animal face origami dog">
-          <figcaption>Animal face origami (folded and colored by me) &ndash; there are many tutorials online.</figcaption>
+          <img src="photo-05.jpeg" alt="Animal face origami — dog">
+          <figcaption>Animal face origami (folded and colored by me) — there are many tutorials online.</figcaption>
         </figure>
 
-        <p>For older children, beginning with crafts that teach more of the important origami terms can help with progressing to harder crafts. These folds may include learning how to do reverse folds, basic sinks, and accordion folds. Some of these crafts include the water balloon (water bomb base), the paper crane (crane base), or a jumping frog (frog base). One of the most well-known traditional crafts would tend to be the paper crane, of which there are many stories written around it. The story of a thousand paper cranes to wish someone well is commonplace, and people still follow the story with hope &ndash; folding a thousand cranes as a gift.</p>
+        <p>For older children, beginning with crafts that teach more of the important origami terms can help with progressing to harder crafts. These folds may include learning how to do reverse folds, basic sinks, and accordion folds. Some of these crafts include the water balloon (water bomb base), the paper crane (crane base), or a jumping frog (frog base). One of the most well-known traditional crafts would tend to be the paper crane, of which there are many stories written around it. The story of a thousand paper cranes to wish someone well is commonplace, and people still follow the story with hope — folding a thousand cranes as a gift.</p>
 
         <figure>
-          <img src="origami-4.jpg" alt="Pink paper crane">
+          <img src="photo-04.jpeg" alt="Pink paper crane">
           <figcaption>Paper crane, folded by me. Paper cranes are often one of the first things people fold.</figcaption>
         </figure>
 
         <p>Moving onto some origami that has a bit more complexity, I love folding this traditional lily, dragon, and turkey, with their respective creators. Origami can be used as festive decorations, handmade additions to presents, or as a gift itself.</p>
 
         <figure>
-          <img src="origami-3.jpg" alt="Origami dragon, turkey, and lily">
-          <figcaption>Left to right: Jo Nakashima&rsquo;s Dragon, Jo Nakashima&rsquo;s Turkey, traditional lily (several creators).</figcaption>
+          <img src="photo-03.jpeg" alt="Cranes, dragon, turkey, and lily origami pieces">
+          <figcaption>Left to right: Jo Nakashima's Dragon, Jo Nakashima's Turkey, traditional lily (several creators).</figcaption>
         </figure>
 
         <p>I tend to find my instructions online, looking for diagrams in particular. Some origami pieces use crease patterns, which require additional practice and training. Origami can also have YouTube tutorials, or tutorials on other social media websites, for more visual clarity in instructions. Two of the websites that I enjoy using would be:</p>
 
-        <ul style="font-size:17px; color:#333; line-height:1.8; padding-left:24px;">
-          <li><a href="https://origami-resource-center.com/free-origami-instructions/" target="_blank">origami-resource-center.com</a> &ndash; origami among several different levels of complexities, primarily origami diagrams</li>
-          <li><a href="https://jonakashima.com.br/" target="_blank">jonakashima.com.br</a> &ndash; intermediate level origami, complete with video tutorials</li>
-        </ul>
+        <p><a href="https://origami-resource-center.com/free-origami-instructions/" target="_blank" style="color:#b51c20;">origami-resource-center.com/free-origami-instructions/</a> — for origami among several different levels of complexities, primarily origami diagrams.</p>
 
-        <p>As for specific models, I look on Gilad&rsquo;s origami or scour the internet, in order to find the exact book/magazine you can find a diagram in. For instance, Tanteidan magazines and conventions have a variety of different origami diagrams, of which have varying skill levels. I have made a few pieces from Tanteidan&rsquo;s diagrams, quite a few from different popular origami artists (such as Satoshi Kamiya), and found smaller origami magazines along the way.</p>
+        <p><a href="https://jonakashima.com.br/" target="_blank" style="color:#b51c20;">jonakashima.com.br</a> — for intermediate level origami, complete with video tutorials.</p>
 
-        <p>Origami is a multi-faceted complex art, but the origami journey doesn&rsquo;t have to delve into the complexities. Origami artists mathematically determine how to create a piece from nothing but a sheet of paper, designing a new representation of the world. For example, a panda has a lot of artistic representations of a panda, with some realistic, and some more abstract. Depending on your skill level and/or what sort of panda you&rsquo;re looking for, you&rsquo;ll end up choosing a design based on your criteria. However, the most important part is that you have this opportunity to pick among the multitudes of designs.</p>
+        <p>As for specific models, I look on Gilad's origami or scour the internet, in order to find the exact book or magazine you can find a diagram in. For instance, Tanteidan magazines and conventions have a variety of different origami diagrams, of which have varying skill levels. I have made a few pieces from Tanteidan's diagrams, quite a few from different popular origami artists (such as Satoshi Kamiya), and found smaller origami magazines along the way.</p>
 
-        <p>Some pieces have a renowned level of prestige, whether it is by difficulty or skill demonstration, such as the Ancient Dragon by Satoshi Kamiya &ndash; which is sometimes used to determine if a person has reached a certain benchmark of difficulty. As a craft, origami is flexible enough to accommodate the wants of the artists who pursue it. Even though origami can reach levels of complexity that only masters of the craft can make, it is still accessible as a craft for most people.</p>
+        <p>Origami is a multi-faceted complex art, but the origami journey doesn't have to delve into the complexities. Origami artists mathematically determine how to create a piece from nothing but a sheet of paper, designing a new representation of the world. For example, a panda has a lot of artistic representations of a panda, with some realistic, and some more abstract. Depending on your skill level and/or what sort of panda you're looking for, you'll end up choosing a design based on your criteria. However, the most important part is that you have this opportunity to pick among the multitudes of designs.</p>
 
-        <p>For some beginner origami books, consider checking out your local library. Chicago&rsquo;s libraries hold over three hundred books about origami (some of which may not have diagrams to follow, as there may be books that explore origami as a subject). You can check out the Chicago Public Library catalogue at <a href="https://www.chipublib.org/books/" target="_blank">chipublib.org</a>. As mentioned earlier, there are origami encyclopedias or catalogues, (I personally like looking through <a href="https://giladorigami.com" target="_blank">giladorigami.com</a>), where you may be able to find specific diagrams &ndash; pandas, for example, have an insane amount of models.</p>
+        <p>Some pieces have a renowned level of prestige, whether it is by difficulty or skill demonstration, such as the Ancient Dragon by Satoshi Kamiya — which is sometimes used to determine if a person has reached a certain benchmark of difficulty. As a craft, origami is flexible enough to accommodate the wants of the artists who pursue it. Even though origami can reach levels of complexity that only masters of the craft can make, it is still accessible as a craft for most people.</p>
+
+        <p>For some beginner origami books, consider checking out your local library. Chicago's libraries hold over three hundred books about origami (some of which may not have diagrams to follow, as there may be books that explore origami as a subject). You can check out the <a href="https://www.chipublib.org/books/" target="_blank" style="color:#b51c20;">Chicago Public Library catalogue</a>. As mentioned earlier, there are origami encyclopedias or catalogues (I personally like looking through <a href="https://giladorigami.com" target="_blank" style="color:#b51c20;">giladorigami.com</a>), where you may be able to find specific diagrams — pandas, for example, have an insane amount of models.</p>
 
         <p>Please feel free to enjoy origami at your own leisure. As a starting point, origami is best enjoyed as an activity or hobby.</p>
 
       </div><!-- end article-body -->
-
-      <!-- Bio block -->
-      <div style="margin-top:32px; padding-top:20px; border-top:1px solid #eee; font-family:'Lato',sans-serif; font-size:14px; color:#555; line-height:1.6;"><strong>Jen Huang</strong> &mdash; Jen Huang is a student at the University of Illinois at Chicago interning at Classic Chicago Magazine. From childhood, she knew that she loves creating, whether that would be art or writing.</div>
 
       <!-- About the Author -->
       <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
@@ -346,16 +153,12 @@
 
       <!-- Feedback Widget -->
       <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
-
-        <!-- Thumbs -->
         <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
         <div style="display: flex; gap: 12px; margin-bottom: 8px;">
           <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
           <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
         </div>
         <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
-
-        <!-- Comment Form -->
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
           <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
         </div>
@@ -372,7 +175,6 @@
             <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
           </form>
         </div>
-
         <script>
           var base = window.location.href.split('?')[0];
           document.getElementById('feedbackReturn').value = base + '?feedback=sent';
@@ -386,12 +188,7 @@
             fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
               method: 'POST',
               headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-              body: JSON.stringify({
-                vote: vote,
-                Page: document.getElementById('page-tracking').value,
-                Environment: document.getElementById('env-tracking').value,
-                _subject: 'Classic Chicago Quick Vote'
-              })
+              body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
             }).catch(function(){});
             document.getElementById('thumbUp').disabled = true;
             document.getElementById('thumbDown').disabled = true;
@@ -402,16 +199,29 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation — order must match homepage card order -->
+      <!-- Article Navigation -->
       <div class="edition-nav">
-        <a href="../st-james/" class="back-link">&larr; Previous: St. James Cathedral 150th Anniversary</a>
-        <a href="../marcy-carmack/" class="back-link">Next: Fashion Trends &rarr;</a>
+        <a href="../st-james/" class="back-link">
+          <span class="nav-dir">&larr; Previous</span>
+          <img src="../st-james/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">St. James Cathedral 150th Anniversary</span>
+        </a>
+        <a href="../marcy-carmack/" class="back-link next-link">
+          <span class="nav-dir">Next &rarr;</span>
+          <img src="../marcy-carmack/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Stephane St Jaymes</span>
+        </a>
       </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
+
+  <!-- dev2-only -->
+  <div class="internal-nav" style="background:#f9f5f0; border-top:1px solid #e8e0d5; padding:6px 0; text-align:center; font-family:'Lato',sans-serif; font-size:12px;">
+    <a href="../../../reader-comments.html" style="color:#666; margin:0 12px;">Reader Comments</a>
+    <a href="../../../future-articles.html" style="color:#666; margin:0 12px;">Future Articles</a>
+    <a href="../index.html" style="color:#666; margin:0 12px;">May 3 Edition</a>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -434,7 +244,6 @@
     </div>
   </footer>
 
-  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
     var prevUrl = '../st-james/';
     var nextUrl = '../marcy-carmack/';
