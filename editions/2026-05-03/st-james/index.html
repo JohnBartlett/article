@@ -125,29 +125,10 @@
       padding-bottom: 24px;
     }
 
-    .article-intro {
-      font-size: 18px;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #eee;
-    }
-
     .article-body p {
       font-size: 17px;
       color: #333;
       margin-bottom: 20px;
-    }
-
-    .article-body h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #111;
-      margin: 40px 0 16px;
-      padding-top: 8px;
-      border-top: 1px solid #eee;
     }
 
     .article-body .pullquote {
@@ -159,59 +140,73 @@
       margin: 30px 0;
     }
 
-    .edition-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
+    .article-body figure {
+      margin: 32px 0;
     }
 
-    .back-link {
-      display: inline-block;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      text-transform: uppercase;
-      color: #b51c20;
-      text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
-    }
-
-    .back-link:hover {
-      color: #d41f1f;
-      border-bottom: 1px solid #d41f1f;
-    }
-
-    .hero-figure {
-      margin: 0 0 36px;
-    }
-
-    .hero-figure img {
+    .article-body figure img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    figure {
-      margin: 36px 0;
-    }
-
-    figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-figure figcaption,
-    figure figcaption {
+    .article-body figure figcaption {
       font-family: 'Lato', sans-serif;
       font-size: 12px;
       color: #888;
-      text-align: center;
-      margin-top: 8px;
       font-style: italic;
+      margin-top: 8px;
+      line-height: 1.5;
     }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      gap: 16px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      flex-direction: column;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b51c20;
+      text-decoration: none;
+      max-width: 45%;
+    }
+
+    .back-link:hover { color: #d41f1f; }
+
+    .back-link .nav-dir {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+
+    .back-link .nav-title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .back-link:hover .nav-title { color: #b51c20; }
+
+    .nav-thumb {
+      width: 80px;
+      height: 56px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 6px;
+      border-radius: 2px;
+    }
+
+    .back-link.next-link { text-align: right; align-items: flex-end; }
 
     footer {
       background: #333;
@@ -235,7 +230,6 @@
     @media (max-width: 600px) {
       h1.article-title { font-size: 32px; }
       .article-subtitle { font-size: 17px; }
-      .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
     }
   </style>
@@ -255,8 +249,8 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <a href="../../2026-03-08/datebook/">DateBook</a>
-        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
       </div>
     </nav>
   </header>
@@ -264,35 +258,33 @@
   <main>
     <div class="article-wrapper">
 
-      <div class="article-category">CATEGORY</div>
+      <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:3px; padding:10px 16px; margin:24px 0 0; font-family:'Lato',sans-serif; font-size:13px; color:#856404; text-align:center; letter-spacing:0.04em;">Article text coming soon</div>
+
+      <div class="article-category">History &amp; Heritage</div>
 
       <h1 class="article-title">St. James Cathedral 150th Anniversary</h1>
-      <p class="article-subtitle">ARTICLE_SUBTITLE</p>
 
-      <div class="article-meta">By AUTHOR_NAME &nbsp;&bull;&nbsp; EDITION_DATE</div>
-
-      <figure class="hero-figure">
-        <img src="HERO_IMAGE.jpg" alt="HERO_ALT">
-        <figcaption>HERO_CAPTION</figcaption>
-      </figure>
-
-      <p class="article-intro">INTRO_PARAGRAPH</p>
+      <div class="article-meta">By <a href="../../../about.html#judy-carmack-bross" style="color:#b51c20; text-decoration:none;">Judy Carmack Bross</a> &nbsp;&bull;&nbsp; May 3, 2026</div>
 
       <div class="article-body">
 
-        <p>BODY_CONTENT</p>
+        <figure>
+          <img src="photo-01.jpeg" alt="St. James Cathedral 150th Anniversary Gala at The Driehaus Museum">
+          <figcaption>The Very Rev. Lisa Hackney-James, Dean of St. James Episcopal Cathedral (left), Mayor Brandon Johnson, and The Right Rev. Paula Clark, Episcopal Bishop of Chicago (right), mark 150 years of St. James Cathedral in a celebratory Gala at The Driehaus Museum. Credit: Office of the Mayor.</figcaption>
+        </figure>
+
+        <p>Article text will appear here. St. James Episcopal Cathedral marks 150 years of faith, community, and architectural splendor in Chicago.</p>
 
       </div><!-- end article-body -->
 
       <!-- About the Author -->
       <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-        <a href="../../../about.html#AUTHOR_ANCHOR" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: AUTHOR_NAME &rarr;</a>
+        <a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Judy Carmack Bross &rarr;</a>
       </div>
 
       <!-- Feedback Widget -->
       <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
 
-        <!-- Thumbs -->
         <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
         <div style="display: flex; gap: 12px; margin-bottom: 8px;">
           <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
@@ -300,7 +292,6 @@
         </div>
         <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
 
-        <!-- Comment Form -->
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
           <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
         </div>
@@ -347,16 +338,29 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation — order must match homepage card order -->
+      <!-- Article Navigation -->
       <div class="edition-nav">
-        <a href="../facets/" class="back-link">&larr; Previous: Facets Children's Programs</a>
-        <a href="../origami/" class="back-link">Next: Origami &rarr;</a>
+        <a href="../facets/" class="back-link">
+          <span class="nav-dir">&larr; Previous</span>
+          <img src="../facets/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Facets Children's Programs</span>
+        </a>
+        <a href="../origami/" class="back-link next-link">
+          <span class="nav-dir">Next &rarr;</span>
+          <img src="../origami/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Origami</span>
+        </a>
       </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
+
+  <!-- dev2-only -->
+  <div class="internal-nav" style="background:#f9f5f0; border-top:1px solid #e8e0d5; padding:6px 0; text-align:center; font-family:'Lato',sans-serif; font-size:12px;">
+    <a href="../../../reader-comments.html" style="color:#666; margin:0 12px;">Reader Comments</a>
+    <a href="../../../future-articles.html" style="color:#666; margin:0 12px;">Future Articles</a>
+    <a href="../index.html" style="color:#666; margin:0 12px;">May 3 Edition</a>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -379,7 +383,6 @@
     </div>
   </footer>
 
-  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
     var prevUrl = '../facets/';
     var nextUrl = '../origami/';

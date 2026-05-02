@@ -102,17 +102,6 @@
       color: #111;
     }
 
-    .article-subtitle {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 20px;
-      font-style: italic;
-      font-weight: 400;
-      text-align: center;
-      color: #666;
-      margin: 0 0 20px;
-      line-height: 1.4;
-    }
-
     .article-meta {
       font-family: 'Lato', sans-serif;
       font-size: 13px;
@@ -125,76 +114,14 @@
       padding-bottom: 24px;
     }
 
-    .article-intro {
-      font-size: 18px;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #eee;
-    }
-
     .article-body p {
       font-size: 17px;
       color: #333;
       margin-bottom: 20px;
     }
 
-    .article-body h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #111;
-      margin: 40px 0 16px;
-      padding-top: 8px;
-      border-top: 1px solid #eee;
-    }
-
-    .article-body .pullquote {
-      font-size: 22px;
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #b51c20;
-      padding: 10px 20px;
-      margin: 30px 0;
-    }
-
-    .edition-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-    }
-
-    .back-link {
-      display: inline-block;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      text-transform: uppercase;
-      color: #b51c20;
-      text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
-    }
-
-    .back-link:hover {
-      color: #d41f1f;
-      border-bottom: 1px solid #d41f1f;
-    }
-
-    .hero-figure {
-      margin: 0 0 36px;
-    }
-
-    .hero-figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
     figure {
-      margin: 36px 0;
+      margin: 32px 0;
     }
 
     figure img {
@@ -203,15 +130,64 @@
       display: block;
     }
 
-    .hero-figure figcaption,
-    figure figcaption {
+    figcaption {
       font-family: 'Lato', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       color: #888;
+      font-style: italic;
       text-align: center;
       margin-top: 8px;
-      font-style: italic;
+      line-height: 1.5;
     }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      gap: 16px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      flex-direction: column;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b51c20;
+      text-decoration: none;
+      max-width: 45%;
+    }
+
+    .back-link:hover { color: #d41f1f; }
+
+    .back-link .nav-dir {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+
+    .back-link .nav-title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .back-link:hover .nav-title { color: #b51c20; }
+
+    .nav-thumb {
+      width: 80px;
+      height: 56px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 6px;
+      border-radius: 2px;
+    }
+
+    .back-link.next-link { text-align: right; align-items: flex-end; }
 
     footer {
       background: #333;
@@ -234,8 +210,6 @@
 
     @media (max-width: 600px) {
       h1.article-title { font-size: 32px; }
-      .article-subtitle { font-size: 17px; }
-      .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
     }
   </style>
@@ -255,8 +229,8 @@
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <a href="../../2026-03-08/datebook/">DateBook</a>
-        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
       </div>
     </nav>
   </header>
@@ -264,35 +238,67 @@
   <main>
     <div class="article-wrapper">
 
-      <div class="article-category">CATEGORY</div>
+      <div class="article-category">Music &amp; Culture</div>
 
       <h1 class="article-title">The Music Institute Honors Chicago Legends</h1>
-      <p class="article-subtitle">ARTICLE_SUBTITLE</p>
 
-      <div class="article-meta">By AUTHOR_NAME &nbsp;&bull;&nbsp; EDITION_DATE</div>
+      <div class="article-meta">By <a href="../../../about.html#judy-carmack-bross" style="color:#b51c20; text-decoration:none;">Judy Carmack Bross</a> &nbsp;&bull;&nbsp; May 3, 2026</div>
 
-      <figure class="hero-figure">
-        <img src="HERO_IMAGE.jpg" alt="HERO_ALT">
-        <figcaption>HERO_CAPTION</figcaption>
+      <figure>
+        <img src="photo-03.jpeg" alt="Donna La Pietra and Bill Kurtis, recipients of the Cultural Visionary Award for Chicago">
+        <figcaption>Donna La Pietra and Bill Kurtis, recipients of the Cultural Visionary Award for Chicago.</figcaption>
       </figure>
-
-      <p class="article-intro">INTRO_PARAGRAPH</p>
 
       <div class="article-body">
 
-        <p>BODY_CONTENT</p>
+        <p>Bill, Donna, Lyric — all you need is one name to know exactly the Chicago legends you are extolling. What they have in common — in addition to consummate cultural commitment — is that they are all being honored at the Music Institute of Chicago's 95th Anniversary Gala May 18 at the Four Seasons Hotel Chicago. The Lyric Opera of Chicago will receive the Dushkin Award and Bill Kurtis and Donna La Pietra the Cultural Visionary Award for Chicago.</p>
+
+        <p>"Almost 100 years ago the Music Institute knew the importance of a shared community for the arts, and that that community needed nurturing and supporting and a shared ladder out for everyone," La Pietra, whose work includes ensuring opportunities at no cost through the Millennium Park Foundation and the Chicago Public Libraries, said. "Education provides an escape and the arts are the answers to big questions. The Music Institute supplies that broader picture and with K through adult programs which have given the wider Chicago community so many opportunities. And a well-rounded person has the arts in their lives. We try to include music in our lives every day, it makes you feel joy inside yourself."</p>
+
+        <p>Alexandra C. Nichols serves as Honorary Chairman, and Gala Co-Chairs are Carlos R. Cardenas and Shiraz Kotte. Proceeds from the Gala support excellence in teaching and performance at the Music Institute, upholding a standard and tradition that has evolved and thrived for nearly a century, and provide the single-largest source of funds for scholarships and merit-based aid, tuition-free community engagement, and neighborhood-based service activities. Each year the Music Institute positively impacts thousands of individuals of all ages and backgrounds from more than 100 Illinois communities and scores of Chicago neighborhoods.</p>
+
+        <p>Getting the opportunity to interview Donna La Pietra and Bill Kurtis makes even a reporter who has been around the block feel like a kid with a notepad — they are just so important to the success of Chicago. Filmmakers, environmentalists, board chairs and amazing, relatable and kind people who give their gifts to Chicago time and again, Donna and Bill are just necessary to Chicago's being Chicago. Catching them as Spring came to life at Mettawa Manor where their commitment to the environment is so evident and the prairies and gardens show their shared passion for being stewards to the land seemed such a happy place.</p>
+
+        <p>A Kansas native known for his restoration of the native tallgrass prairies at his Red Buffalo Ranch in Chautauqua County, Kansas, Kurtis has given the ranch to his daughter Mary Kurtis but continues to develop tallgrass prairies near his home. "Just heard from my daughter that we have 12 baby buffalo on the ranch," Kurtis told us.</p>
+
+        <p>Although that one work idea extends to Bill, too — just mention "voice" to anyone in Chicago and Bill's comes to mind — he is much more, quite simply the journalist, broadcaster and storyteller whose career has shaped American media for more than five decades. After rising to prominence as an anchor he founded Kurtis Productions, creating acclaimed documentary and investigative series. His appearances on NPR's <em>Wait Wait...Don't Tell Me!</em> and his generosity keynoting many charity events show that his voice as well as his heart are perfectly attuned. La Pietra is a creative producer and civic leader whose work bridges media, culture and philanthropy. She has played a transformative role in shaping major cultural initiatives.</p>
+
+        <p>They told us how their partnership began:</p>
+
+        <p>"We were both in broadcasting and met at Channel 2. That was at a time when the networks realized that the airwaves belonged to the public and if you didn't serve the public, you would lose your license," Donna said. "I continue to love the behind the scenes work such as serving on boards and Bill has that great voice. It gives us great pleasure to serve the broader community and we are nearly inseparable."</p>
+
+        <p>"To put it simply, she is the producer and I am the performer," Kurtis said. "I let her do all the work."</p>
+
+        <p>La Pietra said that they love the many events they attend in Chicago.</p>
+
+        <p>"We are often the last people to leave, we are never looking for an exit whether we are working or attending. Meeting new people or catching up with old friends, we always have great respect for everyone in the room. It is always catching up time."</p>
+
+        <figure>
+          <img src="photo-02.jpeg" alt="Lyric Opera Music Director Enrique Mazzola and Lyric General Director John Mangum">
+          <figcaption>Lyric Opera Music Director Enrique Mazzola and Lyric General Director John Mangum.</figcaption>
+        </figure>
+
+        <p>The Lyric Opera is the first institution to receive the Dushkin Award. The award recognizes the leadership of General Director, President &amp; CEO John Mangum and Music Director Enrique Mazzola, and Lyric's dedication to reflecting and drawing strength from the diversity of Chicago through innovation, collaboration and evolving learning opportunities that resonate long after the curtain comes down.</p>
+
+        <figure>
+          <img src="photo-01.jpeg" alt="Grammy Award-winning Marta Aznavoorian, Music Institute alumna, Artist-in-Residence">
+          <figcaption>Grammy Award-winning Marta Aznavoorian, Music Institute alumna, Artist-in-Residence, and recipient of the Richard D. Colburn Award for Teaching Excellence.</figcaption>
+        </figure>
+
+        <p>Grammy Award-winning Marta Aznavoorian will receive the Richard D. Colburn Award for Teaching Excellence which is presented to Music Institute faculty members who exemplify the high standards set by Colburn. A Music Institute alumna, piano faculty member and Artist-in-Residence, she has built an international career as a soloist, chamber musician and educator. She made her professional debut at 13 with the Chicago Symphony Orchestra, invited by Sir Georg Solti, and has appeared throughout the U.S. and abroad. She is a founding member of the Lincoln Trio.</p>
+
+        <p>For more information about the Music Institute of Chicago's 95th Anniversary Gala, which takes place Monday, May 18 at the Four Seasons Hotel Chicago, visit <a href="https://musicinst.org/gala" target="_blank" style="color:#b51c20;">musicinst.org/gala</a>.</p>
 
       </div><!-- end article-body -->
 
       <!-- About the Author -->
       <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-        <a href="../../../about.html#AUTHOR_ANCHOR" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: AUTHOR_NAME &rarr;</a>
+        <a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Judy Carmack Bross &rarr;</a>
       </div>
 
       <!-- Feedback Widget -->
       <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
 
-        <!-- Thumbs -->
         <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
         <div style="display: flex; gap: 12px; margin-bottom: 8px;">
           <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
@@ -300,7 +306,6 @@
         </div>
         <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
 
-        <!-- Comment Form -->
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
           <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
         </div>
@@ -347,16 +352,29 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation — order must match homepage card order -->
+      <!-- Article Navigation -->
       <div class="edition-nav">
-        <a href="../unsung-gems-lfpf/" class="back-link">&larr; Previous: Preservation Foundation Continues to Embrace Its Mission 50 Years After Launching</a>
-        <a href="../about-the-town-may/" class="back-link">Next: About the Town &rarr;</a>
+        <a href="../unsung-gems-lfpf/" class="back-link">
+          <span class="nav-dir">&larr; Previous</span>
+          <img src="../unsung-gems-lfpf/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">Unsung Gems: Lake Forest Place</span>
+        </a>
+        <a href="../about-the-town-may/" class="back-link next-link">
+          <span class="nav-dir">Next &rarr;</span>
+          <img src="../about-the-town-may/photo-01.jpeg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">About the Town</span>
+        </a>
       </div>
-      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
-      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
+
+  <!-- dev2-only -->
+  <div class="internal-nav" style="background:#f9f5f0; border-top:1px solid #e8e0d5; padding:6px 0; text-align:center; font-family:'Lato',sans-serif; font-size:12px;">
+    <a href="../../../reader-comments.html" style="color:#666; margin:0 12px;">Reader Comments</a>
+    <a href="../../../future-articles.html" style="color:#666; margin:0 12px;">Future Articles</a>
+    <a href="../index.html" style="color:#666; margin:0 12px;">May 3 Edition</a>
+  </div>
 
   <footer>
     <div class="social-links">
@@ -379,7 +397,6 @@
     </div>
   </footer>
 
-  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
     var prevUrl = '../unsung-gems-lfpf/';
     var nextUrl = '../about-the-town-may/';
