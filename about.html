@@ -248,36 +248,41 @@
     }
 
     details.more-contributors summary {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
       font-weight: 700;
-      color: #1a1a1a;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b51c20;
       cursor: pointer;
       list-style: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #eee;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 2px solid #b51c20;
+      border-radius: 3px;
       user-select: none;
+      background: #fff;
+      transition: background 0.15s, color 0.15s;
     }
 
     details.more-contributors summary::-webkit-details-marker { display: none; }
 
     details.more-contributors summary::after {
-      content: '＋';
-      font-size: 20px;
-      color: #b51c20;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
+      content: '▾';
+      font-size: 14px;
+      transition: transform 0.2s;
+      display: inline-block;
     }
 
     details.more-contributors[open] summary::after {
-      content: '－';
+      transform: rotate(180deg);
     }
 
     details.more-contributors summary:hover {
-      color: #b51c20;
+      background: #b51c20;
+      color: #fff;
     }
 
     /* Author articles popup */
