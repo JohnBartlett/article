@@ -242,6 +242,44 @@
       }
     }
 
+    /* More Contributors collapsible */
+    details.more-contributors {
+      margin-top: 40px;
+    }
+
+    details.more-contributors summary {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+      user-select: none;
+    }
+
+    details.more-contributors summary::-webkit-details-marker { display: none; }
+
+    details.more-contributors summary::after {
+      content: '＋';
+      font-size: 20px;
+      color: #b51c20;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+    }
+
+    details.more-contributors[open] summary::after {
+      content: '－';
+    }
+
+    details.more-contributors summary:hover {
+      color: #b51c20;
+    }
+
     /* Author articles popup */
     .articles-trigger {
       display: inline-block;
@@ -573,6 +611,258 @@
           <p>A veteran Chicago journalist covering dining, social events, and the people who shape the city&rsquo;s cultural life. Judy studies silent films with a particular interest in learning about pioneering women filmmakers.</p>
             <button class="articles-trigger" data-popup="articles-judy-carmack-bross">Judy Carmack Bross&rsquo;s Articles &rarr;</button>
         </div>
+        <div class="team-member" id="david-sweet">
+          <h3>David A. F. Sweet</h3>
+          <div class="role">Author &amp; Historian</div>
+          <p>David A. F. Sweet is the author of <em>Three Seconds in Munich: The Controversial 1972 Olympic Basketball Final</em>, <em>Lamar Hunt: The Gentle Giant Who Revolutionized Professional Sports</em>, <em>Onwentsia at 125</em>, and <em>Elawa Farm: A Timeless Treasure</em>. Reach him at <a href="mailto:dafsweet@aol.com" style="color: #b51c20;">dafsweet@aol.com</a>.</p>
+            <button class="articles-trigger" data-popup="articles-david-sweet">David A. F. Sweet&rsquo;s Articles &rarr;</button>
+      <div id="articles-david-sweet" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">David A. F. Sweet&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-08/sam-hiller/" class="article-mini">
+          <img src="editions/2026-02-08/sam-hiller/Hiller Referee 1.jpeg" alt="Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</span>
+            <span class="article-mini-date">February 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-02-22/sporting-life-lfc-goalie/" class="article-mini">
+          <img src="editions/2026-02-22/sporting-life-lfc-goalie/LFC-Goalie-2.jpeg" alt="Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks&apos; Goalie">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks&apos; Goalie</span>
+            <span class="article-mini-date">February 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-15/unsung-gems-philadelphia/" class="article-mini">
+          <img src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: The Nation&apos;s First Capital Has Much to Tell About Our Origins">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Philadelphia Story: The Nation&apos;s First Capital Has Much to Tell About Our Origins</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-22/unsung-gems-lfhs/" class="article-mini">
+          <img src="editions/2026-03-22/unsung-gems-lfhs/lfhs-1.jpeg" alt="The Joys and Challenges of Renovating the Classic Lake Forest High School Building">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Joys and Challenges of Renovating the Classic Lake Forest High School Building</span>
+            <span class="article-mini-date">March 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-29/unsung-gems-backgammon/" class="article-mini">
+          <img src="editions/2026-03-29/unsung-gems-backgammon/backgammon-1.jpeg" alt="The Dice Keep Rolling at Trudie&apos;s Winnetka Backgammon Club">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Dice Keep Rolling at Trudie&apos;s Winnetka Backgammon Club</span>
+            <span class="article-mini-date">March 29, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-05/sporting-life-kenny-davis/" class="article-mini">
+          <img src="editions/2026-04-05/sporting-life-kenny-davis/kenny-1.jpeg" alt="Pure Gold: Team USA Creates Own Medal Decades After 1972 Controversy">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Pure Gold: Team USA Creates Own Medal Decades After 1972 Controversy</span>
+            <span class="article-mini-date">April 5, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-05/unsung-gems-jessamine-chan/" class="article-mini">
+          <img src="editions/2026-04-05/unsung-gems-jessamine-chan/jessamine-chan-1.jpeg" alt="Ragdale Author Discusses Her Debut Novel That Became a Bestseller">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Ragdale Author Discusses Her Debut Novel That Became a Bestseller</span>
+            <span class="article-mini-date">April 5, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-19/sporting-life-lfhs/" class="article-mini">
+          <img src="editions/2026-04-19/sporting-life-lfhs/caleb-durbin.jpeg" alt="Game-Changers: The Impact of a North Shore High School on the World of Sports">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Game-Changers: The Impact of a North Shore High School on the World of Sports</span>
+            <span class="article-mini-date">April 19, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-26/unsung-gems-christina-clancy/" class="article-mini">
+          <img src="editions/2026-04-26/unsung-gems-christina-clancy/clancy-1.jpg" alt="Ragdale Author: Christina Clancy Discusses Her Debut Novel That Became a Bestseller">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Ragdale Author: Christina Clancy Discusses Her Debut Novel That Became a Bestseller</span>
+            <span class="article-mini-date">April 26, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-03/unsung-gems-lfpf/" class="article-mini">
+          <img src="editions/2026-05-03/unsung-gems-lfpf/lfpf-cover.jpg" alt="Unsung Gems: Lake Forest Place Foundation">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Unsung Gems: Lake Forest Place Foundation</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="jen-huang">
+          <h3>Jen Huang</h3>
+          <div class="role">Magazine Intern</div>
+          <p>Jen Huang is a student at the University of Illinois at Chicago interning at Classic Chicago Magazine. From childhood, she knew that she loves creating, whether that would be art or writing.</p>
+            <button class="articles-trigger" data-popup="articles-jen-huang">Jen Huang&rsquo;s Articles &rarr;</button>
+      <div id="articles-jen-huang" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Jen Huang&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-15/boba-tea-chinatown/" class="article-mini">
+          <img src="editions/2026-02-15/boba-tea-chinatown/IMG_8051.jpeg" alt="Boba Tea in Chinatown">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Boba Tea in Chinatown</span>
+            <span class="article-mini-date">February 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-08/lunar-new-year-chinatown/" class="article-mini">
+          <img src="editions/2026-03-08/lunar-new-year-chinatown/parade-gate.jpg" alt="Chicago&apos;s Lunar New Year Parade">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Chicago&apos;s Lunar New Year Parade</span>
+            <span class="article-mini-date">March 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-29/marwen/" class="article-mini">
+          <img src="editions/2026-03-29/marwen/IMG_8586.jpeg" alt="Marwen: Fostering Creativity for the Next Generation">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Marwen: Fostering Creativity for the Next Generation</span>
+            <span class="article-mini-date">March 29, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-12/greater-chicago-food-depository/" class="article-mini">
+          <img src="editions/2026-04-12/greater-chicago-food-depository/gcfd-1.jpg" alt="Serving Greater Chicago: The Greater Chicago Food Depository">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Serving Greater Chicago: The Greater Chicago Food Depository</span>
+            <span class="article-mini-date">April 12, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-03/origami/" class="article-mini">
+          <img src="editions/2026-05-03/origami/origami-1.jpg" alt="Origami for Families: Creating Artwork One Step at a Time">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Origami for Families: Creating Artwork One Step at a Time</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="jackson-lejeune">
+          <h3>Jackson LeJeune</h3>
+          <div class="role">Magazine Intern</div>
+          <p>A senior at the University of Illinois at Chicago and an intern at Classic Chicago, Jackson takes interest in Chicago history, indie films and the music scene which have been explored in his fine articles.</p>
+            <button class="articles-trigger" data-popup="articles-jackson-lejeune">Jackson LeJeune&rsquo;s Articles &rarr;</button>
+      <div id="articles-jackson-lejeune" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Jackson LeJeune&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-05-03/train-history-part-two/" class="article-mini">
+          <img src="editions/2026-05-03/train-history-part-two/trains2-cover.jpg" alt="Chicago: An Express History Part Two">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Chicago: An Express History Part Two</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="marcy-carmack">
+          <h3>Marcy Carmack</h3>
+          <div class="role">Fashion Trends</div>
+          <p>Marcy has dedicated her career to pushing the fashion world into brave new territory. With a career spanning three decades, she has been part of the team behind the inaugural season of New York Fashion Week at Bryant Park and has personally styled some of the most beautiful and influential women in the world. Her first inside role began in the early &lsquo;90s with Adrienne Vittadini, followed by positions at top design houses including Calvin Klein.</p>
+          <p>In 2003, Marcy relocated to the West Coast to launch her eponymous styling business, quickly earning recognition from San Francisco magazine. An early founding team member of The RealReal, she helped shape the company&rsquo;s initial vision, brand identity, and fashion authority.</p>
+          <p>Today, she continues to bring a bold, forward-thinking perspective to her styling work, her weekly Fashion Coffee Hour, and her writing for Classic Chicago magazine.</p>
+            <button class="articles-trigger" data-popup="articles-marcy-carmack">Marcy Carmack&rsquo;s Articles &rarr;</button>
+      <div id="articles-marcy-carmack" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Marcy Carmack&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-29/fashion-trends/" class="article-mini">
+          <img src="editions/2026-03-29/fashion-trends/scarf-1.jpeg" alt="The Shape of Spring">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Shape of Spring</span>
+            <span class="article-mini-date">March 29, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-12/chicago-fashion-scene/" class="article-mini">
+          <img src="editions/2026-04-12/chicago-fashion-scene/marcy-1.jpeg" alt="The Chicago Fashion Scene">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Chicago Fashion Scene</span>
+            <span class="article-mini-date">April 12, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-03/marcy-carmack/" class="article-mini">
+          <img src="editions/2026-05-03/marcy-carmack/marcy-cover.jpg" alt="Fashion Trends: May 2026">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Fashion Trends: May 2026</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="annie-delfosse">
+          <h3>Annie Delfosse</h3>
+          <div class="role">DateBook Curator</div>
+          <p>When Editor Annie Delfosse is not working with her beloved Classic Chicago Magazine writers, she spends most of her week at PAWS Chicago or substitute teaching at Chicago Public Schools. Writing, shelter animals and elementary students are the three things most important to her!</p>
+            <button class="articles-trigger" data-popup="articles-annie-delfosse">Annie Delfosse&rsquo;s Articles &rarr;</button>
+      <div id="articles-annie-delfosse" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Annie Delfosse&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-08/datebook/" class="article-mini">
+          <img src="editions/2026-03-08/datebook/photo-march.jpg" alt="DateBook: March 8, 2026">
+          <span class="article-mini-info">
+            <span class="article-mini-title">DateBook: March 8, 2026</span>
+            <span class="article-mini-date">March 8, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-12/datebook/" class="article-mini">
+          <img src="editions/2026-04-12/datebook/photo-april.jpg" alt="DateBook: April 12, 2026">
+          <span class="article-mini-info">
+            <span class="article-mini-title">DateBook: April 12, 2026</span>
+            <span class="article-mini-date">April 12, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-03/datebook/" class="article-mini">
+          <img src="editions/2026-05-03/datebook/photo-may.jpg" alt="DateBook: May 3, 2026">
+          <span class="article-mini-info">
+            <span class="article-mini-title">DateBook: May 3, 2026</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="philip-vidal">
+          <h3>Philip Vidal</h3>
+          <div class="role">About the Town</div>
+          <p>With us for all our 10 years of publishing, Philip introduces us to the very best Chicago offers each month culled by hours of research and the contacts he has made among important local institutions.</p>
+            <button class="articles-trigger" data-popup="articles-philip-vidal">Philip Vidal&rsquo;s Articles &rarr;</button>
+      <div id="articles-philip-vidal" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Philip Vidal&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-04-05/about-the-town/" class="article-mini">
+          <img src="editions/2026-04-05/about-the-town/jazz-day.jpg" alt="About the Town in April">
+          <span class="article-mini-info">
+            <span class="article-mini-title">About the Town in April</span>
+            <span class="article-mini-date">April 5, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-03/about-the-town-may/" class="article-mini">
+          <img src="editions/2026-05-03/about-the-town-may/about-the-town-may-cover.jpg" alt="About the Town in May">
+          <span class="article-mini-info">
+            <span class="article-mini-title">About the Town in May</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="victoria-martin">
+          <h3>Victoria Martin</h3>
+          <div class="role">Astrologer &amp; Columnist</div>
+          <p>Victoria Martin writes the Daily Star, Classic Chicago&rsquo;s monthly astrology guide. Drawing on celestial landmarks and fixed star wisdom, her column maps the key moods and patterns of each day to help readers navigate the month ahead.</p>
+        </div>
+      </div>
+
+      <details class="more-contributors">
+        <summary>More Contributors</summary>
+        <div class="team-grid">
         <div class="team-member" id="biba-roesch">
           <h3>Biba Roesch</h3>
           <div class="role">Travel &amp; Lifestyle Writer</div>
@@ -633,81 +923,6 @@
           <img src="editions/2026-04-26/silk-roads/silk-hero.jpeg" alt="Celebrating Partnerships and Pastels">
           <span class="article-mini-info">
             <span class="article-mini-title">Celebrating Partnerships and Pastels</span>
-            <span class="article-mini-date">April 26, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="david-sweet">
-          <h3>David A. F. Sweet</h3>
-          <div class="role">Author &amp; Historian</div>
-          <p>David A. F. Sweet is the author of <em>Three Seconds in Munich: The Controversial 1972 Olympic Basketball Final</em>, <em>Lamar Hunt: The Gentle Giant Who Revolutionized Professional Sports</em>, <em>Onwentsia at 125</em>, and <em>Elawa Farm: A Timeless Treasure</em>. Reach him at <a href="mailto:dafsweet@aol.com" style="color: #b51c20;">dafsweet@aol.com</a>.</p>
-            <button class="articles-trigger" data-popup="articles-david-sweet">David A. F. Sweet&rsquo;s Articles &rarr;</button>
-      <div id="articles-david-sweet" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">David A. F. Sweet&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-02-08/sam-hiller/" class="article-mini">
-          <img src="editions/2026-02-08/sam-hiller/Hiller Referee 1.jpeg" alt="Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Ice In Her Veins: Firefighter Dons Olympic Hockey Referee Uniform</span>
-            <span class="article-mini-date">February 8, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-02-22/sporting-life-lfc-goalie/" class="article-mini">
-          <img src="editions/2026-02-22/sporting-life-lfc-goalie/LFC-Goalie-2.jpeg" alt="Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks’ Goalie">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks’ Goalie</span>
-            <span class="article-mini-date">February 22, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-15/unsung-gems-philadelphia/" class="article-mini">
-          <img src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: The Nation’s First Capital Has Much to Tell About Our Origins">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Philadelphia Story: The Nation’s First Capital Has Much to Tell About Our Origins</span>
-            <span class="article-mini-date">March 15, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-22/unsung-gems-lfhs/" class="article-mini">
-          <img src="editions/2026-03-22/unsung-gems-lfhs/lfhs-1.jpeg" alt="The Joys and Challenges of Renovating the Classic Lake Forest High School Building">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Joys and Challenges of Renovating the Classic Lake Forest High School Building</span>
-            <span class="article-mini-date">March 22, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-29/unsung-gems-backgammon/" class="article-mini">
-          <img src="editions/2026-03-29/unsung-gems-backgammon/backgammon-1.jpeg" alt="The Dice Keep Rolling at Trudie’s Winnetka Backgammon Club">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Dice Keep Rolling at Trudie’s Winnetka Backgammon Club</span>
-            <span class="article-mini-date">March 29, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-05/sporting-life-kenny-davis/" class="article-mini">
-          <img src="editions/2026-04-05/sporting-life-kenny-davis/kenny-1.jpeg" alt="Pure Gold: Team USA Creates Own Medal Decades After 1972 Controversy">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Pure Gold: Team USA Creates Own Medal Decades After 1972 Controversy</span>
-            <span class="article-mini-date">April 5, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-05/unsung-gems-jessamine-chan/" class="article-mini">
-          <img src="editions/2026-04-05/unsung-gems-jessamine-chan/jessamine-chan-1.jpeg" alt="Ragdale Author Discusses Her Debut Novel That Became a Bestseller">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Ragdale Author Discusses Her Debut Novel That Became a Bestseller</span>
-            <span class="article-mini-date">April 5, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-19/sporting-life-lfhs/" class="article-mini">
-          <img src="editions/2026-04-19/sporting-life-lfhs/caleb-durbin.jpeg" alt="Game-Changers: The Impact of a North Shore High School on the World of Sports">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Game-Changers: The Impact of a North Shore High School on the World of Sports</span>
-            <span class="article-mini-date">April 19, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-26/unsung-gems-christina-clancy/" class="article-mini">
-          <img src="editions/2026-04-26/unsung-gems-christina-clancy/clancy-1.jpg" alt="Ragdale Author: Christina Clancy Discusses Her Debut Novel That Became a Bestseller">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Ragdale Author: Christina Clancy Discusses Her Debut Novel That Became a Bestseller</span>
             <span class="article-mini-date">April 26, 2026</span>
           </span>
         </a>
@@ -790,9 +1005,9 @@
         <div class="articles-popup-heading">Adrian Naves&rsquo;s Articles</div>
         <div class="articles-grid">
         <a href="editions/2026-03-22/pokemon-fossil-museum/" class="article-mini">
-          <img src="editions/2026-03-22/pokemon-fossil-museum/pokemon-1.jpeg" alt="The Pokémon Fossil Museum Is Coming to Chicago">
+          <img src="editions/2026-03-22/pokemon-fossil-museum/pokemon-1.jpeg" alt="The Pok&eacute;mon Fossil Museum Is Coming to Chicago">
           <span class="article-mini-info">
-            <span class="article-mini-title">The Pokémon Fossil Museum Is Coming to Chicago</span>
+            <span class="article-mini-title">The Pok&eacute;mon Fossil Museum Is Coming to Chicago</span>
             <span class="article-mini-date">March 22, 2026</span>
           </span>
         </a>
@@ -806,9 +1021,6 @@
         </div>
       </div>
         </div>
-      </div>
-      <h2>More Contributors</h2>
-      <div class="team-grid">
         <div class="team-member" id="bob-glaze">
           <h3>Bob Glaze</h3>
           <div class="role">Culinary &amp; Cultural Guide</div>
@@ -835,72 +1047,6 @@
         </div>
       </div>
         </div>
-        <div class="team-member" id="jen-huang">
-          <h3>Jen Huang</h3>
-          <div class="role">Magazine Intern</div>
-          <p>Jen Huang is a student at the University of Illinois at Chicago interning at Classic Chicago Magazine. From childhood, she knew that she loves creating, whether that would be art or writing.</p>
-            <button class="articles-trigger" data-popup="articles-jen-huang">Jen Huang&rsquo;s Articles &rarr;</button>
-      <div id="articles-jen-huang" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Jen Huang&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-02-15/boba-tea-chinatown/" class="article-mini">
-          <img src="editions/2026-02-15/boba-tea-chinatown/IMG_8051.jpeg" alt="Boba Tea in Chinatown">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Boba Tea in Chinatown</span>
-            <span class="article-mini-date">February 15, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-08/lunar-new-year-chinatown/" class="article-mini">
-          <img src="editions/2026-03-08/lunar-new-year-chinatown/parade-gate.jpg" alt="Chicago’s Lunar New Year Parade">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Chicago’s Lunar New Year Parade</span>
-            <span class="article-mini-date">March 8, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-29/marwen/" class="article-mini">
-          <img src="editions/2026-03-29/marwen/IMG_8586.jpeg" alt="Marwen: Fostering Creativity for the Next Generation">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Marwen: Fostering Creativity for the Next Generation</span>
-            <span class="article-mini-date">March 29, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-12/greater-chicago-food-depository/" class="article-mini">
-          <img src="editions/2026-04-12/greater-chicago-food-depository/gcfd-1.jpg" alt="Serving Greater Chicago: The Greater Chicago Food Depository">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Serving Greater Chicago: The Greater Chicago Food Depository</span>
-            <span class="article-mini-date">April 12, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-05-03/origami/" class="article-mini">
-          <img src="editions/2026-05-03/origami/origami-1.jpg" alt="Origami for Families: Creating Artwork One Step at a Time">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Origami for Families: Creating Artwork One Step at a Time</span>
-            <span class="article-mini-date">May 3, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="jackson-lejeune">
-          <h3>Jackson LeJeune</h3>
-          <div class="role">Magazine Intern</div>
-          <p>A senior at the University of Illinois at Chicago and an intern at Classic Chicago, Jackson takes interest in Chicago history, indie films and the music scene which have been explored in his fine articles.</p>
-            <button class="articles-trigger" data-popup="articles-jackson-lejeune">Jackson LeJeune&rsquo;s Articles &rarr;</button>
-      <div id="articles-jackson-lejeune" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Jackson LeJeune&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-05-03/train-history-part-two/" class="article-mini">
-          <img src="editions/2026-05-03/train-history-part-two/trains2-cover.jpg" alt="Chicago: An Express History Part Two">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Chicago: An Express History Part Two</span>
-            <span class="article-mini-date">May 3, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
         <div class="team-member" id="sydney-armstrong">
           <h3>Sydney Armstrong</h3>
           <div class="role">Contributing Writer</div>
@@ -911,9 +1057,9 @@
         <div class="articles-popup-heading">Sydney Armstrong&rsquo;s Articles</div>
         <div class="articles-grid">
         <a href="editions/2026-03-08/national-museum-mexican-art/" class="article-mini">
-          <img src="editions/2026-03-08/national-museum-mexican-art/photo-museum-website-2.jpeg" alt="Rieles y Ra&iacute;ces: Chicago’s Mexican Railroad Heritage">
+          <img src="editions/2026-03-08/national-museum-mexican-art/photo-museum-website-2.jpeg" alt="Rieles y Ra&iacute;ces: Chicago&apos;s Mexican Railroad Heritage">
           <span class="article-mini-info">
-            <span class="article-mini-title">Rieles y Ra&iacute;ces: Chicago’s Mexican Railroad Heritage</span>
+            <span class="article-mini-title">Rieles y Ra&iacute;ces: Chicago&apos;s Mexican Railroad Heritage</span>
             <span class="article-mini-date">March 8, 2026</span>
           </span>
         </a>
@@ -928,34 +1074,6 @@
           <img src="editions/2026-04-12/natya-dance-theatre/1 Cover Natya Dance.jpg" alt="Natya Dance Theatre Celebrates Fiftieth Anniversary">
           <span class="article-mini-info">
             <span class="article-mini-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span>
-            <span class="article-mini-date">April 12, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="marcy-carmack">
-          <h3>Marcy Carmack</h3>
-          <div class="role">Fashion Trends</div>
-          <p>Marcy has dedicated her career to pushing the fashion world into brave new territory. With a career spanning three decades, she has been part of the team behind the inaugural season of New York Fashion Week at Bryant Park and has personally styled some of the most beautiful and influential women in the world. Her first inside role began in the early &lsquo;90s with Adrienne Vittadini, followed by positions at top design houses including Calvin Klein.</p>
-          <p>In 2003, Marcy relocated to the West Coast to launch her eponymous styling business, quickly earning recognition from San Francisco magazine. An early founding team member of The RealReal, she helped shape the company&rsquo;s initial vision, brand identity, and fashion authority.</p>
-          <p>Today, she continues to bring a bold, forward-thinking perspective to her styling work, her weekly Fashion Coffee Hour, and her writing for Classic Chicago magazine.</p>
-            <button class="articles-trigger" data-popup="articles-marcy-carmack">Marcy Carmack&rsquo;s Articles &rarr;</button>
-      <div id="articles-marcy-carmack" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Marcy Carmack&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-03-29/fashion-trends/" class="article-mini">
-          <img src="editions/2026-03-29/fashion-trends/scarf-1.jpeg" alt="The Shape of Spring">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Shape of Spring</span>
-            <span class="article-mini-date">March 29, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-12/chicago-fashion-scene/" class="article-mini">
-          <img src="editions/2026-04-12/chicago-fashion-scene/marcy-1.jpeg" alt="The Chicago Fashion Scene">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Chicago Fashion Scene</span>
             <span class="article-mini-date">April 12, 2026</span>
           </span>
         </a>
@@ -1016,58 +1134,6 @@
           <span class="article-mini-info">
             <span class="article-mini-title">At Last, the Daffodils</span>
             <span class="article-mini-date">April 19, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="annie-delfosse">
-          <h3>Annie Delfosse</h3>
-          <div class="role">DateBook Curator</div>
-          <p>When Editor Annie Delfosse is not working with her beloved Classic Chicago Magazine writers, she spends most of her week at PAWS Chicago or substitute teaching at Chicago Public Schools. Writing, shelter animals and elementary students are the three things most important to her!</p>
-            <button class="articles-trigger" data-popup="articles-annie-delfosse">Annie Delfosse&rsquo;s Articles &rarr;</button>
-      <div id="articles-annie-delfosse" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Annie Delfosse&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-03-08/datebook/" class="article-mini">
-          <img src="editions/2026-03-08/datebook/photo-march.jpg" alt="DateBook: March 8, 2026">
-          <span class="article-mini-info">
-            <span class="article-mini-title">DateBook: March 8, 2026</span>
-            <span class="article-mini-date">March 8, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-12/datebook/" class="article-mini">
-          <img src="editions/2026-04-12/datebook/photo-april.jpg" alt="DateBook: April 12, 2026">
-          <span class="article-mini-info">
-            <span class="article-mini-title">DateBook: April 12, 2026</span>
-            <span class="article-mini-date">April 12, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="philip-vidal">
-          <h3>Philip Vidal</h3>
-          <div class="role">About the Town</div>
-          <p>With us for all our 10 years of publishing, Philip introduces us to the very best Chicago offers each month culled by hours of research and the contacts he has made among important local institutions.</p>
-            <button class="articles-trigger" data-popup="articles-philip-vidal">Philip Vidal&rsquo;s Articles &rarr;</button>
-      <div id="articles-philip-vidal" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Philip Vidal&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-04-05/about-the-town/" class="article-mini">
-          <img src="editions/2026-04-05/about-the-town/jazz-day.jpg" alt="About the Town in April">
-          <span class="article-mini-info">
-            <span class="article-mini-title">About the Town in April</span>
-            <span class="article-mini-date">April 5, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-05-03/about-the-town-may/" class="article-mini">
-          <img src="editions/2026-05-03/about-the-town-may/about-the-town-may-cover.jpg" alt="About the Town in May">
-          <span class="article-mini-info">
-            <span class="article-mini-title">About the Town in May</span>
-            <span class="article-mini-date">May 3, 2026</span>
           </span>
         </a>
         </div>
@@ -1175,7 +1241,8 @@
         </div>
       </div>
         </div>
-      </div>
+        </div>
+      </details>
 
       <h2>Contact</h2>
       <p>Have a story idea, want to contribute, or just want to say hello? We'd love to hear from you. Reach us at <a href="mailto:editor@classicchicagomagazine.com">editor@classicchicagomagazine.com</a>.</p>
