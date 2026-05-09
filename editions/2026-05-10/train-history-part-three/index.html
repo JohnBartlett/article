@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Chicago Train: An Express History, Part Three | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-subtitle { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-style: italic; font-weight: 400; text-align: center; color: #666; margin: 0 0 20px; line-height: 1.4; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; color: #111; margin: 40px 0 16px; padding-top: 8px; border-top: 1px solid #eee; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; font-style: italic; text-align: center; margin-top: 8px; line-height: 1.5; }
+    .series-note { font-family: 'Lato', sans-serif; font-size: 14px; color: #888; background: #f9f9f9; border-left: 3px solid #b51c20; padding: 12px 16px; margin: 0 0 32px; line-height: 1.6; }
+    .series-note a { color: #b51c20; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; gap: 16px; }
+    .back-link { display: inline-flex; flex-direction: column; font-family: 'Lato', sans-serif; font-size: 13px; color: #b51c20; text-decoration: none; max-width: 45%; }
+    .back-link:hover { color: #d41f1f; }
+    .back-link .nav-dir { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 4px; }
+    .back-link .nav-title { font-size: 14px; color: #333; }
+    .back-link:hover .nav-title { color: #b51c20; }
+    .nav-thumb { width: 80px; height: 56px; object-fit: cover; display: block; margin-bottom: 6px; border-radius: 2px; }
+    .back-link.next-link { text-align: right; align-items: flex-end; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) { h1.article-title { font-size: 32px; } .article-body p { font-size: 16px; } }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Chicago History</div>
+
+      <h1 class="article-title">Chicago Train: An Express History</h1>
+      <p class="article-subtitle">Part Three: Coming Into the Station</p>
+
+      <div class="article-meta">By <a href="../../../about.html#jackson-lejeune" style="color:#b51c20; text-decoration:none;">Jackson LeJeune</a> &nbsp;&bull;&nbsp; May 10, 2026</div>
+
+      <figure>
+        <img src="photo-01.jpg" alt="Chicago Train: An Express History Part Three">
+      </figure>
+
+      <div class="article-body">
+
+        <p class="series-note">This is Part Three of a three-part series. Read <a href="../../2026-04-26/train-history/">Part One</a> and <a href="../../2026-05-03/train-history-part-two/">Part Two</a>.</p>
+
+        <p>In the previous article, from 1871&ndash;1939, we traced Chicago&rsquo;s path to the height of its powers. Meatpacking, durable goods, and finance buoyed the city&rsquo;s economy, and public transit carried millions of people around the city weekly. Already a city of immigrants by 1860, the next fifty years would keep this trend, with hundreds of thousands making their way to the city from Eastern and Southern Europe, in addition to hundreds of thousands of black Americans, all moving to the city in the hope of a better life. The introduction of the automobile, and consequently suburbanization, would create the negative population trend seen in the coming years, and the Great Depression hit the city especially hard, as a consequence of its focus on heavy industry. While no one can say in good faith that Chicago has &ldquo;collapsed&rdquo; since the high times of the 1920s, its explosive growth was over, and a minor regression has begun.</p>
+
+        <figure>
+          <img src="photo-02.jpg" alt="An unidentified warplane constructed at the Hutler Aircraft Plant in 1944">
+          <figcaption>An unidentified warplane constructed at the Hutler Aircraft Plant in 1944.</figcaption>
+        </figure>
+
+        <h2>Chicago: Beating Heart of Steel (1940&ndash;1955)</h2>
+
+        <p>Ever since the Civil War, Chicago&rsquo;s industrial base has played pivotal roles in the nation&rsquo;s war industry. With its transnational rail network, heavy industry focus, and large population of workers, it was steadfast in its role as war materiel giant. In the forties, the country and the war paid the city back for its loyal service, in a way. Despite the New Deal&rsquo;s best efforts, Chicago and its economy would not recover fully until wartime, which inundated the city with lucrative government contracts (totaling more than $9 billion) for everything from uniforms to tanks to rations, the latter of which the city&rsquo;s packinghouses were more than eager to fulfill.</p>
+
+        <p>The government also injected nearly one billion in funds for new industrial sites, which also sparked new immigration to the city; nearly two hundred thousand black Americans migrated from the south, primarily to Chicago&rsquo;s South Side, doubling the city&rsquo;s black population. By 1950, it stood at eight hundred thousand. But this was not growth without consequence; as black people moved in, the city&rsquo;s white residents ran away to the suburbs while keeping their jobs within the city thanks to the new expressways. The wartime economic boom, which thankfully was sustained after the fighting stopped, provided consumers with surplus money, and military plants with no more military demand turned to civilian auto production, driving down the price of individual car ownership.</p>
+
+        <p>While the world of automobiles and highways was being born, the old world of trains and tracks was undergoing a sort of metamorphosis. Inter-city passenger rail would nearly vanish by 1960, practically across the nation, with cars muscling out trains in fulfilling that need. Freight rail would decline too; trucks took over the role of short- and medium-haul freight movement. Practically no new rail was laid country-wide between 1920 and 1960, as demand had been met and companies went bankrupt.</p>
+
+        <figure>
+          <img src="photo-03.jpg" alt="Mayor Kennelly opens the Milwaukee-Dearborn subway with a ribbon-cutting in 1951">
+          <figcaption>Mayor Kennelly opens the Milwaukee-Dearborn subway with a ribbon-cutting in 1951.</figcaption>
+        </figure>
+
+        <p>After barely functioning in bankruptcy for twenty years, the Chicago Rapid Transit Company (the merger entity responsible for Chicago&rsquo;s &ldquo;L&rdquo; lines) and its lines had fallen even further into disrepair by 1945, from a combination of swollen wartime transport demand and from lack of maintenance. The State of Illinois approved the creation of the Chicago Transit Authority to take over the RTC&rsquo;s assets and run them as a municipal corporation, with seven board members; three by the governor and four by the mayor of Chicago. It was funded entirely by the sale of bonds to the public, and would buy out other moribund Chicago private transport entities, like the Chicago Motor Coach Company and the Chicago Milwaukee St. Paul &amp; Pacific Railroad. By 1953, the CTA was responsible for most of the city&rsquo;s trains, cars, and buses, as well as $201 million in bonded and $121 in un-bonded debt from its predecessors. It immediately began re-organizing the lines under its control; shuttering those going unused and expanding to other regions critically under-served.</p>
+
+        <h2>Daley&rsquo;s Renewal Versus Stagnation</h2>
+
+        <p>Richard J Daley was elected to the office of Chicago Mayor in 1955, and his name was soon synonymous with the city. A creature of the Illinois Democrat Machine, he used his position within it to enact dramatic revitalization efforts and root out its corruption. Known as &ldquo;Dick the Builder,&rdquo; he would construct expressways in response to passenger and trucking demand, improve the city&rsquo;s dramatically substandard housing stock, especially in minority districts, and construct O&rsquo;Hare airport, soon to be the busiest in the world. The Chicago Area Transportation Study (CATS), conducted in 1955, projected growth trends for the city mirroring or even beating out those of previous decades, it projected a metro population of 9.5 million by 1980, and a city population of 3.7 million by that time, and planned massive expressways to accommodate it.</p>
+
+        <p>Although partly due to inaccurate prediction data from the U.S. Census Bureau, and while it would successfully build some of the highways, the CATS was dramatically too optimistic. White Flight meant that, while the metropolitan population would swell from 5.7 in 1950 to 7.5 million by 1980, the city&rsquo;s population would only decrease, from 3.6 million to 3 million in that same time frame, propped up primarily by more black and minority immigration into the inner city. Manufacturing jobs, for so long the city&rsquo;s driving force, were leaving too, in a trend repeated across the nation. This included Chicago&rsquo;s most famous industry: meatpacking. Packers and stockyards alike had been threatening to leave for decades from the unions, and the freedom of trucks and freeways allowed them to pick up shop and move, no longer reliant on the city&rsquo;s rails for transport. Factors like the substitution of feed lots for ranching, and localized slaughterhouses, caused the Union Stock Yard to close its operations by 1971, ending the figurehead of an industry that had defined the city for one hundred years.</p>
+
+        <figure>
+          <img src="photo-04.png" alt="The Humboldt Park Branch being demolished circa 1954">
+          <figcaption>The Humboldt Park Branch being demolished circa 1954.</figcaption>
+        </figure>
+
+        <p>The CTA had quite the challenge ahead of it in these years. Its first hurdle was dealing with a loss of more than 14% of its ridership, as the war&rsquo;s end meant a five day workweek instead of a six-day one. Now responsible for more than five thousand vehicles servicing more than two thousand miles of routes, it had to manage them and budget for them with only the powers to determine fares, routes, and levels of service. One of its first actions was to combine its streetcars and car fleet into a bus system, to remove the streetcars&rsquo; significant maintenance costs and the redundancy of the car fleet. It would also begin downsizing its L lines. The CTA would demolish six branches and an entire line throughout the fifties. These cost-reduction moves were made in order to help the CTA run entirely on fares, but the changes of the seventies would (metaphorically) stack pennies onto the tracks and derail that whole plan.</p>
+
+        <h2>Chicago Becomes the &ldquo;Third City&rdquo;</h2>
+
+        <p>Chicago was not prepared for the changes of the seventies, and neither was Richard J Daley. Growing increasingly corrupt, and unwilling to adapt to his city&rsquo;s changing population and needs, he would die in office in 1976, and with him, so seemed to go the city&rsquo;s veneer of stability and &ldquo;normalcy,&rdquo; and it entered the decades of &ldquo;urban crisis.&rdquo; Los Angeles officially took the lead in city population in 1982, and was well on its way to surpass it in economic power as well. And its transportation system, so lauded by its citizens and admirers, was teetering towards collapse.</p>
+
+        <p>The CTA had been on this doomed course nearly since its inception. Fare revenue, initially intended to be the entity&rsquo;s only source of revenue, had been in constant decline since its founding. Despite repeated price hikes, the affordability of automobiles and population shift to the suburbs left mass transit in the dust; yearly ridership had collapsed from 1 billion to 400 million despite overall metropolitan growth. It was a vicious cycle: more revenue was needed, so fares were increased, but as fares were increased, fewer people were willing to ride, bringing the institution to near bankruptcy. The legislature&rsquo;s response was to create the Regional Transit Authority to oversee all manner of transport in Cook, Lake, DuPage, Kane, McHenry, and Will counties. Subsidiaries Metra and Pace were initiated, respectively, to handle the commuter rail and suburban buses. And, in 1983, it was reorganized to be given funding oversight for its three subsidiaries, including applying for tax subsidies and loans, which it would employ in 1989 to expedite the rehabilitation of its systems by taking on over $1 billion in debt.</p>
+
+        <figure>
+          <img src="photo-05.jpg" alt="A view of the 1970s Chicago skyline">
+          <figcaption>A view of the 1970s Chicago skyline.</figcaption>
+        </figure>
+
+        <p>As the oil shocks of 1973 and 1979 rippled through the nation, Chicago entered a recession with it. While the city had shrunk a little in 1960, from 1970&ndash;1990 it saw a loss of eight hundred thousand people, or about eighteen percent of its population. The Great Migration had ended by the mid seventies, and black people actually began leaving the city proper for the suburbs as they climbed the social ladder. With the emigrants went a significant proportion of Chicago&rsquo;s tax base, which starved its social and government services, and only served to increase its rate of poverty.</p>
+
+        <p>Chicago itself was also facing a political crisis during this time, primarily in its budget. Small businesses and the middle class were fleeing the city, depriving it of its tax revenue base. Its public housing stock, already substandard when it was built, was in shambles and in need of practically a complete overhaul. And after the passing of Daley, it went through a tumultuous series of mayors who failed to get much off the ground due to political stagnation and deadlock, until Daley the Younger (Richard M. Daley, son of Richard J. Daley) was elected in 1989. Running the city with a businesslike demeanor, he balanced seven city budgets in a row, primarily through slashing budgets and privatization of social services and bureaucratic jobs. Thanks in part to his leadership, and the economic boom of the late eighties and early nineties, the city would recover by the end of the century, with some problems still left to grapple with.</p>
+
+        <h2>Arriving at the Station in the New Millennium</h2>
+
+        <figure>
+          <img src="photo-06.jpg" alt="An Amtrak train winds its way east out of the city at sunset">
+          <figcaption>An Amtrak train winds its way east out of the city at sunset.</figcaption>
+        </figure>
+
+        <p>For the first time in decades, the city would experience population growth through the nineties, as well as significant metropolitan growth. Its population was helped by a rapid influx of Hispanic immigrants, both internal from the Southwest and external from areas like Mexico and Puerto Rico. Businesses were investing heavily in the digital revolution, which paid great immediate dividends. The CTA experienced its first year in a decade where it was not in budget deficit in 1997, in part due to labor costs saved by the introduction of an automatic ticket collection system and the standardization of &ldquo;L&rdquo; trains with only one operator. The Blizzard of 1999 would force the city&rsquo;s hand; instituting the 2003 CREATE program to rebuild, automate, and improve all lines under the RTA&rsquo;s authority so that such natural disasters would not paralyze the city again.</p>
+
+        <p>Entering the 2000s, the tech boom would halt with the minor recession of 2001, and Chicago&rsquo;s growth with it. Losing nearly seven percent of its population, the Great Recession of 2008 would only compound the issue, and, like many municipalities, it has yet to truly recover. In a bid to fulfill a budget deficit in 2008, the city sold a seventy-five year lease on its parking meters for $1.18 billion, a number which the investors have already recouped through the revenue.</p>
+
+        <p>While long-haul passenger rail is far from its glory days of the turn of the last century, Chicago remains Amtrak&rsquo;s Midwestern hub, from which it carried nearly 3.4 million passengers in 2011, and Metra runs hundreds of trains daily on nearly five hundred miles of track radiating out from the city center. And long-haul freight has continued, a pillar of the nation&rsquo;s industrial powers, with Chicago at its heart. Dozens of miles-long trains still snake through the city at any given time.</p>
+
+        <h2>Wrap-Up</h2>
+
+        <p>It&rsquo;s been a long way from the start, hasn&rsquo;t it? As we approach the city&rsquo;s 190th, and even its 200th anniversary of incorporation, we will see how its motor-, water-, and especially rail-ways have influenced and will influence its course, and how the city&rsquo;s development influences them back. Perhaps its long history with trains will encourage the construction of the U.S.&rsquo;s first high-speed rail line, or even some other kind of innovative transit. Who knows? All I will say is that I&rsquo;m excited to see where it&rsquo;s headed, as the future of transportation looks brighter than ever.</p>
+
+      </div><!-- end article-body -->
+
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#jackson-lejeune" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Jackson LeJeune &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;"><p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p></div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) { document.getElementById('feedbackForm').style.display = 'none'; document.getElementById('feedbackConfirm').style.display = 'block'; }
+          function submitVote(vote) {
+            fetch('https://formsubmit.co/ajax/editor@2ccmag.com', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' }) }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true; document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <div class="edition-nav">
+        <a href="../kentucky-derby/" class="back-link">
+          <span class="nav-dir">&larr; Previous</span>
+          <img src="../kentucky-derby/photo-01.jpg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">The Kentucky Derby Is Dynamic and Distinguished</span>
+        </a>
+        <a href="../newberry-awards/" class="back-link next-link">
+          <span class="nav-dir">Next &rarr;</span>
+          <img src="../newberry-awards/photo-01.jpg" alt="" class="nav-thumb" onerror="this.style.display='none'">
+          <span class="nav-title">An Enchanted Evening: The Newberry Library Awards Dinner</span>
+        </a>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() { document.getElementById('hamburger-menu').classList.toggle('open'); });
+    var prevUrl = '../kentucky-derby/';
+    var nextUrl = '../newberry-awards/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+</body>
+</html>
