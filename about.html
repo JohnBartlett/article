@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -10,7 +11,7 @@
     gtag('config', 'G-5J2HWKC0B1');
   </script>
   <meta charset="UTF-8">
-  <title>About – Classic Chicago Magazine</title>
+  <title>About &ndash; Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -246,36 +247,41 @@
     }
 
     details.more-contributors summary {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
       font-weight: 700;
-      color: #1a1a1a;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b51c20;
       cursor: pointer;
       list-style: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #eee;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 2px solid #b51c20;
+      border-radius: 3px;
       user-select: none;
+      background: #fff;
+      transition: background 0.15s, color 0.15s;
     }
 
     details.more-contributors summary::-webkit-details-marker { display: none; }
 
     details.more-contributors summary::after {
-      content: '＋';
-      font-size: 20px;
-      color: #b51c20;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
+      content: '\25BE';
+      font-size: 14px;
+      transition: transform 0.2s;
+      display: inline-block;
     }
 
     details.more-contributors[open] summary::after {
-      content: '－';
+      transform: rotate(180deg);
     }
 
     details.more-contributors summary:hover {
-      color: #b51c20;
+      background: #b51c20;
+      color: #fff;
     }
 
     /* Author articles popup */
@@ -408,10 +414,10 @@
 
   <div class="wrapper">
     <h1 class="page-title">About Classic Chicago</h1>
-    <div class="page-subtitle">The city's premier Sunday magazine</div>
+    <div class="page-subtitle">The city&rsquo;s premier Sunday magazine</div>
 
     <div class="about-content">
-      <p>Classic Chicago Magazine is a weekly digital publication celebrating the people, places, culture, and style that make Chicago one of the world's great cities. Published every Sunday, each edition brings together original writing, photography, and reporting from voices who know and love this city.</p>
+      <p>Classic Chicago Magazine is a weekly digital publication celebrating the people, places, culture, and style that make Chicago one of the world&rsquo;s great cities. Published every Sunday, each edition brings together original writing, photography, and reporting from voices who know and love this city.</p>
 
       <h2>Our Mission</h2>
       <p>We believe Chicago deserves a magazine that reflects its depth &mdash; its world-class dining, its storied neighborhoods, its vibrant arts scene, and the remarkable people who call it home. Classic Chicago tells the stories that matter to those who care deeply about this city, past and present.</p>
@@ -626,16 +632,16 @@
           </span>
         </a>
         <a href="editions/2026-02-22/sporting-life-lfc-goalie/" class="article-mini">
-          <img src="editions/2026-02-22/sporting-life-lfc-goalie/LFC-Goalie-2.jpeg" alt="Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks&apos; Goalie">
+          <img src="editions/2026-02-22/sporting-life-lfc-goalie/LFC-Goalie-2.jpeg" alt="Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks' Goalie">
           <span class="article-mini-info">
-            <span class="article-mini-title">Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks&apos; Goalie</span>
+            <span class="article-mini-title">Answering the Call: 45-Year-Old Lake Forest College Alum Suits Up as Blackhawks' Goalie</span>
             <span class="article-mini-date">February 22, 2026</span>
           </span>
         </a>
         <a href="editions/2026-03-15/unsung-gems-philadelphia/" class="article-mini">
-          <img src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: The Nation&apos;s First Capital Has Much to Tell About Our Origins">
+          <img src="editions/2026-03-15/unsung-gems-philadelphia/Philly Independence Hall.jpeg" alt="Philadelphia Story: The Nation's First Capital Has Much to Tell About Our Origins">
           <span class="article-mini-info">
-            <span class="article-mini-title">Philadelphia Story: The Nation&apos;s First Capital Has Much to Tell About Our Origins</span>
+            <span class="article-mini-title">Philadelphia Story: The Nation's First Capital Has Much to Tell About Our Origins</span>
             <span class="article-mini-date">March 15, 2026</span>
           </span>
         </a>
@@ -647,9 +653,9 @@
           </span>
         </a>
         <a href="editions/2026-03-29/unsung-gems-backgammon/" class="article-mini">
-          <img src="editions/2026-03-29/unsung-gems-backgammon/backgammon-1.jpeg" alt="The Dice Keep Rolling at Trudie&apos;s Winnetka Backgammon Club">
+          <img src="editions/2026-03-29/unsung-gems-backgammon/backgammon-1.jpeg" alt="The Dice Keep Rolling at Trudie's Winnetka Backgammon Club">
           <span class="article-mini-info">
-            <span class="article-mini-title">The Dice Keep Rolling at Trudie&apos;s Winnetka Backgammon Club</span>
+            <span class="article-mini-title">The Dice Keep Rolling at Trudie's Winnetka Backgammon Club</span>
             <span class="article-mini-date">March 29, 2026</span>
           </span>
         </a>
@@ -691,6 +697,188 @@
         </div>
       </div>
         </div>
+        <div class="team-member" id="jackson-lejeune">
+          <h3>Jackson LeJeune</h3>
+          <div class="role">Magazine Intern</div>
+          <p>A senior at the University of Illinois at Chicago and an intern at Classic Chicago, Jackson takes interest in Chicago history, indie films and the music scene which have been explored in his fine articles.</p>
+            <button class="articles-trigger" data-popup="articles-jackson-lejeune">Jackson LeJeune&rsquo;s Articles &rarr;</button>
+      <div id="articles-jackson-lejeune" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Jackson LeJeune&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-05-03/train-history-part-two/" class="article-mini">
+          <img src="editions/2026-05-03/train-history-part-two/trains2-cover.jpg" alt="Chicago: An Express History Part Two">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Chicago: An Express History Part Two</span>
+            <span class="article-mini-date">May 3, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-10/train-history-part-three/" class="article-mini">
+          <img src="editions/2026-05-10/train-history-part-three/photo-01.jpg" alt="Chicago Train: An Express History, Part Three">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Chicago Train: An Express History, Part Three</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="francesco-bianchini">
+          <h3>Francesco Bianchini</h3>
+          <div class="role">Travel &amp; Food Writer</div>
+          <p>Born in Rome and raised in Umbria, Francesco Bianchini teaches French language and culture at the University of Perugia and writes from between Italy and France. His work explores memory, place, food, travel, and the quiet rituals that shape a life.</p>
+            <button class="articles-trigger" data-popup="articles-francesco-bianchini">Francesco Bianchini&rsquo;s Articles &rarr;</button>
+      <div id="articles-francesco-bianchini" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Francesco Bianchini&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-15/guardian-san-pietro/" class="article-mini">
+          <img src="editions/2026-03-15/guardian-san-pietro/ascenzio-portrait.jpeg" alt="The Guardian of San Pietro">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Guardian of San Pietro</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-12/shape-of-bread/" class="article-mini">
+          <img src="editions/2026-04-12/shape-of-bread/bread-istanbul-ferry.jpeg" alt="The Shape of Bread">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Shape of Bread</span>
+            <span class="article-mini-date">April 12, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-26/madeira/" class="article-mini">
+          <img src="editions/2026-04-26/madeira/madeira-1.jpeg" alt="Madeira: An Island Revealed from Above">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Madeira: An Island Revealed from Above</span>
+            <span class="article-mini-date">April 26, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-10/guinness-inis-mor/" class="article-mini">
+          <img src="editions/2026-05-10/guinness-inis-mor/photo-01.jpg" alt="The First Guinness on Inis Mór">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The First Guinness on Inis M&oacute;r</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="scott-holleran">
+          <h3>Scott Holleran</h3>
+          <div class="role">Short Story Editor</div>
+          <p>Classic Chicago Magazine Short Story Editor Scott Holleran lived in Chicago for 21 years and writes the non-fictional <a href="https://classicchicagomagazine.com/category/industrial-revolutions/" style="color:#b51c20;">Industrial Revolutions</a> column as well as <a href="https://classicchicagomagazine.com/category/short-stories/" style="color:#b51c20;">short stories</a>. Read his first book, <a href="https://books.apple.com/us/book/long-run/id6755129006" style="color:#b51c20;"><em>Long Run: Short Stories Volume One</em></a>, and his non-fiction, <em>Autonomia</em>, at <a href="https://scottholleran.substack.com/" style="color:#b51c20;">scottholleran.substack.com</a>. Listen to the author read his fiction &mdash; awarded a 2025 literary prize in Chicago&rsquo;s Col. Darron L. Wright Memorial Writing Awards &mdash; at <a href="https://shortstoriesbyscottholleran.substack.com/" style="color:#b51c20;">ShortStoriesByScottHolleran.substack.com</a>.</p>
+            <button class="articles-trigger" data-popup="articles-scott-holleran">Scott Holleran&rsquo;s Articles &rarr;</button>
+      <div id="articles-scott-holleran" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Scott Holleran&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-03-15/honey-child/" class="article-mini">
+          <img src="editions/2026-03-15/honey-child/image0.jpeg" alt="Honey Child">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Honey Child</span>
+            <span class="article-mini-date">March 15, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-05/his-hers-and-us/" class="article-mini">
+          <img src="editions/2026-04-05/his-hers-and-us/holleran-1.jpeg" alt="His, Hers and Us">
+          <span class="article-mini-info">
+            <span class="article-mini-title">His, Hers and Us</span>
+            <span class="article-mini-date">April 5, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-04-19/ordinary-people/" class="article-mini">
+          <img src="editions/2026-04-19/ordinary-people/ordinary-people-cover.jpeg" alt="The Abandoned Shall Love and Be Loved">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Abandoned Shall Love and Be Loved</span>
+            <span class="article-mini-date">April 19, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-10/ordinary-people/" class="article-mini">
+          <img src="editions/2026-05-10/ordinary-people/photo-01.jpg" alt="Rising Son: Movie Review of Ordinary People">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Rising Son: Movie Review of Ordinary People</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="jill-lowe">
+          <h3>Jill Lowe</h3>
+          <div class="role">Facts and Froth</div>
+          <p>Under the banner of Facts and Froth, Jill Lowe writes about the quirky and the curious aspects of the ordinary and familiar parts of our every day life.</p>
+            <button class="articles-trigger" data-popup="articles-jill-lowe">Jill Lowe&rsquo;s Articles &rarr;</button>
+      <div id="articles-jill-lowe" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Jill Lowe&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-05-10/signs/" class="article-mini">
+          <img src="editions/2026-05-10/signs/photo-05.png" alt="Bridge of Sighs: A Sigh Is Just a Sigh?">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Bridge of Sighs: A Sigh Is Just a Sigh?</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="elizabeth-dunlop-richter">
+          <h3>Elizabeth Dunlop Richter</h3>
+          <div class="role">Travel &amp; Culture</div>
+          <p>Elizabeth Dunlop Richter writes about travel, culture, and the art of living well.</p>
+            <button class="articles-trigger" data-popup="articles-elizabeth-dunlop-richter">Elizabeth Dunlop Richter&rsquo;s Articles &rarr;</button>
+      <div id="articles-elizabeth-dunlop-richter" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Elizabeth Dunlop Richter&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-02-22/downsizing/" class="article-mini">
+          <img src="editions/2026-02-22/downsizing/downsizing-room.jpg" alt="The Downsizing Dilemma">
+          <span class="article-mini-info">
+            <span class="article-mini-title">The Downsizing Dilemma</span>
+            <span class="article-mini-date">February 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-03-22/kanuga/" class="article-mini">
+          <img src="editions/2026-03-22/kanuga/image20.jpg" alt="Kanuga: The Christmas Solution">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Kanuga: The Christmas Solution</span>
+            <span class="article-mini-date">March 22, 2026</span>
+          </span>
+        </a>
+        <a href="editions/2026-05-10/detroit/" class="article-mini">
+          <img src="editions/2026-05-10/detroit/photo-01.jpg" alt="A Taste of Detroit">
+          <span class="article-mini-info">
+            <span class="article-mini-title">A Taste of Detroit</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        <div class="team-member" id="emma-muhleman">
+          <h3>Emma Muhleman</h3>
+          <div class="role">Magazine Intern &amp; Writer</div>
+          <p>Emma Muhleman is a student at the University of Illinois at Chicago and an intern at Classic Chicago Magazine, where she contributes writing and editorial support.</p>
+            <button class="articles-trigger" data-popup="articles-emma-muhleman">Emma Muhleman&rsquo;s Articles &rarr;</button>
+      <div id="articles-emma-muhleman" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Emma Muhleman&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-05-10/newberry-awards/" class="article-mini">
+          <img src="editions/2026-05-10/newberry-awards/photo-01.jpg" alt="An Enchanted Evening: The Newberry Library Awards Dinner">
+          <span class="article-mini-info">
+            <span class="article-mini-title">An Enchanted Evening: The Newberry Library Awards Dinner</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <details class="more-contributors">
+        <summary>More Contributors</summary>
+        <div class="team-grid">
         <div class="team-member" id="jen-huang">
           <h3>Jen Huang</h3>
           <div class="role">Magazine Intern</div>
@@ -708,9 +896,9 @@
           </span>
         </a>
         <a href="editions/2026-03-08/lunar-new-year-chinatown/" class="article-mini">
-          <img src="editions/2026-03-08/lunar-new-year-chinatown/parade-gate.jpg" alt="Chicago&apos;s Lunar New Year Parade">
+          <img src="editions/2026-03-08/lunar-new-year-chinatown/parade-gate.jpg" alt="Chicago's Lunar New Year Parade">
           <span class="article-mini-info">
-            <span class="article-mini-title">Chicago&apos;s Lunar New Year Parade</span>
+            <span class="article-mini-title">Chicago's Lunar New Year Parade</span>
             <span class="article-mini-date">March 8, 2026</span>
           </span>
         </a>
@@ -732,25 +920,6 @@
           <img src="editions/2026-05-03/origami/origami-1.jpg" alt="Origami for Families: Creating Artwork One Step at a Time">
           <span class="article-mini-info">
             <span class="article-mini-title">Origami for Families: Creating Artwork One Step at a Time</span>
-            <span class="article-mini-date">May 3, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="jackson-lejeune">
-          <h3>Jackson LeJeune</h3>
-          <div class="role">Magazine Intern</div>
-          <p>A senior at the University of Illinois at Chicago and an intern at Classic Chicago, Jackson takes interest in Chicago history, indie films and the music scene which have been explored in his fine articles.</p>
-            <button class="articles-trigger" data-popup="articles-jackson-lejeune">Jackson LeJeune&rsquo;s Articles &rarr;</button>
-      <div id="articles-jackson-lejeune" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Jackson LeJeune&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-05-03/train-history-part-two/" class="article-mini">
-          <img src="editions/2026-05-03/train-history-part-two/trains2-cover.jpg" alt="Chicago: An Express History Part Two">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Chicago: An Express History Part Two</span>
             <span class="article-mini-date">May 3, 2026</span>
           </span>
         </a>
@@ -960,39 +1129,6 @@
         </div>
       </div>
         </div>
-        <div class="team-member" id="francesco-bianchini">
-          <h3>Francesco Bianchini</h3>
-          <div class="role">Travel &amp; Food Writer</div>
-          <p>Born in Rome and raised in Umbria, Francesco Bianchini teaches French language and culture at the University of Perugia and writes from between Italy and France. His work explores memory, place, food, travel, and the quiet rituals that shape a life.</p>
-            <button class="articles-trigger" data-popup="articles-francesco-bianchini">Francesco Bianchini&rsquo;s Articles &rarr;</button>
-      <div id="articles-francesco-bianchini" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Francesco Bianchini&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-03-15/guardian-san-pietro/" class="article-mini">
-          <img src="editions/2026-03-15/guardian-san-pietro/ascenzio-portrait.jpeg" alt="The Guardian of San Pietro">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Guardian of San Pietro</span>
-            <span class="article-mini-date">March 15, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-12/shape-of-bread/" class="article-mini">
-          <img src="editions/2026-04-12/shape-of-bread/bread-istanbul-ferry.jpeg" alt="The Shape of Bread">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Shape of Bread</span>
-            <span class="article-mini-date">April 12, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-26/madeira/" class="article-mini">
-          <img src="editions/2026-04-26/madeira/madeira-1.jpeg" alt="Madeira: An Island Revealed from Above">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Madeira: An Island Revealed from Above</span>
-            <span class="article-mini-date">April 26, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
         <div class="team-member" id="adrian-naves">
           <h3>Adrian Naves</h3>
           <div class="role">Contributing Writer</div>
@@ -1055,9 +1191,9 @@
         <div class="articles-popup-heading">Sydney Armstrong&rsquo;s Articles</div>
         <div class="articles-grid">
         <a href="editions/2026-03-08/national-museum-mexican-art/" class="article-mini">
-          <img src="editions/2026-03-08/national-museum-mexican-art/photo-museum-website-2.jpeg" alt="Rieles y Ra&iacute;ces: Chicago&apos;s Mexican Railroad Heritage">
+          <img src="editions/2026-03-08/national-museum-mexican-art/photo-museum-website-2.jpeg" alt="Rieles y Ra&iacute;ces: Chicago's Mexican Railroad Heritage">
           <span class="article-mini-info">
-            <span class="article-mini-title">Rieles y Ra&iacute;ces: Chicago&apos;s Mexican Railroad Heritage</span>
+            <span class="article-mini-title">Rieles y Ra&iacute;ces: Chicago's Mexican Railroad Heritage</span>
             <span class="article-mini-date">March 8, 2026</span>
           </span>
         </a>
@@ -1073,39 +1209,6 @@
           <span class="article-mini-info">
             <span class="article-mini-title">Natya Dance Theatre Celebrates Fiftieth Anniversary</span>
             <span class="article-mini-date">April 12, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="scott-holleran">
-          <h3>Scott Holleran</h3>
-          <div class="role">Arts &amp; Culture Writer</div>
-          <p>Scott Holleran is an arts and culture writer who covers film, theatre, and the intersection of art and ideas.</p>
-            <button class="articles-trigger" data-popup="articles-scott-holleran">Scott Holleran&rsquo;s Articles &rarr;</button>
-      <div id="articles-scott-holleran" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Scott Holleran&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-03-15/honey-child/" class="article-mini">
-          <img src="editions/2026-03-15/honey-child/image0.jpeg" alt="Honey Child">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Honey Child</span>
-            <span class="article-mini-date">March 15, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-05/his-hers-and-us/" class="article-mini">
-          <img src="editions/2026-04-05/his-hers-and-us/holleran-1.jpeg" alt="His, Hers and Us">
-          <span class="article-mini-info">
-            <span class="article-mini-title">His, Hers and Us</span>
-            <span class="article-mini-date">April 5, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-04-19/ordinary-people/" class="article-mini">
-          <img src="editions/2026-04-19/ordinary-people/ordinary-people-cover.jpeg" alt="The Abandoned Shall Love and Be Loved">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Abandoned Shall Love and Be Loved</span>
-            <span class="article-mini-date">April 19, 2026</span>
           </span>
         </a>
         </div>
@@ -1151,32 +1254,6 @@
           <span class="article-mini-info">
             <span class="article-mini-title">Antibes Early Spring 2026</span>
             <span class="article-mini-date">April 5, 2026</span>
-          </span>
-        </a>
-        </div>
-      </div>
-        </div>
-        <div class="team-member" id="elizabeth-dunlop-richter">
-          <h3>Elizabeth Dunlop Richter</h3>
-          <div class="role">Travel &amp; Culture</div>
-          <p>Elizabeth Dunlop Richter writes about travel, culture, and the art of living well.</p>
-            <button class="articles-trigger" data-popup="articles-elizabeth-dunlop-richter">Elizabeth Dunlop Richter&rsquo;s Articles &rarr;</button>
-      <div id="articles-elizabeth-dunlop-richter" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Elizabeth Dunlop Richter&rsquo;s Articles</div>
-        <div class="articles-grid">
-        <a href="editions/2026-02-22/downsizing/" class="article-mini">
-          <img src="editions/2026-02-22/downsizing/downsizing-room.jpg" alt="The Downsizing Dilemma">
-          <span class="article-mini-info">
-            <span class="article-mini-title">The Downsizing Dilemma</span>
-            <span class="article-mini-date">February 22, 2026</span>
-          </span>
-        </a>
-        <a href="editions/2026-03-22/kanuga/" class="article-mini">
-          <img src="editions/2026-03-22/kanuga/image20.jpg" alt="Kanuga: The Christmas Solution">
-          <span class="article-mini-info">
-            <span class="article-mini-title">Kanuga: The Christmas Solution</span>
-            <span class="article-mini-date">March 22, 2026</span>
           </span>
         </a>
         </div>
@@ -1239,6 +1316,27 @@
         </div>
       </div>
         </div>
+        <div class="team-member" id="ethan-cotton">
+          <h3>Ethan Cotton</h3>
+          <div class="role">Architecture Writer</div>
+          <p>Ethan Cotton writes about architecture and the built environment, with a particular interest in how cities shape — and are shaped by — the people who inhabit them.</p>
+            <button class="articles-trigger" data-popup="articles-ethan-cotton">Ethan Cotton&rsquo;s Articles &rarr;</button>
+      <div id="articles-ethan-cotton" class="articles-popup">
+        <button class="articles-popup-close">&times;</button>
+        <div class="articles-popup-heading">Ethan Cotton&rsquo;s Articles</div>
+        <div class="articles-grid">
+        <a href="editions/2026-05-10/chicago-skyline/" class="article-mini">
+          <img src="editions/2026-05-10/kentucky-derby/photo-02.jpg" alt="Steel, Stone, and Stars: The Chicago Skyline">
+          <span class="article-mini-info">
+            <span class="article-mini-title">Steel, Stone, and Stars: The Chicago Skyline</span>
+            <span class="article-mini-date">May 10, 2026</span>
+          </span>
+        </a>
+        </div>
+      </div>
+        </div>
+        </div>
+      </details>
         </div>
       </details>
 
