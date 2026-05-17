@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
   try {
     await resend.emails.send({
       from: 'Classic Chicago <forms@2ccmag.com>',
-      to: 'editor@2ccmag.com',
+      to: 'john.bartlett@gmail.com',
       subject,
       text: fields,
     });
