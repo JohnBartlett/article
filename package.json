@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Static HTML magazine for Classic Chicago",
   "dependencies": {
-    "@google-analytics/data": "^4.10.0"
+    "@google-analytics/data": "^4.10.0",
+    "resend": "^6.12.3"
   },
   "engines": {
     "node": ">=18.x"

@@ -242,9 +242,9 @@
         </div>
         <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
           <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-          <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <form action="/api/submit-form" method="POST">
             <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-            <input type="hidden" name="_captcha" value="false">
+            
             <input type="hidden" name="_next" id="feedbackReturn">
             <input type="hidden" name="Page" id="page-tracking">
             <input type="hidden" name="Environment" id="env-tracking">
@@ -263,7 +263,7 @@
             document.getElementById('feedbackConfirm').style.display = 'block';
           }
           function submitVote(vote) {
-            fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            fetch('/api/submit-form', {
               method: 'POST',
               headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
               body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
