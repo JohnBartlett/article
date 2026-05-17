@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -12,26 +14,21 @@ module.exports = async (req, res) => {
     .map(([k, v]) => `${k}: ${v}`)
     .join('\n');
 
-  try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Classic Chicago <forms@2ccmag.com>',
-        to: ['john.bartlett@gmail.com'],
-        subject,
-        text: fields,
-      }),
-    });
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'john.bartlett@gmail.com',
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('Resend error:', err);
-      throw new Error(err);
-    }
+  try {
+    await transporter.sendMail({
+      from: 'Classic Chicago Forms <john.bartlett@gmail.com>',
+      to: 'john.bartlett@gmail.com',
+      subject,
+      text: fields,
+    });
 
     const wantsJson = (req.headers['accept'] || '').includes('application/json');
     if (wantsJson) {
@@ -42,7 +39,7 @@ module.exports = async (req, res) => {
     }
     return res.status(200).send('Message sent.');
   } catch (err) {
-    console.error('Submit form error:', err);
+    console.error('Mail error:', err);
     const wantsJson = (req.headers['accept'] || '').includes('application/json');
     if (wantsJson) {
       return res.status(500).json({ error: 'Failed to send' });
