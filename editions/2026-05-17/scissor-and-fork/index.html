@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Scissor and Fork | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-subtitle { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-style: italic; font-weight: 400; text-align: center; color: #666; margin: 0 0 20px; line-height: 1.4; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-meta a { color: #b51c20; text-decoration: none; }
+    .article-meta a:hover { text-decoration: underline; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    .article-body .pullquote { font-size: 22px; font-style: italic; color: #555; border-left: 4px solid #b51c20; padding: 10px 20px; margin: 30px 0; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; font-style: italic; text-align: center; margin-top: 8px; line-height: 1.5; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; gap: 16px; }
+    .back-link { display: inline-flex; flex-direction: column; font-family: 'Lato', sans-serif; font-size: 13px; color: #b51c20; text-decoration: none; max-width: 45%; }
+    .back-link:hover { color: #d41f1f; }
+    .back-link .nav-dir { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 4px; }
+    .back-link .nav-title { font-size: 14px; color: #333; }
+    .back-link:hover .nav-title { color: #b51c20; }
+    .nav-thumb { width: 80px; height: 56px; object-fit: cover; display: block; margin-bottom: 6px; border-radius: 2px; }
+    .back-link.next-link { text-align: right; align-items: flex-end; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) { h1.article-title { font-size: 32px; } .article-subtitle { font-size: 17px; } .article-body p { font-size: 16px; } }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+    <!-- dev2-only
+    <div class="internal-nav" style="background:#f9f0d8;border-bottom:1px solid #e0c97a;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:13px;">
+      <a href="../../../reader-comments.html" style="color:#8a6d00;margin:0 12px;">Reader Comments</a>
+      <a href="../../../future-articles.html" style="color:#8a6d00;margin:0 12px;">Future Articles</a>
+      <a href="../" style="color:#8a6d00;margin:0 12px;">Edition Index</a>
+    </div>
+    -->
+  </header>
+
+  <div class="article-wrapper">
+    <div class="article-category">Neighborhood &middot; May 17, 2026</div>
+    <h1 class="article-title">Scissor and Fork</h1>
+    <p class="article-subtitle">A woman-owned caf&#233; and salon hybrid is already making an impact in Irving Park</p>
+    <div class="article-meta">By <a href="../../../about.html#deedee-el-bego">Deedee El Bego</a> &nbsp;&bull;&nbsp; May 17, 2026</div>
+
+    <figure>
+      <img src="photo-01.jpg" alt="Scissor and Fork salon and café, Irving Park">
+    </figure>
+
+    <div class="article-body">
+
+      <p>Scissor and Fork, a new salon and caf&#233; in Irving Park is already making an impact on the neighborhood just two weeks after opening its doors. The space is decorated with plants, candles, and artwork. All the furniture is thrifted, and the smell of incense helps create a cozy environment.</p>
+
+      <p>The business combines alternative hairstyling with locally sourced coffee, creating what customers say feels like a welcoming and unique community space. Plus, their cafe features a wide variety of drinks that often come with fun names like &#8220;gimmie gimmie!&#8221;</p>
+
+      <figure>
+        <img src="photo-02.jpg" alt="Inside Scissor and Fork">
+      </figure>
+
+      <p class="pullquote">&#8220;I&#8217;ve had people come in just saying, &#8216;Thank you for being here, we needed this.&#8217;&#8221;</p>
+
+      <p>&#8220;I&#8217;ve had people come in just saying, &#8216;Thank you for being here, we needed this,&#8217;&#8221; owner Ash Grant said. &#8220;Hearing that from someone who&#8217;s lived here longer than I have is so validating, and I&#8217;m so grateful for it.&#8221; Grant added that she plans on hosting many community events in the near future. One of the events is a Dungeons and Dragons night.</p>
+
+      <p>Whether customers are looking for a simple trim or a bold new look, stylists at the salon specialize in a wide range of styles.</p>
+
+      <p>&#8220;I would definitely consider it an alternative salon,&#8221; stylist Nayeli Gonzalez said. &#8220;A lot of my clients are here to do fun hair colors like pink or super bright blues, or mullets and shags.&#8221; Gonzalez has been a hair stylist for 5 years and says punk hair is her favorite to cut and style.</p>
+
+      <figure>
+        <img src="photo-03.jpg" alt="Scissor and Fork stylist at work">
+      </figure>
+
+      <p>The caf&#233; inside the salon also emphasizes supporting local businesses. The coffee served comes from Hexe Coffee, a roaster based in the neighborhood. The cafe also features pastries and donuts that are quickly becoming local favorites.</p>
+
+      <p>&#8220;The coffee is amazing,&#8221; said customer Paul Harris. &#8220;They&#8217;re using Hexe Coffee, which I found out is actually roasted here in the neighborhood. Keeping everything really centralized and local to the neighborhood as much as possible is a really wonderful ethic.&#8221;</p>
+
+      <p>For nearby residents, the location has quickly become a convenient gathering spot. It&#8217;s cozy, and the ambience is home-like. This is felt through the furniture, but also through the lighting and the way the staff treats the customers.</p>
+
+      <p>&#8220;It&#8217;s really nice because we live just around the corner,&#8221; said customer Michelle Harris. &#8220;I was so excited to see a place that I can just walk down the block to. I&#8217;ve wanted that so badly.&#8221;</p>
+
+      <figure>
+        <img src="photo-04.jpg" alt="Scissor and Fork café interior">
+      </figure>
+
+      <p>Grant said she hopes the business continues to grow into more than just a salon and caf&#233; by becoming a hub for neighborhood events and activities in the future.</p>
+
+    </div><!-- end article-body -->
+
+    <p style="font-family:'Lato',sans-serif;font-size:13px;color:#888;margin-top:32px;"><a href="../../../about.html#deedee-el-bego" style="color:#b51c20;text-decoration:none;">About the author: Deedee El Bego &#8599;</a></p>
+
+    <!-- Feedback Widget -->
+    <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+      <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+      <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+        <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+        <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+      </div>
+      <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+      <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+      </div>
+      <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+        <form action="https://formsubmit.co/editor@2ccmag.com" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
+          <input type="hidden" name="Environment" id="env-tracking">
+          <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+          <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+          <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+        </form>
+      </div>
+      <script>
+        var base = window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+        document.getElementById('page-tracking').value = document.title + ' — ' + base;
+        document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+        if (window.location.search.indexOf('feedback=sent') !== -1) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('feedbackConfirm').style.display = 'block';
+        }
+        function submitVote(vote) {
+          fetch('https://formsubmit.co/ajax/editor@2ccmag.com', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' })
+          }).catch(function(){});
+          document.getElementById('thumbUp').disabled = true;
+          document.getElementById('thumbDown').disabled = true;
+          document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+          document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+          document.getElementById('voteConfirm').style.display = 'block';
+        }
+      </script>
+    </div><!-- end feedback widget -->
+
+    <div class="edition-nav">
+      <a class="back-link" href="../bob-glaze-restaurants/">
+        <img class="nav-thumb" src="../bob-glaze-restaurants/bob-glaze-restaurants-cover.jpg" alt="">
+        <span class="nav-dir">&#8592; Previous</span>
+        <span class="nav-title">Chicago&#8217;s Best New Restaurants</span>
+      </a>
+      <a class="back-link next-link" href="../project-styling/">
+        <img class="nav-thumb" src="../project-styling/project-styling-cover.jpg" alt="">
+        <span class="nav-dir">Next &#8594;</span>
+        <span class="nav-title">Project Styling: Columbia College&#8217;s Live Fashion Competition</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomag/" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2026 Classic Chicago Magazine. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      document.getElementById('hamburger-menu').classList.toggle('open');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') window.location.href = '../bob-glaze-restaurants/';
+      if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') window.location.href = '../project-styling/';
+    });
+  </script>
+</body>
+</html>
