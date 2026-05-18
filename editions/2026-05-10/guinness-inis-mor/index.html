@@ -151,7 +151,7 @@
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;"><p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p></div>
         <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
           <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-          <form action="/api/submit-form" method="POST">
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
             <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
             
             <input type="hidden" name="_next" id="feedbackReturn">
@@ -169,7 +169,7 @@
           document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
           if (window.location.search.indexOf('feedback=sent') !== -1) { document.getElementById('feedbackForm').style.display = 'none'; document.getElementById('feedbackConfirm').style.display = 'block'; }
           function submitVote(vote) {
-            fetch('/api/submit-form', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' }) }).catch(function(){});
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({ vote: vote, Page: document.getElementById('page-tracking').value, Environment: document.getElementById('env-tracking').value, _subject: 'Classic Chicago Quick Vote' }) }).catch(function(){});
             document.getElementById('thumbUp').disabled = true; document.getElementById('thumbDown').disabled = true;
             document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
             document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
