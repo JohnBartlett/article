@@ -260,7 +260,7 @@
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;"><p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p></div>
         <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
           <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-          <form action="/api/submit-form" method="POST">
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
             <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
             
             <input type="hidden" name="_next" id="feedbackReturn">
@@ -280,7 +280,7 @@
             document.getElementById('voteConfirm').style.display='block';
             document.getElementById('thumbUp').disabled=true;
             document.getElementById('thumbDown').disabled=true;
-            var f=document.createElement('form'); f.method='POST'; f.action='/api/submit-form';
+            var f=document.createElement('form'); f.method='POST'; f.action='https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form';
             var fields={_subject:'Classic Chicago Quick Vote',_captcha:'false',vote:v,Page:document.title,Environment:document.getElementById('env-tracking').value};
             for(var k in fields){var i=document.createElement('input');i.type='hidden';i.name=k;i.value=fields[k];f.appendChild(i);}
             document.body.appendChild(f); f.submit();
