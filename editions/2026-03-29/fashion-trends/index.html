@@ -185,7 +185,7 @@
         <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;"><p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p></div>
         <div id="feedbackForm">
           <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-          <form action="/api/submit-form" method="POST">
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
             <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
             
             <input type="hidden" name="_next" id="feedbackReturn">
@@ -210,7 +210,7 @@
         function submitVote(vote) {
           var form = document.createElement('form');
           form.method = 'POST';
-          form.action = '/api/submit-form';
+          form.action = 'https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form';
           form.style.display = 'none';
           var fields = { _subject: 'Classic Chicago Quick Vote', _captcha: 'false', vote: vote, Page: document.title + ' \u2014 ' + window.location.href };
           var env = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();

@@ -481,7 +481,7 @@
         </div>
         <div id="feedbackForm">
           <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
-          <form action="/api/submit-form" method="POST">
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
             <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
             
             <input type="hidden" name="_next" id="feedbackReturn">
@@ -519,7 +519,7 @@
           openCommentPopup();
         }
         function submitVote(vote) {
-          fetch('/api/submit-form', {
+          fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
             method: 'POST',
             headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             body: JSON.stringify({

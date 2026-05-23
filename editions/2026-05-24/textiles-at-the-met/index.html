@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Stories of Textiles at The Met | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-btn:hover{color:#b51c20;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .hamburger-menu a:hover{color:#b51c20;text-decoration:underline;}
+    .article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;border-top:1px solid #eee;padding-top:24px;}
+    .article-nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#222;font-family:'Lato',sans-serif;font-size:14px;max-width:45%;}
+    .article-nav a:hover{color:#d41f1f;}
+    .article-nav .prev{flex-direction:row;}
+    .article-nav .next{flex-direction:row-reverse;text-align:right;}
+    .article-nav img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    .article-nav .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;display:block;margin-bottom:3px;}
+    @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <a href="../../2026-03-08/datebook/">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+            </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only
+  <div class="internal-nav" style="background:#1a1a2e;padding:8px 0;text-align:center;">
+    <a href="../../../editors/edition.html" style="color:#7ec8e3;font-family:'Lato',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;margin:0 12px;">Edition</a>
+    <a href="../../../editors/index.html" style="color:#7ec8e3;font-family:'Lato',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;margin:0 12px;">Editors</a>
+    <a href="../../../reader-comments.html" style="color:#7ec8e3;font-family:'Lato',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;margin:0 12px;">Comments</a>
+    <a href="../../../future-articles.html" style="color:#7ec8e3;font-family:'Lato',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;margin:0 12px;">Future Articles</a>
+  </div>
+  -->
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Art &amp; Culture</div>
+
+      <h1 class="article-title">Stories of Textiles at The Met</h1>
+      <p class="article-subtitle">From Qing dynasty wedding silks to global trade — how the Metropolitan Museum preserves 36,000 pieces of the world's woven history</p>
+
+      <div class="article-meta">By <a href="../../../about.html#sigalina-zetouni" style="color:#b51c20;text-decoration:none;">Sigalina Zetouni</a> &nbsp;&bull;&nbsp; May 24, 2026</div>
+
+      <figure class="hero-figure">
+        <img src="photo-01.jpeg" alt="Woman's jacket and skirt, China, Qing dynasty">
+        <figcaption>Woman's jacket and skirt, China, Qing dynasty (1644–1911), late 18th–early 19th century. Silk, metallic thread — one of the treasures in the Metropolitan Museum's incomparable textile collection.</figcaption>
+      </figure>
+
+      <p class="article-intro">The Metropolitan Museum of Art in New York holds one of the world's great textile collections — more than 36,000 objects spanning five thousand years of human craft, trade, and artistry. From imperial Chinese silks to hand-woven Indian cotton traded across three continents, these fabrics tell the story of civilization itself. On a recent visit, I found the collection as alive and revelatory as ever.</p>
+
+      <div class="article-body">
+
+        <h2>Wedding Attire: Three Cultures, One Celebration</h2>
+
+        <p>One of the museum's most captivating recent presentations is <em>Wedding Attire: Three Cultures, One Celebration</em>, an exhibition that draws together bridal dress traditions from across the world. The display invites visitors to consider how the most personal of human rituals — marriage — is expressed through cloth, color, embroidery, and cut in ways that are at once radically different and surprisingly universal.</p>
+
+        <p>The Chinese Qing dynasty pieces are among the most breathtaking. Silk brocades embroidered with phoenixes and peonies, colors ranging from imperial red to subtle gold, speak to centuries of accumulated meaning. Beside them, garments from other traditions — each with its own symbolic vocabulary of color and ornament — make the exhibition a kind of conversation across time and geography.</p>
+
+        <figure>
+          <img src="photo-02.jpeg" alt="Examining textile samples at the Antonio Ratti Center">
+          <figcaption>Curators and researchers examining textile samples at the Antonio Ratti Textile Study and Storage Center, where 36,000 objects are made accessible to scholars and the public.</figcaption>
+        </figure>
+
+        <h2>The Antonio Ratti Textile Study and Storage Center</h2>
+
+        <p>Behind the public galleries lies one of the museum's great hidden resources: the Antonio Ratti Textile Study and Storage Center. Opened in 1995 thanks to a generous gift from Italian textile manufacturer Antonio Ratti, the center transformed how the Met cares for and shares its collection. Before the Ratti Center existed, most of the textiles sat in storage, inaccessible to all but a handful of researchers.</p>
+
+        <p>Today, the center's custom-designed storage system houses all 36,000 textile objects in a climate-controlled environment. Flat drawers hold fragile pieces without folding; specially designed rollers cradle large hangings. A study room allows scholars, designers, students, and curious members of the public to examine objects up close, by appointment.</p>
+
+        <div class="pullquote">"Textiles are among the most fragile artifacts we have — and among the most revealing. Every thread carries information about trade routes, technology, and daily life."</div>
+
+        <figure>
+          <img src="photo-03.jpeg" alt="Conservators immersing a tapestry in the wet lab">
+          <figcaption>Conservators immersing a large tapestry in the textile conservation wet lab — one of the most delicate procedures in the museum's preservation work.</figcaption>
+        </figure>
+
+        <h2>Conservation: The Science of Preservation</h2>
+
+        <p>The Met's textile conservation laboratory is where the oldest and most fragile pieces are stabilized, cleaned, and prepared for display. The wet lab — a long, specially designed pool where conservators can fully immerse large tapestries — is one of the most remarkable workspaces in any museum in the world.</p>
+
+        <p>I was shown photographs of the process: conservators in lab coats gently guiding an enormous tapestry through a bath of purified water, years of accumulated grime slowly releasing from threads that had not been fully clean in centuries. The tapestry emerged transformed — colors more vivid, the design newly legible.</p>
+
+        <figure>
+          <img src="photo-04.jpeg" alt="The Emperor's Carpet conservation">
+          <figcaption>Conservation work on <em>The Emperor's Carpet</em> — Iran, Safavid period, early 16th century. At over 26 feet long, it is one of the largest and finest Islamic carpets in existence.</figcaption>
+        </figure>
+
+        <p>Among the most celebrated objects in the collection is <em>The Emperor's Carpet</em>, an Iranian masterwork from the Safavid period dating to the early sixteenth century. At more than twenty-six feet in length and nearly thirteen feet wide, it is one of the largest and most technically accomplished Islamic carpets known to survive. Its field of hunting animals, arabesque foliage, and mythical creatures is rendered in wool and silk with a density and precision that defies belief. Conservation work on the carpet has revealed details invisible to the naked eye.</p>
+
+        <h2>Interwoven Globe: The Worldwide Textile Trade</h2>
+
+        <p>The 2013 exhibition <em>Interwoven Globe: The Worldwide Textile Trade, 1500–1800</em> remains a landmark in how the museum has presented its textile holdings. The show traced the extraordinary web of exchange that carried cloth — and the ideas embedded in cloth — across oceans and continents during the age of exploration.</p>
+
+        <figure>
+          <img src="photo-05.jpeg" alt="Indian Palampore made for the Sri Lankan market">
+          <figcaption>Palampore (bed cover), India, made for the Sri Lankan market, 18th century. Cotton, hand-painted and resist-dyed — an example of the global trade in Indian textiles that reshaped taste and fashion across the world.</figcaption>
+        </figure>
+
+        <p>Indian cotton palampores — large painted and printed bed covers — traveled to Sri Lanka, to Europe, and to the Americas, each time adapting to local tastes while carrying traces of their origin. European manufacturers scrambled to imitate Indian techniques they could not fully replicate, driving technological innovation and eventually the Industrial Revolution itself.</p>
+
+        <figure>
+          <img src="photo-06.jpeg" alt="French cape, 16th century, silk and gilt thread">
+          <figcaption>Cape, France, 16th century. Silk, gilt and silvered thread — a gift of J. Pierpont Morgan, 1917. The exquisite metallic embroidery reflects the luxury textile trade between France, Italy, and the wider world.</figcaption>
+        </figure>
+
+        <p>European luxury textiles tell their own story of ambition and exchange. A French cape from the sixteenth century — silk embroidered with gilt and silvered thread, a gift to the museum from J. Pierpont Morgan in 1917 — represents the pinnacle of Renaissance textile craft. Its surface catches light in ways that photographs can barely capture; to see it in person is to understand why such objects were treated as treasures equivalent in value to jewels or paintings.</p>
+
+        <h2>A Portrait and a World</h2>
+
+        <figure>
+          <img src="photo-07.jpeg" alt="Portrait of Nicolas Trigault in Chinese Costume, Peter Paul Rubens, 1617">
+          <figcaption>Peter Paul Rubens, <em>Portrait of Nicolas Trigault in Chinese Costume</em>, 1617. The Metropolitan Museum of Art. The painting — and the extraordinary silk robe Trigault wears — embody the cultural and commercial exchanges of the early modern world.</figcaption>
+        </figure>
+
+        <p>Peter Paul Rubens's 1617 <em>Portrait of Nicolas Trigault in Chinese Costume</em> hangs in the Met as one of those rare works that crosses every category. Trigault was a Flemish Jesuit missionary who traveled to China and returned to Europe in Chinese dress, his mission to present Chinese scholarship to a Western audience. Rubens painted him in the silk robe he wore on that diplomatic journey — and the painting is as much about the robe as about the man. The textile, depicted with Rubens's incomparable ability to render fabric, becomes a symbol of the entire interwoven world the collection explores.</p>
+
+        <p>To walk through the Met's textile galleries — or, better, to sit in the Ratti Center study room with a piece of sixteenth-century Indian cotton in your white-gloved hands — is to feel the full weight of what cloth has meant to human beings: protection and beauty, status and story, trade and art, all at once. It is among the richest experiences any museum in the world can offer.</p>
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#sigalina-zetouni" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Sigalina Zetouni &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — order must match homepage card order -->
+      <div class="edition-nav">
+              <nav class="article-nav">
+        <a class="prev" href="../jonathan-hoenig/">
+          <img src="../jonathan-hoenig/photo-01.jpeg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing</div>
+        </a>
+        <a class="next" href="../martha-graham-poem/">
+          <img src="../martha-graham-poem/photo-01.jpeg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Martha Graham When She Danced a Cold-War Peace Plan</div>
+        </a>
+      </nav>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script>
+    var prevUrl = '../jonathan-hoenig/';
+    var nextUrl = '../martha-graham-poem/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) { menu.classList.remove('open'); }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
