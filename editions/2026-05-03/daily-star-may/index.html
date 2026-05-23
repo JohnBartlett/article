@@ -65,6 +65,11 @@
     .social-links svg { width: 32px; height: 32px; fill: #fff; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
     @media (max-width: 600px) { .logo-container img { width: 260px; } .astro-nav { flex-direction: column; align-items: flex-start; } }
+    .feedback-widget{background:#f9f5f0;border:1px solid #e0d8ce;padding:20px 24px;margin-top:40px;text-align:center;font-family:'Lato',sans-serif;}
+    .feedback-widget p{margin:0 0 12px;font-size:15px;color:#555;}
+    .feedback-widget .vote-buttons{display:flex;justify-content:center;gap:12px;}
+    .feedback-widget button{background:#d41f1f;color:#fff;border:none;padding:8px 24px;font-family:'Lato',sans-serif;font-size:14px;cursor:pointer;letter-spacing:0.05em;}
+    .feedback-widget button:hover{background:#b51c20;}
   </style>
 </head>
 <body>
@@ -687,6 +692,40 @@
         </div>
       </details>
     </section>
+
+      <!-- Feedback Widget -->
+      <div class="feedback-widget">
+        <p>Did you enjoy this article?</p>
+        <div class="vote-buttons">
+          <button onclick="submitVote('Yes')">&#128077; Yes</button>
+          <button onclick="submitVote('No')">&#128078; No</button>
+        </div>
+        <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
+        <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
+          <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
+            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
+          </form>
+        </div>
+        <script>
+          var base=window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value=base+'?feedback=sent';
+          document.getElementById('page-tracking').value=document.title+' — '+base;
+          document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
+          function submitVote(vote){
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
+            document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
+            document.querySelector('.vote-buttons button:' + (vote==='Yes'?'first':'last') + '-child').style.opacity='1';
+            document.getElementById('voteConfirm').style.display='block';
+          }
+        </script>
+      </div>
 
     <a href="../../../index.html" class="back-link">&#8592; Back to Classic Chicago</a>
   </main>
