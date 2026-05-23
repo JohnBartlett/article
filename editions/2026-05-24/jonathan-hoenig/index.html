@@ -233,6 +233,13 @@
       .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
     }
+  
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-btn:hover{color:#b51c20;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .hamburger-menu a:hover{color:#b51c20;text-decoration:underline;}
   </style>
 </head>
 
@@ -246,6 +253,11 @@
     <nav>
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+            </div>
+      <div class="hamburger-menu" id="hamburger-menu">
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
@@ -440,8 +452,16 @@
       </div>
 
       <div class="edition-nav">
-        <a href="../brookfield-zoo-gala/" class="back-link">&larr; Previous: Twirl Around the Whirl</a>
-        <a href="../kenilworth-centennial-quilt/" class="back-link">Next: Kenilworth's Centennial Needlepoint &rarr;</a>
+              <nav class="article-nav">
+        <a class="prev" href="../brookfield-zoo-gala/">
+          <img src="../brookfield-zoo-gala/photo-01.jpeg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>Twirl Around the Whirl: Brookfield Zoo Gala Raises $2 Million</div>
+        </a>
+        <a class="next" href="../kenilworth-centennial-quilt/">
+          <img src="../kenilworth-centennial-quilt/photo-01.jpeg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Stitching a Community Together: Kenilworth’s Centennial Needlepoint</div>
+        </a>
+      </nav>
       </div>
 
     </div><!-- end article-wrapper -->
@@ -473,5 +493,17 @@
     });
   </script>
 
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) { menu.classList.remove('open'); }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

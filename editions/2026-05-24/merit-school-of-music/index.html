@@ -56,6 +56,13 @@
     footer a:hover{color:#fff;}
     .footer-social{display:flex;justify-content:center;gap:20px;margin-bottom:12px;}
     @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
+  
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-btn:hover{color:#b51c20;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .hamburger-menu a:hover{color:#b51c20;text-decoration:underline;}
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
@@ -74,6 +81,12 @@
         <a href="../../../advertise.html">Advertise</a>
         <a href="../datebook/">DateBook</a>
         <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+            </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
       </div>
     </nav>
   </header>
@@ -193,12 +206,14 @@
       </div>
 
       <!-- Article Navigation -->
-      <nav class="article-nav">
+            <nav class="article-nav">
         <a class="prev" href="../kenilworth-centennial-quilt/">
-          <div><span class="nav-label">&#8592; Previous</span>Stitching a Community Together: Kenilworth&rsquo;s Centennial Needlepoint</div>
+          <img src="../kenilworth-centennial-quilt/photo-01.jpeg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>Stitching a Community Together: Kenilworth’s Centennial Needlepoint</div>
         </a>
         <a class="next" href="../graduation-dos-donts/">
-          <div><span class="nav-label">Next &#8594;</span>Graduation Do&rsquo;s &amp; Don&rsquo;ts</div>
+          <img src="../graduation-dos-donts/photo-01.jpeg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Graduation Dos and Don’ts: Lessons Learned for Parents and Grandparents</div>
         </a>
       </nav>
 
@@ -227,5 +242,17 @@
     });
   </script>
 
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) { menu.classList.remove('open'); }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
