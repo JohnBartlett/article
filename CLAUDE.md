@@ -369,7 +369,12 @@ source .venv/bin/activate
    - Keep original filenames exactly as named in Drive.
    - If Drive has renamed them generically (e.g. `image1.jpg`), ask the contributor for the originals.
 
-4. **From PDF Articles:**
+4. **From Word Documents (.docx):**
+   - Extract text via python-docx or copy-paste from the document.
+   - After building the HTML, do a **paragraph-by-paragraph diff** against the original Word doc before publishing. Word-to-HTML conversion silently drops parentheticals, sentence endings, and whole paragraphs with no visual break.
+   - Do not trust that the conversion was complete just because the article looks coherent.
+
+5. **From PDF Articles:**
    ```bash
    source .venv/bin/activate
    python3 << 'EOF'
@@ -388,14 +393,15 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 2. **Writing captions before reading the source emails** — Museum credits, photo credits, and caption text are precise attribution. Never infer or fabricate them. Fetch every caption email before writing a single `<figcaption>`. If a contributor sends captions in separate emails ("Image and Credit 1 of 8"), read all of them first.
 3. **Editing contributor article text** — Paste the contributor's words verbatim. No paraphrasing, restructuring, or "improvements." The only changes allowed are HTML formatting tags. If the text seems rough, that is not a reason to rewrite it — flag it to Judy instead.
 4. **Using the email address prefix as a display name** — `sigalina@aol.com` does not mean the person's name is Sigalina. Always use the name from the email signature or a prior published byline. Email address ≠ person's name.
-5. **Google Drive shortcuts download as HTML, not images** — Don't use shortcuts. Ask for real files or email attachments.
-6. **Assume articles are missing BEFORE checking email** — john.bartlett@gmail.com is always the source of truth. Search for contributor names and dates first.
-7. **Forget to install PyPDF2 for PDF articles** — Setup venv first: `python3 -m venv .venv && source .venv/bin/activate && pip install PyPDF2`
-8. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
-9. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
-10. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
-11. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
-12. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
+5. **Word document extraction is silently lossy** — After building HTML from a .docx, always diff the published article paragraph-by-paragraph against the original Word doc. Parentheticals, mid-paragraph sentences, and entire paragraphs can disappear with no obvious gap. Never assume the conversion was complete because the text reads coherently.
+7. **Google Drive shortcuts download as HTML, not images** — Don't use shortcuts. Ask for real files or email attachments.
+8. **Assume articles are missing BEFORE checking email** — john.bartlett@gmail.com is always the source of truth. Search for contributor names and dates first.
+9. **Forget to install PyPDF2 for PDF articles** — Setup venv first: `python3 -m venv .venv && source .venv/bin/activate && pip install PyPDF2`
+10. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
+11. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
+12. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
+13. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
+14. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
 
 ### Recurring email workflow
 
