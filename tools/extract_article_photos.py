@@ -196,11 +196,14 @@ def extract_photos_from_emails(
                     if not is_image_file(filename):
                         continue
 
-                    # Save with normalized name
-                    ext = Path(filename).suffix.lower()
-                    photo_count += 1
-                    output_file = article_path / f"photo-{photo_count:02d}{ext}"
+                    # ALWAYS preserve the contributor's original filename exactly.
+                    # Never rename to photo-01, photo-02, etc. — the original name
+                    # is the only stable link between the file, its caption, and its
+                    # position in the article. Renaming breaks that link and causes
+                    # git rename-detection to scramble file contents on commit.
+                    output_file = article_path / filename
 
+                    photo_count += 1
                     with open(output_file, "wb") as f:
                         f.write(content)
 

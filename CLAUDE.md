@@ -318,7 +318,7 @@ Edit `index.html` (root):
 - `anabaca8@gmail.com` — Photos and articles (Ana Baca - layout editor, photographer)
 - `aedelfosse1@gmail.com` — Annie Delfosse (DateBook, article content)
 - `muhlemane2@gmail.com` — Emma Muhleman (intern - coordinator for submissions)
-- `sigalina@aol.com` — Sigalina Zetouni (sends articles directly to John)
+- `sigalina@aol.com` — Sigalit Zetouni (sends articles directly to John; email address uses "sigalina" but her byline name is Sigalit)
 
 **Tools:**
 - `tools/extract_article_photos.py` — Extract JPEG/PNG attachments from Gmail messages
@@ -339,7 +339,7 @@ source .venv/bin/activate
 **Critical: Email is the ONLY source of truth.** Articles and photos are sent to john.bartlett@gmail.com by contributors, NOT shared via folders or Drive links. Always check emails first.
 
 **Article Structure (Required for All Articles):**
-- **Hero image:** photo-01 placed in `<figure>` right after byline (not in carousel)
+- **Hero image:** First contributor image placed in `<figure>` right after byline — use the original filename, never `photo-01.jpeg`
 - **Inline figures:** Remaining photos as `<figure>` elements throughout article body
 - **Image sizing:** Use `width: 100%; height: auto;` to prevent distortion
 - **Author link:** In byline only: `By <a href="../../../about.html#author-id">Author Name</a>`
@@ -349,20 +349,32 @@ source .venv/bin/activate
 
 **Photo Extraction Methods:**
 
+**UNIVERSAL RULE — Never rename contributor image files.** The original filename (e.g. `IMG_4824.jpeg`, `DSC_0012.jpg`) is the stable link between a photo and its caption/position in the article. Renaming to `photo-01.jpeg` etc. severs that link and causes git's rename-detection to scramble file contents across commits. This rule applies regardless of source — Gmail, Google Drive, Windows Downloads, or PDF extraction.
+
 1. **From Gmail Attachments (✅ BEST):**
    ```bash
    source .venv/bin/activate
    python3 tools/extract_article_photos.py 2026-04-26 --contributor ana
    ```
-   Photos normalize to photo-01.jpeg, photo-02.jpeg, etc.
+   The script preserves original filenames exactly as sent by the contributor.
 
 2. **From Windows Downloads Folder:**
    ```bash
    cp "/mnt/c/Users/johnb/Downloads/article-folder/*.jpeg" editions/2026-04-26/article-slug/
-   # Then rename files to photo-01.jpeg, photo-02.jpeg, etc.
+   # Keep original filenames — do NOT rename them.
    ```
 
-3. **From PDF Articles:**
+3. **From Google Drive:**
+   - Download the actual files (not shortcuts — shortcuts download as HTML).
+   - Keep original filenames exactly as named in Drive.
+   - If Drive has renamed them generically (e.g. `image1.jpg`), ask the contributor for the originals.
+
+4. **From Word Documents (.docx):**
+   - Extract text via python-docx or copy-paste from the document.
+   - After building the HTML, do a **paragraph-by-paragraph diff** against the original Word doc before publishing. Word-to-HTML conversion silently drops parentheticals, sentence endings, and whole paragraphs with no visual break.
+   - Do not trust that the conversion was complete just because the article looks coherent.
+
+5. **From PDF Articles:**
    ```bash
    source .venv/bin/activate
    python3 << 'EOF'
@@ -377,14 +389,20 @@ source .venv/bin/activate
 Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Create/update `ARTICLE_EMAIL_MAP` in extract script for future reference.
 
 **Common Mistakes to Avoid:**
-1. **Google Drive shortcuts download as HTML, not images** — Don't use shortcuts. Ask for real files or email attachments.
-2. **Assume articles are missing BEFORE checking email** — john.bartlett@gmail.com is always the source of truth. Search for contributor names and dates first.
-3. **Forget to install PyPDF2 for PDF articles** — Setup venv first: `python3 -m venv .venv && source .venv/bin/activate && pip install PyPDF2`
-4. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
-5. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
-6. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
-7. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
-8. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
+1. **Renaming contributor image files** — NEVER rename `IMG_4824.jpeg` to `photo-01.jpeg` or any other name, regardless of source. The original filename is the permanent identity of the image. Renaming breaks the caption-to-photo link and causes git's rename-detection to scramble binary content across commits and merges. This rule is absolute for Gmail, Google Drive, Windows Downloads, and PDF extraction.
+2. **Writing captions before reading the source emails** — Museum credits, photo credits, and caption text are precise attribution. Never infer or fabricate them. Fetch every caption email before writing a single `<figcaption>`. If a contributor sends captions in separate emails ("Image and Credit 1 of 8"), read all of them first.
+3. **Editing contributor article text** — Paste the contributor's words verbatim. No paraphrasing, restructuring, or "improvements." The only changes allowed are HTML formatting tags. If the text seems rough, that is not a reason to rewrite it — flag it to Judy instead.
+4. **Using the email address prefix as a display name** — `sigalina@aol.com` does not mean the person's name is Sigalina. Always use the name from the email signature or a prior published byline. Email address ≠ person's name.
+5. **Word document extraction is silently lossy** — After building HTML from a .docx, always diff the published article paragraph-by-paragraph against the original Word doc. Parentheticals, mid-paragraph sentences, and entire paragraphs can disappear with no obvious gap. Never assume the conversion was complete because the text reads coherently.
+6. **Q&A and interview articles require a question count check** — Count the number of questions in the source (email, Word doc, PDF) and verify the exact same count appears in the HTML before publishing. Q&A format is the most dangerous for silent omissions: each dropped Q&A leaves no obvious gap and the article still reads coherently. Also verify photo-to-person matching by name — photos of named individuals cannot be inferred from image content alone; match them explicitly against the source.
+7. **Google Drive shortcuts download as HTML, not images** — Don't use shortcuts. Ask for real files or email attachments.
+8. **Assume articles are missing BEFORE checking email** — john.bartlett@gmail.com is always the source of truth. Search for contributor names and dates first.
+9. **Forget to install PyPDF2 for PDF articles** — Setup venv first: `python3 -m venv .venv && source .venv/bin/activate && pip install PyPDF2`
+10. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
+11. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
+12. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
+13. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
+14. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
 
 ### Recurring email workflow
 
