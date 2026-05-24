@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Classic Chicago – Sunday Edition, May 17, 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d41f1f;
+      padding: 2px 8px;
+      margin-left: 10px;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .hamburger-btn:hover { color: #b51c20; }
+
+    .hamburger-menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hamburger-menu.open { display: block; }
+
+    .hamburger-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger-menu a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    /* Hero + Ad Row */
+    .hero-row {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .hero {
+      position: relative;
+      flex: 2;
+      min-width: 0;
+    }
+
+    .hero-ad {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-ad img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: clamp(380px, 55vw, 560px);
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .hero > a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .hero .hero-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #b51c20;
+      margin: 16px 0 8px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+
+    .hero h2 a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .hero h2 a:hover { color: #b51c20; }
+
+    .hero .hero-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero .hero-teaser {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Card Grid */
+    .wrapper {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    h1.page-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8443a;
+      display: inline-block;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 3px;
+      margin-bottom: 14px;
+      background: #f0ebe3;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+
+    .card h2 a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .card h2 a:hover { color: #b51c20; }
+
+    .card .meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+    }
+
+    /* Past Editions */
+    .past-editions {
+      margin-top: 0;
+      padding: 40px 0 60px;
+      background: #f2f0ec;
+      border-top: 4px solid #d41f1f;
+    }
+
+    .past-editions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .past-editions .card-image {
+      filter: grayscale(80%) opacity(0.75);
+      transition: filter 0.3s ease;
+    }
+
+    .past-editions .card:hover .card-image {
+      filter: grayscale(30%) opacity(0.9);
+    }
+
+    .past-editions h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .social-links a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .social-links svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      vertical-align: middle;
+    }
+
+    .social-links a:hover { color: #fff; }
+
+    .copyright { color: #666; line-height: 1.8; }
+
+    @media (max-width: 700px) {
+      .hero-row { flex-direction: column; }
+      .hero-ad { padding: 20px 0; }
+      .card-grid { grid-template-columns: 1fr; }
+      .logo-container img { width: 280px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Classic Chicago Magazine">
+    </div>
+  </header>
+
+  <div style="text-align: center; padding: 30px 16px 10px;">
+    <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">May 17, 2026</div>
+  </div>
+
+  <!-- Hero Feature + Ad -->
+  <div class="hero-row">
+    <div class="hero" style="flex: 2;">
+      <img class="hero-image" src="editions/2026-05-17/chicago-skyline/chicago-skyline-cover.jpg" alt="Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline" style="object-position: center center;">
+      <div class="hero-label">Photography</div>
+      <h2>Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline</h2>
+      <div class="hero-meta">May 17, 2026</div>
+      <p class="hero-teaser">Ethan Cotton captures Chicago's soaring skyline in a breathtaking photo essay — steel and glass reaching for the stars above the lake.</p>
+    </div>
+    <div class="hero-ad" style="flex-direction: column; gap: 12px; justify-content: center; align-items: center;">
+      <img src="ads/Classic Chicago April 2026.png" alt="Heritage Auctions – Modern &amp; Contemporary Art" style="width: 230px; display: block; border-radius: 3px;">
+      <img src="ads/marcy-carmack-ad.jpg" alt="Marcy Carmack Style – Do you have a closet full of clothes and nothing to wear?" style="width: 230px; height: 230px; object-fit: cover; display: block; border-radius: 3px;">
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="card-grid" style="margin-bottom: 0;">
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/peoria-riverfront-museum/peoria-riverfront-museum-cover.jpg" alt="The Promise of Liberty" style="object-position: center center;">
+        <h2>The Promise of Liberty: Peoria's Gift to the 250th Celebration</h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Culture</div>
+        <p>The Peoria Riverfront Museum joins America's 250th celebration with a landmark exhibition — first, best, and only in America.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/glessner-house/glessner-house-cover.jpg" alt="Glessner House Celebrates 60 Years" style="object-position: center center;">
+        <h2>Glessner House Celebrates 60 Years</h2>
+        <div class="meta">By William Tyre &nbsp;&bull;&nbsp; History</div>
+        <p>More than 100 friends gathered to mark six decades of preserving one of Chicago's most beloved National Historic Landmarks.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/guild-chicago-history-museum/guild-chicago-history-museum-cover.jpg" alt="A Celebration of Liberty" style="object-position: center center;">
+        <h2>A Celebration of Liberty: The Guild of the Chicago History Museum</h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Society</div>
+        <p>Don your red, white, and blue for an upcoming gala at the Chicago History Museum — a salute to American freedom and fellowship.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/project-styling/project-styling-cover.jpg" alt="Project Styling at Columbia College" style="object-position: center center;">
+        <h2>Project Styling at Columbia College</h2>
+        <div class="meta">By Marcy Carmack &nbsp;&bull;&nbsp; Fashion</div>
+        <p>Inspired by Project Runway, Columbia College's second annual Project Styling showcased the next generation of Chicago fashion talent.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/chicago-opera-theater/chicago-opera-theater-cover.jpg" alt="Murder at the Opera" style="object-position: center center;">
+        <h2>Murder at the Opera: The Chicago Opera Theater Asks Who Did It?</h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Arts</div>
+        <p>The Chicago Opera Theater's mystery gala had guests sleuthing in style — an unforgettable evening of intrigue and high drama.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/bob-glaze-restaurants/bob-glaze-restaurants-cover.jpg" alt="Best New Restaurants" style="object-position: center center;">
+        <h2>Classic Chicago's Best New Restaurant Finds in Chicago</h2>
+        <div class="meta">By Bob Glaze &nbsp;&bull;&nbsp; Dining</div>
+        <p>Bob Glaze explores the newest cafes and restaurants making an impact on Chicago's ever-evolving culinary scene.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-image" src="editions/2026-05-17/scissor-and-fork/photo-01.jpg" alt="Scissor and Fork" style="object-position: center center;">
+        <h2>Scissor and Fork: A New Salon and Cafe Making Waves in Irving Park</h2>
+        <div class="meta">By Deedee El Bego &nbsp;&bull;&nbsp; Community</div>
+        <p>A woman-owned salon and café hybrid in Irving Park is already making its mark on the neighborhood.</p>
+      </div>
+
+    </div>
+  </div><!-- end wrapper -->
+
+  <div class="past-editions">
+    <div class="past-editions-inner">
+      <h1 class="page-title">Past Editions</h1>
+      <div class="card-grid">
+
+        <div class="card">
+          <img class="card-image" src="editions/2026-05-10/kentucky-derby/photo-01.jpg" alt="May 10, 2026 Edition" style="object-position: center center;">
+          <h2>May 10, 2026</h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Kentucky Derby, Chicago Train History, Newberry Awards, Inis Mór, Intuit Art Party, Detroit, Bridge of Sighs, Ordinary People, and more.</p>
+        </div>
+
+        <div class="card">
+          <img class="card-image" src="editions/2026-05-03/unsung-gems-lfpf/photo-01.jpeg" alt="May 3, 2026 Edition" style="object-position: center center;">
+          <h2>May 3, 2026</h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Lake Forest Preservation Foundation, Bill Kurtis &amp; Music Institute, About the Town, FACETS, St. James Cathedral, Origami, and more.</p>
+        </div>
+
+        <div class="card">
+          <img class="card-image" src="editions/2026-04-26/brit-marling/brit-cover.jpg" alt="April 26, 2026 Edition" style="object-position: center center;">
+          <h2>April 26, 2026</h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Brit Marling, Biba's Palm Springs, Rush Luncheon, Silk Roads, Madeira, Christina Clancy, Sigalit Zetouni, Second Presbyterian, and more.</p>
+        </div>
+
+        <div class="card">
+          <img class="card-image" src="editions/2026-04-19/daffodils/daffodils-cover.jpeg" alt="April 19, 2026 Edition" style="object-position: center center;">
+          <h2>April 19, 2026</h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Guillaume Gallienne, Daffodils, Bandwidth, Route 66, Junior League Gala, Game-Changers LFHS, Astrid Greve Spencer, and more.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

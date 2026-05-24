@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  <meta charset="UTF-8">
+  <title>DateBook &mdash; May 24, 2026 | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #f5f1ea;
+      color: #2c2c2c;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 16px;
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400;
+      color: #d41f1f; text-decoration: none; text-transform: uppercase;
+      margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d41f1f;
+      padding: 2px 8px;
+      margin-left: 10px;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .hamburger-btn:hover {
+      color: #b51c20;
+    }
+
+    .hamburger-menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hamburger-menu.open {
+      display: block;
+    }
+
+    .hamburger-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger-menu a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-container { max-width: 780px; margin: 40px auto 60px; padding: 0 16px; }
+
+    .datebook-masthead {
+      background: #1a1a1a; color: #fff; text-align: center;
+      padding: 48px 40px 40px; border-radius: 6px 6px 0 0; margin-bottom: 0;
+    }
+
+    .datebook-kicker {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #c9a96e; margin-bottom: 14px;
+    }
+
+    .datebook-title {
+      font-family: 'Playfair Display', serif; font-size: 64px;
+      font-weight: 800; color: #fff; letter-spacing: 0.05em;
+      margin: 0 0 16px; line-height: 1;
+    }
+
+    .datebook-dek {
+      font-size: 16px; font-weight: 300; color: #bbb;
+      max-width: 480px; margin: 0 auto 20px; line-height: 1.6;
+    }
+
+    .datebook-byline { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.1em; }
+    .datebook-byline strong { color: #c9a96e; }
+
+    .datebook-body {
+      background: #fff; border-radius: 0 0 6px 6px;
+      padding: 0 0 48px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .month-header {
+      background: #b51c20; color: #fff; padding: 18px 40px;
+      font-family: 'Playfair Display', serif; font-size: 28px;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    .event-list { padding: 16px 40px 8px; }
+
+    .event-entry { padding: 24px 0; border-bottom: 1px solid #f0ece4; }
+    .event-entry:last-child { border-bottom: none; }
+
+    .event-date-row {
+      display: flex; align-items: baseline; gap: 12px;
+      margin-bottom: 6px; flex-wrap: wrap;
+    }
+
+    .event-date {
+      font-family: 'Playfair Display', serif; font-size: 17px;
+      font-weight: 700; color: #b51c20; white-space: nowrap;
+    }
+
+    .event-time { font-size: 13px; font-weight: 400; color: #999; white-space: nowrap; }
+
+    .event-org {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #888; margin-bottom: 4px;
+    }
+
+    .event-name {
+      font-family: 'Playfair Display', serif; font-size: 20px;
+      font-weight: 700; color: #1a1a1a; margin: 0 0 10px; line-height: 1.3;
+    }
+
+    .event-description { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 12px; }
+
+    .event-meta { font-size: 13px; color: #777; line-height: 1.6; }
+    .event-meta .venue { font-weight: 700; color: #444; }
+    .event-meta .contact { margin-top: 4px; }
+    .event-meta a { color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .event-meta a:hover { border-bottom-style: solid; }
+
+    .edition-nav {
+      display: flex; justify-content: space-between; margin-top: 40px; padding: 0 4px;
+    }
+
+    .edition-nav a {
+      font-family: 'Lato', sans-serif; font-size: 14px; color: #b51c20;
+      text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .edition-nav a:hover { text-decoration: underline; }
+
+    footer {
+      background: #1a1a1a; color: #aaa; padding: 30px 16px;
+      text-align: center; font-family: 'Lato', sans-serif; font-size: 14px;
+    }
+
+    .social-links { display: flex; justify-content: center; gap: 18px; margin-bottom: 16px; }
+
+    .social-links a {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%; background: #333; transition: background 0.2s;
+    }
+
+    .social-links a:hover { background: #555; }
+    .social-links svg { width: 18px; height: 18px; fill: #fff; }
+    .copyright { color: #666; font-size: 13px; }
+
+    @media (max-width: 700px) {
+      .datebook-title { font-size: 44px; }
+      .datebook-masthead { padding: 36px 24px 32px; }
+      .month-header { padding: 14px 20px; font-size: 22px; }
+      .event-list { padding: 12px 20px 4px; }
+    }
+
+    @media (max-width: 480px) {
+      .datebook-title { font-size: 36px; }
+      .logo-container img { width: 280px; }
+    }
+    .feedback-widget{background:#f9f5f0;border:1px solid #e0d8ce;padding:20px 24px;margin-top:40px;text-align:center;font-family:'Lato',sans-serif;}
+    .feedback-widget p{margin:0 0 12px;font-size:15px;color:#555;}
+    .feedback-widget .vote-buttons{display:flex;justify-content:center;gap:12px;}
+    .feedback-widget button{background:#d41f1f;color:#fff;border:none;padding:8px 24px;font-family:'Lato',sans-serif;font-size:14px;cursor:pointer;letter-spacing:0.05em;}
+    .feedback-widget button:hover{background:#b51c20;}
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="./">DateBook</a>
+        <a href="../../2026-05-03/daily-star-may/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+    <!-- dev2-only
+    <div class="internal-nav" style="background:#f9f0d8;border-bottom:1px solid #e0c97a;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:13px;">
+      <a href="../../../reader-comments.html" style="color:#8a6d00;margin:0 12px;">Reader Comments</a>
+      <a href="../../../future-articles.html" style="color:#8a6d00;margin:0 12px;">Future Articles</a>
+      <a href="../" style="color:#8a6d00;margin:0 12px;">Edition Index</a>
+    </div>
+    -->
+  </header>
+
+  <main>
+    <div class="article-container">
+
+      <div class="datebook-masthead">
+        <div class="datebook-kicker">Classic Chicago &mdash; May 24, 2026</div>
+        <h1 class="datebook-title">DateBook</h1>
+        <p class="datebook-dek">Galas, concerts, lectures, and celebrations &mdash; the essential guide to Chicago&rsquo;s social season</p>
+        <div class="datebook-byline">Curated by <strong><a href="../../../about.html#annie-delfosse" style="color:inherit; text-decoration:none;">Annie Delfosse</a></strong></div>
+      </div>
+
+      <div class="datebook-body">
+
+        <!-- ══════════ MAY ══════════ -->
+        <div class="month-header">May</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Music Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Monday, May 18</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">95th Anniversary Gala</h2>
+            <p class="event-description">The Music Institute of Chicago hosts its 95th Anniversary Gala. Event highlights include the presentation of the prestigious Dushkin Award to the Lyric Opera of Chicago, the Cultural Visionary Award for Chicago to Bill Kurtis and Donna La Pietra, and the Colburn Award for Teaching Excellence to Marta Aznavoorian.</p>
+            <div class="event-meta">
+              <span class="venue">The Four Seasons Hotel Chicago</span><br>
+              120 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.musicinst.org/gala" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Pup Social Chicago &nbsp;&bull;&nbsp; Chicago Rescue Authority</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, May 20</span>
+              <span class="event-time">4:00 &ndash; 7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">National Rescue Dog Day Fundraising Social</h2>
+            <p class="event-description">Join us in celebrating National Rescue Dog Day with a special community-focused event honoring the incredible rescue dogs who have found their forever homes. This event highlights the power of adoption and the amazing work being done by rescue organizations in our community. In partnership with Chicago Rescue Authority, guests will have the opportunity to meet adoptable dogs on site, learn more about the rescue process, and discover ways to support rescue efforts through fostering, volunteering, and adoption. Whether you already have a rescue pup or are simply passionate about helping animals in need, this event is a chance to connect with others who share that same love and commitment.</p>
+            <div class="event-meta">
+              <span class="venue">Pup Social</span><br>
+              2200 North Ashland Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.eventbrite.com/e/national-rescue-dog-day-fundraising-social-tickets-1987708554795" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Innovation</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, May 27</span>
+              <span class="event-time">5:00 &ndash; 8:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Innovation Elevates Us All</h2>
+            <p class="event-description">Innovation doesn&rsquo;t happen in isolation &mdash; it happens when a city comes together. Join us for Innovation Elevates Us All, a dynamic gathering of business, civic, and entrepreneurial leaders shaping what&rsquo;s next for Chicago. Hear a candid, forward-looking conversation from inspired leaders who are charting a new era of innovation in Chicago. Connect with 30+ exhibiting organizations that offer funding, mentorship, networks and support to help innovators grow and scale.</p>
+            <div class="event-meta">
+              <span class="venue">Harold Washington Library</span><br>
+              400 South State Street, Chicago<br>
+              <span class="contact"><a href="https://chicagoinnovation.com/events/innovation-elevates-us-all-2/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Woman&rsquo;s Board of Northwestern Memorial Hospital</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, May 29</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Summer Soir&eacute;e: The Cabana Club</h2>
+            <p class="event-description">The Woman&rsquo;s Board of Northwestern Memorial Hospital&rsquo;s annual fundraiser Summer Soir&eacute;e is back to kick off the summer party season. The evening, themed The Cabana Club, will transport guests to the pink sand beaches of Harbour Island in the Bahamas. Under striped cabanas, the event will offer Goombay Smashes and upbeat calypso tunes. The festive party will raise critical funds to support the programs and services provided by Northwestern Memorial Hospital.</p>
+            <div class="event-meta">
+              <span class="venue">Saddle &amp; Cycle Club</span><br>
+              900 West Foster Avenue, Chicago<br>
+              <span class="contact"><a href="https://wbnorthwestern.org" target="_blank">wbnorthwestern.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Opera Theater</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 30</span>
+              <span class="event-time">3:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Trusted &mdash; Concert World Premiere</h2>
+            <p class="event-description">Chicago Opera Theater (COT) closes its 2025/26 season with the concert premiere of a new opera <em>Trusted</em> &mdash; the seventh full-length opera developed through COT&rsquo;s Vanguard Initiative. Composed by Aaron Israel Levin to a libretto by Marella Martin Koch, <em>Trusted</em> was developed over the course of Levin&rsquo;s two-year tenure as COT&rsquo;s Vanguard Composer. Earlier this season, audiences were invited to view a piano-vocal workshop of the opera and provide feedback. Now, audiences can see how the piece has developed since the first workshop in its fully orchestrated premiere.</p>
+            <div class="event-meta">
+              <span class="venue">The Studebaker Theater at the Fine Arts Building</span><br>
+              410 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.chicagooperatheater.org/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Joffrey Ballet</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, May 30</span>
+              <span class="event-time">7:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Joffrey Celebration</h2>
+            <p class="event-description">Step into the spotlight at the Joffrey Celebration, where we raise a glass to 70 years of The Joffrey Ballet and 30 years of calling Chicago home. And we&rsquo;re marking the milestone in a way only we know how: on the dance floor. The year is 1978 &mdash; the height of Disco. A mirror ball spins, lights pulse, and energy fills the room. For one unforgettable evening, join us at Studio Joffrey, a dazzling homage to disco&rsquo;s golden age, where glamour met grit and self-expression ruled the night. Cocktails sparkle with effervescent delights, laughter lingers, and sequins shimmer under the limelight as Joffrey Company Artists and Chicago&rsquo;s most fabulous guests share the floor, channeling the fearless spirit of a generation that changed everything.</p>
+            <div class="event-meta">
+              <span class="venue">Cinespace</span><br>
+              1501 South Rockwell, Chicago<br>
+              <span class="contact"><a href="https://joffrey.org/performances-and-tickets/see-you-on-the-dance-floor/" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list May -->
+
+        <!-- ══════════ JUNE ══════════ -->
+        <div class="month-header">June</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Chicago City Opera</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, June 5</span>
+              <span class="event-time">7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Der Rosenkavalier</h2>
+            <p class="event-description">Chicago City Opera (CCO) presents one of late-Romantic composer Richard Strauss&rsquo; most beloved works, <em>Der Rosenkavalier</em>. Composed by Strauss to a libretto by Hugo von Hofmannsthal, <em>Der Rosenkavalier</em> requires massive forces both on stage and in the pit, and thus is somewhat of a rarity for traditional opera companies. In CCO&rsquo;s signature pared-down style, the grand opera is stripped down to its raw essentials, highlighting the complex relationships, sophisticated humor, and nuanced characters at the heart of this work.</p>
+            <div class="event-meta">
+              <span class="venue">DANK Haus German American Cultural Center</span><br>
+              4740 North Western Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.chicagocityopera.com/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">American Writers Museum &nbsp;&bull;&nbsp; Chicago Public Library</div>
+            <div class="event-date-row">
+              <span class="event-date">Sunday, June 7</span>
+            </div>
+            <h2 class="event-name">American Writers Festival</h2>
+            <p class="event-description">The American Writers Festival is a free literary event. It features in-depth conversations with diverse writers from across genres and backgrounds, all to celebrate the power of the written word. With a range of topics discussed and genres represented, the American Writers Festival celebrates the past, promotes the present, and inspires the future of American writing. Children&rsquo;s storytimes, photo booths, literary crafts and mini writing workshops get adults and kids into the written word, with books for sale and authors signing them!</p>
+            <div class="event-meta">
+              <span class="venue">Harold Washington Library Center</span><br>
+              400 South State Street, Chicago<br>
+              <span class="contact"><a href="https://americanwritersmuseum.org/american-writers-festival/" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Chicago City Opera</div>
+            <div class="event-date-row">
+              <span class="event-date">Sunday, June 7</span>
+              <span class="event-time">7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Der Rosenkavalier</h2>
+            <p class="event-description">Chicago City Opera (CCO) presents one of late-Romantic composer Richard Strauss&rsquo; most beloved works, <em>Der Rosenkavalier</em>. Composed by Strauss to a libretto by Hugo von Hofmannsthal, <em>Der Rosenkavalier</em> requires massive forces both on stage and in the pit, and thus is somewhat of a rarity for traditional opera companies. In CCO&rsquo;s signature pared-down style, the grand opera is stripped down to its raw essentials, highlighting the complex relationships, sophisticated humor, and nuanced characters at the heart of this work.</p>
+            <div class="event-meta">
+              <span class="venue">Fulton Street Collective</span><br>
+              1821 West Hubbard Street, Unit 307, Chicago<br>
+              <span class="contact"><a href="https://www.chicagocityopera.com/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Shakespeare Theater</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, June 12</span>
+            </div>
+            <h2 class="event-name">Revel in Ruby: 40th Anniversary Gala</h2>
+            <p class="event-description">For 40 years, Chicago Shakespeare Theater has brought stories to life in Chicago and beyond: illuminating imaginations, welcoming new audiences, and inspiring generations of artists and students across our city. This season, we celebrate a momentous milestone: our ruby anniversary. Join us as we Revel in Ruby, an evening honoring four decades of powerful theater making and propelling CST into its bold future.</p>
+            <div class="event-meta">
+              <span class="contact"><a href="https://www.chicagoshakes.com/ruby-gala/" target="_blank">Sponsorship information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Founders&rsquo; Board of Lurie Children&rsquo;s</div>
+            <div class="event-date-row">
+              <span class="event-date">Sunday &amp; Monday, June 14 &amp; 15</span>
+            </div>
+            <h2 class="event-name">Pro Amateur Golf Championship &amp; Dinner on the Bluff</h2>
+            <p class="event-description">The Founders&rsquo; Board of Lurie Children&rsquo;s hosts the 66th annual event at Onwentsia Club, pairing 200 amateur golfers with professionals from 50 prestigious clubs across the country. The festivities kick off the night before with a summer dinner party, paddle raise and live auction at Shoreacres in Lake Bluff. Proceeds will benefit the Founders&rsquo; Board new $3.5M commitment to the Lurie Children&rsquo;s Center for Cancer and Blood Disorders.</p>
+            <div class="event-meta">
+              <span class="venue">Onwentsia Club</span><br>
+              300 North Green Bay Road, Lake Forest<br>
+              <span class="venue">Shoreacres</span>, 1601 Shoreacres Road, Lake Bluff<br>
+              <span class="contact"><a href="https://www.luriechildrens.org/proam" target="_blank">www.luriechildrens.org/proam</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Guild of the Chicago History Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, June 19</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">A Celebration of Liberty</h2>
+            <p class="event-description">The Guild of the Chicago History Museum celebrates America 250 with a gala reception, program and dinner chaired by Connie Barkley and Erica Meyer at the Chicago History Museum. Revolutionary garb optional, the evening features Sarah Botstein, Executive Director of Ken Burns&rsquo; <em>American Revolution</em>, in conversation with Chicago Public Television&rsquo;s Geoffrey Baer.</p>
+            <div class="event-meta">
+              <span class="venue">Chicago History Museum</span><br>
+              1601 North Clark Street, Chicago<br>
+              <span class="contact">Kimberley Bill &nbsp;&bull;&nbsp; (312) 799-2112 &nbsp;&bull;&nbsp; <a href="mailto:kbill@chicagohistory.org">kbill@chicagohistory.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Illinois Conservatory for the Arts</div>
+            <div class="event-date-row">
+              <span class="event-date">Monday, June 22</span>
+              <span class="event-time">7:30 p.m.</span>
+            </div>
+            <h2 class="event-name">The Royal Reunion: Celebrating Six Years of <em>Six</em></h2>
+            <p class="event-description">Illinois Conservatory for the Arts (ICA), a non-profit arts education institution in the western suburbs, hosts a one-night-only benefit concert celebrating the music, legacy, and original stars of the Broadway phenomenon <em>Six</em>. Marking the six-year anniversary of the show&rsquo;s transfer to Broadway in 2020, The Royal Reunion will reunite the original queens and the original band for an evening of powerhouse performances in an intimate Chicago venue. Proceeds from the event will support ICA&rsquo;s mission of providing high-level arts education to Chicagoland youth.</p>
+            <div class="event-meta">
+              <span class="venue">The Fairlie</span><br>
+              339 North Bell Avenue, Chicago<br>
+              <span class="contact"><a href="https://e.givesmart.com/events/NrH/" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list June -->
+
+        <!-- ══════════ JULY ══════════ -->
+        <div class="month-header">July</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Ravinia Women&rsquo;s Board</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, July 11</span>
+              <span class="event-time">4:30 p.m.</span>
+            </div>
+            <h2 class="event-name">60th Annual Gala Evening</h2>
+            <p class="event-description">The Women&rsquo;s Board is proud to host Ravinia&rsquo;s Opening Night Gala, unveiling the newly renovated Hunter Pavilion for the first time to the public. Join us for a magical cocktail reception under the stars before enjoying piano prodigy Yunchan Lim perform with the Chicago Symphony Orchestra conducted by Marin Alsop. Following the concert, guests will be wined and dined under our stunning Gala tent with a gorgeous three-course meal, surprise performances, and a celebration fit for our new state-of-the-art Hunter Pavilion.</p>
+            <div class="event-meta">
+              <span class="venue">Ravinia Festival</span><br>
+              418 Sheridan Road, Highland Park<br>
+              <span class="contact"><a href="https://www.ravinia.org/support/fundraising-events/gala" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, July 16</span>
+              <span class="event-time">6:00 &ndash; 11:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Beach Party</h2>
+            <p class="event-description">Set at Offshore Rooftop, Beach Party is a summer celebration for more than 500 luau guests and their pets. Sip festive cocktails and soak up the sun, as the Lake Michigan waves roll in and the summer breeze fills the air. As the sun sets, dance the night away, enjoy an open bar, dinner, live and silent auctions, raffles, and so much more. For sponsorship and ticket information, please email <a href="mailto:BeachParty@pawschicago.org">BeachParty@pawschicago.org</a>.</p>
+            <div class="event-meta">
+              <span class="venue">Offshore Rooftop, Navy Pier</span><br>
+              1000 East Grand Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org/events-dog-training/fundraising-events/beach-party-event" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Music Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, July 17</span>
+              <span class="event-time">7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">38th Chicago Duo Piano Festival</h2>
+            <p class="event-description">The Music Institute of Chicago presents the 38th annual Chicago Duo Piano Festival featuring three concerts, a student recital, and a master class July 12&ndash;19. Called a &ldquo;duo piano mecca&rdquo; by Pioneer Press, the world-renowned Chicago Duo Piano Festival was founded in 1988 by Music Institute of Chicago faculty members and Piano Duo in Residence Claire Aebersold Neiweem and Ralph Neiweem. Its mission is to foster a deeper interest in the repertoire, performance, and teaching of music for piano, four hands and two pianos, in a fun and supportive atmosphere.</p>
+            <div class="event-meta">
+              <span class="venue">Nichols Concert Hall</span><br>
+              1490 Chicago Avenue, Evanston<br>
+              <span class="contact"><a href="https://www.musicinst.org/chicago-duo-piano-festival" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list July -->
+
+        <!-- ══════════ AUGUST ══════════ -->
+        <div class="month-header">August</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Dance Health Fund</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, August 22</span>
+              <span class="event-time">7:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Dance for Life 35th Anniversary</h2>
+            <p class="event-description">Chicago Dance Health Fund, which provides financial relief for preventative healthcare and critical medical needs for Chicago dance industry professionals, announces Dance for Life 35th Anniversary. A Gala Dinner takes place at 5 p.m. at Venue SIX10, 610 South Michigan Avenue, Chicago, and the After Party following the performance also takes place at Venue SIX10. For this special anniversary performance, the lineup includes prominent Chicago dance companies and celebrated Chicago choreographers.</p>
+            <div class="event-meta">
+              <span class="venue">The Auditorium</span><br>
+              50 East Ida B. Wells Drive, Chicago<br>
+              <span class="contact"><a href="https://www.auditoriumtheatre.org/" target="_blank">Tickets at auditoriumtheatre.org</a> or Auditorium box office</span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, August 29</span>
+            </div>
+            <h2 class="event-name">PAWS Chicago 5K Walk/Run for Their Lives</h2>
+            <p class="event-description">The PAWS Chicago 5K Walk/Run for Their Lives is Chicago&rsquo;s LARGEST dog-friendly charity event, and it&rsquo;s a day of fun, dog agility courses, raffles, entertainment, treats, and more. Whether you plan to run, walk, or simply enjoy the comradery, you&rsquo;ll be surrounded by a community of fellow animal lovers &mdash; all while raising critical funds to help pets in need.</p>
+            <div class="event-meta">
+              <span class="venue">Montrose Harbor &ndash; Grove 16</span><br>
+              601 West Montrose Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org/events-dog-training/fundraising-events/5k-walk/run" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list August -->
+
+        <!-- ══════════ SEPTEMBER ══════════ -->
+        <div class="month-header">September</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Architecture Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, September 16</span>
+            </div>
+            <h2 class="event-name">60th Anniversary Celebration &amp; &ldquo;Designing Futures&rdquo; Gala</h2>
+            <p class="event-description">Proceeds from the event will benefit CAC&rsquo;s civic advocacy, trades apprenticeship program, learning and community engagement programs. More details to come!</p>
+            <div class="event-meta">
+              <span class="venue">Obama Presidential Center</span><br>
+              6001 South Stony Island Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.architecture.org/events-programs/cac-designing-futures-gala" target="_blank">Check for event updates &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Children&rsquo;s Service Board (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 17 &amp; Thursday, September 24</span>
+            </div>
+            <h2 class="event-name">70th Annual Gold Coast Fashion Show</h2>
+            <p class="event-description">Fashion and philanthropy merge as the Children&rsquo;s Service Board celebrates the 70th annual Gold Coast Fashion Show. Cutting-edge fashion is presented in two fast-paced, live runway shows at a luncheon on September 17 at The Drake Hotel and an evening cocktail reception on September 24 at the Geraghty. Funds raised will benefit the Chicago Institute for Fetal Health at the Ann &amp; Robert H. Lurie Children&rsquo;s Hospital of Chicago.</p>
+            <div class="event-meta">
+              <span class="venue">The Drake Hotel</span>, 140 East Walton Place, Chicago<br>
+              <span class="venue">The Geraghty</span>, 2520 South Hoyne Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.goldcoastfashionshow.com" target="_blank">www.goldcoastfashionshow.com</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list September -->
+
+        <!-- ══════════ OCTOBER ══════════ -->
+        <div class="month-header">October</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Elmhurst Art Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, October 17</span>
+            </div>
+            <h2 class="event-name">Aces &amp; Art: A Night of Luck and Giving</h2>
+            <p class="event-description">Elmhurst Art Museum presents Aces &amp; Art: A Night of Luck and Giving, an evening filled with style and a touch of casino-night fun &mdash; all in support of the museum&rsquo;s exhibitions and education programs. The evening includes gaming tables featuring roulette, blackjack, craps, and more; complimentary cocktails &amp; delicious bites; a DJ and dancing; and raffles and artful prizes. Whether you&rsquo;re feeling lucky or just love a night out surrounded by creativity, this is the can&rsquo;t-miss event of the season.</p>
+            <div class="event-meta">
+              <span class="venue">Elmhurst Art Museum</span><br>
+              150 Cottage Hill Avenue, Elmhurst<br>
+              <span class="contact"><a href="https://elmhurstartmuseum.org" target="_blank">elmhurstartmuseum.org</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list October -->
+
+        <!-- ══════════ NOVEMBER ══════════ -->
+        <div class="month-header">November</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, November 13</span>
+              <span class="event-time">6:00 p.m. &ndash; 12:00 a.m.</span>
+            </div>
+            <h2 class="event-name">Fur Ball</h2>
+            <p class="event-description">The PAWS Chicago Fur Ball is Chicago&rsquo;s premier pet-friendly black tie event! Set at the legendary Drake Hotel, this unique gala invites guests to dress their pets in four-legged formal wear and walk the red carpet for an exciting celebration to benefit PAWS Chicago. Guests will delight in the silent and live auctions with one-of-a-kind items, raffle, dancing, and dinner buffets. Lucky dogs in attendance will also be treated to an evening of indulgences &mdash; including a divine dinner served in crystal goblets at the special dog buffet.</p>
+            <div class="event-meta">
+              <span class="venue">Drake Hotel</span><br>
+              140 East Walton Place, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org/events-dog-training/fundraising-events/fur-ball" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Founder&rsquo;s Board (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, November 19</span>
+            </div>
+            <h2 class="event-name">Winter Wishes: Annual Holiday Cocktail Celebration</h2>
+            <p class="event-description">This festive celebration has become the official kick-off to Chicago&rsquo;s holiday season. Guests gather to celebrate the holidays and help to make wishes come true for patients treated at Lurie Children&rsquo;s. Proceeds benefit the Founders&rsquo; Board&rsquo;s fundraising commitment to the Lurie Children&rsquo;s Center for Cancer and Blood Disorders.</p>
+            <div class="event-meta">
+              <span class="venue">The Casino</span><br>
+              195 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.luriechildrens.org/winterwishes" target="_blank">www.luriechildrens.org/winterwishes</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Allendale Association</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 21</span>
+              <span class="event-time">9:30 a.m.</span>
+            </div>
+            <h2 class="event-name">Allendale Youth Board Polar Plunge</h2>
+            <p class="event-description">Take the plunge in Lake Michigan, challenge yourself in the stair climbing competition, or cheer from the shore at Allendale Youth Board&rsquo;s 2nd Annual Polar Plunge. Tickets are $25 and participants are encouraged to invite friends and family to sponsor their plunge or climb. All proceeds benefit Allendale in Lake Villa, a school and residence supporting the behavioral, emotional, and mental health needs of some of Illinois&rsquo;s most vulnerable children.</p>
+            <div class="event-meta">
+              <span class="venue">Forest Park Beach, Lake Forest</span><br>
+              <span class="contact"><a href="https://allendale4kids.org/" target="_blank">allendale4kids.org</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list November -->
+
+        <!-- ══════════ DECEMBER ══════════ -->
+        <div class="month-header">December</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Children&rsquo;s Research Fund (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, December 12</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">75th Annual Children&rsquo;s Research Fund Children&rsquo;s Ball</h2>
+            <p class="event-description">The 2026 Children&rsquo;s Ball is the signature fundraising event of the Children&rsquo;s Research Fund at Ann &amp; Robert H. Lurie Children&rsquo;s Hospital of Chicago. This black-tie gala brings together philanthropic leaders for an inspiring evening dedicated to advancing pediatric research. Funds raised support the Children&rsquo;s Research Fund&rsquo;s commitment to Advanced Therapeutics at the Stanley Manne Children&rsquo;s Research Institute, accelerating innovative treatments and transformative discoveries for children in Chicago and beyond.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://crf.luriechildrens.org" target="_blank">crf.luriechildrens.org</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list December -->
+
+      </div><!-- /datebook-body -->
+
+      <!-- Feedback Widget -->
+      <div class="feedback-widget">
+        <p>Did you enjoy this article?</p>
+        <div class="vote-buttons">
+          <button onclick="submitVote('Yes')">&#128077; Yes</button>
+          <button onclick="submitVote('No')">&#128078; No</button>
+        </div>
+        <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
+        <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
+          <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
+            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
+          </form>
+        </div>
+        <script>
+          var base=window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value=base+'?feedback=sent';
+          document.getElementById('page-tracking').value=document.title+' — '+base;
+          document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
+          function submitVote(vote){
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
+            document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
+            document.querySelector('.vote-buttons button:' + (vote==='Yes'?'first':'last') + '-child').style.opacity='1';
+            document.getElementById('voteConfirm').style.display='block';
+          }
+        </script>
+      </div>
+
+      <div class="edition-nav">
+        <a href="../../../index.html">Back to Sunday Edition &rarr;</a>
+      </div>
+
+    </div><!-- /article-container -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
