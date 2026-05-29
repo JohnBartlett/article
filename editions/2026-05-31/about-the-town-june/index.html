@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- GA4-disabled
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
@@ -11,28 +12,55 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>About the Town — June 2026 | Classic Chicago – Sunday Edition</title>
+  <title>About the Town in June | Classic Chicago &ndash; Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: Georgia, serif; background: #fff; color: #222; line-height: 1.7; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
     header { padding: 20px 0; border-bottom: 1px solid #eee; }
     .logo-container { text-align: center; margin-bottom: 20px; }
     .logo-container img { width: 390px; height: auto; }
     nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
-    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
-    .article-wrapper { max-width: 780px; margin: 40px auto 60px; padding: 0 20px; text-align: center; }
-    .draft-notice { background: #fff8e1; border: 1px solid #ffe082; padding: 16px 24px; font-family: 'Lato', sans-serif; font-size: 14px; color: #666; margin-bottom: 32px; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #111; }
-    .byline { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    .article-body p em { font-style: italic; }
+    .article-body a { color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .article-body a:hover { border-bottom-style: solid; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    .hero-figure { margin: 0 0 36px; }
+    .hero-figure img, figure img { width: 100%; height: auto; display: block; }
+    figure { margin: 36px 0; }
+    .hero-figure figcaption, figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
     footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) { h1.article-title { font-size: 32px; } .article-body p { font-size: 16px; } }
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
+
 <body>
+
+  <!-- dev2-only
+  <div style="background:#b51c20;color:#fff;text-align:center;padding:8px 16px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">
+    Dev2 Preview &mdash; Not Published &nbsp;|&nbsp;
+    <a href="../../../editors/" style="color:#fff;text-decoration:underline;">Editors&rsquo; Page</a>
+  </div>
+  -->
+
   <header>
     <div class="logo-container">
       <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
@@ -48,15 +76,173 @@
       </div>
     </nav>
   </header>
+
   <main>
     <div class="article-wrapper">
-      <div class="draft-notice">Article pending — content not yet received.</div>
-      <h1>About the Town — June 2026</h1>
-      <p class="byline">By Philip Vidal &nbsp;&bull;&nbsp; May 31, 2026</p>
+
+      <div class="article-category">About the Town</div>
+      <h1 class="article-title">About the Town in June</h1>
+      <div class="article-meta">By <a href="../../../about.html#philip-vidal" style="color:#b51c20;text-decoration:none;border-bottom:1px dashed #b51c20;">Philip Vidal</a> &nbsp;&bull;&nbsp; May 31, 2026</div>
+
+      <figure class="hero-figure">
+        <img src="COVER Chicago Dance Month.jpg" alt="Chicago Dance Month">
+        <figcaption>Cover Photo credit to Michelle Reid Photography.</figcaption>
+      </figure>
+
+      <div class="article-body">
+
+        <p>Chicago isn&rsquo;t that old, but one of the many things that fascinates me about Chicago is the juxtaposition of the old and the new.</p>
+
+        <p>The dedication ceremony for the new <a href="https://www.obama.org/visit/">Obama Presidential Center</a> is June 18, before it opens to the public the following day, on Juneteenth. The center is located in Jackson Park, site of the 1893 World&rsquo;s Columbian Exposition. The center&rsquo;s Brutalist 180-foot tower is in stark contrast to the late 19th century neo-classical building next door housing the Griffin Museum of Science and Industry, and the University of Chicago campus, whose original buildings are in the ornate neo-Gothic style.</p>
+
+        <figure>
+          <img src="1 Old Town Art Fair.jpg" alt="Old Town Art Fair">
+          <figcaption>View the latest works from over 200 artists at the Old Town Art Fair, June 13&ndash;14. Photo credit to Patrick Malon.</figcaption>
+        </figure>
+
+        <p>About a mile northwest of the center in the heart of the historic Hyde Park neighborhood, find the latest original works by artists at the Midwest&rsquo;s oldest juried art fair, the 79th annual <a href="https://www.57thstreetartfair.com/">57th Street Art Fair</a>. You can also find the latest works from over 200 artists at the 76th annual <a href="https://www.oldtownartfair.org/">Old Town Art Fair</a>, June 13&ndash;14, set in the Old Town Triangle Historic District.</p>
+
+        <p>June ushers in the summer season of art fairs, festivals and outdoor summer concerts.</p>
+
+        <p>The upcoming season of the <a href="https://www.ravinia.org/">Ravinia Festival</a> marks the 90th anniversary of the Chicago Symphony Orchestra&rsquo;s residency at the Ravinia Festival, June 3&ndash;September 23. The newly redesigned Hunter Pavilion debuts this summer. In addition to classical music, the festival features a wide array of music and artists. Paul Simon, Brandi Carlile, Billy Idol, Emmylou Harris, Kool &amp; the Gang, Ricky Martin, Hugh Jackman and Chicago&rsquo;s own Chance the Rapper are all slated to perform at Ravinia this summer. Nearby, Winnetka hosts the 10th anniversary of the <a href="https://www.winnetkamusicfestival.com/lineup-2026">Winnetka Music Festival</a>, June 19&ndash;20.</p>
+
+        <p>The theme for the sixth <a href="https://operafestivalchicago.org/season/2026/events/">Opera Festival of Chicago</a> is &ldquo;Bohemian Tragedy.&rdquo; The festival runs June 13&ndash;July 5 at DePaul University and North Shore Center for the Arts.</p>
+
+        <figure>
+          <img src="2 Blues on the Fox 2026.jpg" alt="Blues on the Fox Festival">
+          <figcaption>Aurora&rsquo;s newly renovated outdoor concert venue welcomes the Blues on the Fox Festival on June 20 with performances starting at 3 pm. Photo courtesy of Thomas J. Weisner RiverEdge Park.</figcaption>
+        </figure>
+
+        <p>The <a href="https://paramountaurora.com/events/blues-on-the-fox-2026/">Blues on the Fox Festival</a> returns to Aurora&rsquo;s RiverEdge Park on June 20. The festival marks the opening of Aurora&rsquo;s newly renovated outdoor concert venue. Billed as &ldquo;the largest free blues festival in the world,&rdquo; the <a href="https://www.chicago.gov/city/en/depts/dca/provdrs/chicago_festivals/news/2026/april/blues_fest.html">Chicago Blues Festival</a> returns to Millennium Park June 4&ndash;7, with the opening night at Bridgeport&rsquo;s recently renovated and reopened Ramova Theatre (1929).</p>
+
+        <p>Hear nationally and internationally acclaimed carillonists perform on St. Chrysostom&rsquo;s recently renovated 48-bell carillon during the <a href="https://saintc.org/carillonfestival/">Carillon Festival</a>, June 7, 14 and 21.</p>
+
+        <p>Chicago&rsquo;s historic Navy pier is home to the city&rsquo;s first lakefront roller rink, <a href="https://navypier.org/summerskate/">Summer Skate</a>, which is described as having a &ldquo;nineties retro vibe&rdquo; and runs June 18&ndash;September 7. I recall roller skating (and not very well) at Rainbo Roller Rink at 4836 North Clark in the 1990s when roller skating had a resurgence. The Rainbo building was demolished in 2003.</p>
+
+        <figure>
+          <img src="3 RiverEdge Park.jpg" alt="Cheap Trick at RiverEdge Park">
+          <figcaption>Legendary Rock and Roll Hall of Famers Cheap Trick hit the RiverEdge Park stage on June 25. Photo credit to Thomas J. King.</figcaption>
+        </figure>
+
+        <p>As part of the Brookfield Zoo&rsquo;s Roaring Nights summer concert series, <a href="https://www.brookfieldzoo.org/events/roaring-nights-concerts">Melissa Etheridge</a> will perform on June 7. The free, weekly, live outdoor music performances in the Anne and John Kern Terrace Garden at the Museum of Contemporary Art are a summertime treat. The <a href="https://visit.mcachicago.org/tuesdays-on-the-terrace-2026/">Tuesdays on Terrace</a> series runs June 16&ndash;August 25 and features local musicians. Other &lsquo;local&rsquo; musicians performing this month include Rockford&rsquo;s <a href="https://paramountaurora.com/events/cheap-trick-2026/">Cheap Trick</a>, who play Aurora&rsquo;s RiverEdge Park on June 25, and <a href="https://www.unitedcenter.com/events/2026/06/26/lionel-richie-earth-wind-fire-sing-a-song/">Earth, Wind &amp; Fire</a>, which began in Chicago, and performs with Lionel Richie at the United Center on June 26.</p>
+
+        <p>Marking the 250th anniversary of the United States, Symphony Center presents &ldquo;<a href="https://cso.org/concerts-tickets/feature-pages/america-250/">American 250: A Musical Journey</a>,&rdquo; a series of concerts in June featuring works by American composers such as Leonard Bernstein, Aaron Copland, Duke Ellington, George Gershwin, Charles Ives, and John Williams.</p>
+
+        <figure>
+          <img src="4 American Writers Museum.jpg" alt="American Writers Museum — Declarations exhibit">
+          <figcaption>View the Nation of Writers gallery at the &ldquo;Declarations: 250 Years of Writing Toward Independence&rdquo; exhibit at the American Writers Museum, June 18&ndash;September 7. Photo courtesy of American Writers Museum.</figcaption>
+        </figure>
+
+        <p>The American Writers Museum (AWM) marks America&rsquo;s 250th anniversary with &ldquo;<a href="https://americanwritersmuseum.org/america250/">Declarations: 250 Years of Writing Toward Independence</a>&rdquo; programming that includes a pop-up exhibition running June 18&ndash;September 7, and which includes a 1776 British first edition of Thomas Paine&rsquo;s &ldquo;Common Sense.&rdquo; America 250 programming will also take place at the 4th annual <a href="https://americanwritersmuseum.org/american-writers-festival/">American Writers Festival</a>, June 6&ndash;7. Presented by the AWM and the Chicago Public Library at the AWM on June 6, and the Harold Washington Library on June 7, this free event includes presentations by Eve L. Ewing, Bill Kurtis, Sara Paretsky, and Chicago poet laureate Mayda del Valle.</p>
+
+        <p>Chicago&rsquo;s diverse ethnic communities and their cuisines are well-represented this month at several outdoor festivals. Have a jibarito, a plantain sandwich invented in Chicago, at the 45th annual <a href="https://www.puertoricanfest.com/">Puerto Rican Festival</a>, which returns to Humboldt Park, June 11&ndash;14. Sign up (if you dare) for the haggis eating contest at the 40th annual <a href="https://chicagoscots.org/festival/">Scottish Festival and Highland Games</a>, DuPage County Fairgrounds, June 12&ndash;13. I&rsquo;m sure they&rsquo;re will be Swedish meatballs on offer at the 60th edition of Andersonville&rsquo;s Swedish-themed <a href="https://andersonville.org/midsommarfest/">Midsommerfest</a> on June 12&ndash;14. Billed as one of Chicago&rsquo;s most interesting food festivals, <a href="https://www.illinoisthai.org/">Thai Festival Chicago</a>, at 851 West Irving Park Road, runs June 13&ndash;14.</p>
+
+        <p>Chicago has hosted the &ldquo;Oscars of the food world&rdquo; since 2015. The <a href="https://www.jamesbeard.org/awards/restaurant-and-chef-awards">James Beard Restaurant and Chef Awards</a> return to the Lyric Opera of Chicago on June 15. The fifth and final season of FX&rsquo;s &ldquo;<a href="https://www.fxnetworks.com/shows/the-bear">The Bear</a>&rdquo; premieres June 25. I used to work just around the corner from Mr. Beef, the Italian beef restaurant at 666 North Orleans, that was the inspiration for hit TV series. As I am writing this in May, there is a bill in the Illinois senate to make the Italian beef sandwich the state&rsquo;s official sandwich.</p>
+
+        <p>The inaugural <a href="https://chicagococktailclassic.com/">Chicago Cocktail Classic</a> was so popular that it&rsquo;s back again this year in the West Loop and showcases the tipples of more than two dozen U.S. and international bars, some with provocative names like Father Forgive Me, Little Rituals, and Bar Glue. This reminds me of classic cocktails that still please, like the Side Car and the Pink Squirrel.</p>
+
+        <!-- Photo 5 (Navy Pier Dance Month) pending from Google Drive -->
+
+        <p>See Chicago Dance&rsquo;s citywide 13th annual <a href="https://seechicagodance.com/page/chicago-dance-month">Chicago Dance Month</a> festival, which continues through June 27 featuring performances, dance film screenings, workshops, and something else new this year, Neighborhood/MOVES programming. All events are free and open to the public unless otherwise noted.</p>
+
+        <p>The 13th <a href="https://www.physicalfestival.com/">Physical Theater Festival Chicago</a> brings internationally-acclaimed performances to Theater Wit and The Dance Center at Columbia College Chicago, June 1&ndash;7. The new project from the <a href="https://www.houseofdov.com/">House of DOV</a> performance ensemble led by Drew Lewis with live music by Family Junket is &ldquo;Circle of Apathy.&rdquo; It runs June 20&ndash;21 at Ragdale, and June 27&ndash;28 at the Gorton Center, both are in Lake Forest. The House of DOV&rsquo;s cutting-edge contemporary performance will be a nice contrast with <a href="https://www.ragdale.org/">Ragdale</a> (1897), which was originally the Arts &amp; Craft summer home of noted Chicago architect Howard Van Doren Shaw before it became home to the Ragdale Residency program for artists working in dance, writing, and the visual arts.</p>
+
+        <!-- Photo 6 (Eugene Onegin) pending from Google Drive -->
+
+        <p>Alexander Pushkin&rsquo;s early 19th century novel &ldquo;<a href="https://joffrey.org/performances-and-tickets/25-26-season/eugene-onegin/">Eugene Onegin</a>&rdquo; is the inspiration for Yuri Possokhov&rsquo;s ballet of the same name, a co-production between The Joffrey Ballet of Chicago and San Francisco Ballet, which makes its Chicago premiere June 4&ndash;14 at the Lyric Opera House.</p>
+
+        <p>Steppenwolf Theatre Company&rsquo;s longtime ensemble member Gary Cole returns to his Chicago roots in a performance of the Chicago premiere of Mia Chung&rsquo;s &ldquo;<a href="https://www.steppenwolf.org/tickets--events/seasons-/2025-26/catch-as-catch-can/">Catch as Catch Can</a>,&rdquo; directed by ensemble member Amy Morton, June 4&ndash;July 12.</p>
+
+        <figure>
+          <img src="7 Leopoldstadt.jpg" alt="Leopoldstadt at Writers Theatre">
+          <figcaption>Writers Theatre largest production in its history and Tom Stoppard&rsquo;s final play &ldquo;Leopoldstadt&rdquo; runs June 4&ndash;July 19. Photo courtesy of Writers Theatre.</figcaption>
+        </figure>
+
+        <p>Billed as the &ldquo;largest production in Writers Theatre history and the final play from one of our era&rsquo;s greatest playwrights,&rdquo; Glencoe&rsquo;s Writers Theater presents Tom Stoppard&rsquo;s &ldquo;<a href="https://www.writerstheatre.org/events/leopoldstadt">Leopoldstadt</a>,&rdquo; June 4&ndash;July 19, along with related lectures and programming.</p>
+
+        <figure>
+          <img src="8 Iceboy.jpg" alt="Iceboy at Goodman Theatre">
+          <figcaption>A new musical that will melt your heart! Performances for the world premiere of &ldquo;Iceboy! or The Completely Untrue Story of How Eugene O&rsquo;Neill Came to Write The Iceman Cometh&rdquo; start June 9 at the Goodman Theatre. Photo courtesy of Goodman Theatre.</figcaption>
+        </figure>
+
+        <p>Emmy Award&reg;-winning actor Nick Offerman and his Emmy Award&reg;-winning wife Megan Mullally star in the world premiere of the musical &ldquo;<a href="https://www.goodmantheatre.org/show/iceboy/">Iceboy! or The Completely Untrue Story of How Eugene O&rsquo;Neill Came to Write <em>The Iceman Cometh</em></a>&rdquo; at the Goodman Theatre, June 9&ndash;July 19.</p>
+
+        <p>The movie &ldquo;Ferris Buehler&rsquo;s Day Off&rdquo; was released on June 11, 1986, and features some iconic Chicago locations. Visit some of these spots on a &ldquo;<a href="https://onlocationtours.com/chicago-movie-and-tv-tours/">Ferris Buehler&rsquo;s Day Off</a>&rdquo; walking tour. The most famous locations in the film are all with us, but some have changed names: the Sears Tower is now the Willis Tower.</p>
+
+        <p>Compare the modern and lively McCormick Place Convention Center with the desolate site of the former Michael Reese Hospital complex just to the south, and imagine what the latter could have been. The Hyde Park Art Center&rsquo;s new exhibition &ldquo;<a href="https://www.hydeparkart.org/exhibition-archive/jeff-carter-the-singer-pavilion-project/">Jeff Carter: The Singer Pavilion Project</a>&rdquo; runs June 6&ndash;September 20. Jeff Carter explores the site, history, and significance of the Singer Pavilion (1948, designed by Walter Gropius, the founder of the Bauhaus School), and the last remaining building of the former Michael Reese Hospital complex. The site would have been the location for the Olympic Village if Chicago had been successful in its 2016 Olympic Games bid. The site was also mentioned as a possible home for the Obama Center.</p>
+
+        <p><em>Dates, times, locations and availability are subject to change.</em></p>
+
+      </div>
+
+      <div style="margin:32px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
+        <a href="../../../about.html#philip-vidal" style="color:#b51c20;text-decoration:none;border-bottom:1px dashed #b51c20;">About the Author: Philip Vidal &rarr;</a>
+      </div>
+
+      <div style="margin:56px 0 40px;padding:28px 32px;border:1px solid #e8e0d5;border-radius:2px;background:#fdfaf7;">
+        <p style="font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin:0 0 14px;">Did you enjoy this article?</p>
+        <div style="display:flex;gap:12px;margin-bottom:8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background:#f0f8f0;border:1px solid #c8e6c9;border-radius:4px;padding:10px 22px;font-size:22px;cursor:pointer;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background:#fff8f8;border:1px solid #ffcdd2;border-radius:4px;padding:10px 22px;font-size:22px;cursor:pointer;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display:none;font-family:'Lato',sans-serif;font-size:13px;color:#2e7d32;margin-bottom:20px;">&#10003; Thanks for your vote!</div>
+        <div id="feedbackConfirm" style="display:none;text-align:center;padding:12px 0;"><p style="font-family:'Lato',sans-serif;font-size:16px;color:#555;margin:0;">Thank you for your comment!</p></div>
+        <div id="feedbackForm" style="border-top:1px solid #ece5dd;padding-top:20px;margin-top:16px;">
+          <p style="font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin:0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px 12px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px 12px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
+            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
+          </form>
+        </div>
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' â ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2')!==-1) return 'dev2'; if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) { document.getElementById('feedbackForm').style.display='none'; document.getElementById('feedbackConfirm').style.display='block'; }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({vote:vote, Page:document.getElementById('page-tracking').value, Environment:document.getElementById('env-tracking').value, _subject:'Classic Chicago Quick Vote'}) }).catch(function(){});
+            document.getElementById('thumbUp').disabled=true; document.getElementById('thumbDown').disabled=true;
+            document.getElementById('thumbUp').style.opacity=(vote==='Yes')?'1':'0.35'; document.getElementById('thumbDown').style.opacity=(vote==='No')?'1':'0.35';
+            document.getElementById('voteConfirm').style.display='block';
+          }
+        </script>
+      </div>
+
+      <div class="edition-nav">
+        <a href="../pitching-washingtons-tent/" class="back-link">&larr; Previous: Pitching George Washington&rsquo;s Tent</a>
+        <a href="../omelette-and-wine/" class="back-link">Next: An Omelette and a Glass of Wine &rarr;</a>
+      </div>
+
     </div>
   </main>
+
   <footer>
-    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
   </footer>
+
+  <script>
+    var prevUrl = '../pitching-washingtons-tent/';
+    var nextUrl = '../omelette-and-wine/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable) return;
+      if (e.key==='n'||e.key==='N') window.location.href = nextUrl;
+      if (e.key==='p'||e.key==='P') window.location.href = prevUrl;
+      if (e.key===' '||e.key==='PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight*0.85); }
+      if (e.key==='PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight*0.85); }
+    });
+  </script>
+
 </body>
 </html>
