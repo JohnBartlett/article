@@ -22,6 +22,14 @@ module.exports = async (req, res) => {
     .map(([k, v]) => `${k}: ${v}`)
     .join('\n');
 
+  // Reject empty submissions (bots, crawlers, health checks)
+  if (!fields.trim()) {
+    const wantsJson = (req.headers['accept'] || '').includes('application/json');
+    if (wantsJson) return res.status(200).json({ success: true });
+    if (next) return res.redirect(302, next);
+    return res.status(200).send('OK');
+  }
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
