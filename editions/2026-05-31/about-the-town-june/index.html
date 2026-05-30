@@ -26,6 +26,9 @@
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
     .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
     .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
     .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
     h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
@@ -47,19 +50,20 @@
     .social-links a:hover { opacity: 0.7; }
     .social-links svg { width: 32px; height: 32px; fill: #fff; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    .article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;border-top:1px solid #eee;padding-top:24px;}
+    .article-nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#222;font-family:'Lato',sans-serif;font-size:14px;max-width:45%;}
+    .article-nav a:hover{color:#d41f1f;}
+    .article-nav .prev{flex-direction:row;}
+    .article-nav .next{flex-direction:row-reverse;text-align:right;}
+    .article-nav img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    .article-nav .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;display:block;margin-bottom:3px;}
+    @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
     @media (max-width: 600px) { h1.article-title { font-size: 32px; } .article-body p { font-size: 16px; } }
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
 
 <body>
-
-  <!-- dev2-only
-  <div style="background:#b51c20;color:#fff;text-align:center;padding:8px 16px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">
-    Dev2 Preview &mdash; Not Published &nbsp;|&nbsp;
-    <a href="../../../editors/" style="color:#fff;text-decoration:underline;">Editors&rsquo; Page</a>
-  </div>
-  -->
 
   <header>
     <div class="logo-container">
@@ -76,6 +80,13 @@
       </div>
     </nav>
   </header>
+
+  <!-- dev2-only -->
+  <div class="internal-nav">
+    <a href="../../../reader-comments.html">Reader Comments</a>
+    <a href="../../../future-articles.html">Future Articles</a>
+    <a href="../../../editors/index.html">Editors</a>
+  </div>
 
   <main>
     <div class="article-wrapper">
@@ -220,10 +231,17 @@
         </script>
       </div>
 
-      <div class="edition-nav">
-        <a href="../pitching-washingtons-tent/" class="back-link">&larr; Previous: Pitching George Washington&rsquo;s Tent</a>
-        <a href="../omelette-and-wine/" class="back-link">Next: An Omelette and a Glass of Wine &rarr;</a>
-      </div>
+      <!-- Article Navigation -->
+      <nav class="article-nav">
+        <a class="prev" href="../omelette-and-wine/">
+          <img src="../omelette-and-wine/96An Omelette and a Glass of Wine4.jpeg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>An Omelette and a Glass of Wine</div>
+        </a>
+        <a class="next" href="../beauty-at-all-ages/">
+          <img src="../beauty-at-all-ages/1-Mommy and Dad.jpeg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>My Silk Roads &ndash; On Elegance</div>
+        </a>
+      </nav>
 
     </div>
   </main>
@@ -238,8 +256,8 @@
   </footer>
 
   <script>
-    var prevUrl = '../pitching-washingtons-tent/';
-    var nextUrl = '../omelette-and-wine/';
+    var prevUrl = '../omelette-and-wine/';
+    var nextUrl = '../beauty-at-all-ages/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable) return;

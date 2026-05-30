@@ -26,6 +26,17 @@
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
     .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
     .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    .article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;border-top:1px solid #eee;padding-top:24px;}
+    .article-nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#222;font-family:'Lato',sans-serif;font-size:14px;max-width:45%;}
+    .article-nav a:hover{color:#d41f1f;}
+    .article-nav .prev{flex-direction:row;}
+    .article-nav .next{flex-direction:row-reverse;text-align:right;}
+    .article-nav img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    .article-nav .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;display:block;margin-bottom:3px;}
+    @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
     .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
     .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
     h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
@@ -55,13 +66,6 @@
 
 <body>
 
-  <!-- dev2-only
-  <div style="background:#b51c20;color:#fff;text-align:center;padding:8px 16px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">
-    Dev2 Preview &mdash; Not Published &nbsp;|&nbsp;
-    <a href="../../../editors/" style="color:#fff;text-decoration:underline;">Editors&rsquo; Page</a>
-  </div>
-  -->
-
   <header>
     <div class="logo-container">
       <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
@@ -77,6 +81,13 @@
       </div>
     </nav>
   </header>
+
+  <!-- dev2-only -->
+  <div class="internal-nav">
+    <a href="../../../reader-comments.html">Reader Comments</a>
+    <a href="../../../future-articles.html">Future Articles</a>
+    <a href="../../../editors/index.html">Editors</a>
+  </div>
 
   <main>
     <div class="article-wrapper">
@@ -175,10 +186,17 @@
         </script>
       </div>
 
-      <div class="edition-nav">
-        <a href="../biba-palm-springs-2/" class="back-link">&larr; Previous: Biba&rsquo;s Favorite Things: Palm Springs, Part II</a>
-        <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
-      </div>
+      <!-- Article Navigation -->
+      <nav class="article-nav">
+        <a class="prev" href="../about-the-town-june/">
+          <img src="../about-the-town-june/COVER Chicago Dance Month.jpg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>About the Town in June</div>
+        </a>
+        <a class="next" href="../biba-palm-springs-2/">
+          <img src="../biba-palm-springs-2/doris-1.JPEG" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Biba&rsquo;s Favorite Things: Palm Springs, Part II</div>
+        </a>
+      </nav>
 
     </div>
   </main>
@@ -193,8 +211,8 @@
   </footer>
 
   <script>
-    var prevUrl = '../biba-palm-springs-2/';
-    var nextUrl = '../../../index.html';
+    var prevUrl = '../about-the-town-june/';
+    var nextUrl = '../biba-palm-springs-2/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable) return;
