@@ -1,648 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- GA4-disabled <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5J2HWKC0B1');
-  </script> -->
   <meta charset="UTF-8">
-  <title>Edition &ndash; Classic Chicago Editors</title>
+  <title>Current Edition | Classic Chicago Editors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <script src="../dark-mode.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fdfaf7; color: #222; line-height: 1.6; }
-    header { padding: 20px 0 0; border-bottom: 1px solid #eee; background: #fff; position: relative; }
-    .logo-container { text-align: center; margin-bottom: 16px; }
-    .logo-container img { width: 390px; height: auto; }
-    .editors-nav { border-top: 1px solid #eee; padding: 8px 0; text-align: center; }
-    .editors-nav a { font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 16px; padding: 5px 0; }
-    .editors-nav a:hover { text-decoration: underline; }
-    .editors-nav a.active { border-bottom: 2px solid #b51c20; }
-    .editors-nav .home-link { color: #aaa; font-weight: 400; }
-    .editors-nav .home-link:hover { color: #b51c20; }
-    .wrapper { max-width: 820px; margin: 0 auto 80px; padding: 0 24px; }
-
-    .page-header { text-align: center; padding: 40px 0 28px; border-bottom: 2px solid #e8443a; margin-bottom: 44px; }
-    .page-label { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 8px; }
-    .page-title { font-family: 'Playfair Display', serif; font-size: 42px; color: #111; margin: 0 0 8px; line-height: 1.15; }
-    .edition-tag { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.12em; }
-
-    .dash-section { margin-bottom: 48px; }
-    .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
-    .section-title { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #b51c20; flex: 1; }
-    .btn-stage { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #b51c20; color: #fff; padding: 7px 14px; border-radius: 2px; text-decoration: none; white-space: nowrap; }
-    .btn-stage:hover { background: #8f1518; }
-    .stage-note { font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; font-style: italic; margin: 0 0 16px; }
-
-    /* Article table */
-    .edition-table { width: 100%; border-collapse: collapse; font-family: 'Lato', sans-serif; font-size: 14px; }
-    .edition-table th { text-align: left; padding: 8px 10px; background: #f5f0eb; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; font-weight: 700; }
-    .edition-table th.center { text-align: center; }
-    .edition-table td { padding: 13px 10px; border-bottom: 1px solid #f0ebe3; vertical-align: middle; }
-    .edition-table tr:last-child td { border-bottom: none; }
-    .article-name { font-family: Georgia, serif; font-size: 15px; color: #222; }
-    .article-sub { font-size: 11px; color: #bbb; margin-top: 2px; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
-    .writer-cell { font-family: 'Lato', sans-serif; font-size: 13px; color: #666; }
-    .open-link { font-family: 'Lato', sans-serif; font-size: 12px; color: #b51c20; text-decoration: none; display: block; text-align: center; white-space: nowrap; }
-    .open-link:hover { text-decoration: underline; }
-    .stage-dash { color: #ccc; font-family: 'Lato', sans-serif; font-size: 13px; display: block; text-align: center; }
-
-    .badge { display: inline-block; font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
-    .badge-published { background: #e8f5e9; color: #2e7d32; }
-    .badge-pending   { background: #fff8e1; color: #7a5c00; }
-    .badge-missing   { background: #f5f5f5; color: #999; }
-
-    footer { background: #1a1a1a; color: #fff; padding: 30px 20px; text-align: center; margin-top: 60px; }
-    .copyright { font-family: 'Lato', sans-serif; font-size: 13px; color: #aaa; }
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    header{background:#fff;border-bottom:3px solid #d41f1f;padding:16px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .header-title .subtitle{font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:2px;}
+    .header-title h1{font-family:'Playfair Display',serif;font-size:26px;margin:0;}
+    .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .header-links a:hover{text-decoration:underline;}
+    .wrapper{max-width:1100px;margin:32px auto;padding:0 24px;}
+    .section{background:#fff;border-radius:4px;padding:24px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,0.07);}
+    .section h2{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 4px;}
+    .section .meta{font-size:12px;color:#999;margin-bottom:20px;}
+    table{width:100%;border-collapse:collapse;font-size:14px;}
+    th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:8px 12px;border-bottom:2px solid #eee;}
+    td{padding:10px 12px;border-bottom:1px solid #f0ede8;vertical-align:top;}
+    tr:last-child td{border-bottom:none;}
+    tr:hover td{background:#fdf9f6;}
+    .badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+    .badge-ready{background:#e8f5e9;color:#2e7d32;}
+    .badge-cover{background:#fff3e0;color:#e65100;}
+    .badge-pending{background:#f5f5f5;color:#888;}
+    .badge-deferred{background:#f3e5f5;color:#7b1fa2;}
+    .badge-published{background:#e3f2fd;color:#1565c0;}
+    a.art-link{color:#d41f1f;text-decoration:none;}
+    a.art-link:hover{text-decoration:underline;}
+    .past-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+    .past-item{background:#f5f3ef;border:1px solid #e8e4de;border-radius:3px;padding:8px 14px;font-size:13px;}
+    .past-item strong{display:block;color:#222;margin-bottom:2px;}
+    .past-item span{color:#888;font-size:12px;}
+    .preview-btn{display:inline-block;background:#d41f1f;color:#fff;padding:6px 14px;border-radius:3px;text-decoration:none;font-size:12px;font-weight:700;margin-bottom:20px;}
+    .preview-btn:hover{background:#b51c20;}
   </style>
 </head>
 <body>
 
-  <div style="background: #b51c20; color: #fff; text-align: center; padding: 11px 24px;">
-    <span style="font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">Editors Only &mdash; Not Published &mdash; Dev2 Only</span>
+<header>
+  <div class="header-title">
+    <div class="subtitle">Classic Chicago &mdash; Internal</div>
+    <h1>Current Edition</h1>
+  </div>
+  <div class="header-links">
+    <a href="index.html">Editors&rsquo; Home</a>
+    <a href="stats.html">Stats</a>
+    <a href="../reader-comments.html">Reader Comments</a>
+    <a href="../index.html">Live Site &uarr;</a>
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- June 7 Edition -->
+  <div class="section">
+    <h2>June 7, 2026</h2>
+    <div class="meta">Publishing Sunday, June 7 &bull; In Progress</div>
+
+    <a class="preview-btn" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/index.html" target="_blank">Dev2 Preview &rarr;</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Article</th>
+          <th>Author</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/court-tennis/" target="_blank">An Ancient Sport Aims to Court Players Where Mammoths Once Roamed</a></td>
+          <td>David A. F. Sweet</td>
+          <td><span class="badge badge-ready">Ready</span></td>
+          <td>3 photos &bull; Hero article</td>
+        </tr>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/scott-holleran/" target="_blank">Senior</a></td>
+          <td>Scott Holleran</td>
+          <td><span class="badge badge-ready">Ready</span></td>
+          <td>2 photos &bull; Short story</td>
+        </tr>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/san-miguel/" target="_blank">Letter from San Miguel de Allende, Part I: A History</a></td>
+          <td>Russell Kelley</td>
+          <td><span class="badge badge-ready">Ready</span></td>
+          <td>25 photos</td>
+        </tr>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/ryan-licht-sang/" target="_blank">Ryan Licht Sang Luncheon</a></td>
+          <td>Judy Carmack Bross</td>
+          <td><span class="badge badge-cover">Cover Only</span></td>
+          <td>Article text awaiting from Emma (muhlemane2@gmail.com)</td>
+        </tr>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/alliance-francaise/" target="_blank">Alliance Fran&ccedil;aise Gala</a></td>
+          <td>Judy Carmack Bross</td>
+          <td><span class="badge badge-cover">Cover Only</span></td>
+          <td>Article text awaiting from Emma (muhlemane2@gmail.com)</td>
+        </tr>
+        <tr>
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/minds-matter/" target="_blank">Minds Matter Benefit</a></td>
+          <td>Judy Carmack Bross</td>
+          <td><span class="badge badge-cover">Cover Only</span></td>
+          <td>Ana (anabaca8@gmail.com) building tomorrow</td>
+        </tr>
+        <tr>
+          <td>Costume Art at The Met &mdash; Costume Institute</td>
+          <td>Sigalit Zetouni</td>
+          <td><span class="badge badge-pending">Awaiting</span></td>
+          <td>Article + photos + credits due noon Friday, June 5 (sigalina@aol.com)</td>
+        </tr>
+        <tr>
+          <td>Seminary Gardens</td>
+          <td>Annie Delfosse</td>
+          <td><span class="badge badge-pending">Awaiting</span></td>
+          <td>aedelfosse1@gmail.com</td>
+        </tr>
+        <tr>
+          <td>DateBook</td>
+          <td>Annie Delfosse</td>
+          <td><span class="badge badge-pending">Awaiting</span></td>
+          <td>aedelfosse1@gmail.com</td>
+        </tr>
+        <tr style="background:#fdf5ff;">
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/jill-lowe-magic/" target="_blank"><em>Abracadabra&hellip; and Then the Magic Happens</em></a></td>
+          <td><em>Jill Lowe</em></td>
+          <td><span class="badge badge-deferred">June 14</span></td>
+          <td><em>15 photos &bull; Built &bull; Deferred per Judy, June 4</em></td>
+        </tr>
+        <tr style="background:#fdf5ff;">
+          <td><a class="art-link" href="https://article-2ygwunvnf-johns-projects-e5fce345.vercel.app/editions/2026-06-07/san-miguel-trip/" target="_blank"><em>Letter from San Miguel, Part II: Our April 2026 Trip</em></a></td>
+          <td><em>Russell Kelley</em></td>
+          <td><span class="badge badge-deferred">June 14</span></td>
+          <td><em>25 photos &bull; Built &bull; Continuing from Part I</em></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <header>
-    <div class="logo-container">
-      <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
-    </div>
-    <nav class="editors-nav">
-      <a href="../index.html" class="home-link">&#8592; Site</a>
-      <a href="index.html">Editors&rsquo; Page</a>
-      <a href="edition.html" class="active">Edition</a>
-      <a href="comments.html">Comments</a>
-      <a href="stats.html">Stats</a>
-      <a href="analysis.html">Analysis</a>
-      <a href="coverage.html">Coverage</a>
-    </nav>
-  </header>
-
-  <div class="wrapper">
-
-    <div class="page-header">
-      <div class="page-label">Next Build</div>
-      <h1 class="page-title">Edition</h1>
-      <div class="edition-tag">June 7, 2026 &mdash; Planning</div>
-    </div>
-
-    <!-- ══ JUNE 7 PLANNING ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-        <div class="section-title">June 7, 2026 &mdash; Incoming Content</div>
+  <!-- Past Editions -->
+  <div class="section">
+    <h2>Past Editions</h2>
+    <div class="meta">All published at <a href="https://chicagoclassicmag.com" target="_blank" style="color:#d41f1f;">chicagoclassicmag.com</a></div>
+    <div class="past-strip">
+      <div class="past-item">
+        <strong>May 31, 2026</strong>
+        <span>Pitching Washington's Tent, About the Town, An Omelette &amp; a Glass of Wine, Biba's Palm Springs, Botanic Garden, Persephone Dinner, St. Chrys's Closet &bull; 8 articles</span>
       </div>
-      <p class="stage-note"><strong>June 1 session:</strong> Judy sent full June 7 plan (msg 19e8202866253a02). 8 articles planned &mdash; see below. San Miguel de Allende split into Part I &amp; Part II as Judy suggested; HTML built, photos need Gmail OAuth download (25 PNGs, msg 19e79ecd652408bf). Jill Lowe PDF (msg 19e81fcd543000c2) assigned to Ana Baca. Scott Holleran short story (&ldquo;Senior&rdquo;, msg 19e82b9ae37f18c3) &mdash; Judy says &ldquo;let&rsquo;s talk when you are back.&rdquo; Marcy Carmack deferred until after June 10.</p>
-      <p class="stage-note"><strong>June 3 session:</strong> David Sweet&rsquo;s court tennis article arrived (msg 19e8cc7d1d17aebc) &mdash; HTML built at court-tennis/; 3 photos still need Gmail OAuth download. Jill Lowe magic article photos arrived (msg 19e8d407de6fe087, 14 images) &mdash; PDF text still needed. Heritage Auctions ad: link updated to new June URL; image <code>ads/Classic Chicago June 2026.png</code> needs manual drop-in from msg 19e8d42e4ca1bee7. Judy also sent scheduling note about Jill Lowe, and Sigalit&rsquo;s Met Costume exhibit article is forthcoming. Judy wants to call Thursday to discuss longer articles.</p>
-      <p class="stage-note"><strong>June 4 session:</strong> All previously pending photos now downloaded. <strong>court-tennis, jill-lowe-magic, scott-holleran, san-miguel, san-miguel-trip</strong> all marked Ready (photos placed). Heritage Auctions ad fully live on homepage with correct June image and link. San Miguel folders renamed from san-miguel-1/san-miguel-2 to san-miguel/san-miguel-trip. Cover photos received from Judy: Ryan Licht Sang (msg 19e92222c5e01352, &ldquo;Melissa Haley and Florence Ann Romano.jpeg&rdquo;) and Minds Matter (msg 19e92219948b1797, &ldquo;Mark &amp; Robin Tebbe IMG_2467.jpeg&rdquo;) &mdash; both in respective article folders; article text still awaiting from Emma. Scott Holleran cover photo resent by Judy twice today (msgs 19e923f0a7217f77, 19e9268d68dd4ede &mdash; both image0.jpeg, appears duplicate). Sigalit article (Costume Art) still pending &mdash; due June 5. Seminary Gardens, Minds Matter article text, Ryan Licht Sang article text outstanding.</p>
-
-      <table class="edition-table">
-        <thead>
-          <tr>
-            <th style="width: 46%;">Article</th>
-            <th style="width: 22%;">Writer</th>
-            <th style="width: 18%;">Status</th>
-            <th style="width: 10%;" class="center">Dev2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="article-name">Letter from San Miguel de Allende, Part I: A History</div>
-              <div class="article-sub">HTML at editions/2026-06-07/san-miguel/. 18 PNG photos placed (msg 19e79ecd652408bf). Ready.</div>
-            </td>
-            <td class="writer-cell">Russell Kelley (via Annie)</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-06-07/san-miguel/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Letter from San Miguel de Allende, Part II: Our April 2026 Trip</div>
-              <div class="article-sub">HTML at editions/2026-06-07/san-miguel-trip/. Photos from same email, placed. Ready.</div>
-            </td>
-            <td class="writer-cell">Russell Kelley (via Annie)</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-06-07/san-miguel-trip/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Short Story by Scott Holleran (&ldquo;Senior&rdquo;)</div>
-              <div class="article-sub">Built. HTML at editions/2026-06-07/scott-holleran/. Text from msg 19e82b9ae37f18c3 (.docx). Photos: image0.jpeg, image1.jpeg placed. Cover photo resent by Judy June 4 (msgs 19e923f0a7217f77, 19e9268d68dd4ede).</div>
-            </td>
-            <td class="writer-cell">Scott Holleran (via Judy)</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-06-07/scott-holleran/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Jill Lowe on Magic &mdash; Abracadabra (&ldquo;and then the magic happens&rdquo;)</div>
-              <div class="article-sub">Built. HTML at editions/2026-06-07/jill-lowe-magic/. PDF text from msg 19e8d3e3aaca2dc1. 14 photos from msg 19e8d407de6fe087 &mdash; placed. Ready.</div>
-            </td>
-            <td class="writer-cell">Jill Lowe</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-06-07/jill-lowe-magic/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">An Ancient Sport Aims to Court Players Where Mammoths Once Roamed</div>
-              <div class="article-sub">Built. HTML at editions/2026-06-07/court-tennis/. Text + 3 photos from msg 19e8cc7d1d17aebc. Placed. Ready. Nav: hero (first).</div>
-            </td>
-            <td class="writer-cell">David A. F. Sweet</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-06-07/court-tennis/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Ryan Licht Sang Luncheon</div>
-              <div class="article-sub">Cover photo received June 4: &ldquo;Melissa Haley and Florence Ann Romano.jpeg&rdquo; (msg 19e92222c5e01352). Stub HTML at ryan-licht-sang/. Article text still awaiting from Emma.</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-pending">Cover Only</span></td>
-            <td><a href="../editions/2026-06-07/ryan-licht-sang/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Minds Matter Benefit</div>
-              <div class="article-sub">Cover photo received June 4: &ldquo;Mark &amp; Robin Tebbe IMG_2467.jpeg&rdquo; (msg 19e92219948b1797). Stub HTML at minds-matter/. Article text still awaiting from Emma.</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-pending">Cover Only</span></td>
-            <td><a href="../editions/2026-06-07/minds-matter/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Seminary Gardens</div>
-              <div class="article-sub">Annie writing. Not yet received.</div>
-            </td>
-            <td class="writer-cell">Annie Delfosse</td>
-            <td><span class="badge badge-pending">Awaiting</span></td>
-            <td><span class="stage-dash">&mdash;</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Costume Art &mdash; The Met Costume Institute</div>
-              <div class="article-sub">Sigalit confirmed June 2 (msg 19e8399a9dedca7a). Exhibition at The Met, runs until Jan 10, 2027. Article + images + credits + blast text due June 5. Not yet received as of June 4.</div>
-            </td>
-            <td class="writer-cell">Sigalit Zetouni</td>
-            <td><span class="badge badge-pending">Awaiting</span></td>
-            <td><span class="stage-dash">&mdash;</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ══ MAY 31 INVENTORY ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-        <div class="section-title">Article Inventory &mdash; May 31, 2026 &mdash; Published</div>
-        <a href="https://chicagoclassicmag.com/editions/2026-05-31/pitching-washingtons-tent/" target="_blank" class="btn-stage">Live &#8599;</a>
+      <div class="past-item">
+        <strong>May 24, 2026</strong>
+        <span>Brookfield Zoo Gala, TimeLine Theatre, Kenilworth Centennial Quilt, Jonathan Hoenig, Textiles at The Met, Martha Graham, Merit Music &bull; 7 articles</span>
       </div>
-      <p class="stage-note">Published May 31, 2026. 8 articles + DateBook + Daily Star. Nav chain: pitching-washingtons-tent &rarr; omelette-and-wine &rarr; about-the-town-june &rarr; beauty-at-all-ages &rarr; botanic-garden &rarr; biba-palm-springs-2 &rarr; persephone-dinner &rarr; st-chrys-closet. Caption changes to Washington Tent applied before publication (msg 19e753a6fbfc83fa &mdash; remove all captions except sewing volunteers photo; add Morristown photo).</p>
-
-      <table class="edition-table">
-        <thead>
-          <tr>
-            <th style="width: 46%;">Article</th>
-            <th style="width: 22%;">Writer</th>
-            <th style="width: 18%;">Status</th>
-            <th style="width: 10%;" class="center">Live</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="article-name">Pitching George Washington&rsquo;s Tent: Celebrate America 250 at the Newberry</div>
-              <div class="article-sub">Hero (#1)</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/pitching-washingtons-tent/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">An Omelette and a Glass of Wine</div>
-              <div class="article-sub">#2</div>
-            </td>
-            <td class="writer-cell">Francesco Bianchini</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/omelette-and-wine/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">About the Town &mdash; June 2026</div>
-              <div class="article-sub">#3</div>
-            </td>
-            <td class="writer-cell">Philip Vidal</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/about-the-town-june/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">My Silk Roads &ndash; On Elegance</div>
-              <div class="article-sub">#4</div>
-            </td>
-            <td class="writer-cell">Susan Aurinko</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/beauty-at-all-ages/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">250 Years of Garden Stories at the Chicago Botanic Garden</div>
-              <div class="article-sub">#5</div>
-            </td>
-            <td class="writer-cell">Sydney Armstrong</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/botanic-garden/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Biba&rsquo;s Favorite Things: Palm Springs, Part II</div>
-              <div class="article-sub">#6</div>
-            </td>
-            <td class="writer-cell">Biba Roesch</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/biba-palm-springs-2/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Persephone: A Muse in Chicago</div>
-              <div class="article-sub">#7</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/persephone-dinner/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">A Closet Looking for a Home</div>
-              <div class="article-sub">#8 &mdash; St. Chrysostom&rsquo;s Closet</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/st-chrys-closet/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">DateBook &mdash; May 31</div>
-            </td>
-            <td class="writer-cell">Annie Delfosse</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/datebook/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Daily Star &mdash; June 2026</div>
-            </td>
-            <td class="writer-cell">Victoria Martin</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-31/daily-star-june/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ══ MAY 24 INVENTORY ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-<div class="section-title">Article Inventory &mdash; May 24, 2026 (In Progress)</div>
+      <div class="past-item">
+        <strong>May 17, 2026</strong>
+        <span>Chicago Skyline, Peoria Riverfront Museum, Glessner House, Chicago History Museum Guild, Chicago Opera Theater, Bob Glaze Restaurants, Scissor &amp; Fork &bull; 8 articles</span>
       </div>
-      <p class="stage-note">Planning emails received May 18&ndash;19 from Judy. Lineup (subject to change): 1.&nbsp;Brookfield Zoo Gala, Twist Around the World (Emma), 2.&nbsp;Scott Holleran Feature (Ana), 3.&nbsp;Poet Jean Colonomos (Judy &mdash; built), 4.&nbsp;NY Met Fabric Collection (Sig, sends directly to John), 5.&nbsp;Kennilworth Centennial Quilt (Annie), 6.&nbsp;Merit School of Music Gala (Emma), 7.&nbsp;Elizabeth Richter on TimeLine Theater (Annie). No David Sweet this week. Nav chain TBD once all articles arrive. <strong>May 20 update:</strong> Merit Music Gala cover shot received from Judy (Gmail msg 19e452eb7f1d1fe4): &ldquo;Honorees Caroline &amp; Charlie Huebner with daughter Julia (Kyle Flubacker).jpeg&rdquo; &mdash; pending extraction. <strong>May 22 update:</strong> Additional cover photos received from Judy: Brookfield Zoo (msg 19e4a434dff66640), Kenilworth Quilt (msg 19e4c5f0a0f0ccf0, &ldquo;Kate Peterson and her mother Mrs. Patricia Hagenah&rdquo;), Martha Graham extra photos &mdash; author + book cover (msg 19e4f2dc333f7e09), cover confirmed = Unknown-2.jpeg. Sig sent Met Fabric blast teaser + cover (msg 19e4ae2b70638f47). Graduation Dos &amp; Don&rsquo;ts cover shot received (msg 19e4fbb4c6906341) &mdash; no folder yet, likely future edition.</p>
-
-      <table class="edition-table">
-        <thead>
-          <tr>
-            <th style="width: 46%;">Article</th>
-            <th style="width: 22%;">Writer</th>
-            <th style="width: 18%;">Status</th>
-            <th style="width: 10%;" class="center">Dev2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-<div class="article-name">Brookfield Zoo Gala: Twist Around the World</div>
-              <div class="article-sub">Hero (#1) &mdash; Cover photo received (msg 19e4a434dff66640, Judy May 21, file: 260423_Whirl_2026_FM_0358.jpeg). Article text pending from Emma.</div>
-            </td>
-            <td class="writer-cell">Emma Muhleman</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/brookfield-zoo-gala/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Scott Holleran Feature</div>
-              <div class="article-sub">#2 &mdash; Article and photos pending from Ana.</div>
-            </td>
-            <td class="writer-cell">Ana Baca</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/scott-holleran/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Martha Graham When She Danced a Cold-War Peace Plan: A Memory in Poetry</div>
-              <div class="article-sub">Built May 19 &mdash; text complete. Photos: msg 19e4019667ab2696: Unknown-2.jpeg (cover &mdash; confirmed by Judy May 22), Martha-Graham-Letter-to-the-World (inline). Additional from msg 19e4f2dc333f7e09 (Judy May 22): jeancolonomos-cutout (author photo), 51EdIFFvarL (book cover). All 4 photos need extraction.</div>
-            </td>
-            <td class="writer-cell">Jean Colonomos</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-24/martha-graham-cold-war/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">NY Met Fabric Collection</div>
-              <div class="article-sub">#4 &mdash; Sig sent blast teaser + cover photo (msg 19e4ae2b70638f47, May 21, file: IMG_4745.JPG). Image credit: &ldquo;Indian Palampore,&rdquo; 18th century, The Met. Full article text still pending from Sig.</div>
-            </td>
-            <td class="writer-cell">Sigalit Zetouni</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/met-fabric-collection/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Kenilworth&rsquo;s Centennial Quilt</div>
-              <div class="article-sub">#5 &mdash; Cover photo received (msg 19e4c5f0a0f0ccf0, Judy May 21, file: IMG_4397 2.jpeg, caption: &ldquo;Kate Peterson and her mother Mrs. Patricia Hagenah&rdquo;). Article text pending from Annie/Mary Grant.</div>
-            </td>
-            <td class="writer-cell">Mary Grant (via Annie)</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/kenilworth-centennial-quilt/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Merit School of Music Gala</div>
-<div class="article-sub">#6 &mdash; Cover photo received (msg 19e452eb7f1d1fe4). Article text pending from Emma.</div>
-            </td>
-            <td class="writer-cell">Emma Muhleman</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/merit-school-of-music/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">TimeLine Theater</div>
-              <div class="article-sub">#7 &mdash; Judy sending to Annie. Article pending from Elizabeth Richter.</div>
-            </td>
-            <td class="writer-cell">Elizabeth Dunlop Richter (via Annie)</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/timeline-theater/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">DateBook &mdash; May 24</div>
-            </td>
-            <td class="writer-cell">Annie Delfosse</td>
-            <td><span class="badge badge-missing">Placeholder</span></td>
-            <td><a href="../editions/2026-05-24/datebook/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ══ MAY 17 INVENTORY ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-<div class="section-title">Article Inventory &mdash; May 17, 2026 &mdash; Published</div>
-        <a href="https://chicagoclassicmag.com/editions/2026-05-17/chicago-skyline/" target="_blank" class="btn-stage">Live &#8599;</a>
+      <div class="past-item">
+        <strong>May 10, 2026</strong>
+        <span>Kentucky Derby, Chicago Train History, Newberry Awards, Inis M&oacute;r, Intuit Art Party, Detroit, Bridge of Sighs, Ordinary People &bull; 9 articles</span>
       </div>
-      <p class="stage-note">Nav chain: chicago-skyline &rarr; peoria-riverfront-museum &rarr; glessner-house &rarr; guild-chicago-history-museum &rarr; chicago-opera-theater &rarr; bob-glaze-restaurants &rarr; scissor-and-fork &rarr; project-styling. <strong>Updated May 16:</strong> Chicago Skyline expanded to 19 photos (15 additional from Ethan Cotton Drive folder, decoded from Drive MCP). Scissor and Fork 4 photos extracted from PDF (Google Doc shared by Deedee El Bego via Judy). Full content/caption audit completed &mdash; all text, photos, captions verified against source emails.</p>
-
-      <table class="edition-table">
-        <thead>
-          <tr>
-            <th style="width: 46%;">Article</th>
-            <th style="width: 22%;">Writer</th>
-            <th style="width: 18%;">Status</th>
-            <th style="width: 10%;" class="center">Dev2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="article-name">Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline</div>
-              <div class="article-sub">Photography &mdash; Hero (#1). 19 photos from Ethan Cotton Drive folder (folder 173B4uUrF4YzB6ywyrQe7lZvy7B2Brz8S). No captions per Judy. Byline: &ldquo;Photographs and text by Ethan Cotton.&rdquo;</div>
-            </td>
-            <td class="writer-cell">Ethan Cotton</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/chicago-skyline/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">The Promise of Liberty: Peoria&rsquo;s Gift to the 250th Celebration</div>
-              <div class="article-sub">Culture &amp; Travel &mdash; Ready. 10 photos extracted (cover + 9). All captions verified vs Judy email. Byline present.</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/peoria-riverfront-museum/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Glessner House Celebrates 60 Years</div>
-              <div class="article-sub">Chicago History &mdash; Ready. 12 photos extracted from Ana email (msg 19e2d7579f2f93a9). All 12 captions + cover verified. Photos 10 &amp; 11 have no captions (per source).</div>
-            </td>
-            <td class="writer-cell">William Tyre</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/glessner-house/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">A Celebration of Liberty: Guild of the Chicago History Museum</div>
-              <div class="article-sub">Arts &amp; Society &mdash; Ready. 3 photos extracted (msg 19e270fed10e2baa). Cover caption: &ldquo;Guild Co-Chairs Connie Barkley and Erica Meyer.&rdquo; All captions verified.</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/guild-chicago-history-museum/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Columbia College Fashion</div>
-              <div class="article-sub">Fashion &mdash; Ready. 8 photos placed. Cover caption: &ldquo;Contestant Chloe Boehm and parents. Photography by Ellen Sharba.&rdquo; Article text from Word doc (msg 19e24a6676bb5063).</div>
-            </td>
-            <td class="writer-cell">Marcy Carmack</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/project-styling/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Chicago Opera Theater Gala: Murder at the Opera</div>
-              <div class="article-sub">Arts &amp; Society &mdash; Ready. 24 Drive photos (Emma msg 19e2f98952361c4c) + cover (photo-18 = Judy Blau). 25 captions verified. Note: Emma numbered two photos as &ldquo;Photo 21&rdquo; &mdash; slots 21 &amp; 22 share same file.</div>
-            </td>
-            <td class="writer-cell">Emma Muhleman / Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/chicago-opera-theater/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Chicago&rsquo;s Best New Restaurants</div>
-              <div class="article-sub">Dining &mdash; Ready. 19 photos extracted (msg 19e2faeabfb4ee4a). No captions per Emma. Globalphile.com link added May 17 per Judy request.</div>
-            </td>
-            <td class="writer-cell">Bob Glaze</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/bob-glaze-restaurants/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Scissor and Fork</div>
-              <div class="article-sub">Neighborhood &mdash; Ready. 4 photos extracted from Google Doc PDF (shared by Judy, May 16). Text from msg 19e1b9f7cffdb923.</div>
-            </td>
-            <td class="writer-cell">Deedee El Bego</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-17/scissor-and-fork/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">DateBook &mdash; May 17</div>
-              <div class="article-sub">Events Calendar &mdash; Built May 16 from Annie&rsquo;s email. 25 events (May&ndash;Dec 2026). Judy&rsquo;s June 19 Guild event inserted. No photos.</div>
-            </td>
-            <td class="writer-cell">Annie Delfosse</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-17/datebook/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="stage-note" style="margin-top:16px;"><strong>Ready (8):</strong> Chicago Skyline (Ethan Cotton), Peoria Riverfront Museum (Judy), Glessner House (William Tyre), Guild Chicago History Museum (Judy), Chicago Opera Theater (Emma/Judy), Bob Glaze Restaurants (Bob Glaze), Project Styling (Marcy Carmack), Scissor and Fork (Deedee El Bego). <strong>Text Only (1):</strong> DateBook (no photos expected). Full content/caption audit completed May 16. May 17 check: Globalphile.com link added to Bob Glaze article; June 19 Guild/History Museum event confirmed in DateBook; writer bios confirmed current. Scissor and Fork: Judy sent 1 screenshot photo (msg 19e3264b10edae33) &mdash; pending extraction when credentials available.</p>
-    </div>
-
-    <!-- ══ MAY 10 PUBLISHED (REFERENCE) ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-        <div class="section-title">May 10, 2026 &mdash; Published (Reference)</div>
-        <a href="https://chicagoclassicmag.com/editions/2026-05-10/kentucky-derby/" target="_blank" class="btn-stage">Live &#8599;</a>
+      <div class="past-item">
+        <strong>May 3, 2026</strong>
+        <span>Lake Forest Preservation Foundation, Bill Kurtis &amp; Music Institute, About the Town, FACETS, St. James Cathedral, Origami &bull; 9 articles</span>
       </div>
-      <p class="stage-note">Nav chain: kentucky-derby &rarr; train-history-part-three &rarr; newberry-awards &rarr; guinness-inis-mor &rarr; intuit-art-party &rarr; detroit &rarr; signs &rarr; ordinary-people &rarr; anti-cruelty-bonded-pair. Ethan Cotton (Chicago Skyline) moved to May 17.</p>
-
-      <table class="edition-table">
-        <thead>
-          <tr>
-            <th style="width: 46%;">Article</th>
-            <th style="width: 22%;">Writer</th>
-            <th style="width: 18%;">Status</th>
-            <th style="width: 10%;" class="center">Dev2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="article-name">The Kentucky Derby Is Dynamic and Distinguished</div>
-              <div class="article-sub">Unsung Gems &mdash; Hero (#1). 3 photos pending. Gmail msg 19dfef4437244ade (Judy, May 6).</div>
-            </td>
-            <td class="writer-cell">David A. F. Sweet</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-10/kentucky-derby/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Chicago: An Express History, Part Three</div>
-              <div class="article-sub">Chicago History &mdash; 6 photos pending. Gmail msg 19e030334c08b963 (Ana Baca, May 7).</div>
-            </td>
-            <td class="writer-cell">Jackson LeJeune</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-10/train-history-part-three/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">An Enchanted Evening: The Newberry Library Awards Dinner</div>
-              <div class="article-sub">Arts &amp; Culture &mdash; Built May 9. Cover (Joe &amp; Meg Flippin) + 5 body photos from Emma/Judy (msgs 19e0b1de38b2ae6e, 19dfefe2018f4145).</div>
-            </td>
-            <td class="writer-cell">Emma Muhleman</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-10/newberry-awards/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">The First Guinness on Inis M&oacute;r</div>
-              <div class="article-sub">Travel &mdash; Built May 9. Text only. 4 photos from Gmail msg 19df8accaf8e9cac pending extraction.</div>
-            </td>
-            <td class="writer-cell">Francesco Bianchini</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-10/guinness-inis-mor/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Life Is an Art at Intuit Art Museum</div>
-              <div class="article-sub">Arts &amp; Culture (Click Click) &mdash; Built May 9. 18 photos placed in article order. By Judy Carmack Bross.</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-published">Ready</span></td>
-            <td><a href="../editions/2026-05-10/intuit-art-party/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">A Visit to Detroit</div>
-              <div class="article-sub">Travel &mdash; Stub only (&ldquo;Article coming soon&rdquo;). No text or photos received from Annie/Elizabeth yet.</div>
-            </td>
-            <td class="writer-cell">Elizabeth Dunlop Richter</td>
-            <td><span class="badge badge-missing">Stub</span></td>
-            <td><a href="../editions/2026-05-10/detroit/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Bridge of Sighs: A Sigh Is Just a Sigh?</div>
-              <div class="article-sub">Facts &amp; Froth &mdash; Built May 9. Closing paragraph + Shakespeare quote added. <strong>TODO:</strong> photo-02.jpg and photo-03.jpg are in folder but not yet placed in article.</div>
-            </td>
-            <td class="writer-cell">Jill Lowe</td>
-            <td><span class="badge badge-pending">Near Ready</span></td>
-            <td><a href="../editions/2026-05-10/signs/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">Rising Son: Movie Review of Ordinary People</div>
-              <div class="article-sub">Film &mdash; Built May 9. Text only. Photos from Gmail msg 19dfa2e70402239d pending extraction.</div>
-            </td>
-            <td class="writer-cell">Scott Holleran</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-10/ordinary-people/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">A Bonded Pair: Friends Who Want to Share a Home Together</div>
-              <div class="article-sub">Community &mdash; Built May 8. 5 photos pending. Gmail msg 19e076e123bb8489 (Judy, May 8).</div>
-            </td>
-            <td class="writer-cell">Judy Carmack Bross</td>
-            <td><span class="badge badge-pending">Text Only</span></td>
-            <td><a href="../editions/2026-05-10/anti-cruelty-bonded-pair/" class="open-link" target="_blank">Open &#8599;</a></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="article-name">DateBook &mdash; May 10</div>
-              <div class="article-sub">Events Calendar &mdash; Pending from Annie Delfosse.</div>
-            </td>
-            <td class="writer-cell">Annie Delfosse</td>
-            <td><span class="badge badge-missing">Pending</span></td>
-            <td><span class="stage-dash">&mdash;</span></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="stage-note" style="margin-top:16px;"><strong>Ready (2):</strong> Newberry Awards (Emma), Intuit Art Party (Judy). <strong>Near Ready (1):</strong> Bridge of Sighs (2 photos not placed). <strong>Text Only (4):</strong> Kentucky Derby, Chicago Trains 3, Guinness, Ordinary People, Bonded Pair. <strong>Stub (1):</strong> Detroit. <strong>Pending (1):</strong> DateBook. <strong>Moved to May 17:</strong> Chicago Skyline (Ethan Cotton).</p>
-    </div>
-
-    <!-- ══ READER ENGAGEMENT ══ -->
-    <div class="dash-section">
-      <div class="section-head">
-        <div class="section-title">Reader Quick Votes &mdash; Recent</div>
-        <a href="../reader-comments.html" target="_blank" class="btn-stage">Full Comments &#8599;</a>
+      <div class="past-item">
+        <strong>April 26, 2026</strong>
+        <span>Rush Hospital, Chicago Trains, Biba's Palm Springs, Mona Lisa, Joyspan, BandWith, Game-Changers LFHS, Astrid Greve-Spencer &bull; 11 articles</span>
       </div>
-      <p class="stage-note">Votes received Apr 26&ndash;30 &mdash; April 26 edition: <strong>Brit Marling</strong> (7 Yes), <strong>Biba&rsquo;s Favorite Things</strong> (11 Yes, 1 No), <strong>Celebrating Twenty Years</strong> (5 Yes), <strong>Chicago Train History</strong> (4 Yes), <strong>Rush Spring Luncheon</strong> (3 Yes), <strong>Madeira</strong> (3 Yes). Past editions: various. April 26 total: 33 Yes, 1 No.</p>
-      <p class="stage-note">Vote received May 2: <strong>My Silk Road</strong> (1 Yes) &mdash; needs logging to reader-comments.html. Reader left a comment on silk-roads article from production site.</p>
-      <p class="stage-note">Votes received May 3&ndash;4 (May 3 edition, production): <strong>Preservation Foundation</strong> (6 Yes), <strong>Music Institute / Bill Kurtis</strong> (4 Yes), <strong>Sesquicentennial Gala / St. James</strong> (4 Yes), <strong>About the Town</strong> (3 Yes), <strong>Stephane St Jaymes</strong> (2 Yes, 1 No &mdash; notable), <strong>Origami</strong> (1 Yes). Total: 20 Yes, 1 No.</p>
-      <p class="stage-note">Votes received May 4 (late) &amp; May 5: <strong>Doris Kearns Goodwin / Rush Spring Luncheon</strong> (1 Yes, May 4 &mdash; not in previous tally), <strong>Facets Children&rsquo;s Programs</strong> (2 Yes, May 5 &mdash; from production site). Additional: 3 Yes.</p>
-      <p class="stage-note">Votes received May 7&ndash;8 (production): <strong>Chicago: An Express History Part Two</strong> (1 Yes, May 7 &mdash; May 3 edition), <strong>Honey Child</strong> (1 Yes, May 8 &mdash; March 15 edition). Additional: 2 Yes.</p>
-      <p class="stage-note">Votes received May 9&ndash;10 (production): <strong>Biba&rsquo;s Favorite Things: Palm Springs</strong> (1 Yes, May 9 &mdash; March 29 edition), <strong>Preservation Foundation</strong> (1 Yes, May 10 &mdash; May 3 edition), <strong>The First Guinness on Inis M&oacute;r</strong> (1 Yes, May 10 &mdash; May 10 edition), <strong>Rising Son: Ordinary People</strong> (1 Yes, May 10 &mdash; May 10 edition). Also: 3 reader comment form submissions received (Inis M&oacute;r, Bonded Pair, Biba&rsquo;s Palm Springs) &mdash; appear to be empty submissions (no comment text visible). Additional: 4 Yes.</p>
-      <p class="stage-note">Votes received May 10 (eve)&ndash;11 (production): <strong>A Taste of Detroit</strong> (3 Yes), <strong>A Bonded Pair</strong> (1 Yes), <strong>Bridge of Sighs</strong> (2 Yes &mdash; including 1 from Portuguese-translated page via Google Translate), <strong>Rising Son: Ordinary People</strong> (1 Yes, 2nd), <strong>The First Guinness on Inis M&oacute;r</strong> (1 Yes, 2nd). Total new: 8 Yes. Additional 8+ comment form submissions received (Bonded Pair &times;3, Detroit &times;3, Preservation Foundation &times;1, Bridge of Sighs &times;1) &mdash; HTML-only emails, content not retrievable. Logged in reader-comments.html.</p>
-      <p class="stage-note">Votes received May 11 (pm)&ndash;12 (production): <strong>The First Guinness on Inis M&oacute;r</strong> (1 Yes, 3rd), <strong>An Enchanted Evening: Newberry Library Awards Dinner</strong> (1 Yes), <strong>Chicago: An Express History, Part Three</strong> (2 Yes), <strong>A Taste of Detroit</strong> (1 Yes, 4th), <strong>Bridge of Sighs</strong> (1 Yes, 3rd). Total new: 6 Yes. Also 3 new empty comment form submissions (Bonded Pair, Chicago Train Part Three, Detroit) &mdash; HTML-only, no text retrieved. <strong>Updated May 10 edition tally: 19 Yes.</strong> Logged in reader-comments.html.</p>
-      <p class="stage-note"><strong>Votes/comments May 14&ndash;16:</strong> No new Quick Votes or reader comments received since May 13. Last confirmed activity: BandWith comment (May 13 14:48) and Kentucky Derby comment (May 13 22:32) &mdash; both HTML-only, content not retrievable. 1 spam submission (nbalyk@wailo.cloudns.asia, May 13) &mdash; ignored.</p>
-      <p class="stage-note"><strong>Scott Holleran note (May 10):</strong> Scott reported via Judy that the full version of his Ordinary People movie review is not on the site (citing Elizabeth McGovern not mentioned). Judy forwarded a .docx attachment. Verified: dev2 and master article bodies are identical and have always included Elizabeth McGovern (3 mentions) since initial commit. .docx attachment not accessible without Gmail API credentials. Article appears complete &mdash; Scott may have seen a cached/stale version. Flag for manual review if Scott follows up.</p>
-      <p class="stage-note"><strong>May 17 Issue Planning (May 11):</strong> Judy sent lineup: 1. Chicago Skyline Photos (Ethan Cotton, WeTransfer), 2. Peoria Riverfront Museum America250 (Ana), 3. Glessner House by William Tyre (Ana), 4. Guild of Chicago History Museum Gala (Annie), 5. Sigalit Zetouni article (Sig sends directly), 6. St. Thomas the Apostle Gardens &mdash; TBD, 7. Chicago Opera Theater Gala (Emma), 8. Bob Glaze, Chicago&rsquo;s Best New Restaurants (Emma), 9. Deedee El Bego Barber Shop (Judy). Judy also forwarded St. Thomas the Apostle photo essay (7 photos, captions included) &mdash; first batch of 4 batches. Cover photo for Peoria story sent as attachment (Gmail msg 19e1717f89c576f6, &lsquo;1-2.jpeg&rsquo;). No article text received yet.</p>
-      <p class="stage-note"><strong>May 17 Planning Update (May 12):</strong> #6 St. Thomas the Apostle Gardens <strong>postponed to May 24</strong>; replaced by <strong>Marcy Carmack &mdash; short fashion article on Columbia College</strong>. Marcy will send blurb + photo May 13; article due Wednesday May 13. Cover photo received for <strong>Chicago Opera Theater Gala</strong> (Gmail msg 19e193348bacc330, &ldquo;Judy Blau inspects the crime scene .jpeg&rdquo;). <strong>Scissor and Fork (Deedee El Bego) article text received</strong> in full (Gmail msg 19e1b9f7cffdb923) &mdash; no photos yet. Ethan Cotton resent WeTransfer for Chicago Skyline photos (Gmail msg 19e17f8401a7d394, May 11); Judy notes intro text already in hand, asks Ethan about captions &mdash; awaiting WeTransfer link. Updated May 17 lineup: 1.&nbsp;Chicago Skyline (Ethan), 2.&nbsp;Peoria Riverfront Museum (Ana), 3.&nbsp;Glessner House (Ana), 4.&nbsp;Guild/Chicago History Museum Gala (Annie), 5.&nbsp;Sigalit (Sig), 6.&nbsp;Marcy Carmack fashion/Columbia College, 7.&nbsp;Chicago Opera Theater Gala (Emma), 8.&nbsp;Bob Glaze Best New Restaurants (Emma), 9.&nbsp;Scissor and Fork/Deedee El Bego (Judy). Guild cover photo also received (msg 19e1c63b83f78b82, &ldquo;IMG_6794.jpeg&rdquo; &mdash; Connie Barkley left, Erica Meyer right).</p>
-      <p class="stage-note"><strong>Spam submissions (May 12):</strong> 5 bot submissions received to editor@2ccmag.com &mdash; cryptocurrency transfer scam messages from charvard1@shopcobe.com and sofanordcasa@onlinecmail.com. Ignored. Also 5 &ldquo;Action Required: Activate FormSubmit&rdquo; emails received (17:36 UTC) &mdash; ignored per standard practice.</p>
-      <p class="stage-note"><strong>May 13 build:</strong> Scissor and Fork article built at editions/2026-05-17/scissor-and-fork/index.html (text only; photos pending). Cover photos for Opera Theater and Guild noted but not extracted (Python venv/Gmail credentials not set up in this session).</p>
-      <p class="stage-note"><strong>May 13&ndash;14 activity:</strong> 2 reader form interactions received from production site (chicagoclassicmag.com) &mdash; <strong>BandWith: A New Musical Home in East Garfield Park</strong> (msg 19e21cf783d31c84, May 13 14:48 UTC) and <strong>The Kentucky Derby Is Dynamic and Distinguished</strong> (msg 19e23786e9abe0a9, May 13 22:32 UTC). Full comment body not retrievable (HTML-only email); unclear whether these are Quick Votes or empty Reader Comments. Also 1 new crypto spam submission (nbalyk@wailo.cloudns.asia) &mdash; ignored. <strong>Marcy Carmack Columbia College article materials received:</strong> Word doc &ldquo;project STYLING May 6.docx&rdquo; (msg 19e24a6676bb5063, May 14) + photos (msgs 19e1e3362ca614ff, 19e2558b25d0b547); caption confirmed &ldquo;Contestant Chloe Boehm and parents,&rdquo; photographer Ellen Sharba. Article text: &ldquo;Inspired by &lsquo;Project Runway&rsquo; Columbia College had their 2nd annual &lsquo;Project Styling&rsquo;.&rdquo; Full article in Word doc; awaiting venv/extraction to build HTML. <strong>Guild photo caption confirmed:</strong> all 3 photos show Connie Barkley (left) and Erica Meyer (right) (Judy email msg 19e1c63b83f78b82).</p>
+      <div class="past-item">
+        <strong>April 19, 2026</strong>
+        <span>Route 66 in Chicago, Daffodils, Junior League, Columbia College, IWA Women Leaders, At Last the Daffodils &bull; 8 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>April 12, 2026</strong>
+        <span>Natya Dance Theatre, Flax and Linen, Dwight Cleveland Posters, Chanel Exhibit, Metaphors: Fondazione Prada Milan &bull; 7 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>March 29, 2026</strong>
+        <span>Backgammon Club, An Island Idyll, Marwen, Landmarks Illinois, Tiffany at Driehaus, American Writers Museum, The Shape of Spring, Biba's Palm Springs &bull; 8 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>March 22, 2026</strong>
+        <span>Jessie Mueller, Chicago Chamber Music Society, Unsung Gems LFHS, Two Sisters and a Piano, Pok&eacute;mon Fossil Museum, Kanuga, Building Blocks &bull; 7 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>March 15, 2026</strong>
+        <span>Guardian of San Pietro, Honey Child, Coco Chanel Exhibit, ICA Broadway, Unsung Gems Philadelphia, Little Village, Anti-Cruelty &bull; 7 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>March 8, 2026</strong>
+        <span>Dr. Rebecca Tilles, DateBook, Where Care Happens, Aqu&iacute; en Chicago, Mexican Railroad Heritage, Lunar New Year &bull; 7 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>March 1, 2026</strong>
+        <span>Wells Street Kitchen, Arts Club Members Show, Ernest Hemingway, The Case of the Missing Caramel, About the Town &bull; 5 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>February 22, 2026</strong>
+        <span>Cynthia Safford-Mulcahy, The Downsizing Dilemma, Sea Cloud Spirit, IWA Women Extraordinaire, Blackhawks Goalie, Bag Charms &bull; 7 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>February 15, 2026</strong>
+        <span>Alicia Ziegler, Children's Research Fund Ball, Where to Eat on Halsted, Winter in Antibes, My Silk Roads, Boba Tea &bull; 6 articles</span>
+      </div>
+      <div class="past-item">
+        <strong>February 8, 2026</strong>
+        <span>Biba's Linda Heister, Lincoln Park History, Mimosa, About the Town, Ice In Her Veins, Iron Lung &bull; 6 articles &bull; Launch edition</span>
+      </div>
     </div>
-
   </div>
 
-  <footer>
-    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
-  </footer>
-
+</div>
 </body>
 </html>
