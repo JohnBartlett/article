@@ -95,7 +95,29 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 ### FormSubmit — "Action Required: Activate FormSubmit"
 - Ignore entirely
 
-## Step 3 — Update editors pages
+## Step 3 — Update EMAIL_LOG.md
+
+After processing each email, update `EMAIL_LOG.md` at the repo root:
+
+- **New actionable email not yet in the log** → add a row under the correct edition section with status ⏳
+- **Action fully applied this session** → update status to ✅ and add a note describing what was done
+- **Action started but blocked** (waiting on another email, missing photos, needs Judy input) → status 🔁, note what's missing
+- **Irrelevant / spam / activation email** → status ⬛, brief note
+
+Row format:
+```
+| Jun 5 | Judy | Short subject summary | `msgid` | ✅ | What was done |
+```
+
+If no edition section exists yet for the emails being processed, create one (e.g. `## June 14 Edition`).
+
+After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATUS.md`:
+- Mark article rows as ✅ if now complete
+- Check off any action items that were completed this session
+- Add new action items if the email revealed something outstanding
+
+## Step 4 — Update editors pages
+
 
 After applying all changes:
 
@@ -107,7 +129,7 @@ After applying all changes:
 - Update progress count and bar if articles moved to Ready
 - Update Decisions Needed if Judy flagged holds, replacements, or outstanding items
 
-## Step 4 — Commit and push
+## Step 5 — Commit and push
 
 ```bash
 git add <changed files>
