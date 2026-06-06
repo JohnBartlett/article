@@ -169,6 +169,10 @@ Internally, convert to structured data before generating HTML. JSON is the clean
 
 **Key rule:** Whatever format events arrive in, every event must have the same fields so HTML generation is consistent.
 
+### Past events — auto-detection required
+
+Past events must be visually dimmed and labeled "Past" using **JavaScript auto-detection** — compare each event's date to `new Date()` at page load and add a `.past` class + "Past" badge. Never hardcode past/future state in HTML classes. This ensures the DateBook stays accurate as time passes without manual edits.
+
 ## Analytics Reporting
 
 A script `tools/ga4_report.py` is available to collect performance stats (users, sessions, page views) from Google Analytics 4.
@@ -339,13 +343,21 @@ source .venv/bin/activate
 **Critical: Email is the ONLY source of truth.** Articles and photos are sent to john.bartlett@gmail.com by contributors, NOT shared via folders or Drive links. Always check emails first.
 
 **Article Structure (Required for All Articles):**
-- **Hero image:** First contributor image placed in `<figure>` right after byline — use the original filename, never `photo-01.jpeg`
-- **Inline figures:** Remaining photos as `<figure>` elements throughout article body
-- **Image sizing:** Use `width: 100%; height: auto;` to prevent distortion
-- **Author link:** In byline only: `By <a href="../../../about.html#author-id">Author Name</a>`
-- **NO author bio in article** — bio is linked from About section only
-- **Previous/Next nav:** With thumbnail images at bottom (not just text links)
-- **Internal nav:** On dev2 only (marked with `<!-- dev2-only -->` comments)
+
+Every article must have ALL of the following before it is considered complete. Audit immediately after building:
+
+1. **Header** — logo, main nav (Home, About, Subscribe, Advertise, DateBook, Astrochart, hamburger menu), internal-nav (dev2 only, commented out on dev/master)
+2. **Article label** — category in red small-caps
+3. **H1 title** — matches `<title>` tag
+4. **Byline** — `By <a href="../../../about.html#author-id">Author Name</a> • [Date]`
+5. **Hero image** — `<figure>` immediately after byline; `width:100%; height:auto`; original filename
+6. **Article body** — verbatim contributor text; inline `<figure>` elements with correct captions; `figure img { width:100%; height:auto; display:block; }` in CSS
+7. **About the Author link** — centered, before feedback widget: `About the Author: [Name] →` linking to `about.html#anchor`
+8. **Feedback widget** — vote buttons + comment form
+9. **Article nav** — prev and next links, each with a **70×70px thumbnail** (`object-fit:cover`) and article title. Thumbnail omitted only when linking to the homepage.
+10. **Footer** — social links + copyright
+
+**If anything is missing after building:** flag it explicitly ("I found X is missing and want to re-check") before moving on. In auto mode, fix silently and log for post-mortem.
 
 **Photo Extraction Methods:**
 
@@ -403,6 +415,10 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 12. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
 13. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
 14. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
+15. **Sending emails without asking** — Always ask "Should I send this or save as a draft?" before sending any email. Never send autonomously unless explicitly told to.
+16. **Assuming caption = label before image** — The label appearing before an image in an email body is *sometimes* a caption, but may also be a placement instruction (e.g. "Photo 1", "Cover"). Verify from context; when uncertain, ask before writing `<figcaption>`.
+17. **Assuming only Annie specifies photo layout** — Any contributor (Ana, Emma, Judy, the author) may define photo placement order in their article. Always check the source email for placement instructions before building. If the intended order is unclear, ask.
+18. **Silently correcting contributor spelling** — Never fix a typo in contributor text without flagging it to the editor first. Use verbatim text and note the suspected error.
 
 ### Recurring email workflow
 
