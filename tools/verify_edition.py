@@ -29,6 +29,7 @@ def parse_html(content):
         'byline_anchor': None,   # the #fragment in the byline author link
         'has_feedback': False,
         'has_footer': False,
+        'has_social_icons': False,
         'has_h1': False,
         'has_byline': False,
     }
@@ -53,6 +54,9 @@ def parse_html(content):
 
     # footer
     facts['has_footer'] = '<footer' in content
+    # social icons: footer should have SVG icons, not plain text links
+    footer_m = re.search(r'<footer>(.*?)</footer>', content, re.DOTALL)
+    facts['has_social_icons'] = bool(footer_m and '<svg' in footer_m.group(1))
 
     # datebook link in nav
     db_m = re.search(r'<a href="([^"]*datebook[^"]*)"[^>]*>DateBook</a>', content)
@@ -126,6 +130,8 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         issues.append("missing feedback widget")
     if not facts['has_footer']:
         issues.append("missing footer")
+    if not facts['has_social_icons']:
+        issues.append("footer has text social links instead of SVG icons")
 
     # ── Internal-nav state ──
     if facts['internal_nav_active'] and facts['internal_nav_commented']:
