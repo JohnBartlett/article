@@ -141,11 +141,12 @@
       </div>
 
       <nav class="article-nav">
-        <a class="prev" href="../../../index.html">
-          <div><span class="nav-label">&#8592; Previous</span>Home</div>
+        <a class="prev" href="../minds-matter/">
+          <img src="../minds-matter/Mark%20%26%20Robin%20Tebbe%20IMG_2467.jpeg" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>Robin Loewenberg Tebbe: Minds Matter</div>
         </a>
-        <a class="next" href="../../../index.html">
-          <div><span class="nav-label">Next &#8594;</span>Home</div>
+        <a class="next" href="../seminary-gardens/">
+          <div><span class="nav-label">Next &#8594;</span>St. Thomas the Apostle Church: An Urban Garden and Community Oasis</div>
         </a>
       </nav>
 
@@ -162,9 +163,13 @@
   </footer>
 
   <script>
+    var prevUrl = '../minds-matter/';
+    var nextUrl = '../seminary-gardens/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
