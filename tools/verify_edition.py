@@ -63,16 +63,25 @@ def parse_html(content):
     if db_m:
         facts['datebook_href'] = db_m.group(1)
 
-    # article-nav prev/next
+    # article-nav prev/next + thumbnail presence
     nav_m = re.search(r'<nav class="article-nav">(.*?)</nav>', content, re.DOTALL)
+    facts['nav_thumbs'] = {}   # direction -> has_img (True/False/None if home link)
     if nav_m:
         nav_html = nav_m.group(1)
-        prev_m = re.search(r'class="prev"[^>]*href="([^"]+)"', nav_html)
-        next_m = re.search(r'class="next"[^>]*href="([^"]+)"', nav_html)
-        if prev_m:
-            facts['prev_href'] = prev_m.group(1)
-        if next_m:
-            facts['next_href'] = next_m.group(1)
+        for direction in ('prev', 'next'):
+            link_m = re.search(
+                r'class="' + direction + r'"[^>]*href="([^"]+)"(.*?)(?=class="(?:prev|next)"|$)',
+                nav_html, re.DOTALL
+            )
+            if link_m:
+                href = link_m.group(1)
+                body = link_m.group(2)
+                if direction == 'prev':
+                    facts['prev_href'] = href
+                else:
+                    facts['next_href'] = href
+                is_home = href.endswith('index.html') and '../../..' in href
+                facts['nav_thumbs'][direction] = None if is_home else bool(re.search(r'<img[^>]+src=', body))
 
     # all img srcs
     facts['img_srcs'] = re.findall(r'<img[^>]+src="([^"]+)"', content)
@@ -154,19 +163,22 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         if anchor not in about_anchors:
             issues.append(f"byline anchor #{anchor} not found in about.html")
 
-    # ── Nav links ──
+    # ── Nav links + thumbnail presence ──
     for direction, href in [("prev", facts['prev_href']), ("next", facts['next_href'])]:
         if href is None:
             issues.append(f"missing {direction} nav link")
             continue
-        # home link is fine
+        # home link is fine — no thumbnail required
         if href.endswith('index.html') and '../../..' in href:
             continue
         target = (article_dir / href).resolve()
-        # nav links point to sibling dirs; target should contain index.html
         target_index = target / "index.html" if target.is_dir() else target
         if not target_index.exists():
             issues.append(f"{direction} nav target missing: {href}")
+        # thumbnail required for all article-to-article links
+        has_thumb = facts['nav_thumbs'].get(direction)
+        if has_thumb is False:
+            issues.append(f"{direction} nav link missing thumbnail image")
 
     # ── Broken images ──
     broken = []
