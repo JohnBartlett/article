@@ -228,7 +228,8 @@ def verify_edition(edition_date):
         photos = f" [{status_info.get('photos', 0)} photos]" if "photos" in status_info else ""
         print(f"{symbol} {article:30} | {status:15} | {status_info['reason']}{photos}")
 
-        if status not in ("MISSING", "PLACEHOLDER"):
+        NON_ARTICLES = {"datebook", "daily-star", "astrochart"}
+        if status not in ("MISSING", "PLACEHOLDER") and article not in NON_ARTICLES:
             issues = check_article_structure(edition_path, article, about_anchors)
             if issues:
                 all_issues[article] = issues
