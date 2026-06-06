@@ -28,24 +28,25 @@ git rm -rf editors/
 ```
 The `editors/` folder contains the internal editors' hub and must never appear on dev or master.
 
-## Step 2 — Comment out the internal-nav block in index.html
+## Step 2 — Comment out all internal-nav blocks
 
 The `<!-- dev2-only -->` internal editors menu must **not** appear on dev or master.
+This applies to **all HTML files** — index.html AND every article file.
 
-**Before (dev2 state — visible):**
-```html
-<!-- dev2-only -->
-<div class="internal-nav">
-  ...
-</div>
+```bash
+python3 tools/comment_internal_nav.py
+git add -u
 ```
 
-**After (dev/master state — hidden):**
+The script converts every instance of:
+```html
+<!-- dev2-only -->
+<div class="internal-nav">...</div>
+```
+to:
 ```html
 <!-- dev2-only
-<div class="internal-nav">
-  ...
-</div>
+<div class="internal-nav">...</div>
 -->
 ```
 
