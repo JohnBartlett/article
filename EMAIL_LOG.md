@@ -27,6 +27,11 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 5 | Judy | Update on June 7th articles (master list) | `19e978a18d405bf8` | ✅ | Full article list noted; STATUS.md updated |
 | Jun 5 | Judy | Ferris Bueller cover photo (`CC FB Review Parade Image.jpeg`) | `19e9783197461100` | ⏳ | Photo attached; extract to editions/2026-06-07/ferris-bueller/ |
 | Jun 5 | Judy | Ferris Bueller PDF article by Jackson LeJeune | `19e97840f861354b` | ⏳ | PDF attached (`CC Ferris Bueller 40th Anniversary.pdf`); extract text and build article |
+| Jun 5 | Ana | Robin Tebbe: Minds Matter layout v1 (15 photos + cover) | `19e99154679cf6ad` | ⏳ | Extract photos; use revised version below |
+| Jun 5 | Ana | Robin Tebbe: Minds Matter layout REVISED (use this one) | `19e991c22bee8047` | ⏳ | Adds "$1.5M raised, 400 guests" sentence; 15 photos + cover; extract and build |
+| Jun 5 | Ana | Confirming Robin Tebbe layout sent | `19e9919a92f2993f` | ✅ | Acknowledged |
+| Jun 5 | Judy | For this week — DateBook skip; St. Thomas byline = Judy; San Miguel = 2 parts | `19e9988c7382abfe` | ⏳ | Fix seminary-gardens byline to Judy Carmack Bross (not Todd Schwebel); DateBook skipped this week |
+| Jun 5 | Judy | Re: June 7 status update — confirms Ferris Bueller + Robin Tebbe | `19e998a5e671bbdd` | ✅ | Noted |
 
 ## June 14 Edition
 
@@ -36,6 +41,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 1 | Judy/Sig | Sig — Costume Art / Met article discussion | `19e837055ef0dc71` | ✅ | Moved to June 14; Sig delivering by noon Jun 5 |
 | Jun 5 | Sigalit | Image and credit for blast (Walking Dress + La Grande Jatte) | `19e956225d4d31ce` | ⏳ | Photo + credit for Sig's Costume Art article; Judy confirmed running June 14 |
 | Jun 5 | Judy | Re: Image and credit for blast — confirmed June 14 | `19e972b858ed0e15` | ✅ | Judy confirmed; Sig's article is June 14 |
+| Jun 5 | Sigalit | Blast sentence for Costume Art | `19e956d9139ea3b7` | ⏳ | Use on June 14 homepage: "In May 2026, The Costume Institute at the Metropolitan Museum of Art in New York, opened the annual exhibition entitled 'Costume Art,'..." |
 
 ## San Miguel (June 7 Part 1 / June 14 Part 2)
 

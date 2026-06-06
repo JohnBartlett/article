@@ -12,8 +12,8 @@ _Updated: 2026-06-05 (emails logged)_
 | san-miguel | Letter from San Miguel de Allende, Part 1 | Russell Kelley | ✅ | ✅ 25 | — |
 | san-miguel-trip | San Miguel de Allende (trip photos) | Russell Kelley | ✅ | ✅ 25 | Clarify: is this separate from Part 1? |
 | scott-holleran | Scott Holleran short story | Scott Holleran | ✅ | ✅ 2 | Captions: "Images by author courtesy of GrokAI on X." |
-| seminary-gardens | St. Thomas the Apostle Garden | Annie Delfosse | ✅ | ❌ 0 | Waiting on Annie's photos |
-| minds-matter | Robin Tebbe / Minds Matter | Judy Carmack Bross | ✅ | ⚠️ 1 | Ana is building; Judy sending to Ana this morning |
+| seminary-gardens | St. Thomas the Apostle Garden | **Judy Carmack Bross** | ✅ | ❌ 0 | Byline = Judy (not Todd Schwebel); still waiting on Annie's photos |
+| minds-matter | Robin Tebbe / Minds Matter | Judy Carmack Bross | ✅ | ✅ 15+cover | Ana sent revised layout Jun 5; use msg `19e991c22bee8047`; photos need extracting |
 | ferris-bueller | Ferris Bueller's 40th Anniversary | Jackson LeJeune | ❌ | ⚠️ | PDF + cover photo in inbox; needs extraction |
 | sig-costume-art | Costume Art / The Met | Sigalit Zetouni | — | — | **Moved to June 14** — Sig delivering by noon June 5 |
 | datebook | DateBook | Annie Delfosse | ❌ | — | Not started |
@@ -22,7 +22,7 @@ _Updated: 2026-06-05 (emails logged)_
 
 - **Emma** — Ryan Licht Sang photos + Alliance Française article & photos
 - **Annie** — St. Thomas the Apostle garden photos
-- **Ana** — Robin Tebbe / Minds Matter full layout
+- ~~**Ana** — Robin Tebbe / Minds Matter full layout~~ ✅ Received Jun 5
 - **Sig** — Costume Art article, photos, credits → June 14 edition
 
 ## Action Items
@@ -30,7 +30,7 @@ _Updated: 2026-06-05 (emails logged)_
 - [ ] Extract Ferris Bueller article from PDF (msg `19e97840f861354b`) + cover photo (msg `19e9783197461100`)
 - [ ] Swap Heritage Auctions ad to June version — new image `Classic Chicago June 2026.png`, new link `https://comics.ha.com/itm/coming-soon-/p/7468-98001.s?ic4=GalleryView-Thumbnail-071515` (overdue since May 21)
 - [ ] Confirm: are `san-miguel` and `san-miguel-trip` the same article or different?
-- [ ] Build DateBook
+- [x] DateBook — skipped this week per Judy; revisit for June 14
 - [ ] Build homepage for June 7
 - [ ] Update about.html "Our Writers This Week"
 - [ ] Verify nav chain across all articles
