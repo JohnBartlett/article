@@ -49,8 +49,17 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 ### Judy — article text
 - If `/prep-edition` has already run: fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`
 - If prep has not run yet: note the content and report — run `/prep-edition` first
-- Download attached photos: `download_attachment(token, msg_id, att_id, dest_path)`
-- Normalize photos to `photo-01.jpeg`, `photo-02.jpeg`, etc.
+- Download attached photos using the original filename — never rename:
+  ```python
+  for att in list_attachments(token, msg_id):
+      download_attachment(token, msg_id, att['id'],
+          f'editions/YYYY-MM-DD/slug/{att["filename"]}')
+  ```
+- **Never rename contributor image files.** The original filename is the permanent link between a photo and its caption/position. Renaming to `photo-01.jpeg` etc. severs that link.
+- **Before placing any `<figure>` HTML**, build an explicit photo map: `filename → caption (verbatim from email) → placement (after which sentence/paragraph)`. If any field is unknown, stop and find it — never infer captions or placement.
+- **COVER photos** (filename contains "COVER"): use as the homepage card image only. Do not place in the article body unless the contributor explicitly says to AND it has a caption.
+- **Caption vs. placement label**: a label appearing before a photo in an email may be a caption or a placement instruction (e.g. "Photo 1", "Cover"). Verify from context before using as `<figcaption>`. When uncertain, ask.
+- After placing all photos: count `<figure>` elements vs. photos on disk (excluding COVER-only files); for 6+ photo articles, read through the HTML sequentially and confirm each figure is at its specified anchor.
 
 ### Judy — bio updates
 - Locate the author in `about.html` and append the quoted text after the existing bio sentence
