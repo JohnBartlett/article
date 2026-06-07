@@ -81,7 +81,9 @@ Running `vercel deploy --yes` creates a unique preview URL for the current dev2 
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-03-29/driehaus-museum/\"|" editors/edition.html
+EDITION_DATE="YYYY-MM-DD"   # current edition date
+HERO_SLUG="slug"             # hero article slug (first article in homepage order)
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```
@@ -139,6 +141,8 @@ Other skills:
 | `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
+| `/writer-bios` | Look up, add, or update writer bios in `_bios/` and `about.html` |
+| `/prompts` | Quick-reference cheat sheet for common request phrasings |
 | `/retrospective` | End-of-session: gather lessons, draft updates to CLAUDE.md/skills/memory for review, then apply on approval — nothing written without user sign-off |
 
 ## DateBook
@@ -196,8 +200,8 @@ A script `tools/ga4_report.py` is available to collect performance stats (users,
 
 ```bash
 pip install google-analytics-data
-export GA4_PROPERTY_ID="your-numeric-id"
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key.json"
+export GA4_PROPERTY_ID="523654462"
+export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
 python3 tools/ga4_report.py
 ```
 
@@ -224,43 +228,13 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │   └── image006.png        Heritage Auctions banner image
 ├── tools/                  Analytics and reporting scripts
 ├── editions/
-│   ├── 2026-02-08/         Edition 1 — February 8, 2026
-│   ├── 2026-02-15/         Edition 2 — February 15, 2026
-│   ├── 2026-02-22/         Edition 3 — February 22, 2026
-│   ├── 2026-03-01/         Edition 4 — March 1, 2026
-│   ├── 2026-03-08/         Edition 5 — March 8, 2026
-│   ├── 2026-03-15/         Edition 6 — March 15, 2026
-│   ├── 2026-03-22/         Edition 7 — March 22, 2026
-│   │   ├── jessie-mueller/
-│   │   ├── chicago-chamber-music-society/
-│   │   ├── unsung-gems-lfhs/
-│   │   ├── two-sisters-and-a-piano/
-│   │   ├── pokemon-fossil-museum/
-│   │   ├── kanuga/
-│   │   └── building-blocks/
-│   └── 2026-03-29/         Edition 8 — March 29, 2026 (current, in progress)
-│       ├── unsung-gems-backgammon/
-│       ├── an-island-idyll/
-│       ├── marwen/
-│       ├── landmarks-preservation-forward/
-│       ├── american-writers-museum/
-│       └── biba-palm-springs/          (photos only; article pending)
+│   ├── YYYY-MM-DD/         One folder per edition (run `ls editions/` for current list)
+│   │   ├── article-slug/   One subfolder per article
+│   │   │   └── index.html
+│   │   ├── datebook/       Copied from previous edition each week
+│   │   ├── daily-star-MONTH/  Copied from previous edition each week
+│   │   └── thumb-*.jpg     Homepage card thumbnails
 ```
-
-## Current Homepage Article Order (March 29 edition — staged, publishing 10pm March 28)
-
-This order is used for keyboard navigation (N/P keys cycle through):
-
-1. **The Dice Keep Rolling at Trudie's Winnetka Backgammon Club** — David A. F. Sweet (hero)
-2. **An Island Idyll** — Susan Aurinko
-3. **Marwen: Fostering Creativity for the Next Generation** — Jen Huang
-4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
-5. **Tiffany at the Driehaus Museum: Chicago Can't Get Enough** — Judy Carmack Bross
-6. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
-7. **The Shape of Spring** — Marcy Carmack
-8. **Biba's Favorite Things: Palm Springs** — Biba Roesch
-
-Past editions in footer: March 22, March 15, March 8, March 1.
 
 ## Conventions
 
@@ -298,6 +272,7 @@ Past editions in footer: March 22, March 15, March 8, March 1.
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
 8. Use GA4 **disabled** form in new articles (matching `_template/article.html`)
+9. Use inline `<figure>` elements for photos — never carousels (see mistake #10)
 
 ### Updating the homepage for a new edition
 Edit `index.html` (root):
@@ -317,7 +292,7 @@ Edit `index.html` (root):
 3. Use `tools/extract_article_photos.py` to extract attachments to article folder
 4. For PDF articles: setup venv with PyPDF2, manually extract and format text
 5. Create article HTML from `_template/article.html` with extracted content
-6. Add Splide.js photo carousel for images
+6. Place photos as inline `<figure>` elements — never carousels (see mistake #10)
 7. Run `verify_edition.py YYYY-MM-DD` to confirm photos and content
 8. Update homepage card with article image
 9. Deploy to Vercel and verify preview
@@ -458,14 +433,15 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
-- Writers and curators: Our Writers This Week section
+- Writers and curators: More Contributors section (permanent bio cards — persists across editions)
+- "Our Writers This Week" section: edition-specific rotation, updated each week by `/edition-checks`
 - Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
 
 ### Editors menu (Internal nav — dev2 only)
 The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master` (handled automatically by `/stage`).
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
-- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
+- Keep standing links: `reader-comments.html`, `future-articles.html`
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
 - Remove any stale edition-specific links from the prior edition
 
