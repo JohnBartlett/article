@@ -47,6 +47,10 @@ Workflow: `dev2` → `dev` → `master`
 
 Use `/stage` to promote dev2 → dev, and `/publish` to promote dev → master.
 
+**What goes to dev/master:** Only changes that affect what readers see — article HTML, photos, homepage, CSS, JS.
+
+**What stays on dev2 only:** Skills (`.claude/commands/`), CLAUDE.md, `tools/` scripts, `_template/`, memory files, and any other internal tooling. These have no effect on the live site and must never be promoted to dev or master.
+
 ### GA4 per branch
 GA4 is disabled on dev and dev2 to prevent skewing production analytics. The `/stage` skill comments it out when merging to dev; the `/publish` skill restores it before pushing to master.
 
