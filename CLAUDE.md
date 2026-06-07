@@ -135,6 +135,7 @@ Other skills:
 | `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
+| `/retrospective` | End-of-session: gather lessons, draft updates to CLAUDE.md/skills/memory for review, then apply on approval — nothing written without user sign-off |
 
 ## DateBook
 
