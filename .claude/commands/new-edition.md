@@ -29,41 +29,7 @@ For each email, determine:
 - Any photo placement instructions in the text (e.g. "(Photo of X, caption: Y)")
 - Whether Judy has marked any article as held, replaced, or deferred
 
-## Step 3 — Download and place photos
-
-For each photo attachment:
-
-```python
-attachments = list_attachments(token, msg_id)
-for att in attachments:
-    download_attachment(token, msg_id, att['id'],
-        f'editions/YYYY-MM-DD/slug/{att["filename"]}')
-```
-
-**Never rename contributor image files.** Save with the original filename exactly as sent. Renaming severs the caption-to-photo link and scrambles git's rename detection.
-
-If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
-ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
-
-**Before placing any `<figure>` HTML, build an explicit photo map:**
-
-| Filename | Caption (verbatim from email) | Placement (after which sentence/paragraph) |
-|---|---|---|
-| IMG_4824.jpeg | "..." | after byline, as hero |
-| DSC_0012.jpg | "..." | after paragraph beginning "..." |
-
-If any field is unknown, stop and find it from the email before writing HTML. Never infer captions or placement positions.
-
-**COVER photos:** Any file with "COVER" in the filename is the homepage card image. Do NOT include it in the article body unless the contributor explicitly says to AND it has a caption.
-
-**PDF-sourced photos:** PDFs have no embedded layout. Build article text first (no photos), then ask for or find explicit placement instructions before inserting any figures.
-
-**After placing all photos:**
-- Count `<figure>` elements vs. photos on disk — they must match (excluding COVER-only files)
-- For articles with 6+ photos, do a sequential read-through: confirm each `<figure>` appears immediately after its specified anchor sentence
-- Check no photo filename appears more than once in the HTML (duplicate = hero + inline conflict)
-
-## Step 4 — Extract article text
+## Step 3 — Extract article text
 
 **From docx attachment:**
 ```python
@@ -74,9 +40,13 @@ text = re.sub(r'<[^>]+>', ' ', xml)
 text = re.sub(r'\s+', ' ', text).strip()
 ```
 
+**⚠ Word doc extraction is silently lossy.** After building the HTML, do a paragraph-by-paragraph diff against the original `.docx`. Parentheticals, mid-paragraph sentences, and entire paragraphs can disappear with no visible gap. Never assume conversion is complete because the text reads coherently.
+
 **From PDF attachment:**
+```bash
+source .venv/bin/activate  # activate venv first (bash, not Python)
+```
 ```python
-source .venv/bin/activate  # if not already active
 import PyPDF2
 reader = PyPDF2.PdfReader('/tmp/article.pdf')
 text = '\n'.join(page.extract_text() for page in reader.pages)
@@ -94,17 +64,52 @@ with zipfile.ZipFile('/tmp/article.docx') as z:
                 f.write(data)
 ```
 
+**Q&A articles:** Count the number of questions in the source. Verify the exact same count appears in the HTML before marking Ready. Also verify photo-to-person matching by name — never infer which photo shows which person from image content alone.
+
+## Step 4 — Download and place photos
+
+For each photo attachment:
+
+```python
+attachments = list_attachments(token, msg_id)
+for att in attachments:
+    download_attachment(token, msg_id, att['id'],
+        f'editions/YYYY-MM-DD/slug/{att["filename"]}')
+```
+
+**Never rename contributor image files.** Save with the original filename exactly as sent. Renaming severs the caption-to-photo link and scrambles git's rename detection.
+
+If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
+ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
+
+**Before placing any `<figure>` HTML, build an explicit photo map** (now that you have the article text to identify anchor sentences):
+
+| Filename | Caption (verbatim from email) | Placement (after which sentence/paragraph) |
+|---|---|---|
+| IMG_4824.jpeg | "..." | after paragraph beginning "..." |
+| DSC_0012.jpg | "..." | after sentence ending "..." |
+
+If any field is unknown, stop and find it from the email before writing HTML. Never infer captions or placement positions.
+
+**COVER photos:** Any file with "COVER" in the filename is the homepage card image. Do NOT include it in the article body unless the contributor explicitly says to AND it has a caption.
+
+**PDF-sourced photos:** PDFs have no embedded layout. Ask for or find explicit placement instructions before inserting any figures — never guess based on content.
+
+**After placing all photos:**
+- Count `<figure>` elements vs. photos on disk — they must match (excluding COVER-only files)
+- For articles with 6+ photos, do a sequential read-through: confirm each `<figure>` appears immediately after its specified anchor sentence
+- Check no photo filename appears more than once in the HTML (duplicate = would show same photo twice)
+
 ## Step 5 — Build article HTML
 
 Fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`. Do not recreate from
 scratch — the nav chain, GA4 state, and internal nav block are already correct.
 
 **Article structure (required order):**
-1. Category label, `<h1>` title, meta (By Author · Date)
-2. Hero `<figure>` — first photo per contributor's placement instructions, placed right after byline (not in carousel); use original filename
-3. `<p class="article-intro">` — first paragraph in larger font
-4. `<div class="article-body">` — body paragraphs with inline `<figure>` elements for remaining photos
-5. About the Author link — last element inside `.article-body`:
+1. Category label, `<h1>` title, byline (`By [Author linked to about.html#anchor] · Date`)
+2. Opening `<figure>` — only if the contributor's placement instructions specify one at the top; use original filename. Do not add a top photo by default if explicit inline placements are given.
+3. Article body — `<p>` paragraphs verbatim from contributor; inline `<figure>` elements at specified positions. No `article-intro` class (deprecated).
+4. About the Author link — centered, before feedback widget:
    ```html
    <p style="margin-top: 32px;"><a href="../../../about.html#author-id" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
    ```
@@ -121,6 +126,8 @@ scratch — the nav chain, GA4 state, and internal nav block are already correct
 
 Replace the placeholder card in root `index.html` for this article with the real cover image
 and teaser text. If this is the hero (article #1), update the hero section.
+
+Hero meta must be `<div class="hero-meta">By [Author Name]</div>` — author only, no date.
 
 ## Step 7 — Handle held or pulled articles
 
