@@ -3,7 +3,33 @@
 Run after all articles are Ready — before staging. Applies structural fixes, updates
 about.html, and verifies nav integrity. This is the quality gate between Build and Stage.
 
-## Step 1 — Run automated fixes
+## Step 1 — Pre-flight checks (run before anything else)
+
+**Run verify_edition.py and fix all issues before proceeding:**
+```bash
+python3 tools/verify_edition.py YYYY-MM-DD
+```
+Fix every structural issue reported — broken images, missing nav thumbnails, doubled menus, oversized images, missing feedback widget, etc. Do not proceed to Step 2 until verify_edition.py is clean.
+
+**DateBook + Astrochart links point to current edition:**
+```bash
+grep -E "datebook|daily-star" index.html
+```
+Both hrefs must match the current edition date. Fix if stale.
+
+**Homepage hero meta is author-only:**
+```bash
+grep "hero-meta" index.html
+```
+Must read `By [Author Name]` — no date.
+
+**No dangling git submodules:**
+```bash
+git ls-files --stage | grep "^160000"
+```
+No output = clean. If any: `git rm --cached <folder>` and commit.
+
+## Step 2 — Run automated fixes
 
 ```bash
 python3 tools/edition_checks.py
@@ -17,11 +43,11 @@ report = json.load(open('tools/edition_checks_report.json'))
 ```
 
 The script handles:
-- Adds `dark-mode.js` to any edition homepage or article missing it
-- Adds nav-thumb CSS (64×48px flex layout) to any article missing it
+- Adds `dark-mode.js` to any article missing it
+- Adds nav-thumb CSS (70×70px, `object-fit:cover`) to any article missing it
 - Appends new articles to existing author popups in `about.html`
 
-## Step 2 — Handle new authors
+## Step 3 — Handle new authors
 
 For each author in `report['new_authors_needing_bios']`, add a `<div class="team-member">` entry
 to the **More Contributors** section in `about.html` (just before the closing `</div>` of that
@@ -51,7 +77,7 @@ Author bio source (in priority order):
 2. The article itself — byline or author note
 3. Ask Judy if unknown
 
-## Step 3 — Update "Our Writers This Week"
+## Step 4 — Update "Our Writers This Week"
 
 The "Our Writers This Week" section in `about.html` should list **only this edition's writers**.
 
@@ -64,25 +90,27 @@ The "Our Writers This Week" section in `about.html` should list **only this edit
 3. Each card references the author's existing `id` — bio and popup already exist in their section
 4. Keep trigger buttons pointing to existing popups (e.g. `data-popup="articles-biba-roesch"`)
 
-## Step 4 — Verify nav chain
+## Step 5 — Verify nav chain
 
 Check end-to-end nav integrity for the new edition:
-- First article's "Previous" → `../index.html` (edition homepage)
-- Last article's "Next" → `../index.html` (edition homepage)
-- Every article's prev/next slugs match the actual folder names
-- Edition homepage links to all articles
+- First article's "Previous" → `../../../index.html` (root homepage)
+- Last article's "Next" → `../../../index.html` (root homepage)
+- Every middle article's prev/next slugs match actual folder names
 
 ```bash
-EDITION=2026-05-03
-grep -r 'edition-nav\|back-link\|next-link' editions/$EDITION/ --include="index.html" -l
+EDITION=2026-06-07
+# Extract all prev/next hrefs across the edition
+grep -rh 'class="prev"\|class="next"' editions/$EDITION/ --include="index.html" -A1 | grep href
 ```
 
-## Step 5 — Verify homepage card order
+Confirm the first href is `../../../index.html`, the last href is `../../../index.html`, and all middle hrefs are `../slug/` paths that exist on disk.
+
+## Step 6 — Verify homepage card order
 
 Confirm root `index.html` card order matches the nav chain order (hero = article #1,
 cards = articles #2 onward in nav order).
 
-## Step 6 — Update editors pages
+## Step 7 — Update editors pages
 
 **`editors/edition.html`:**
 - Mark all articles as Ready (update any remaining Pending badges)
@@ -93,7 +121,7 @@ cards = articles #2 onward in nav order).
 - Edition tag: "Ready for Staging"
 - Decisions Needed: remove resolved items; add "All articles ready — awaiting stage approval"
 
-## Step 7 — Commit and push
+## Step 8 — Commit and push
 
 ```bash
 git add about.html editions/ editors/ index.html
@@ -101,40 +129,13 @@ git commit -m "Edition YYYY-MM-DD checks: dark-mode, nav-thumb, about.html — r
 git push origin dev2
 ```
 
-## Step 8 — Deploy Vercel preview
+## Step 9 — Deploy Vercel preview
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
 ```
 
 Update both editors pages with the final pre-stage preview URL, commit, push, return URL to user.
-
-## Step (pre-staging) — Verify homepage nav links and image sizes
-
-Before staging, run these checks manually:
-
-**DateBook + Astrochart links point to current edition:**
-```bash
-grep -E "datebook|daily-star" index.html
-```
-Both hrefs must match the current edition date. If either is stale, fix on dev2 before proceeding.
-
-**Homepage hero meta is author-only (no date):**
-```bash
-grep "hero-meta" index.html
-```
-Must read `By [Author Name]` — no date. Fix if a date is present.
-
-**No oversized images** (`verify_edition.py` now checks this — review its output for any "oversized image" warnings before staging):
-```bash
-python3 tools/verify_edition.py YYYY-MM-DD
-```
-
-**No dangling git submodules:**
-```bash
-git ls-files --stage | grep "^160000"
-```
-No output = clean. If any output, run `git rm --cached <folder>` and commit before staging.
 
 ## Checklist
 
