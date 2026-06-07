@@ -68,25 +68,19 @@ cp _template/article.html editions/$EDITION/bill-kurtis/index.html
 Fill in each stub:
 - `<title>` and `<h1>` — working title
 - Byline — author name linked to `../../../about.html#author-id`
-- Prev/next nav — correct slugs in order (first article prev → `../index.html`; last article next → `../index.html`)
-- Hero image — omit `src` or use `../thumb-placeholder.jpg`
+- Prev/next nav — correct slugs in order:
+  - First article: prev → `../../../index.html` (root homepage), next → `../second-slug/`
+  - Middle articles: prev → `../prev-slug/`, next → `../next-slug/`
+  - Last article: prev → `../prev-slug/`, next → `../../../index.html` (root homepage)
+- Nav thumbnails — include `<img src="../thumb-placeholder.jpg">` in each prev/next link so verify_edition.py doesn't flag them as missing
+- Hero image — omit `src` or use a placeholder
 - Body — `<p style="color:#999; font-style:italic;">[Article text coming soon]</p>`
 - GA4 disabled (already in template — do not change)
 - `<!-- dev2-only -->` internal nav block
 
-## Step 3 — Create edition homepage
+**Check new authors:** For any author not previously published, verify their `about.html#anchor` exists: `grep -n "id=\"author-id\"" about.html`. If missing, flag it — the byline link will be broken until it's added.
 
-```bash
-cp _template/article.html editions/$EDITION/index.html
-```
-
-Fill in:
-- Edition date in header and title
-- Article list in correct order with placeholder images
-- Links to each article subfolder (`./slug/`)
-- Prev/next not applicable on edition homepage — link back to `../../index.html`
-
-## Step 4 — Update root index.html
+## Step 3 — Update root index.html
 
 - Change date line to new edition date
 - Replace hero with article #1 (placeholder image OK); hero meta = `By [Author Name]` only — no date
@@ -97,7 +91,7 @@ Fill in:
 
 Verify both links point to the new edition: `grep -E "datebook|daily-star" index.html`
 
-## Step 5 — Log articles in future-articles.html
+## Step 4 — Log articles in future-articles.html
 
 Update the pending table with every article — active and held:
 
@@ -108,7 +102,7 @@ Update the pending table with every article — active and held:
 | DateBook | Annie Delfosse | Pending | Email | Arrives last |
 | [Held article] | Author | Held | — | Reason if known |
 
-## Step 6 — Update editors/edition.html
+## Step 5 — Update editors/edition.html
 
 - Change edition date in page header and edition-tag
 - Populate article inventory table: one row per active article, all badged `Pending`
@@ -117,14 +111,14 @@ Update the pending table with every article — active and held:
 
 Columns: Article title + sub (order, category), Writer, Status badge, Dev2 link
 
-## Step 7 — Update editors/index.html
+## Step 6 — Update editors/index.html
 
 - Change edition date and edition-tag to "In Progress — Prep"
 - Reset progress block: "0 of N articles ready", bar at 0%
 - Clear Decisions Needed — add one item: "Edition prepped — awaiting content from contributors"
 - Replace next-edition planning section with current edition's article list and expected contributors
 
-## Step 8 — Commit and push
+## Step 7 — Commit and push
 
 ```bash
 git add editions/$EDITION/ index.html future-articles.html editors/
@@ -132,7 +126,7 @@ git commit -m "Prep YYYY-MM-DD edition: skeleton + stubs for N articles"
 git push origin dev2
 ```
 
-## Step 9 — Deploy Vercel preview and update editors pages
+## Step 8 — Deploy Vercel preview and update editors pages
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
@@ -149,15 +143,17 @@ git push origin dev2
 
 Return the preview URL to the user.
 
-## Step 10 — Email Judy
+## Step 9 — Email Judy
 
-Draft and send a confirmation email:
+Draft a confirmation email and **show it to the user before sending**:
 
 **To:** judycbross@aol.com  
 **Subject:** Classic Chicago — [Month Day] Edition Structure Ready
 
 Body: confirm edition is prepped, list each article with its author and expected source,
 note any held articles, include preview URL. Style: `Dear Judy,` / `Cheers, John` / first person.
+
+Ask: "Should I send this?" — do not send until confirmed.
 
 ## Notes
 
