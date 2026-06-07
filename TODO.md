@@ -7,6 +7,7 @@
 - [ ] Re-enable Subscribe form on `subscribe.html` after Formsubmit activation confirmed
 - [ ] Re-enable Advertise form on `advertise.html` after Formsubmit activation confirmed
 - [ ] Swap Heritage Auctions ad to June image (`Classic Chicago June 2026.png`) — overdue since May 21 (see EMAIL_LOG.md)
+- [ ] Susan Aurinko silk-roads article (`editions/2026-04-26/silk-roads/`): confirm correct brand spelling — article uses "LensFlair Editions" (capital F); domain is `lensflaireditions.com` (lowercase). Verify with Susan or Judy before changing.
 
 ## Content / Editorial (Recurring)
 
