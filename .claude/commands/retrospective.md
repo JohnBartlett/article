@@ -32,15 +32,24 @@ For each incident, check whether it is already covered:
 
 **CLAUDE.md mistakes list:**
 ```bash
-grep -n "^\d\+\." /home/john/article/CLAUDE.md | tail -20
+grep -En "^[0-9]+\." CLAUDE.md | tail -20
 ```
 
-**Relevant skills:**
-- `/prep-edition` — edition setup gaps
-- `/new-edition` — article building, photo placement
-- `/edition-checks` — pre-staging quality gate
-- `/publish` — pre-publish checks
-- `/stage` — promotion process
+**Relevant skills** — check whichever matches the incident category:
+
+| Incident category | Skill to check |
+|---|---|
+| Edition setup, folder structure, nav chain | `/prep-edition` |
+| Article building, photo placement, text extraction | `/new-edition` |
+| Email processing, FormSubmit votes | `/check-emails` |
+| Pre-staging quality gate | `/edition-checks` |
+| Staging, dev promotion, internal-nav | `/stage` |
+| Production push, GA4, Cloudflare | `/publish` |
+| Post-publish email, GA4 stats | `/send-update` |
+| Homepage order, nav links, about.html popups | `/layout` |
+| Editors pages, stats refresh | `/update-editors` |
+| Author bios, about.html | `/writer-bios` |
+| Layout review preview | `/preview` |
 
 **Memory files:**
 ```bash
