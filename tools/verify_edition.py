@@ -180,6 +180,16 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         if has_thumb is False:
             issues.append(f"{direction} nav link missing thumbnail image")
 
+    # ── Doubled hamburger menu ──
+    # About/Subscribe/Advertise must appear ONLY in hamburger-menu, not in nav-inner
+    nav_inner_m = re.search(r'<div class="nav-inner">(.*?)</div>', content, re.DOTALL)
+    ham_menu_m = re.search(r'<div class="hamburger-menu"[^>]*>(.*?)</div>', content, re.DOTALL)
+    if nav_inner_m and ham_menu_m:
+        if 'about.html">About' in nav_inner_m.group(1) and 'about.html">About' in ham_menu_m.group(1):
+            issues.append("doubled nav: About/Subscribe/Advertise in both nav-inner and hamburger-menu")
+    if ham_menu_m and 'editors/' in ham_menu_m.group(1):
+        issues.append("internal Editors link exposed in public hamburger-menu")
+
     # ── Broken images ──
     broken = []
     for src in facts['img_srcs']:
@@ -191,6 +201,14 @@ def check_article_structure(edition_path, article_slug, about_anchors):
     if broken:
         for b in broken:
             issues.append(f"broken image: {b}")
+
+    # ── Oversized images (Cloudflare 25 MB limit) ──
+    LIMIT = 25 * 1024 * 1024
+    for img in article_dir.iterdir():
+        if img.suffix.lower() in {'.jpg', '.jpeg', '.png', '.gif', '.webp'}:
+            size = img.stat().st_size
+            if size > LIMIT:
+                issues.append(f"oversized image ({size/1048576:.1f} MB, limit 25 MB): {img.name}")
 
     return issues
 
