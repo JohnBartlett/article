@@ -6,17 +6,19 @@
 - [ ] Confirm Formsubmit activation emails for `subscribe@2ccmag.com` and `advertise@2ccmag.com` (check inbox, click confirmation link)
 - [ ] Re-enable Subscribe form on `subscribe.html` after Formsubmit activation confirmed
 - [ ] Re-enable Advertise form on `advertise.html` after Formsubmit activation confirmed
-- [ ] Sync master with dev: `git checkout master && git merge dev && git push origin master`
+- [ ] Swap Heritage Auctions ad to June image (`Classic Chicago June 2026.png`) — overdue since May 21 (see EMAIL_LOG.md)
 
 ## Content / Editorial (Recurring)
 
-- [ ] Update `about.html` "Our Writers This Week" section with each new edition
-- [ ] Add new articles and editions as they come in
-- [ ] Update homepage `index.html` hero + card grid for each new edition
-- [ ] Update keyboard navigation order in all articles to match new homepage order
+These are handled by skills each edition — tracked here as a reminder:
+- [ ] Update `about.html` "Our Writers This Week" section with each new edition (handled by `/edition-checks`)
+- [ ] Update homepage `index.html` hero + card grid for each new edition (handled by `/new-edition`)
+- [ ] Update keyboard navigation order in all articles to match homepage order (handled by `/layout`)
 
 ## Completed
 
+- [x] Set up Gmail API for email/attachment extraction (`tools/gmail_api.py`, `~/.gmail-mcp/credentials.json`)
+- [x] Set up GA4 reporting (`tools/ga4_report.py`, `tools/credentials.json`, property ID `523654462`)
 - [x] Scheduled deploy to production: Saturday Feb 14 at 11:30pm CST (GitHub Actions workflow)
 - [x] Remove experimental homepage variants (`index-b.html`, `index-b1.html`, `index-c.html`)
 - [x] Remove edition test page (`editions/2026-02-15/index.html`)
