@@ -3,6 +3,24 @@
 Promote the current dev2 work to `dev` for Vercel preview. Run this when an edition is
 ready for staging review — after `/edition-checks` has passed.
 
+## Step 0 — Pre-flight checks
+
+Before merging, run these on dev2:
+
+**No dangling git submodules:**
+```bash
+git ls-files --stage | grep "^160000"
+```
+No output = clean. If any output: `git rm --cached <folder>`, commit, then proceed.
+
+**No oversized images:**
+```bash
+find editions/ -name "*.jpg" -o -name "*.jpeg" -o -name "*.JPG" | while read f; do [ $(stat -c%s "$f") -gt 26214400 ] && echo "$f"; done
+```
+Compress any hits before staging — Cloudflare will reject files over 25 MB.
+
+**Tooling-only commits don't need staging:** If the only changes since last stage are to `.claude/commands/`, `CLAUDE.md`, `tools/`, or `_template/` (no article HTML, photos, or homepage changes), skip staging. Tooling changes are harmless on dev2 and will flow through naturally with the next edition's content.
+
 ## Step 1 — Switch to dev and merge
 
 ```bash

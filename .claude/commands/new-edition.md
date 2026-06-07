@@ -37,10 +37,10 @@ For each photo attachment:
 attachments = list_attachments(token, msg_id)
 for att in attachments:
     download_attachment(token, msg_id, att['id'],
-        f'editions/YYYY-MM-DD/slug/photo-{n:02d}.jpeg')
+        f'editions/YYYY-MM-DD/slug/{att["filename"]}')
 ```
 
-Normalize filenames to `photo-01.jpeg`, `photo-02.jpeg`, etc.
+**Never rename contributor image files.** Save with the original filename exactly as sent. Renaming severs the caption-to-photo link and scrambles git's rename detection.
 
 If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
 ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
@@ -49,8 +49,8 @@ ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continu
 
 | Filename | Caption (verbatim from email) | Placement (after which sentence/paragraph) |
 |---|---|---|
-| photo-01.jpeg | "..." | after byline, as hero |
-| photo-02.jpeg | "..." | after paragraph beginning "..." |
+| IMG_4824.jpeg | "..." | after byline, as hero |
+| DSC_0012.jpg | "..." | after paragraph beginning "..." |
 
 If any field is unknown, stop and find it from the email before writing HTML. Never infer captions or placement positions.
 
@@ -101,7 +101,7 @@ scratch — the nav chain, GA4 state, and internal nav block are already correct
 
 **Article structure (required order):**
 1. Category label, `<h1>` title, meta (By Author · Date)
-2. Hero `<figure>` — `photo-01.jpeg` placed right after byline (not in carousel)
+2. Hero `<figure>` — first photo per contributor's placement instructions, placed right after byline (not in carousel); use original filename
 3. `<p class="article-intro">` — first paragraph in larger font
 4. `<div class="article-body">` — body paragraphs with inline `<figure>` elements for remaining photos
 5. About the Author link — last element inside `.article-body`:
