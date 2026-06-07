@@ -13,16 +13,15 @@ git merge -X theirs dev
 The GA4 state always differs between dev (disabled) and master (enabled), so `-X theirs`
 takes dev's content — GA4 will be re-enabled in Step 2.
 
-## Step 1b — Verify AstroChart points to current month
+## Step 1b — Verify DateBook and AstroChart point to current edition
 
 ```bash
-grep "daily-star" /home/john/article/index.html
+grep -E "datebook|daily-star" /home/john/article/index.html
 ```
 
-The href should match the current edition month (e.g. `editions/2026-05-03/daily-star-may/`).
-If it points to a previous month, fix it on dev2 first, re-stage, then publish.
+Both hrefs must match the current edition date. Fix on dev2, re-stage, then publish if either is stale.
 
-**Do not proceed if the AstroChart link is stale.**
+**Do not proceed if either link is stale.**
 
 ## Step 2 — Re-enable GA4 on master
 

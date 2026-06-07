@@ -109,9 +109,41 @@ PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{prin
 
 Update both editors pages with the final pre-stage preview URL, commit, push, return URL to user.
 
+## Step (pre-staging) — Verify homepage nav links and image sizes
+
+Before staging, run these checks manually:
+
+**DateBook + Astrochart links point to current edition:**
+```bash
+grep -E "datebook|daily-star" index.html
+```
+Both hrefs must match the current edition date. If either is stale, fix on dev2 before proceeding.
+
+**Homepage hero meta is author-only (no date):**
+```bash
+grep "hero-meta" index.html
+```
+Must read `By [Author Name]` — no date. Fix if a date is present.
+
+**No oversized images** (`verify_edition.py` now checks this — review its output for any "oversized image" warnings before staging):
+```bash
+python3 tools/verify_edition.py YYYY-MM-DD
+```
+
+**No dangling git submodules:**
+```bash
+git ls-files --stage | grep "^160000"
+```
+No output = clean. If any output, run `git rm --cached <folder>` and commit before staging.
+
 ## Checklist
 
 - [ ] `python3 tools/edition_checks.py` ran clean
+- [ ] `python3 tools/verify_edition.py YYYY-MM-DD` — no structural issues, no oversized images
+- [ ] DateBook link in `index.html` points to current edition
+- [ ] Astrochart link in `index.html` points to current edition
+- [ ] Homepage hero meta is `By [Author Name]` only — no date
+- [ ] No dangling git submodules (`git ls-files --stage | grep "^160000"` returns nothing)
 - [ ] New author bios added to More Contributors (if any)
 - [ ] "Our Writers This Week" updated for this edition
 - [ ] Nav chain verified end-to-end

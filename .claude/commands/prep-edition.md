@@ -39,12 +39,24 @@ Rules:
 
 **Held articles:** Log in `future-articles.html` only — do NOT create a folder or stub.
 
-## Step 2 — Create edition folder and article stubs
+## Step 2 — Create edition folder, copy DateBook and Astrochart
 
 ```bash
 EDITION=2026-05-03
+PREV=2026-04-26
 mkdir -p editions/$EDITION
 ```
+
+Copy the DateBook and Astrochart folders from the previous edition — both are persistent and must exist in every edition:
+
+```bash
+cp -r editions/$PREV/datebook editions/$EDITION/datebook
+cp -r editions/$PREV/daily-star-MONTH editions/$EDITION/daily-star-MONTH
+```
+
+Update the title/date in both `index.html` files. If the Astrochart folder name changes (e.g. `daily-star-may` → `daily-star-june`), rename accordingly.
+
+**Do not skip this step.** A missing datebook or daily-star folder causes a live 404 on nav links in every article.
 
 For each active article, copy the template and fill in the stub:
 
@@ -77,9 +89,13 @@ Fill in:
 ## Step 4 — Update root index.html
 
 - Change date line to new edition date
-- Replace hero with article #1 (placeholder image OK)
+- Replace hero with article #1 (placeholder image OK); hero meta = `By [Author Name]` only — no date
 - Replace card grid with all active articles (placeholder images OK)
 - Move previous current edition to Past Editions footer (keep ~4 past editions)
+- Update DateBook nav link: `editions/YYYY-MM-DD/datebook/`
+- Update Astrochart nav link: `editions/YYYY-MM-DD/daily-star-MONTH/`
+
+Verify both links point to the new edition: `grep -E "datebook|daily-star" index.html`
 
 ## Step 5 — Log articles in future-articles.html
 

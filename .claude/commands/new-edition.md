@@ -45,6 +45,24 @@ Normalize filenames to `photo-01.jpeg`, `photo-02.jpeg`, etc.
 If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
 ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
 
+**Before placing any `<figure>` HTML, build an explicit photo map:**
+
+| Filename | Caption (verbatim from email) | Placement (after which sentence/paragraph) |
+|---|---|---|
+| photo-01.jpeg | "..." | after byline, as hero |
+| photo-02.jpeg | "..." | after paragraph beginning "..." |
+
+If any field is unknown, stop and find it from the email before writing HTML. Never infer captions or placement positions.
+
+**COVER photos:** Any file with "COVER" in the filename is the homepage card image. Do NOT include it in the article body unless the contributor explicitly says to AND it has a caption.
+
+**PDF-sourced photos:** PDFs have no embedded layout. Build article text first (no photos), then ask for or find explicit placement instructions before inserting any figures.
+
+**After placing all photos:**
+- Count `<figure>` elements vs. photos on disk — they must match (excluding COVER-only files)
+- For articles with 6+ photos, do a sequential read-through: confirm each `<figure>` appears immediately after its specified anchor sentence
+- Check no photo filename appears more than once in the HTML (duplicate = hero + inline conflict)
+
 ## Step 4 — Extract article text
 
 **From docx attachment:**
