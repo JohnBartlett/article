@@ -13,10 +13,24 @@ git merge -X theirs dev
 The GA4 state always differs between dev (disabled) and master (enabled), so `-X theirs`
 takes dev's content — GA4 will be re-enabled in Step 2.
 
+## Step 0 — Pre-flight checks
+
+**No oversized images (Cloudflare 25 MB limit):**
+```bash
+find editions/ -name "*.jpg" -o -name "*.jpeg" -o -name "*.JPG" -o -name "*.png" | while read f; do [ $(stat -c%s "$f") -gt 26214400 ] && echo "$f"; done
+```
+Compress any hits before proceeding.
+
+**No dangling git submodules:**
+```bash
+git ls-files --stage | grep "^160000"
+```
+No output = clean.
+
 ## Step 1b — Verify DateBook and AstroChart point to current edition
 
 ```bash
-grep -E "datebook|daily-star" /home/john/article/index.html
+grep -E "datebook|daily-star" index.html
 ```
 
 Both hrefs must match the current edition date. Fix on dev2, re-stage, then publish if either is stale.
@@ -80,7 +94,13 @@ Return the production URL to the user:
 
 **https://chicagoclassicmag.com**
 
-Note: Cloudflare may take 1–2 minutes to propagate after the push.
+Note: Cloudflare may take 1–2 minutes to propagate after the push. To confirm deployment:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" https://chicagoclassicmag.com
+```
+
+200 = live. If not yet up, wait 60 seconds and retry.
 
 ## Notes
 

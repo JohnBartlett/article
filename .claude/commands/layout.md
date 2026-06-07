@@ -88,11 +88,12 @@ When auditing, check every article in the current edition for:
 | Navigation — prev link | Points to correct preceding article (or Home if first) |
 | Navigation — next link | Points to correct following article (or Home if last) |
 | Navigation — JS vars | `prevUrl` and `nextUrl` match the link hrefs |
-| Attribution line | Present if bio file has text; absent if `(none — byline only)` |
+| Nav thumbnails | Every article-to-article link has a 70×70px `<img>` with `object-fit:cover`; only homepage links are exempt |
 | About the Author link | Last element in `.article-body`; "About the Author: Name →" linked to `about.html#slug`; no inline bio text or external links |
 | GA4 | Disabled (`<!-- GA4-disabled ... -->` wrapper) |
 | HA ad | Not present in article body |
 | Feedback widget | Present |
+| Nav pattern | `nav-inner` contains Home/DateBook/Astrochart/hamburger-btn ONLY; About/Subscribe/Advertise in hamburger ONLY |
 
 Also check the homepage:
 | Check | Pass condition |
@@ -100,6 +101,9 @@ Also check the homepage:
 | Hero | First article in edition order |
 | Card count | All non-hero articles appear as cards |
 | Card order | Matches edition order (top-to-bottom, left-to-right) |
+| Hero meta | `By [Author Name]` only — no date |
+| DateBook link | `href` points to current edition datebook |
+| Astrochart link | `href` points to current edition daily-star folder |
 | about.html popups | All authors have article popups with all their articles listed |
 
 ---
