@@ -120,7 +120,7 @@ Row format:
 
 If no edition section exists yet for the emails being processed, create one (e.g. `## June 14 Edition`).
 
-After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATUS.md`:
+After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATUS.md` if it exists (only active/upcoming editions have one — do not create it for past editions):
 - Mark article rows as ✅ if now complete
 - Check off any action items that were completed this session
 - Add new action items if the email revealed something outstanding
