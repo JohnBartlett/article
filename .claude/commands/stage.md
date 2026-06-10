@@ -84,15 +84,22 @@ any public-facing page on dev or master:
 
 - `reader-comments.html`
 - `future-articles.html`
-- `march-events-planning.html` (or equivalent month)
 - `comments.html`
+- Any edition-specific planning or draft pages
 
 These files may exist in the repo — that's fine. They just must not be linked from any public nav.
+
+```bash
+grep -r "reader-comments\|future-articles\|comments\.html" \
+  index.html about.html editions/ --include="index.html" \
+  | grep -v "internal-nav\|<!-- dev2-only\|<!--"
+```
+
+Any output that is not inside a comment block is a live public link — remove it.
 
 ## Step 5 — Commit and push
 
 ```bash
-git add index.html
 git add -u
 git commit -m "Stage <edition date> edition for dev preview
 
@@ -128,7 +135,15 @@ Confirm the scheduled time back to the user.
 
 If they say "now" or "manually", skip scheduling.
 
-## Step 8 — Return preview URL
+## Step 8 — Verify deployment and return preview URL
+
+After pushing to dev, Vercel auto-deploys within ~1–2 minutes. Verify it succeeded:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" https://article-git-dev-johns-projects-e5fce345.vercel.app
+```
+
+200 = deployed. If not yet up, wait 60 seconds and retry before reporting to user.
 
 The Vercel staging preview URL is:
 
@@ -139,6 +154,7 @@ Return this URL as the final output — easy to copy and send to Judy.
 ## Notes
 
 - Never commit directly to `master` — dev → master happens only via `/publish`
+- Hotfixes (dev2 → dev → master bypassing full stage) skip the `editors/` removal and internal-nav commenting — those files end up on master but are unlinked and harmless. Run a full `/stage` on the next edition to clean them up.
 - The `<!-- dev2-only -->` block in `index.html` must always be commented out before any push to dev or master
 - GA4 must be disabled on dev and dev2; re-enabled only by `/publish` on master
 - If the merge produces unexpected content conflicts (not just modify/delete): resolve manually, preferring dev2's version for all edition content
