@@ -68,4 +68,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 9 | Sig | Re: Image and credit for blast | `19eae0673b184087` | ✅ | Sig confirmed article + photos + credits coming Thursday Jun 12 |
 | Jun 9 | Judy | Re: Image and credit for blast | `19eae8c73f66c54d` | ✅ | Judy praising Sig's article; no action |
 | Jun 9 | Sig | Re: Image and credit for blast (2) | `19eaed2023401d9b` | ✅ | Sig thank-you reply; no action |
+| Jun 10 | Ana | Heritage Auctions full article + 6 photos | `19eb366d27b3da5f` | ✅ | Article built; photos extracted; homepage card updated |
+| Jun 10 | Ana | Do Division / DeeDee El Bego article + 7 photos | `19eb3367487c3d85` | ✅ | Article built; photos extracted; homepage card updated |
+| Jun 10 | Judy | DeeDee El Bego cover photo (FullSizeRender.jpeg) | `19eb316f1e9488e5` | ✅ | Already extracted; COVER Deedee Story.jpg from Ana supersedes |
 | Jun 10 | Judy | Re: Photo and blurb (Marcy fashion article) | `19eb13cf8b8df402` | ✅ | Judy confirmed Marcy fashion article for June 21 lead; already noted in future-articles.html |
