@@ -83,7 +83,26 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 - Apply only if content is unambiguous and sender is a known contributor writing from an unexpected address
 
 ### FormSubmit — votes and comments
-- Not checked here. FormSubmit (`submissions@formsubmit.co`) is processed only during `/send-update` when compiling weekly stats.
+Search for votes since the last update date noted in `editors/stats.html` (check the data-note line):
+
+```
+subject:"Classic Chicago" newer_than:7d
+```
+
+Tally Yes/No counts by article. Fetch body of "Classic Chicago Reader Comment" threads to check for non-empty `comment:` fields.
+
+**Update `reader-comments.html`** (always):
+- If the current edition section exists: add vote tally cards, bar chart, and Votes by Article list. Add comment cards for any non-empty comments.
+- If the section doesn't exist yet: create it with the current edition header, tally, and vote log. Use the same edition-block pattern as the existing June 7 section.
+- Add "Late Votes — Other Editions" sub-section for any votes that arrived for older articles.
+
+**Update `editors/stats.html`** (always):
+- Update the Reader Approval KPI (Yes count, No count, total, approval %). **Do this in the same edit as any row update — never update a row without also updating the KPI.**
+- Update the data-note "Reader votes updated" date to today.
+- Prepend new edition rows to the Reader Votes table (use the section-header row pattern from the June 7 block).
+- Add any late-vote rows near the bottom of their original edition's entries.
+
+After updating both files, commit and push to dev2.
 
 ## Step 3 — Update EMAIL_LOG.md
 
