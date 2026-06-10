@@ -24,3 +24,4 @@ tools/credentials.json
 exif-mcp/
 tools/__pycache__/
 .venv/
+ga4_report_*.json
