@@ -56,3 +56,16 @@ Track emails that have been processed, are pending action, or need re-addressing
 |------|------|-------------------|--------|--------|-------|
 | May 30 | Judy | Re: May 31 Edition — Ready for Review | `19e7b54854a53208` | ✅ | Judy approved; published |
 | May 31 | Judy | Re: Classic Chicago May 31 Edition is Live | `19e7d905aa1866bf` | ✅ | Judy acknowledged; no action |
+| Jun 8 | Judy | Re: Delaying Jill's story | `19ea6e03a8b03f8f` | ✅ | Ana confirmed Jill moved to Jun 14; Judy asked Ana to choose cover photo |
+| Jun 8 | Judy | Rough Draft Assignments for June 14 | `19ea6e74ad5c2319` | ✅ | Assignment list noted; edition prepped in prior session |
+| Jun 9 | Judy | Heritage Auctions cover shot (Continental Dollar obverse.jpeg) | `19eadcbae7ab0567` | ✅ | Photo extracted to editions/2026-06-14/heritage-auction/ |
+| Jun 9 | Judy | Music Institute cover photo + caption | `19eacbd52d9349c6` | ✅ | Photo extracted to editions/2026-06-14/music-benefit/; caption logged |
+| Jun 9 | Judy | Fwd: 60th reunion story (PDF) | `19eade225803d83b` | ✅ | PDF extracted; article text already built in elizabeth-richter-reunion/ |
+| Jun 9 | Judy | Fwd: requesting correction — Jill and Chad Coe | `19eae891d8e1145b` | ✅ | Already fixed in prior hotfix commit |
+| Jun 9 | Judy | Re: Reader Comment — Ferris Bueller | `19ead3ce4e609e8a` | ✅ | Judy asked about running as letter; decided yes (see 19eadd340129205f) |
+| Jun 9 | Judy | Re: Reader Comment — run with editor's note | `19eadd340129205f` | ✅ | Ferris alternate-take article built with editor's note and full comment text |
+| Jun 9 | Judy | Re: Image and credit for blast (Sig) | `19eadf6599822b96` | ✅ | Confirmed blast text for Sig's article; no new action |
+| Jun 9 | Sig | Re: Image and credit for blast | `19eae0673b184087` | ✅ | Sig confirmed article + photos + credits coming Thursday Jun 12 |
+| Jun 9 | Judy | Re: Image and credit for blast | `19eae8c73f66c54d` | ✅ | Judy praising Sig's article; no action |
+| Jun 9 | Sig | Re: Image and credit for blast (2) | `19eaed2023401d9b` | ✅ | Sig thank-you reply; no action |
+| Jun 10 | Judy | Re: Photo and blurb (Marcy fashion article) | `19eb13cf8b8df402` | ✅ | Judy confirmed Marcy fashion article for June 21 lead; already noted in future-articles.html |
