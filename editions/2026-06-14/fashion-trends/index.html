@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  -->
+  <meta charset="UTF-8">
+  <title>Fashion Trends | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#fff;color:#222;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    header{padding:20px 0;border-bottom:1px solid #eee;}
+    .logo-container{text-align:center;margin-bottom:20px;}
+    .logo-container img{width:390px;height:auto;}
+    nav{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap;}
+    .nav-inner a{font-family:'Lato',sans-serif;font-size:16px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .article-container{max-width:780px;margin:0 auto 60px;padding:0 20px;}
+    .article-label{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin:40px 0 10px;}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 16px;font-weight:800;}
+    .byline{font-family:'Lato',sans-serif;font-size:14px;color:#555;margin-bottom:28px;}
+    .byline a{color:#d41f1f;text-decoration:none;}
+    figure{margin:32px 0;}
+    figure img{width:100%;height:auto;display:block;}
+    figcaption{font-family:'Lato',sans-serif;font-size:13px;color:#777;margin-top:8px;font-style:italic;}
+    .article-body p{margin:0 0 22px;}
+    .about-author{text-align:center;margin:40px 0 20px;}
+    .about-author a{font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#d41f1f;text-decoration:none;}
+    .feedback-widget{border-top:1px solid #eee;padding-top:24px;margin-top:32px;font-family:'Lato',sans-serif;}
+    .feedback-widget h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#555;margin:0 0 14px;}
+    .vote-buttons{display:flex;gap:12px;margin-bottom:20px;}
+    .vote-btn{padding:8px 20px;border:1px solid #d41f1f;background:#fff;color:#d41f1f;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;border-radius:2px;}
+    .vote-btn:hover{background:#d41f1f;color:#fff;}
+    .comment-form input,.comment-form textarea{width:100%;border:1px solid #ddd;padding:10px;font-family:'Lato',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box;}
+    .comment-form textarea{height:80px;resize:vertical;}
+    .comment-form button{padding:9px 22px;background:#d41f1f;color:#fff;border:none;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;}
+    nav.article-nav{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd;gap:16px;}
+    nav.article-nav a{font-family:'Lato',sans-serif;font-size:13px;color:#d41f1f;text-decoration:none;display:flex;align-items:center;gap:10px;max-width:48%;}
+    nav.article-nav a img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    nav.article-nav .nav-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;}
+    nav.article-nav a.next{flex-direction:row-reverse;text-align:right;margin-left:auto;}
+    footer{background:#1a1a1a;color:#fff;padding:40px 20px;text-align:center;}
+    .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
+    .footer-links a{color:#ccc;text-decoration:none;}
+    .footer-links a:hover{color:#fff;}
+    .copyright{font-family:'Lato',sans-serif;font-size:14px;color:#aaa;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <a href="../../../index.html">
+      <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+    </a>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="../datebook/">DateBook</a>
+      <a href="../daily-star-june/">Astrochart</a>
+      <button class="hamburger-btn" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+    </div>
+    <div class="hamburger-menu">
+      <a href="../../../about.html">About</a>
+      <a href="../../../subscribe.html">Subscribe</a>
+      <a href="../../../advertise.html">Advertise</a>
+    </div>
+  </nav>
+  <!-- dev2-only -->
+  <div class="internal-nav">
+    <a href="../../../editors/">Editors' Page</a>
+    <a href="../../../reader-comments.html">Reader Comments</a>
+    <a href="../../../future-articles.html">Future Articles</a>
+  </div>
+</header>
+
+<div class="article-container">
+  <div class="article-label">Fashion &amp; Style</div>
+  <h1>Fashion Trends</h1>
+  <div class="byline">By <a href="../../../about.html#marcy-carmack">Marcy Carmack</a> &bull; June 14, 2026</div>
+
+  <!-- STUB: article text and photos pending from Marcy (arriving June 11) -->
+
+  <div class="about-author">
+    <a href="../../../about.html#marcy-carmack">About the Author: Marcy Carmack &rarr;</a>
+  </div>
+
+  <div class="feedback-widget">
+    <h3>Did you enjoy this article?</h3>
+    <div class="vote-buttons">
+      <form action="https://formsubmit.co/editor@classicchicagomagazine.com" method="POST" style="display:inline;">
+        <input type="hidden" name="vote" value="Yes">
+        <input type="hidden" name="article" value="Fashion Trends">
+        <input type="hidden" name="edition" value="2026-06-14">
+        <input type="hidden" name="_next" id="feedbackReturn">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="vote-btn">&#10003; Yes!</button>
+      </form>
+      <form action="https://formsubmit.co/editor@classicchicagomagazine.com" method="POST" style="display:inline;">
+        <input type="hidden" name="vote" value="No">
+        <input type="hidden" name="article" value="Fashion Trends">
+        <input type="hidden" name="edition" value="2026-06-14">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="vote-btn">Not so much</button>
+      </form>
+    </div>
+    <div class="comment-form">
+      <form action="https://formsubmit.co/editor@classicchicagomagazine.com" method="POST">
+        <input type="hidden" name="article" value="Fashion Trends">
+        <input type="hidden" name="edition" value="2026-06-14">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your name (optional)">
+        <input type="email" name="email" placeholder="Your email (optional)">
+        <textarea name="comment" placeholder="Leave a comment…"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <nav class="article-nav">
+    <a class="prev" href="../tent-pitching/">
+      <img src="../thumb-placeholder.jpg" alt="Previous article" style="width:70px;height:70px;object-fit:cover;">
+      <span><span class="nav-label">Previous</span>Tent Pitching: America 250</span>
+    </a>
+    <a class="next" href="../../../index.html">
+      <span><span class="nav-label">Next</span>Home</span>
+    </a>
+  </nav>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.facebook.com" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+  <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+</footer>
+
+<script>
+  var prevUrl='../tent-pitching/';
+  var nextUrl='../../../index.html';
+  document.addEventListener('keydown',function(e){var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable)return;if(e.key==='n'||e.key==='N'){window.location.href=nextUrl;}if(e.key==='p'||e.key==='P'){window.location.href=prevUrl;}if(e.key===' '||e.key==='PageDown'){e.preventDefault();window.scrollBy(0,window.innerHeight*0.85);}if(e.key==='PageUp'){e.preventDefault();window.scrollBy(0,-window.innerHeight*0.85);}});
+  document.getElementById('feedbackReturn').value=window.location.href;
+</script>
+</body>
+</html>
