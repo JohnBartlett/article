@@ -6,15 +6,17 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 
 ## Email Sources
 
-### Tier 1 — Known contributors (checked by address)
+### Tier 1 — CCM staff and coordinators (checked by address)
 - Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, article text, bio updates, article replacements, holds
 - Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (also relays Katherine Harvey's articles)
 - Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — article content and photos (intern, coordinator)
-- Marcy Carmack (`marcycarmack@icloud.com`) — Fashion Trends articles
 - Sig (`sigalina@aol.com`) — article submissions
 - Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing (not currently in tier1 search)
-- FormSubmit (`submissions@formsubmit.co`) — reader comments and Quick Votes
+
+**Not in tier1 search:**
+- Marcy Carmack (`marcycarmack@icloud.com`) — writer/contributor; caught by tier2 keyword search
+- FormSubmit (`submissions@formsubmit.co`) — reader votes/comments; checked only during `/send-update` stats run, not here
 
 ### Tier 2 — Unknown writers (keyword search)
 - Search recent unread emails mentioning "Classic Chicago" or "article" from senders not in Tier 1
@@ -31,11 +33,11 @@ token = get_access_token()
 
 # Tier 1 — known addresses
 tier1_messages = search_messages(token,
-    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR submissions@formsubmit.co) newer_than:2d")
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) newer_than:2d")
 
-# Tier 2 — keyword search for direct writers
+# Tier 2 — keyword search for writers (including Marcy and others not in tier1)
 tier2_messages = search_messages(token,
-    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR submissions@formsubmit.co)")
+    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
@@ -80,29 +82,8 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 - Report sender + subject for review
 - Apply only if content is unambiguous and sender is a known contributor writing from an unexpected address
 
-### FormSubmit — Quick Vote
-- Use `get_html_body(token, msg_id)` then `parse_formsubmit(html)` to extract field:value pairs
-- Skip if `Environment: dev2` (test vote)
-- Tally votes by article; group multiple votes with `(×N)` count
-- Update `reader-comments.html`:
-  - Find the current-week edition block (red header bar)
-  - Update `.tally-card` Yes/No counts and `.bar-chart` percentages (recalculate widths)
-  - Update `.tally-total` with new total and date range
-  - Append new articles to "Votes by Article" `<ul>`
-  - Omit "Not so much" bar row if no-votes = 0
-
-### FormSubmit — Reader Comment (non-empty `comment` field)
-- Add to `reader-comments.html` inside current-week `.comments-section`:
-  ```html
-  <div class="comment-card">
-    <p class="comment-text">&ldquo;Comment text here.&rdquo;</p>
-    <div class="comment-meta">Date &nbsp;&bull;&nbsp; Article Title &nbsp;&bull;&nbsp; Email (if provided)</div>
-  </div>
-  ```
-- If comment raises an editorial concern, also flag in `comments.html` under "Reader Comments"
-
-### FormSubmit — "Action Required: Activate FormSubmit"
-- Ignore entirely
+### FormSubmit — votes and comments
+- Not checked here. FormSubmit (`submissions@formsubmit.co`) is processed only during `/send-update` when compiling weekly stats.
 
 ## Step 3 — Update EMAIL_LOG.md
 
