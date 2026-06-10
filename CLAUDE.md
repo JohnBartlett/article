@@ -74,19 +74,23 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 ### Dev2 preview deployments
 Running `vercel deploy --yes` creates a unique preview URL for the current dev2 state. After every such deploy:
 1. Capture the Preview URL from the output line starting with `Preview:`
-2. Update two links in the editors pages:
+2. Update the stable alias to point to the new deployment
+3. Update two links in the editors pages:
    - `editors/edition.html` — Dev2 Preview button (points to current hero article)
    - `editors/index.html` — Dev Preview quick link (points to homepage)
-3. Commit both files and push to dev2
+4. Commit both files and push to dev2
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
 EDITION_DATE="YYYY-MM-DD"   # current edition date
 HERO_SLUG="slug"             # hero article slug (first article in homepage order)
 sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```
+
+**Stable alias:** `https://article-dev2.vercel.app` — always points to the most recent dev2 deploy.
 
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
