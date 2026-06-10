@@ -13,7 +13,7 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — article content and photos (intern, coordinator)
 - Marcy Carmack (`marcycarmack@icloud.com`) — Fashion Trends articles
 - Sig (`sigalina@aol.com`) — article submissions
-- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing
+- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing (not currently in tier1 search)
 - FormSubmit (`submissions@formsubmit.co`) — reader comments and Quick Votes
 
 ### Tier 2 — Unknown writers (keyword search)
@@ -31,11 +31,11 @@ token = get_access_token()
 
 # Tier 1 — known addresses
 tier1_messages = search_messages(token,
-    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR niceguyfatz@gmail.com OR submissions@formsubmit.co) newer_than:2d")
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR submissions@formsubmit.co) newer_than:2d")
 
 # Tier 2 — keyword search for direct writers
 tier2_messages = search_messages(token,
-    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR niceguyfatz@gmail.com OR submissions@formsubmit.co)")
+    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR submissions@formsubmit.co)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
