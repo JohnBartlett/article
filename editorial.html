@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  -->
+  <meta charset="UTF-8">
+  <title>Editors&rsquo; Page | Classic Chicago Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#fdfaf7;color:#222;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    header{padding:20px 0;border-bottom:1px solid #eee;background:#fff;}
+    .logo-container{text-align:center;margin-bottom:20px;}
+    .logo-container img{width:390px;height:auto;}
+    nav{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0;background:#fff;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap;align-items:center;}
+    .nav-inner a{font-family:'Lato',sans-serif;font-size:16px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .nav-inner a:hover{text-decoration:underline;}
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .page-wrapper{max-width:780px;margin:48px auto 80px;padding:0 20px;}
+    .page-header{border-bottom:3px solid #d41f1f;margin-bottom:48px;padding-bottom:20px;}
+    .page-label{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#d41f1f;margin-bottom:10px;}
+    .page-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,50px);font-weight:800;line-height:1.1;margin:0 0 12px;}
+    .page-subtitle{font-family:'Lato',sans-serif;font-size:16px;color:#777;font-style:italic;}
+    .post{margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid #e8e0d5;}
+    .post:last-of-type{border-bottom:none;}
+    .post-meta{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#d41f1f;margin-bottom:8px;}
+    .post-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin:0 0 6px;line-height:1.25;}
+    .post-byline{font-family:'Lato',sans-serif;font-size:13px;color:#888;margin-bottom:20px;}
+    .post-body p{font-size:17px;color:#333;margin:0 0 20px;}
+    .post-body p:last-child{margin-bottom:0;}
+    .post-body .editor-note{font-family:'Lato',sans-serif;font-size:14px;color:#555;font-style:italic;border-left:3px solid #d41f1f;padding:12px 18px;margin:20px 0;background:#fdf9f6;}
+    .placeholder-note{font-family:'Lato',sans-serif;font-size:13px;color:#aaa;font-style:italic;border:1px dashed #ddd;padding:16px 20px;border-radius:2px;background:#fafafa;}
+    footer{background:#1a1a1a;color:#fff;padding:40px 20px;text-align:center;}
+    .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
+    .footer-links a{color:#ccc;text-decoration:none;}
+    .footer-links a:hover{color:#fff;}
+    .copyright{font-family:'Lato',sans-serif;font-size:14px;color:#aaa;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <a href="index.html"><img src="logo.jpg" alt="Classic Chicago Magazine"></a>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="editions/2026-06-14/datebook/">DateBook</a>
+      <a href="editions/2026-06-14/daily-star-june/">Astrochart</a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">
+      <a href="about.html">About</a>
+      <a href="subscribe.html">Subscribe</a>
+      <a href="advertise.html">Advertise</a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <div class="page-label">Classic Chicago Magazine</div>
+    <h1 class="page-title">Editors&rsquo; Page</h1>
+    <p class="page-subtitle">Notes, introductions, and observations from the editors &mdash; June 14, 2026</p>
+  </div>
+
+  <!-- POST 1: Introduction of the page -->
+  <div class="post">
+    <div class="post-meta">June 14, 2026</div>
+    <h2 class="post-title">Welcome to Our Editors&rsquo; Page</h2>
+    <div class="post-byline">By Judy Carmack Bross &amp; John Bartlett</div>
+    <div class="post-body">
+      <p class="placeholder-note">[PLACEHOLDER &mdash; Judy to write introduction to the page. What it is, why we&rsquo;re starting it, what readers can expect here.]</p>
+    </div>
+  </div>
+
+  <!-- POST 2: Sig's new title introduction -->
+  <div class="post">
+    <div class="post-meta">June 14, 2026</div>
+    <h2 class="post-title"><!-- PLACEHOLDER: Sig's title TBD --></h2>
+    <div class="post-byline">By Judy Carmack Bross</div>
+    <div class="post-body">
+      <p class="placeholder-note">[PLACEHOLDER &mdash; Introduction of Sigalit Zetouni with her new official title at Classic Chicago. Pending Judy&rsquo;s confirmation that Sig accepted.]</p>
+    </div>
+  </div>
+
+  <!-- POST 3: John's new title introduction -->
+  <div class="post">
+    <div class="post-meta">June 14, 2026</div>
+    <h2 class="post-title"><!-- PLACEHOLDER: John's title TBD --></h2>
+    <div class="post-byline">By Judy Carmack Bross</div>
+    <div class="post-body">
+      <p class="placeholder-note">[PLACEHOLDER &mdash; Introduction of John Bartlett with his new official title at Classic Chicago. Pending Judy&rsquo;s confirmation of title.]</p>
+    </div>
+  </div>
+
+  <!-- POST 4: Ferris Bueller reader letter -->
+  <div class="post">
+    <div class="post-meta">June 14, 2026</div>
+    <h2 class="post-title">An Alternate Take on Ferris Bueller&rsquo;s Day Off</h2>
+    <div class="post-byline">A Letter from a Reader &mdash; with a Note from the Editor</div>
+    <div class="post-body">
+      <p class="editor-note">Editor&rsquo;s Note: We don&rsquo;t run comments without authors, but we make this exception because of the heartfelt sentiments of one anonymous reader who praises Ferris Bueller because he &ldquo;dared to live in the moment.&rdquo; Thank you for your letter &mdash; so many share your love of Ferris and this iconic film celebrating its 40th anniversary.</p>
+      <p class="placeholder-note">[PLACEHOLDER &mdash; Anonymous reader comment text to be inserted here. Pull from reader-comments.html.]</p>
+    </div>
+  </div>
+
+  <!-- POST 5: Anything else Judy wants to add -->
+  <div class="post">
+    <div class="post-meta">June 14, 2026</div>
+    <p class="placeholder-note">[PLACEHOLDER &mdash; Additional posts from Judy, if any. Awaiting her reply.]</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+  <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('hamburger-btn');
+    var menu=document.getElementById('hamburger-menu');
+    if(btn&&menu){
+      btn.addEventListener('click',function(){menu.classList.toggle('open');});
+      document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});
+    }
+  })();
+</script>
+</body>
+</html>
