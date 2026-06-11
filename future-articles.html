@@ -71,6 +71,15 @@
       color: #777;
     }
 
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      color: #111;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e0d5;
+    }
+
     .article-entry {
       border: 1px solid #e8e0d5;
       border-left: 4px solid #b51c20;
@@ -78,6 +87,11 @@
       margin-bottom: 24px;
       background: #fdfaf7;
       border-radius: 2px;
+    }
+
+    .article-entry.ready {
+      border-left-color: #2e7d32;
+      background: #f9fdf9;
     }
 
     .article-entry h2 {
@@ -95,6 +109,10 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 12px;
+    }
+
+    .article-entry.ready .byline {
+      color: #2e7d32;
     }
 
     .article-entry p {
@@ -124,7 +142,7 @@
       border-radius: 12px;
     }
 
-    .meta-pill.held {
+    .meta-pill.pending {
       color: #7a5c00;
       background: #fff8e1;
     }
@@ -134,15 +152,10 @@
       background: #e8f5e9;
     }
 
-    .article-link {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #b51c20;
-      text-decoration: none;
-      border-bottom: 1px dashed #b51c20;
+    .meta-pill.future {
+      color: #1a3a5c;
+      background: #e3f0ff;
     }
-
-    .article-link:hover { text-decoration: none; border-bottom: 1px solid #b51c20; }
 
     .back-link {
       display: inline-block;
@@ -170,7 +183,6 @@
       color: #aaa;
     }
   </style>
-  <script src="dark-mode.js"></script>
 </head>
 
 <body>
@@ -186,164 +198,134 @@
     <div class="page-header">
       <div class="page-label">Internal Document</div>
       <h1 class="page-title">Future Articles</h1>
-      <div class="page-meta">Articles held for upcoming editions</div>
+      <div class="page-meta">Articles in progress or planned for upcoming editions &mdash; Updated June 11, 2026</div>
     </div>
 
-    <div class="article-entry">
-      <h2>The Music Institute Honors Chicago Legends May 18</h2>
-      <div class="byline">By Judy Carmack Bross &mdash; For May 3, 2026</div>
-      <p>Bill Kurtis and Donna La Pietra receive the Cultural Visionary Award; the Lyric Opera of Chicago receives the Dushkin Award at the Music Institute of Chicago&rsquo;s 95th Anniversary Gala, Monday May 18 at the Four Seasons Hotel Chicago. Grammy Award&ndash;winning Marta Aznavoorian receives the Richard D. Colburn Award for Teaching Excellence. Gala co-chairs: Carlos R. Cardenas and Shiraz Kotte.</p>
-      <p>Full article text received Apr 28. Three photos included: cover (Donna La Pietra and Bill Kurtis), Lyric Opera (Enrique Mazzola and John Mangum), Marta Aznavoorian. Caption for Lyric Opera photo: &ldquo;Lyric Opera Music Director Enrique Mazzola and Lyric General Director John Mangum.&rdquo;</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Held for May 3</span>
-        <span class="meta-pill">Philanthropy &amp; Arts</span>
-        <span class="meta-pill">Photos: 3 attached</span>
-      </div>
-    </div>
+    <!-- JUNE 14 EDITION -->
+    <h2 class="section-heading">June 14, 2026 Edition &mdash; In Progress</h2>
 
-    <div class="article-entry">
-      <h2>Chicago: An Express History Part Two &mdash; Riding the Gravy Train</h2>
-      <div class="byline">By Jackson LeJeune (via Ana Baca) &mdash; For May 3, 2026</div>
-      <p>Part 2 of 3: Chicago 1871&ndash;1939. Covers the Great Fire, the rise of the L, the 1893 World&rsquo;s Fair, meatpacking dominance, labor struggles (Haymarket, Pullman Strike), the Great Migration, Prohibition, and the Great Depression&rsquo;s impact on the city. Teaser: &ldquo;By 1900, Chicago had become the second city of the nation, teeming with people and built on the bedrock of its railroad network.&rdquo;</p>
-      <p>Full article text received Apr 29 from Ana Baca. Five photos + cover (all sourced from Chicago History Museum archive). Photo markers in text: COVER, PHOTO 1&ndash;5 with captions. Judy confirmed: &ldquo;Let&rsquo;s run it this week.&rdquo;</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Held for May 3</span>
-        <span class="meta-pill">Chicago History</span>
-        <span class="meta-pill">Photos: 6 (cover + 5)</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>Preservation Foundation Continues to Embrace Its Mission 50 Years After Launching</h2>
-      <div class="byline">By David A. F. Sweet (Unsung Gems) &mdash; For May 3, 2026</div>
-      <p>Lake Forest Preservation Foundation marks its 50th anniversary under new Executive Director Jennifer McGregor. Covers cemetery headstone inventory, Lake Forest Library renovation, new Adrian Smith Preservationist Award, digitization of 50 years of archives, and upcoming celebrations (Bank Lane block party May 3, black-and-white gala June 26, exhibit Aug. 20, symposium Oct. 16&ndash;18 with Geoffrey Baer). First appeared in Lake Forest Love.</p>
-      <p>Full article text received Apr 29 from Judy. Three photo attachments: (1) Lasker Estate Garage House 2025 event &mdash; possible cover; (2) Jennifer McGregor in front of restored David Adler house on Albert Lasker estate; (3) same Lasker Estate Garage House event photo. Judy suggests this &ldquo;could be the first story, across the top.&rdquo;</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Held for May 3</span>
-        <span class="meta-pill">Unsung Gems</span>
-        <span class="meta-pill">Photos: 3 attached</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>St. James Episcopal Cathedral &mdash; 150th Anniversary</h2>
-      <div class="byline">By TBD &mdash; For May 3, 2026</div>
-      <p>St. James Cathedral marks 150 years. Cover photo received Apr 29: The Very Rev. Lisa Hackney-James (Dean), Mayor Brandon Johnson, and The Right Rev. Paula Clark (Episcopal Bishop of Chicago) at the celebratory Gala at The Driehaus Museum. Credit: Office of the Mayor. Article text not yet received.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Held for May 3</span>
-        <span class="meta-pill">Religion &amp; Community</span>
-        <span class="meta-pill">Cover photo received; article pending</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>Fashion Trends (title TBD)</h2>
-      <div class="byline">By Marcy Carmack &mdash; Planned for June 21, 2026</div>
-      <p>Marcy sent a photo June 9 (&ldquo;Do you know what a stylist does?&rdquo;). Judy confirmed June 10: "I would love to have it for a lead article for June 21." Stub exists at editions/2026-06-14/fashion-trends/ but is NOT in the June 14 nav chain &mdash; will be moved to June 21 edition at prep time.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Planned June 21</span>
-        <span class="meta-pill">Fashion &amp; Style</span>
-        <span class="meta-pill">Article text + 15 photos pending</span>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin: 48px 0 32px; padding-top: 24px; border-top: 2px solid #b51c20;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #111; margin: 0 0 6px;">June 14, 2026 Edition</h2>
-      <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: #777;">Assignments from Judy&rsquo;s email, June 8</p>
-    </div>
-
-    <div class="article-entry">
+    <div class="article-entry ready">
       <h2>Letter from San Miguel de Allende, Part II: Our April 2026 Trip</h2>
-      <div class="byline">By Russell Kelley (via Annie Delfosse) &mdash; For June 14, 2026</div>
-      <p>Article and photos in hand. Annie will choose cover photo.</p>
+      <div class="byline">By Russell Kelley (via Annie Delfosse) &mdash; Hero Article</div>
+      <p>Built and ready. Hero article for June 14.</p>
       <div class="article-meta-row">
-        <span class="meta-pill ready">Article + Photos Ready</span>
+        <span class="meta-pill ready">Built &amp; Ready</span>
         <span class="meta-pill">Travel</span>
+        <span class="meta-pill">25 photos</span>
       </div>
     </div>
 
-    <div class="article-entry">
+    <div class="article-entry ready">
       <h2>Abracadabra&hellip; and Then the Magic Happens</h2>
-      <div class="byline">By Jill Lowe (via Ana Baca) &mdash; For June 14, 2026</div>
-      <p>Article and 30 photos in hand. Laid out by Ana. Ana will choose cover photo.</p>
+      <div class="byline">By Jill Lowe (via Ana Baca)</div>
+      <p>Built and ready. 30 photos. Laid out by Ana. Moved from June 7 edition.</p>
       <div class="article-meta-row">
-        <span class="meta-pill ready">Article + Photos Ready</span>
-        <span class="meta-pill">Facts and Froth</span>
+        <span class="meta-pill ready">Built &amp; Ready</span>
+        <span class="meta-pill">Facts &amp; Froth</span>
+        <span class="meta-pill">30 photos</span>
+      </div>
+    </div>
+
+    <div class="article-entry ready">
+      <h2>Americana at Auction: Telling the Liberty Story</h2>
+      <div class="byline">By Judy Carmack Bross (via Ana Baca)</div>
+      <p>Built and ready. Article and 7 photos delivered by Ana June 10. Heritage Auctions feature article.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill ready">Built &amp; Ready</span>
+        <span class="meta-pill">Arts &amp; Culture</span>
+        <span class="meta-pill">7 photos</span>
+      </div>
+    </div>
+
+    <div class="article-entry ready">
+      <h2>Do Division Street Fest 2026: Music, Food, and Perfect Weather</h2>
+      <div class="byline">By Deedee El Bego (via Ana Baca)</div>
+      <p>Built and ready. Article and 8 photos delivered by Ana June 10. Bio added to about.html.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill ready">Built &amp; Ready</span>
+        <span class="meta-pill">Arts &amp; Culture</span>
+        <span class="meta-pill">8 photos</span>
+      </div>
+    </div>
+
+    <div class="article-entry ready">
+      <h2>An Alternate Take on Ferris Bueller&rsquo;s Day Off</h2>
+      <div class="byline">Anonymous Reader &mdash; Letter to the Editor</div>
+      <p>Built and ready. Running on the Editors&rsquo; Page per Judy&rsquo;s approval June 9.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill ready">Built &amp; Ready</span>
+        <span class="meta-pill">Editors&rsquo; Page</span>
       </div>
     </div>
 
     <div class="article-entry">
-      <h2>Peony Party</h2>
-      <div class="byline">Author TBD (via Anne) &mdash; For June 14, 2026</div>
-      <p>Anne has story and photo. Author name TBD when article arrives.</p>
+      <h2>Peony Party at Paul Schweikher&rsquo;s Historic Modernist Home</h2>
+      <div class="byline">By Susan Benjamin (via Annie Delfosse)</div>
+      <p>Cover photo received (White peony.jpeg). Susan Benjamin bio added to about.html. Annie laying out the article text. Full article and photos pending from Annie.</p>
       <div class="article-meta-row">
-        <span class="meta-pill held">Pending from Anne</span>
+        <span class="meta-pill pending">Pending from Annie</span>
+        <span class="meta-pill">Society</span>
+        <span class="meta-pill">Cover photo in hand</span>
+      </div>
+    </div>
+
+    <div class="article-entry">
+      <h2>Music Institute of Chicago 95th Anniversary Gala</h2>
+      <div class="byline">By Judy Carmack Bross (via Emma Muhleman)</div>
+      <p>Cover photo received June 9 (Layne Dixon caption). Judy has sent article text to Emma. Emma laying out.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill pending">Pending from Emma</span>
+        <span class="meta-pill">Arts</span>
+        <span class="meta-pill">Cover photo in hand</span>
+      </div>
+    </div>
+
+    <div class="article-entry">
+      <h2>The 60th Reunion Is Worth Celebrating!</h2>
+      <div class="byline">By Elizabeth Dunlop Richter (via Annie Delfosse)</div>
+      <p>Article text built. Photos not yet received. Via Annie.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill pending">Photos Pending</span>
         <span class="meta-pill">Society</span>
       </div>
     </div>
 
     <div class="article-entry">
-      <h2>Music Benefit</h2>
-      <div class="byline">By Judy Carmack Bross (via Emma) &mdash; For June 14, 2026</div>
-      <p>Emma will lay out.</p>
+      <h2>Costume Art: The Metropolitan Museum of Art</h2>
+      <div class="byline">By Sigalit Zetouni, Arts Editor</div>
+      <p>Full article text and photos promised by Sig for Thursday June 12. Blast image (Walking Dress + La Grande Jatte) and credit already received.</p>
       <div class="article-meta-row">
-        <span class="meta-pill held">Pending from Emma</span>
-        <span class="meta-pill">Arts</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>Heritage Auctions</h2>
-      <div class="byline">Advertisement &mdash; June 14, 2026</div>
-      <p>Not an article. Cover photo (Continental Dollar obverse.jpeg) saved to ads/. Ask Judy for the correct ad link.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill">Advertisement</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>Reunion</h2>
-      <div class="byline">By Elizabeth Dunlop Richter (via Annie) &mdash; For June 14, 2026</div>
-      <p>Libbet sent article to Annie. Annie to confirm receipt.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Pending from Annie</span>
-        <span class="meta-pill">Society</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>SummerFest</h2>
-      <div class="byline">By DeeDee El Bego (via Ana) &mdash; For June 14, 2026</div>
-      <p>Short article. Judy will send to Ana today (June 8). DeeDee El Bego is a new contributor &mdash; about.html anchor needed.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Pending from Ana</span>
-        <span class="meta-pill">Arts</span>
-        <span class="meta-pill held">New author &mdash; bio needed</span>
-      </div>
-    </div>
-
-    <div class="article-entry">
-      <h2>Costume Art (Museum Feature)</h2>
-      <div class="byline">By Sigalit Zetouni &mdash; For June 14, 2026</div>
-      <p>John has the article. Photos and credits TBD.</p>
-      <div class="article-meta-row">
-        <span class="meta-pill held">Text in hand; photos pending</span>
+        <span class="meta-pill pending">Article + Photos Due Today</span>
         <span class="meta-pill">Arts</span>
       </div>
     </div>
 
     <div class="article-entry">
       <h2>Tent Pitching: America 250</h2>
-      <div class="byline">By Judy Carmack Bross (via Emma) &mdash; For June 14, 2026</div>
-      <p>Emma will lay out.</p>
+      <div class="byline">By Judy Carmack Bross (via Emma Muhleman)</div>
+      <p>Judy has sent article to Emma. Emma laying out.</p>
       <div class="article-meta-row">
-        <span class="meta-pill held">Pending from Emma</span>
+        <span class="meta-pill pending">Pending from Emma</span>
         <span class="meta-pill">Society</span>
       </div>
     </div>
 
+    <!-- JUNE 21 AND BEYOND -->
+    <h2 class="section-heading">June 21, 2026 Edition &mdash; Planned</h2>
+
+    <div class="article-entry">
+      <h2>Fashion Trends (title TBD)</h2>
+      <div class="byline">By Marcy Carmack &mdash; Lead Article</div>
+      <p>Judy confirmed June 10: lead article for June 21. Article text and 15 photos pending from Marcy. Stub exists at editions/2026-06-14/fashion-trends/ &mdash; will be moved to June 21 folder at edition prep.</p>
+      <div class="article-meta-row">
+        <span class="meta-pill future">June 21</span>
+        <span class="meta-pill">Fashion &amp; Style</span>
+        <span class="meta-pill pending">Article + 15 photos pending</span>
+      </div>
+    </div>
+
     <div style="text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee;">
-      <a href="editions/2026-03-08/editorial-critique.html" class="back-link">&larr; March 8 Editorial Critique</a>
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
     </div>
   </main>
 
