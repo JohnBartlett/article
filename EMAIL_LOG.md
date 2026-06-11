@@ -50,6 +50,15 @@ Track emails that have been processed, are pending action, or need re-addressing
 | May 30 | Annie | Letter from San Miguel de Allende | `19e79ecd652408bf` | ⏳ | Part 1 built in san-miguel/; Part 2 starts at "trip to San Miguel in April, 2026" — build for June 14 |
 | Jun 1 | Judy | San Miguel — divide into Part 1 / Part 2 | `19e83ab1ccb15628` | ⏳ | Part 2 needs its own folder in editions/2026-06-14/ |
 
+## June 14 Edition — New Jun 10-11
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 10 | Ana | Stories for this Sunday (advance notice) | `19eb368576c24cf3` | ✅ | Ana flagged all-day work event Jun 11; sent articles ahead of time |
+| Jun 11 | Judy | Re: Stories for this Sunday | `19eb6deb0d8c3b86` | ✅ | Judy praised Ana's work; no action needed |
+| Jun 11 | Sig | Re: Your title at the magazine (accepted Arts Editor) | `19eb71f4b296ae34` | ✅ | Sig accepted Arts Editor title; announcement goes on editorial.html for Jun 14 |
+| Jun 11 | Judy | Re: Your title at the magazine (confirmed) | `19eb747de6e260cf` | ✅ | Judy confirmed; no action needed |
+
 ## Ongoing / Not Edition-Specific
 
 | Date | From | Subject / Summary | Msg ID | Status | Notes |
