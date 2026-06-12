@@ -81,3 +81,8 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 10 | Ana | Do Division / DeeDee El Bego article + 7 photos | `19eb3367487c3d85` | ✅ | Article built; photos extracted; homepage card updated |
 | Jun 10 | Judy | DeeDee El Bego cover photo (FullSizeRender.jpeg) | `19eb316f1e9488e5` | ✅ | Already extracted; COVER Deedee Story.jpg from Ana supersedes |
 | Jun 10 | Judy | Re: Photo and blurb (Marcy fashion article) | `19eb13cf8b8df402` | ✅ | Judy confirmed Marcy fashion article for June 21 lead; already noted in future-articles.html |
+| Jun 11 | Judy | Susan Benjamin bio for Peony Party | `19eb699d97cb6131` | ✅ | Bio text provided; already in about.html#susan-benjamin |
+| Jun 11 | Ana | Re: Stories for this Sunday (all-day event) | `19eb8ea48afa898d` | ⬛ | Ana/Judy exchange praising each other; no action needed |
+| Jun 11 | Judy | Approved John intro for editorial.html | `19eb8eba9e42c876` | ✅ | "Absolutely perfect, wouldn't change a word" — intro live on editorial.html |
+| Jun 11 | Judy | Approved Sig intro for editorial.html | `19eb8edee9e953db` | ✅ | "Absolutely perfect, so right" — Sig Arts Editor intro live on editorial.html |
+| Jun 12 | Sig | Article text coming later today | `19ebbcc2caa53300` | ⏳ | Sig confirmed article text + photos + credits for sig-costume-art coming today |
