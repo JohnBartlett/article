@@ -1,6 +1,6 @@
 # June 14, 2026 Edition — Status
 
-_Updated: 2026-06-11_
+_Updated: 2026-06-12_
 
 ## Articles
 
@@ -18,6 +18,7 @@ _Updated: 2026-06-11_
 | tent-pitching | Tent Pitching: America 250 | Judy Carmack Bross | ❌ | ❌ | Emma laying out |
 | daily-star-june | Daily Star June | TBD | ✅ | — | Astrochart page |
 | fashion-trends | Fashion Trends | Marcy Carmack | ❌ | ❌ | Moved to June 21 |
+| _(editorial.html)_ | Editors' Page | Judy Carmack Bross | ✅ | — | Standalone root page; John + Sigalit intros approved June 11; internal-nav added June 12 |
 
 ## Pending Deliveries
 
@@ -37,4 +38,6 @@ _Updated: 2026-06-11_
 | Judy — Heritage Auctions cover photo | `19eadcbae7ab0567` |
 | Judy — Peony Party cover photo | `19eb693b97a9bafa` |
 | Judy — Susan Benjamin bio | `19eb699d97cb6131` |
-| Judy — Deedee El Bego bio | `19eb649864f4a56a` |
+| Judy — Deedee El Bego bio | `19eb649864f4a56a` (in thread 19eb220380b1ae11) |
+| Judy — John intro approved | `19eb8edee9e953db` |
+| Judy — Sigalit intro approved | `19eb8eba9e42c876` |
