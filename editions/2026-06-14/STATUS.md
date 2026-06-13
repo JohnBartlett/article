@@ -1,6 +1,6 @@
 # June 14, 2026 Edition — Status
 
-_Updated: 2026-06-12_
+_Updated: 2026-06-13_
 
 ## Articles
 
@@ -15,7 +15,7 @@ _Updated: 2026-06-12_
 | music-benefit | Music Institute of Chicago 95th Anniversary Gala | Judy Carmack Bross | ❌ | ✅ 1 | Cover photo received June 9 (Layne Dixon); Emma laying out |
 | elizabeth-richter-reunion | The 60th Reunion Is Worth Celebrating! | Elizabeth Dunlop Richter | ❌ | ❌ | Via Annie; text sent June 9 |
 | sig-costume-art | Costume Art / Metropolitan Museum | Sigalit Zetouni | ❌ | ❌ | Text promised by Sig; image+credit for blast received |
-| tent-pitching | Tent Pitching: America 250 | Judy Carmack Bross | ❌ | ❌ | Emma laying out |
+| tent-pitching | Look Who Pitched George Washington's Tent | Judy Carmack Bross | ✅ | ⏳ 13 | HTML built June 13 from Emma email 19ebe7fe316a7bd8; photos not yet extracted (no Gmail creds in session); note: text has apparent typo "Danelle Allen" (should be Danielle Allen?) and garbled sentence before book title — flag to Judy; final photo marker in email says "Photo 12" but photo 13 exists in attachments — placed as photo 13 |
 | daily-star-june | Daily Star June | TBD | ✅ | — | Astrochart page |
 | fashion-trends | Fashion Trends | Marcy Carmack | ❌ | ❌ | Moved to June 21 |
 | _(editorial.html)_ | Editors' Page | Judy Carmack Bross | ✅ | — | Standalone root page; John + Sigalit intros approved June 11; internal-nav added June 12 |
@@ -23,7 +23,7 @@ _Updated: 2026-06-12_
 ## Pending Deliveries
 
 - **Annie** — Peony Party article text (Susan Benjamin); Elizabeth Richter reunion article
-- **Emma** — Music Benefit text layout; Tent Pitching layout
+- **Emma** — Music Benefit text layout; Tent Pitching photos (extract from message 19ebe7fe316a7bd8 when Gmail creds available)
 - **Sigalit** — Costume Art / Met article text + photos
 
 ## Email Message IDs
@@ -41,3 +41,5 @@ _Updated: 2026-06-12_
 | Judy — Deedee El Bego bio | `19eb649864f4a56a` (in thread 19eb220380b1ae11) |
 | Judy — John intro approved | `19eb8edee9e953db` |
 | Judy — Sigalit intro approved | `19eb8eba9e42c876` |
+| Judy — Music Institute cover photo (re-send w/ caption) | `19ebfe7d9cb5b0b1` |
+| Emma — Tent Pitching article + 13 photos | `19ebe7fe316a7bd8` |
