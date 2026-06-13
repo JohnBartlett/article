@@ -3,10 +3,15 @@
 <head>
   <!-- GA4-disabled
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
   -->
   <meta charset="UTF-8">
-  <title>The 60th Reunion Is Worth Celebrating! | Classic Chicago – Sunday Edition</title>
+  <title>The 60th Reunion Is Worth Celebrating! | Classic Chicago &ndash; Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -19,31 +24,41 @@
     nav{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0;}
     .nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap;}
     .nav-inner a{font-family:'Lato',sans-serif;font-size:16px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .nav-inner a:hover{color:#b51c20;text-decoration:underline;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    .article-container{max-width:780px;margin:0 auto;padding:40px 20px 60px;}
+    .article-label{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 16px;font-weight:800;}
+    .byline{font-family:'Lato',sans-serif;font-size:15px;color:#555;margin-bottom:30px;}
+    .byline a{color:#d41f1f;text-decoration:none;}
+    .byline a:hover{text-decoration:underline;}
+    p{margin:0 0 1.4em;}
+    figure{margin:0 0 32px;}
+    figure img{width:100%;height:auto;display:block;}
+    figcaption{font-family:'Lato',sans-serif;font-size:13px;color:#666;margin-top:8px;line-height:1.4;font-style:italic;}
+    .article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;border-top:1px solid #eee;padding-top:24px;}
+    .article-nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#222;font-family:'Lato',sans-serif;font-size:14px;max-width:45%;}
+    .article-nav a:hover{color:#d41f1f;}
+    .article-nav .prev{flex-direction:row;}
+    .article-nav .next{flex-direction:row-reverse;text-align:right;}
+    .article-nav img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    .article-nav .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;display:block;margin-bottom:3px;}
+    .feedback-widget{background:#f9f5f0;border:1px solid #e0d8ce;padding:20px 24px;margin-top:40px;text-align:center;font-family:'Lato',sans-serif;}
+    .feedback-widget p{margin:0 0 12px;font-size:15px;color:#555;}
+    .feedback-widget .vote-buttons{display:flex;justify-content:center;gap:12px;}
+    .feedback-widget button{background:#d41f1f;color:#fff;border:none;padding:8px 24px;font-family:'Lato',sans-serif;font-size:14px;cursor:pointer;letter-spacing:0.05em;}
+    .feedback-widget button:hover{background:#b51c20;}
+    footer{background:#222;color:#ccc;text-align:center;padding:30px 20px;font-family:'Lato',sans-serif;font-size:13px;}
+    footer a{color:#ccc;text-decoration:none;}
+    footer a:hover{color:#fff;}
+    .footer-social{display:flex;justify-content:center;gap:20px;margin-bottom:12px;}
     .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
     .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
     .hamburger-menu.open{display:block;}
     .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
-    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
-    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
-    .article-container{max-width:780px;margin:0 auto 60px;padding:0 20px;}
-    .article-label{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin:40px 0 10px;}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 16px;font-weight:800;}
-    .byline{font-family:'Lato',sans-serif;font-size:15px;color:#555;margin-bottom:30px;}
-    .byline a{color:#d41f1f;text-decoration:none;}
-    figure{margin:36px 0;}
-    figure img{width:100%;height:auto;display:block;}
-    figure figcaption{font-family:'Lato',sans-serif;font-size:12px;color:#888;text-align:center;margin-top:8px;font-style:italic;}
-    .article-body p{font-size:17px;color:#333;margin-bottom:20px;}
-    nav.article-nav{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd;gap:16px;}
-    nav.article-nav a{font-family:'Lato',sans-serif;font-size:13px;color:#d41f1f;text-decoration:none;display:flex;align-items:center;gap:10px;max-width:48%;}
-    nav.article-nav a img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
-    nav.article-nav .nav-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;}
-    nav.article-nav a.next{flex-direction:row-reverse;text-align:right;margin-left:auto;}
-    footer{background:#333;color:#fff;padding:40px 20px;text-align:center;margin-top:60px;}
-    .social-links{margin-bottom:20px;}
-    .social-links a{display:inline-block;margin:0 10px;transition:opacity 0.3s;}
-    .social-links svg{width:32px;height:32px;fill:#fff;}
-    .copyright{font-family:'Lato',sans-serif;font-size:14px;color:#aaa;}
+    @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
   </style>
 </head>
 <body>
@@ -75,123 +90,170 @@
     <a href="../../../editors/stats.html">Stats</a>
   </div>
 
-  <main>
-    <div class="article-container">
-      <!-- PENDING: Judy to confirm title and article label -->
-      <div class="article-label">Travel &amp; Culture</div>
-      <h1>The 60th Reunion Is Worth Celebrating!</h1>
-      <p class="byline">By <a href="../../../about.html#elizabeth-dunlop-richter">Elizabeth Dunlop Richter</a> &nbsp;&bull;&nbsp; June 14, 2026</p>
+  <div class="article-container">
+    <div class="article-label">Travel &amp; Culture</div>
+    <h1>The 60th Reunion Is Worth Celebrating!</h1>
+    <div class="byline">By <a href="../../../about.html#elizabeth-dunlop-richter">Elizabeth Dunlop Richter</a> &bull; June 14, 2026</div>
 
-      <!-- PENDING: Hero photo from Annie/Libbet — no placement instructions received yet -->
+    <p>One's 50th college reunion is a major milestone. Most of us who can, make it a  point to go. But with that one behind us, the 60th is more likely to be skipped.  At my alma mater, Wellesley College, the 50th reunion class always wins the  attendance award, the 60th never. But for me and many of my classmates, the 60th was nonetheless important. Since our 55th reunion had to be online thanks to Covid, it had been ten years since I had seen most of my class and  the campus is always stunning in May when the rhododendrons are in bloom. But a primary reason was two of my closest friends from New York were going, and it was time to get together! Additionally, Wellesley does a fine job of welcoming alumnae.</p>
 
-      <div class="article-body">
-        <p>One&rsquo;s 50th college reunion is a major milestone. Most of us who can, make it a point to go. But with that one behind us, the 60th is more likely to be skipped. At my alma mater, Wellesley College, the 50th reunion class always wins the attendance award, the 60th never. But for me and many of my classmates, the 60th was nonetheless important.</p>
+    <figure>
+      <img src="1-WelcomeBackSign.png" alt="">
+    </figure>
 
-        <p>Since our 55th reunion had to be online thanks to Covid, it had been ten years since I had seen most of my class and the campus is always stunning in May when the rhododendrons are in bloom. But a primary reason was two of my closest friends from New York were going, and it was time to get together! Additionally, Wellesley does a fine job of welcoming alumnae.</p>
+    <figure>
+      <img src="2-PinkFlowers.png" alt="">
+    </figure>
 
-        <p>Founded in 1875 (and celebrating its 150th anniversary year), Wellesley is one of the few remaining women&rsquo;s colleges. With the ongoing debate over single sex education as well as the decline in teaching the liberal arts, as a history major I wanted to endorse both causes.</p>
+    <p>Founded in 1875 (and celebrating its 150th anniversary year), Wellesley is one  of the few remaining women's colleges. With the ongoing debate over single  sex education as well as the decline in teaching the liberal arts, as a history  major I wanted to endorse both causes.</p>
 
-        <p>Despite concerns about male companionship, there was a plethora of men on tap when I was at Wellesley. There were a variety of opportunities to meet them outside of class (the obvious academic benefits of single-sex classes were substantial). The theater group attracted men for thespian opportunities. One could take classes at MIT or spend a semester at Dartmouth. And there of course were mixers at area schools like Harvard (I introduced a classmate to her future husband at such a mixer &mdash; but had no luck myself that night!).</p>
+    <p>Despite concerns about male companionship, there was a plethora of men on  tap when I was at Wellesley. There were a variety of opportunities to meet  them outside of class (the obvious academic benefits of single-sex classes  were substantial). The theater group attracted men for thespian opportunities.  One could take classes at MIT or spend a semester at Dartmouth. And there  of course were mixers at area schools like Harvard (I introduced a classmate  to her future husband at such a mixer - but had no luck myself that night!).</p>
 
-        <p>Liberal arts courses were and remain many and excellent; STEM offerings were equally available and impressive, from mathematics and statistics to astronomy and physics. Both are critical to a complete education. Meeting classmates at reunion who had been professors at MIT or senior executives in the federal government or financial gurus was part of the fun. Our classmate Diana Chapman Walsh, a former professor at the Harvard School of Public Health, had been President of Wellesley from 1993 to 2007, making our class very special in our minds.</p>
+    <p>Liberal arts courses were and remain many and excellent; STEM offerings were equally available and impressive, from mathematics and statistics to  astronomy and physics. Both are critical to a complete education. Meeting  classmates at reunion who had been professors at MIT or senior executives in  the federal government or financial gurus was part of the fun. Our classmate Diana Chapman Walsh, a former professor at the Harvard School of Public  Health, had been President of Wellesley from 1993 to 2007, making our class  very special in our minds.</p>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Diana Chapman, former Wellesley College president and member of class of 1966, waves to her fans during the alumnae parade. Marching with her is Jeanne Palleiko, reunion chair." -->
+    <figure>
+      <img src="3-Parade.png" alt="Diana Chapman, former Wellesley College president and member of class of 1966, waves to her fans during the alumnae parade.">
+      <figcaption>Diana Chapman, former Wellesley College president and member of class of 1966,waves to her fans during  the alumnae parade. Marching with her is Jeanne Palleiko, reunion chair.</figcaption>
+    </figure>
 
-        <p>Of particular interest at our 60th was the screening of a new documentary, &ldquo;From Sea to Shining Sea&rdquo; about the life of Wellesley graduate and faculty member Katherine Lee Bates, class of 1880, the author of the poem/lyrics to &ldquo;America the Beautiful.&rdquo; The film was based on Bates&rsquo; biography written by my classmate Melinda Ponder, about whom I wrote for this publication when she came through Chicago on a book tour. Bates also came through Chicago during the 1893 Columbian World&rsquo;s Exposition, her inspiration for the alabaster cities mentioned in the song. She was enroute to Colorado where a visit to Pike&rsquo;s Peak inspired the line &ldquo;for purple mountains&rsquo; majesty,&rdquo; among others. She had dinner in Chicago with social reformer Jane Addams, whose settlement house gave her the idea of starting one in Boston.</p>
+    <p>Of particular interest at our 60th was the screening of a new documentary,  "From Sea to Shining Sea" about the life of Wellesley graduate and faculty  member Katherine Lee Bates, class of 1880, the author of the poem/lyrics to "America the Beautiful." The film was based on Bates' biography written by my  classmate Melinda Ponder, about whom I wrote for this publication when she  came through Chicago on a book tour. Bates also came through Chicago  during the 1893 Columbian World's Exposition, her inspiration for the  alabaster cities mentioned in the song. She was enroute to Colorado where a  visit to Pike's Peak inspired the line "for purple mountains' majesty," among others. She had dinner in Chicago with social reformer Jane Addams, whose  settlement house gave her the idea of starting one in Boston.</p>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Katherine Lee Bates" -->
+    <figure>
+      <img src="4-WomanWithDog.png" alt="Katherine Lee Bates">
+      <figcaption>Katherine Lee Bates</figcaption>
+    </figure>
 
-        <p>The book details the challenges facing a female academic of her era. Even though she was a noted scholar and on the Wellesley faculty, as a woman, she could not enter the Harvard library and had to befriend a male student to borrow books for her research in English literature. And if she married, she would have had to leave the faculty, a nasty choice. She chose to stay.</p>
+    <p>The book details the challenges facing a female academic of her era. Even  though she was a noted scholar and on the Wellesley faculty, as a woman,  she could not enter the Harvard library and had to befriend a male student to  borrow books for her research in English literature. And if she married, she  would have had to leave the faculty, a nasty choice. She chose to stay.</p>
 
-        <p>Colleges and universities stage reunions at their core for one reason: to raise money. By keeping alumnae emotionally engaged with their college and their college memories, higher education encourages donations at all levels. Statistics show that besides religious organizations, the second cause to which people most donate money is education. A college or university has a big job not only to attract alums back for a reunion, but to solidify personal connections by making the reunion memorable and instilling loyalty sufficient to open pocketbooks. Wellesley does an impressive job: scheduling faculty lectures, holding open houses, setting up tours of new campus buildings, and facilitating class dinners. Many members of our class (including me and my friends) even stayed in dormitories, enduring hard mattresses to reinforce old memories. Giving strategies include contact from class fundraising reps, annuity options, and planned giving societies.</p>
+    <figure>
+      <img src="5-Book.png" alt="">
+    </figure>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Honoring Wellesley's 150th anniversary, a panel of four college presidents spoke about the challenges facing higher education today, (L to R) Alicia DeCoudreau (Mills College), Nan Keohane (Wellesley), Diana Chapman Walsh (Wellesley), Paula Johnson (current Wellesley president)" -->
+    <p>Colleges and universities stage reunions at their core for one reason: to raise  money. By keeping alumnae emotionally engaged with their college and their  college memories, higher education encourages donations at all levels.  Statistics show that besides religious organizations, the second cause to  which people most donate money is education. A college or university has a  big job not only to attract alums back for a reunion, but to solidify personal  connections by making the reunion memorable and instilling loyalty sufficient  to open pocketbooks. Wellesley does an impressive job: scheduling faculty  lectures, holding open houses, setting up tours of new campus buildings, and  facilitating class dinners. Many members of our class (including me and my  friends) even stayed in dormitories, enduring hard mattresses to reinforce old  memories. Giving strategies include contact from class fundraising reps,  annuity options, and planned giving societies.</p>
 
-        <p>Admittedly, our 60th reunion involved more looking at photos of grandchildren (some were already Wellesley students!) than discussing donation strategies. The huge benefit of a reunion and a driver for many of us to attend is that everyone is going through roughly the same life stage. It&rsquo;s probably the only gathering where one can assume everyone is within a year or two of being the same age. Most of our class are now retired and having to make various life decisions. I&rsquo;m not mentioning our age &mdash; do the math &mdash; but all of us are looking at new challenges for the next ten or twenty (if we&rsquo;re lucky) years and can use all the help we can get. This drew us to the Class Discussion.</p>
+    <figure>
+      <img src="6-PieChart.png" alt="">
+    </figure>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "The 'red class' of 1999 lines the road to cheer on earlier classes as each preceding class marches or in some cases rides through the parade." -->
+    <p>A special panel featured four past college presidents discussing the  challenges facing higher education.</p>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Marji Siegal Greenberg, class of 1966, catches a ride in the alumnae parade." -->
+    <figure>
+      <img src="7-Panel.png" alt="Honoring Wellesley's 150th anniversary, a panel of four college presidents spoke about the challenges facing higher education today.">
+      <figcaption>Honoring Wellesley's 150th anniversary, a panel of four college presidents spoke about the challenges facing higher education today, (L to R) Alicia DeCoudreau (Mills College), Nan Keohane (Wellesley), Diana Chapman Walsh (Wellesley), Paula Johnson (current Wellesley president)</figcaption>
+    </figure>
 
-        <p>The highly anticipated Class Discussion, a regular feature of our reunions, allowed classmates to be open about the challenges and issues they faced. Four of us jump-started the conversation by reporting briefly on our current situations. Many have found new adventures, and many are facing new health challenges. This variety engaged almost everyone in learning about ways to change or enrich their present situations.</p>
+    <p>Admittedly, our 60th reunion involved more looking at photos of grandchildren  (some were already Wellesley students!) than discussing donation strategies.  The huge benefit of a reunion and a driver for many of us to attend is that  everyone is going through roughly the same life stage. It's probably the only  gathering where one can assume everyone is within a year of two of being the  same age. Most of our class are now retired and having to make various life  decisions. I'm not mentioning our age – do the math – but all of us are looking at new challenges for the next ten or twenty (if we're lucky) years and can use  all the help we can get. This drew us to the Class Discussion.</p>
 
-        <p>About a third of our class has passed away, as have many class spouses. Widowhood was one major topic of discussion. Moving to housing more accommodating to aging hips and knees was another popular topic. We listened to several classmates urge us to move sooner than later to a CCRC (continuing care retirement community) where they had found friends, support, and engaging activities. Health challenges were prominent. When I described recent surgery, a classmate immediately came up to me and said, &ldquo;Now I know whom I can talk to. I&rsquo;m having the same thing.&rdquo;</p>
+    <p>The highly anticipated Class Discussion, a regular feature of our reunions,  allowed classmates to be open about the challenges and issues they faced.  Four of us jump-started the conversation by reporting briefly on our current situations. Many have found new adventures, and many are facing new health  challenges. This variety engaged almost everyone in learning about ways to  change or enrich their present situations.</p>
 
-        <p>Dodie Williams Headington is clear about why she came. &ldquo;I wouldn&rsquo;t consider not going. We&rsquo;re all going through the same things&hellip;it&rsquo;s an age of transitions for sure.&rdquo; Like my husband and I have done, Headington and her husband moved from a multi-stair situation to a ground level home to ease the stress on creaky joints. They also left the hurricane-devastated island of Boca Grande on Florida&rsquo;s west coast to West Palm Beach on the east coast to be farther inland and near family. Safety is a concern for all of us.</p>
+    <figure>
+      <img src="8-Umbrellas.png" alt="The 'red class' of 1999 lines the road to cheer on earlier classes as each preceding class marches or in some cases rides through the parade.">
+      <figcaption>The "red class" of 1999 lines the road to cheer on earlier classes as each preceding class marches or in some cases rides through the parade.</figcaption>
+    </figure>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Dodie Headington" -->
+    <figure>
+      <img src="9-GolfCart.png" alt="Marji Siegal Greenberg, class of 1966, catches a ride in the alumnae parade.">
+      <figcaption>Marji Siegal Greenberg, class of 1966, catches a ride in the alumnae parade.</figcaption>
+    </figure>
 
-        <p>Headington, a former alumnae class president, is active in local Wellesley clubs (encouraged by the college) and has a biweekly Zoom session with a group of dorm mates. Not only did she reconnect with these and other friends, but &ldquo;I always make new friends at reunion.&rdquo; She plans to review the class book, comprised of personal updates collected for each reunion, and email women with whom she had newly connected.</p>
+    <p>About a third of our class has passed away, as have many class spouses. Widowhood was one major topic of discussion. Moving to housing more accommodating to aging hips and knees was another popular topic. We listened to several classmates urge us to move sooner than later to a CCRC (continuing care retirement community) where they had found friends,  support, and engaging activities. Health challenges were prominent. When I described recent surgery, a classmate immediately came up to me and said, "Now I know whom I can talk to. I'm having the same thing."</p>
 
-        <p>Conversations were hardly only about health and housing. I was delighted to hear about new passions, satisfying volunteer work, academic pursuits, favorite books and films. Some had taken professional careers to assisted living opportunities like writing for the group newsletter. Others continued life-long avocations like painting or philanthropy. One classmate thoughtfully took each grandchild on a trip to wherever he/she wanted to go. This is what I had come to absorb: experiences that will enhance what my late uncle (he lived to 100!) always called the &ldquo;4th quarter.&rdquo; Perhaps the most consistent advice so many shared was &ldquo;just keep moving.&rdquo;</p>
+    <p>Dodie Williams Headington is clear about why she came. "I wouldn't consider not going. We're all going through the same things…it's an age of transitions for sure." Like my husband and I have done, Headington and her husband moved from a multi-stair situation to a ground level home to ease the stress on creaky joints. They also left the hurricane-devastated island of Boca Grande on Florida's west coast to West Palm Beach on the east coast to be farther inland and near family. Safety is a concern for all of us.</p>
 
-        <p>So, what about the 65th reunion? Chicagoan Isabel Stewart, class of 1961 and former executive director of the Chicago Foundation for Women, just attended hers.</p>
+    <figure>
+      <img src="10-WomaninPink.png" alt="Dodie Headington">
+      <figcaption>Dodie Headington</figcaption>
+    </figure>
 
-        <!-- PHOTO PLACEHOLDER — caption from PDF: "Isabel Stewart, class of 1961" -->
+    <p>Headington, a former alumnae class president, is active in local Wellesley  clubs (encouraged by the college) and has a biweekly Zoom session with a  group of dorm mates. Not only did she reconnect with these and other  friends, but "I always make new friends at the reunion." She plans to review the  class book, comprised of personal updates collected for each reunion, and  email women with whom she had newly connected.</p>
 
-        <p>&ldquo;I attended my 65th reunion at Wellesley for old times&rsquo; sake. I wanted to see that lovely campus again and I wanted to visit with classmates of 60 years ago and compare notes. My dearest Wellesley friend died shortly before reunion. I attended in part in her memory. Additionally, I had made (for me and my circumstances) a major contribution to Wellesley earlier this year after selling an artwork. I wanted to visit campus and affirm my decision to do so!&rdquo;</p>
+    <p>Conversations were hardly only about health and housing. I was delighted to  hear about new passions, satisfying volunteer work, academic pursuits,  favorite books and films. Some had taken professional careers to assisted  living opportunities like writing for the group newsletter. Others continued life long avocations like painting or philanthropy. One classmate thoughtfully  took each grandchild on a trip to wherever he/she wanted to go. This is what I  had come to absorb: experiences that will enhance what my late uncle (he lived to 100!) always called the "4th quarter." Perhaps the most consistent  advice so many shared was "just keep moving."</p>
 
-        <p>So we have many reasons for coming back to our alma mater. The phrase &ldquo;alma mater&rdquo; means &ldquo;nourishing mother&rdquo; in Latin. For many of us, the love of our alma mater does not end until we can no longer make the journey!</p>
+    <figure>
+      <img src="11-School.png" alt="">
+    </figure>
+
+    <p>So, what about the 65th reunion? Chicagoan Isabel Stewart, class of 1961 and  former executive director of the Chicago Foundation for Women, just attended  hers.</p>
+
+    <figure>
+      <img src="12-WomaninVisor.png" alt="Isabel Stewart, class of 1961">
+      <figcaption>Isabel Stewart, class of 1961</figcaption>
+    </figure>
+
+    <p><em>"I attended my 65th reunion at Wellesley for old times' sake. I wanted to see  that lovely campus again and I wanted to visit with classmates of 60 years ago  and compare notes. My dearest Wellesley friend died shortly before reunion. I  attended in part in her memory. Additionally, I had made (for me and my  circumstances) a major contribution to Wellesley earlier this year after selling  an artwork. I wanted to visit campus and affirm my decision to do so!"</em></p>
+
+    <p>So we have many reasons for coming back to our alma mater. The phrase  "alma mater" means "nourishing mother" in Latin. For many of us, the love of  our alma mater does not end until we can no longer make the journey!</p>
+
+    <p style="text-align:center;margin-top:32px;"><a href="../../../about.html#elizabeth-dunlop-richter" style="color:#d41f1f;font-family:'Lato',sans-serif;font-size:15px;text-decoration:none;">About the Author: Elizabeth Dunlop Richter &rarr;</a></p>
+
+    <div class="feedback-widget">
+      <p>Did you enjoy this article?</p>
+      <div class="vote-buttons">
+        <button onclick="submitVote('Yes')">&#128077; Yes</button>
+        <button onclick="submitVote('No')">&#128078; No</button>
       </div>
-
-      <p style="margin-top:32px;"><a href="../../../about.html#elizabeth-dunlop-richter" style="font-family:'Lato',sans-serif;font-size:14px;font-weight:700;color:#b51c20;text-decoration:none;text-transform:uppercase;letter-spacing:0.08em;">About the Author: Elizabeth Dunlop Richter &rarr;</a></p>
-
-      <div style="margin:56px 0 40px;padding:28px 32px;border:1px solid #e8e0d5;border-radius:2px;background:#fdfaf7;">
-        <p style="font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin:0 0 14px;">Did you enjoy this article?</p>
-        <div style="display:flex;gap:12px;margin-bottom:8px;">
-          <button id="thumbUp" onclick="submitVote('Yes')" style="background:#f0f8f0;border:1px solid #c8e6c9;border-radius:4px;padding:10px 22px;font-size:22px;cursor:pointer;">&#128077;</button>
-          <button id="thumbDown" onclick="submitVote('No')" style="background:#fff8f8;border:1px solid #ffcdd2;border-radius:4px;padding:10px 22px;font-size:22px;cursor:pointer;">&#128078;</button>
-        </div>
-        <div id="voteConfirm" style="display:none;font-family:'Lato',sans-serif;font-size:13px;color:#2e7d32;margin-bottom:20px;">&#10003; Thanks for your vote!</div>
-        <div id="feedbackForm" style="border-top:1px solid #ece5dd;padding-top:20px;margin-top:16px;">
-          <p style="font-family:'Lato',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin:0 0 10px;">Leave a comment</p>
-          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
-            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-            <input type="hidden" name="_next" id="feedbackReturn">
-            <input type="hidden" name="Page" id="page-tracking">
-            <input type="hidden" name="Environment" id="env-tracking">
-            <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px 12px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
-            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px 12px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
-            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
-          </form>
-        </div>
-        <script>
-          var base=window.location.href.split('?')[0];
-          document.getElementById('feedbackReturn').value=base+'?feedback=sent';
-          document.getElementById('page-tracking').value=document.title+' — '+base;
-          document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
-          function submitVote(vote){fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});document.getElementById('thumbUp').disabled=true;document.getElementById('thumbDown').disabled=true;document.getElementById('thumbUp').style.opacity=(vote==='Yes')?'1':'0.35';document.getElementById('thumbDown').style.opacity=(vote==='No')?'1':'0.35';document.getElementById('voteConfirm').style.display='block';}
-        </script>
+      <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
+      <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
+        <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
+        <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+          <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+          <input type="hidden" name="_next" id="feedbackReturn">
+          <input type="hidden" name="Page" id="page-tracking">
+          <input type="hidden" name="Environment" id="env-tracking">
+          <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
+          <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
+          <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
+        </form>
       </div>
-
-      <nav class="article-nav">
-        <a class="prev" href="../heritage-auction/">
-          <img src="../thumb-placeholder.jpg" alt="">
-          <div><span class="nav-label">&#8592; Previous</span>Heritage Auctions</div>
-        </a>
-        <a class="next" href="../deedee-summerfest/">
-          <img src="../thumb-placeholder.jpg" alt="">
-          <div><span class="nav-label">Next &#8594;</span>SummerFest</div>
-        </a>
-      </nav>
+      <script>
+        var base=window.location.href.split('?')[0];
+        document.getElementById('feedbackReturn').value=base+'?feedback=sent';
+        document.getElementById('page-tracking').value=document.title+' — '+base;
+        document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
+        function submitVote(vote){
+          fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
+          document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
+          document.querySelector('.vote-buttons button:'+(vote==='Yes'?'first':'last')+'-child').style.opacity='1';
+          document.getElementById('voteConfirm').style.display='block';
+        }
+      </script>
     </div>
-  </main>
+
+    <nav class="article-nav">
+      <a href="../peony-party/" class="prev">
+        <img src="../peony-party/17-White%20peony.jpeg" alt="Previous article thumbnail">
+        <div>
+          <span class="nav-label">&larr; Previous</span>
+          Peony Party
+        </div>
+      </a>
+      <a href="../music-benefit/" class="next">
+        <img src="../music-benefit/da9a7cf6-14e3-0892-351a-6c29de1155b7.jpg" alt="Next article thumbnail">
+        <div>
+          <span class="nav-label">Next &rarr;</span>
+          Music Benefit
+        </div>
+      </a>
+    </nav>
+  </div>
 
   <footer>
-    <div class="social-links">
-      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
     </div>
-    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
   </footer>
 
-  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
   <script>
-    var prevUrl='../heritage-auction/';
-    var nextUrl='../deedee-summerfest/';
-    document.addEventListener('keydown',function(e){var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable)return;if(e.key==='n'||e.key==='N'){window.location.href=nextUrl;}if(e.key==='p'||e.key==='P'){window.location.href=prevUrl;}if(e.key===' '||e.key==='PageDown'){e.preventDefault();window.scrollBy(0,window.innerHeight*0.85);}if(e.key==='PageUp'){e.preventDefault();window.scrollBy(0,-window.innerHeight*0.85);}});
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      var menu = document.getElementById('hamburger-menu');
+      menu.classList.toggle('open');
+    });
   </script>
 </body>
 </html>
