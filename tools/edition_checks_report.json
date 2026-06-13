@@ -1,9 +1,110 @@
 {
   "dark_mode_added": [
-    "editions/2026-03-01/moneyball/index.html",
-    "editions/2026-03-01/wells-street-kitchen-juice/index.html"
+    "editions/2026-05-10/signs-review/index.html",
+    "editions/2026-05-17/chicago-opera-theater/index.html",
+    "editions/2026-05-17/chicago-skyline/index.html",
+    "editions/2026-05-17/project-styling/index.html",
+    "editions/2026-06-07/alliance-francaise/index.html",
+    "editions/2026-06-07/court-tennis/index.html",
+    "editions/2026-06-07/ferris-bueller/index.html",
+    "editions/2026-06-07/minds-matter/index.html",
+    "editions/2026-06-07/ryan-licht-sang/index.html",
+    "editions/2026-06-07/san-miguel/index.html",
+    "editions/2026-06-07/scott-holleran/index.html",
+    "editions/2026-06-07/seminary-gardens/index.html",
+    "editions/2026-06-14/deedee-summerfest/index.html",
+    "editions/2026-06-14/elizabeth-richter-reunion/index.html",
+    "editions/2026-06-14/fashion-trends/index.html",
+    "editions/2026-06-14/ferris-bueller-alternate-take/index.html",
+    "editions/2026-06-14/heritage-auction/index.html",
+    "editions/2026-06-14/jill-lowe-magic/index.html",
+    "editions/2026-06-14/music-benefit/index.html",
+    "editions/2026-06-14/peony-party/index.html",
+    "editions/2026-06-14/san-miguel-trip/index.html",
+    "editions/2026-06-14/sig-costume-art/index.html",
+    "editions/2026-06-14/tent-pitching/index.html"
   ],
   "nav_css_added": [],
-  "popup_articles_added": [],
-  "new_authors_needing_bios": []
+  "popup_articles_added": [
+    "biba-roesch: Biba&rsquo;s Favorite Things: Palm Springs, Part II (May 31, 2026)",
+    "david-sweet: The Kentucky Derby Is Dynamic and Distinguished (May 10, 2026)",
+    "deedee-el-bego: Scissor and Fork (May 17, 2026)",
+    "elizabeth-dunlop-richter: The 60th Reunion Is Worth Celebrating! (June 14, 2026)",
+    "francesco-bianchini: An Omelette and a Glass of Wine (May 31, 2026)",
+    "jill-lowe: Abracadabra&hellip; and Then the Magic Happens (June 14, 2026)",
+    "judy-carmack-bross: The Music Institute Honors Chicago Legends (May 3, 2026)",
+    "judy-carmack-bross: Family Sundays at FACETS: A No Shhh-Zone (May 3, 2026)",
+    "judy-carmack-bross: A Sesquicentennial Gala and a Bold Future Vision (May 3, 2026)",
+    "judy-carmack-bross: A Bonded Pair: Friends Who Want to Share a Home Together (May 10, 2026)",
+    "judy-carmack-bross: Life Is an Art at Intuit Art Museum (May 10, 2026)",
+    "judy-carmack-bross: Persephone: A Muse in Chicago (May 31, 2026)",
+    "judy-carmack-bross: Pitching George Washington&rsquo;s Tent: Celebrate America 250 at the Newberry (May 31, 2026)",
+    "judy-carmack-bross: A Closet Looking for a Home (May 31, 2026)",
+    "judy-carmack-bross: Americana at Auction: Telling the Liberty Story (June 14, 2026)",
+    "judy-carmack-bross: Music Institute of Chicago: Exceeding Your Goals at 95 (June 14, 2026)",
+    "judy-carmack-bross: Look Who Pitched George Washington&rsquo;s Tent (June 14, 2026)",
+    "scott-holleran: Senior (June 7, 2026)",
+    "sigalit-zetouni: Connective Threads (June 14, 2026)",
+    "susan-aurinko: My Silk Roads &ndash; On Elegance (May 31, 2026)",
+    "sydney-armstrong: 250 Years of Garden Stories at the Chicago Botanic Garden (May 31, 2026)"
+  ],
+  "new_authors_needing_bios": [
+    {
+      "id": "bob-glaze",
+      "articles": [
+        "March 15, 2026: Visiting Little Village in Chicago &mdash; Where to Eat and What to Do",
+        "April 19, 2026: Route 66 in Chicago",
+        "May 17, 2026: Chicago&#8217;s Best New Restaurant Finds"
+      ]
+    },
+    {
+      "id": "emma-muhleman",
+      "articles": [
+        "May 10, 2026: An Enchanted Evening: The Newberry Library Awards Dinner"
+      ]
+    },
+    {
+      "id": "ethan-cotton",
+      "articles": [
+        "May 10, 2026: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline",
+        "May 17, 2026: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline"
+      ]
+    },
+    {
+      "id": "jean-colonomos",
+      "articles": [
+        "May 24, 2026: Martha Graham When She Danced a Cold-War Peace Plan"
+      ]
+    },
+    {
+      "id": "marcy-carmack",
+      "articles": [
+        "March 29, 2026: The Shape of Spring",
+        "April 12, 2026: The Chicago Fashion Scene",
+        "May 3, 2026: Stephane St Jaymes",
+        "May 17, 2026: Project Styling: Columbia College's Live Fashion Competition",
+        "June 14, 2026: Fashion Trends"
+      ]
+    },
+    {
+      "id": "mary-grant",
+      "articles": [
+        "May 24, 2026: Stitching a Community Together: The Story Behind Kenilworth&#8217;s Centennial Needlepoint"
+      ]
+    },
+    {
+      "id": "philip-vidal",
+      "articles": [
+        "April 5, 2026: About the Town in April",
+        "May 3, 2026: About the Town",
+        "May 31, 2026: About the Town in June"
+      ]
+    },
+    {
+      "id": "william-tyre",
+      "articles": [
+        "May 17, 2026: Glessner House Celebrates 60 Years"
+      ]
+    }
+  ]
 }
