@@ -96,4 +96,5 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 13 | Annie | Articles in morning (delayed) | `19ebfa7c07b94a53` | 🔁 | Awaiting: Peony Party, Elizabeth Richter, DateBook |
 | Jun 13 | Judy | Re: Annie articles — acknowledged | `19ebfe50ec92a143` | ⬛ | Judy/Annie exchange; no action |
 | Jun 13 | John→Sig | Your introduction in Sunday's edition | `19ec178e8a869061` | ✅ | Sent Sig her Arts Editor intro text; CC Judy; PS about John's intro running same edition |
+| Jun 13 | John→Judy | June 14 Edition — Saturday Morning Status | `19ec182a6b86593b` | ✅ | Status update: 6/9 articles ready; Editors' Page ready; asked if reminders to Annie and Emma |
 | Jun 13 | Judy | Music Institute cover photo (confirm) | `19ebfe7d9cb5b0b1` | ✅ | Duplicate of Jun 9 photo; caption already in article; Emma has all photos |
