@@ -85,4 +85,14 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 11 | Ana | Re: Stories for this Sunday (all-day event) | `19eb8ea48afa898d` | ⬛ | Ana/Judy exchange praising each other; no action needed |
 | Jun 11 | Judy | Approved John intro for editorial.html | `19eb8eba9e42c876` | ✅ | "Absolutely perfect, wouldn't change a word" — intro live on editorial.html |
 | Jun 11 | Judy | Approved Sig intro for editorial.html | `19eb8edee9e953db` | ✅ | "Absolutely perfect, so right" — Sig Arts Editor intro live on editorial.html |
-| Jun 12 | Sig | Article text coming later today | `19ebbcc2caa53300` | ⏳ | Sig confirmed article text + photos + credits for sig-costume-art coming today |
+| Jun 12 | Sig | Article text coming later today | `19ebbcc2caa53300` | ✅ | Text + 5 photos arrived overnight Jun 13 |
+| Jun 12 | Emma | Tent Pitching article + 13 photos | `19ebe7fe316a7bd8` | ✅ | Article built; photos 1-7+11-12 placed; photos 8,9,10,13 unplaced pending instruction |
+| Jun 13 | Sig | Text (Connective Threads) | `19ebfcb691659496` | ✅ | Full article text; built in sig-costume-art/ |
+| Jun 13 | Sig | 2 of 6 — Katy Perry | `19ebfd2d678fb09b` | ✅ | IMG_5453.jpg placed in Met Gala section |
+| Jun 13 | Sig | 3 of 6 — Dree Hemingway | `19ebfd57b8cbc820` | ✅ | IMG_5452.jpg placed in Met Gala section |
+| Jun 13 | Sig | 4 of 6 — no caption | `19ebfd7453d48b69` | 🔁 | IMG_5449.jpg — no caption provided; cannot place until Sig clarifies |
+| Jun 13 | Sig | 5 of 6 — Installation View | `19ebfd951e50d449` | ✅ | IMG_5447.JPG placed as hero figure |
+| Jun 13 | Sig | 6 of 6 — Walking Dress + Seurat | `19ebfdc428dc0265` | ✅ | IMG_4894.jpeg placed at Abstract Body paragraph |
+| Jun 13 | Annie | Articles in morning (delayed) | `19ebfa7c07b94a53` | 🔁 | Awaiting: Peony Party, Elizabeth Richter, DateBook |
+| Jun 13 | Judy | Re: Annie articles — acknowledged | `19ebfe50ec92a143` | ⬛ | Judy/Annie exchange; no action |
+| Jun 13 | Judy | Music Institute cover photo (confirm) | `19ebfe7d9cb5b0b1` | ✅ | Duplicate of Jun 9 photo; caption already in article; Emma has all photos |
