@@ -58,7 +58,8 @@ You don't need to know which case applies — just describe the result.
 
 | What you want | Try saying |
 |---|---|
-| Build a new edition | "Start the new edition for [date] from Judy's emails" → runs `/new-edition` |
+| Prep a new edition skeleton | "Prep the [date] edition from Judy's article list" → runs `/prep-edition` |
+| Fill in articles as content arrives | "Build [article] from the email Judy sent" → runs `/new-edition` |
 | Lay out a single article | "Build [article] from the email Judy sent on [date]" |
 | Deploy a dev2 preview | "Deploy a fresh preview." |
 | Promote dev2 → dev | "/stage" |

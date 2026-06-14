@@ -1,52 +1,52 @@
 {
   "property_id": "523654462",
-  "date_range": "2026-03-18 to 2026-04-17",
-  "updated": "2026-04-17 16:18",
+  "date_range": "2026-05-11 to 2026-06-10",
+  "fetched_at": "2026-06-10T09:51:48.906264",
   "totals": {
-    "activeUsers": 2392,
-    "sessions": 3836,
-    "screenPageViews": 6398
+    "activeUsers": 4308,
+    "sessions": 6317,
+    "screenPageViews": 10362
   },
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": 2944
+      "screenPageViews": 3082
+    },
+    {
+      "pagePath": "/editions/2026-05-17/peoria-riverfront-museum/",
+      "screenPageViews": 551
+    },
+    {
+      "pagePath": "/editions/2026-05-31/biba-palm-springs-2/",
+      "screenPageViews": 328
     },
     {
       "pagePath": "/about",
-      "screenPageViews": 341
+      "screenPageViews": 290
     },
     {
-      "pagePath": "/editions/2026-03-29/unsung-gems-backgammon/",
-      "screenPageViews": 250
+      "pagePath": "/editions/2026-06-07/alliance-francaise/",
+      "screenPageViews": 248
     },
     {
-      "pagePath": "/editions/2026-03-29/biba-palm-springs/",
-      "screenPageViews": 199
+      "pagePath": "/editions/2026-05-24/kenilworth-centennial-quilt/",
+      "screenPageViews": 231
     },
     {
-      "pagePath": "/editions/2026-03-22/unsung-gems-lfhs/",
-      "screenPageViews": 188
+      "pagePath": "/editions/2026-05-24/jonathan-hoenig/",
+      "screenPageViews": 174
     },
     {
-      "pagePath": "/editions/2026-03-29/fashion-trends/",
-      "screenPageViews": 173
+      "pagePath": "/editions/2026-05-31/st-chrys-closet/",
+      "screenPageViews": 170
     },
     {
-      "pagePath": "/editions/2026-03-22/jessie-mueller/",
-      "screenPageViews": 168
+      "pagePath": "/editions/2026-06-07/minds-matter/",
+      "screenPageViews": 162
     },
     {
-      "pagePath": "/editions/2026-03-08/datebook/",
-      "screenPageViews": 167
-    },
-    {
-      "pagePath": "/editions/2026-03-22/chicago-chamber-music-society/",
-      "screenPageViews": 163
-    },
-    {
-      "pagePath": "/editions/2026-03-29/driehaus-museum/",
-      "screenPageViews": 160
+      "pagePath": "/editions/2026-05-10/newberry-awards/",
+      "screenPageViews": 158
     }
   ]
 }

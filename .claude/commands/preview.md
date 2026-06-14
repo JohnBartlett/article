@@ -35,7 +35,7 @@ In all cases, identify:
 
 Find the matching article folder under `editions/` (e.g. `editions/2026-03-22/chicago-chamber-music-society/`).
 
-Also check `_bios/<author-slug>.md` for the author's attribution line and `about_url` — useful context for building the review page and for noting if the author is missing from the bio library.
+Check `about.html` for the author's bio anchor (e.g. `id="david-sweet"`) — note it for the byline link and to flag if missing.
 
 ## Step 4 — Build the review page
 
@@ -44,7 +44,6 @@ Create `<sender-first-name>-review.html` in the article folder using the site's 
 Include:
 - Yellow "Review Copy" banner at top: `● Review Copy — <Sender> Final Draft (<date>) — Not Published ●`
 - Article category, title (`h1.article-title`), byline/date (`.article-meta`)
-- Intro paragraph (`.article-intro`)
 - Body paragraphs (`.article-body p`)
 - **Single images**: full-width `<figure>` with caption
 - **Portrait grids** (individual people): CSS grid, `object-fit: cover; object-position: top center`, height ~220px so faces are framed correctly

@@ -65,7 +65,7 @@ as a single file.
 
 ### Skills
 
-Scan .claude/skills/*/SKILL.md. For each skill:
+Scan `.claude/commands/*.md`. For each skill:
 - Count lines (flag > 200, critical > 500)
 - Run the same five filters on instructions
 - Check for restated goals, hedging ("you may want to"), synonymous

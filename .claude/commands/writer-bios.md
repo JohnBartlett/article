@@ -24,17 +24,20 @@ The italic line that appears at the end of their articles.
 
 ## When building an article
 
-1. Check `_bios/<slug>.md` for the writer's attribution line.
-2. If the writer's attribution line is not "(none — byline only)", add it as the last paragraph in `.article-body`. Link the author's name to their `about.html` anchor:
+1. Look up the writer's `slug` and `about_url` in `_bios/<slug>.md`.
+2. Add an "About the Author" link as the last element inside `.article-body`, before the feedback widget:
 ```html
-<p style="font-size: 15px; color: #888; font-style: italic;"><a href="../../../about.html#slug" style="color: #b51c20;">Author Name</a> is a ... attribution line.</p>
+<p style="margin-top: 32px;"><a href="../../../about.html#slug" style="font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #b51c20; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em;">About the Author: Author Name &rarr;</a></p>
 ```
+
+**Do not include bio text in the article body.** The attribution line in the bio file is for `about.html` only — never paste it into an article.
 
 ## Adding a new writer
 
 1. Create `_bios/<slug>.md` with their info.
-2. Add a `<div class="team-member" id="<slug>">` entry to the "Our Writers This Week" section of `about.html`.
+2. Add a `<div class="team-member" id="<slug>">` entry to the **More Contributors** section of `about.html` (permanent bio card, persists across editions).
 3. If they have an articles popup (most recurring writers do), add it after the team-member div following the pattern used for David Sweet, Susan Aurinko, Jen Huang, etc.
+4. The "Our Writers This Week" section is updated each edition (via `/edition-checks`) — it is not updated here.
 
 ## Updating an existing bio
 

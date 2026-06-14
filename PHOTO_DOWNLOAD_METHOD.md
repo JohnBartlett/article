@@ -1,92 +1,53 @@
-# Article Photo Download Methods
+# Photo Download Methods
 
-## Status: April 26, 2026 Edition
+## Primary Method: Gmail API (always use this first)
 
-### What Works
+```bash
+source .venv/bin/activate
+python3 tools/extract_article_photos.py YYYY-MM-DD --contributor ana
+```
 
-#### 1. **Google Drive Downloads** ✓
-Direct curl download from shared Google Drive links (no authentication needed):
+Downloads all photo attachments from the contributor's most recent email for that edition date. Preserves original filenames exactly as sent.
+
+For manual extraction of a specific message:
+
+```python
+import sys; sys.path.insert(0, 'tools')
+from gmail_api import get_access_token, list_attachments, download_attachment
+
+token = get_access_token()
+attachments = list_attachments(token, 'MESSAGE_ID_HERE')
+for att in attachments:
+    download_attachment(token, 'MESSAGE_ID_HERE', att['id'],
+        f'editions/YYYY-MM-DD/slug/{att["filename"]}')
+```
+
+**Never rename the downloaded files.** `att["filename"]` is the original filename — use it as-is.
+
+## Secondary Method: Windows Downloads Folder
+
+If photos were forwarded to john.bartlett@gmail.com and saved locally:
+
+```bash
+cp "/mnt/c/Users/johnb/Downloads/photo-folder/"*.jpeg editions/YYYY-MM-DD/slug/
+```
+
+Keep original filenames. Do not rename.
+
+## Google Drive (use with caution)
+
+Only works for publicly shared files (not shortcuts):
 
 ```bash
 FILE_ID="1KpKKswF39lgyEIPjGYajcWTya7PtKib4"
-curl -s -L "https://drive.google.com/uc?export=download&id=$FILE_ID" -o photo.jpg
+curl -s -L "https://drive.google.com/uc?export=download&id=$FILE_ID" -o original-filename.jpg
 ```
 
-**Source**: Photo credit URLs from email content
-**Status**: Successfully tested - 878KB file downloaded
+**Important:** Drive shortcuts download as HTML, not images. If a file downloads as HTML, ask the contributor to send via email attachment instead. If Drive has renamed files generically (e.g. `image1.jpg`), ask contributor for originals with proper names.
 
-#### 2. **Public Website Images** ~ (Partial)
-Some websites allow direct image downloads:
+## Rules That Apply Regardless of Source
 
-```bash
-curl -L "https://chicagology.com/wp-content/themes/revolution-20/PreFire3/..." -o photo.jpg
-```
-
-**Status**: Some URLs available, others blocked by Cloudflare/robots.txt
-
-#### 3. **Email Attachments** ✗
-Gmail API attachment extraction requires valid authentication:
-- Token-based approach: Requires non-expired OAuth token
-- Raw message format: Requires authorization scope `https://www.googleapis.com/auth/gmail.readonly`
-
-**Status**: Blocked due to expired token
-
-### Article Photos Status
-
-#### Rush Hospital (15 photos total)
-- **Downloaded**: 2 photos from Google Drive links
-- **Pending**: 13 photos (likely in email attachments or external sources)
-- **Action needed**: Manual download from email or provide Drive link list
-
-#### Second Presbyterian (8 photos total)
-- **Downloaded**: 0 photos
-- **Pending**: 8 photos (in email attachments only)
-- **Action needed**: Manual download from email attachments
-
-#### Trains Chicago (6 photos total)
-- **Downloaded**: 1 photo from chicagology.com
-- **Pending**: 5 photos (external sources: WBEZ, trains.com, Chicago History Museum, etc.)
-- **Action needed**: Source public URLs or provide local files
-
-### Recommended Process for Future Editions
-
-1. **When editor sends articles via email:**
-   - Extract any Google Drive file IDs from email body: `drive.google.com/file/d/[ID]/`
-   - Use curl download method above for each ID
-   - Save to `editions/YYYY-MM-DD/[article-slug]/`
-
-2. **For email attachments:**
-   - Export Gmail conversation to .eml format
-   - Use `munpack` or `uudeview` to extract attachments:
-     ```bash
-     munpack -C download-folder message.eml
-     ```
-   - Or manually download via Gmail web interface
-
-3. **For external sources:**
-   - Try downloading with curl/wget
-   - If blocked, manually download and upload
-   - Document source URL for attribution
-
-### Tools and Commands
-
-```bash
-# Check if file downloaded successfully
-file photo.jpg
-
-# Batch download multiple Drive files
-while IFS= read -r id; do
-  curl -s -L "https://drive.google.com/uc?export=download&id=$id" -o "photo-${COUNTER}.jpg"
-  ((COUNTER++))
-done < file-ids.txt
-```
-
-### Future Improvements
-
-1. Set up Google Drive API credentials for authenticated downloads
-2. Configure Gmail API with proper scopes for attachment extraction
-3. Create Python script to automate email parsing and attachment extraction
-4. Build Perplexity/web search integration for missing external images
-
----
-*Last updated: April 24, 2026*
+1. **Never rename files** — original filename is the permanent link between photo and caption
+2. **Build a photo map first** — `filename → caption → placement` before writing any `<figure>` HTML
+3. **COVER files stay off the article body** — files with "COVER" in the name are homepage card images only
+4. **Verify after downloading** — run `python3 tools/verify_edition.py YYYY-MM-DD` to confirm photo counts

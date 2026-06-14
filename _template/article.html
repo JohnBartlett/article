@@ -232,6 +232,13 @@
       color: #aaa;
     }
 
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
     @media (max-width: 600px) {
       h1.article-title { font-size: 32px; }
       .article-subtitle { font-size: 17px; }
@@ -252,15 +259,24 @@
     <nav>
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-MONTH/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
         <a href="../../../about.html">About</a>
         <a href="../../../subscribe.html">Subscribe</a>
         <a href="../../../advertise.html">Advertise</a>
-        <a href="../../2026-03-08/datebook/">DateBook</a>
-        <a href="../../2026-03-01/daily-star-march/">Astrochart</a>
       </div>
     </nav>
   </header>
 
+  <!-- dev2-only
+  <div class="internal-nav">
+    <a href="../../../reader-comments.html">Reader Comments</a>
+    <a href="../../../future-articles.html">Future Articles</a>
+  </div>
+  -->
   <main>
     <div class="article-wrapper">
 
@@ -377,6 +393,8 @@
       All rights reserved.
     </div>
   </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>

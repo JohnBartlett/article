@@ -430,6 +430,30 @@
         height: 320px;
       }
     }
+
+    .editorial-banner {
+      background: #1a1a2e;
+      color: #f0e6d3;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .editorial-banner a {
+      color: #e8c97e;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .editorial-banner a:hover { text-decoration: underline; }
+    .editorial-banner .banner-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a89070;
+      margin-right: 10px;
+    }
   </style>
   <script src="dark-mode.js"></script>
 </head>
@@ -444,8 +468,9 @@
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
-        <a href="editions/2026-06-07/datebook/">DateBook</a>
-        <a href="editions/2026-06-07/daily-star-june/">Astrochart</a>
+        <a href="editions/2026-06-14/datebook/">DateBook</a>
+        <a href="editions/2026-06-14/daily-star-june/">Astrochart</a>
+        <a href="editorial.html">Editors&rsquo; Page</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -454,35 +479,26 @@
         <a href="advertise.html">Advertise</a>
       </div>
     </nav>
-    <!-- dev2-only
-    <div class="internal-nav">
-      <div class="internal-nav-inner">
-        <span class="internal-nav-label">Internal</span>
-        <a href="editors/index.html">Editors&rsquo; Page</a>
-        <a href="editors/stats.html">Stats</a>
-        <a href="reader-comments.html">Reader Comments</a>
-        <a href="future-articles.html">Future Articles</a>
-
-      </div>
-    </div>
-    -->
   </header>
+  <div class="editorial-banner">
+    <span class="banner-label">New</span>Visit our <a href="editorial.html">Editors&rsquo; Page</a> &mdash; letters, thoughts, and a look behind the magazine.
+  </div>
 
   <div style="text-align: center; padding: 30px 16px 10px;">
     <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
-    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">June 7, 2026</div>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">June 14, 2026</div>
   </div>
 
   <!-- Hero Feature + Ad -->
   <div class="hero-row">
     <div class="hero" style="flex: 2;">
-      <a href="editions/2026-06-07/court-tennis/">
-        <img class="hero-image" src="editions/2026-06-07/court-tennis/Court%20Tennis%201.jpeg" alt="An Ancient Sport Aims to Court Players Where Mammoths Once Roamed" style="object-position: center center;">
+      <a href="editions/2026-06-14/san-miguel-trip/">
+        <img class="hero-image" src="editions/2026-06-14/san-miguel-trip/1-Vibrant%20landscape.png" alt="Letter from San Miguel de Allende, Part II: Our April 2026 Trip" style="object-position: center center;">
       </a>
-      <div class="hero-label">Sports &amp; Recreation</div>
-      <h2><a href="editions/2026-06-07/court-tennis/">An Ancient Sport Aims to Court Players Where Mammoths Once Roamed</a></h2>
-      <div class="hero-meta">By David A. F. Sweet</div>
-      <p class="hero-teaser">Inside a Wisconsin golf resort, a 900-year-old sport played by Henry VIII finds a new home &mdash; and a young pro determined to share its ancient joys.</p>
+      <div class="hero-label">Travel</div>
+      <h2><a href="editions/2026-06-14/san-miguel-trip/">Letter from San Miguel de Allende, Part II: Our April 2026 Trip</a></h2>
+      <div class="hero-meta">By Russell Kelley</div>
+      <p class="hero-teaser">The second chapter of a journey through one of the Western Hemisphere&rsquo;s most storied cities &mdash; this time, a personal account of an April 2026 visit.</p>
     </div>
     <div class="hero-ad" style="flex-direction: column; gap: 12px; justify-content: center;">
       <a href="https://comics.ha.com/itm/coming-soon-/p/7468-98001.s?ic4=GalleryView-Thumbnail-071515" target="_blank">
@@ -496,66 +512,75 @@
     <div class="card-grid" style="margin-bottom: 0;">
 
       <div class="card">
-        <a href="editions/2026-06-07/ryan-licht-sang/">
-          <img class="card-image" src="editions/2026-06-07/ryan-licht-sang/Melissa%20Haley%20and%20Florence%20Ann%20Romano.jpeg" alt="Ryan Licht Sang Bipolar Foundation Luncheon" style="object-position: center center;">
+        <a href="editions/2026-06-14/jill-lowe-magic/">
+          <img class="card-image" src="editions/2026-06-14/jill-lowe-magic/1%20David%20Copperfield.jpeg" alt="Abracadabra… and Then the Magic Happens" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-06-07/ryan-licht-sang/">Simply Sensational: The Ryan Licht Sang Bipolar Foundation Luncheon</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Community</div>
-        <p>All five senses were celebrated at the Foundation&rsquo;s 20th Medical Briefing Luncheon as art and neuroscience came together in joyful, surprising ways.</p>
+        <h2><a href="editions/2026-06-14/jill-lowe-magic/">Abracadabra&hellip; and Then the Magic Happens</a></h2>
+        <div class="meta">By Jill Lowe &nbsp;&bull;&nbsp; Facts and Froth</div>
+        <p>With Chicago poised to become a world home for modern magic, Jill Lowe spotlights how the art of illusion is changing lives &mdash; from children with disabilities to hospital patients and beyond.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-06-07/alliance-francaise/">
-          <img class="card-image" src="editions/2026-06-07/alliance-francaise/202600509_AF_093.jpeg" alt="Alliance Française Gala" style="object-position: center 20%;">
+        <a href="editions/2026-06-14/peony-party/">
+          <img class="card-image" src="editions/2026-06-14/peony-party/White peony.jpeg" alt="Peony Party" style="object-position: center center;">
         </a>
-        <h2><a href="editions/2026-06-07/alliance-francaise/">Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala</a></h2>
+        <h2><a href="editions/2026-06-14/peony-party/">Peony Party</a></h2>
+        <div class="meta">By Susan Benjamin &nbsp;&bull;&nbsp; Society</div>
+        <p>Coming soon.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/music-benefit/">
+          <img class="card-image" src="editions/2026-06-14/music-benefit/1001-Honorees and leadership-see caption.jpg" alt="Music Institute of Chicago 95th Anniversary Gala" style="object-position: center center;">
+        </a>
+        <h2><a href="editions/2026-06-14/music-benefit/">Music Institute of Chicago: Exceeding Your Goals at 95</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Arts</div>
+        <p>The Music Institute of Chicago welcomed more than 250 guests to its 95th Anniversary Gala at The Four Seasons Hotel Chicago, raising more than $1 million and celebrating excellence in music education.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/heritage-auction/">
+          <img class="card-image" src="editions/2026-06-14/heritage-auction/COVER Americana Article.jpeg" alt="Americana at Auction: Telling the Liberty Story" style="object-position: center center;">
+        </a>
+        <h2><a href="editions/2026-06-14/heritage-auction/">Americana at Auction: Telling the Liberty Story</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Arts &amp; Culture</div>
+        <p>Like an 18th century quilting bee, Chicago&rsquo;s institutions are ready for July 4th &mdash; and Heritage Auctions is offering rare Americana to take home.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/elizabeth-richter-reunion/">
+          <img class="card-image" src="editions/2026-06-14/elizabeth-richter-reunion/1-WelcomeBackSign.png" alt="The 60th Reunion Is Worth Celebrating!" style="object-position: center center;">
+        </a>
+        <h2><a href="editions/2026-06-14/elizabeth-richter-reunion/">The 60th Reunion Is Worth Celebrating!</a></h2>
+        <div class="meta">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; Society</div>
+        <p>It&rsquo;s easy to skip the 60th. Elizabeth Dunlop Richter didn&rsquo;t &mdash; and at Wellesley College in May, with old friends and the campus in bloom, she was glad she went.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/deedee-summerfest/">
+          <img class="card-image" src="editions/2026-06-14/deedee-summerfest/COVER Deedee Story.jpg" alt="Do Division Street Fest 2026" style="object-position: center center;">
+        </a>
+        <h2><a href="editions/2026-06-14/deedee-summerfest/">Do Division Street Fest 2026</a></h2>
+        <div class="meta">By Deedee El Bego &nbsp;&bull;&nbsp; Arts &amp; Culture</div>
+        <p>40,000 people, 65 vendors, two stages &mdash; Chicago&rsquo;s Do Division Street Fest kicked off festival season in style.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/sig-costume-art/">
+          <img class="card-image" src="editions/2026-06-14/sig-costume-art/IMG_5447.JPG" alt="Connective Threads" style="object-position: center center;">
+        </a>
+        <h2><a href="editions/2026-06-14/sig-costume-art/">Connective Threads</a></h2>
+        <div class="meta">By Sigalit Zetouni &nbsp;&bull;&nbsp; Arts</div>
+        <p>Sigalit Zetouni traces the history of The Met&rsquo;s Costume Institute and this year&rsquo;s &ldquo;Costume Art&rdquo; exhibition, which pairs 200 garments with 200 masterworks.</p>
+      </div>
+
+      <div class="card">
+        <a href="editions/2026-06-14/tent-pitching/">
+          <img class="card-image" src="editions/2026-06-14/tent-pitching/photo 1.jpg" alt="Look Who Pitched George Washington's Tent" style="object-position: center top;">
+        </a>
+        <h2><a href="editions/2026-06-14/tent-pitching/">Look Who Pitched George Washington&rsquo;s Tent</a></h2>
         <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Society</div>
-        <p>Biarritz&rsquo;s joie de vivre came to the Four Seasons Chicago as over 350 guests celebrated the Alliance&rsquo;s 130-year legacy and the arts of France.</p>
-      </div>
-
-      <div class="card">
-        <a href="editions/2026-06-07/minds-matter/">
-          <img class="card-image" src="editions/2026-06-07/minds-matter/COVER%20Mark%20and%20Robin%20Tebbe.JPG" alt="Robin Loewenberg Tebbe: Minds Matter" style="object-position: center top;">
-        </a>
-        <h2><a href="editions/2026-06-07/minds-matter/">Robin Loewenberg Tebbe: Minds Matter</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Community</div>
-        <p>A gala raising $1.5 million for brain tumor research &mdash; and the remarkable woman at the center of it all.</p>
-      </div>
-
-      <div class="card">
-        <a href="editions/2026-06-07/ferris-bueller/">
-          <img class="card-image" src="editions/2026-06-07/ferris-bueller/CC%20FB%20Review%20Parade%20Image.jpeg" alt="Ferris Bueller's Day Off: 40th Anniversary" style="object-position: center center;">
-        </a>
-        <h2><a href="editions/2026-06-07/ferris-bueller/">Ferris Bueller&rsquo;s Day Off: 40th Anniversary and Review</a></h2>
-        <div class="meta">By Jackson LeJeune &nbsp;&bull;&nbsp; Film</div>
-        <p>Forty years on, John Hughes&rsquo;s Chicago classic is revisited &mdash; and the case is made that Cameron, not Ferris, is the story&rsquo;s true hero.</p>
-      </div>
-
-      <div class="card">
-        <a href="editions/2026-06-07/seminary-gardens/">
-          <img class="card-image" src="editions/2026-06-07/seminary-gardens/1-ChurchEntrance.jpeg" alt="St. Thomas the Apostle Church Garden" style="object-position: center center;">
-        </a>
-        <h2><a href="editions/2026-06-07/seminary-gardens/">St. Thomas the Apostle Church: An Urban Garden and Community Oasis</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Gardens</div>
-        <p>Follow Pope Leo&rsquo;s footsteps through the walled gardens of a Hyde Park landmark &mdash; a bucolic three-acre oasis created by Todd Schwebel.</p>
-      </div>
-
-      <div class="card">
-        <a href="editions/2026-06-07/san-miguel/">
-          <img class="card-image" src="editions/2026-06-07/san-miguel/1-Vibrant%20landscape.png" alt="Letter from San Miguel de Allende, Part I" style="object-position: center center;">
-        </a>
-        <h2><a href="editions/2026-06-07/san-miguel/">Letter from San Miguel de Allende, Part I: A History</a></h2>
-        <div class="meta">By Russell Kelley &nbsp;&bull;&nbsp; Travel</div>
-        <p>The birthplace of Mexican independence celebrates 200 years since renaming &mdash; a sweeping history of one of the Western Hemisphere&rsquo;s most storied cities.</p>
-      </div>
-
-      <div class="card">
-        <a href="editions/2026-06-07/scott-holleran/">
-          <img class="card-image" src="editions/2026-06-07/scott-holleran/image0.jpeg" alt="Senior" style="object-position: center center;">
-        </a>
-        <h2><a href="editions/2026-06-07/scott-holleran/">Senior</a></h2>
-        <div class="meta">By Scott Holleran &nbsp;&bull;&nbsp; Fiction</div>
-        <p>A Hollywood producer and his aging rescue dog &mdash; a story of loyalty, illness, and the quiet heroism that goes unnoticed.</p>
+        <p>Five hundred Chicagoans picked up mallets and pulled ropes at Washington Square Park to help raise a replica of George Washington&rsquo;s Revolutionary War dining tent.</p>
       </div>
 
     </div>
@@ -565,6 +590,15 @@
     <div class="past-editions-inner">
       <h1 class="page-title">Past Editions</h1>
       <div class="card-grid">
+
+        <div class="card">
+          <a href="editions/2026-06-07/">
+            <img class="card-image" src="editions/2026-06-07/court-tennis/Court%20Tennis%201.jpeg" alt="June 7, 2026 Edition" style="object-position: center center;">
+          </a>
+          <h2><a href="editions/2026-06-07/">June 7, 2026</a></h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Court Tennis, Ryan Licht Sang Luncheon, Alliance Fran&ccedil;aise Gala, Robin Tebbe: Minds Matter, Ferris Bueller, St. Thomas the Apostle Church, San Miguel Part I, Senior, and more.</p>
+        </div>
 
         <div class="card">
           <a href="editions/2026-05-31/">
@@ -591,15 +625,6 @@
           <h2><a href="editions/2026-05-17/">May 17, 2026</a></h2>
           <div class="meta">Sunday Edition</div>
           <p>Chicago Skyline, Peoria Riverfront Museum, Glessner House, Chicago History Museum Guild, Project Styling, Chicago Opera Theater, Bob Glaze Restaurants, and more.</p>
-        </div>
-
-        <div class="card">
-          <a href="editions/2026-05-10/">
-            <img class="card-image" src="editions/2026-05-10/kentucky-derby/photo-01.jpg" alt="May 10, 2026 Edition" style="object-position: center center;">
-          </a>
-          <h2><a href="editions/2026-05-10/">May 10, 2026</a></h2>
-          <div class="meta">Sunday Edition</div>
-          <p>Kentucky Derby, Chicago Train History, Newberry Awards, Inis M&oacute;r, Intuit Art Party, Detroit, Bridge of Sighs, Ordinary People, and more.</p>
         </div>
 
       </div>
