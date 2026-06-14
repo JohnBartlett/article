@@ -40,7 +40,9 @@ For each article marked as "Ready" or "Text Only" in verification:
 
 ### Step 4: Update Editors Pages
 ```bash
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-XX-XX/article-slug/\"|" editors/edition.html
+EDITION_DATE="YYYY-MM-DD"   # current edition date
+HERO_SLUG="slug"             # hero article slug
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 ```
 

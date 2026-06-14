@@ -47,6 +47,10 @@ Workflow: `dev2` → `dev` → `master`
 
 Use `/stage` to promote dev2 → dev, and `/publish` to promote dev → master.
 
+**What goes to dev/master:** Only changes that affect what readers see — article HTML, photos, homepage, CSS, JS.
+
+**What stays on dev2 only:** Skills (`.claude/commands/`), CLAUDE.md, `tools/` scripts, `_template/`, memory files, and any other internal tooling. These have no effect on the live site and must never be promoted to dev or master.
+
 ### GA4 per branch
 GA4 is disabled on dev and dev2 to prevent skewing production analytics. The `/stage` skill comments it out when merging to dev; the `/publish` skill restores it before pushing to master.
 
@@ -70,17 +74,23 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 ### Dev2 preview deployments
 Running `vercel deploy --yes` creates a unique preview URL for the current dev2 state. After every such deploy:
 1. Capture the Preview URL from the output line starting with `Preview:`
-2. Update two links in the editors pages:
+2. Update the stable alias to point to the new deployment
+3. Update two links in the editors pages:
    - `editors/edition.html` — Dev2 Preview button (points to current hero article)
    - `editors/index.html` — Dev Preview quick link (points to homepage)
-3. Commit both files and push to dev2
+4. Commit both files and push to dev2
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/2026-03-29/driehaus-museum/\"|" editors/edition.html
+vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
+EDITION_DATE="YYYY-MM-DD"   # current edition date
+HERO_SLUG="slug"             # hero article slug (first article in homepage order)
+sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
 sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
 git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```
+
+**Stable alias:** `https://article-dev2.vercel.app` — always points to the most recent dev2 deploy.
 
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
@@ -135,6 +145,9 @@ Other skills:
 | `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
+| `/writer-bios` | Look up, add, or update writer bios in `_bios/` and `about.html` |
+| `/prompts` | Quick-reference cheat sheet for common request phrasings |
+| `/retrospective` | End-of-session: gather lessons, draft updates to CLAUDE.md/skills/memory for review, then apply on approval — nothing written without user sign-off |
 
 ## DateBook
 
@@ -191,8 +204,8 @@ A script `tools/ga4_report.py` is available to collect performance stats (users,
 
 ```bash
 pip install google-analytics-data
-export GA4_PROPERTY_ID="your-numeric-id"
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-key.json"
+export GA4_PROPERTY_ID="523654462"
+export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
 python3 tools/ga4_report.py
 ```
 
@@ -219,43 +232,13 @@ The script generates a timestamped JSON file with the last 30 days of data.
 │   └── image006.png        Heritage Auctions banner image
 ├── tools/                  Analytics and reporting scripts
 ├── editions/
-│   ├── 2026-02-08/         Edition 1 — February 8, 2026
-│   ├── 2026-02-15/         Edition 2 — February 15, 2026
-│   ├── 2026-02-22/         Edition 3 — February 22, 2026
-│   ├── 2026-03-01/         Edition 4 — March 1, 2026
-│   ├── 2026-03-08/         Edition 5 — March 8, 2026
-│   ├── 2026-03-15/         Edition 6 — March 15, 2026
-│   ├── 2026-03-22/         Edition 7 — March 22, 2026
-│   │   ├── jessie-mueller/
-│   │   ├── chicago-chamber-music-society/
-│   │   ├── unsung-gems-lfhs/
-│   │   ├── two-sisters-and-a-piano/
-│   │   ├── pokemon-fossil-museum/
-│   │   ├── kanuga/
-│   │   └── building-blocks/
-│   └── 2026-03-29/         Edition 8 — March 29, 2026 (current, in progress)
-│       ├── unsung-gems-backgammon/
-│       ├── an-island-idyll/
-│       ├── marwen/
-│       ├── landmarks-preservation-forward/
-│       ├── american-writers-museum/
-│       └── biba-palm-springs/          (photos only; article pending)
+│   ├── YYYY-MM-DD/         One folder per edition (run `ls editions/` for current list)
+│   │   ├── article-slug/   One subfolder per article
+│   │   │   └── index.html
+│   │   ├── datebook/       Copied from previous edition each week
+│   │   ├── daily-star-MONTH/  Copied from previous edition each week
+│   │   └── thumb-*.jpg     Homepage card thumbnails
 ```
-
-## Current Homepage Article Order (March 29 edition — staged, publishing 10pm March 28)
-
-This order is used for keyboard navigation (N/P keys cycle through):
-
-1. **The Dice Keep Rolling at Trudie's Winnetka Backgammon Club** — David A. F. Sweet (hero)
-2. **An Island Idyll** — Susan Aurinko
-3. **Marwen: Fostering Creativity for the Next Generation** — Jen Huang
-4. **Landmarks Illinois Delivers at The Old Post Office** — Judy Carmack Bross
-5. **Tiffany at the Driehaus Museum: Chicago Can't Get Enough** — Judy Carmack Bross
-6. **A Literary Adventure at the American Writers Museum** — Sydney Armstrong
-7. **The Shape of Spring** — Marcy Carmack
-8. **Biba's Favorite Things: Palm Springs** — Biba Roesch
-
-Past editions in footer: March 22, March 15, March 8, March 1.
 
 ## Conventions
 
@@ -293,6 +276,7 @@ Past editions in footer: March 22, March 15, March 8, March 1.
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
 8. Use GA4 **disabled** form in new articles (matching `_template/article.html`)
+9. Use inline `<figure>` elements for photos — never carousels (see mistake #10)
 
 ### Updating the homepage for a new edition
 Edit `index.html` (root):
@@ -312,7 +296,7 @@ Edit `index.html` (root):
 3. Use `tools/extract_article_photos.py` to extract attachments to article folder
 4. For PDF articles: setup venv with PyPDF2, manually extract and format text
 5. Create article HTML from `_template/article.html` with extracted content
-6. Add Splide.js photo carousel for images
+6. Place photos as inline `<figure>` elements — never carousels (see mistake #10)
 7. Run `verify_edition.py YYYY-MM-DD` to confirm photos and content
 8. Update homepage card with article image
 9. Deploy to Vercel and verify preview
@@ -421,6 +405,18 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 18. **Silently correcting contributor spelling** — Never fix a typo in contributor text without flagging it to the editor first. Use verbatim text and note the suspected error.
 19. **Missing nav thumbnails** — Every article-to-article prev/next link must have a thumbnail `<img>` (70×70px, `object-fit:cover`). Only homepage links (`../../../index.html`) are exempt. `verify_edition.py` now checks this — run it before staging.
 20. **DateBook is persistent — copy it each week** — The DateBook never comes down; its events auto-dim via JS as they pass. Each new edition must copy the previous week's datebook folder: `cp -r editions/PREV-DATE/datebook editions/NEW-DATE/datebook`, then update the title/kicker date. Never remove DateBook nav links from articles.
+21. **Astrochart (daily-star) must also be copied each week** — Like the DateBook, the Astrochart folder (`daily-star-MONTH/`) must be copied from the previous edition: `cp -r editions/PREV-DATE/daily-star-MONTH editions/NEW-DATE/daily-star-MONTH`. If it is missing, the Astrochart link is a 404. Do this at edition setup, same time as DateBook copy.
+22. **Update DateBook and Astrochart links on the homepage before publishing** — `index.html` has nav links to both `editions/YYYY-MM-DD/datebook/` and `editions/YYYY-MM-DD/daily-star-MONTH/`. These must point to the current edition, not the previous one. Check both before any push to dev or master: `grep -E "datebook|daily-star" index.html`. Stale links send live readers to old content.
+23. **Homepage hero meta: author name only, no date** — The hero article on the homepage shows `<div class="hero-meta">By [Author Name]</div>`. It must not include the edition date. The date appears elsewhere on the page; adding it to the hero byline is redundant and was flagged as incorrect.
+24. **Never put internal links in the public nav** — Stats, Reader Comments, Future Articles, and the Staff Dashboard are internal tools. They belong only in the `<!-- dev2-only -->` internal-nav bar, never in the public nav.
+25. **Nav pattern: nav-inner contains Home, DateBook, Astrochart, Editors' Page, then the hamburger button. Hamburger contains About, Subscribe, Advertise.** The public Editors' Page (`editorial.html`) was introduced June 14, 2026 and lives in the main nav-inner row (not the hamburger). `verify_edition.py` checks for About/Subscribe/Advertise appearing in nav-inner (a doubled-menu bug) — keep those three in the hamburger only.
+26. **Compress photos before pushing to master** — Cloudflare Pages rejects files over 25 MB. Run `verify_edition.py` before staging; it now flags oversized images. To compress: `source .venv/bin/activate && python3 -c "from PIL import Image; img=Image.open('path'); img.thumbnail((3000,3000), Image.LANCZOS); img.save('path','JPEG',quality=75,optimize=True)"`. Run a full-repo scan before major pushes: `find editions/ -name "*.jpg" -o -name "*.jpeg" | while read f; do [ $(stat -c%s "$f") -gt 26214400 ] && echo "$f"; done`. This hit production twice in two consecutive sessions — scan the whole repo, not just the current edition.
+27. **COVER photos belong on the homepage card, not in the article body** — Any photo with "COVER" in its filename (e.g. `COVER Mark and Robin Tebbe.JPG`) is the homepage card image. Do not include it in the article body unless the contributor explicitly says to AND it has a caption. If it's already the card image and has no caption, leave it out of the body entirely.
+28. **Build a photo map before placing any figures** — Before writing any `<figure>` HTML, create an explicit map: `filename → caption (verbatim from email) → placement (after which paragraph/sentence)`. If any field is unknown, stop and find it. This is especially critical when photos arrive in separate emails, the source is a PDF, or the contributor numbers photos without specifying positions.
+29. **PDF articles: never place photos without explicit placement instructions** — PDFs have no embedded photo layout. Build the article text first (no photos), then ask or check the contributor's email for where each photo goes. Don't guess based on content.
+30. **Don't place a photo as both the opening hero AND inline in the body** — If a photo appears at the top of the article as a hero figure AND is also placed at its correct inline position in the body, it shows up twice. When building from explicit placement instructions, use those positions only — don't add a separate hero figure unless the contributor explicitly requests one.
+31. **Verify photo order after placing in high-count articles** — For articles with more than ~6 photos, do a verification pass after placing all of them: read the HTML top to bottom and confirm each `<figure>` appears immediately after its specified anchor sentence. With 24 photos (as in San Miguel), adjacent photos can be swapped or land one paragraph off. Never trust order is correct just because all photos are present.
+32. **Remove dangling git submodule entries** — If a folder was ever added as a git submodule (e.g. `exif-mcp`) but the `.gitmodules` file is gone, git still tracks it in the index and Cloudflare will fail with "No url found for submodule path." Fix with `git rm --cached <folder>` and commit. Run `git ls-files --stage | grep "^160000"` to check for dangling submodules before any major push.
 
 ### Recurring email workflow
 
@@ -441,14 +437,15 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
-- Writers and curators: Our Writers This Week section
+- Writers and curators: More Contributors section (permanent bio cards — persists across editions)
+- "Our Writers This Week" section: edition-specific rotation, updated each week by `/edition-checks`
 - Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
 
 ### Editors menu (Internal nav — dev2 only)
 The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master` (handled automatically by `/stage`).
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
-- Keep standing links: `reader-comments.html`, `future-articles.html`, `march-events-planning.html`
+- Keep standing links: `reader-comments.html`, `future-articles.html`
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
 - Remove any stale edition-specific links from the prior edition
 

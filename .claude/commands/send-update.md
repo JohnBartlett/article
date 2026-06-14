@@ -33,8 +33,8 @@ Compare against the last update email to identify new votes since last report.
 ## Step 3 — Pull GA4 stats
 
 ```bash
-export GA4_PROPERTY_ID="your-numeric-id"
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+export GA4_PROPERTY_ID="523654462"
+export GOOGLE_APPLICATION_CREDENTIALS="tools/credentials.json"
 python3 tools/ga4_report.py
 ```
 

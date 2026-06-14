@@ -6,15 +6,17 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 
 ## Email Sources
 
-### Tier 1 — Known contributors (checked by address)
+### Tier 1 — CCM staff and coordinators (checked by address)
 - Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, article text, bio updates, article replacements, holds
 - Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (also relays Katherine Harvey's articles)
 - Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — article content and photos (intern, coordinator)
-- Marcy Carmack (`marcycarmack@icloud.com`) — Fashion Trends articles
 - Sig (`sigalina@aol.com`) — article submissions
-- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing
-- FormSubmit (`submissions@formsubmit.co`) — reader comments and Quick Votes
+- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing (not currently in tier1 search)
+
+**Not in tier1 search:**
+- Marcy Carmack (`marcycarmack@icloud.com`) — writer/contributor; caught by tier2 keyword search
+- FormSubmit (`submissions@formsubmit.co`) — reader votes/comments; checked only during `/send-update` stats run, not here
 
 ### Tier 2 — Unknown writers (keyword search)
 - Search recent unread emails mentioning "Classic Chicago" or "article" from senders not in Tier 1
@@ -31,11 +33,11 @@ token = get_access_token()
 
 # Tier 1 — known addresses
 tier1_messages = search_messages(token,
-    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR niceguyfatz@gmail.com OR submissions@formsubmit.co) newer_than:2d")
+    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) newer_than:2d")
 
-# Tier 2 — keyword search for direct writers
+# Tier 2 — keyword search for writers (including Marcy and others not in tier1)
 tier2_messages = search_messages(token,
-    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR marcycarmack@icloud.com OR sigalina@aol.com OR niceguyfatz@gmail.com OR submissions@formsubmit.co)")
+    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
@@ -49,8 +51,17 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 ### Judy — article text
 - If `/prep-edition` has already run: fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`
 - If prep has not run yet: note the content and report — run `/prep-edition` first
-- Download attached photos: `download_attachment(token, msg_id, att_id, dest_path)`
-- Normalize photos to `photo-01.jpeg`, `photo-02.jpeg`, etc.
+- Download attached photos using the original filename — never rename:
+  ```python
+  for att in list_attachments(token, msg_id):
+      download_attachment(token, msg_id, att['id'],
+          f'editions/YYYY-MM-DD/slug/{att["filename"]}')
+  ```
+- **Never rename contributor image files.** The original filename is the permanent link between a photo and its caption/position. Renaming to `photo-01.jpeg` etc. severs that link.
+- **Before placing any `<figure>` HTML**, build an explicit photo map: `filename → caption (verbatim from email) → placement (after which sentence/paragraph)`. If any field is unknown, stop and find it — never infer captions or placement.
+- **COVER photos** (filename contains "COVER"): use as the homepage card image only. Do not place in the article body unless the contributor explicitly says to AND it has a caption.
+- **Caption vs. placement label**: a label appearing before a photo in an email may be a caption or a placement instruction (e.g. "Photo 1", "Cover"). Verify from context before using as `<figcaption>`. When uncertain, ask.
+- After placing all photos: count `<figure>` elements vs. photos on disk (excluding COVER-only files); for 6+ photo articles, read through the HTML sequentially and confirm each figure is at its specified anchor.
 
 ### Judy — bio updates
 - Locate the author in `about.html` and append the quoted text after the existing bio sentence
@@ -71,29 +82,27 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 - Report sender + subject for review
 - Apply only if content is unambiguous and sender is a known contributor writing from an unexpected address
 
-### FormSubmit — Quick Vote
-- Use `get_html_body(token, msg_id)` then `parse_formsubmit(html)` to extract field:value pairs
-- Skip if `Environment: dev2` (test vote)
-- Tally votes by article; group multiple votes with `(×N)` count
-- Update `reader-comments.html`:
-  - Find the current-week edition block (red header bar)
-  - Update `.tally-card` Yes/No counts and `.bar-chart` percentages (recalculate widths)
-  - Update `.tally-total` with new total and date range
-  - Append new articles to "Votes by Article" `<ul>`
-  - Omit "Not so much" bar row if no-votes = 0
+### FormSubmit — votes and comments
+Search for votes since the last update date noted in `editors/stats.html` (check the data-note line):
 
-### FormSubmit — Reader Comment (non-empty `comment` field)
-- Add to `reader-comments.html` inside current-week `.comments-section`:
-  ```html
-  <div class="comment-card">
-    <p class="comment-text">&ldquo;Comment text here.&rdquo;</p>
-    <div class="comment-meta">Date &nbsp;&bull;&nbsp; Article Title &nbsp;&bull;&nbsp; Email (if provided)</div>
-  </div>
-  ```
-- If comment raises an editorial concern, also flag in `comments.html` under "Reader Comments"
+```
+subject:"Classic Chicago" newer_than:7d
+```
 
-### FormSubmit — "Action Required: Activate FormSubmit"
-- Ignore entirely
+Tally Yes/No counts by article. Fetch body of "Classic Chicago Reader Comment" threads to check for non-empty `comment:` fields.
+
+**Update `reader-comments.html`** (always):
+- If the current edition section exists: add vote tally cards, bar chart, and Votes by Article list. Add comment cards for any non-empty comments.
+- If the section doesn't exist yet: create it with the current edition header, tally, and vote log. Use the same edition-block pattern as the existing June 7 section.
+- Add "Late Votes — Other Editions" sub-section for any votes that arrived for older articles.
+
+**Update `editors/stats.html`** (always):
+- Update the Reader Approval KPI (Yes count, No count, total, approval %). **Do this in the same edit as any row update — never update a row without also updating the KPI.**
+- Update the data-note "Reader votes updated" date to today.
+- Prepend new edition rows to the Reader Votes table (use the section-header row pattern from the June 7 block).
+- Add any late-vote rows near the bottom of their original edition's entries.
+
+After updating both files, commit and push to dev2.
 
 ## Step 3 — Update EMAIL_LOG.md
 
@@ -111,7 +120,7 @@ Row format:
 
 If no edition section exists yet for the emails being processed, create one (e.g. `## June 14 Edition`).
 
-After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATUS.md`:
+After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATUS.md` if it exists (only active/upcoming editions have one — do not create it for past editions):
 - Mark article rows as ✅ if now complete
 - Check off any action items that were completed this session
 - Add new action items if the email revealed something outstanding

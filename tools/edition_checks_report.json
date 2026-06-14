@@ -1,9 +1,58 @@
 {
-  "dark_mode_added": [
-    "editions/2026-03-01/moneyball/index.html",
-    "editions/2026-03-01/wells-street-kitchen-juice/index.html"
-  ],
+  "dark_mode_added": [],
   "nav_css_added": [],
-  "popup_articles_added": [],
-  "new_authors_needing_bios": []
+  "popup_articles_added": [
+    "marcy-carmack: The Chicago Fashion Scene (April 12, 2026)",
+    "marcy-carmack: Stephane St Jaymes (May 3, 2026)",
+    "marcy-carmack: Project Styling: Columbia College's Live Fashion Competition (May 17, 2026)"
+  ],
+  "new_authors_needing_bios": [
+    {
+      "id": "bob-glaze",
+      "articles": [
+        "March 15, 2026: Visiting Little Village in Chicago &mdash; Where to Eat and What to Do",
+        "April 19, 2026: Route 66 in Chicago",
+        "May 17, 2026: Chicago&#8217;s Best New Restaurant Finds"
+      ]
+    },
+    {
+      "id": "emma-muhleman",
+      "articles": [
+        "May 10, 2026: An Enchanted Evening: The Newberry Library Awards Dinner"
+      ]
+    },
+    {
+      "id": "ethan-cotton",
+      "articles": [
+        "May 10, 2026: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline",
+        "May 17, 2026: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline"
+      ]
+    },
+    {
+      "id": "jean-colonomos",
+      "articles": [
+        "May 24, 2026: Martha Graham When She Danced a Cold-War Peace Plan"
+      ]
+    },
+    {
+      "id": "mary-grant",
+      "articles": [
+        "May 24, 2026: Stitching a Community Together: The Story Behind Kenilworth&#8217;s Centennial Needlepoint"
+      ]
+    },
+    {
+      "id": "philip-vidal",
+      "articles": [
+        "April 5, 2026: About the Town in April",
+        "May 3, 2026: About the Town",
+        "May 31, 2026: About the Town in June"
+      ]
+    },
+    {
+      "id": "william-tyre",
+      "articles": [
+        "May 17, 2026: Glessner House Celebrates 60 Years"
+      ]
+    }
+  ]
 }

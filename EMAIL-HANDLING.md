@@ -4,127 +4,82 @@
 
 ## Article Content Sources
 
-Judy sends article content via:
-1. **Docx attachments** (most common) - requires extraction
-2. **Email body text** - can be directly used
-3. **Forwarded content** - may be wrapped in other messages
+Contributors send article content via:
+1. **Docx attachments** — extract text via `zipfile` + `word/document.xml` parsing (see `/new-edition`)
+2. **PDF attachments** — extract via PyPDF2 (activate `.venv` first)
+3. **Email body text** — use directly
+4. **Forwarded/quoted content** — strip headers, extract only the actual article text
 
-## Extraction Workflow
-
-### When Article Comes as .docx Attachment
+## Extraction Tools
 
 ```python
-# Use: tools/email_attachments.py
-python3 tools/email_attachments.py --msg-id <ID> --output /tmp/article.txt
+# Gmail API — primary tool for all email access
+import sys; sys.path.insert(0, 'tools')
+from gmail_api import get_access_token, search_messages, get_body, list_attachments, download_attachment
+
+# Download photo attachments (preserves original filenames)
+python3 tools/extract_article_photos.py YYYY-MM-DD --contributor ana
 ```
 
-What this does:
-- Downloads docx from Gmail
-- Extracts text from document.xml
-- Cleans up formatting
-- Saves plain text output
-- Reports success/failure
+**Never use `munpack`, `uudeview`, or manual `.eml` extraction** — the Gmail API handles all attachment extraction directly with original filenames preserved.
 
-**CRITICAL:** If extraction fails, mark article as "Content received but extraction pending" (not "Ready").
+## Word Doc Extraction
 
-### When Article Comes in Email Body
-
-1. Find the email in Gmail by subject/date
-2. Manually copy the text (gmail_api.py won't be needed)
-3. Create the HTML article from copied text
-4. Mark status as "Text received, converting to HTML"
-
-### When Content is Forwarded/Quoted
-
-- Extract only the ACTUAL article text, not quotes
-- Remove email headers ("On [date] so-and-so wrote:")
-- Look for boundaries: "---", "Begin forwarded message", etc.
-
-## Process for Each Article Type
-
-### Document with Photos
-
-```markdown
-1. Search Gmail: from:contributor "article name" has:attachment
-2. Download docx via tools/email_attachments.py
-3. Extract text
-4. Search same sender for photo emails
-5. Download photos to article folder
-6. Build HTML article
-7. Mark status as "Ready" (when both text AND photos exist)
+```python
+import zipfile, re
+with zipfile.ZipFile('/tmp/article.docx') as z:
+    xml = z.read('word/document.xml').decode('utf-8')
+text = re.sub(r'<[^>]+>', ' ', xml)
+text = re.sub(r'\s+', ' ', text).strip()
 ```
 
-### Story Only (No Photos Yet)
+**⚠ Word doc extraction is silently lossy.** After building the HTML, do a paragraph-by-paragraph diff against the original `.docx`. Entire paragraphs can disappear with no visible gap.
 
-```markdown
-1. Extract story text from email/docx
-2. Build HTML article with placeholder photo divs
-3. Mark status as "Text Only - Photos Pending"
-4. When photos arrive:
-   - Download to article folder
-   - Update article HTML to reference real photos
-   - Mark status as "Ready"
+## PDF Extraction
+
+```bash
+source .venv/bin/activate
+```
+```python
+import PyPDF2
+reader = PyPDF2.PdfReader('/tmp/article.pdf')
+text = '\n'.join(page.extract_text() for page in reader.pages)
 ```
 
-### Photos Only (Text Coming Later)
+## Photo Handling
 
-```markdown
-1. Download photos to article folder
-2. Create placeholder article with photo divs
-3. Mark status as "Photos Ready - Text Pending"
-4. When text arrives:
-   - Extract and build article
-   - Reference existing photos
-   - Mark status as "Ready"
-```
+**Never rename contributor image files.** Save with the original filename exactly as sent. See CLAUDE.md mistake #1.
+
+Before placing any `<figure>` HTML, build an explicit photo map:
+`filename → caption (verbatim from email) → placement (after which sentence/paragraph)`
+
+## Article Status Definitions
+
+- **Ready** = content + photos both exist
+- **Text Only** = content exists, no photos
+- **In Progress** = has one but not both
+- **Placeholder** = no real content
+
+Run `python3 tools/verify_edition.py YYYY-MM-DD` to confirm actual state before claiming any status.
 
 ## Logging Rules
 
 **Always log what actually happened:**
 
-✓ GOOD: "Brit Marling article text extracted from Judy's April 21 email; photos not found"
+✓ GOOD: "Brit Marling article text extracted from Judy's April 21 email; photos not found"  
 ✗ BAD: "Brit Marling ready" (hides what's missing)
 
-✓ GOOD: "Biba's Favorites docx downloaded but Python extraction failed; manual extraction needed"
-✗ BAD: "Biba content received" (hides extraction failure)
-
-## Editors Page Status
-
-Use these exact status indicators in `editors/edition.html`:
-
-```html
-<!-- Story received (docx) April 24, photos from Emma pending -->
-<!-- Story + cover photo received April 22, pending full story extraction -->
-<!-- Photos received (Tree.jpeg), story text pending -->
-```
-
-## Integration with /check-emails Skill
-
-When `/check-emails` processes contributor emails:
-
-1. Note what was received (docx? email body? photos?)
-2. Run extraction tools
-3. Log SUCCESS or FAILURE with reason
-4. Update article status based on ACTUAL extraction
-5. Do NOT assume success without verification
-
-## Common Issues & Workarounds
+## Common Issues
 
 ### Docx Extraction Fails
-- Reason: Old Word format, corrupted file, or zipfile issue
-- Workaround: Manually copy text from email or ask writer to resend as text
+Reason: Old Word format, corrupted file, or zipfile issue.  
+Workaround: Ask writer to resend as plain text or copy-paste from email.
 
-### Photo Files Named Unclearly
-- Log the actual filename received
-- In article HTML, use the actual filename (don't rename)
-- Note in editors page: "Photos: IMG_12345.jpeg, IMG_12346.jpeg"
+### Google Drive Shortcuts
+Drive shortcuts download as HTML, not the actual file. Ask contributor for the real file or email attachment instead.
 
 ### Email Content Is Partial
-- Mark as "Text partial - writer cut off mid-sentence"
-- Follow up with contributor
-- Don't claim "ready" when text is obviously incomplete
+Mark as "Text partial — writer cut off mid-sentence." Follow up with contributor. Don't claim Ready when text is obviously incomplete.
 
 ### No Communication From Writer
-- Check for emails using different addresses or subject variations
-- After 3 days: escalate to Judy
-- Mark as "Awaiting from [name] - no communication since [date]"
+Check for emails using different addresses or subject variations. After 3 days: escalate to Judy.

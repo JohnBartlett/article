@@ -1,22 +1,22 @@
 # Branch Strategy
 
-This repository uses three branches:
+This repository uses three branches. See CLAUDE.md "Branching Strategy" for the authoritative reference.
 
 ## `master` — Production
-The production branch. Code on `master` is live and deployed to the production site. Only merge into `master` from `dev` after changes have been staged and verified.
+Live site, deployed to Cloudflare (`chicagoclassicmag.com`). **Never commit directly.** GA4 enabled. Only receives merges from `dev` via `/publish`.
 
 ## `dev` — Staging
-The staging branch. Changes are collected and reviewed here before being promoted to `master`. Use `dev` to verify that content and code changes work correctly before deploying to production.
+Vercel preview (`article-git-dev-johns-projects-e5fce345.vercel.app`). Receives merges from `dev2` via `/stage`. GA4 disabled.
 
-## `dev2` — Experimental
-The experimental branch for spitballing ideas and trying things out. Work here is informal and may or may not be promoted to `dev`. Use `dev2` for drafts, experiments, and exploratory changes without affecting staging or production.
+## `dev2` — Active Work
+All work starts here. Every article, photo, fix, and skill change is made on `dev2`. GA4 disabled.
+
+**What stays on dev2 only:** Skills (`.claude/commands/`), `CLAUDE.md`, `tools/`, `_template/`, memory files. These must never be promoted to `dev` or `master`.
 
 ## Workflow
 
 ```
-dev2 (experiment) --> dev (stage & verify) --> master (production)
+dev2 (all work) --> dev (staging/Vercel) --> master (production/Cloudflare)
 ```
 
-1. Try out new ideas on `dev2`.
-2. When changes are ready for review, merge or cherry-pick them into `dev`.
-3. After verifying on `dev`, merge into `master` for production deployment.
+Use `/stage` to promote dev2 → dev, and `/publish` to promote dev → master.

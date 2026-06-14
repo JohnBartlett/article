@@ -59,7 +59,32 @@
     .hamburger-menu.open{display:block;}
     .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
     @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
+
+    .editorial-banner {
+      background: #1a1a2e;
+      color: #f0e6d3;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .editorial-banner a {
+      color: #e8c97e;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .editorial-banner a:hover { text-decoration: underline; }
+    .editorial-banner .banner-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a89070;
+      margin-right: 10px;
+    }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 <body>
   <header>
@@ -70,7 +95,8 @@
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
         <a href="../datebook/">DateBook</a>
-        <a href="#">Astrochart</a>
+        <a href="../daily-star-june/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -80,13 +106,8 @@
       </div>
     </nav>
   </header>
-
-  <!-- dev2-only
-  <div class="internal-nav">
-    <a href="../../../reader-comments.html">Reader Comments</a>
-    <a href="../../../future-articles.html">Future Articles</a>
-    <a href="../../../editors/index.html">Editors</a>
-    <a href="../../../editors/stats.html">Stats</a>
+  <div class="editorial-banner">
+    <span class="banner-label">New</span>Visit our <a href="../../../editorial.html">Editors&rsquo; Page</a> &mdash; letters, thoughts, and a look behind the magazine.
   </div>
   -->
   <main>
@@ -102,7 +123,7 @@
         <img src="1%20David%20Copperfield.jpeg" alt="David Copperfield">
       </figure>
 
-      <p>With Chicago poised to become the <em>world&rsquo;s most dazzling home for modern magic</em>, it is appropriate to spotlight the impact of magic in some often underserved populations.</p>
+      <p>With Chicago poised to become the <em>world&rsquo;s most dazzling home for modern magic</em>, it is appropriate to spotlight the impact of magic in some often under-served populations.</p>
 
       <p>For children with disabilities, achievements of daily living, such as tying shoelaces, dressing oneself, are monumental for the child, and praised by parents, but do not invoke <em>the jaw-dropping astonishment of a parent whose disabled child has made a coin magically disappear.</em></p>
 
@@ -197,7 +218,7 @@
 
       <p><em>KevinSpencerLive.com</em> and <em>MagicTherapy.com</em></p>
 
-      <p><em>Kevin</em> now develops evidence-based, magic-based therapeutic and educational programs (Magic Therapy&reg; and Hocus Focus&trade;) for underserved populations. He holds appointments at Harvard Medical School and the University of Alabama at Birmingham, and his work reaches occupational therapy, special education, and the performing arts. The concepts of <em>Magic Therapy&reg;</em> are used in more than 1,500 hospitals and rehabilitation centers across the USA and 30 countries around the world.</p>
+      <p><em>Kevin</em> now develops evidence-based, magic-based therapeutic and educational programs (Magic Therapy&reg; and Hocus Focus&trade;) for under-served populations. He holds appointments at Harvard Medical School and the University of Alabama at Birmingham, and his work reaches occupational therapy, special education, and the performing arts. The concepts of <em>Magic Therapy&reg;</em> are used in more than 1,500 hospitals and rehabilitation centers across the USA and 30 countries around the world.</p>
 
       <figure>
         <img src="10%20Dr%20Spencer.jpeg" alt="Dr. Kevin Spencer at work">
@@ -239,7 +260,9 @@
         <img src="15%20Magic%20Surprise.jpeg" alt="Magic">
       </figure>
 
-      <div style="margin:32px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
+      <p style="font-family:'Lato',sans-serif;font-size:13px;color:#999;font-style:italic;margin:32px 0 8px;">Photos: Jill Lowe / Shutterstock</p>
+
+      <div style="margin:16px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
         <a href="../../../about.html#jill-lowe" style="color:#d41f1f;text-decoration:none;border-bottom:1px dashed #d41f1f;">About the Author: Jill Lowe &rarr;</a>
       </div>
 
@@ -277,13 +300,13 @@
       </div>
 
       <nav class="article-nav">
-        <a class="prev" href="../scott-holleran/">
-          <img src="../scott-holleran/image0.jpeg" alt="">
-          <div><span class="nav-label">&#8592; Previous</span>Senior</div>
+        <a class="prev" href="../san-miguel-trip/">
+          <img src="../san-miguel-trip/1-Vibrant%20landscape.png" alt="">
+          <div><span class="nav-label">&#8592; Previous</span>Letter from San Miguel de Allende, Part II: Our April 2026 Trip</div>
         </a>
-        <a class="next" href="../san-miguel/">
-          <img src="../san-miguel/1-Vibrant%20landscape.png" alt="">
-          <div><span class="nav-label">Next &#8594;</span>Letter from San Miguel de Allende, Part I</div>
+        <a class="next" href="../peony-party/">
+          <img src="../thumb-placeholder.jpg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Peony Party</div>
         </a>
       </nav>
 
@@ -292,16 +315,19 @@
 
   <footer>
     <div class="footer-social">
-      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">Facebook</a>
-      <a href="https://twitter.com/classicchimag" target="_blank">Twitter/X</a>
-      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
     </div>
-    <div>COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
   </footer>
 
   <script>
-    var prevUrl = '../scott-holleran/';
-    var nextUrl = '../san-miguel/';
+    var prevUrl = '../san-miguel-trip/';
+    var nextUrl = '../peony-party/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;

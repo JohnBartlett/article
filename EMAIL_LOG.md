@@ -50,9 +50,51 @@ Track emails that have been processed, are pending action, or need re-addressing
 | May 30 | Annie | Letter from San Miguel de Allende | `19e79ecd652408bf` | ⏳ | Part 1 built in san-miguel/; Part 2 starts at "trip to San Miguel in April, 2026" — build for June 14 |
 | Jun 1 | Judy | San Miguel — divide into Part 1 / Part 2 | `19e83ab1ccb15628` | ⏳ | Part 2 needs its own folder in editions/2026-06-14/ |
 
+## June 14 Edition — New Jun 10-11
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 10 | Ana | Stories for this Sunday (advance notice) | `19eb368576c24cf3` | ✅ | Ana flagged all-day work event Jun 11; sent articles ahead of time |
+| Jun 11 | Judy | Re: Stories for this Sunday | `19eb6deb0d8c3b86` | ✅ | Judy praised Ana's work; no action needed |
+| Jun 11 | Sig | Re: Your title at the magazine (accepted Arts Editor) | `19eb71f4b296ae34` | ✅ | Sig accepted Arts Editor title; announcement goes on editorial.html for Jun 14 |
+| Jun 11 | Judy | Re: Your title at the magazine (confirmed) | `19eb747de6e260cf` | ✅ | Judy confirmed; no action needed |
+
 ## Ongoing / Not Edition-Specific
 
 | Date | From | Subject / Summary | Msg ID | Status | Notes |
 |------|------|-------------------|--------|--------|-------|
 | May 30 | Judy | Re: May 31 Edition — Ready for Review | `19e7b54854a53208` | ✅ | Judy approved; published |
 | May 31 | Judy | Re: Classic Chicago May 31 Edition is Live | `19e7d905aa1866bf` | ✅ | Judy acknowledged; no action |
+| Jun 8 | Judy | Re: Delaying Jill's story | `19ea6e03a8b03f8f` | ✅ | Ana confirmed Jill moved to Jun 14; Judy asked Ana to choose cover photo |
+| Jun 8 | Judy | Rough Draft Assignments for June 14 | `19ea6e74ad5c2319` | ✅ | Assignment list noted; edition prepped in prior session |
+| Jun 9 | Judy | Heritage Auctions cover shot (Continental Dollar obverse.jpeg) | `19eadcbae7ab0567` | ✅ | Photo extracted to editions/2026-06-14/heritage-auction/ |
+| Jun 9 | Judy | Music Institute cover photo + caption | `19eacbd52d9349c6` | ✅ | Photo extracted to editions/2026-06-14/music-benefit/; caption logged |
+| Jun 9 | Judy | Fwd: 60th reunion story (PDF) | `19eade225803d83b` | ✅ | PDF extracted; article text already built in elizabeth-richter-reunion/ |
+| Jun 9 | Judy | Fwd: requesting correction — Jill and Chad Coe | `19eae891d8e1145b` | ✅ | Already fixed in prior hotfix commit |
+| Jun 9 | Judy | Re: Reader Comment — Ferris Bueller | `19ead3ce4e609e8a` | ✅ | Judy asked about running as letter; decided yes (see 19eadd340129205f) |
+| Jun 9 | Judy | Re: Reader Comment — run with editor's note | `19eadd340129205f` | ✅ | Ferris alternate-take article built with editor's note and full comment text |
+| Jun 9 | Judy | Re: Image and credit for blast (Sig) | `19eadf6599822b96` | ✅ | Confirmed blast text for Sig's article; no new action |
+| Jun 9 | Sig | Re: Image and credit for blast | `19eae0673b184087` | ✅ | Sig confirmed article + photos + credits coming Thursday Jun 12 |
+| Jun 9 | Judy | Re: Image and credit for blast | `19eae8c73f66c54d` | ✅ | Judy praising Sig's article; no action |
+| Jun 9 | Sig | Re: Image and credit for blast (2) | `19eaed2023401d9b` | ✅ | Sig thank-you reply; no action |
+| Jun 10 | Ana | Heritage Auctions full article + 6 photos | `19eb366d27b3da5f` | ✅ | Article built; photos extracted; homepage card updated |
+| Jun 10 | Ana | Do Division / DeeDee El Bego article + 7 photos | `19eb3367487c3d85` | ✅ | Article built; photos extracted; homepage card updated |
+| Jun 10 | Judy | DeeDee El Bego cover photo (FullSizeRender.jpeg) | `19eb316f1e9488e5` | ✅ | Already extracted; COVER Deedee Story.jpg from Ana supersedes |
+| Jun 10 | Judy | Re: Photo and blurb (Marcy fashion article) | `19eb13cf8b8df402` | ✅ | Judy confirmed Marcy fashion article for June 21 lead; already noted in future-articles.html |
+| Jun 11 | Judy | Susan Benjamin bio for Peony Party | `19eb699d97cb6131` | ✅ | Bio text provided; already in about.html#susan-benjamin |
+| Jun 11 | Ana | Re: Stories for this Sunday (all-day event) | `19eb8ea48afa898d` | ⬛ | Ana/Judy exchange praising each other; no action needed |
+| Jun 11 | Judy | Approved John intro for editorial.html | `19eb8eba9e42c876` | ✅ | "Absolutely perfect, wouldn't change a word" — intro live on editorial.html |
+| Jun 11 | Judy | Approved Sig intro for editorial.html | `19eb8edee9e953db` | ✅ | "Absolutely perfect, so right" — Sig Arts Editor intro live on editorial.html |
+| Jun 12 | Sig | Article text coming later today | `19ebbcc2caa53300` | ✅ | Text + 5 photos arrived overnight Jun 13 |
+| Jun 12 | Emma | Tent Pitching article + 13 photos | `19ebe7fe316a7bd8` | ✅ | Article built; photos 1-7+11-12 placed; photos 8,9,10,13 unplaced pending instruction |
+| Jun 13 | Sig | Text (Connective Threads) | `19ebfcb691659496` | ✅ | Full article text; built in sig-costume-art/ |
+| Jun 13 | Sig | 2 of 6 — Katy Perry | `19ebfd2d678fb09b` | ✅ | IMG_5453.jpg placed in Met Gala section |
+| Jun 13 | Sig | 3 of 6 — Dree Hemingway | `19ebfd57b8cbc820` | ✅ | IMG_5452.jpg placed in Met Gala section |
+| Jun 13 | Sig | 4 of 6 — no caption | `19ebfd7453d48b69` | 🔁 | IMG_5449.jpg — no caption provided; cannot place until Sig clarifies |
+| Jun 13 | Sig | 5 of 6 — Installation View | `19ebfd951e50d449` | ✅ | IMG_5447.JPG placed as hero figure |
+| Jun 13 | Sig | 6 of 6 — Walking Dress + Seurat | `19ebfdc428dc0265` | ✅ | IMG_4894.jpeg placed at Abstract Body paragraph |
+| Jun 13 | Annie | Articles in morning (delayed) | `19ebfa7c07b94a53` | 🔁 | Awaiting: Peony Party, Elizabeth Richter, DateBook |
+| Jun 13 | Judy | Re: Annie articles — acknowledged | `19ebfe50ec92a143` | ⬛ | Judy/Annie exchange; no action |
+| Jun 13 | John→Sig | Your introduction in Sunday's edition | `19ec178e8a869061` | ✅ | Sent Sig her Arts Editor intro text; CC Judy; PS about John's intro running same edition |
+| Jun 13 | John→Judy | June 14 Edition — Saturday Morning Status | `19ec182a6b86593b` | ✅ | Status update: 6/9 articles ready; Editors' Page ready; asked if reminders to Annie and Emma |
+| Jun 13 | Judy | Music Institute cover photo (confirm) | `19ebfe7d9cb5b0b1` | ✅ | Duplicate of Jun 9 photo; caption already in article; Emma has all photos |

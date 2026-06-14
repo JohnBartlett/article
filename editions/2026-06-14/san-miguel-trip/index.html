@@ -62,7 +62,32 @@
     .hamburger-menu.open{display:block;}
     .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
     @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
+
+    .editorial-banner {
+      background: #1a1a2e;
+      color: #f0e6d3;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .editorial-banner a {
+      color: #e8c97e;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .editorial-banner a:hover { text-decoration: underline; }
+    .editorial-banner .banner-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a89070;
+      margin-right: 10px;
+    }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 <body>
   <header>
@@ -73,7 +98,8 @@
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
         <a href="../datebook/">DateBook</a>
-        <a href="#">Astrochart</a>
+        <a href="../daily-star-june/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -83,13 +109,8 @@
       </div>
     </nav>
   </header>
-
-  <!-- dev2-only
-  <div class="internal-nav">
-    <a href="../../../reader-comments.html">Reader Comments</a>
-    <a href="../../../future-articles.html">Future Articles</a>
-    <a href="../../../editors/index.html">Editors</a>
-    <a href="../../../editors/stats.html">Stats</a>
+  <div class="editorial-banner">
+    <span class="banner-label">New</span>Visit our <a href="../../../editorial.html">Editors&rsquo; Page</a> &mdash; letters, thoughts, and a look behind the magazine.
   </div>
   -->
   <main>
@@ -195,7 +216,7 @@
         <figcaption>The ravine of El Charco del Ingenio.</figcaption>
       </figure>
 
-      <p>Seven miles north of San Miguel off the Carretera (Highway) 51 is the town of Atotonilco, famous for the Sanctuario de Jes&uacute;s Nazareno with its painted interior which has been called &ldquo;the Sistine Chapel of Mexico.&rdquo; Nearby are La Gruta (the Grotto) hot springs. A further 20 miles north is Dolores Hidalgo, where Miguel Hidalgo issued his famous call to arms. Today it is known for its ceramics.</p>
+      <p>Seven miles north of San Miguel off the brand new Carretera (Highway) 51 is the town of Atotonilco, famous for the Sanctuario de Jes&uacute;s Nazareno with its painted interior which has been called &ldquo;the Sistine Chapel of Mexico.&rdquo; Nearby are La Gruta (the Grotto) hot springs. A further 20 miles north is Dolores Hidalgo, where Miguel Hidalgo issued his famous call to arms. Today it is known for its ceramics.</p>
 
       <figure>
         <img src="22-Church.png" alt="Santuario de Jes&uacute;s Nazareno de Atotonilco">
@@ -214,9 +235,13 @@
         <figcaption>The Luna Rooftop Bar and Restaurant atop the Rosewood Hotel.</figcaption>
       </figure>
 
+      <p>Ten miles southwest of San Miguel is Ca&ntilde;ada de la Virgen (Canyon of the Virgin), with ruins of a pre-Columbian city. The site first opened to the public in 2011. It was closed when we were in San Miguel.</p>
+
       <p>If you stick to the Centro Hist&oacute;rico, you may get the impression that San Miguel has become what one guide book described as &ldquo;Aspen with a Mexican accent&rdquo; &mdash; a premier destination for U.S. and Canadian tourists, retirees and expats that offers a luxurious yet culturally rich lifestyle. Similar to Aspen, it is a pedestrian-friendly, elite, and vibrant community known for art, fine dining, and cosmopolitan charm. Most people in the hotels, restaurants and stores speak English. There is a Starbucks. But if you venture to the outer colonias &mdash; for example, to Valle del Maiz, 1.5 miles southeast of El Jard&iacute;n and one of San Miguel&rsquo;s oldest neighborhoods whose residents are mostly indigenous &mdash; you will see another, more authentic side of San Miguel.</p>
 
-      <p>It is true that the average Sanmiguelense (local resident) can&rsquo;t afford to shop at the high-end shops or to dine in the expensive restaurants in the Centro Hist&oacute;rico, where the prices do indeed recall New York prices. But you do not have to venture far outside San Miguel to find the real Mexico.</p>
+      <p>It is true that the average Sanmiguelense (local resident) can&rsquo;t afford to shop at the high-end shops or to dine in the expensive restaurants in the Centro Hist&oacute;rico, where the prices do indeed recall New York prices. They do not shop for groceries at the City Market, where you can buy caviar, lobsters and fine wines, or at its sister store La Comer. They go to local markets in other neighborhoods of San Miguel, or in other towns altogether, which cater to the local community.</p>
+
+      <p>But you do not have to venture far outside San Miguel to find the real Mexico.</p>
 
       <figure>
         <img src="24-Horseback%20ride.png" alt="Horseback riding at Rancho Xotolar">
@@ -227,8 +252,6 @@
       <p>We stopped at a small general store (tienda) in a hamlet of 500 souls for refreshments. Getting into the spirit of the occasion, I downed a shot of Centenario tequila with a slice of lime with a Doctor Pepper chaser. Lio had a Corona beer chaser. Then we rode back to the ranch where Lio&rsquo;s aunt had prepared a traditional lunch for us composed of chili relleno, blue corn tortillas, rice and beans, prickly pear salad, and cheese she had made from the fresh milk we had given her earlier. The meal was cooked with gas from a canister. The ranch got its electricity from solar panels. I don&rsquo;t think there was running water. It was as far from the Luna Rooftop Bar as you could get.</p>
 
       <p>&iexcl;Hasta la vista!</p>
-
-      <p style="margin-top:0;font-style:italic;">Russell</p>
 
       <div style="margin:32px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
         <a href="../../../about.html#russell-kelley" style="color:#d41f1f;text-decoration:none;border-bottom:1px dashed #d41f1f;">About the Author: Russell Kelley &rarr;</a>
@@ -268,12 +291,12 @@
       </div>
 
       <nav class="article-nav">
-        <a class="prev" href="../../2026-06-07/san-miguel/">
-          <img src="../../2026-06-07/san-miguel/1-Vibrant%20landscape.png" alt="">
-          <div><span class="nav-label">&#8592; Previous</span>Letter from San Miguel de Allende, Part I</div>
+        <a class="prev" href="../../../index.html">
+          <div><span class="nav-label">&#8592; Back to</span>Sunday Edition</div>
         </a>
-        <a class="next" href="../../../index.html">
-          <div><span class="nav-label">Next &#8594;</span>Home</div>
+        <a class="next" href="../jill-lowe-magic/">
+          <img src="../jill-lowe-magic/1%20David%20Copperfield.jpeg" alt="">
+          <div><span class="nav-label">Next &#8594;</span>Abracadabra&hellip; and Then the Magic Happens</div>
         </a>
       </nav>
 
@@ -282,16 +305,19 @@
 
   <footer>
     <div class="footer-social">
-      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">Facebook</a>
-      <a href="https://twitter.com/classicchimag" target="_blank">Twitter/X</a>
-      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
     </div>
-    <div>COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
   </footer>
 
   <script>
-    var prevUrl = '../../2026-06-07/san-miguel/';
-    var nextUrl = '../../../index.html';
+    var prevUrl = '../../../index.html';
+    var nextUrl = '../jill-lowe-magic/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
