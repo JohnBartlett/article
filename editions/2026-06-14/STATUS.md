@@ -1,6 +1,6 @@
 # June 14, 2026 Edition — Status
 
-_Updated: 2026-06-13_
+_Updated: 2026-06-14_
 
 ## Articles
 
@@ -12,18 +12,17 @@ _Updated: 2026-06-13_
 | deedee-summerfest | Do Division Street Fest 2026 | Deedee El Bego | ✅ | ✅ 8 | Built June 11; bio added; via Ana June 10 |
 | heritage-auction | Americana at Auction: Telling the Liberty Story | Judy Carmack Bross | ✅ | ✅ 7 | Built June 11; via Ana June 10 |
 | sig-costume-art | Connective Threads | Sigalit Zetouni | ✅ | ⚠️ 4/5 | Text built Jun 13; 4 photos placed; IMG_5449.jpg (4of6) has no caption — needs Sig to clarify |
-| tent-pitching | Look Who Pitched George Washington's Tent | Judy Carmack Bross | ✅ | ⚠️ 9/13 | Built Jun 13; photos 1-7 + 11-12 placed; photos 8, 9, 10, 13 unplaced — need placement + photo 10 needs caption |
-| peony-party | Peony Party | Susan Benjamin | ❌ | ❌ | Author confirmed June 11; bio added; cover photo in email; Annie laying out text |
-| music-benefit | Music Institute of Chicago 95th Anniversary Gala | Judy Carmack Bross | ❌ | ✅ 2 | Cover photo confirmed Jun 13 (Layne Dixon); Emma laying out text + has all photos |
-| elizabeth-richter-reunion | The 60th Reunion Is Worth Celebrating! | Elizabeth Dunlop Richter | ❌ | ❌ | Via Annie; text sent June 9 |
+| tent-pitching | Look Who Pitched George Washington's Tent | Judy Carmack Bross | ✅ | ⚠️ 9/13 | Built Jun 13; Judy correction applied Jun 14 (removed "recent"/"recently"); photos 8, 9, 10, 13 still unplaced — need placement + photo 10 needs caption |
+| peony-party | Peony Party | Susan Benjamin | ✅ | ✅ 17 | Built Jun 14; 17 photos from Annie (msg 19ec20414a1185c7) |
+| music-benefit | Music Institute of Chicago 95th Anniversary Gala | Judy Carmack Bross | ✅ | ✅ 25 | Built Jun 14; Emma laid out; Layne Dixon + Mary Rafferty photos |
+| elizabeth-richter-reunion | The 60th Reunion Is Worth Celebrating! | Elizabeth Dunlop Richter | ✅ | ✅ 12 | Built Jun 14; 12 photos from Annie (msg 19ec1f3245d17c1d) |
 | daily-star-june | Daily Star June | TBD | ✅ | — | Astrochart page |
 | fashion-trends | Fashion Trends | Marcy Carmack | ❌ | ❌ | Moved to June 21 |
 | _(editorial.html)_ | Editors' Page | Judy Carmack Bross | ✅ | — | Standalone root page; John + Sigalit intros approved June 11 |
 
 ## Pending Deliveries
 
-- **Annie** — Peony Party article text (Susan Benjamin); Elizabeth Richter reunion article; DateBook (promised first thing Sat Jun 13 morning)
-- **Emma** — Music Benefit text layout (has all photos)
+- **Annie** — DateBook (pushed to Jun 21 per Judy email Jun 13)
 - **Sig** — Caption for IMG_5449.jpg (4 of 6); placement instructions for tent-pitching photos 8, 9, 10 (+ caption for 10), 13
 
 ## Flags / Blockers
