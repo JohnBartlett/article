@@ -6,10 +6,11 @@ _Updated: 2026-06-16_
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| rush-hospital-luncheon | Rush Hospital Luncheon | Emma Muhleman | ❌ | ❌ | Awaiting from Emma |
-| ciorba-de-perisoare | Ciorba de Perisoare | Francesco Bianchini | ✅ | ❌ 0/4 | Built June 15; 4 photos in email msg 19eca873eeb4752f — need download |
-| glessner-house | Glessner House Gala | Annie Delfosse | ❌ | ❌ | Cover photo received June 15: "2 - Tom and Barbi Donnelley with Bill Tyre.jpeg" (msg 19eca696cf65f20a); article text pending |
-| today-in-chicago-history | Today in Chicago History | Scott Holleran / Ana Baca | ❌ | ❌ | Cover photo received June 16: "IMG_4034.JPG" (msg 19ecfdf3bf2d035b, CC Ana); article text pending |
+| poems-for-summer | Poems for Summer | Jean Colonomos | ✅ | — | Built June 16; no photos (poetry) |
+| rush-hospital-luncheon | Rush Hospital Luncheon | Emma Muhleman | ❌ | ⏳ 1 cover | Cover photo downloaded June 16; article text pending from Emma |
+| ciorba-de-perisoare | Ciorba de Perisoare | Francesco Bianchini | ✅ | ✅ 4/4 | Complete June 16 |
+| glessner-house | Glessner House Gala | Annie Delfosse | ❌ | ⏳ 1 cover | Cover photo downloaded June 16; article text pending from Annie |
+| today-in-chicago-history | Today in Chicago History | Scott Holleran / Ana Baca | ❌ | ⏳ 1 cover | Cover photo downloaded June 16; article text pending from Ana / Scott |
 | bob-glaze | Bob Glaze column | Bob Glaze / Emma Muhleman | ❌ | ❌ | Awaiting from Emma |
 | datebook | DateBook | Annie Delfosse | ✅* | — | Copied from June 14; new events pending from Annie |
 | fashion-trends | Fashion Trends | Marcy Carmack | ❌ | ❌ | Judy confirming with Marcy (June 16 email); article + 1 photo expected |
@@ -23,31 +24,16 @@ _Updated: 2026-06-16_
 - **Marcy Carmack** — Fashion Trends article + photo (Judy following up)
 - **Photos download** — Francesco's 4 photos (msg 19eca873eeb4752f), Glessner House cover (msg 19eca696cf65f20a), Scott Holleran cover (msg 19ecfdf3bf2d035b)
 
-## Photo Download Needed
+## Photos — Downloaded June 16
 
-Francesco's article (`ciorba-de-perisoare`):
-```bash
-# Gmail msg: 19eca873eeb4752f
-# Photos (preserve exact filenames):
-#   97Ciorba de Perisoare1.jpeg  → cover/hero  → caption: "Ciorba de perisoare"
-#   97Ciorba de Perisoare2 2.jpeg → after foothills para  → caption: "Toward the high Carpathians"
-#   Unknown-1.jpeg               → after "grace in decay" para  → caption: "Grace in decay"
-#   97Ciorba de Perisoare4.jpeg  → after "Every detail" para  → caption: "Still Standing"
-```
+All cover photos are on disk. No further downloads needed until article text arrives.
 
-Glessner House cover photo:
-```bash
-# Gmail msg: 19eca696cf65f20a
-# Filename: 2 - Tom and Barbi Donnelley with Bill Tyre.jpeg
-# Use as hero/homepage card for glessner-house article
-```
-
-Scott Holleran cover photo:
-```bash
-# Gmail msg: 19ecfdf3bf2d035b (CC: anabaca8@gmail.com)
-# Filename: IMG_4034.JPG
-# Use as hero/homepage card for today-in-chicago-history article
-```
+| Article | File | Status |
+|---|---|---|
+| ciorba-de-perisoare | 97Ciorba de Perisoare1.jpeg + 3 more | ✅ All placed in HTML |
+| glessner-house | 2 - Tom and Barbi Donnelley with Bill Tyre.jpeg | ✅ On disk, awaiting article text |
+| today-in-chicago-history | IMG_4034.JPG | ✅ On disk, awaiting article text |
+| rush-hospital-luncheon | Ela Lewis, Gale Gottlieb, Mary Pearlman.jpeg | ✅ On disk, awaiting article text |
 
 ## Other Flags from June 16 Emails
 
