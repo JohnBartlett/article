@@ -11,14 +11,14 @@
 7. [ ] Lay out Bob Glaze column (pending from Emma)
 8. [ ] Lay out Marcy Carmack Fashion Trends article (Judy chasing her for photo + Blast sentence)
 9. [ ] Update DateBook for June 21 (new events from Annie — pending)
-10. [ ] Add Philip Vidal to `about.html` — awaiting bio from Judy
-11. [ ] Add Jean Colonomos intro to `editorial.html` — awaiting Judy approval of draft (sent June 16)
+10. [x] Add Philip Vidal to `about.html` — Events Editor card added to More Contributors using Judy's bio text
+11. [x] Add Jean Colonomos intro to `editorial.html` — posted June 21 (Judy-approved)
 12. [ ] Run `/edition-checks` before staging
 13. [ ] Stage and publish June 21 edition
 
 ## People / Editorial
 
-1. [ ] Add Philip Vidal to `about.html` as contributor (About the Town column) — awaiting bio from Philip
+1. [x] Add Philip Vidal to `about.html` as contributor (About the Town column) — done
 2. [ ] Send Philip Vidal intro/title email to Judy (draft ready, unsent)
 3. [ ] Await Sig Zetouni reply re: articles for coming weeks (email sent June 16)
 4. [ ] Compile Elizabeth Richter article list for Judy (requested)
