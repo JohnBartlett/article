@@ -1,6 +1,6 @@
 # June 21, 2026 Edition — Status
 
-_Updated: 2026-06-16_
+_Updated: 2026-06-17_
 
 ## Articles
 
@@ -21,8 +21,7 @@ _Updated: 2026-06-16_
 - **Emma** — Rush Hospital Luncheon (article + photos); Bob Glaze column
 - **Annie** — Glessner House Gala article text; DateBook new events
 - **Ana / Scott Holleran** — Today in Chicago History article text
-- **Marcy Carmack** — Fashion Trends article + photo (Judy following up)
-- **Photos download** — Francesco's 4 photos (msg 19eca873eeb4752f), Glessner House cover (msg 19eca696cf65f20a), Scott Holleran cover (msg 19ecfdf3bf2d035b)
+- **Marcy Carmack** — Fashion Trends article + photo; delayed to Jun 18 (Marcy email Jun 16 CC'd John; Judy confirmed Jun 17 msg 19ed536df8bd983f)
 
 ## Photos — Downloaded June 16
 
@@ -35,16 +34,15 @@ All cover photos are on disk. No further downloads needed until article text arr
 | today-in-chicago-history | IMG_4034.JPG | ✅ On disk, awaiting article text |
 | rush-hospital-luncheon | Ela Lewis, Gale Gottlieb, Mary Pearlman.jpeg | ✅ On disk, awaiting article text |
 
-## Other Flags from June 16 Emails
+## Changes — June 17, 2026
 
-- **Philip Vidal not in More Contributors** — Philip noted he's missing from about.html contributors section.
-  Judy plans to give him a title ("Events Editor") and add him. Need his bio text before adding card.
-  His articles popup already exists in about.html (id="articles-philip-vidal").
-  Action: add `<div class="team-member" id="philip-vidal">` card once bio received from Judy.
+- **Philip Vidal added to More Contributors** (about.html) — Judy confirmed via email Jun 17 (msg 19ed55669b8fdd8a). Bio from msg 19ed560cf2e7e4d4. Role set to "About the Town" (Philip explicitly declined "Events Editor" title). Popup moved from hidden popup-store into inline card.
 
-- **Jean Colonomos (poet)** — Judy has a poem/profile she may run on the Editors' Page.
-  She attached photo `jeancolonomos-cutout-e1711686281549.png` (msg 19ed0727b3dc0f8b).
-  No code action yet — awaiting Judy's decision on format and content.
+- **Jean Colonomos added to More Contributors** (about.html) — Stub bio added to provide anchor `#jean-colonomos` linked from poems-for-summer article. Role: "Poet & Playwright."
+
+- **Jean Colonomos intro added to editorial.html** — Judy approved draft editor's note via email Jun 17 (msg 19ed562abfdd9d99). Posted under June 21, 2026. Editorial.html subtitle updated to June 21; nav DateBook/Astrochart links updated to editions/2026-06-21/; dev2-only internal nav added.
+
+- **Jean Colonomos photo** (jeancolonomos-cutout-e1711686281549.png, msg 19ed0727b3dc0f8b) — Judy asked "Should this be our cover shot or get an AI photo of texting?" No definitive instruction given; awaiting decision before placing photo.
 
 - **Elizabeth Dunlop Richter article archive** — Judy requests a list of Libbet's articles.
   Found 5 published articles:
