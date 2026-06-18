@@ -21,15 +21,15 @@
 1. [x] Add Philip Vidal to `about.html` as contributor (About the Town column) — done
 2. [ ] Send Philip Vidal intro/title email to Judy (draft ready, unsent)
 3. [ ] Await Sig Zetouni reply re: articles for coming weeks (email sent June 16)
-4. [ ] Compile Elizabeth Richter article list for Judy (requested)
+4. [x] Compile Elizabeth Richter article list for Judy — sent June 18
 
 ## High Priority (Site)
 
 1. [ ] Disable Vercel Deployment Protection so dev preview URLs are publicly accessible (Vercel Dashboard → Settings → Deployment Protection → turn off)
-2. [ ] Confirm Formsubmit activation emails for `subscribe@2ccmag.com` and `advertise@2ccmag.com` (check inbox, click confirmation link)
-3. [ ] Re-enable Subscribe form on `subscribe.html` after Formsubmit activation confirmed
-4. [ ] Re-enable Advertise form on `advertise.html` after Formsubmit activation confirmed
-5. [ ] Swap Heritage Auctions ad to June image (`Classic Chicago June 2026.png`) — overdue since May 21
+2. [x] Confirm Formsubmit activation for `editor@2ccmag.com` — activation link opened June 18
+3. [x] Re-enable Subscribe form on `subscribe.html` — done June 18
+4. [x] Re-enable Advertise form on `advertise.html` — done June 18
+5. [x] Swap Heritage Auctions ad to June image (`Classic Chicago June 2026.png`) — already done on homepage
 6. [ ] Susan Aurinko silk-roads article (`editions/2026-04-26/silk-roads/`): confirm correct brand spelling — article uses "LensFlair Editions" (capital F); domain is `lensflaireditions.com` (lowercase). Verify with Susan or Judy before changing.
 
 ## Content / Editorial (Recurring)
