@@ -19,7 +19,7 @@
 ## People / Editorial
 
 1. [x] Add Philip Vidal to `about.html` as contributor (About the Town column) — done
-2. [ ] Send Philip Vidal intro/title email to Judy (draft ready, unsent)
+2. [x] Send Philip Vidal intro/title email to Judy — sent + corrected June 18 (role: About the Town)
 3. [ ] Await Sig Zetouni reply re: articles for coming weeks (email sent June 16)
 4. [x] Compile Elizabeth Richter article list for Judy — sent June 18
 
