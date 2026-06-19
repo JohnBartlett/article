@@ -446,10 +446,15 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation — order must match homepage card order -->
-      <!-- Nav links to be updated once full article order is set for June 21 -->
       <div class="edition-nav">
-        <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
+        <div class="nav-item">
+          <img class="nav-thumb" src="../today-in-chicago-history/COVER - Scott Holleran Date in History.JPG" alt="">
+          <a href="../today-in-chicago-history/" class="back-link">&larr; Previous: Today in Chicago History</a>
+        </div>
+        <div class="nav-item" style="text-align:right;">
+          <a href="../glessner-house/" class="back-link">Next: Glessner House Gala &rarr;</a>
+          <img class="nav-thumb" src="../glessner-house/2 - Tom and Barbi Donnelley with Bill Tyre.jpeg" alt="">
+        </div>
       </div>
 
     </div><!-- end article-wrapper -->
@@ -480,8 +485,8 @@
 
   <!-- Keyboard nav — to be updated once full article order is set -->
   <script>
-    var prevUrl = '../../../index.html';
-    var nextUrl = '../../../index.html';
+    var prevUrl = '../today-in-chicago-history/';
+    var nextUrl = '../glessner-house/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
