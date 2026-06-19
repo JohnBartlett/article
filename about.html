@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- GA4-disabled
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,7 +10,7 @@
     gtag('js', new Date());
     gtag('config', 'G-5J2HWKC0B1');
   </script>
-
+  -->
   <meta charset="UTF-8">
   <title>About &ndash; Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -857,42 +857,42 @@
           <p>Annie Delfosse curates the Classic Chicago DateBook, gathering the best of the city&rsquo;s cultural calendar each week. She has an eye for the events that make Chicago worth celebrating.</p>
           <button class="articles-trigger" data-popup="articles-annie-delfosse">Annie Delfosse&rsquo;s Articles &rarr;</button>
         </div>
-      </div>
-
-      <!-- popup-store: popup divs for writers not in More Contributors -->
-      <div style="display:none">
-        <div id="articles-philip-vidal" class="articles-popup">
-          <button class="articles-popup-close">&times;</button>
-          <div class="articles-popup-heading">Philip Vidal&rsquo;s Articles</div>
-          <div class="articles-grid">
-            <a href="editions/2026-04-05/about-the-town/" class="article-mini">
-              <img src="editions/2026-04-05/about-the-town/jazz-day.jpg" alt="About the Town in April">
-              <span class="article-mini-info">
-                <span class="article-mini-title">About the Town in April</span>
-                <span class="article-mini-date">April 5, 2026</span>
-              </span>
-            </a>
-            <a href="editions/2026-05-03/about-the-town-may/" class="article-mini">
-              <div style="width:100%;aspect-ratio:4/3;background:#f0ece6;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Lato',sans-serif;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;">Classic Chicago</span></div>
-              <span class="article-mini-info">
-                <span class="article-mini-title">About the Town in May</span>
-                <span class="article-mini-date">May 3, 2026</span>
-              </span>
-            </a>
-            <a href="editions/2026-05-31/about-the-town-june/" class="article-mini">
-              <img src="editions/2026-05-31/about-the-town-june/COVER Chicago Dance Month.jpg" alt="About the Town in June">
-              <span class="article-mini-info">
-                <span class="article-mini-title">About the Town in June</span>
-                <span class="article-mini-date">May 31, 2026</span>
-              </span>
-            </a>
-          </div>
+        <div class="team-member" id="bob-glaze-this-week">
+          <h3>Bob Glaze</h3>
+          <div class="role">Weekend Road Trips</div>
+          <p>One of our first contributors, Bob Glaze&rsquo;s monthly Weekend Road Trips columns were a saving grace to readers during COVID who yearned for short driving trips where they learned about neighborhoods and towns nearby. Whether it&rsquo;s trips now to San Miguel de Allende, the Jersey Shore, or great Chicago neighborhoods, Bob shares history, great dining and shops to visit. His worldwide recommendations can be found at <a href="https://globalphile.com" style="color:#b51c20;">globalphile.com</a>.</p>
+          <button class="articles-trigger" data-popup="articles-bob-glaze">Bob Glaze&rsquo;s Articles &rarr;</button>
+        </div>
+        <div class="team-member" id="jean-colonomos-this-week">
+          <h3>Jean Colonomos</h3>
+          <div class="role">Poet &amp; Playwright</div>
+          <p>Poet, playwright, and former Martha Graham dancer, Jean Colonomos also wrote dance journalism for The Village Voice, The New York Dance Calendar and Dance Magazine. She received a Citation from the City of Los Angeles for her play <em>Black Dawn</em> about Cambodian women who suffered under Pol Pot&rsquo;s genocide. As a poet she was nominated for a Pushcart Prize.</p>
+          <button class="articles-trigger" data-popup="articles-jean-colonomos">Jean Colonomos&rsquo;s Articles &rarr;</button>
         </div>
       </div>
 
       <details class="more-contributors">
         <summary>More Contributors</summary>
         <div class="team-grid">
+          <div class="team-member" id="jean-colonomos">
+            <h3>Jean Colonomos</h3>
+            <div class="role">Poet &amp; Playwright</div>
+            <p>Poet, playwright, and former Martha Graham dancer, Jean Colonomos also wrote dance journalism for The Village Voice, The New York Dance Calendar and Dance Magazine. She received a Citation from the City of Los Angeles for her play <em>Black Dawn</em> about Cambodian women who suffered under Pol Pot&rsquo;s genocide. As a poet she was nominated for a Pushcart Prize.</p>
+            <button class="articles-trigger" data-popup="articles-jean-colonomos">Jean Colonomos&rsquo;s Articles &rarr;</button>
+            <div id="articles-jean-colonomos" class="articles-popup">
+              <button class="articles-popup-close">&times;</button>
+              <div class="articles-popup-heading">Jean Colonomos&rsquo;s Articles</div>
+              <div class="articles-grid">
+                <a href="editions/2026-06-21/poems-for-summer/" class="article-mini">
+                  <div style="width:100%;aspect-ratio:4/3;background:#f0ece6;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Lato',sans-serif;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;">Classic Chicago</span></div>
+                  <span class="article-mini-info">
+                    <span class="article-mini-title">Poems for Summer</span>
+                    <span class="article-mini-date">June 21, 2026</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="team-member" id="david-sweet">
             <h3>David A. F. Sweet</h3>
             <div class="role">Author &amp; Historian</div>
@@ -989,10 +989,61 @@
         </div>
             </div>
           </div>
+          <div class="team-member" id="philip-vidal">
+            <h3>Philip Vidal</h3>
+            <p>Each month Philip Vidal curates Chicago events from hundreds of ideas he receives to create About the Town which presents a wide variety of cultural, musical, theatric, philanthropic events and more which are tailored to the wide interests of our readers. A monthly contributor since Classic Chicago was founded almost 11 years ago, Vidal&rsquo;s picks have made his a most popular column.</p>
+            <button class="articles-trigger" data-popup="articles-philip-vidal">Philip Vidal&rsquo;s Articles &rarr;</button>
+            <div id="articles-philip-vidal" class="articles-popup">
+              <button class="articles-popup-close">&times;</button>
+              <div class="articles-popup-heading">Philip Vidal&rsquo;s Articles</div>
+              <div class="articles-grid">
+                <a href="editions/2026-04-05/about-the-town/" class="article-mini">
+                  <img src="editions/2026-04-05/about-the-town/jazz-day.jpg" alt="About the Town in April">
+                  <span class="article-mini-info">
+                    <span class="article-mini-title">About the Town in April</span>
+                    <span class="article-mini-date">April 5, 2026</span>
+                  </span>
+                </a>
+                <a href="editions/2026-05-03/about-the-town-may/" class="article-mini">
+                  <div style="width:100%;aspect-ratio:4/3;background:#f0ece6;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Lato',sans-serif;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.05em;">Classic Chicago</span></div>
+                  <span class="article-mini-info">
+                    <span class="article-mini-title">About the Town in May</span>
+                    <span class="article-mini-date">May 3, 2026</span>
+                  </span>
+                </a>
+                <a href="editions/2026-05-31/about-the-town-june/" class="article-mini">
+                  <img src="editions/2026-05-31/about-the-town-june/COVER Chicago Dance Month.jpg" alt="About the Town in June">
+                  <span class="article-mini-info">
+                    <span class="article-mini-title">About the Town in June</span>
+                    <span class="article-mini-date">May 31, 2026</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member" id="bob-glaze">
+            <h3>Bob Glaze</h3>
+            <div class="role">Weekend Road Trips</div>
+            <p>One of our first contributors, Bob Glaze&rsquo;s monthly Weekend Road Trips columns were a saving grace to readers during COVID who yearned for short driving trips where they learned about neighborhoods and towns nearby. Whether it&rsquo;s trips now to San Miguel de Allende, the Jersey Shore, or great Chicago neighborhoods, Bob shares history, great dining and shops to visit. His worldwide recommendations can be found at <a href="https://globalphile.com" style="color:#b51c20;">globalphile.com</a>.</p>
+            <button class="articles-trigger" data-popup="articles-bob-glaze">Bob Glaze&rsquo;s Articles &rarr;</button>
+            <div id="articles-bob-glaze" class="articles-popup">
+              <button class="articles-popup-close">&times;</button>
+              <div class="articles-popup-heading">Bob Glaze&rsquo;s Articles</div>
+              <div class="articles-grid">
+                <a href="editions/2026-04-19/bob-glaze/" class="article-mini">
+                  <img src="editions/2026-04-19/bob-glaze/bob-glaze-cover.jpeg" alt="Route 66 in Chicago">
+                  <span class="article-mini-info">
+                    <span class="article-mini-title">Route 66 in Chicago</span>
+                    <span class="article-mini-date">April 19, 2026</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="team-member" id="jackson-lejeune">
             <h3>Jackson LeJeune</h3>
-            <div class="role">Magazine Intern</div>
-            <p>A senior at the University of Illinois at Chicago and an intern at Classic Chicago, Jackson takes interest in Chicago history, indie films and the music scene which have been explored in his fine articles.</p>
+            <div class="role">Contributing Writer</div>
+            <p>A graduate of the University of Illinois at Chicago and a former intern with our magazine, Jackson LeJeune has a deep interest in film, music and popular culture and writes about these topics.</p>
             <button class="articles-trigger" data-popup="articles-jackson-lejeune">Jackson LeJeune&rsquo;s Articles &rarr;</button>
             <div id="articles-jackson-lejeune" class="articles-popup">
               <button class="articles-popup-close">&times;</button>
