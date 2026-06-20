@@ -111,6 +111,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 15 | Judy | Glessner House Gala + 16 photos | (session) | ✅ | Article built; 6th in nav chain |
 | Jun 15 | Jean | Poems for Summer + 4 photos | (session) | ✅ | Article built; last in nav chain |
 | Jun 20 | Annie | DateBook coming in the morning | (session) | ⏳ | Promised June 20 — not yet received; blocking staging |
+| Jun 20 | Annie | DateBook June 21 update (same photos) | `19ee5e2d00264d5c` | ✅ | 12 new events added; kicker updated to June 21, 2026 |
 | Jun 20 | Annie | Glessner House article + 15 photos (From One Landmark to Another) | `19ee3ed4945163ef` | ✅ | Article already built from this source; all 15 photos present; title correct |
 | Jun 20 | Judy | For the More Contributors Section — reorder + Jen Huang bio | `19ee48fde89e29dd` | ✅ | Order already correct; Jen Huang bio already in about.html verbatim |
 | Jun 20 | Judy | First Editor's Page draft (superseded) | `19ee4c003f1df03c` | ⬛ | Superseded by "USE THIS ONE" version (`19ee4d2b064b21b0`) |
