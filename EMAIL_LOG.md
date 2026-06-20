@@ -98,3 +98,23 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 13 | John→Sig | Your introduction in Sunday's edition | `19ec178e8a869061` | ✅ | Sent Sig her Arts Editor intro text; CC Judy; PS about John's intro running same edition |
 | Jun 13 | John→Judy | June 14 Edition — Saturday Morning Status | `19ec182a6b86593b` | ✅ | Status update: 6/9 articles ready; Editors' Page ready; asked if reminders to Annie and Emma |
 | Jun 13 | Judy | Music Institute cover photo (confirm) | `19ebfe7d9cb5b0b1` | ✅ | Duplicate of Jun 9 photo; caption already in article; Emma has all photos |
+
+## June 21 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 15 | Judy | Rush Hospital Luncheon article + 17 photos | (session) | ✅ | Article built; hero for June 21 |
+| Jun 15 | Scott | Today in Chicago History article + 6 photos | (session) | ✅ | Article built; 2nd in nav chain |
+| Jun 15 | Bob | Visiting Suburban Riverside, IL + 16 photos | (session) | ✅ | Article built; 3rd in nav chain |
+| Jun 15 | Francesco | Ciorba de Perisoare + 4 photos | (session) | ✅ | Article built; 4th in nav chain |
+| Jun 15 | Marcy | The Art of Style + 8 photos | (session) | ✅ | Article built; Mick Jagger paragraph added per Marcy |
+| Jun 15 | Judy | Glessner House Gala + 16 photos | (session) | ✅ | Article built; 6th in nav chain |
+| Jun 15 | Jean | Poems for Summer + 4 photos | (session) | ✅ | Article built; last in nav chain |
+| Jun 20 | Annie | DateBook coming in the morning | (session) | ⏳ | Promised June 20 — not yet received; blocking staging |
+
+## June 28 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 17 | Judy | David Sweet — Daniel Murphy Scholarship Fund + 3 photos | `19ed7c6e67b00757` | ⏳ | docx + 2 photos; Truth Hughes photo in follow-up `19ed7cd60c666dd8`; hold for June 28 |
+| Jun 20 | Judy | USE THIS ONE — Editor's Page for June 28 | `19ee4d2b064b21b0` | ⏳ | "What Are We Doing for the Fourth of July.docx" attached; not yet extracted or built |
