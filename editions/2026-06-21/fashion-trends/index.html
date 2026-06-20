@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>The Art of Style | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body ul {
+      font-size: 17px;
+      color: #333;
+      margin: 0 0 20px;
+      padding-left: 24px;
+      line-height: 1.8;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-item-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-june/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only
+  <div class="internal-nav">
+    <a href="../../../reader-comments.html">Reader Comments</a>
+    <a href="../../../future-articles.html">Future Articles</a>
+  </div>
+  -->
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Fashion Trends</div>
+
+      <h1 class="article-title">The Art of Style</h1>
+      <p class="article-subtitle">How clarity, confidence, and a little gravitational pull can transform the way you dress.</p>
+
+      <div class="article-meta">By <a href="../../../about.html#marcy-carmack" style="color:#888; text-decoration:none; border-bottom:1px dashed #aaa;">Marcy Carmack</a> &nbsp;&bull;&nbsp; June 21, 2026</div>
+
+      <div class="article-body">
+
+        <p>Most women I work with are highly accomplished. They run companies, serve on boards, raise families, build careers, and manage complex lives. Yet many of them stand in front of a closet full of clothes and feel they have nothing to wear.</p>
+
+        <p>It isn&rsquo;t because they lack taste. It isn&rsquo;t because they don&rsquo;t care about how they look. More often, they simply haven&rsquo;t had the time, interest, or inclination to develop a personal style that reflects who they are.</p>
+
+        <p>That&rsquo;s where I come in.</p>
+
+        <p>As a personal stylist, I help men and women simplify one of the most visible parts of their lives: how they present themselves to the world.</p>
+
+        <p>After more than three decades in fashion, I&rsquo;ve learned that style has very little to do with trends and surprisingly little to do with fashion itself. Style is deeply personal. It is the visual expression of who you are.</p>
+
+        <p>That doesn&rsquo;t mean fashion isn&rsquo;t fun. Quite the contrary. Whether you dip your toe in or dive headfirst, fashion can be a powerful tool for self-expression.</p>
+
+        <p>My iridescent velvet boots bring out my inner Mick Jagger, while my Bottega Veneta gladiator sandals make me feel like a force to be reckoned with. A Tibi blazer lends a touch of Alexander McQueen energy, and my Rachel Comey navy blazer leaves me feeling effortlessly cool.</p>
+
+        <p>These associations matter. The best clothes don&rsquo;t just fit your body; they connect to something in your imagination. The combinations we create become what I&rsquo;ve long called &ldquo;gravitational pull&rdquo;&mdash;that subtle but distinct energy that makes an outfit, and the person wearing it, memorable.</p>
+
+        <p>My philosophy about fashion and styling wasn&rsquo;t formed overnight. In fact, I arrived at it in a somewhat unexpected way.</p>
+
+        <p>Growing up, I thought the girls who were interested in fashion were a bit silly. I moved to New York without a clear plan, only the conviction that I was going to do something meaningful. New York has a way of demanding clarity, and before long I found myself taking aptitude tests at the Johnson O&rsquo;Connor Research Foundation. The results surprised me. My strongest aptitude was observation, and many of the careers recommended to me were design-related.</p>
+
+        <p>What better place to pursue design than New York City?</p>
+
+        <p>Through a fortuitous introduction to the head designer at Adrienne Vittadini, I found my way into fashion. What began as curiosity quickly became a career. I spent years immersed in the industry, learning from designers, editors, merchants, and perhaps most importantly, the endlessly inspiring parade of people on New York&rsquo;s streets.</p>
+
+        <p>Eventually I moved west and launched my styling business. Soon after, I was voted Best of the Bay by San Francisco magazine. There I refined my approach, built relationships with leading designers, and continued making regular trips to New York for Fashion Week.</p>
+
+        <p>Later, I joined the founding team of The RealReal, another entrepreneurial adventure that deepened my understanding of luxury fashion and consumer behavior. Eventually, my Midwestern roots called me back. Today, Chicago is home. Alongside my styling business, I host Fashion Coffee Hour with Stanley Smith and write about fashion for Classic Chicago magazine.</p>
+
+        <p>Most of my clients don&rsquo;t lack clothing; they lack clarity.</p>
+
+        <p>One client, the wife of a prominent politician, had so much on her plate that she simply wanted to delegate her wardrobe. Another, an avid art collector, loved fashion but needed an editor. In many ways, that&rsquo;s what I do. I edit. I refine. I help clients identify what works, eliminate what doesn&rsquo;t, and build wardrobes that support the lives they actually lead.</p>
+
+        <p>At its best, styling isn&rsquo;t about clothing at all. It&rsquo;s about helping people feel comfortable in their own skin. When someone looks in the mirror and sees a version of themselves that feels authentic, polished, and confident, everything becomes easier.</p>
+
+        <p>I&rsquo;ve always been drawn to classical forms. In fashion, as in art, proportion, harmony, and balance matter. That&rsquo;s why I gravitate toward timeless silhouettes that can be adapted and reinterpreted rather than constantly replaced. Classics provide the foundation. Once that foundation is in place, you can add personality, creativity, and a little gravitational pull.</p>
+
+        <p>My guiding principles are simple:</p>
+
+        <ul>
+          <li>Fit is everything.</li>
+          <li>Buy better, buy less.</li>
+          <li>Know your proportions.</li>
+          <li>Have fun with trends, but don&rsquo;t be ruled by them.</li>
+          <li>Practice discernment. Not every trend deserves a place in your closet.</li>
+          <li>Develop a little gravitational pull.</li>
+        </ul>
+
+        <p>In the end, style is the visual expression of who you are. The goal isn&rsquo;t to become someone else. The goal is to become more fully yourself.</p>
+
+        <h2>Paris Fashion Week</h2>
+
+        <figure>
+          <img src="IMG_1700.jpeg" alt="The Tuileries, Paris Fashion Week">
+          <figcaption>The Tuileries</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1703.jpg" alt="Flore, Paris Fashion Week">
+          <figcaption>Flore</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1705.jpg" alt="The Ritz, Paris Fashion Week">
+          <figcaption>The Ritz</figcaption>
+        </figure>
+
+        <h2>New York Fashion Week</h2>
+
+        <figure>
+          <img src="IMG_1697.jpg" alt="New York Fashion Week">
+          <figcaption>New York Fashion Week</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1699.jpg" alt="Thom Browne">
+          <figcaption>Thom Browne</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1701.PNG" alt="Manolo Blahnik">
+          <figcaption>Manolo Blahnik</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1706.jpg" alt="Diane von Furstenberg">
+          <figcaption>Diane von Furstenberg</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_1707.jpg" alt="André Leon Talley">
+          <figcaption>André Leon Talley</figcaption>
+        </figure>
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#marcy-carmack" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Marcy Carmack &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <div class="edition-nav">
+        <div class="nav-item">
+          <img class="nav-thumb" src="../ciorba-de-perisoare/97Ciorba de Perisoare1.jpeg" alt="">
+          <a href="../ciorba-de-perisoare/" class="back-link">&larr; Previous: Ciorba de Perisoare</a>
+        </div>
+        <div class="nav-item" style="text-align:right;">
+          <a href="../glessner-house/" class="back-link">Next: Glessner House Gala &rarr;</a>
+          <img class="nav-thumb" src="../glessner-house/2 - Tom and Barbi Donnelley with Bill Tyre.jpeg" alt="">
+        </div>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+
+  <!-- Keyboard nav — to be updated once full article order is set -->
+  <script>
+    var prevUrl = '../ciorba-de-perisoare/';
+    var nextUrl = '../glessner-house/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>
