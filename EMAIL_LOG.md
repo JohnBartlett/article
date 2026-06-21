@@ -110,15 +110,20 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 15 | Marcy | The Art of Style + 8 photos | (session) | ✅ | Article built; Mick Jagger paragraph added per Marcy |
 | Jun 15 | Judy | Glessner House Gala + 16 photos | (session) | ✅ | Article built; 6th in nav chain |
 | Jun 15 | Jean | Poems for Summer + 4 photos | (session) | ✅ | Article built; last in nav chain |
-| Jun 20 | Annie | DateBook coming in the morning | (session) | ⏳ | Promised June 20 — not yet received; blocking staging |
+| Jun 20 | Annie | DateBook coming in the morning | (session) | ✅ | Resolved — DateBook update arrived Jun 20 (see row below) |
 | Jun 20 | Annie | DateBook June 21 update (same photos) | `19ee5e2d00264d5c` | ✅ | 12 new events added; kicker updated to June 21, 2026 |
 | Jun 20 | Annie | Glessner House article + 15 photos (From One Landmark to Another) | `19ee3ed4945163ef` | ✅ | Article already built from this source; all 15 photos present; title correct |
 | Jun 20 | Judy | For the More Contributors Section — reorder + Jen Huang bio | `19ee48fde89e29dd` | ✅ | Order already correct; Jen Huang bio already in about.html verbatim |
 | Jun 20 | Judy | First Editor's Page draft (superseded) | `19ee4c003f1df03c` | ⬛ | Superseded by "USE THIS ONE" version (`19ee4d2b064b21b0`) |
+| Jun 21 | Judy | With thanks for today's great issue + June 28 assignments | `19ee9775346c439a` | ✅ | Edition confirmed live; June 28 assignments noted (see June 28 section) |
 
 ## June 28 Edition
 
 | Date | From | Subject / Summary | Msg ID | Status | Notes |
 |------|------|-------------------|--------|--------|-------|
-| Jun 17 | Judy | David Sweet — Daniel Murphy Scholarship Fund + 3 photos | `19ed7c6e67b00757` | ⏳ | docx + 2 photos; Truth Hughes photo in follow-up `19ed7cd60c666dd8`; hold for June 28 |
+| Jun 17 | Judy | David Sweet — Daniel Murphy Scholarship Fund + 3 photos | `19ed7c6e67b00757` | ⏳ | "The Sporting Life Daniel Murphy.docx" attached; 3 photos already on disk in editions/2026-06-28/daniel-murphy/; need docx text extracted to build article |
+| Jun 17 | Judy | Truth Hughes photo follow-up | `19ed7cd60c666dd8` | ✅ | DMSF Truth Hughes.jpeg already on disk; caption: "I learned to open myself up to others and to build connections," said Truth Hughes about the Daniel Murphy Scholarship Fund's Summer Bridge program. |
 | Jun 20 | Judy | USE THIS ONE — Editor's Page for June 28 | `19ee4d2b064b21b0` | ⏳ | "What Are We Doing for the Fourth of July.docx" attached; not yet extracted or built |
+| Jun 21 | Judy | Cover photo for Linda Miller/Second Church article | `19ee981311481f80` | ⏳ | "Jeweled Window from the Scaffolding .jpeg" attached; Annie writing the article; folder editions/2026-06-28/linda-miller/ not yet created; extract photo when credentials available |
+| Jun 21 | Judy | Caption for Jeweled Window photo | `19ee983aec085dfe` | ✅ | Caption: "1893 Tiffany Jeweled window, (gift of Marshall Field I) during reinstallation at the Second Presbyterian church." |
+| Jun 21 | Judy | June 28 article assignments | `19ee9775346c439a` | ✅ | 1. Philip Vidal About the Town (Ana); 2. NMH Summer Soiree (Emma); 3. David Sweet / Murphy Foundation (John has docx); 4. Linda Miller by Judy (Annie building); 5. Susan Aurinko (Emma); 6. Sig (direct to John); 7. Fourth of July at History Museum (Annie) |
