@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/comments", "destination": "/reader-comments.html" },
-    { "source": "/future",   "destination": "/future-articles.html" },
-    { "source": "/stats",    "destination": "/editors/stats.html" },
-    { "source": "/editors",  "destination": "/editors/index.html" }
-  ]
-}
