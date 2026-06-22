@@ -225,6 +225,49 @@ def get_about_anchors(repo_root):
     return set(re.findall(r'\bid=["\']([^"\']+)["\']', content))
 
 
+def check_about_popups(repo_root):
+    """
+    Check about.html for article popup divs trapped inside a collapsed <details>
+    element while their trigger buttons live outside it.
+
+    Returns list of issue strings (empty = all clear).
+    """
+    about = repo_root / "about.html"
+    if not about.exists():
+        return ["about.html not found"]
+
+    with open(about, encoding='utf-8') as f:
+        content = f.read()
+
+    issues = []
+
+    # Find every <details> block (greedy enough to handle nesting won't occur here)
+    details_spans = [(m.start(), m.end()) for m in
+                     re.finditer(r'<details\b[^>]*>.*?</details>', content, re.DOTALL)]
+
+    def inside_details(pos):
+        return any(start <= pos <= end for start, end in details_spans)
+
+    # Find all popup divs: id="articles-*"
+    for m in re.finditer(r'<div\s+id="(articles-[^"]+)"\s+class="articles-popup"', content):
+        popup_id = m.group(1)
+        popup_pos = m.start()
+        popup_in_details = inside_details(popup_pos)
+
+        # Find all trigger buttons pointing to this popup
+        for tm in re.finditer(
+                rf'<button\b[^>]*data-popup="{re.escape(popup_id)}"', content):
+            trigger_in_details = inside_details(tm.start())
+            if popup_in_details and not trigger_in_details:
+                issues.append(
+                    f'#{popup_id}: popup is inside <details> but trigger button is outside — '
+                    f'popup will not render when <details> is collapsed'
+                )
+                break  # one report per popup is enough
+
+    return issues
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def verify_edition(edition_date):
@@ -287,7 +330,17 @@ def verify_edition(edition_date):
     else:
         print("STRUCTURAL ISSUES: none\n")
 
-    return {"status_counts": status_counts, "issues": all_issues}
+    # about.html popup audit
+    popup_issues = check_about_popups(repo_root)
+    print(f"ABOUT.HTML POPUP AUDIT:")
+    if popup_issues:
+        for issue in popup_issues:
+            print(f"  ✗ {issue}")
+    else:
+        print("  ✓ All popup divs are outside <details> or share the same section as their trigger")
+    print()
+
+    return {"status_counts": status_counts, "issues": all_issues, "popup_issues": popup_issues}
 
 
 if __name__ == "__main__":
