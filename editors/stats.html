@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stats | Classic Chicago Editors</title>
+  <title>Stats &amp; To Do | Classic Chicago Editors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
     .header-links a:hover{text-decoration:underline;}
     .wrapper{max-width:1100px;margin:32px auto;padding:0 24px;}
     .data-note{font-size:12px;color:#aaa;font-style:italic;background:#fff;border-radius:3px;padding:10px 16px;margin-bottom:24px;border-left:3px solid #e0d8ce;}
+    .data-note code{font-size:11px;background:#f5f3ef;padding:1px 4px;border-radius:2px;}
     .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:28px;}
     .kpi{background:#fff;border-radius:4px;padding:20px 24px;border-top:4px solid #d41f1f;box-shadow:0 1px 3px rgba(0,0,0,0.07);}
     .kpi .label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-bottom:6px;}
@@ -32,13 +33,28 @@
     tr:hover td{background:#fdf9f6;}
     .bar-wrap{display:flex;align-items:center;gap:8px;}
     .bar{height:8px;background:#d41f1f;border-radius:2px;opacity:0.7;min-width:2px;}
-    .views-num{font-size:13px;color:#555;min-width:36px;}
     .vote-yes{display:inline-block;background:#e8f5e9;color:#2e7d32;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;}
     .vote-no{display:inline-block;background:#ffebee;color:#c62828;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;}
     .ed-row{cursor:pointer;font-weight:600;}
     .ed-sub{display:none;}
     .ed-sub td{padding:5px 12px 5px 28px;font-size:13px;color:#666;font-weight:400;background:#fdfaf7;}
     .rank{color:#bbb;font-size:12px;min-width:24px;display:inline-block;}
+    .ed-section-header td{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;border-bottom:none;}
+    .todo-list{list-style:none;padding:0;margin:0;}
+    .todo-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede8;}
+    .todo-list li:last-child{border-bottom:none;}
+    .todo-check{width:16px;height:16px;border:2px solid #bbb;border-radius:3px;flex-shrink:0;margin-top:2px;}
+    .todo-label{flex:1;}
+    .todo-label strong{display:block;margin-bottom:3px;font-size:14px;}
+    .todo-meta{font-size:12px;color:#aaa;line-height:1.5;}
+    .priority-high{border-left:3px solid #d41f1f;padding-left:10px;}
+    .priority-med{border-left:3px solid #f57c00;padding-left:10px;}
+    .comment-card{background:#fdfaf7;border:1px solid #e8e0d5;border-radius:4px;padding:14px 16px;margin-bottom:12px;}
+    .comment-card:last-child{margin-bottom:0;}
+    .comment-text{font-family:Georgia,serif;font-size:15px;color:#333;font-style:italic;margin:0 0 8px;line-height:1.6;}
+    .comment-meta{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.04em;}
+    .subsection-heading{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0ede8;font-weight:700;}
+    .subsection-heading:first-child{margin-top:0;}
   </style>
 </head>
 <body>
@@ -46,7 +62,7 @@
 <header>
   <div class="header-title">
     <div class="subtitle">Classic Chicago &mdash; Internal</div>
-    <h1>Stats</h1>
+    <h1>Stats &amp; To Do</h1>
   </div>
   <div class="header-links">
     <a href="index.html">Editors&rsquo; Home</a>
@@ -58,47 +74,83 @@
 
 <div class="wrapper">
 
-  <div class="data-note">GA4 data last refreshed June 10, 2026 &bull; Reader votes updated June 11, 2026 &bull; To refresh: <code>export GA4_PROPERTY_ID=523654462 GOOGLE_APPLICATION_CREDENTIALS=tools/credentials.json &amp;&amp; python3 tools/ga4_report.py</code></div>
+  <div class="data-note">GA4 data last refreshed June 20, 2026 &bull; Reader votes updated June 22, 2026 &bull; To refresh GA4: <code>export GA4_PROPERTY_ID=523654462 GOOGLE_APPLICATION_CREDENTIALS=tools/credentials.json &amp;&amp; python3 tools/ga4_report.py</code></div>
+
+  <!-- To Do -->
+  <div class="section">
+    <h2>To Do &mdash; June 28 Edition</h2>
+    <div class="sh-meta">Items pending before next publish</div>
+    <ul class="todo-list">
+      <li class="priority-high">
+        <div class="todo-check"></div>
+        <div class="todo-label">
+          <strong>David Sweet &mdash; Daniel Murphy Scholarship Fund</strong>
+          <div class="todo-meta">Article + 3 photos in Gmail &bull; Thread 19ed7c6e67b00757 (article + 2 photos) + 19ed7cd60c666dd8 (Truth Hughes photo) &bull; Judy says possible top story for June 28</div>
+        </div>
+      </li>
+      <li class="priority-high">
+        <div class="todo-check"></div>
+        <div class="todo-label">
+          <strong>Judy &mdash; Editor&rsquo;s Page: &ldquo;What Are We Doing for the Fourth of July&rdquo;</strong>
+          <div class="todo-meta">Revised Word doc in Gmail &bull; Thread 19ee4d2b064b21b0 &bull; &ldquo;USE THIS ONE, I added a sentence&rdquo;</div>
+        </div>
+      </li>
+      <li class="priority-med">
+        <div class="todo-check"></div>
+        <div class="todo-label">
+          <strong>Set up June 28 edition folder skeleton</strong>
+          <div class="todo-meta">Create editions/2026-06-28/ &bull; Copy datebook + daily-star from June 21 &bull; Stub articles &bull; Update homepage shell</div>
+        </div>
+      </li>
+      <li class="priority-med">
+        <div class="todo-check"></div>
+        <div class="todo-label">
+          <strong>Add June 14 votes &amp; comments to reader-comments.html</strong>
+          <div class="todo-meta">14 Yes, 0 No &bull; 2 real comments from The 60th Reunion article</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
   <!-- KPIs -->
   <div class="kpi-grid">
     <div class="kpi">
       <div class="label">Page Views</div>
-      <div class="value">10,362</div>
-      <div class="sub">May 11 &ndash; Jun 10, 2026</div>
+      <div class="value">11,015</div>
+      <div class="sub">May 21 &ndash; Jun 20, 2026</div>
     </div>
     <div class="kpi">
       <div class="label">Active Users</div>
-      <div class="value">4,308</div>
+      <div class="value">4,418</div>
       <div class="sub">Same period</div>
     </div>
     <div class="kpi">
       <div class="label">Sessions</div>
-      <div class="value">6,317</div>
+      <div class="value">6,519</div>
       <div class="sub">Same period</div>
     </div>
     <div class="kpi">
       <div class="label">Reader Approval</div>
       <div class="value">94%</div>
-      <div class="sub">174 Yes &bull; 12 No &bull; 186 total votes</div>
+      <div class="sub">188 Yes &bull; 12 No &bull; 200 total votes</div>
     </div>
   </div>
 
-  <!-- Top Articles by Views -->
+  <!-- Top Articles -->
   <div class="section">
     <h2>Top Articles by Views</h2>
-    <div class="sh-meta">May 11 &ndash; Jun 10, 2026 (rolling 30 days) &bull; Homepage (3,082 views) and About page excluded</div>
+    <div class="sh-meta">May 21 &ndash; Jun 20, 2026 (rolling 30 days) &bull; Homepage and About page excluded</div>
     <table>
       <thead><tr><th>#</th><th>Article</th><th>Edition</th><th>Views</th><th></th></tr></thead>
       <tbody>
-        <tr><td><span class="rank">1</span></td><td>The Promise of Liberty: Peoria&rsquo;s Gift to the 250th Celebration</td><td>May 17</td><td>551</td><td><div class="bar-wrap"><div class="bar" style="width:200px"></div></div></td></tr>
-        <tr><td><span class="rank">2</span></td><td>Biba&rsquo;s Favorite Things: Palm Springs, Part II</td><td>May 31</td><td>328</td><td><div class="bar-wrap"><div class="bar" style="width:119px"></div></div></td></tr>
-        <tr><td><span class="rank">3</span></td><td>Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala</td><td>Jun 7</td><td>248</td><td><div class="bar-wrap"><div class="bar" style="width:90px"></div></div></td></tr>
-        <tr><td><span class="rank">4</span></td><td>Stitching a Community Together: The Story Behind Kenilworth&rsquo;s Centennial Needlepoint</td><td>May 24</td><td>231</td><td><div class="bar-wrap"><div class="bar" style="width:84px"></div></div></td></tr>
-        <tr><td><span class="rank">5</span></td><td>Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing</td><td>May 24</td><td>174</td><td><div class="bar-wrap"><div class="bar" style="width:63px"></div></div></td></tr>
-        <tr><td><span class="rank">6</span></td><td>A Closet Looking for a Home</td><td>May 31</td><td>170</td><td><div class="bar-wrap"><div class="bar" style="width:62px"></div></div></td></tr>
-        <tr><td><span class="rank">7</span></td><td>Robin Loewenberg Tebbe: Minds Matter</td><td>Jun 7</td><td>162</td><td><div class="bar-wrap"><div class="bar" style="width:59px"></div></div></td></tr>
-        <tr><td><span class="rank">8</span></td><td>An Enchanted Evening: The Newberry Library Awards Dinner</td><td>May 10</td><td>158</td><td><div class="bar-wrap"><div class="bar" style="width:57px"></div></div></td></tr>
+        <tr><td><span class="rank">1</span></td><td>Biba&rsquo;s Favorite Things: Palm Springs, Part II</td><td>May 31</td><td>333</td><td><div class="bar-wrap"><div class="bar" style="width:200px"></div></div></td></tr>
+        <tr><td><span class="rank">2</span></td><td>Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala</td><td>Jun 7</td><td>298</td><td><div class="bar-wrap"><div class="bar" style="width:179px"></div></div></td></tr>
+        <tr><td><span class="rank">3</span></td><td>The Promise of Liberty: Peoria&rsquo;s Gift to the 250th Celebration</td><td>May 17</td><td>290</td><td><div class="bar-wrap"><div class="bar" style="width:174px"></div></div></td></tr>
+        <tr><td><span class="rank">4</span></td><td>Stitching a Community Together: The Story Behind Kenilworth&rsquo;s Centennial Needlepoint</td><td>May 24</td><td>255</td><td><div class="bar-wrap"><div class="bar" style="width:153px"></div></div></td></tr>
+        <tr><td><span class="rank">5</span></td><td>A Closet Looking for a Home</td><td>May 31</td><td>214</td><td><div class="bar-wrap"><div class="bar" style="width:128px"></div></div></td></tr>
+        <tr><td><span class="rank">6</span></td><td>Robin Loewenberg Tebbe: Minds Matter</td><td>Jun 7</td><td>203</td><td><div class="bar-wrap"><div class="bar" style="width:122px"></div></div></td></tr>
+        <tr><td><span class="rank">7</span></td><td>An Ancient Sport Aims to Court Players Where Mammoths Once Roamed</td><td>Jun 7</td><td>188</td><td><div class="bar-wrap"><div class="bar" style="width:113px"></div></div></td></tr>
+        <tr><td><span class="rank">8</span></td><td>Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing</td><td>May 24</td><td>176</td><td><div class="bar-wrap"><div class="bar" style="width:106px"></div></div></td></tr>
       </tbody>
     </table>
   </div>
@@ -106,7 +158,7 @@
   <!-- Edition Performance -->
   <div class="section">
     <h2>Edition Performance</h2>
-    <div class="sh-meta">Total page views per edition &bull; Click a row to expand top articles &bull; Data through Apr 2, 2026</div>
+    <div class="sh-meta">Total page views per edition &bull; Click a row to expand top articles</div>
     <table>
       <thead><tr><th>Edition</th><th>Total Views</th><th></th><th>Top Article</th></tr></thead>
       <tbody>
@@ -139,7 +191,7 @@
         </tbody></table></td></tr>
         <tr class="ed-row" onclick="toggle('e301')"><td>March 1, 2026</td><td>1,095</td><td><div class="bar-wrap"><div class="bar" style="width:190px"></div></div></td><td>Wells Street Kitchen (240)</td></tr>
         <tr class="ed-sub" id="e301"><td colspan="4"><table><tbody>
-          <tr><td>Wells Street Kitchen & Juice</td><td>240</td></tr>
+          <tr><td>Wells Street Kitchen &amp; Juice</td><td>240</td></tr>
           <tr><td>Chicago's Vanguard: 92nd Arts Club Members Show</td><td>169</td></tr>
           <tr><td>Ernest Hemingway in Chicago</td><td>167</td></tr>
           <tr><td>The Case of the Missing Caramel</td><td>127</td></tr>
@@ -155,7 +207,7 @@
           <tr><td>Two Sisters and a Piano</td><td>100</td></tr>
           <tr><td>Pokémon Fossil Museum</td><td>45</td></tr>
         </tbody></table></td></tr>
-        <tr class="ed-row" onclick="toggle('e329')"><td>March 29, 2026</td><td>776</td><td><div class="bar-wrap"><div class="bar" style="width:135px"></div></div></td><td>Biba's Palm Springs (169)</td></tr>
+        <tr class="ed-row" onclick="toggle('e329')"><td>March 29, 2026</td><td>776</td><td><div class="bar-wrap"><div class="bar" style="width:135px"></div></div></td><td>Biba&rsquo;s Palm Springs (169)</td></tr>
         <tr class="ed-sub" id="e329"><td colspan="4"><table><tbody>
           <tr><td>Biba's Favorite Things: Palm Springs</td><td>169</td></tr>
           <tr><td>Trudie's Backgammon Club</td><td>143</td></tr>
@@ -176,7 +228,7 @@
           <tr><td>Visiting Little Village</td><td>83</td></tr>
           <tr><td>Taffy and Pretty Girl at Anti-Cruelty</td><td>71</td></tr>
         </tbody></table></td></tr>
-        <tr class="ed-row" onclick="toggle('e208')"><td>February 8, 2026</td><td>148</td><td><div class="bar-wrap"><div class="bar" style="width:26px"></div></div></td><td>Biba's Linda Heister (64) &bull; Launch edition</td></tr>
+        <tr class="ed-row" onclick="toggle('e208')"><td>February 8, 2026</td><td>148</td><td><div class="bar-wrap"><div class="bar" style="width:26px"></div></div></td><td>Biba&rsquo;s Linda Heister (64) &bull; Launch edition</td></tr>
         <tr class="ed-sub" id="e208"><td colspan="4"><table><tbody>
           <tr><td>Biba's Favorite Things: Linda Heister</td><td>64</td></tr>
           <tr><td>Lincoln Park: History Hiding in Plain Sight</td><td>28</td></tr>
@@ -189,46 +241,55 @@
 
   <!-- Reader Votes -->
   <div class="section">
-    <h2>Reader Votes</h2>
-    <div class="sh-meta">All votes through June 11, 2026 &bull; 186 total &bull; 94% approval &bull; Full history: <a href="../reader-comments.html" style="color:#d41f1f;">reader-comments.html</a></div>
+    <h2>Reader Votes by Edition</h2>
+    <div class="sh-meta">All votes through June 22, 2026 &bull; 200 total &bull; 94% approval &bull; Full history: <a href="../reader-comments.html" style="color:#d41f1f;">reader-comments.html</a></div>
     <table>
       <thead><tr><th>Article</th><th>Edition</th><th>Votes</th></tr></thead>
       <tbody>
-        <tr><td colspan="3" style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;">June 7, 2026 Edition</td></tr>
+        <tr class="ed-section-header"><td colspan="3">June 21, 2026 &mdash; Just Published</td></tr>
+        <tr><td colspan="3" style="font-size:13px;color:#aaa;padding:8px 12px;font-style:italic;">No votes yet &mdash; published June 20</td></tr>
+        <tr class="ed-section-header"><td colspan="3">June 14, 2026 Edition</td></tr>
+        <tr><td>The 60th Reunion Is Worth Celebrating!</td><td>Jun 14</td><td><span class="vote-yes">Yes &times;6</span></td></tr>
+        <tr><td>Music Institute of Chicago: Exceeding Your Goals at 95</td><td>Jun 14</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
+        <tr><td>Look Who Pitched George Washington&rsquo;s Tent</td><td>Jun 14</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
+        <tr><td>2026 Peony Party</td><td>Jun 14</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
+        <tr><td>Letter from San Miguel de Allende, Part II</td><td>Jun 14</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
+        <tr><td>A Sesquicentennial Gala at St. James (late vote)</td><td>May 3</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
+        <tr class="ed-section-header"><td colspan="3">June 7, 2026 Edition</td></tr>
         <tr><td>St. Thomas the Apostle Church: An Urban Garden and Community Oasis</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;14</span></td></tr>
         <tr><td>An Ancient Sport Aims to Court Players Where Mammoths Once Roamed</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;11</span></td></tr>
-        <tr><td>Simply Sensational: The Ryan Licht Sang Bipolar Foundation Luncheon</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
-        <tr><td>Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;3</span></td></tr>
         <tr><td>Robin Loewenberg Tebbe: Minds Matter</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;5</span></td></tr>
-        <tr><td>Letter from San Miguel de Allende, Part I: A History</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
+        <tr><td>Simply Sensational: The Ryan Licht Sang Bipolar Foundation Luncheon</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>Senior: Scott Holleran</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;3</span> <span class="vote-no">No &times;3</span></td></tr>
+        <tr><td>Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;3</span></td></tr>
+        <tr><td>Letter from San Miguel de Allende, Part I: A History</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>Ferris Bueller&rsquo;s Day Off: 40th Anniversary and Review</td><td>Jun 7</td><td><span class="vote-yes">Yes &times;1</span> <span class="vote-no">No &times;1</span></td></tr>
-        <tr><td colspan="3" style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;">May 31, 2026 Edition</td></tr>
+        <tr class="ed-section-header"><td colspan="3">May 31, 2026 Edition</td></tr>
         <tr><td>Biba&rsquo;s Favorite Things: Palm Springs, Part II</td><td>May 31</td><td><span class="vote-yes">Yes &times;16</span></td></tr>
         <tr><td>Pitching George Washington&rsquo;s Tent: Celebrate America 250 at the Newberry</td><td>May 31</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>A Closet Looking for a Home</td><td>May 31</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
-        <tr><td>My Silk Roads &ndash; On Elegance &mdash; Susan Aurinko</td><td>May 31</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
+        <tr><td>My Silk Roads &ndash; On Elegance</td><td>May 31</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>Persephone: A Muse in Chicago</td><td>May 31</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>An Omelette and a Glass of Wine</td><td>May 31</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>250 Years of Garden Stories at the Chicago Botanic Garden</td><td>May 31</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>About the Town in June &mdash; Philip Vidal</td><td>May 31</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
-        <tr><td colspan="3" style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;">May 24, 2026 Edition</td></tr>
+        <tr class="ed-section-header"><td colspan="3">May 24, 2026 Edition</td></tr>
+        <tr><td>Stitching a Community Together: Kenilworth&rsquo;s Centennial Needlepoint</td><td>May 24</td><td><span class="vote-yes">Yes &times;11</span></td></tr>
         <tr><td>Stage Write: TimeLine Reborn</td><td>May 24</td><td><span class="vote-yes">Yes &times;7</span></td></tr>
-        <tr><td>Stitching a Community Together: The Story Behind Kenilworth&rsquo;s Centennial Needlepoint</td><td>May 24</td><td><span class="vote-yes">Yes &times;11</span></td></tr>
         <tr><td>Graduation Dos and Don&rsquo;ts: Lessons Learned for Parents and Grandparents</td><td>May 24</td><td><span class="vote-yes">Yes &times;7</span></td></tr>
-        <tr><td>Martha Graham When She Danced a Cold-War Peace Plan: A Memory in Poetry</td><td>May 24</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
+        <tr><td>Martha Graham When She Danced a Cold-War Peace Plan</td><td>May 24</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>Merit Gala: Showcasing Student Success</td><td>May 24</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing</td><td>May 24</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
-        <tr><td>Twirl Around the Whirl: Brookfield Zoo Gala Raises $2 Million</td><td>May 24</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
-        <tr><td colspan="3" style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;">May 17, 2026 Edition</td></tr>
+        <tr><td>Twirl Around the Whirl: Brookfield Zoo Gala</td><td>May 24</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
+        <tr class="ed-section-header"><td colspan="3">May 17, 2026 Edition</td></tr>
         <tr><td>The Promise of Liberty: Peoria&rsquo;s Gift to the 250th Celebration</td><td>May 17</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>Chicago&rsquo;s Best New Restaurant Finds &mdash; Bob Glaze</td><td>May 17</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
-        <tr><td colspan="3" style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;padding:10px 12px 4px;background:#fdf9f6;font-weight:700;">Earlier Editions</td></tr>
+        <tr class="ed-section-header"><td colspan="3">Earlier Editions</td></tr>
         <tr><td>Route 66 in Chicago &mdash; Bob Glaze</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;8</span></td></tr>
         <tr><td>Joyspan: How to Thrive in Life&rsquo;s Second Half</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;6</span></td></tr>
-        <tr><td>A Taste of Detroit</td><td>May 10</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
-        <tr><td>At Last, the Daffodils</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>Game-Changers: The Impact of a North Shore High School</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;4</span> <span class="vote-no">No &times;1</span></td></tr>
+        <tr><td>At Last, the Daffodils</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
+        <tr><td>A Taste of Detroit</td><td>May 10</td><td><span class="vote-yes">Yes &times;4</span></td></tr>
         <tr><td>Natya Dance Theatre Celebrates Fiftieth Anniversary</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;3</span></td></tr>
         <tr><td>A Bonded Pair</td><td>May 10</td><td><span class="vote-yes">Yes &times;3</span></td></tr>
         <tr><td>The First Guinness on Inis M&oacute;r</td><td>May 10</td><td><span class="vote-yes">Yes &times;3</span></td></tr>
@@ -244,13 +305,60 @@
         <tr><td>IWA Honors Women Leaders in the Arts</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;2</span></td></tr>
         <tr><td>Celebrating Partnerships and Pastels &mdash; Susan Aurinko</td><td>Apr 26</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>Leaving Your Mark: Astrid Greve-Spencer</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
-        <tr><td>Les Ann&eacute;es Folles de Coco Chanel</td><td>Apr 19</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>The Chicago Fashion Scene</td><td>Apr 12</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>An Enchanted Evening: Newberry Awards</td><td>May 10</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>The Kentucky Derby</td><td>May 10</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
         <tr><td>Biba&rsquo;s Favorite Things: Palm Springs</td><td>Mar 29</td><td><span class="vote-yes">Yes &times;1</span></td></tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- Reader Comments -->
+  <div class="section">
+    <h2>Reader Comments</h2>
+    <div class="sh-meta">Real comments only &mdash; empty submissions excluded &bull; Full log: <a href="../reader-comments.html" style="color:#d41f1f;">reader-comments.html</a></div>
+
+    <div class="subsection-heading">June 14, 2026 Edition</div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;Loved this article! Am a big fan of college reunions and keeping in touch with the people and environment that provided me with the knowledge and skills I have used my entire life.&rdquo;</p>
+      <div class="comment-meta">June 16, 2026 &bull; The 60th Reunion Is Worth Celebrating!</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;Excellent to get your news, Libbet! We&rsquo;d really love a chat soon. Cousins Justin and Sally&rdquo;</p>
+      <div class="comment-meta">June 20, 2026 &bull; The 60th Reunion Is Worth Celebrating! &bull; mjw368111@gmail.com</div>
+    </div>
+
+    <div class="subsection-heading">June 7, 2026 Edition</div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;Judy is the best as is Classic Chicago!&rdquo;</p>
+      <div class="comment-meta">June 8, 2026 &bull; Putting the Ritz in Biarritz: The Alliance Fran&ccedil;aise de Chicago&rsquo;s Biannual Gala &bull; jowen@realtorjanetowen.com</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;A very thought provoking short story of how man&rsquo;s best friend (Senior) shaped his owner&rsquo;s (Blaze) life. Pets are here to give as much love and care in return. Beautiful story!&rdquo;</p>
+      <div class="comment-meta">June 10, 2026 &bull; Senior: Scott Holleran</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;While I appreciate Jackson LeJeune&rsquo;s thoughtful review of Ferris Bueller&rsquo;s Day Off, I think his perspective illustrates exactly why some films can be difficult to fully understand when viewed outside the cultural context in which they were created&hellip; The film&rsquo;s famous message &mdash; &lsquo;Life moves pretty fast. If you don&rsquo;t stop and look around once in a while, you could miss it.&rsquo; &mdash; isn&rsquo;t an endorsement of irresponsibility. It&rsquo;s a reminder not to become so consumed by obligations, schedules, and expectations that you forget to actually live.&rdquo;</p>
+      <div class="comment-meta">June 7, 2026 &bull; Ferris Bueller&rsquo;s Day Off: 40th Anniversary and Review &bull; <em>Note: Likely AI-generated; Judy suggested running as a letter to the editor</em></div>
+    </div>
+
+    <div class="subsection-heading">Earlier Editions &mdash; Selected</div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;Biba! You are, and look, amazing. Love this article. So happy to have so much exciting news from you.&rdquo;</p>
+      <div class="comment-meta">May 31 edition &bull; Biba&rsquo;s Favorite Things: Palm Springs, Part II</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;Loved seeing Biba last month in PS! Her warm personality was the perfect antidote to the lingering cold in Chicago!&rdquo;</p>
+      <div class="comment-meta">May 31 edition &bull; Biba&rsquo;s Favorite Things: Palm Springs, Part II</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;I attend a conference at Kanuga every year in June, it is an amazing spot for spiritual renewal and relaxation! Enjoyed your article &mdash; it was so well done, as were the photographs!&rdquo;</p>
+      <div class="comment-meta">March 22 edition &bull; Kanuga: The Christmas Solution</div>
+    </div>
+    <div class="comment-card">
+      <p class="comment-text">&ldquo;A neglected topic. Covered very nicely. The world needs a Consumer Report on retirement homes!&rdquo;</p>
+      <div class="comment-meta">Earlier edition &bull; The Downsizing Dilemma</div>
+    </div>
   </div>
 
 </div>
