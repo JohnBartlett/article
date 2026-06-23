@@ -77,6 +77,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 9 | Sig | Re: Image and credit for blast | `19eae0673b184087` | ✅ | Sig confirmed article + photos + credits coming Thursday Jun 12 |
 | Jun 9 | Judy | Re: Image and credit for blast | `19eae8c73f66c54d` | ✅ | Judy praising Sig's article; no action |
 | Jun 9 | Sig | Re: Image and credit for blast (2) | `19eaed2023401d9b` | ✅ | Sig thank-you reply; no action |
+| Jun 22 | Judy | Elizabeth Richter articles — request to compile back-issue list | `19eef867e13ccc5e` | 🔁 | John replied offering to look; Judy said search by name, more than 5 articles exist; may ask Elizabeth to work with Annie instead — no dev2 changes needed yet |
 | Jun 10 | Ana | Heritage Auctions full article + 6 photos | `19eb366d27b3da5f` | ✅ | Article built; photos extracted; homepage card updated |
 | Jun 10 | Ana | Do Division / DeeDee El Bego article + 7 photos | `19eb3367487c3d85` | ✅ | Article built; photos extracted; homepage card updated |
 | Jun 10 | Judy | DeeDee El Bego cover photo (FullSizeRender.jpeg) | `19eb316f1e9488e5` | ✅ | Already extracted; COVER Deedee Story.jpg from Ana supersedes |
@@ -116,6 +117,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 20 | Judy | For the More Contributors Section — reorder + Jen Huang bio | `19ee48fde89e29dd` | ✅ | Order already correct; Jen Huang bio already in about.html verbatim |
 | Jun 20 | Judy | First Editor's Page draft (superseded) | `19ee4c003f1df03c` | ⬛ | Superseded by "USE THIS ONE" version (`19ee4d2b064b21b0`) |
 | Jun 21 | Judy | With thanks for today's great issue + June 28 assignments | `19ee9775346c439a` | ✅ | Edition confirmed live; June 28 assignments noted (see June 28 section) |
+| Jun 21 | Judy | Changing last paragraph of Glessner House story (Bill Tyre correction) | `19eeb927213db49b` | ✅ | Last paragraph before "For more information" replaced with two new paragraphs; applied in commit `aeae1fe` |
 
 ## June 28 Edition
 
@@ -127,3 +129,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 21 | Judy | Cover photo for Linda Miller/Second Church article | `19ee981311481f80` | ⏳ | "Jeweled Window from the Scaffolding .jpeg" attached; Annie writing the article; folder editions/2026-06-28/linda-miller/ not yet created; extract photo when credentials available |
 | Jun 21 | Judy | Caption for Jeweled Window photo | `19ee983aec085dfe` | ✅ | Caption: "1893 Tiffany Jeweled window, (gift of Marshall Field I) during reinstallation at the Second Presbyterian church." |
 | Jun 21 | Judy | June 28 article assignments | `19ee9775346c439a` | ✅ | 1. Philip Vidal About the Town (Ana); 2. NMH Summer Soiree (Emma); 3. David Sweet / Murphy Foundation (John has docx); 4. Linda Miller by Judy (Annie building); 5. Susan Aurinko (Emma); 6. Sig (direct to John); 7. Fourth of July at History Museum (Annie) |
+| Jun 22 | Judy | NMH Summer Soiree delayed to July 5; Versailles replaces it | `19ef11d790f46629` | ✅ | NMH coordinator (Whitley) needs more time; Kristin Smith's Versailles article fills the slot; Summer Soiree moves to July 5 edition |
+| Jun 22 | Judy | Re: With thanks — Soma Roy article added to June 28 | `19eef8d0db43d90d` | ✅ | New article by Soma Roy ("RSVP to Enchantment"), layout handled by Ana; still waiting on NMH Summer Soiree photos |
+| Jun 23 | Judy | Revised June 28 article order (8 articles) | `19ef3adc98ada0ae` | ✅ | New order: 1-Philip Vidal (Ana), 2-Sig, 3-David Sweet, 4-Chicago History Museum/statue unveiling (Judy), 5-Susan Aurinko (Emma), 6-Friends of Versailles (Emma), 7-Soma Roy/Enchantment (Ana), 8-Linda Miller/Second Church (Annie) |
+| Jun 23 | Judy | Cover photo for Fourth of July / Lincoln statue story (June 28) | `19ef42d40dd75dd8` | ⏳ | Attachment: `processed-A18A7F48-33A8-4546-A172-64E38C52F932.jpeg`; folder not yet created; attachment ID in email — extract when credentials available |
