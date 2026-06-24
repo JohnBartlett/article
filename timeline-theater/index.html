@@ -1,29 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
   <meta charset="UTF-8">
+  <title>Stage Write: TimeLine Reborn | Classic Chicago &ndash; Sunday Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stage Write: TimeLine Reborn | Elizabeth Dunlop Richter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/ccm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#fff;color:#222;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    header{padding:20px 0;border-bottom:1px solid #eee;}
+    .logo-container{text-align:center;margin-bottom:20px;}
+    .logo-container img{width:390px;height:auto;}
+    nav{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px 0;}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap;}
+    .nav-inner a{font-family:'Lato',sans-serif;font-size:16px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .nav-inner a:hover{color:#b51c20;text-decoration:underline;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    .article-container{max-width:780px;margin:0 auto;padding:40px 20px 60px;}
+    .article-label{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 16px;font-weight:800;}
+    .byline{font-family:'Lato',sans-serif;font-size:15px;color:#555;margin-bottom:30px;}
+    .byline a{color:#d41f1f;text-decoration:none;}
+    .byline a:hover{text-decoration:underline;}
+    figure{margin:0 0 32px;}
+    figure img{width:100%;height:auto;display:block;}
+    figcaption{font-family:'Lato',sans-serif;font-size:13px;color:#666;margin-top:8px;line-height:1.4;}
+    p{margin:0 0 1.4em;}
+    blockquote{margin:0 0 1.4em 0;padding:0 0 0 24px;border-left:3px solid #d41f1f;font-style:italic;color:#444;}
+    .pull-quote{font-family:'Playfair Display',serif;font-size:1.25em;font-style:italic;color:#444;border-top:2px solid #d41f1f;border-bottom:1px solid #eee;padding:20px 0;margin:0 0 32px;}
+    .article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;border-top:1px solid #eee;padding-top:24px;}
+    .article-nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#222;font-family:'Lato',sans-serif;font-size:14px;max-width:45%;}
+    .article-nav a:hover{color:#d41f1f;}
+    .article-nav .prev{flex-direction:row;}
+    .article-nav .next{flex-direction:row-reverse;text-align:right;}
+    .article-nav img{width:70px;height:70px;object-fit:cover;flex-shrink:0;}
+    .article-nav .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;display:block;margin-bottom:3px;}
+    .feedback-widget{background:#f9f5f0;border:1px solid #e0d8ce;padding:20px 24px;margin-top:40px;text-align:center;font-family:'Lato',sans-serif;}
+    .feedback-widget p{margin:0 0 12px;font-size:15px;color:#555;}
+    .feedback-widget .vote-buttons{display:flex;justify-content:center;gap:12px;}
+    .feedback-widget button{background:#d41f1f;color:#fff;border:none;padding:8px 24px;font-family:'Lato',sans-serif;font-size:14px;cursor:pointer;letter-spacing:0.05em;}
+    .feedback-widget button:hover{background:#b51c20;}
+    footer{background:#222;color:#ccc;text-align:center;padding:30px 20px;font-family:'Lato',sans-serif;font-size:13px;}
+    footer a{color:#ccc;text-decoration:none;}
+    footer a:hover{color:#fff;}
+    .footer-social{display:flex;justify-content:center;gap:20px;margin-bottom:12px;}
+    @media(max-width:600px){.article-nav{flex-direction:column;}.article-nav .next{flex-direction:row;text-align:left;}.article-nav a{max-width:100%;}}
+  
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-btn:hover{color:#b51c20;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .hamburger-menu a:hover{color:#b51c20;text-decoration:underline;}
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="/"><img class="logo-img" src="/logo.jpg" alt="Classic Chicago Magazine"></a>
-    <div class="author-byline">Elizabeth Dunlop Richter</div>
-    <nav><a href="/">&#8592; All Articles</a></nav>
-  </div>
-</header>
-<main>
-  <div class="article-wrapper">
-    <div class="article-label">Theater</div>
-    <h1>Stage Write: TimeLine Reborn</h1>
-    <div class="article-byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; May 24, 2026</div>
-    <figure class="hero-figure">
-      <img class="hero-img" src="photo-01.jpeg" alt="Stage Write: TimeLine Reborn">
-    </figure>
-    <p class="byline">By <a href="../../../about.html#elizabeth-dunlop-richter">Elizabeth Dunlop Richter</a> &nbsp;&bull;&nbsp; May 24, 2026</p>
+  <header>
+    <div class="logo-container">
+      <a href="/">
+        <img src="/logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="https://classicchicagomag.com">Classic Chicago</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+            </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="https://classicchicagomag.com/about.html">About</a>
+        <a href="https://classicchicagomag.com/subscribe.html">Subscribe</a>
+        <a href="https://classicchicagomag.com/advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  
+
+  <main>
+    <div class="article-container">
+
+      <div class="article-label">Theater</div>
+
+      <h1>Stage Write: TimeLine Reborn</h1>
+
+      <p class="byline">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; May 24, 2026</p>
 
       <!-- HERO IMAGE — photo-01.jpeg — Caption: TimeLine Theatre 1501 N. Broadway -->
       <figure><img src="photo-01.jpeg" alt="TimeLine Theatre 1501 N. Broadway"><figcaption>TimeLine Theatre, 1501 N. Broadway.</figcaption></figure>
@@ -128,10 +200,93 @@
       <p>Culbert makes the case for first impressions. &ldquo;When you walk in the door&hellip;In the old theater, you think they&rsquo;re scrappy and they make this work. In this one, you walk in the door and you realize they take this seriously.&rdquo; Initial media reviews are positive. Time will tell how TimeLine builds on its impressive first steps.</p>
 
       <!-- Feedback Widget -->
-  </div>
-</main>
-<footer>
-  <p>© Classic Chicago Magazine &nbsp;&middot;&nbsp; <a href="https://classicchicagomag.com">classicchicagomag.com</a></p>
-</footer>
+      <div class="feedback-widget">
+        <p>Did you enjoy this article?</p>
+        <div class="vote-buttons">
+          <button onclick="submitVote('Yes')">&#128077; Yes</button>
+          <button onclick="submitVote('No')">&#128078; No</button>
+        </div>
+        <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
+        <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
+          <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
+            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
+          </form>
+        </div>
+        <script>
+          var base=window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value=base+'?feedback=sent';
+          document.getElementById('page-tracking').value=document.title+' — '+base;
+          document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
+          function submitVote(vote){
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
+            document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
+            document.querySelector('.vote-buttons button:' + (vote==='Yes'?'first':'last') + '-child').style.opacity='1';
+            document.getElementById('voteConfirm').style.display='block';
+          }
+        </script>
+      </div>
+
+      <!-- Article Navigation -->
+              <nav class="article-nav">
+    <a class="prev" href="/detroit/">
+      <img src="/detroit/photo-01.jpg" alt="A Taste of Detroit">
+      <div>
+        <span class="nav-label">&larr; Previous</span>
+        A Taste of Detroit
+      </div>
+    </a>
+    <a class="next" href="/elizabeth-richter-reunion/">
+      <img src="/elizabeth-richter-reunion/1-WelcomeBackSign.png" alt="The 60th Reunion Is Worth Celebrating!">
+      <div>
+        <span class="nav-label">Next &rarr;</span>
+        The 60th Reunion Is Worth Celebrating!
+      </div>
+    </a>
+  </nav>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank">Facebook</a>
+      <a href="https://twitter.com/classicchimag" target="_blank">Twitter/X</a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank">Instagram</a>
+    </div>
+    <div>COPYRIGHT &copy; Classic Chicago Magazine. All rights reserved.</div>
+  </footer>
+
+  <script>
+    var prevUrl = '/detroit/';
+    var nextUrl = '/elizabeth-richter-reunion/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) { menu.classList.remove('open'); }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

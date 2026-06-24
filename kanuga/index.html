@@ -1,30 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
   <meta charset="UTF-8">
+  <title>Kanuga: The Christmas Solution | Classic Chicago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kanuga: The Christmas Solution | Elizabeth Dunlop Richter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/ccm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; font-family: 'Lato', sans-serif; }
+    .hamburger-btn:hover { color: #b51c20; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .hamburger-menu a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; line-height: 1.25; text-align: center; margin: 0 0 16px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-intro { font-size: 18px; line-height: 1.75; color: #333; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .photo-grid { display: grid; gap: 12px; margin: 36px 0; }
+    .photo-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .photo-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid figure { margin: 0; }
+    .photo-grid figure img { width: 100%; height: 220px; object-fit: cover; object-position: center; display: block; }
+    .photo-grid figure figcaption { font-size: 11px; }
+.edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 28px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+      .photo-grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .photo-grid-2 { grid-template-columns: 1fr; }
+      .author-bio { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="/"><img class="logo-img" src="/logo.jpg" alt="Classic Chicago Magazine"></a>
-    <div class="author-byline">Elizabeth Dunlop Richter</div>
+  <header>
+    <div class="logo-container">
+      <a href="/"><img src="/logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
     <nav>
-      <a href="/">&#8592; All Articles</a>
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="https://classicchicagomag.com">Classic Chicago</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="https://classicchicagomag.com/about.html">About</a>
+        <a href="https://classicchicagomag.com/subscribe.html">Subscribe</a>
+        <a href="https://classicchicagomag.com/advertise.html">Advertise</a>
+      </div>
     </nav>
-  </div>
-</header>
-<main>
+  </header>
+
   <div class="article-wrapper">
-    <div class="article-label">Travel &amp; Culture</div>
-    <h1>Kanuga: The Christmas Solution</h1>
-    <div class="article-byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; March 22, 2026</div>
-    <figure class="hero-figure">
-      <img class="hero-img" src="images/image20.jpg" alt="Kanuga: The Christmas Solution">
+    <div class="article-category">Travel &amp; Holiday</div>
+    <h1 class="article-title">Kanuga: The Christmas Solution</h1>
+    <div class="article-meta">By Elizabeth Dunlop Richter &nbsp;&bull;&nbsp; March 22, 2026</div>
+
+    <!-- Hero image -->
+    <figure>
+      <img src="images/image20.jpg" alt="Welcome to Kanuga">
+      <figcaption>Welcome to Kanuga &mdash; An Episcopal Center, Est. 1928, near Hendersonville, North Carolina</figcaption>
     </figure>
+
+    <p class="article-intro">It&rsquo;s never too early to plan for Christmas in Chicago. Perhaps you&rsquo;re thinking about seeing the Nutcracker at the Lyric Opera House, having lunch by the Christmas tree in Macy&rsquo;s Walnut Room, and drinking cocoa at the Zoo Lights in Lincoln Park. But next year, you&rsquo;d really prefer to chill a bit: hike in the woods, create your own ornaments, and make s&rsquo;mores over a roaring fire. And by the way, you know you won&rsquo;t want to cook for the dozen relatives who want to connect. We found a unique solution to this dilemma in western North Carolina this year: Kanuga.</p>
+
     <div class="article-body">
 
       <p>From the Cherokee word for &ldquo;place of the white owl,&rdquo; the name Kanuga was chosen by Charlotte businessman George Stephens for the private mountain resort, the Kanuga Lake Club, he created in 1909 near Hendersonville, North Carolina. Combining a lake, cottages, and a lodge, Stephens envisioned a summer getaway for families. Sadly the devastating flood of 1916, in some ways comparable to 2024&rsquo;s destructive Hurricane Helene, bankrupted many regional businesses and contributed to the failure of the club.</p>
@@ -223,15 +291,55 @@
       </script>
     </div>
 
-    <div class="edition-nav">
-      <a href="../pokemon-fossil-museum/" class="back-link">&larr; Previous: Pok&eacute;mon Fossil Museum</a>
-      <a href="../../../index.html" class="back-link">Back to Home &rarr;</a>
+      <nav class="article-nav">
+    <a class="prev" href="/downsizing/">
+      <img src="/downsizing/house-sale.jpg" alt="The Downsizing Dilemma">
+      <div>
+        <span class="nav-label">&larr; Previous</span>
+        The Downsizing Dilemma
+      </div>
+    </a>
+    <a class="next" href="/detroit/">
+      <img src="/detroit/photo-01.jpg" alt="A Taste of Detroit">
+      <div>
+        <span class="nav-label">Next &rarr;</span>
+        A Taste of Detroit
+      </div>
+    </a>
+  </nav>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
     </div>
-  </div>
-  </div>
-</main>
-<footer>
-  <p>© Classic Chicago Magazine &nbsp;&middot;&nbsp; <a href="https://classicchicagomag.com">classicchicagomag.com</a></p>
-</footer>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() { menu.classList.toggle('open'); });
+        document.addEventListener('click', function(e) { if (!btn.contains(e.target) && !menu.contains(e.target)) menu.classList.remove('open'); });
+      }
+    })();
+  </script>
+  <script>
+    var prevUrl = '/downsizing/';
+    var nextUrl = '/detroit/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+    // Note: no nextUrl — Kanuga is the last article in this edition
+  </script>
 </body>
 </html>
