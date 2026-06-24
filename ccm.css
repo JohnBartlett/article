@@ -20,7 +20,8 @@ img{max-width:100%;height:auto;}
 .index-hero{text-align:center;padding:56px 0 40px;border-bottom:1px solid #e8e0d5;margin-bottom:48px;}
 .index-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:#1c1c1c;margin:0 0 12px;line-height:1.15;}
 .index-hero .tagline{font-family:'Playfair Display',serif;font-size:13px;font-style:normal;color:#b52b2b;text-transform:uppercase;letter-spacing:0.14em;margin:0 0 20px;}
-.index-hero .index-bio{font-size:16px;line-height:1.8;color:#555;max-width:640px;margin:0 auto;}
+.index-hero .index-bio{font-size:16px;line-height:1.8;color:#555;max-width:640px;margin:0 auto 16px;}
+.index-hero .index-disclaimer{font-size:13px;line-height:1.7;color:#aaa;max-width:580px;margin:0 auto;font-style:italic;}
 
 .year-section{margin-bottom:56px;}
 .year-label{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:#b52b2b;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid #e8e0d5;}
