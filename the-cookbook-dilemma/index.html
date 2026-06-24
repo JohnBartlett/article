@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Cookbook Dilemma | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <h1>The Cookbook Dilemma</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; June 5, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span>I’m sure there are a few of us who don’t own at least one cookbook. And there are some of us who own many, many more. One could argue too many. I am one of the latter. Not that I really think I have too many, but my husband Tobin does. Once while I was out of the house, he took a pile from the kitchen counter to the basement because “there was no shelf room for them.” That was perhaps the closest we came to “irreconcilable differences.” I retrieved them (down and up to three flights of stairs!) and reorganized my kitchen bookcase storage options.</span></p>
+<table>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span>My dilemma today is that while I love looking at my collection on the shelves, occasionally browsing through them, and just knowing they are there, I hardly ever actually use them. Is it finally time to deacquistion as they say in the museum business? It’s all the fault of the Internet. If I happen to have leftover chicken, some zucchini, and say carrots, I can enter those three words in Google search and come up with a dozen or more recipes, complete with reviews and “cook it again” star ratings. Yummily.com alone lists “the ten best chicken carrot zucchini recipes.”  How long would I have to thumb through dozens of cookbooks to find even one?</span></p>
+
+<p><span>I’m confident that we all appreciate that cookbooks are not just for finding recipes. Cookbooks remind us of family, of travels, of organizations we support, and of past culinary adventures. My mother, a not particularly inspired cook, always relied on the revered Irma Rombauer classic,<em> The Joy of Cooking.</em> It was probably the first cookbook I acquired when I first lived on my own. Out of nostalgia and an increasing interest in culinary history, I have picked up a number of editions of<em> The Joy of Cooking </em>in secondhand bookstores and purchased one of the recent ones. I was fascinated to find in a World War II vintage edition a series of recipes designed to deal with wartime shortages. It’s also fascinating to see what ingredients and recipes that are common today were not in my mother’s copy, hummus, for example.</span></p>
+
+<p><span>When local Chicago chefs publish well-reviewed cookbooks, surely one should support their restaurants where one ate the previous week? I’m sure I’ll never make his “Roast Partridge in Grape Leaves,” but when I see the late Chef Louis Szathmary smiling on the cover of his <em>The Chef’s Secret Cook Book</em>,” I happily remember eating Beef Wellington at the iconic Bakery. And having even inhaled the chocolate aromas at Mindy Segal’s former Bucktown favorite restaurant Hot Chocolate, could one resist her cookbook <em>Cookie Love?</em></span></p>
+
+<p><span>But we keep buying cookbooks or letting family members know we might want one for a birthday, don’t we? With the arrival of such rock star chef/restaurateurs as Thomas Keller, and Chicago’s own Rick Bayless and Charlie Trotter, their cookbooks provided not only recipes but connections to celebrities, trendy menus, and exotic ingredients.</span></p>
+
+<p><span>My first serious cookbook purchase was certainly inspired by a celebrity, Julia Child. But I was interested not so much in her celebrity as in learning to make what I watched her create in her inspiring initial public television series in the 1960s.  My first meal prepared for Tobin, then my fiancé featured her Boeuf Bourguignon, made famous more recently in the film<em> Julie and Julia.</em> Mine actually came out very well. Unfortunately, Tobin knew someone who had died from a poisoned mushroom (foraged) and carefully picked out every mushroom (supermarket purchased), which I had lovingly wiped clean – individually -– with a damp cloth.</span></p>
+
+<p><span>Cookbook sales continue to rise. Over 17,000,000 were sold in 2018.  With Covid-19 isolation and the resulting dramatic increase in bread making, 200,000 more bread cookbooks were sold than the previous year, up 145 %, according to NPD Group sales records. It’s impossible to keep track of all the new cookbooks that continue to appear. New appliances like air fryers prompt new cookbooks (<em>The Essential Air Fryer Cookbook for Beginners</em>). Television personalities with no particular culinary background like Joanna Gaines of <em>Fixer Upper </em>fame write bestsellers (<em>Magnolia Table</em>).  Established chef/cookbook writers keep writing new ones (Yotam Ottolenghi’s <em>Ottolenghi Flavor: A Cookbook)</em>. No country or region is too small to have its own unique cuisine from Catalonia (<em>Spanish Recipes from Barcelona and Beyond</em>) to Jabalpur (<em>Chai, Chaat, and Chutney</em>) and Corsica (<em>Corsica: The Recipes</em>) to Japan. And we keep buying.</span></p>
+<p><span>Chicago foodies who want to hear directly from the cookbook authors (and to have the opportunity to buy an autographed copy of the book) belong to The Culinary Historians of Chicago, a group of enthusiasts who gather monthly to meet cookbook authors in person and sample recipes from their cookbooks prepared by member volunteers. Since March 2020, of course, the meetings have been virtual without benefit of samples or autographed books. Zoom, however, has enabled the group to book speakers from anywhere. A recent meeting featured the Ethiopian/Swedish/American restaurateur and chef Marcus Samuelsson based in New York City.<span> </span></span></p>
+
+<p><em>Marcus Samuelsson</em></p>
+<p><span>The Culinary Historians often feature cookbook authors one might never have come across otherwise.  John Tufts, a Shakespearean actor by profession and an avid cook the rest of the time, became fascinated with the references to food in Shakespeare’ s plays. Struck by Prince Hal calling Falstaff “a roasted Manningtree ox with the pudding in his belly,” in <em>Henry !V Part 1,</em> Tufts set out to discover Shakespeare’s cuisine and in his words “bring Shakespeare back down to earth.” His resulting cookbook, <em>Fat Rascals, Dining at Shakespeare’s Table,” </em>is a delightful addition to anyone’s understanding of Elizabethan foodstuffs.</span></p>
+
+<p><span>Founded by Roosevelt University Professor Emeritus, culinary historian, and nationally recognized hot dog expert Bruce Kraig, the Culinary Historians share many members with the Greater Midwest Foodways Alliance, which focuses on the unique foods of the Midwest and their history. Attending these sessions is extremely dangerous for anyone who collects cookbooks.</span></p>
+
+<p><span>In addition to the aforementioned <em>Fat Rascals</em>, my own cache includes not only several copies of <em>The Joy of Cooking </em>but also an eclectic selection of books picked up on travels to such countries as Jamaica, China, Finland, India, and South Africa.  Junior League cookbooks have their own shelf – these women know how to entertain!</span></p>
+
+<p><span>Mark Bittman, Abby Mandel, Marcella Hazan, Craig Claiborne, and James Beard have found their way to my shelves. And ever since I took a cooking class with the wife of the Chinese Ambassador in Washington, DC decades ago, I have looked to the wonderful Time-Life series of international cookbooks that she endorsed for Chinese authenticity.</span></p>
+
+<p><span>So the dilemma is very real.  How could I part with any of these! Downsizing I fear will eventually be necessary. I have actually tried. I once donated 20 years of Gourmet Magazines (R.I.P.) to the culinary program at Gallery 37 (I kept my first three years saved in binders).  Perhaps Gallery 37 will take cookbooks</span></p>
+<p><span>As I think about what I will cook in the week ahead, will I consult any of these cookbooks and make a shopping list? Probably not.  I’ll go to the reopened Green City Market, see what looks wonderful, and check the fridge. I might look at my stack of “What to Cook This Week” columns torn from the New York Times for inspiration. Chances are good, I’ll fire up my iPad to pick one of the “Ten Best Recipes for……….” or just improvise, now my more usual habit.</span></p>
+<p><span>Did I neglect to mention that I’ve actually helped write a cookbook?  I was on the committee that put together <em>The Green City Market Cookbook</em>, celebrating seasonal, locally grown foods. And I find myself on a committee for another organization putting out a cookbook this fall.  I seem destined to avoid leaving my cookbook avocation behind. The making of a cookbook turns out to be more complicated than one might think; that’s a story for another day. Stay tuned.</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

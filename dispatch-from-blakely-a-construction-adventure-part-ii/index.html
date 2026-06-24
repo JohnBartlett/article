@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispatch from Blakely: A Construction Adventure Part II | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/2-3.png" alt="Dispatch from Blakely: A Construction Adventure Part II">
+<h1>Dispatch from Blakely: A Construction Adventure Part II</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; September 17, 2022</div>
+    </div>
+    <div class="article-body">
+<p><span>Blakely Island, WA remained beautiful, the sunsets stunning, the eagles soaring, and the Salish Sea sparkling. In Part II of our construction adventure, by early September we remained under construction. The master bedroom, bathrooms, and kitchen would remain useable, so we decided to stay in the house. Despite the challenges, I was intrigued to see what was involved in building an additional new entrance, and new roof on an island without ferry access.</span></p>
+
+<p><span>At the end of Part I, we were awaiting the new building inspector’s approval for a concrete pour for the new addition foundation and new peaked roof for our island vacation home. He made it to the island, the inspection was successful, and we moved ahead.</span></p>
+
+<figure><img   aria-describedby="caption-attachment-136446"  src="imgs/2-3.png" alt=""     /><figcaption><span>Forms ready for the concrete</span></figcaption></figure>
+<p><span>The next milestone would be the concrete pour. An unanticipated delay, thanks to driver shortages and heavy summer workload, meant the concrete truck could not get to Blakely for over three weeks. This gave the team the opportunity to prepare more forms for what would have been a second pour. After passing a second inspection of the remaining forms, we were ready for the concrete.</span></p>
+<p><span>The concrete truck wouldn’t be able to drive around the house because of trees, so a boom would have to go over the house (an advantage to the soon-to-be-replaced flat roof?) and, by necessity, go through the deck to reach the forms on the waterside. That meant boards in the deck had to be removed.</span></p>
+
+<p><span>If you recall the first installment of this tale, you’ll remember we entered the house by going around the house, under the deck, up the stairs, and in from the deck. With that no longer possible, we climbed in the front door using a make-shift ramp. Getting luggage and groceries inside now required standing in what would eventually be crawl space and sliding our purchases along a make-shift bridge over the foundation forms.</span></p>
+
+<p><span>The morning of the concrete pour, one of the construction team made an “interesting” suggestion. He told us that since the boom that would channel the concrete over the roof and into the waterside forms weighs 4 tons, we should consider not being inside the house… “just in case.” Hmmm. Sounded like good advice. We watched with anticipation as the first of two large trucks navigated our tree-lined driveway. One small tree had to be removed to make room for passage. At 24,000 pounds (22 tons written on the side of the truck), the pump/boom truck arrived first. Because of the slope of the job site, the truck was leveled by extending supports that lifted the front tires a foot in the air.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><em><span>22 tons of pump/boom truck arrive.</span></em></p>
+</td>
+<td></p>
+<p><span><em>Solving the slope challenge</em></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>Slowly, the huge boom unfolded itself like the legs of a praying mantis, reaching at the height of its curve over 60 feet in the air and clipping off a few Douglas fir branches. For those of us accustomed to seeing high rise construction in Chicago, this should have seemed a minor operation, but its scale on our forested lot was astonishing.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>120 plus feet of tubing about to stretch over the house.</em></span></p>
+</td>
+<td></p>
+<p><em><span>The concrete truck arrives. <span>xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx</span></span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>The concrete truck arrived about 30 minutes later, on a separate barge with its white barrel </span><span>turning (I missed the red and white stripes of the Ozinga trucks in Chicago). The operator </span><span>connected it to the pump/boom truck and the grey ooze began to flow through the boom tube </span><span>and an added flexible pipe that the workmen wrestled into the prepared forms.</span></p>
+<table>
+<tbody>
+<tr>
+<td><img    src="imgs/9-3.png" alt=""     /></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><em><span>The pour continues over the house and through the deck.</span></em></p>
+</td>
+<td></p>
+<p><span>The pour continues over the house and through the deck.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>The pour went quickly. The boom first filled the near side and then easily cleared the roof and </span><span>deposited its load on the waterside of the house. The process required constant vibration to </span><span>remove air bubbles and compact the cement, followed by hand-smoothing of the surface and </span><span>redistributing the wet concrete. This was all new to me and strangely fascinating. Now it would </span><span>take several days for the concrete to set, the forms to be removed and prep to begin for </span><span>installing the floor joists.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>Hand-smoothing the concrete</em></span></p>
+</td>
+<td><em><span>Forms removed</span></em></td>
+</tr>
+</tbody>
+</table>
+<p><span>With the forms removed, an emulsion was painted on the outside of the concrete to make it waterproof. Meanwhile, lumber for the floor was delivered along with trusses for the new peaked roof. It proved to be a busy morning at the marina as the Island Express water taxi arrived to drop off groceries and pick up a departing family at the same time. There was just room for everyone. We wouldn’t be ready for the trusses until the walls were framed out, so the trusses had to be transported to a nearby airplane hangar for temporary storage.</span></p>
+
+<p><span>Our lumber and trusses had filled the barge completely. Since one of the trucks remained on Blakely, we were able to fit our Xterra on it for a trip back to the mainland for a much needed “spa day” at the Nissan dealer in Burlington. We’d be without a car for several days until a spot on another barge opened up to return it. And no, it usually can’t be scheduled in advance, unless you need to charter the whole barge yourself. The joys of partial barge loads and island logistics!</span></p>
+<p><span>With the concrete work done, our gangplank entry to the house disappeared. We realized that if we moved one small sofa from the furniture and box-filled guest room to the living room, we could move other furniture and boxes enough to permit entry to the house from the work zone through the guest room’s siding door.</span></p>
+
+<p><span>We continued to rearrange our building materials and boxes as we settled in to our less-thanelegant construction site living. Until the roof comes off, we could use the living room for more than building material storage. Our single table, a card table hastily retrieved from the storage shed, was our “partners desk” with each of us commanding one side with our laptops.</span></p>
+
+<p><span>We also learned to reappropriate space for new activities. We used the card table for our first “dinner party,” a chili and cornbread repast for my cousin from Texas, in residence at the house she shares alternatively with her brother. Yoga mats fit in nearby.</span></p>
+<p><span>By the week after Labor Day weekend, the addition’s floor joists were installed, and the floor </span><span>laid. We’d have lumber for the walls the following week.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>Floor joints in place</em></span></p>
+</td>
+<td></p>
+<p><em><span>Floor ready for wall framing</span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>We needed to retrieve our car the Friday of Labor Day weekend after its vacation on the mainland, A plan emerged to get the car back to Blakely. We arranged for our contractor to drive it from the dealer and park it by the Anacortes dock for the water taxi. Over the next three days, we’d take the water taxi to pick up the car and stopping to see friends en route, we’d visit two other islands by car ferry to connect with a barge heading back to Blakely. If this sounds complicated, it was and even more challenging to schedule! The great luxury was driving from the grocery store to the barge to our house with no intermediate loading and unloading of groceries!</span></p>
+<p><span>A key question must have surely occurred to you by now. Why are we putting ourselves through this? We could have remained in Chicago and monitored the work remotely. Frankly, we’re used to juggling logistics, part of island life. Personally, I am learning a tremendous amount about construction, far outside my usual portfolio. There’s always the reason we have a home here in the first place. See the opening sentence of this report!</span></p>
+<p><span>I had naively thought that Part II of our construction adventure would wrap up the story. It’s clear, however, that it’s time to pause again. So, if you’re still reading these dispatches, stay tuned once again. I hope to have another update in a month or two!</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

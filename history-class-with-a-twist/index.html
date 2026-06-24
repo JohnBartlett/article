@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History Class with a Twist | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <h1>History Class with a Twist</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; May 31, 2020</div>
+    </div>
+    <div class="article-body">
+<p><span>By Elizabeth Dunlop Richter</span></p>
+
+<p>The impact of jazz on racial integration. The Chicago Women’s Liberation Union. Prima Ballerina Maria Tallchief. <span> </span>Labor organizer Addie Wyatt. <span> </span>AIDS advocacy leader ACT UP.<span>  </span>That’s a lot of history to absorb in one weekend! I was fortunate to do just that in late April and learn details about these important historic breakthroughs, thanks to five talented teenagers who participated in the Chicago Metro History Fair. Their task was to explore and interpret primary as well as secondary sources to find the facts, the photos, and the videos that tell these stories and create 10-minute documentaries.<span>  </span>My job would be to evaluate the quality of their work.</p>
+
+<p><em>Did you know that Maria Tallchief’s grandfather was an<br />
+Osage Native American who struck it rich in the Oklahoma oil fields?<br />
+</em></p>
+
+<p><span>Since 2016, the Chicago Metro History Fair has been part of the Chicago History Museum. With the pandemic underway and the Museum closed, this year would be dramatically different. The Fair had to scramble to move this year’s competition online. Over 11,000 students from 86 area schools had spent the school year participating in various aspects of the program at both the junior and senior high levels; of those, 1416 students created entries that advanced out of their schools to compete in the Metro Chicago Regional contests. A total of 845 projects (some entries representing work of multiple students) included formal research papers, exhibition displays, websites, and live performances as well as video documentaries, the category I screened. In the past, we did all this on-site, at the Chicago History Museum or at various area schools.  We had the opportunity to meet and talk to the students, watch their performances, study their exhibits and screen their videos.</span><span></span></p>
+
+<p><strong>Judges screening docs 2016 at Illinois Institute of Technology</strong></p>
+
+<p>In my third year judging for the Fair, I was one of over 250 volunteer judges.<span>  </span>We were tasked with evaluating the projects on the basis of the students’ knowledge, analysis, sources, presentation, and relevance of their topics to the Fair’s theme – this year,<span>  </span>“Breaking Barriers.” Like all judges, I worked with a judging partner, this year of course, virtually. <span> </span>Although we send in our own individual evaluations, judging teams discuss entries and share observations to ensure fair scoring.</p>
+
+<p><em>Did you know that Benny Goodman was one of the first big band<br />
+leaders to perform with an integrated group of musicians?<br />
+</em></p>
+
+<p><strong>2016 Niles High School student with her exhibit</strong></p>
+
+<p>For the months of March and April, there was a flurry of activity as entries were completed and distributed electronically to the judges, who had to have their training online as well instead of in person. For Tyler Monaghan, the manager of the Chicago Metro History Fair, it’s not been all bad. “Having to move the competition online this year has actually accelerated changes we wanted to make anyway to help us work more efficiently,” he said. The biggest negative is that the students and judges did not get to meet in person and answer any questions about their projects.<span>  </span>I personally would have welcomed the chance to talk to the young documentary makers.</p>
+
+<p><strong>Judges writing evaluations in 2017 at Lane Tech College Prep High School </strong></p>
+
+<p>Established in the late 1970s as a project of the Newberry Library, the History Fair soon expanded to become the independent Chicago Metro History Education Center with such partners as the Chicago Historical Society (now Chicago History Museum) and the University of Illinois Chicago, dedicated to developing not only the History Fair but also other educational projects to improve the teaching of history in the Chicago area.</p>
+<p>The Chicago Metro History Fair describes itself as “a project-based inquiry program that challenges students to become historians by actually doing history.” The Fair’s new home with the Chicago History Museum was a special initiative led in part by the late Russell Lewis, Executive Vice President and Chief Historian at the time of the merger. Bringing the Fair into the museum family made sense, said the museum’s Director of Education Nancy Villafranca-Guzman. “The work that the students are doing is so much in alignment with the work we do. The board decided that the Museum could provide additional administrative resources, enabling staff to focus on students&#8217; needs and on making the program better.”</p>
+
+<p><strong>Jenine Wehbeh, a teacher at Murphy Elementary, helps a student do </strong><br />
+<strong>research at Harold Washington Library 2019</strong></p>
+
+<p>Monaghan, a former teacher himself, reflected on his role. “One of the most satisfying things for me was hearing teachers tell me their students gain new knowledge from the project. It acts like a force multiplier, introducing so many more students to a passion for history,” he explained. History teachers themselves see the hands-on process of doing original research engaging students in new ways. One teacher reported, “My students were super excited to compete and we even have a few going to state. They are beyond overjoyed!”</p>
+
+<p><em>Did you know that Chicago women learned how to advocate<br />
+</em><em>for women’s rights through classes taught by<br />
+</em><em>the Chicago Women’s Liberation Union in the 1970s?</em></p>
+
+<p>Chicago area winners competed again online in Springfield for Illinois History Day, May 7, hosted by the Abraham Lincoln Presidential Library and Museum. <span> </span>Each state will next send two projects in each category in both junior and senior divisions to the national competition at the University of Maryland. The finals will be held online during the June 14-20 celebration of National History Day.</p>
+
+<p>Being a judge is not only interesting but also challenging.<span>  </span>One is reviewing material created by teenagers with varying degrees of educational experiences and access to resources. In my case, I was looking at short documentaries that unlike a research paper, had to integrate video, audio, graphics and text in a way that demonstrated not only a serious effort to learn about the subject and but also the use of media to tell the story. I was able to tap my professional background in media production, but I couldn’t evaluate these entries as critically as I did when I judged Emmy Awards. <span> </span>I would look for evidence of the students’ best efforts.<span>  </span><span> </span>My judging partner, an attorney, similarly sought to find elements in entry to compliment.</p>
+
+<p><em>Did you know that Chicago labor organizer Addie Wyatt<br />
+</em><em>was the first African-American woman elected<br />
+</em><em>international vice president of a major labor union,<br />
+</em><em><span> </span>the </em><em>Amalgamated Meat Cutters Union</em><em>?</em></p>
+
+<p><strong>East Main High School entry 2020</strong></p>
+
+<p>As I downloaded the student videos in my home office, I could imagine how the students must have felt when we screened their work in person in the past.<span>  </span>Nervous, anxious, excited?<span>  </span>Now, we were all spared (or unable to enjoy!) those emotions.<span> </span>Reading the topics chosen for my five projects, I was particularly interested in two of them since I had been privileged to meet both Maria Tallchief and Addie Wyatt before they passed away.<span>  </span>How would students tell these compelling stories? The student filmmakers used a variety of effective techniques to accomplish this.<span>  </span></p>
+<p>I was able to see Maria Tallchief’s extraordinary dancing in a series of vintage film clips. <span> </span>I heard sound bites of Addie Wyatt’s dynamic speech-making and listened to an interview with her very proud grandson.<span>  </span>News footage of early suffragettes and 1970’s marchers supporting the Equal Rights Amendment enhanced the story of the Chicago Women’s Liberation Union. The cool sounds of Louis Armstrong’s jazz trumpet set the stage for a discussion of integration in the music industry. Photography of victims from the early days of the AIDS crisis added to an emotional understanding of ACT-UP.</p>
+
+<p><em>Did you know that AIDS activist Larry Kramer brought<br />
+</em><em>dramatic and provocative advocacy techniques to demand<br />
+</em><em>federal government attention to the AIDS crisis?</em></p>
+
+<p>Students learn many new skills as they develop their entries. In our evaluations, we judges are encouraged to help this process by offering constructive suggestions in a supportive way.<span>  </span><span> </span>Even the best student work naturally has room for improvement. In documentaries for example, sometimes graphic identification of speakers or quotes are unreadable over moving video or appear in a font that is lost against the background image. Students often use a photograph more than once, either because they like it or they don’t have other material to cover the text.<span>  </span>There can be uneven audio levels, which may reflect the quality of a school’s editing lab equipment. In addition to these technical issues, students need to be alerted to sloppy grammar, unfocused story arcs, and under-researched topics. All these are completely normal errors for first time filmmakers; our goal as judges is to help them raise their personal standards for their next film and encourage them to make more.</p>
+
+<p><strong>A student meets the judges at the Illinois Institute of Technology in 2016</strong></p>
+
+<p>Lisa Oppenheim, who managed the program for 20 years, is struck by what she calls “the power of inquiry.” “Kids come to appreciate the past. They are the ones making the connections between the past and the present. I am always awestruck at the bravery of the teachers to take this on…they have to let go of the top-down model and instead guide the students in their own explorations.”</p>
+<p>For me, the pleasure of being part of the Chicago Metro History Fair judging team is seeing the impressive skills these students have developed and their passion for history, an interest that will benefit them throughout their lives and careers, whether they become astrophysicists or history professors. As a college history major myself, I never tire of picking up new insights, and I marvel at the online resources today’s students have that we never imagined so many years ago. I’m guessing, for example, that many of us did not know that that Chicago had such a well-organized women’s rights organization in the 1970s or that their marches were now findable on the Internet. <span> </span>One student filmmaker discovered it, and now I know it too! <span> </span></p>
+<p>I was pleased to see that three of the documentaries I reviewed moved on to the state finals (those dealing with Jazz, Maria Tallchief, and ACT UP) If you’re curious about our history and its movers and shakers, think about volunteering to judge next year’s competition. <span> </span>You’ll trade a few well-spent hours for a few years of knowledge! <a href="https://www.chicagohistory.org/education/historyfair/" target="_blank" rel="noopener noreferrer"><span>https://www.chicagohistory.org/education/historyfair/</span></a></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

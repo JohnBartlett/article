@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage Write: The Magic of Projections | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/Screenshot-2023-09-21-7.29.46-PM.png" alt="Stage Write: The Magic of Projections">
+<h1>Stage Write: The Magic of Projections</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; September 23, 2023</div>
+    </div>
+    <div class="article-body">
+<p><span>The Austrian Alps, a Roman Catholic nunnery, the streets of Florence – these are just a few of  the exotic locales seen within the past year on Chicago theater stages. No, plaster mountains  were not built on stage nor were leaded glass windows or Renaissance shop windows installed.  You, the audience, is transported around the world by one of the theater’s most useful devices,  the video projection.</span></p>
+
+<p><span>Ever since ancient peoples noticed that a fire could cast a shadow image on a cave wall, the idea  of creating projected visual images has intrigued us. Jump forward a few tens of thousands of years to the 4</span><span>th </span><span>century BCE in China when the principle of the “Camera Obscura” or pinhole  camera was first recorded. By the 17</span><span>th </span><span>century, the magic lantern had evolved using candles and  lamps to show images using the new technology of lenses. Electricity, then movies, and now  computer-controlled video opened new options. Today digital technology has raised the  projected image to new levels of realism or abstraction as desired. </span></p>
+
+<p><span>Projections were not recognized as a separate award category by the Jeff Committee until 2017, when a total of eight productions were nominated. Winners were Anthony Churchill, “The Body  of an American,” Stage Left Theatre; and Mike Tutaj, “Objects in the Mirror,” Goodman Theatre. Projections are now commonplace in productions both large and small.</span></p>
+
+<p><span>For some playwrights, however, projections are still a new tool. Jim Sherman, author of  “Chagall at School,” (and Jeff Committee member) has only just begun to appreciate how  projections can enhance his work. “Because I was writing about Mark Chagall, I knew there  were specific references to his works and to other artists. In readings, I just got enlarged  pictures and put them on poster boards…what I didn’t know, if you’d have a projection designer and a really good one, she comes up with other things to do. Designer Erin Peake filled up the  world of the play in ways I never imagined.” </span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.29.46-PM.png" alt=""   /></p>
+<p><span><em><span>Jim Sherman</span></em></span></p>
+
+<p><span>For “Chagall in School,” she used the windows in the classroom set to display both the outside  world and various paintings as mentioned in the play, neatly giving Jim what he needed. She  also won a Jeff Award for her work. You might imagine that this could reduce the cost of the  set, but projections do not necessarily ease the cost. “They exploded the budget,” Sherman  related.</span></p>
+
+<p><img    src="imgs/5B47E149-EE07-4205-B5F9-3065ED99CCDF-1.jpeg" alt=""     /></p>
+<p><span><em><span> </span><span>“Chagall in School” </span></em></span></p>
+
+<p><span>Budget is a serious consideration. Large theaters may invest in their own projection equipment  for $30,000 and up, but small theaters need to rent. Projection specialists frequently own their  own equipment and therefore have a revenue stream, separate from their fee. And sometimes,  they will donate the projectors. “If it’s important enough, I’ll put stuff that’s my own into the  production,” says Romanian-born projectionist Liviu Pasare. </span></p>
+
+<p><span>Pasare studied painting and drawing at the School of the Art Institute. In his first year there, “the environment made me realize how technology is used in creating art…I found the medium  very appealing to me,” he said. “It was immediate and my work was amplified.” After  graduating, he worked with an improv group, the now-closed Redmoon Theater, and Collaboraction, exploring the integration of art, production and technology. He found the  theater world creative and welcoming; he liked the interaction with actors and art. </span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.30.33-PM.png" alt=""     /></p>
+<p><span><em><span>Liviu Pasare</span></em></span></p>
+
+<p><span>Like many projection specialists, Pasare pursues a variety of projects that include not only  theater but also art installations in museums and galleries, and environments for dance </span><span>companies. Pasare was nominated for the Jeff Award for Projection in 2022 for Teatro Vista’s  “Somewhere Over the Border” and is nominated again this year with Reese Craig for Raven  Theater’s &#8220;Right to Be Forgotten.” His projections for Teatro Vista’s “The Dream King” supported  the 2023 Jeff-nominated lighting and set designs. “I just want the set to do the best it can,” he  said. He always asks himself, “Does it [a projection] help tell the story? Is there another way to  do it with existing stuff?” </span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.30.50-PM.png" alt=""     /></p>
+<p><span><em><span> </span><span>“The Dream King” </span></em></span></p>
+
+<p><span>Like Pasare, Max Maxin did not start out doing projections. He developed set design skills as a student at the Actors Training Center in Wilmette. He still creates sets and  more often designs lighting, but a production’s need for video is when his name  frequently comes up. “People are diving more into what it [projection] can be. Originally  it was a lot of very, very simple things,” he said. Ten years ago, the technical process of  rendering images, for example, took much longer and made it hard to make last minute  edits. “It’s now simple, fast and accessible.” </span></p>
+
+<p><span>Maxin’s credits include projections for Black Button Eyes Productions of “Dr. Horrible’s  Sing-Along Blog” at the Edge Theater and Kolkandy’s “Sweeney Todd” at the Chopin  Theater. His experience is often being called for at the last minute. “The nice thing about  projection is that I can get ahead of the game and do the prep [on my computer} at  home. Lighting you have to do in the space.” </span></p>
+
+<p><span>To use projection, a theater needs a projector and a screen, just like your home movies.  But the projector(s) needs to be carefully positioned in front of the set, usually hung  above the audience (for front projection) or set up behind the set (for rear projection).  “A lot of times the space will limit what you can get away with,” said Maxin. Whether  one uses rear and/or front projection depends on how much backstage area exists for </span><span>actors to move and the blocking of the actors on the set to avoid stepping in front of the  projected image. </span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.31.33-PM.png" alt=""     /></p>
+<p><span><em><span>Max Maxin IV</span></em></span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.31.52-PM.png" alt=""     /></p>
+<p><span><em><span>Scene from “Dr. Horrible’s Sing-Along Blog” </span></em></span></p>
+
+<p><span>An issue can be the director’s inexperience with projections. “A lot of directors may initially look at the tech requirements and say ‘Oh, there’s a screen in this show. Where  is that screen going?’” Maxin, on the other hand, understands how flexible projection  can be. “I can cut out any picture and I can move it any way I want. It’s absolutely  limitless what I can do with video. I just picture so many options. There’s literally no  boundary,” he said. “Once the director is on board with projections, and we can figure  out what it’s saying, I’ll reshape the entire show to match.”</span></p>
+
+<p><span>Budget issues range dramatically. Since many theaters can’t invest in their own  projectors, Maxin realized owning his own projectors made sense. “Kokandy Productions  needed two projectors for “Sweeney Todd;” I had two in warehouses for them to use. The “Sweeney Todd” budget’s line item was just $1000. For a larger theater, the cost  could be $25,000 for rental alone. Maxin handled this production himself. At a larger  theater he might have a team of several technicians. </span></p>
+
+<p><span>The newest technology to enhance the set electronically is technically not a projection  and is far more costly. Computer controlled LED panels can be used at any scale in any  setting and are used extensively in New York and Hollywood productions, sports  stadiums, industrial trade shows, and other venues to provide photo-realistic  environments. They offer maximum realism, and eliminate the space considerations for </span><span>a rear projector and placement issues with front projectors. The Citadel, a midsize Equity  theater in Lake Forest, has no room for a rear projector and little budget even for front  projectors. Thanks to a family connection, the theater has been able to experiment with $90,000 in LED panels at no cost for two productions, last year’s “The Christians” and  this year’s “The Mousetrap.”</span></p>
+
+<p><img    src="imgs/Screenshot-2023-09-21-7.32.04-PM.png" alt=""     /></p>
+<p><em><span>Set of “The Mousetrap” with five LED panel elements: a mirror, a woman’s portrait, a large window with snow falling,  a hunting scene painting, and a fire burning in a fireplace. Approximately 80 individual panels were installed.</span></em></p>
+
+<p><span>Pangaea Technology, a California-based manufacturer of state-of-the-art LED panels,  provided the hardware and software that effectively brought falling snow and a blazing  fireplace to “The Mousetrap” set. Videos were integrated to show a skier through the  window approaching the manor house through the snow and to change the wall  paintings to show individual suspects as the murder mystery unfolded. Most dramatic  was a splash of blood that appeared to hit the window just as a knife was plunged into  the second victim. The complex wiring and supporting piping required little backstage  space and still allowed just enough room for the actors to cross over to the opposite side  of the stage unseen. Scott Westerman, the director, was delighted to have the new  technology, “I had so much fun seeing what was possible!”</span></p>
+
+<table>
+<tbody>
+<tr>
+<td><img    src="imgs/Screenshot-2023-09-21-7.32.25-PM.png" alt=""     /></p>
+<p><span><em><span>LED panels for large central window </span></em></span></td>
+<td><img    src="imgs/Screenshot-2023-09-21-7.32.43-PM.png" alt=""     /></p>
+<p><span><span><em>LED panels for the fireplace</em></span> </span></td>
+</tr>
+</tbody>
+</table>
+
+<p><span>Audience impact? “I want to be not noticed,” said Maxin. “I think of it [projection] as the  icing on the cake. They say about lighting design, you don’t leave the show singing the  lighting, you leave singing the song.” In the same way, the role of projections in theaters  is to enhance the director’s vision for the production. You don’t want the audience to  leave singing a projection “melody.” In the case of “The Mousetrap,” however, one  shivered for the actor trudging through the snow and happily enjoyed the warmth of the  fire inside. </span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

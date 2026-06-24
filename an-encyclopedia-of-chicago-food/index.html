@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An Encyclopedia of Chicago Food | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <h1>An Encyclopedia of Chicago Food</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; October 8, 2017</div>
+    </div>
+    <div class="article-body">
+<p>Have you ever wondered why deep dish pizza is associated with Chicago? Or perhaps you’re curious about how Rich Melman built his restaurant empire, Lettuce Entertain You? And I’m guessing you’ve never thought about the origins of tailgating. For these and more delicious bites of Chicago culinary history, you can find the answers in the brand new <em>Chicago Food Encyclopedia</em>.</p>
+
+<p>Compiled and edited by historian Bruce Kraig; former <em>Chicago Tribune</em> food editor Carol Mighton Haddix; and cookbook author/expert on food from India, Colleen Taylor Sen, this handy reference book will not only help you settle many bets but, more importantly, provide a colorful companion to the many existing volumes of Chicago history dealing with such topics as politics, architecture, and Al Capone.</p>
+
+<p>It’s impossible to separate completely the history of Chicago food from the city’s economic, artistic, and neighborhood development. Do you know the name of Al Capone’s favorite restaurant? It’s here. What about the meatpacking families whose wealth enriched Chicago in the 1890s? They’re here. And so are the food traditions of Chicago’s immigrant families who provided the labor to rebuild Chicago after the great fire of 1871.</p>
+
+<p>So how does one put together a Food Encyclopedia? Bruce Kraig, professor of history at Roosevelt University, host of PBS specials on food and culture around the world, and founder of the Culinary Historians of Chicago was undaunted by the task. Learning that New York would soon have its <em>Savoring Gotham</em>, he says, “I knew that we in the second city had to do something. New York is a great food city, but Chicago holds prime place as historically America&#8217;s food collection, production, and distribution center, and it is now America&#8217;s leading restaurant city. The world should know it, and now with the encyclopedia, it will.”</p>
+
+<p>Kraig next recruited Sen and Haddix, and the trio embraced the challenge. Finding contributors was the first task. “We started with a list of headwords (topics for entries), but the list constantly evolved as our contributors suggested new topics and we thought of new topics that needed new writers! We were fortunate in recruiting the Chicago area&#8217;s top food journalists, authors, and academics to write the entries,” explained Sen.</p>
+<p>I was one of the over 70 writers asked to create entries for the volume. Among the topics I researched were the history of tailgating (who knew it has a tenuous connection to the Civil War!?), early Chicago television cooking shows, and the Green City Market, now in its 20<sup>th</sup> year.</p>
+
+<p>We were tapped for our expertise but also our willingness to dig. Resources included everything from the Chicago Public Library and Chicago History Museum collections to corporate archives and newspaper clippings. With her background at the <em>Chicago Tribune</em>, Haddix was particularly good at ferreting out obscure facts. “There are so many great stories in the book, but it was fun to learn about the creation of the malted milk shake in Chicago. It began with the Horlick Brothers, who in 1875 created dried milk powder to mix with their other creation, dried malt powder. Just add water! It was used in infant foods. But it wasn&#8217;t until 1922 that ice cream was added to the drink by an enterprising Walgreens soda jerk, and it took off nationally from there,” notes Haddix.</p>
+<p>Here’s a sampling of appetizing excerpts to tempt your reading palate:</p>
+<p>“Another mixing innovation wowed fairgoers at the Cola-Cola exhibit, where the first automatic fountain dispenser created well-blended Cokes with the pull of a handle.” (From the entry “A Century of Progress, Chicago’s World Fair [1933-4]&#8221;)</p>
+<p>On ice houses:</p>
+<p>“By the [1870s], much of Chicago’s ice came by rail from as far away as northern Wisconsin. The ice, cut in large blocks, was shipped packed with wood shavings, sawdust or straw.”</p>
+<p>On the Mother-in-Law:</p>
+<p>“This uniquely Chicago sandwich is a tamale covered with chili, usually served on a hotdog bun.”</p>
+<p>On The Spice House:</p>
+<p>“To make curry powder, each store grinds its own ingredients separately, and then they mix them in a large stainless steel bowl. They sift and blend three times and hand mix it 1,500 times to ensure full flavor development.”</p>
+
+<p>Available online and in bookstores, <em>The Chicago Food Encyclopedia</em> indeed helps put Chicago’s culinary legacy on the national map.</p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispatch from Blakely: A Construction Adventure, Part I | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/4.png" alt="Dispatch from Blakely: A Construction Adventure, Part I">
+<h1>Dispatch from Blakely: A Construction Adventure, Part I</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; August 6, 2022</div>
+    </div>
+    <div class="article-body">
+<p><span>Since my last dispatch a year ago from Blakely Island, many things have not changed. Stunning views of the Salish Sea, the hum of the occasional small plane circling for landing on the airstrip, the sight of a soaring bald eagle, the smell of Douglas fir and cedar. Thank heavens! Much at our vacation home, however, had changed. These planned changes don’t sound particularly dramatic, a new roof and a small addition. But living through the process on a small island is another matter.</span></p>
+
+<p><span>What might be relatively routine, if construction is ever routine in Chicago, is a different story on an island with no ferry access in the San Juan Islands of Washington state. My mother had her retirement home built in 1975, using the local builder who had been putting up vacation homes on the island since the 1950’s. The island had once been inhabited by 19th and early 20th century homesteaders who had logged parts of the island’s old growth forest and operated a sawmill. Blakely Island was next purchased by entrepreneur Floyd Johnson, who had sold small planes to the likes of John Wayne in Los Angeles. Johnson sold lots along a newly built runway for flying enthusiasts and other lots along the coastline. Harold Bartram built the houses.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>An original Harold Bartram vacation home, this one with an</em></span><br />
+<span><em>airplane hangar on the first level and a unique indoor</em></span><br />
+<span><em>swimming pool (!) </em></span></p>
+</td>
+<td></p>
+<p><em><span>Another original design <span>cation home, this one with an</span><br />
+<span>airplane hangar on the first level and a unique indoor</span><br />
+<span>swimming pool (!)</span></span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>My mother had ideas of her own. She didn’t want an A-frame or the typical slant-roofed designs Bartram usually built. She had seen the design of a flat-roofed, mid-century modern house in the California redwoods that captured her imagination. She wanted it to blend into the woods on the lot she purchased on the water, far from the runway. Simple, efficient, and focused on opening with wide windows and sliding doors to the water view, the house met my mother’s requirements, but it was not the usual style. My uncle, her younger brother who was the first family member to build on Blakely, warned that a flat roof on a rainy Pacific Northwest island was risky. The older sister prevailed. His warning was prophetic.</span></p>
+<table>
+<tbody>
+<tr>
+<td><img    src="imgs/4.png" alt=""     /></p>
+<p><span><em>The original Blakely house flat roof design</em></span></p>
+</td>
+<td></p>
+<p><em><span>Interior, waterside</span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>Over the years, various attempts were made to stop the roof from leaking. My husband Tobin spent many summers patching and retarring the roof. Finally, we decided it was time to invest in a new peaked roof and while we were at it, an addition – a family room with many options for use. Our goal, to get the new roof on before the fall rainy season. Sounds simple.</span></p>
+
+<p><span>Challenge number one, a new septic tank. Challenge number two, an archeological study to insure there were no Native American artifacts buried on the property. Challenge number three, getting the documentation together and approved for the building permit. Challenge number four, scheduling a contractor to do the work. For a variety of reasons not worth detailing, these seemingly straightforward activities delayed the work for five years. Covid added another year. We redesigned the project to be easier to build. Finally, the project was launched last fall with the construction of a new carport, the tearing down of the old one where the addition would be built, and the conversion of a woodshed to a storage/project shed and </span><span>the construction of a new woodshed. We spent our time last summer on the island prepping the house for construction.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><em><span>Packing underway in the living room</span></em></p>
+</td>
+<td></p>
+<p><em><span>The guest room with stacked beds and boxes</span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>Given the challenge of managing the project from Chicago, Tobin – having some professional knowledge of construction &#8211; made three trips to the island this spring. I joined him mid-July for the rest of the summer. While I had seen pictures and talked to Tobin frequently, I was not quite prepared for a summer in a construction zone. The master bedroom, two bathrooms, and kitchen would keep their existing ceilings, so they were usable. So thought Tobin on his most recent trip here.</span></p>
+<p><span>A schedule misunderstanding meant the plumbing had been cut off the Friday Tobin arrived. Luckily, a cousin’s guest house was available with working plumbing. Tobin’s load of groceries was at our house, while he was at the guest house too far down the road to carry groceries. With the plumbing restored the following Monday, he moved in, but electricity to the kitchen lights had been shut off. He cooked for a couple of weeks only during daylight hours. Fortunately, kitchen lights had been restored when I arrived. Access to the front door, however, was not. The plan calls for a new entrance along with the addition. With forms for the new foundation in place, the front door was unusable.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>Family room foundation forms</em></span></p>
+</td>
+<td></p>
+<p><span><em>New front entrance foundation forms</em></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>This means we walk around the house, under the deck, up a set of stairs to the deck and enter from the deck on the water side of the house. This also means that luggage, groceries, wood for the fireplace etc. all must be carried from the far side of the construction site along the same woodsy route. This may explain why we didn’t initially use the fireplace – and with the electrical heat in the living room cut off, it was a bit chilly. Our refuge, a heated bathroom and bedroom.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span><em>The path to enter the house under the deck</em> </span></p>
+</td>
+<td></p>
+<p><span><em>Up the stairs to the deck and in through the </em></span><span><em>sliding doors</em></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>Summertime on Blakely has always meant seeing family – many cousins and friends on the island &#8211; and entertaining. Well, our living room and dining room furniture are all carefully stored away in the guest room and a nearby airplane hangar until the new roof is on, new floors laid, and painting completed. We have use of three chairs and a card table. No dinner parties this summer! We also learned that one cousin and her son just tested positive for Covid, so we’re not even sure who we can see in the next few weeks. In the meantime, Tobin’s painting “studio,” eventually to be in our project shed, was set up in the living room with the 48-year-old carpeting now removed, next to piles of paneling and insulation. But there were other concerns.</span></p>
+
+<p><span>The next step in completing this marathon project was to be a visit from the county building inspector to sign off on the addition’s forms for the first of two concrete pours. In San Juan County, there is just one building inspector (a second position is unfilled) who has numerous islands to visit, particularly during the summer. On our designated Thursday last week, we were number 8 on a list of 12, and the only address on Blakely Island. He couldn’t make it on Thursday; a call to the building department rescheduled the inspection for this coming Monday. Needless to say, no more work can be done until we have a successful inspection. On a small island relying on boat schedules inevitably causes delay.</span></p>
+<p><span>In line after the hoped-for inspector’s approval, the next task will be our contractor’s scheduling the concrete mixer, to arrive on a barge from the mainland. Barges are the only way cars and trucks get to our island. Many vehicles can come on a barge at a time, but scheduling can be tricky and expensive if the barge is not full. This means one does not decide at the last minute to drive to the Safeway for groceries. Some homeowners like my mother did, keep a car on the mainland. We take the Island Express or the Paraclete, the water “taxis,” to the mainland and then a taxi to shop. In the last two years, we have had the option of using Instacart which now delivers to the Island Express, which for a fee brings groceries to the Blakely dock for pick up. </span></p>
+
+<p><span>One more detail, our contractor had eight-hour back surgery in June. Fortunately, he’s very fit and is back on the job wearing a neck brace, but with lifting limitations. Making the work easier, he and his crew have accommodations on the island several days week, going home to the mainland on weekends. It’s the back and forth for workmen and their equipment that adds significant construction expenses on islands like Blakely – and as we learned, creates challenges for building inspectors. Will the inspector arrive on Monday and approve the forms? It would be a major milestone! This seems like a good point to pause in this tale…will the job be finished before the rainy season? Adventures to follow, no doubt. Stay tuned!</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>

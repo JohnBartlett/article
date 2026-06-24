@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An Urban Art Discovery | Elizabeth Dunlop Richter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Elizabeth Dunlop Richter</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <h1>An Urban Art Discovery</h1>
+      <div class="byline"><strong>By Elizabeth Dunlop Richter</strong> &nbsp;&bull;&nbsp; July 24, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span>Where in Chicago can you rent a yacht, monitor barges unloading gravel, see red and white rotating cement trucks head out to a job site, watch cowhides treated at Chicago’s remaining tannery, and experience world-class art within two blocks of one another? And if you’re lucky, you might also see a Great Blue Heron or a flock of cormorants.</span></p>
+<p><span>This unique urban landscape wraps around the corner near the Cortland Avenue Bridge at North Mendell Street, on the North Branch of the Chicago River. The most surprising of these options are several blocks of stunning murals painted on remnants of Chicago’s turn-of-the-last-century industrial buildings. Who knew? I certainly didn’t.</span></p>
+
+<p>My first glimpse of something unusual</p>
+<p><span>On one of my morning walks from Lincoln Park to the Chicago River, for the first time I noticed across a wide-open field &#8211; the potential home of the Lincoln Yards development – on the other side of the river, something unusual, directly under a tall brick chimney. At first, I thought it was a giant inflated bird, like the huge rats sometimes put up at factories by striking workers. As I walked closer, I realized it was curving around an industrial building, impossible for a balloon, but trees soon blocked my view.</span></p>
+
+<table>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Hides being turned into top quality leather</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span>My walking companion and I were determined to find out what we were seeing. We crossed the river at Webster and walked south down Ashland Avenue. On our left, the Horween Leather Company had some open windows, allowing us to peer in to see workers pulling hides from large vats.  We would learn that this was the nation’s premier source for fine cordovan leather and the only remaining tannery of the many once operating along that stretch of the river.</span></p>
+<p><span><br />
+We turned left on a side street into what was clearly an industrial area. At the end of the block was North Mendell Street.  Straight ahead of us was the Ozinga concrete facility, where the city’s ubiquitous red and white cement mixers were lined up to get their cargo for the day. Barges on the riverside unloaded sand, aggregate, and cement, some of the ingredients for concrete. I had actually taken this route once before, but never looked up or turned left. I had turned right toward Cortland. Today we turned in the other direction.</span></p>
+
+<p>Mendell Street with Hebru and Sansing murals</p>
+<p><span>What astonishing discoveries! On our left, we found a series of huge murals painted on the rear of the Horween building and its neighbors, on our right a seemingly new office building lined on two sides by panels of murals by a wide variety of other artists.  We turned around to look up and there was the giant bird we’d seen from across the river. I pulled out my iPhone and Googled “Ozinga bird mural” and the mystery was solved.   </span></p>
+
+<p>ROA’s Chicago version of Bird and Bones</p>
+<p><span>My search pulled up a news story from 2017. It turned out that the murals were created four years ago when Warren Baker, the developer of the renovated low-rise office building at 2017 Mendell Street, saw the potential for an art district.</span></p>
+
+<p><span>“When we looked at the street, we saw a little enclave of grit. I would call it blighted,” he recalled.  “I noticed nobody was paying any attention. I wanted to develop the Bucktown or Lincoln Park vibe. We wanted to create a corridor of art to take the edge off the grittiness.” Baker had developed the nearby Kohl’s store and other buildings in the area. He saw potential with the promise of the Lincoln Yards project.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p>Warren Baker</td>
+<td></p>
+<p>James Geier</td>
+</tr>
+</tbody>
+</table>
+<p><span>Baker engaged James Geier of 555 International, a global design, development, and fabrication firm specializing in the commercial, retail, and hospitality industries, to work on the building’s interior and exterior environment. “The developer wanted us to create public spaces with some excitement, to clean it up and utilize street art with great content at a large scale,” Geier said. “We wanted to make it a stop along the way for people who look for these artists.”  Geier is a fan of urban artists and street artists. He’s known for his urban design work in the Fulton Market area and in his words, his firm “designs urban environments all over the place.” He reached out to four noted mural artists; all were interested in the project.</span></p>
+<p><span>The mix of art is dramatic. The giant bird, perhaps a kingfisher’s cousin, was created by ROA, a street artist from Ghent, Belgium.  His detailed murals of birds and animals are found all over the world from Europe, the United States, and Australia, to Asia, New Zealand, and Africa. He often incorporates decay and death in his work, as with the fish skeleton and hook/line detail under the bird on North Mendell Street. This is not his only Chicago mural; among others is one located on West Prindiville Street in Logan Square depicting a pair of cavorting rats. ROA is known to be rather reclusive and doesn’t explain his art.  In a video about his work he says, “I don’t like to make a story too easy to understand.”</span></p>
+
+<p>ROA at work 2017</p>
+
+<p>ROA’s playful rats on a Logan Square wall</p>
+<p><span>Perhaps more familiar is the work of Brantley Hebru, known for his iconic Flyboy character. On his website, he credits the South Side of Chicago’s Afro Cobra movement of the 1960s and 70s as a major influence. Internationally acclaimed like ROA, he is known for his pop-art motifs.  Hebru is based in Los Angeles where his company Angry Hero develops partnerships with companies like Nike and Redbull and is expanding more broadly into content creation.</span></p>
+
+<p>Hebru’s Flyboy underway</p>
+<p>Hebru signs a Nike runner mural in 2013</p>
+<p><span>In addition to ROA and Hebru, Geier engaged muralist Sick Fisher, raised in Massachusetts and Florida, who moved to Chicago in 2009 and is now based in Los Angeles.  In neighborhoods throughout the region from River North to Skokie, Fisher has followed his passion to improve neglected spaces, adding his signature look to storefronts and walls. Fisher’s challenge here was to celebrate the tannery employees on the rear of the Horween building. His mural depicts the many steps in the tanning process that produce the finished basketball.</span></p>
+
+<p>Inner workings of Horween Leather revealed in Fisher’s mural</p>
+<p><span>Max Sansing completes the quartet of major artists represented. Raised in Avondale on Chicago’s South Side, the teenaged Sansing got started in art through the city’s Gallery 37 Center for the Arts program. Developing as a graffiti artist and then professionally trained at the American Academy of Art, he was attracted to the large scale that murals provided. His colorful work is found throughout Chicago and particularly in his South Side neighborhood. In addition to the North Mendell Street mural, he was also commissioned to do interior paintings for the 2017 building.</span></p>
+
+<p>Sansing’s vibrant portrait includes the often-present skeleton key, a reference to his father’s job on the CTA</p>
+<p><span>In addition to these established artists, Baker wanted more street artists represented. Working through a gallery on Milwaukee Avenue, he and his colleagues began networking with other local artists and have lined the building on two sides with panels of their colorful artwork.</span></p>
+
+<p><span>Because the murals are public rather than private, Warren was able to negotiate a $10,000 fee for Hebru, whose work can command $100,000 and more. Baker estimates the entire project, artists, materials, and lifts totaled about $40,000.  He’s optimistic that the area will gain foot traffic and recognition with the development of Lincoln Yards.  He says the city has not provided any help for the project and hopes it will see the value in what he’s invested.  Neighboring Ozinga did and joined the effort by adding lively color to its adjacent fencing.</span></p>
+
+<p>Ozinga facility fence</p>
+<p><span>For the visitor, the value is obvious. Not only can one enjoy the lively murals, but just around the corner is the Cortland Street Bridge, notable as one of the first bascule bridges in the city, dating to 1901.  And from the bridge, one can enjoy the river and even charter the 64 foot Blue Water Motor Yacht from North Shore Marine to entertain up to 39 friends. If you’re lucky, you might spot a Great Blue heron, a flock of cormorants, or more likely a family of ducks along the riverbank.</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Elizabeth Dunlop Richter
+</footer>
+</body>
+</html>
