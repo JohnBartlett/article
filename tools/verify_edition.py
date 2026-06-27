@@ -357,6 +357,33 @@ def verify_edition(edition_date):
     else:
         print("STRUCTURAL ISSUES: none\n")
 
+    # Homepage card image object-position check
+    homepage = repo_root / "index.html"
+    if homepage.exists():
+        hp = homepage.read_text()
+        # Find all card-image and hero-image entries for this edition
+        card_imgs = re.findall(
+            r'<img[^>]+class="(?:card-image|hero-image)"[^>]+src="(editions/' + edition_date + r'/[^"]+)"[^>]+style="([^"]*)"',
+            hp
+        )
+        card_imgs += re.findall(
+            r'<img[^>]+src="(editions/' + edition_date + r'/[^"]+)"[^>]+class="(?:card-image|hero-image)"[^>]+style="([^"]*)"',
+            hp
+        )
+        hp_issues = []
+        for src, style in card_imgs:
+            pos = re.search(r'object-position:\s*([^;"]+)', style)
+            pos_val = pos.group(1).strip() if pos else 'not set'
+            if pos_val in ('center center', 'not set'):
+                hp_issues.append(f"card image may cut off faces (object-position: {pos_val}): {src.split('/')[-1]}")
+        if hp_issues:
+            print("HOMEPAGE CARD IMAGE WARNINGS (verify faces not cut off):")
+            for w in hp_issues:
+                print(f"  ⚠ {w}")
+            print()
+        else:
+            print("HOMEPAGE CARD IMAGES: all portrait cards have explicit object-position\n")
+
     # about.html popup integrity
     broken_popups = check_about_popups(repo_root)
     if broken_popups:
