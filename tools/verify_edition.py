@@ -196,12 +196,23 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         if has_thumb is False:
             issues.append(f"{direction} nav link missing thumbnail image")
 
-    # ── Nav CSS pattern consistency ──
-    # Must use .back-link / .nav-item / .nav-thumb — not legacy .nav-card pattern
+    # ── Nav CSS + HTML pattern consistency ──
+    # Standard: .edition-nav > .nav-item > img.nav-thumb + a.back-link
     if '.nav-card' in content:
         issues.append("nav uses legacy .nav-card CSS — replace with .back-link/.nav-item/.nav-thumb pattern")
-    if '.back-link' not in content:
-        issues.append("nav missing .back-link CSS definition")
+    for required_css in ('.edition-nav', '.back-link', '.nav-item', '.nav-thumb'):
+        if required_css not in content:
+            issues.append(f"nav missing CSS definition: {required_css}")
+    # Check HTML structure: nav-item wrappers must be present
+    nav_m = re.search(r'<div class="edition-nav">(.*?)</div>\s*</div>', content, re.DOTALL)
+    if nav_m:
+        nav_html = nav_m.group(1)
+        if 'class="nav-item"' not in nav_html:
+            issues.append("edition-nav missing nav-item wrapper divs (thumb and link must be inside nav-item)")
+        if 'class="back-link"' not in nav_html:
+            issues.append("edition-nav missing back-link anchors")
+        if 'class="nav-thumb"' not in nav_html:
+            issues.append("edition-nav missing nav-thumb images")
 
     # ── Doubled hamburger menu ──
     # About/Subscribe/Advertise must appear ONLY in hamburger-menu, not in nav-inner
