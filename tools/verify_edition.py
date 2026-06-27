@@ -13,6 +13,12 @@ import re
 from pathlib import Path
 from urllib.parse import unquote
 
+try:
+    from PIL import Image as PILImage
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+
 IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG'}
 
 # ── HTML parsing helpers ──────────────────────────────────────────────────────
@@ -219,6 +225,23 @@ def check_article_structure(edition_path, article_slug, about_anchors):
             size = img.stat().st_size
             if size > LIMIT:
                 issues.append(f"oversized image ({size/1048576:.1f} MB, limit 25 MB): {img.name}")
+
+    # ── Nav thumbnail dimensions ──
+    if HAS_PIL:
+        NAV_THUMB_MAX = 300  # warn if either dimension exceeds this
+        thumb_srcs = re.findall(r'<img[^>]+class="nav-thumb"[^>]+src="([^"]+)"', content)
+        thumb_srcs += re.findall(r'<img[^>]+src="([^"]+)"[^>]+class="nav-thumb"', content)
+        for src in thumb_srcs:
+            img_path = (article_dir / unquote(src)).resolve()
+            if not img_path.exists():
+                continue
+            try:
+                with PILImage.open(img_path) as img:
+                    w, h = img.size
+                    if w > NAV_THUMB_MAX or h > NAV_THUMB_MAX:
+                        issues.append(f"nav-thumb too large ({w}×{h}px, should be ≤{NAV_THUMB_MAX}px): {img_path.name}")
+            except Exception:
+                pass
 
     return issues
 
