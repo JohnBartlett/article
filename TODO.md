@@ -17,7 +17,7 @@
 | Article | Content | Photos | Status |
 |---|---|---|---|
 | Philip Vidal | ✅ | ✅ | Built |
-| Daniel Murphy (DMSF) | ✅ | ✅ | Built; "click here" link needs URL from David Sweet |
+| Daniel Murphy (DMSF) | ✅ | ✅ | Built; "click here" temporarily changed to "contact the author" — needs real URL from David Sweet |
 | Sigalit (Edgar Calel) | ✅ | ✅ | Built |
 | CHM / Lincoln Park | ✅ | ✅ | Built |
 | Versailles (Kristin Smith) | ✅ | ✅ | Built (32 photos) |
@@ -29,7 +29,7 @@
 - [ ] Restore Soma Roy nav links once she confirms preview [Jun 28]
 - [ ] Linda Miller — confirm all photos are in place; extract missing ones if needed [Jun 28]
 - [ ] July astrochart — replace daily-star-june with July content; Victoria's full text needed (Word doc unreadable) [Jun 28]
-- [ ] Get DMSF "click here" URL from David Sweet [Jun 28]
+- [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
 - [ ] `about.html` "Our Writers This Week" — update for June 28 writers [Jun 28]
 - [ ] Run verify_edition.py and fix any issues before staging [Jun 28]
 - [ ] Deploy to Vercel + update editors pages [Jun 28]
@@ -40,7 +40,7 @@
 
 - [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
 - [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
-- [ ] Get DMSF "click here" URL from David Sweet [Jun 28]
+- [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
 - [ ] Reply to Marcy re: ad placement and Instagram question [General]
 
 ---
@@ -54,7 +54,6 @@
 
 ## TODO — SITE / ONGOING
 
-- [ ] Disable Vercel Deployment Protection — dev preview URLs not publicly accessible [General]
 - [ ] GitHub token expired — update token to re-enable git push to remote [General]
 - [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
 
