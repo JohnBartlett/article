@@ -235,6 +235,18 @@ def get_about_anchors(repo_root):
     return set(re.findall(r'\bid=["\']([^"\']+)["\']', content))
 
 
+def check_about_popups(repo_root):
+    """Check that every articles-trigger in about.html has a matching popup div."""
+    about = repo_root / "about.html"
+    if not about.exists():
+        return []
+    with open(about, encoding='utf-8') as f:
+        content = f.read()
+    triggers = re.findall(r'data-popup="([^"]+)"', content)
+    popups = set(re.findall(r'\bid="(articles-[^"]+)"', content))
+    return [t for t in triggers if t not in popups]
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def verify_edition(edition_date):
@@ -298,7 +310,17 @@ def verify_edition(edition_date):
     else:
         print("STRUCTURAL ISSUES: none\n")
 
-    return {"status_counts": status_counts, "issues": all_issues}
+    # about.html popup integrity
+    broken_popups = check_about_popups(repo_root)
+    if broken_popups:
+        print(f"ABOUT.HTML POPUP ISSUES:")
+        for t in broken_popups:
+            print(f"  ✗ articles-trigger '{t}' has no matching popup div")
+        print()
+    else:
+        print("ABOUT.HTML POPUPS: all triggers have matching popups\n")
+
+    return {"status_counts": status_counts, "issues": all_issues, "broken_popups": broken_popups}
 
 
 if __name__ == "__main__":
