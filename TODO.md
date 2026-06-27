@@ -1,59 +1,80 @@
-# TODO — Classic Chicago Magazine
+# Classic Chicago Magazine — TODO
 
-## June 21 Edition — In Progress
+## TODO — JUNE 28 EDITION
 
-1. [x] Lay out Jean Colonomos poems article — built June 16
-2. [ ] Add Jean Colonomos bio to `about.html` (awaiting Judy's reply; poet, playwright, former Martha Graham dancer)
-3. [x] Lay out Francesco Bianchini / Ciorba de Perisoare — text + 4 photos complete June 16
-4. [ ] Lay out Glessner House Gala — cover photo downloaded (`2 - Tom and Barbi Donnelley with Bill Tyre.jpeg`); article text pending from Annie
-5. [ ] Lay out Rush Hospital Luncheon — cover photo downloaded (`Ela Lewis, Gale Gottlieb, Mary Pearlman.jpeg`); article text pending from Emma
-6. [ ] Lay out Today in Chicago History — cover photo downloaded (`IMG_4034.JPG`); article text pending from Ana / Scott Holleran
-7. [ ] Lay out Bob Glaze column (pending from Emma)
-8. [ ] Lay out Marcy Carmack Fashion Trends article (Judy chasing her for photo + Blast sentence)
-9. [ ] Update DateBook for June 21 (new events from Annie — pending)
-10. [x] Add Philip Vidal to `about.html` — Events Editor card added to More Contributors using Judy's bio text
-11. [x] Add Jean Colonomos intro to `editorial.html` — posted June 21 (Judy-approved)
-12. [ ] Run `/edition-checks` before staging
-13. [ ] Stage and publish June 21 edition
+### Article order (per Judy)
+1. Philip Vidal
+2. Daniel Murphy
+3. Sigalit (Edgar Calel)
+4. CHM / Lincoln Park statue
+5. Versailles (Kristin Smith)
+6. Susan Aurinko
+7. Soma Roy
+8. Linda Miller
 
-## People / Editorial
+### Article status
 
-1. [x] Add Philip Vidal to `about.html` as contributor (About the Town column) — done
-2. [x] Send Philip Vidal intro/title email to Judy — sent + corrected June 18 (role: About the Town)
-3. [ ] Await Sig Zetouni reply re: articles for coming weeks (email sent June 16)
-4. [x] Compile Elizabeth Richter article list for Judy — sent June 18
+| Article | Content | Photos | Status |
+|---|---|---|---|
+| Philip Vidal | ✅ | ✅ | Built |
+| Daniel Murphy (DMSF) | ✅ | ✅ | Built; "click here" temporarily changed to "contact the author" — needs real URL from David Sweet |
+| Sigalit (Edgar Calel) | ✅ | ✅ | Built |
+| CHM / Lincoln Park | ✅ | ✅ | Built |
+| Versailles (Kristin Smith) | ✅ | ✅ | Built (32 photos) |
+| Susan Aurinko | ✅ | ✅ | Built |
+| Soma Roy | ✅ | ✅ | Built; nav temporarily unlinked for writer preview |
+| Linda Miller | ✅ | ⚠️ partial | Text built; photos referenced but not all extracted |
 
-## High Priority (Site)
+### Still to do [Jun 28]
+- [ ] Restore Soma Roy nav links once she confirms preview [Jun 28]
+- [ ] Linda Miller — confirm all photos are in place; extract missing ones if needed [Jun 28]
+- [ ] July astrochart — replace daily-star-june with July content; Victoria's full text needed (Word doc unreadable) [Jun 28]
+- [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
+- [ ] `about.html` "Our Writers This Week" — update for June 28 writers [Jun 28]
+- [ ] Run verify_edition.py and fix any issues before staging [Jun 28]
+- [ ] Deploy to Vercel + update editors pages [Jun 28]
 
-1. [ ] Disable Vercel Deployment Protection so dev preview URLs are publicly accessible (Vercel Dashboard → Settings → Deployment Protection → turn off)
-2. [x] Confirm Formsubmit activation for `editor@2ccmag.com` — activation link opened June 18
-3. [x] Re-enable Subscribe form on `subscribe.html` — done June 18
-4. [x] Re-enable Advertise form on `advertise.html` — done June 18
-5. [x] Swap Heritage Auctions ad to June image (`Classic Chicago June 2026.png`) — already done on homepage
-6. [ ] Susan Aurinko silk-roads article (`editions/2026-04-26/silk-roads/`): confirm correct brand spelling — article uses "LensFlair Editions" (capital F); domain is `lensflaireditions.com` (lowercase). Verify with Susan or Judy before changing.
+---
 
-## Content / Editorial (Recurring)
+## TODO — PENDING REPLIES / ACTIONS
 
-These are handled by skills each edition — tracked here as a reminder:
+- [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
+- [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
+- [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
+- [ ] Reply to Marcy re: ad placement and Instagram question [General]
 
-1. [ ] Update `about.html` "Our Writers This Week" section with each new edition (handled by `/edition-checks`)
-2. [ ] Update homepage `index.html` hero + card grid for each new edition (handled by `/new-edition`)
-3. [ ] Update keyboard navigation order in all articles to match homepage order (handled by `/layout`)
+---
 
-## Completed
+## TODO — EDITORS TOOLS
 
-1. [x] Set up Gmail API for email/attachment extraction (`tools/gmail_api.py`, `~/.gmail-mcp/credentials.json`)
-2. [x] Set up GA4 reporting (`tools/ga4_report.py`, `tools/credentials.json`, property ID `523654462`)
-3. [x] Scheduled deploy to production: Saturday Feb 14 at 11:30pm CST (GitHub Actions workflow)
-4. [x] Remove experimental homepage variants (`index-b.html`, `index-b1.html`, `index-c.html`)
-5. [x] Remove edition test page (`editions/2026-02-15/index.html`)
-6. [x] Fix all broken links across Feb 08 and Feb 15 editions (30+ fixes)
-7. [x] Clean orphaned files (~6.5MB, 20 files removed)
-8. [x] Create `/ads/` folder and consolidate ad assets
-9. [x] Add Heritage Auctions ad to homepage and edition page
-10. [x] Reorder keyboard navigation to match homepage article order
-11. [x] Add PgUp/PgDn to keyboard shortcuts help popup
-12. [x] Fix "Back to Sunday Edition" links across all articles
-13. [x] Fix Silk Roads image splicing (zebra-gaze.jpg / poesie-affiches.jpg)
-14. [x] Disable forms with "coming soon" placeholder (no emails exposed)
-15. [x] Remove email addresses from subscribe and advertise pages
+- [ ] Re-apply tools/ga4_report.py changes to dev2 (engagement time, top 25, avgEngagementFormatted; lost in stash conflict) [General]
+- [ ] Add June 14 votes & comments to reader-comments.html on editors branch — 14 Yes, 0 No; 2 Reunion comments [General]
+
+---
+
+## TODO — SITE / ONGOING
+
+- [ ] GitHub token expired — update token to re-enable git push to remote [General]
+- [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
+
+---
+
+## Done — June 28 Edition
+- [x] Philip Vidal article built with 7 photos
+- [x] Daniel Murphy (DMSF) article built
+- [x] Sigalit (Edgar Calel) article built with 8 photos
+- [x] CHM / Lincoln Park article built
+- [x] Versailles article built with 32 photos (Kristin Smith)
+- [x] Susan Aurinko "Dispatch from Paris" built with 7 photos
+- [x] Soma Roy article built; nav unlinked for writer preview
+- [x] Linda Miller article built (partial photos)
+- [x] Nav chain wired across all 8 articles
+- [x] Homepage updated with all June 28 cards
+- [x] Reader Comments and Future Articles removed from internal nav (all articles + template)
+- [x] Stray rush-hospital and trains-chicago folders deleted
+- [x] Soma Roy nav unlinked and deployed for writer preview
+
+## Done — General
+- [x] Elizabeth Dunlop Richter archive — 103 articles built, deployed, emailed Judy
+- [x] Writer preview policy: never share dev2 homepage; send direct unlinked article URL only
+- [x] No-emoji rule added to CLAUDE.md and memory

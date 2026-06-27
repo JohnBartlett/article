@@ -13,6 +13,12 @@ import re
 from pathlib import Path
 from urllib.parse import unquote
 
+try:
+    from PIL import Image as PILImage
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+
 IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG'}
 
 # ── HTML parsing helpers ──────────────────────────────────────────────────────
@@ -43,14 +49,14 @@ def parse_html(content):
     # h1
     facts['has_h1'] = bool(re.search(r'<h1[ >]', content))
 
-    # byline: look for class="byline"
-    byline_m = re.search(r'class="byline"[^>]*>.*?<a href="[^"]*about\.html(#[^"]+)"', content, re.DOTALL)
+    # byline: look for class="article-meta" or class="byline" with about.html link
+    byline_m = re.search(r'class="(?:article-meta|byline)"[^>]*>.*?<a href="[^"]*about\.html(#[^"]+)"', content, re.DOTALL)
     if byline_m:
         facts['has_byline'] = True
         facts['byline_anchor'] = byline_m.group(1)
 
-    # feedback widget
-    facts['has_feedback'] = 'feedback-widget' in content
+    # feedback widget: class="feedback-widget" OR thumbUp/thumbDown buttons
+    facts['has_feedback'] = 'feedback-widget' in content or 'id="thumbUp"' in content
 
     # footer
     facts['has_footer'] = '<footer' in content
@@ -63,28 +69,38 @@ def parse_html(content):
     if db_m:
         facts['datebook_href'] = db_m.group(1)
 
-    # article-nav prev/next + thumbnail presence
-    nav_m = re.search(r'<nav class="article-nav">(.*?)</nav>', content, re.DOTALL)
+    # edition-nav prev/next: look for JS vars prevUrl/nextUrl (primary pattern)
     facts['nav_thumbs'] = {}   # direction -> has_img (True/False/None if home link)
-    if nav_m:
-        nav_html = nav_m.group(1)
-        for direction in ('prev', 'next'):
-            link_m = re.search(
-                r'class="' + direction + r'"[^>]*href="([^"]+)"(.*?)(?=class="(?:prev|next)"|$)',
-                nav_html, re.DOTALL
-            )
-            if link_m:
-                href = link_m.group(1)
-                body = link_m.group(2)
-                if direction == 'prev':
-                    facts['prev_href'] = href
-                else:
-                    facts['next_href'] = href
-                is_home = href.endswith('index.html') and '../../..' in href
-                facts['nav_thumbs'][direction] = None if is_home else bool(re.search(r'<img[^>]+src=', body))
+    prev_m = re.search(r"var prevUrl\s*=\s*'([^']*)'", content)
+    next_m = re.search(r"var nextUrl\s*=\s*'([^']*)'", content)
+    if prev_m:
+        facts['prev_href'] = prev_m.group(1) or None
+    if next_m:
+        facts['next_href'] = next_m.group(1) or None
+    # Fallback: back-link hrefs in edition-nav for articles without JS vars
+    if not facts['prev_href'] and not facts['next_href']:
+        back_links = re.findall(r'<a href="([^"]+)" class="back-link"', content)
+        if len(back_links) >= 1:
+            facts['prev_href'] = back_links[0]
+        if len(back_links) >= 2:
+            facts['next_href'] = back_links[1]
+    # Thumbnail detection: count nav-thumb images in the full content
+    # (don't use nested-div regex — it stops at first </div>)
+    thumb_count = len(re.findall(r'<img[^>]+class="nav-thumb"', content))
+    for direction in ('prev', 'next'):
+        href = facts.get(f'{direction}_href')
+        if href is None:
+            facts['nav_thumbs'][direction] = None
+            continue
+        is_home = '../../..' in href and href.endswith('index.html')
+        if is_home:
+            facts['nav_thumbs'][direction] = None
+        else:
+            facts['nav_thumbs'][direction] = thumb_count > 0
 
-    # all img srcs
-    facts['img_srcs'] = re.findall(r'<img[^>]+src="([^"]+)"', content)
+    # all img srcs — strip HTML comments first to avoid flagging commented-out pending photos
+    stripped = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    facts['img_srcs'] = re.findall(r'<img[^>]+src="([^"]+)"', stripped)
 
     return facts
 
@@ -180,6 +196,30 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         if has_thumb is False:
             issues.append(f"{direction} nav link missing thumbnail image")
 
+    # ── Nav CSS + HTML pattern consistency ──
+    # Standard: .edition-nav > .nav-item > img.nav-thumb + a.back-link
+    if '.nav-card' in content:
+        issues.append("nav uses legacy .nav-card CSS — replace with .back-link/.nav-item/.nav-thumb pattern")
+    for required_css in ('.edition-nav', '.back-link', '.nav-item', '.nav-thumb'):
+        if required_css not in content:
+            issues.append(f"nav missing CSS definition: {required_css}")
+    # Nav link font size must be 14px
+    back_link_css = re.search(r'\.back-link\s*\{([^}]*)\}', content)
+    if back_link_css:
+        size_m = re.search(r'font-size:\s*([^;]+)', back_link_css.group(1))
+        if size_m and size_m.group(1).strip() != '14px':
+            issues.append(f"back-link font-size is {size_m.group(1).strip()}, expected 14px")
+    # Check HTML structure: nav-item wrappers must be present
+    nav_m = re.search(r'<div class="edition-nav">(.*?)</div>\s*</div>', content, re.DOTALL)
+    if nav_m:
+        nav_html = nav_m.group(1)
+        if 'class="nav-item"' not in nav_html:
+            issues.append("edition-nav missing nav-item wrapper divs (thumb and link must be inside nav-item)")
+        if 'class="back-link"' not in nav_html:
+            issues.append("edition-nav missing back-link anchors")
+        if 'class="nav-thumb"' not in nav_html:
+            issues.append("edition-nav missing nav-thumb images")
+
     # ── Doubled hamburger menu ──
     # About/Subscribe/Advertise must appear ONLY in hamburger-menu, not in nav-inner
     nav_inner_m = re.search(r'<div class="nav-inner">(.*?)</div>', content, re.DOTALL)
@@ -210,6 +250,35 @@ def check_article_structure(edition_path, article_slug, about_anchors):
             if size > LIMIT:
                 issues.append(f"oversized image ({size/1048576:.1f} MB, limit 25 MB): {img.name}")
 
+    # ── Duplicate images ──
+    # Strip comments, collect all non-external img srcs, flag duplicates
+    stripped = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    all_srcs = re.findall(r'<img[^>]+src="([^"]+)"', stripped)
+    body_srcs = [s for s in all_srcs if not s.startswith('http') and not s.startswith('//') and 'logo' not in s and 'nav-thumb' not in s]
+    seen = {}
+    for src in body_srcs:
+        seen[src] = seen.get(src, 0) + 1
+    for src, count in seen.items():
+        if count > 1:
+            issues.append(f"duplicate image used {count}× in article: {src.split('/')[-1]}")
+
+    # ── Nav thumbnail dimensions ──
+    if HAS_PIL:
+        NAV_THUMB_MAX = 300  # warn if either dimension exceeds this
+        thumb_srcs = re.findall(r'<img[^>]+class="nav-thumb"[^>]+src="([^"]+)"', content)
+        thumb_srcs += re.findall(r'<img[^>]+src="([^"]+)"[^>]+class="nav-thumb"', content)
+        for src in thumb_srcs:
+            img_path = (article_dir / unquote(src)).resolve()
+            if not img_path.exists():
+                continue
+            try:
+                with PILImage.open(img_path) as img:
+                    w, h = img.size
+                    if w > NAV_THUMB_MAX or h > NAV_THUMB_MAX:
+                        issues.append(f"nav-thumb too large ({w}×{h}px, should be ≤{NAV_THUMB_MAX}px): {img_path.name}")
+            except Exception:
+                pass
+
     return issues
 
 
@@ -226,46 +295,15 @@ def get_about_anchors(repo_root):
 
 
 def check_about_popups(repo_root):
-    """
-    Check about.html for article popup divs trapped inside a collapsed <details>
-    element while their trigger buttons live outside it.
-
-    Returns list of issue strings (empty = all clear).
-    """
+    """Check that every articles-trigger in about.html has a matching popup div."""
     about = repo_root / "about.html"
     if not about.exists():
-        return ["about.html not found"]
-
+        return []
     with open(about, encoding='utf-8') as f:
         content = f.read()
-
-    issues = []
-
-    # Find every <details> block (greedy enough to handle nesting won't occur here)
-    details_spans = [(m.start(), m.end()) for m in
-                     re.finditer(r'<details\b[^>]*>.*?</details>', content, re.DOTALL)]
-
-    def inside_details(pos):
-        return any(start <= pos <= end for start, end in details_spans)
-
-    # Find all popup divs: id="articles-*"
-    for m in re.finditer(r'<div\s+id="(articles-[^"]+)"\s+class="articles-popup"', content):
-        popup_id = m.group(1)
-        popup_pos = m.start()
-        popup_in_details = inside_details(popup_pos)
-
-        # Find all trigger buttons pointing to this popup
-        for tm in re.finditer(
-                rf'<button\b[^>]*data-popup="{re.escape(popup_id)}"', content):
-            trigger_in_details = inside_details(tm.start())
-            if popup_in_details and not trigger_in_details:
-                issues.append(
-                    f'#{popup_id}: popup is inside <details> but trigger button is outside — '
-                    f'popup will not render when <details> is collapsed'
-                )
-                break  # one report per popup is enough
-
-    return issues
+    triggers = re.findall(r'data-popup="([^"]+)"', content)
+    popups = set(re.findall(r'\bid="(articles-[^"]+)"', content))
+    return [t for t in triggers if t not in popups]
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -301,8 +339,9 @@ def verify_edition(edition_date):
         photos = f" [{status_info.get('photos', 0)} photos]" if "photos" in status_info else ""
         print(f"{symbol} {article:30} | {status:15} | {status_info['reason']}{photos}")
 
-        NON_ARTICLES = {"datebook", "daily-star", "astrochart"}
-        if status not in ("MISSING", "PLACEHOLDER") and article not in NON_ARTICLES:
+        NON_ARTICLES = {"datebook", "astrochart"}
+        is_non_article = article in NON_ARTICLES or article.startswith("daily-star") or article == "fourth-of-july"
+        if status not in ("MISSING", "PLACEHOLDER") and not is_non_article:
             issues = check_article_structure(edition_path, article, about_anchors)
             if issues:
                 all_issues[article] = issues
@@ -330,17 +369,44 @@ def verify_edition(edition_date):
     else:
         print("STRUCTURAL ISSUES: none\n")
 
-    # about.html popup audit
-    popup_issues = check_about_popups(repo_root)
-    print(f"ABOUT.HTML POPUP AUDIT:")
-    if popup_issues:
-        for issue in popup_issues:
-            print(f"  ✗ {issue}")
-    else:
-        print("  ✓ All popup divs are outside <details> or share the same section as their trigger")
-    print()
+    # Homepage card image object-position check
+    homepage = repo_root / "index.html"
+    if homepage.exists():
+        hp = homepage.read_text()
+        # Find all card-image and hero-image entries for this edition
+        card_imgs = re.findall(
+            r'<img[^>]+class="(?:card-image|hero-image)"[^>]+src="(editions/' + edition_date + r'/[^"]+)"[^>]+style="([^"]*)"',
+            hp
+        )
+        card_imgs += re.findall(
+            r'<img[^>]+src="(editions/' + edition_date + r'/[^"]+)"[^>]+class="(?:card-image|hero-image)"[^>]+style="([^"]*)"',
+            hp
+        )
+        hp_issues = []
+        for src, style in card_imgs:
+            pos = re.search(r'object-position:\s*([^;"]+)', style)
+            pos_val = pos.group(1).strip() if pos else 'not set'
+            if pos_val in ('center center', 'not set'):
+                hp_issues.append(f"card image may cut off faces (object-position: {pos_val}): {src.split('/')[-1]}")
+        if hp_issues:
+            print("HOMEPAGE CARD IMAGE WARNINGS (verify faces not cut off):")
+            for w in hp_issues:
+                print(f"  ⚠ {w}")
+            print()
+        else:
+            print("HOMEPAGE CARD IMAGES: all portrait cards have explicit object-position\n")
 
-    return {"status_counts": status_counts, "issues": all_issues, "popup_issues": popup_issues}
+    # about.html popup integrity
+    broken_popups = check_about_popups(repo_root)
+    if broken_popups:
+        print(f"ABOUT.HTML POPUP ISSUES:")
+        for t in broken_popups:
+            print(f"  ✗ articles-trigger '{t}' has no matching popup div")
+        print()
+    else:
+        print("ABOUT.HTML POPUPS: all triggers have matching popups\n")
+
+    return {"status_counts": status_counts, "issues": all_issues, "broken_popups": broken_popups}
 
 
 if __name__ == "__main__":

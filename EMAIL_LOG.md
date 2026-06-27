@@ -77,6 +77,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 9 | Sig | Re: Image and credit for blast | `19eae0673b184087` | ✅ | Sig confirmed article + photos + credits coming Thursday Jun 12 |
 | Jun 9 | Judy | Re: Image and credit for blast | `19eae8c73f66c54d` | ✅ | Judy praising Sig's article; no action |
 | Jun 9 | Sig | Re: Image and credit for blast (2) | `19eaed2023401d9b` | ✅ | Sig thank-you reply; no action |
+| Jun 22 | Judy | Elizabeth Richter articles — request to compile back-issue list | `19eef867e13ccc5e` | 🔁 | John replied offering to look; Judy said search by name, more than 5 articles exist; may ask Elizabeth to work with Annie instead — no dev2 changes needed yet |
 | Jun 10 | Ana | Heritage Auctions full article + 6 photos | `19eb366d27b3da5f` | ✅ | Article built; photos extracted; homepage card updated |
 | Jun 10 | Ana | Do Division / DeeDee El Bego article + 7 photos | `19eb3367487c3d85` | ✅ | Article built; photos extracted; homepage card updated |
 | Jun 10 | Judy | DeeDee El Bego cover photo (FullSizeRender.jpeg) | `19eb316f1e9488e5` | ✅ | Already extracted; COVER Deedee Story.jpg from Ana supersedes |
@@ -110,15 +111,43 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 15 | Marcy | The Art of Style + 8 photos | (session) | ✅ | Article built; Mick Jagger paragraph added per Marcy |
 | Jun 15 | Judy | Glessner House Gala + 16 photos | (session) | ✅ | Article built; 6th in nav chain |
 | Jun 15 | Jean | Poems for Summer + 4 photos | (session) | ✅ | Article built; last in nav chain |
-| Jun 20 | Annie | DateBook coming in the morning | (session) | ⏳ | Promised June 20 — not yet received; blocking staging |
+| Jun 20 | Annie | DateBook coming in the morning | (session) | ✅ | Resolved — DateBook update arrived Jun 20 (see row below) |
 | Jun 20 | Annie | DateBook June 21 update (same photos) | `19ee5e2d00264d5c` | ✅ | 12 new events added; kicker updated to June 21, 2026 |
 | Jun 20 | Annie | Glessner House article + 15 photos (From One Landmark to Another) | `19ee3ed4945163ef` | ✅ | Article already built from this source; all 15 photos present; title correct |
 | Jun 20 | Judy | For the More Contributors Section — reorder + Jen Huang bio | `19ee48fde89e29dd` | ✅ | Order already correct; Jen Huang bio already in about.html verbatim |
 | Jun 20 | Judy | First Editor's Page draft (superseded) | `19ee4c003f1df03c` | ⬛ | Superseded by "USE THIS ONE" version (`19ee4d2b064b21b0`) |
+| Jun 21 | Judy | With thanks for today's great issue + June 28 assignments | `19ee9775346c439a` | ✅ | Edition confirmed live; June 28 assignments noted (see June 28 section) |
+| Jun 21 | Judy | Changing last paragraph of Glessner House story (Bill Tyre correction) | `19eeb927213db49b` | ✅ | Last paragraph before "For more information" replaced with two new paragraphs; applied in commit `aeae1fe` |
 
 ## June 28 Edition
 
 | Date | From | Subject / Summary | Msg ID | Status | Notes |
 |------|------|-------------------|--------|--------|-------|
-| Jun 17 | Judy | David Sweet — Daniel Murphy Scholarship Fund + 3 photos | `19ed7c6e67b00757` | ⏳ | docx + 2 photos; Truth Hughes photo in follow-up `19ed7cd60c666dd8`; hold for June 28 |
+| Jun 17 | Judy | David Sweet — Daniel Murphy Scholarship Fund + 3 photos | `19ed7c6e67b00757` | ✅ | Article built at editions/2026-06-28/daniel-murphy/ |
+| Jun 17 | Judy | Truth Hughes photo follow-up | `19ed7cd60c666dd8` | ✅ | DMSF Truth Hughes.jpeg already on disk; caption: "I learned to open myself up to others and to build connections," said Truth Hughes about the Daniel Murphy Scholarship Fund's Summer Bridge program. |
 | Jun 20 | Judy | USE THIS ONE — Editor's Page for June 28 | `19ee4d2b064b21b0` | ⏳ | "What Are We Doing for the Fourth of July.docx" attached; not yet extracted or built |
+| Jun 21 | Judy | Cover photo for Linda Miller/Second Church article | `19ee981311481f80` | ⏳ | "Jeweled Window from the Scaffolding .jpeg" attached; Annie writing the article; folder editions/2026-06-28/linda-miller/ not yet created; extract photo when credentials available |
+| Jun 21 | Judy | Caption for Jeweled Window photo | `19ee983aec085dfe` | ✅ | Caption: "1893 Tiffany Jeweled window, (gift of Marshall Field I) during reinstallation at the Second Presbyterian church." |
+| Jun 21 | Judy | June 28 article assignments | `19ee9775346c439a` | ✅ | 1. Philip Vidal About the Town (Ana); 2. NMH Summer Soiree (Emma); 3. David Sweet / Murphy Foundation (John has docx); 4. Linda Miller by Judy (Annie building); 5. Susan Aurinko (Emma); 6. Sig (direct to John); 7. Fourth of July at History Museum (Annie) |
+| Jun 22 | Judy | NMH Summer Soiree delayed to July 5; Versailles replaces it | `19ef11d790f46629` | ✅ | NMH coordinator (Whitley) needs more time; Kristin Smith's Versailles article fills the slot; Summer Soiree moves to July 5 edition |
+| Jun 22 | Judy | Re: With thanks — Soma Roy article added to June 28 | `19eef8d0db43d90d` | ✅ | New article by Soma Roy ("RSVP to Enchantment"), layout handled by Ana; still waiting on NMH Summer Soiree photos |
+| Jun 23 | Judy | Revised June 28 article order (8 articles) | `19ef3adc98ada0ae` | ✅ | New order: 1-Philip Vidal (Ana), 2-Sig, 3-David Sweet, 4-Chicago History Museum/statue unveiling (Judy), 5-Susan Aurinko (Emma), 6-Friends of Versailles (Emma), 7-Soma Roy/Enchantment (Ana), 8-Linda Miller/Second Church (Annie) |
+| Jun 23 | Judy | Cover photo for Fourth of July / Lincoln statue story (June 28) | `19ef42d40dd75dd8` | ✅ | Photo in editions/2026-06-28/chm-lincoln/ |
+| Jun 23 | Sig | Image and credit for Blast (Edgar Calel) | `19ef704f21df4af8` | ✅ | IMG_5660.jpeg in sigalit/; credit: "Installation view of 'Edgar Calel: Corn Mountain of Life (Ixim Juyu K'aslem)' at the Art Institute of Chicago, 2026." |
+| Jun 23 | Sig | Text for Blast (Edgar Calel) | `19ef707782f928bc` | ✅ | Text built into sigalit/index.html |
+| Jun 24 | Judy | Cover photo for Soma Roy article (CC Photo 8.jpeg) | `19ef9e5b659d2297` | ✅ | Noted; Ana's COVER - Soma Enchantment.jpeg used as primary cover |
+| Jun 24 | Annie | Linda Miller: A Landmark's Archangel article | `19ef86014efbbe0e` | ✅ | Article built in editions/2026-06-28/linda-miller/ |
+| Jun 24 | Judy | Bios for Soma Roy and Kristin N. Smith | `19eff01558187a60` | ✅ | Both bios added to about.html More Contributors section |
+| Jun 24 | Judy | Cover shot for Versailles Party (4. Fireworks at Versailles.jpeg) | `19efeaf0950a5b57` | ✅ | Photo extracted to editions/2026-06-28/versailles/; article text still pending (Emma) |
+| Jun 24 | Judy | Re: Elizabeth Richter archive | `19efdb471750ccd1` | ✅ | Elizabeth thanked John; Judy pleased; no further action |
+| Jun 24 | Sig | Thursday delay | `19efbb5ee6d23eb6` | ✅ | Sig pushing article to Thursday; acknowledged |
+| Jun 25 | Sig | Late tonight — article delay | `19f0004fe8050374` | ⏳ | Sig promising article, photos, and credits later Thursday night; NOT yet received as of Jun 26 |
+| Jun 25 | Judy | Re: Late tonight | `19f0046f841a5a47` | ⬛ | Judy/Sig exchange; no action |
+| Jun 25 | Judy | Re: Change in security | `19f004911868d705` | ⬛ | Judy thanked John for deletion; no action |
+| Jun 25 | Judy | History Museum/Lincoln stat coming morning | `19f007100145788b` | ✅ | CHM article arrived Jun 26 morning; already built in chm-lincoln/ |
+| Jun 26 | Judy | Fwd: Elizabeth Richter articles thank-you | `19f0332ac06ae704` | ⬛ | Elizabeth thanking John for archive; Judy suggested charging her; no dev changes |
+| Jun 26 | Judy | Working tomorrow — article order confirmation | `19f03618a542c023` | ✅ | Order confirmed: 1-Philip Vidal, 2-David Sweet, 3-Sig, 4-CHM/Lincoln, 5-Versailles, 6-Susan Aurinko, 7-Soma Roy, 8-Linda Miller; Soma Roy wants a final look before publish |
+| Jun 26 | Judy | CHM article — Come to Lincoln Park | `19f03945ba7d8a9c` | ✅ | Full text + 5 attachments; article already built in chm-lincoln/ |
+| Jun 26 | Ana | Soma Roy / R.S.V.P. to Enchantment (9 photos) | `19f0440567f125c1` | ✅ | Photos extracted; article built at editions/2026-06-28/soma-roy/ |
+| Jun 26 | Judy | Re: R.S.V.P. to Enchantment | `19f0490d053a2835` | ⏳ | Judy wants Soma Roy to have a final look before publishing — notify Judy when preview is up |
+| Jun 26 | Ana | Philip Vidal: About the Town in July (8 photos) | `19f0497e6044f281` | ✅ | Photos extracted; article built at editions/2026-06-28/philip-vidal/ |
