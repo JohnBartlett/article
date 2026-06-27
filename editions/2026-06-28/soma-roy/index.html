@@ -216,14 +216,8 @@
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation -->
+      <!-- PREVIEW-UNLINKED: nav temporarily removed for writer preview; restore before staging -->
       <div class="edition-nav">
-        <div class="nav-item">
-          <a href="../susan-aurinko/" class="back-link">&larr; Previous: My Silk Roads</a>
-        </div>
-        <div class="nav-item" style="text-align:right; justify-content: flex-end;">
-          <a href="../linda-miller/" class="back-link">Next: Linda Miller &rarr;</a>
-          <img class="nav-thumb" src="../linda-miller/6-AwardLindaMiller.jpg" alt="">
-        </div>
       </div>
 
     </div><!-- end article-wrapper -->
@@ -242,8 +236,8 @@
   <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
 
   <script>
-    var prevUrl = '../susan-aurinko/';
-    var nextUrl = '../linda-miller/';
+    var prevUrl = '';
+    var nextUrl = ''; /* PREVIEW-UNLINKED */
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
