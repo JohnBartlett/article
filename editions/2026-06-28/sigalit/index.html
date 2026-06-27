@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  -->
+  <meta charset="UTF-8">
+  <title>Corn Highlights | Classic Chicago &ndash; Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; align-items: center; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-meta a { color: #888; text-decoration: none; border-bottom: 1px dashed #aaa; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .about-author { text-align: center; margin: 40px 0 30px; font-family: 'Lato', sans-serif; font-size: 14px; }
+    .about-author a { color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .feedback-widget { background: #f9f5f0; border: 1px solid #e0d8ce; padding: 24px; margin: 40px 0; text-align: center; font-family: 'Lato', sans-serif; }
+    .feedback-widget p { margin: 0 0 16px; font-size: 15px; color: #555; }
+    .vote-buttons { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+    .vote-btn { padding: 8px 24px; border: 1px solid #b51c20; background: #fff; color: #b51c20; font-family: 'Lato', sans-serif; font-size: 14px; cursor: pointer; }
+    .vote-btn:hover { background: #b51c20; color: #fff; }
+    .comment-form textarea { width: 100%; padding: 10px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ccc; margin-bottom: 10px; }
+    .comment-form button { padding: 8px 24px; background: #b51c20; color: #fff; border: none; font-family: 'Lato', sans-serif; font-size: 14px; cursor: pointer; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    .nav-item { display: flex; align-items: center; gap: 10px; max-width: 260px; }
+    .nav-thumb { width: 70px; height: 70px; object-fit: cover; display: block; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; }
+    .internal-nav { background: #f9f5f0; border-bottom: 1px solid #e0d8ce; padding: 6px 0; text-align: center; font-family: 'Lato', sans-serif; font-size: 12px; }
+    .internal-nav a { color: #7a5c3a; text-decoration: none; margin: 0 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .internal-nav a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { h1.article-title { font-size: 30px; } .article-body p { font-size: 16px; } }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-june/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only -->
+  <div class="internal-nav">
+  </div>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Art</div>
+      <h1 class="article-title">Corn Highlights</h1>
+      <div class="article-meta">By <a href="../../../about.html#sigalit-zetouni">Sigalit Zetouni</a> &nbsp;&bull;&nbsp; June 28, 2026</div>
+
+      <figure>
+        <img src="IMG_5514.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+        <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+      </figure>
+
+      <div class="article-body">
+
+        <p>Rooted in our lives, corn was named the official Illinois state grain on January 1, 2018. Following Iowa, Illinois is the second largest state in the USA in corn production. Throughout vast fields, Illinois grows eleven million acres of this mighty grain, generating close to ten billion dollars annually. In Illinois, where agriculture drives the economy, corn is sweet and dominant. Moreover, exports are highly valued, and a major part of the corn produced in Illinois is traded nationally and worldwide, shipping to countries that include Mexico, Colombia, Japan, Spain, and Guatemala. The exported corn is mainly used for livestock feeding and food processing, making Illinois a powerful feeder globally.</p>
+
+        <figure>
+          <img src="IMG_5517.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+          <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+        </figure>
+
+        <p>The corn grain is ancient according to scientists, and its domestication began more than 9,000 years ago by the indigenous population of southern Mexico. <a href="https://www.pioneer.com/us/agronomy/domestication-of-corn.html" target="_blank">(source)</a> Today, the usage of corn is multifaceted and international, producing food (cereals, tortilla, polenta, grits), cooking oils, gasoline, whiskey, plastic, gels, various starch thickeners, and more. Due to present environmental challenges that require creative solutions, it is inspiring to learn about the progress made in corn production, ranging from improved plastic options to renewable fuel (a specific alcohol produced by fermenting sugars from corn), creating hopes for an improved future for earth and humanity.</p>
+
+        <figure>
+          <img src="IMG_5656.JPG" alt="Detail of an ear of corn">
+          <figcaption>Detail of an ear of corn</figcaption>
+        </figure>
+
+        <p>Just as corn is paramount to Illinois, the historic grain is embedded in the lives of the Kaqchikel people, who are one of more than thirty indigenous Maya groups. In modern times, Maya peoples have turned from a monolith model to unique groups that include the Kaqchikel people. In the main, the Kaqchikel live in the midwestern highlands of Guatemala and southern Mexico.</p>
+
+        <figure>
+          <img src="IMG_5518.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+          <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+        </figure>
+
+        <p>Recently, Guatemalan Artist Edgar Calel (b. 1987) has created a corn-centered installation in Illinois, specifically at the Modern Wing of the Art Institute of Chicago, in the Bluhm Family Terrace. The outdoor public space presents stunning views of Millennium Park and the surrounding architecture. Calel&rsquo;s installation is entitled &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem).&rdquo; Calel, who is Maya Kaqchikel and whose first language is Kaqchikel, incorporates original words and symbols throughout his work. The installation is composed of several objects, and at the core, viewers encounter a hut made of recycled materials. Inside the hut there is a sculpture of a turtle with corn breaking through its shell. The hut appears similar to the ones near Calel&rsquo;s home in Chi-Xot, built by families for winter storage of tools, harvest, and firewood. The turtle with its rounded shell represents the earth. The corn element that breaks through the turtle portrays the source of humanity and the central force of Mayan life. Outside the hut there is a mountain of ceramic corn that symbolizes abundance and security. Through art, Calel expresses his roots, culture, and community. Calel&rsquo;s aesthetic forms portray the history and spiritual journey of his people.</p>
+
+        <figure>
+          <img src="IMG_5525.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+          <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_5520.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+          <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_5535.jpeg" alt="Installation view of Edgar Calel: Corn Mountain of Life at the Art Institute of Chicago">
+          <figcaption>Installation view of &ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; at the Art Institute of Chicago, 2026. Photo by S. Zetouni</figcaption>
+        </figure>
+
+        <figure>
+          <img src="IMG_5743.jpg" alt="Artist Edgar Calel">
+          <figcaption>Artist Edgar Calel. Photo: Artist&rsquo;s Personal Collection</figcaption>
+        </figure>
+
+        <p>&ldquo;Edgar Calel: Corn Mountain of Life (Ixim Juyu K&rsquo;aslem)&rdquo; is curated by Giampaolo Bianconi, Dittmer Associate Curator, Modern and Contemporary Art. Calel&rsquo;s work of everyday rural architecture from the midwestern highlands of Guatemala is exhibited at the Art Institute of Chicago through September 13, 2026.</p>
+
+      </div>
+
+      <div class="about-author">
+        <a href="../../../about.html#sigalit-zetouni">About the Author: Sigalit Zetouni &rarr;</a>
+      </div>
+
+      <div class="feedback-widget">
+        <p>Did you enjoy this article?</p>
+        <div class="vote-buttons">
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" style="display:inline">
+            <input type="hidden" name="type" value="vote">
+            <input type="hidden" name="article" value="sigalit-jun28">
+            <input type="hidden" name="vote" value="Yes">
+            <button type="submit" class="vote-btn">&#128077; Yes</button>
+          </form>
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" style="display:inline">
+            <input type="hidden" name="type" value="vote">
+            <input type="hidden" name="article" value="sigalit-jun28">
+            <input type="hidden" name="vote" value="No">
+            <button type="submit" class="vote-btn">&#128078; No</button>
+          </form>
+        </div>
+        <div class="comment-form">
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form">
+            <input type="hidden" name="type" value="comment">
+            <input type="hidden" name="article" value="sigalit-jun28">
+            <textarea name="comment" rows="3" placeholder="Leave a comment..."></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="edition-nav">
+        <div class="nav-item">
+          <img class="nav-thumb" src="../daniel-murphy/DMSF Golfer with Caddie-navthumb.jpeg" alt="">
+          <a href="../daniel-murphy/" class="back-link">&larr; Previous: Unsung Gems</a>
+        </div>
+        <div class="nav-item" style="text-align:right; justify-content: flex-end;">
+          <a href="../chm-lincoln/" class="back-link">Next: Come to Lincoln Park &rarr;</a>
+          <img class="nav-thumb" src="../chm-lincoln/processed-A18A7F48-33A8-4546-A172-64E38C52F932 2-navthumb.jpeg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+  <script>
+    var prevUrl = '../daniel-murphy/';
+    var nextUrl = '../chm-lincoln/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+</body>
+</html>

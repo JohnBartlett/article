@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5J2HWKC0B1');</script>
+  -->
+  <meta charset="UTF-8">
+  <title>Dispatch from Paris | Classic Chicago &ndash; Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; align-items: center; }
+    .nav-inner a { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-meta a { color: #888; text-decoration: none; border-bottom: 1px dashed #aaa; }
+    .article-body p { font-size: 17px; color: #333; margin-bottom: 20px; }
+    figure { margin: 32px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .about-author { text-align: center; margin: 40px 0 30px; font-family: 'Lato', sans-serif; font-size: 14px; }
+    .about-author a { color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .feedback-widget { background: #f9f5f0; border: 1px solid #e0d8ce; padding: 24px; margin: 40px 0; text-align: center; font-family: 'Lato', sans-serif; }
+    .feedback-widget p { margin: 0 0 16px; font-size: 15px; color: #555; }
+    .vote-buttons { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+    .vote-btn { padding: 8px 24px; border: 1px solid #b51c20; background: #fff; color: #b51c20; font-family: 'Lato', sans-serif; font-size: 14px; cursor: pointer; }
+    .vote-btn:hover { background: #b51c20; color: #fff; }
+    .comment-form textarea { width: 100%; padding: 10px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ccc; margin-bottom: 10px; }
+    .comment-form button { padding: 8px 24px; background: #b51c20; color: #fff; border: none; font-family: 'Lato', sans-serif; font-size: 14px; cursor: pointer; }
+    .edition-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-block; font-family: 'Lato', sans-serif; font-size: 14px; text-transform: uppercase; color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .back-link:hover { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    .nav-item { display: flex; align-items: center; gap: 10px; max-width: 260px; }
+    .nav-thumb { width: 70px; height: 70px; object-fit: cover; display: block; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #d41f1f; padding: 2px 8px; margin-left: 10px; line-height: 1; }
+    .hamburger-menu { display: none; background: #fff; border-bottom: 1px solid #eee; text-align: center; padding: 10px 0; }
+    .hamburger-menu.open { display: block; }
+    .hamburger-menu a { font-family: 'Lato', sans-serif; font-size: 15px; color: #d41f1f; text-decoration: none; text-transform: uppercase; display: inline-block; margin: 0 15px; padding: 5px 0; }
+    .internal-nav { background: #f9f5f0; border-bottom: 1px solid #e0d8ce; padding: 6px 0; text-align: center; font-family: 'Lato', sans-serif; font-size: 12px; }
+    .internal-nav a { color: #7a5c3a; text-decoration: none; margin: 0 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .internal-nav a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { h1.article-title { font-size: 30px; } .article-body p { font-size: 16px; } }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-june/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only -->
+  <div class="internal-nav">
+  </div>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">My Silk Roads</div>
+      <h1 class="article-title">Dispatch from Paris</h1>
+      <div class="article-meta">By <a href="../../../about.html#susan-aurinko">Susan Aurinko</a> &nbsp;&bull;&nbsp; June 28, 2026</div>
+
+      <figure>
+        <img src="photo 1.jpg" alt="Dispatch from Paris">
+      </figure>
+
+      <div class="article-body">
+
+        <p>On June 9, after a several hour delay, I boarded an Air France plane for my annual photo-expedition in Europe. I actually slept and woke up to a lovely breakfast served by a friendly flight attendant. Air France is a marvel. I got to my hotel, and after staying for almost 20 years of visits spent in the Marais, Hotel de l&rsquo;Universit&eacute; is refreshingly quiet, tucked away on the left bank, just down the block from the tiny hotel where I stayed with my daughter Thalia when she was small. I&rsquo;d barely unpacked when my friend Marcia Grunsfeld, who was spending a month here, arrived at my hotel, ready to walk the city streets. We are walkers, and love walking together whenever possible. I gave her a gift, a square Purvis Horses scarf new to LensFlair Editions, which she tied around her waist immediately in the style that has become so hot this year.</p>
+
+        <figure>
+          <img src="photo 2.jpeg" alt="">
+        </figure>
+
+        <p>Day 2: We started out early on our daily walking tour of the City of Lights. First stop, Anthemis, a shop I&rsquo;d ordered earrings from after seeing them in HTSI (How to Spend It), the Financial Times&rsquo; Weekend Magazine. I&rsquo;d paid the tariff, and UPS botched the delivery and sent them back to the Paris shop. Busra Ozcan, who owns Anthemis and makes spectacularly beautiful jewelry and accessories for weddings and other special occasions, was not only adorable, but instantly gave me a pair of the earrings to replace those that went missing in the blundered delivery. I cannot tell you how beautiful her pieces are, and if you ever need something very, very special, I suggest you check out her wares. She was working on two pieces for a spread in Paris Vogue when we were there &ndash; we were spellbound! <a href="https://www.anthemis.com" target="_blank">www.anthemis.com</a> We walked another few miles, went to our respective homes and freshened up for dinner with my old friend, art appraiser and consultant Joel Straus. I&rsquo;m seldom in Paris when at least one person I know from home isn&rsquo;t here at the same time! We chose my longtime go-to, Le Fr&eacute;gate at the rue du Bac facing the Seine. The meal was good, especially Joel&rsquo;s duck, but the dessert was amazing &ndash; l&rsquo;Ile Flottante, a deliciously sweet confection I&rsquo;m sure my dentist would warn me against, but hey, egg whites are full of protein, right? <a href="https://www.lefregate.com" target="_blank">www.lefregate.com</a></p>
+
+        <figure>
+          <img src="photo 3.jpg" alt="L'Ile Flottant">
+          <figcaption>L&rsquo;Ile Flottant</figcaption>
+        </figure>
+
+        <p>Day 3 &ndash; We set off early to have a coffee with my dear longtime friend Corine Bluel, whom I represented in my gallery for many years. Over time she&rsquo;s also become friends with Marcia. Corine showed us some of her new work, which is wonderful. <a href="https://www.instagram.com/corinebluel/" target="_blank">https://www.instagram.com/corinebluel/</a> Aside from almost eight miles of walking, we were fortunate to get tickets to the Lee Miller photography exhibition at the Mus&eacute;e d&rsquo;Art Moderne de Parls. The largest ever exhibition of Miller&rsquo;s work, the mind-boggling array of photographs of and by Miller shows her prolific life on both sides of the camera. If you don&rsquo;t get to Paris before it leaves on August 2nd, it&rsquo;s headed to London&rsquo;s Tate next. <a href="https://www.mamparis.fr" target="_blank">www.mamparis.fr</a>.</p>
+
+        <figure>
+          <img src="photo 4.jpg" alt="Badoit and Chocolates">
+          <figcaption>Badoit and Chocolates</figcaption>
+        </figure>
+
+        <p>Day 4 &ndash; After a wonderful breakfast in the hotel, I met Marcia along the Seine, and we walked to a jeweler she&rsquo;s befriended where I found a very creative pair of earrings. (he only makes one of anything, based on the stones he decides to use) He&rsquo;s Italian, and because he was formerly a singer/dancer, he has amazing stories of the myriad famous people he&rsquo;s gathered over the years. (Marcia saw Uma Thurman leaving the last time she was there.) We heard a dozen stories, then paid and made our way, via a rather circuitous route, to the Marais where the crowds were practically oppressive. (I Garbelli, 13, rue Mazarine, 75006 Paris) We went into a few stores but found nothing much. On the way home, I stopped in Debauve &amp; Gallais, the &ldquo;chocolatier to the kings of France,&rdquo; and gifted myself some Orangettes, dark chocolate covered orange peel, at a price more appropriate for a king, but how delicious they are/were! We happened to go to Eately, of all places, for a late lunch &ndash; the service was abysmal, but the softball size burrata swimming on a sea of red and yellow grape tomatoes was worth the aggravation, although no one needs that much cheese at one sitting!</p>
+
+        <figure>
+          <img src="photo 5.jpg" alt="Dior Museum">
+          <figcaption>Dior Museum</figcaption>
+        </figure>
+
+        <p>Day 5 &ndash; The highlight of the day was my visit to the Dior Museum. I wrote about it in my dispatch from Paris last year, but it never gets tiring, and they change it during the year, so each show is completely new. The garments, which are displayed with amazing creativity, cover all the designers from Christian Dior to Jonathan Anderson, the house&rsquo;s current creative director, and everyone in between. The couture gowns, suits, dresses and coats defy description, mostly because they run the gamut from sweet to sophisticated to literal sculpture, depending on the essence of each designer. I found new angles to shoot the magnificent staircase and several floors of miniatures behind glass on the walls. If you wish to go on your next jaunt to Paris, make sure you get tickets long in advance &ndash; it&rsquo;s only $20, but you must have a ticket. <a href="https://www.galeriedior.com/en" target="_blank">https://www.galeriedior.com/en</a>. When we left the museum, we saw a crow eyeing the sandwich of a guy eating in his car. I managed to get a shot of the crow in profile as he waited! We also passed the downright silly Louis Vuitton &ldquo;suitcase&rdquo; shaped hotel under construction on the Champs Elys&eacute;e &ndash; call me a pragmatic Midwesterner, but I just don&rsquo;t see the point in that.</p>
+
+        <figure>
+          <img src="photo 6.jpg" alt="Crow on a Mission">
+          <figcaption>Crow on a Mission</figcaption>
+        </figure>
+
+        <p>My last dinner in Paris was with, of all people, my friend Meg, who is my next-door neighbor in Chicago, and her delightful preteen daughter Vivi. We enjoyed classically French fare, me an Aperol Spritz, Meg a Kir Royale, Croque Madame and Monsieur, again at La Fr&eacute;gate, and once again ending with I&rsquo;ile flottante &ndash; when you&rsquo;ve tasted perfection, why settle for anything less? I had hoped to see the Leonora Carrington exhibition at the Luxembourg and the 18th century clothing at the Palais Galleria, but alas, tomorrow I&rsquo;ll board an Austrian Air Flight for Vienna. You&rsquo;ll have to wait until July to read my Dispatch from Vienna but until then, live fashionably!</p>
+
+        <p>Susan</p>
+
+        <figure>
+          <img src="photo 7.jpg" alt="Louis Vuitton Suitcase Hotel">
+          <figcaption>Louis Vuitton Suitcase Hotel</figcaption>
+        </figure>
+
+      </div>
+
+      <div class="about-author">
+        <a href="../../../about.html#susan-aurinko">About the Author: Susan Aurinko &rarr;</a>
+      </div>
+
+      <div class="feedback-widget">
+        <p>Did you enjoy this article?</p>
+        <div class="vote-buttons">
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" style="display:inline">
+            <input type="hidden" name="type" value="vote">
+            <input type="hidden" name="article" value="susan-aurinko-jun28">
+            <input type="hidden" name="vote" value="Yes">
+            <button type="submit" class="vote-btn">&#128077; Yes</button>
+          </form>
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" style="display:inline">
+            <input type="hidden" name="type" value="vote">
+            <input type="hidden" name="article" value="susan-aurinko-jun28">
+            <input type="hidden" name="vote" value="No">
+            <button type="submit" class="vote-btn">&#128078; No</button>
+          </form>
+        </div>
+        <div class="comment-form">
+          <form method="POST" action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form">
+            <input type="hidden" name="type" value="comment">
+            <input type="hidden" name="article" value="susan-aurinko-jun28">
+            <textarea name="comment" rows="3" placeholder="Leave a comment..."></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="edition-nav">
+        <div class="nav-item">
+          <img class="nav-thumb" src="../versailles/photo 1-navthumb.jpg" alt="">
+          <a href="../versailles/" class="back-link">&larr; Previous: Chicagoans at Versailles</a>
+        </div>
+        <div class="nav-item" style="text-align:right; justify-content: flex-end;">
+          <a href="../soma-roy/" class="back-link">Next: R.S.V.P. to Enchantment &rarr;</a>
+          <img class="nav-thumb" src="../soma-roy/COVER - Soma Enchantment-navthumb.jpeg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+    </div>
+    <div class="copyright">COPYRIGHT &copy; Classic Chicago Magazine.<br>All rights reserved.</div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+  <script>
+    var prevUrl = '../versailles/';
+    var nextUrl = '../soma-roy/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+</body>
+</html>
