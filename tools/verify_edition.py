@@ -203,6 +203,12 @@ def check_article_structure(edition_path, article_slug, about_anchors):
     for required_css in ('.edition-nav', '.back-link', '.nav-item', '.nav-thumb'):
         if required_css not in content:
             issues.append(f"nav missing CSS definition: {required_css}")
+    # Nav link font size must be 14px
+    back_link_css = re.search(r'\.back-link\s*\{([^}]*)\}', content)
+    if back_link_css:
+        size_m = re.search(r'font-size:\s*([^;]+)', back_link_css.group(1))
+        if size_m and size_m.group(1).strip() != '14px':
+            issues.append(f"back-link font-size is {size_m.group(1).strip()}, expected 14px")
     # Check HTML structure: nav-item wrappers must be present
     nav_m = re.search(r'<div class="edition-nav">(.*?)</div>\s*</div>', content, re.DOTALL)
     if nav_m:
