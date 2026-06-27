@@ -416,6 +416,8 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 29. **PDF articles: never place photos without explicit placement instructions** — PDFs have no embedded photo layout. Build the article text first (no photos), then ask or check the contributor's email for where each photo goes. Don't guess based on content.
 30. **Don't place a photo as both the opening hero AND inline in the body** — If a photo appears at the top of the article as a hero figure AND is also placed at its correct inline position in the body, it shows up twice. When building from explicit placement instructions, use those positions only — don't add a separate hero figure unless the contributor explicitly requests one.
 31. **Verify photo order after placing in high-count articles** — For articles with more than ~6 photos, do a verification pass after placing all of them: read the HTML top to bottom and confirm each `<figure>` appears immediately after its specified anchor sentence. With 24 photos (as in San Miguel), adjacent photos can be swapped or land one paragraph off. Never trust order is correct just because all photos are present.
+33. **Never share the dev2 URL with writers or outside contributors** — The dev2 staging URL (`article-dev2.vercel.app`) is internal only. When a writer asks to preview their article, send them the direct article page URL on dev2 (e.g. `https://article-dev2.vercel.app/editions/YYYY-MM-DD/slug/`) — never the homepage. Only do this once the article is finalized exactly as it will appear in the published edition. **Before sharing the URL, temporarily remove the article from the nav chain** (disconnect its prev/next links so the reader cannot browse to other articles or the homepage card). Restore the nav links after the writer has confirmed.
+
 32. **Remove dangling git submodule entries** — If a folder was ever added as a git submodule (e.g. `exif-mcp`) but the `.gitmodules` file is gone, git still tracks it in the index and Cloudflare will fail with "No url found for submodule path." Fix with `git rm --cached <folder>` and commit. Run `git ls-files --stage | grep "^160000"` to check for dangling submodules before any major push.
 
 ### Recurring email workflow
@@ -445,8 +447,8 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is **uncommented and visible**; it must be commented out before promoting to `dev` or `master` (handled automatically by `/stage`).
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
-- Keep standing links: `reader-comments.html`, `future-articles.html`
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
+- Do NOT include reader-comments.html or future-articles.html in the internal nav — these have been removed
 - Remove any stale edition-specific links from the prior edition
 
 The comment marker convention:
