@@ -2,50 +2,64 @@
 
 ## TODO — JUNE 28 EDITION
 
-### In progress
-- [ ] David Sweet — Daniel Murphy Scholarship Fund article (threads 19ed7c6e67b00757 + 19ed7cd60c666dd8)
-- [ ] Judy's Editor's Page — "What Are We Doing for the Fourth of July" (thread 19ee4d2b064b21b0)
-- [ ] Soma Roy article — Ana is laying it out; add to editions/2026-06-28/ when ready
+### Article order (per Judy)
+1. Philip Vidal
+2. Sigalit
+3. David Sweet
+4. CHM statue unveiling (Judy's Editor's Page)
+5. Susan Aurinko
+6. Friends of Versailles
+7. Soma Roy
+8. Linda Miller
 
-### Next up
-- [ ] Create editions/2026-06-28/ folder skeleton (articles, datebook, daily-star, editors page)
-- [ ] Copy daily-star from June 21 edition into June 28
-- [ ] Update homepage + nav for June 28 edition
+### Article status
 
-### Blocked / waiting
-- [ ] NMH Summer Soiree article — waiting on: photos from NMH (Judy awaiting their reply)
+| Article | Content | Photos | Notes |
+|---|---|---|---|
+| Philip Vidal | ❌ | ❌ | Ana handling |
+| Sigalit (Edgar Calel blast) | ✅ | ✅ | Built — but Sigalit sending a full article Thu |
+| David Sweet (DMSF) | ✅ | ✅ | Built; "click here" link needs URL from David |
+| CHM statue / Fourth of July | ❌ | ✅ cover | Judy will send text |
+| Susan Aurinko | ❌ | ❌ | Emma handling |
+| Versailles (Kristin Smith) | ❌ | ✅ cover | Cover downloaded; Emma handling content; byline TBD from Judy |
+| Soma Roy | ❌ | ✅ cover | Ana handling layout |
+| Linda Miller | ✅ | ⚠️ partial | 3 of 7 photos on disk; missing: cover window, before, after, Tree of Life, archway mural |
+
+### Still to build [Jun 28]
+- [ ] Homepage shell for June 28 [Jun 28]
+- [ ] `about.html` "Our Writers This Week" [Jun 28]
+- [ ] Nav chain across all 8 articles (once all are in) [Jun 28]
+- [ ] Deploy to Vercel + update editors pages [Jun 28]
+
+---
+
+## TODO — PENDING REPLIES / ACTIONS
+
+- [ ] Reply to Marcy re: ad placement and Instagram question [General]
+- [ ] Chase Annie for 4 missing Linda Miller photos [Jun 28]
+- [ ] Get DMSF "click here" URL from David Sweet [Jun 28]
+- [ ] Confirm Versailles byline with Judy (Kristin Smith?) [Jun 28]
+- [ ] Sigalit full article arriving Thu Jun 26 — build when received [Jun 28]
 
 ---
 
 ## TODO — EDITORS TOOLS
 
-### Next up
-- [ ] Re-apply tools/ga4_report.py changes to dev2 — 4 metrics (engagement time), top 25, avgEngagementFormatted; lost in stash conflict last session
-- [ ] Add June 14 votes & comments to reader-comments.html on editors branch — 14 Yes, 0 No; 2 Reunion comments
-
----
-
-## TODO — ELIZABETH RICHTER SITE
-
-### Next up
-- [ ] Email Judy with URL (elizabeth-dunlop-richter-ccm.vercel.app) to share with Elizabeth
-- [ ] Spot-check a sample of articles for image quality and body text accuracy
+- [ ] Re-apply tools/ga4_report.py changes to dev2 (engagement time, top 25, avgEngagementFormatted; lost in stash conflict) [General]
+- [ ] Add June 14 votes & comments to reader-comments.html on editors branch — 14 Yes, 0 No; 2 Reunion comments [General]
 
 ---
 
 ## TODO — SITE / ONGOING
 
-### Next up
-- [ ] Disable Vercel Deployment Protection — dev preview URLs not publicly accessible (Vercel Dashboard → Settings → Deployment Protection)
-- [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" with Susan or Judy
+- [ ] Disable Vercel Deployment Protection — dev preview URLs not publicly accessible [General]
+- [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
 
 ---
 
 ## Done (this session)
-- [x] Glessner House — replaced garbled last paragraph with Bill Tyre's two corrected paragraphs; deployed to prod
-- [x] Marcy Carmack + 4 others — fixed article popups broken by collapsed `<details>` element; removed duplicate popup IDs
-- [x] verify_edition.py — added check_about_popups() to catch popups trapped in collapsed `<details>`
-- [x] article-mini placeholder cards — fixed width/height to match img sizing (all 6 instances sitewide)
-- [x] Caption fix — "Flore" → "Cafe de Flore" in Marcy's June 21 fashion-trends article; deployed to prod
-- [x] Stats page (editors branch) — 23-article table with avg engagement time + engagement rate; color-coded
-- [x] Elizabeth Dunlop Richter archive — 103 articles (98 old CCM + 5 current) built and deployed to elizabeth-dunlop-richter-ccm.vercel.app
+- [x] Sigalit article (Edgar Calel blast) built and deployed [Jun 28]
+- [x] David Sweet (DMSF) article built and deployed [Jun 28]
+- [x] Versailles cover photo downloaded (4. Fireworks at Versailles.jpeg) [Jun 28]
+- [x] Elizabeth Dunlop Richter archive — 103 articles built, deployed, emailed Judy [General]
+- [x] Linda Miller article built (text complete, photos partial) [Jun 28]
