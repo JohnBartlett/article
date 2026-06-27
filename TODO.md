@@ -4,42 +4,44 @@
 
 ### Article order (per Judy)
 1. Philip Vidal
-2. Sigalit
-3. David Sweet
-4. CHM statue unveiling (Judy's Editor's Page)
-5. Susan Aurinko
-6. Friends of Versailles
+2. Daniel Murphy
+3. Sigalit (Edgar Calel)
+4. CHM / Lincoln Park statue
+5. Versailles (Kristin Smith)
+6. Susan Aurinko
 7. Soma Roy
 8. Linda Miller
 
 ### Article status
 
-| Article | Content | Photos | Notes |
+| Article | Content | Photos | Status |
 |---|---|---|---|
-| Philip Vidal | ❌ | ❌ | Ana handling |
-| Sigalit (Edgar Calel blast) | ✅ | ✅ | Built — but Sigalit sending a full article Thu |
-| David Sweet (DMSF) | ✅ | ✅ | Built; "click here" link needs URL from David |
-| CHM statue / Fourth of July | ❌ | ✅ cover | Judy will send text |
-| Susan Aurinko | ❌ | ❌ | Emma handling |
-| Versailles (Kristin Smith) | ❌ | ✅ cover | Cover downloaded; Emma handling content; byline TBD from Judy |
-| Soma Roy | ❌ | ✅ cover | Ana handling layout |
-| Linda Miller | ✅ | ⚠️ partial | 3 of 7 photos on disk; missing: cover window, before, after, Tree of Life, archway mural |
+| Philip Vidal | ✅ | ✅ | Built |
+| Daniel Murphy (DMSF) | ✅ | ✅ | Built; "click here" link needs URL from David Sweet |
+| Sigalit (Edgar Calel) | ✅ | ✅ | Built |
+| CHM / Lincoln Park | ✅ | ✅ | Built |
+| Versailles (Kristin Smith) | ✅ | ✅ | Built (32 photos) |
+| Susan Aurinko | ✅ | ✅ | Built |
+| Soma Roy | ✅ | ✅ | Built; nav temporarily unlinked for writer preview |
+| Linda Miller | ✅ | ⚠️ partial | Text built; photos referenced but not all extracted |
 
-### Still to build [Jun 28]
-- [ ] Homepage shell for June 28 [Jun 28]
-- [ ] `about.html` "Our Writers This Week" [Jun 28]
-- [ ] Nav chain across all 8 articles (once all are in) [Jun 28]
+### Still to do [Jun 28]
+- [ ] Restore Soma Roy nav links once she confirms preview [Jun 28]
+- [ ] Linda Miller — confirm all photos are in place; extract missing ones if needed [Jun 28]
+- [ ] July astrochart — replace daily-star-june with July content; Victoria's full text needed (Word doc unreadable) [Jun 28]
+- [ ] Get DMSF "click here" URL from David Sweet [Jun 28]
+- [ ] `about.html` "Our Writers This Week" — update for June 28 writers [Jun 28]
+- [ ] Run verify_edition.py and fix any issues before staging [Jun 28]
 - [ ] Deploy to Vercel + update editors pages [Jun 28]
 
 ---
 
 ## TODO — PENDING REPLIES / ACTIONS
 
-- [ ] Reply to Marcy re: ad placement and Instagram question [General]
-- [ ] Chase Annie for 4 missing Linda Miller photos [Jun 28]
+- [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
+- [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
 - [ ] Get DMSF "click here" URL from David Sweet [Jun 28]
-- [ ] Confirm Versailles byline with Judy (Kristin Smith?) [Jun 28]
-- [ ] Sigalit full article arriving Thu Jun 26 — build when received [Jun 28]
+- [ ] Reply to Marcy re: ad placement and Instagram question [General]
 
 ---
 
@@ -53,13 +55,27 @@
 ## TODO — SITE / ONGOING
 
 - [ ] Disable Vercel Deployment Protection — dev preview URLs not publicly accessible [General]
+- [ ] GitHub token expired — update token to re-enable git push to remote [General]
 - [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
 
 ---
 
-## Done (this session)
-- [x] Sigalit article (Edgar Calel blast) built and deployed [Jun 28]
-- [x] David Sweet (DMSF) article built and deployed [Jun 28]
-- [x] Versailles cover photo downloaded (4. Fireworks at Versailles.jpeg) [Jun 28]
-- [x] Elizabeth Dunlop Richter archive — 103 articles built, deployed, emailed Judy [General]
-- [x] Linda Miller article built (text complete, photos partial) [Jun 28]
+## Done — June 28 Edition
+- [x] Philip Vidal article built with 7 photos
+- [x] Daniel Murphy (DMSF) article built
+- [x] Sigalit (Edgar Calel) article built with 8 photos
+- [x] CHM / Lincoln Park article built
+- [x] Versailles article built with 32 photos (Kristin Smith)
+- [x] Susan Aurinko "Dispatch from Paris" built with 7 photos
+- [x] Soma Roy article built; nav unlinked for writer preview
+- [x] Linda Miller article built (partial photos)
+- [x] Nav chain wired across all 8 articles
+- [x] Homepage updated with all June 28 cards
+- [x] Reader Comments and Future Articles removed from internal nav (all articles + template)
+- [x] Stray rush-hospital and trains-chicago folders deleted
+- [x] Soma Roy nav unlinked and deployed for writer preview
+
+## Done — General
+- [x] Elizabeth Dunlop Richter archive — 103 articles built, deployed, emailed Judy
+- [x] Writer preview policy: never share dev2 homepage; send direct unlinked article URL only
+- [x] No-emoji rule added to CLAUDE.md and memory
