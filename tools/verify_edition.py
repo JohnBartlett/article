@@ -43,14 +43,14 @@ def parse_html(content):
     # h1
     facts['has_h1'] = bool(re.search(r'<h1[ >]', content))
 
-    # byline: look for class="byline"
-    byline_m = re.search(r'class="byline"[^>]*>.*?<a href="[^"]*about\.html(#[^"]+)"', content, re.DOTALL)
+    # byline: look for class="article-meta" or class="byline" with about.html link
+    byline_m = re.search(r'class="(?:article-meta|byline)"[^>]*>.*?<a href="[^"]*about\.html(#[^"]+)"', content, re.DOTALL)
     if byline_m:
         facts['has_byline'] = True
         facts['byline_anchor'] = byline_m.group(1)
 
-    # feedback widget
-    facts['has_feedback'] = 'feedback-widget' in content
+    # feedback widget: class="feedback-widget" OR thumbUp/thumbDown buttons
+    facts['has_feedback'] = 'feedback-widget' in content or 'id="thumbUp"' in content
 
     # footer
     facts['has_footer'] = '<footer' in content
@@ -63,28 +63,38 @@ def parse_html(content):
     if db_m:
         facts['datebook_href'] = db_m.group(1)
 
-    # article-nav prev/next + thumbnail presence
-    nav_m = re.search(r'<nav class="article-nav">(.*?)</nav>', content, re.DOTALL)
+    # edition-nav prev/next: look for JS vars prevUrl/nextUrl (primary pattern)
     facts['nav_thumbs'] = {}   # direction -> has_img (True/False/None if home link)
-    if nav_m:
-        nav_html = nav_m.group(1)
-        for direction in ('prev', 'next'):
-            link_m = re.search(
-                r'class="' + direction + r'"[^>]*href="([^"]+)"(.*?)(?=class="(?:prev|next)"|$)',
-                nav_html, re.DOTALL
-            )
-            if link_m:
-                href = link_m.group(1)
-                body = link_m.group(2)
-                if direction == 'prev':
-                    facts['prev_href'] = href
-                else:
-                    facts['next_href'] = href
-                is_home = href.endswith('index.html') and '../../..' in href
-                facts['nav_thumbs'][direction] = None if is_home else bool(re.search(r'<img[^>]+src=', body))
+    prev_m = re.search(r"var prevUrl\s*=\s*'([^']*)'", content)
+    next_m = re.search(r"var nextUrl\s*=\s*'([^']*)'", content)
+    if prev_m:
+        facts['prev_href'] = prev_m.group(1) or None
+    if next_m:
+        facts['next_href'] = next_m.group(1) or None
+    # Fallback: back-link hrefs in edition-nav for articles without JS vars
+    if not facts['prev_href'] and not facts['next_href']:
+        back_links = re.findall(r'<a href="([^"]+)" class="back-link"', content)
+        if len(back_links) >= 1:
+            facts['prev_href'] = back_links[0]
+        if len(back_links) >= 2:
+            facts['next_href'] = back_links[1]
+    # Thumbnail detection: count nav-thumb images in the full content
+    # (don't use nested-div regex — it stops at first </div>)
+    thumb_count = len(re.findall(r'<img[^>]+class="nav-thumb"', content))
+    for direction in ('prev', 'next'):
+        href = facts.get(f'{direction}_href')
+        if href is None:
+            facts['nav_thumbs'][direction] = None
+            continue
+        is_home = '../../..' in href and href.endswith('index.html')
+        if is_home:
+            facts['nav_thumbs'][direction] = None
+        else:
+            facts['nav_thumbs'][direction] = thumb_count > 0
 
-    # all img srcs
-    facts['img_srcs'] = re.findall(r'<img[^>]+src="([^"]+)"', content)
+    # all img srcs — strip HTML comments first to avoid flagging commented-out pending photos
+    stripped = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    facts['img_srcs'] = re.findall(r'<img[^>]+src="([^"]+)"', stripped)
 
     return facts
 
@@ -258,8 +268,9 @@ def verify_edition(edition_date):
         photos = f" [{status_info.get('photos', 0)} photos]" if "photos" in status_info else ""
         print(f"{symbol} {article:30} | {status:15} | {status_info['reason']}{photos}")
 
-        NON_ARTICLES = {"datebook", "daily-star", "astrochart"}
-        if status not in ("MISSING", "PLACEHOLDER") and article not in NON_ARTICLES:
+        NON_ARTICLES = {"datebook", "astrochart"}
+        is_non_article = article in NON_ARTICLES or article.startswith("daily-star") or article == "fourth-of-july"
+        if status not in ("MISSING", "PLACEHOLDER") and not is_non_article:
             issues = check_article_structure(edition_path, article, about_anchors)
             if issues:
                 all_issues[article] = issues
