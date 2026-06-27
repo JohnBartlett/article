@@ -196,6 +196,13 @@ def check_article_structure(edition_path, article_slug, about_anchors):
         if has_thumb is False:
             issues.append(f"{direction} nav link missing thumbnail image")
 
+    # ── Nav CSS pattern consistency ──
+    # Must use .back-link / .nav-item / .nav-thumb — not legacy .nav-card pattern
+    if '.nav-card' in content:
+        issues.append("nav uses legacy .nav-card CSS — replace with .back-link/.nav-item/.nav-thumb pattern")
+    if '.back-link' not in content:
+        issues.append("nav missing .back-link CSS definition")
+
     # ── Doubled hamburger menu ──
     # About/Subscribe/Advertise must appear ONLY in hamburger-menu, not in nav-inner
     nav_inner_m = re.search(r'<div class="nav-inner">(.*?)</div>', content, re.DOTALL)
