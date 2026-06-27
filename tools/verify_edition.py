@@ -250,6 +250,18 @@ def check_article_structure(edition_path, article_slug, about_anchors):
             if size > LIMIT:
                 issues.append(f"oversized image ({size/1048576:.1f} MB, limit 25 MB): {img.name}")
 
+    # ── Duplicate images ──
+    # Strip comments, collect all non-external img srcs, flag duplicates
+    stripped = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    all_srcs = re.findall(r'<img[^>]+src="([^"]+)"', stripped)
+    body_srcs = [s for s in all_srcs if not s.startswith('http') and not s.startswith('//') and 'logo' not in s and 'nav-thumb' not in s]
+    seen = {}
+    for src in body_srcs:
+        seen[src] = seen.get(src, 0) + 1
+    for src, count in seen.items():
+        if count > 1:
+            issues.append(f"duplicate image used {count}× in article: {src.split('/')[-1]}")
+
     # ── Nav thumbnail dimensions ──
     if HAS_PIL:
         NAV_THUMB_MAX = 300  # warn if either dimension exceeds this
