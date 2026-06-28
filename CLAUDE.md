@@ -422,6 +422,10 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 32. **Remove dangling git submodule entries** — If a folder was ever added as a git submodule (e.g. `exif-mcp`) but the `.gitmodules` file is gone, git still tracks it in the index and Cloudflare will fail with "No url found for submodule path." Fix with `git rm --cached <folder>` and commit. Run `git ls-files --stage | grep "^160000"` to check for dangling submodules before any major push.
 
+35. **Cloudflare caches aggressively — use the rename trick when changes don't appear** — If a pushed change (image, HTML, CSS) doesn't appear on chicagoclassicmag.com within 2 minutes of a confirmed deploy, Cloudflare is serving a cached version. Fix: rename the file to a new name (e.g. `photo.jpg` → `photo-v2.jpg`), update all HTML references, push, confirm it's live, then rename back to the original and push again. A new URL bypasses the CDN cache entirely. This works for any file type. When grepping to confirm a change is live, use a specific selector (e.g. `grep "soma-roy" | grep "center top"`), not a generic term that may appear elsewhere in the page.
+
+36. **Claude can run git push directly — only ask user when token expires** — `git push origin master/dev/dev2` works fine via the Bash tool. Never use the `!` prefix for git pushes (it silently fails when credentials are needed). The only time user action is needed: if a push silently fails and `origin` doesn't advance, the GitHub token in the remote URL has expired. Ask the user to generate a new token at github.com/settings/tokens and run: `git remote set-url origin https://NEW_TOKEN@github.com/JohnBartlett/article.git`
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
