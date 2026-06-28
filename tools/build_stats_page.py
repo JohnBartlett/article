@@ -308,25 +308,29 @@ CSS = """
 body { font-family: 'Lato', sans-serif; background: #f7f5f0; color: #1a1a1a; line-height: 1.6; }
 .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
 h1 { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: -0.5px; }
-h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; margin-bottom: 4px; }
-h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin: 20px 0 10px; }
-.masthead { border-bottom: 3px double #1a1a1a; padding-bottom: 16px; margin-bottom: 28px; }
+h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin: 24px 0 10px; }
+h3:first-child { margin-top: 0; }
+.masthead { border-bottom: 3px double #1a1a1a; padding-bottom: 16px; margin-bottom: 0; }
 .masthead .meta { font-size: 0.8rem; color: #888; margin-top: 6px; }
 .red { color: #c41e3a; }
-/* Sections */
-details { background: #fff; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 16px; }
-details[open] { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-summary { cursor: pointer; padding: 16px 20px; font-family: 'Playfair Display', serif; font-size: 1.1rem;
-          list-style: none; display: flex; justify-content: space-between; align-items: center; }
-summary::-webkit-details-marker { display: none; }
-summary::after { content: '▸'; font-size: 0.8rem; color: #aaa; transition: transform 0.2s; }
-details[open] summary::after { transform: rotate(90deg); }
-summary .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
-                         color: #c41e3a; font-family: 'Lato', sans-serif; margin-left: 12px; }
-.section-body { padding: 20px; border-top: 1px solid #eee; }
+/* Tab nav */
+.tab-nav { display: flex; gap: 0; border-bottom: 2px solid #1a1a1a; margin-bottom: 28px; margin-top: 24px; flex-wrap: wrap; }
+.tab-btn { background: none; border: none; cursor: pointer; padding: 10px 18px;
+           font-family: 'Lato', sans-serif; font-size: 0.82rem; font-weight: 700;
+           text-transform: uppercase; letter-spacing: 0.8px; color: #888;
+           border-bottom: 3px solid transparent; margin-bottom: -2px;
+           transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: #1a1a1a; }
+.tab-btn.active { color: #c41e3a; border-bottom-color: #c41e3a; }
+.tab-label { display: block; font-size: 0.65rem; font-weight: 400; color: #bbb; letter-spacing: 0.5px;
+             text-transform: none; margin-top: 1px; }
+.tab-btn.active .tab-label { color: #e07080; }
+/* Tab panels */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 /* Stat cards */
-.stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-.stat-card { background: #f7f5f0; border: 1px solid #e0ddd8; border-radius: 4px;
+.stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.stat-card { background: #fff; border: 1px solid #e0ddd8; border-radius: 4px;
              padding: 14px 18px; min-width: 120px; flex: 1; }
 .stat-val { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: #1a1a1a; }
 .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; color: #888; margin-top: 2px; }
@@ -335,15 +339,16 @@ summary .section-label { font-size: 0.7rem; text-transform: uppercase; letter-sp
 table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 thead tr { border-bottom: 2px solid #1a1a1a; }
 th { text-align: left; padding: 6px 10px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; color: #888; }
+th.num { text-align: center; }
 td { padding: 7px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
-td.num { text-align: right; color: #555; }
+td.num { text-align: center; color: #555; }
 tr:last-child td { border-bottom: none; }
 a { color: #c41e3a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 .rank { color: #aaa; font-size: 0.8rem; }
 /* Edition history cards */
-.edition-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
-.edition-card { background: #f7f5f0; border: 1px solid #ddd; border-radius: 4px; padding: 14px; }
+.edition-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.edition-card { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 14px; }
 .edition-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 8px; }
 .edition-card.current { border-color: #c41e3a; border-width: 2px; }
 .edition-mini-stat { display: flex; justify-content: space-between; font-size: 0.82rem;
@@ -364,6 +369,23 @@ a:hover { text-decoration: underline; }
 .no-data { color: #aaa; font-size: 0.88rem; font-style: italic; padding: 12px 0; }
 .muted { color: #aaa; font-size: 0.8rem; }
 .generated { font-size: 0.75rem; color: #bbb; text-align: right; margin-top: 32px; }
+"""
+
+TAB_JS = """
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+  if (history.replaceState) history.replaceState(null, '', '#' + id);
+}
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = location.hash.replace('#','');
+  var valid = ['tab1','tab2','tab3','tab4','tab5'];
+  showTab(valid.includes(hash) ? hash : 'tab1');
+});
+</script>
 """
 
 
@@ -394,9 +416,6 @@ def build_section1(client, current_edition, today_str):
     top_rows = "\n".join(article_row(a, i+1) for i, a in enumerate(top[:8]))
 
     return f"""
-<details open>
-  <summary>Section 1 — Current Edition Spotlight <span class="section-label">Edition {ed_label}</span></summary>
-  <div class="section-body">
     <h3>Today ({today_str})</h3>
     <div class="stat-row">{today_cards}</div>
 
@@ -408,8 +427,6 @@ def build_section1(client, current_edition, today_str):
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th></tr></thead>
       <tbody>{top_rows}</tbody>
     </table>
-  </div>
-</details>
 """
 
 
@@ -462,20 +479,15 @@ def build_section2(client, editions_list, today_str):
 </tr>"""
 
     return f"""
-<details>
-  <summary>Section 2 — Edition History <span class="section-label">Last 4 editions</span></summary>
-  <div class="section-body">
     <div class="edition-grid">{cards_html}</div>
     <h3>Comparison Table</h3>
     <table>
       <thead><tr>
         <th>Edition</th><th class="num">Pageviews</th><th class="num">Sessions</th>
-        <th class="num">New Users</th><th>Avg. Engage</th><th>Top 3 Articles</th>
+        <th class="num">New Users</th><th class="num">Avg. Engage</th><th>Top 3 Articles</th>
       </tr></thead>
       <tbody>{table_rows}</tbody>
     </table>
-  </div>
-</details>
 """
 
 
@@ -493,17 +505,12 @@ def build_section3(client, today_str):
     rows = "\n".join(article_row(a, i+1) for i, a in enumerate(top10))
 
     return f"""
-<details>
-  <summary>Section 3 — All-Time Site Stats <span class="section-label">Since {SITE_LAUNCH}</span></summary>
-  <div class="section-body">
     <div class="stat-row">{cards}</div>
     <h3>All-Time Top 10 Articles by Pageviews</h3>
     <table>
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th></tr></thead>
       <tbody>{rows}</tbody>
     </table>
-  </div>
-</details>
 """
 
 
@@ -531,12 +538,7 @@ def build_section4(records, current_edition):
   <div style="margin-top:8px">{comments_html}</div>
 </div>"""
 
-    return f"""
-<details>
-  <summary>Section 4 — Reader Votes &amp; Comments <span class="section-label">Edition {ed_label}</span></summary>
-  <div class="section-body">{body}</div>
-</details>
-"""
+    return body
 
 
 def build_section5(records):
@@ -568,12 +570,7 @@ def build_section5(records):
   <tbody>{rows}</tbody>
 </table>"""
 
-    return f"""
-<details>
-  <summary>Section 5 — All-Time Comment Leaderboard <span class="section-label">All editions</span></summary>
-  <div class="section-body">{body}</div>
-</details>
-"""
+    return body
 
 
 # ---------------------------------------------------------------------------
@@ -623,6 +620,8 @@ def main():
     generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
     ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
 
+    ed_label_short = edition_label(current_edition)
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -640,14 +639,33 @@ def main():
     <div class="meta">Current edition: <strong>{ed_label}</strong> &nbsp;·&nbsp; Generated {generated_at}</div>
   </div>
 
-  {s1}
-  {s2}
-  {s3}
-  {s4}
-  {s5}
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="tab1" onclick="showTab('tab1')">
+      Current Edition<span class="tab-label">Edition {ed_label_short}</span>
+    </button>
+    <button class="tab-btn" data-tab="tab2" onclick="showTab('tab2')">
+      Edition History<span class="tab-label">Last 4 editions</span>
+    </button>
+    <button class="tab-btn" data-tab="tab3" onclick="showTab('tab3')">
+      All-Time Stats<span class="tab-label">Since launch</span>
+    </button>
+    <button class="tab-btn" data-tab="tab4" onclick="showTab('tab4')">
+      Votes &amp; Comments<span class="tab-label">Edition {ed_label_short}</span>
+    </button>
+    <button class="tab-btn" data-tab="tab5" onclick="showTab('tab5')">
+      Comment Leaderboard<span class="tab-label">All editions</span>
+    </button>
+  </nav>
+
+  <div id="tab1" class="tab-panel active">{s1}</div>
+  <div id="tab2" class="tab-panel">{s2}</div>
+  <div id="tab3" class="tab-panel">{s3}</div>
+  <div id="tab4" class="tab-panel">{s4}</div>
+  <div id="tab5" class="tab-panel">{s5}</div>
 
   <div class="generated">Data from GA4 Property 523654462 · dev2 internal only</div>
 </div>
+{TAB_JS}
 </body>
 </html>"""
 
