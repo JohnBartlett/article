@@ -110,10 +110,10 @@ def fetch_totals(client, start, end, path_filter=None):
 
 
 def fetch_top_articles(client, start, end, path_filter, limit=10):
-    """Return list of {slug, title, pageviews, users} dicts."""
+    """Return list of {path, title, pageviews, users, avgTime} dicts."""
     r = run_report(client, start, end,
                    dimensions=["pagePath", "pageTitle"],
-                   metrics=["screenPageViews", "activeUsers"],
+                   metrics=["screenPageViews", "activeUsers", "userEngagementDuration", "sessions"],
                    filters=path_filter,
                    order_by_metric="screenPageViews",
                    limit=limit)
@@ -123,12 +123,15 @@ def fetch_top_articles(client, start, end, path_filter, limit=10):
         title = row.dimension_values[1].value
         pv    = int(row.metric_values[0].value)
         users = int(row.metric_values[1].value)
+        eng   = float(row.metric_values[2].value)
+        sess  = int(row.metric_values[3].value) or 1
         # Skip datebook / daily-star
         if any(x in path for x in ["/datebook/", "/daily-star", "/editors/"]):
             continue
         # Clean title — strip " | Classic Chicago..." suffix
         title = re.sub(r'\s*\|\s*Classic Chicago.*$', '', title).strip() or slug_to_title(path)
-        articles.append({"path": path, "title": title, "pageviews": pv, "users": users})
+        articles.append({"path": path, "title": title, "pageviews": pv, "users": users,
+                         "avgTime": fmt_duration(eng / sess)})
     return articles
 
 
@@ -295,7 +298,8 @@ def pct_bar(yes, no):
 def article_row(art, rank=None):
     rank_html = f'<span class="rank">#{rank}</span> ' if rank else ''
     link = f'<a href="https://chicagoclassicmag.com{art["path"]}" target="_blank">{art["title"]}</a>' if art.get("path") else art["title"]
-    return f'<tr><td>{rank_html}{link}</td><td class="num">{art["pageviews"]:,}</td><td class="num">{art["users"]:,}</td></tr>'
+    avg = art.get("avgTime", "—")
+    return f'<tr><td>{rank_html}{link}</td><td class="num">{art["pageviews"]:,}</td><td class="num">{art["users"]:,}</td><td class="num">{avg}</td></tr>'
 
 
 def stat_card(label, value, sub=None):
@@ -424,7 +428,7 @@ def build_section1(client, current_edition, today_str):
 
     <h3>Top Articles This Edition</h3>
     <table>
-      <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th></tr></thead>
+      <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
       <tbody>{top_rows}</tbody>
     </table>
 """
@@ -508,7 +512,7 @@ def build_section3(client, today_str):
     <div class="stat-row">{cards}</div>
     <h3>All-Time Top 10 Articles by Pageviews</h3>
     <table>
-      <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th></tr></thead>
+      <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
       <tbody>{rows}</tbody>
     </table>
 """
