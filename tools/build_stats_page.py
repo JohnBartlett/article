@@ -437,7 +437,6 @@ def build_section1(client, current_edition, today_str):
 def build_section2(client, editions_list, today_str):
     """Edition History — last 4 editions."""
     cards_html = ""
-    table_rows = ""
 
     for i, ed in enumerate(editions_list[:4]):
         ed_date = ed
@@ -461,7 +460,7 @@ def build_section2(client, editions_list, today_str):
             ])
 
         top_items = "".join(
-            f'<li>{a["title"]} <span class="muted">({a["pageviews"]} pv)</span></li>'
+            f'<li>{a["title"]} <span class="muted">({a["pageviews"]} pv · {a["avgTime"]})</span></li>'
             for a in top3
         )
 
@@ -472,26 +471,8 @@ def build_section2(client, editions_list, today_str):
   <div class="edition-top"><strong>Top articles:</strong><ol style="padding-left:16px;margin-top:4px">{top_items}</ol></div>
 </div>"""
 
-        top3_txt = ", ".join(f'{a["title"]} ({a["pageviews"]}pv)' for a in top3) or "—"
-        table_rows += f"""<tr>
-  <td><strong>{label}</strong></td>
-  <td class="num">{totals['pageviews']:,}</td>
-  <td class="num">{totals['sessions']:,}</td>
-  <td class="num">{totals['newUsers']:,}</td>
-  <td>{totals['avgEngagement']}</td>
-  <td style="font-size:0.8rem">{top3_txt}</td>
-</tr>"""
-
     return f"""
     <div class="edition-grid">{cards_html}</div>
-    <h3>Comparison Table</h3>
-    <table>
-      <thead><tr>
-        <th>Edition</th><th class="num">Pageviews</th><th class="num">Sessions</th>
-        <th class="num">New Users</th><th class="num">Avg. Engage</th><th>Top 3 Articles</th>
-      </tr></thead>
-      <tbody>{table_rows}</tbody>
-    </table>
 """
 
 
