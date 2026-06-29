@@ -140,10 +140,13 @@ def fetch_top_articles(client, start, end, path_filter, limit=10):
 # ---------------------------------------------------------------------------
 
 def detect_editions(n=5):
-    """Return last n edition dates (desc) from editions/ folder."""
+    """Return last n published edition dates (desc) — excludes future editions."""
     editions_dir = os.path.join(os.path.dirname(__file__), '..', 'editions')
+    today = date.today()
     dates = sorted(
-        [d for d in os.listdir(editions_dir) if re.match(r'\d{4}-\d{2}-\d{2}$', d)],
+        [d for d in os.listdir(editions_dir)
+         if re.match(r'\d{4}-\d{2}-\d{2}$', d)
+         and datetime.strptime(d, "%Y-%m-%d").date() <= today],
         reverse=True
     )
     return dates[:n]
