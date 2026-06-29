@@ -151,3 +151,12 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 26 | Ana | Soma Roy / R.S.V.P. to Enchantment (9 photos) | `19f0440567f125c1` | ✅ | Photos extracted; article built at editions/2026-06-28/soma-roy/ |
 | Jun 26 | Judy | Re: R.S.V.P. to Enchantment | `19f0490d053a2835` | ⏳ | Judy wants Soma Roy to have a final look before publishing — notify Judy when preview is up |
 | Jun 26 | Ana | Philip Vidal: About the Town in July (8 photos) | `19f0497e6044f281` | ✅ | Photos extracted; article built at editions/2026-06-28/philip-vidal/ |
+
+## July 5 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 28 | Judy | July 5 lineup | `19f10a42caaf303d` | ✅ | 7 articles: chinatown (Jen), tiepolo-sky (Francesco), spark-gala (Emma), nmh-summer-soiree (Judy), making-history-awards (Judy), cat-photo-essay (Ethan Cotton), man-overboard (Judy) |
+| Jun 28 | Judy | Man Overboard article + 2 photos | `19f0eea5a27d1261` | ✅ | Article built; Final Cover used as homepage card; KRHeadHorizEyes inline in body |
+| Jun 28 | Judy | Making History Awards cover photo (Buddy Guy 22.jpg) | `19f10bc4583eb9b6` | ⏳ | Photo downloaded; no article text yet |
+| Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ⏳ | Photo downloaded; no article text yet |
