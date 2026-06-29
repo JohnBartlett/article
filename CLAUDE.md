@@ -426,6 +426,8 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 36. **Claude can run git push directly — only ask user when token expires** — `git push origin master/dev/dev2` works fine via the Bash tool. Never use the `!` prefix for git pushes (it silently fails when credentials are needed). The only time user action is needed: if a push silently fails and `origin` doesn't advance, the GitHub token in the remote URL has expired. Ask the user to generate a new token at github.com/settings/tokens and run: `git remote set-url origin https://NEW_TOKEN@github.com/JohnBartlett/article.git`
 
+37. **Check EMAIL_LOG.md before searching for emails — never use a fixed `newer_than:Nd` window** — Read the last entry date in `EMAIL_LOG.md` first, then search `after:YYYY/MM/DD` (Gmail date format) to fetch only emails that arrived after the last processed date. Using a fixed window like `newer_than:3d` re-fetches already-logged emails and wastes time re-processing them.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
