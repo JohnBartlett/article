@@ -1,0 +1,58 @@
+name: Refresh Stats Dashboard
+
+on:
+  schedule:
+    # Every 6 hours (midnight, 6am, noon, 6pm Chicago time = 5,11,17,23 UTC)
+    - cron: '0 5,11,17,23 * * *'
+  workflow_dispatch:  # allow manual trigger from GitHub Actions UI
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout dev2
+        uses: actions/checkout@v4
+        with:
+          ref: dev2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install google-analytics-data requests
+
+      - name: Write GA4 credentials
+        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > tools/credentials.json
+
+      - name: Write Gmail OAuth keys
+        run: echo '${{ secrets.GMAIL_OAUTH_KEYS }}' > /tmp/gmail-oauth-keys.json
+
+      - name: Write Gmail credentials
+        run: echo '${{ secrets.GMAIL_CREDENTIALS }}' > /tmp/gmail-credentials.json
+
+      - name: Build stats page
+        env:
+          GA4_PROPERTY_ID: '523654462'
+          GOOGLE_APPLICATION_CREDENTIALS: tools/credentials.json
+          GMAIL_OAUTH_KEYS_PATH: /tmp/gmail-oauth-keys.json
+          GMAIL_CREDENTIALS_PATH: /tmp/gmail-credentials.json
+        run: python3 tools/build_stats_page.py --output editors/stats.html
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add editors/stats.html
+          if git diff --cached --quiet; then
+            echo "No changes to stats.html — skipping commit"
+          else
+            git commit -m "Auto-refresh stats dashboard [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git push origin dev2
+          fi

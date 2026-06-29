@@ -5,8 +5,8 @@ import os, json, base64, email as emaillib, requests
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-GMAIL_MCP_CREDS = os.path.expanduser("~/.gmail-mcp/credentials.json")
-GMAIL_MCP_KEYS  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
+GMAIL_MCP_CREDS = os.environ.get("GMAIL_CREDENTIALS_PATH", os.path.expanduser("~/.gmail-mcp/credentials.json"))
+GMAIL_MCP_KEYS  = os.environ.get("GMAIL_OAUTH_KEYS_PATH",  os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json"))
 
 def get_access_token():
     with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
