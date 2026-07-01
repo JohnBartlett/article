@@ -14,14 +14,14 @@
 
 ### Article status
 
-- Philip Vidal         [content ✅] [photos ✅] Built
-- Daniel Murphy (DMSF) [content ✅] [photos ✅] Built; "click here" → "contact the author" — needs real URL from David Sweet
-- Sigalit (Edgar Calel) [content ✅] [photos ✅] Built
-- CHM / Lincoln Park   [content ✅] [photos ✅] Built
-- Versailles           [content ✅] [photos ✅] Built (32 photos)
-- Susan Aurinko        [content ✅] [photos ✅] Built
-- Soma Roy             [content ✅] [photos ✅] Built; nav temporarily unlinked for writer preview
-- Linda Miller         [content ✅] [photos ⚠️] Text built; photos referenced but not all extracted
+- Philip Vidal — content OK, photos OK — Built
+- Daniel Murphy (DMSF) — content OK, photos OK — Built; needs real URL from David Sweet
+- Sigalit (Edgar Calel) — content OK, photos OK — Built
+- CHM / Lincoln Park — content OK, photos OK — Built
+- Versailles — content OK, photos OK — Built (32 photos)
+- Susan Aurinko — content OK, photos OK — Built
+- Soma Roy — content OK, photos OK — Built; nav temporarily unlinked for writer preview
+- Linda Miller — content OK, photos PARTIAL — Text built; not all photos extracted
 
 ### Still to do [Jun 28]
 - [ ] Restore Soma Roy nav links once she confirms preview [Jun 28]
