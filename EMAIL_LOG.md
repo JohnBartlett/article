@@ -161,3 +161,4 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 28 | Judy | Making History Awards cover photo (Buddy Guy 22.jpg) | `19f10bc4583eb9b6` | ⏳ | Photo downloaded; no article text yet |
 | Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ⏳ | Photo downloaded; no article text yet |
 | Jun 29 | Judy | NMH Summer Soiree cover photo (women's board) | `19f163ea364e68f1` | ⏳ | Photo downloaded to nmh-summer-soiree/; article text coming from Emma |
+| Jul 1  | Judy | Fwd: The Reading Room by Scott Holleran (short story for July 5) | `19f1d8a0e3296f22` | ✅ | Article built in the-reading-room/; photo (image0.jpeg) placed at end of story; nav chain updated (man-overboard now → the-reading-room → homepage) |
