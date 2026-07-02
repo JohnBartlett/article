@@ -152,11 +152,15 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 26 | Judy | Re: R.S.V.P. to Enchantment | `19f0490d053a2835` | ⏳ | Judy wants Soma Roy to have a final look before publishing — notify Judy when preview is up |
 | Jun 26 | Ana | Philip Vidal: About the Town in July (8 photos) | `19f0497e6044f281` | ✅ | Photos extracted; article built at editions/2026-06-28/philip-vidal/ |
 
+| Jul 1 | Judy | Fwd: Question for you! (Josée Nadeau photo for Versailles) | `19f1dd166c90c2f9` | 🔁 | Josée wants photo of her + Ivan Dvorak added to Versailles article; Judy unsure; John emailed Judy Jul 2 offering to ask Kristin Smith directly which photo to use (wide/architecture vs. close/faces) |
+
 ## July 5 Edition
 
 | Date | From | Subject / Summary | Msg ID | Status | Notes |
 |------|------|-------------------|--------|--------|-------|
 | Jun 28 | Judy | July 5 lineup | `19f10a42caaf303d` | ✅ | 7 articles: chinatown (Jen), tiepolo-sky (Francesco), spark-gala (Emma), nmh-summer-soiree (Judy), making-history-awards (Judy), cat-photo-essay (Ethan Cotton), man-overboard (Judy) |
+| Jul 1  | Judy | Postponing Making History Awards to July 12 | `19f1f862e88a5643` | ✅ | Making History Awards moved to Jul 12; The Reading Room (already built) is substitute for Jul 5 |
+| Jul 1  | Ana  | Chinatown article by Jen Huang + 12 photos | `19f1f7cc12275e10` | ✅ | Article built; 12 photos converted from HEIC to JPEG; homepage hero updated; COVER and photo 13 not in attachments — needed from Ana |
 | Jun 28 | Judy | Man Overboard article + 2 photos | `19f0eea5a27d1261` | ✅ | Article built; Final Cover used as homepage card; KRHeadHorizEyes inline in body |
 | Jun 28 | Judy | Making History Awards cover photo (Buddy Guy 22.jpg) | `19f10bc4583eb9b6` | ⏳ | Photo downloaded; no article text yet |
 | Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ⏳ | Photo downloaded; no article text yet |
