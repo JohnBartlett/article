@@ -72,13 +72,26 @@ def download_attachment(token, msg_id, att_id, dest_path):
     with open(dest_path, "wb") as f:
         f.write(data)
 
-def send_email(token, to, subject, body, cc=None):
+def send_email(token, to, subject, body, cc=None, attachments=None):
+    import mimetypes
+    from email.mime.base import MIMEBase
+    from email import encoders
     msg = MIMEMultipart()
     msg["To"] = to
     msg["Subject"] = subject
     if cc:
         msg["Cc"] = cc
     msg.attach(MIMEText(body, "plain"))
+    for path in (attachments or []):
+        mime_type, _ = mimetypes.guess_type(path)
+        main_type, sub_type = (mime_type or 'application/octet-stream').split('/', 1)
+        with open(path, 'rb') as f:
+            data = f.read()
+        part = MIMEBase(main_type, sub_type)
+        part.set_payload(data)
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment', filename=path.split('/')[-1])
+        msg.attach(part)
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
     r = requests.post("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
         headers={"Authorization": f"Bearer {token}"}, json={"raw": raw})
