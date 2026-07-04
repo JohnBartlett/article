@@ -152,7 +152,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 26 | Judy | Re: R.S.V.P. to Enchantment | `19f0490d053a2835` | ⏳ | Judy wants Soma Roy to have a final look before publishing — notify Judy when preview is up |
 | Jun 26 | Ana | Philip Vidal: About the Town in July (8 photos) | `19f0497e6044f281` | ✅ | Photos extracted; article built at editions/2026-06-28/philip-vidal/ |
 
-| Jul 1 | Judy | Fwd: Question for you! (Josée Nadeau photo for Versailles) | `19f1dd166c90c2f9` | 🔁 | Josée wants photo of her + Ivan Dvorak added to Versailles article; Jul 2: emailed Kristin Smith (CC Judy) with both photos attached asking which to use; awaiting reply |
+| Jul 1 | Judy | Fwd: Question for you! (Josée Nadeau photo for Versailles) | `19f1dd166c90c2f9` | ✅ | Josée wants photo of her + Ivan Dvorak added to Versailles article; Jul 2: emailed Kristin Smith (CC Judy) with both photos attached; Kristin deferred to CC's editorial judgment; John chose the close-up photo, added as image0.jpeg (commit fea2842c); Judy confirmed |
 
 ## July 5 Edition
 
@@ -166,3 +166,11 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ⏳ | Photo downloaded; no article text yet |
 | Jun 29 | Judy | NMH Summer Soiree cover photo (women's board) | `19f163ea364e68f1` | ⏳ | Photo downloaded to nmh-summer-soiree/; article text coming from Emma |
 | Jul 1  | Judy | Fwd: The Reading Room by Scott Holleran (short story for July 5) | `19f1d8a0e3296f22` | ✅ | Article built in the-reading-room/; photo (image0.jpeg) placed at end of story; nav chain updated (man-overboard now → the-reading-room → homepage) |
+| Jul 2  | Judy | About – Classic Chicago Magazine (Jean Colonomos reorder, Ethan Cotton note) | `19f237ea7c5192ed` | ✅ | Removed Jean Colonomos as first under More Contributors, moved to end of list; added Ethan Cotton bio for July 5 cat-photo-essay (commit da7d7e80, same day) |
+| Jul 3  | Judy | Returning now from The Canadian Rockies | `19f29e8e6a17b135` | ⬛ | Judy back from trip, praised Versailles article, asked what the #1 (hero) article is; no action needed |
+
+## July 19 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jul 2  | Sig  | Next Article | `19f2539e60725e54` | 🔁 | Sig proposing to submit text, photos, and credits for her next article by Wed Jul 15; Judy confirmed slot for the July 19 edition; no content received yet |
