@@ -163,11 +163,17 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jul 1  | Ana  | Chinatown article by Jen Huang + 12 photos | `19f1f7cc12275e10` | ✅ | Article built; 12 photos converted from HEIC to JPEG; homepage hero updated; COVER and photo 13 not in attachments — needed from Ana |
 | Jun 28 | Judy | Man Overboard article + 2 photos | `19f0eea5a27d1261` | ✅ | Article built; Final Cover used as homepage card; KRHeadHorizEyes inline in body |
 | Jun 28 | Judy | Making History Awards cover photo (Buddy Guy 22.jpg) | `19f10bc4583eb9b6` | ⏳ | Photo downloaded; no article text yet |
-| Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ⏳ | Photo downloaded; no article text yet |
+| Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ✅ | Superseded — this photo turned out to be byte-identical to "3-Salad.jpeg" from Francesco's full submission; removed as a duplicate hero, kept only as the in-body Photo Three |
 | Jun 29 | Judy | NMH Summer Soiree cover photo (women's board) | `19f163ea364e68f1` | ⏳ | Photo downloaded to nmh-summer-soiree/; article text coming from Emma |
 | Jul 1  | Judy | Fwd: The Reading Room by Scott Holleran (short story for July 5) | `19f1d8a0e3296f22` | ✅ | Article built in the-reading-room/; photo (image0.jpeg) placed at end of story; nav chain updated (man-overboard now → the-reading-room → homepage) |
 | Jul 2  | Judy | About – Classic Chicago Magazine (Jean Colonomos reorder, Ethan Cotton note) | `19f237ea7c5192ed` | ✅ | Removed Jean Colonomos as first under More Contributors, moved to end of list; added Ethan Cotton bio for July 5 cat-photo-essay (commit da7d7e80, same day) |
 | Jul 3  | Judy | Returning now from The Canadian Rockies | `19f29e8e6a17b135` | ⬛ | Judy back from trip, praised Versailles article, asked what the #1 (hero) article is; no action needed |
+| Jul 4  | Annie | Classic Chicago Article: Dining Under a Tripoli Sky (Francesco Bianchini) | `19f2c56d454cab15` | ✅ | Full article text + 5 Drive-linked photos; another session had built the HTML skeleton with correct filenames but never fetched the actual files; downloaded all 5 and removed the duplicate hero (see above); subject line has a typo ("Tripoli" for "Tiepolo") — title itself is correct |
+| Jul 4  | Annie | Classic Chicago Article: Global Purr-spective: Cats Around the World (Ethan Cotton) | `19f2c6279ad78524` | 🔁 | Hero photo "1-Cat in grass.jpg" + a "Cats 2 (1).zip" (13 unlabeled/any-order photos) sent as real Gmail attachments; no tool available to fetch Gmail attachment bytes directly (only Drive links) — needs John to download manually, same as the NMH photos |
+| Jul 4  | Judy | Here is the Spark! Photo with Rob Ellis, Stuart Dyer, Kassy Welsh Helme, Suzy and Brendan Mulshine | `19f2cabbfde28b32` | 🔁 | Confirms the correct "Photo 12" for spark-gala as a real Gmail attachment; also needs manual download, same limitation |
+| Jul 4  | Judy | Here is Aimee Nolan, Carol and Peter Goldman, Mike Nolan (your request to Emma) | `19f2ca8d76842333` | 🔁 | The previously-missing "Photo 11" for spark-gala, sent as a real Gmail attachment; also needs manual download |
+| Jul 4  | Emma | Re: Spark! Raises $5 million... | `19f2cb5747f82957` | ⬛ | Confirms Judy's Photo 12 is correct; no further action |
+| Jul 4  | Judy | Re: Editorial | `19f2ca5a4b7b08f6` | ⬛ | John sent Judy a personal editorial ("My Chicago began across the street from itself...") for feedback; Judy loved it; not part of the July 5 lineup — no page built yet, John's call on where/whether to publish it |
 
 ## July 19 Edition
 
