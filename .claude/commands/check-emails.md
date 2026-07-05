@@ -23,7 +23,17 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 - Catches writers emailing directly: Bob Glaze, Katherine Harvey, Susan Aurinko, David Sweet, Lee Hamilton, Sophie Bross, Sydney Armstrong, Philip Vidal, Elizabeth Dunlop Richter, etc.
 - Report any matches with sender + subject; apply changes only if content is unambiguous
 
-## Step 1 — Fetch emails
+## Step 1 — Determine the search cutoff date
+
+**Before fetching any emails**, read `EMAIL_LOG.md` and find the date of the most recent entry. Use that date as the `after:` cutoff — do NOT use a fixed `newer_than:Nd` window, which re-fetches already-logged emails.
+
+```python
+# Read EMAIL_LOG.md, find last entry date, format as YYYY/MM/DD for Gmail
+# Example: if last log entry is "Jun 28", cutoff = "2026/06/28"
+after_date = "YYYY/MM/DD"  # replace with actual last-log date
+```
+
+Then fetch:
 
 ```python
 import sys; sys.path.insert(0, 'tools')
@@ -31,13 +41,13 @@ from gmail_api import get_access_token, search_messages, get_metadata, get_body,
 
 token = get_access_token()
 
-# Tier 1 — known addresses
+# Tier 1 — known addresses, only after last processed date
 tier1_messages = search_messages(token,
-    "from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) newer_than:2d")
+    f"from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) after:{after_date}")
 
-# Tier 2 — keyword search for writers (including Marcy and others not in tier1)
+# Tier 2 — keyword search for writers, unread only
 tier2_messages = search_messages(token,
-    "(\"Classic Chicago\" OR article) is:unread newer_than:2d -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
+    f"(\"Classic Chicago\" OR article) is:unread after:{after_date} -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
