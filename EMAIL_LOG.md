@@ -151,3 +151,44 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jun 26 | Ana | Soma Roy / R.S.V.P. to Enchantment (9 photos) | `19f0440567f125c1` | ✅ | Photos extracted; article built at editions/2026-06-28/soma-roy/ |
 | Jun 26 | Judy | Re: R.S.V.P. to Enchantment | `19f0490d053a2835` | ⏳ | Judy wants Soma Roy to have a final look before publishing — notify Judy when preview is up |
 | Jun 26 | Ana | Philip Vidal: About the Town in July (8 photos) | `19f0497e6044f281` | ✅ | Photos extracted; article built at editions/2026-06-28/philip-vidal/ |
+
+| Jul 1 | Judy | Fwd: Question for you! (Josée Nadeau photo for Versailles) | `19f1dd166c90c2f9` | ✅ | Josée wants photo of her + Ivan Dvorak added to Versailles article; Jul 2: emailed Kristin Smith (CC Judy) with both photos attached; Kristin deferred to CC's editorial judgment; John chose the close-up photo, added as image0.jpeg (commit fea2842c); Judy confirmed |
+
+## July 5 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jun 28 | Judy | July 5 lineup | `19f10a42caaf303d` | ✅ | 7 articles: chinatown (Jen), tiepolo-sky (Francesco), spark-gala (Emma), nmh-summer-soiree (Judy), making-history-awards (Judy), cat-photo-essay (Ethan Cotton), man-overboard (Judy) |
+| Jul 1  | Judy | Postponing Making History Awards to July 12 | `19f1f862e88a5643` | ✅ | Making History Awards moved to Jul 12; The Reading Room (already built) is substitute for Jul 5 |
+| Jul 1  | Ana  | Chinatown article by Jen Huang + 12 photos | `19f1f7cc12275e10` | ✅ | Article built; 12 photos converted from HEIC to JPEG; homepage hero updated; COVER and photo 13 not in attachments — needed from Ana |
+| Jun 28 | Judy | Man Overboard article + 2 photos | `19f0eea5a27d1261` | ✅ | Article built; Final Cover used as homepage card; KRHeadHorizEyes inline in body |
+| Jun 28 | Judy | Making History Awards cover photo (Buddy Guy 22.jpg) | `19f10bc4583eb9b6` | ⏳ | Photo downloaded; no article text yet |
+| Jun 28 | Judy | Tiepolo Sky suggested photo (Unknown-1.jpeg) | `19f10a7c266cb674` | ✅ | Superseded — this photo turned out to be byte-identical to "3-Salad.jpeg" from Francesco's full submission; removed as a duplicate hero, kept only as the in-body Photo Three |
+| Jun 29 | Judy | NMH Summer Soiree cover photo (women's board) | `19f163ea364e68f1` | ⏳ | Photo downloaded to nmh-summer-soiree/; article text coming from Emma |
+| Jul 1  | Judy | Fwd: The Reading Room by Scott Holleran (short story for July 5) | `19f1d8a0e3296f22` | ✅ | Article built in the-reading-room/; photo (image0.jpeg) placed at end of story; nav chain updated (man-overboard now → the-reading-room → homepage) |
+| Jul 2  | Judy | About – Classic Chicago Magazine (Jean Colonomos reorder, Ethan Cotton note) | `19f237ea7c5192ed` | ✅ | Removed Jean Colonomos as first under More Contributors, moved to end of list; added Ethan Cotton bio for July 5 cat-photo-essay (commit da7d7e80, same day) |
+| Jul 3  | Judy | Returning now from The Canadian Rockies | `19f29e8e6a17b135` | ⬛ | Judy back from trip, praised Versailles article, asked what the #1 (hero) article is; no action needed |
+| Jul 4  | Annie | Classic Chicago Article: Dining Under a Tripoli Sky (Francesco Bianchini) | `19f2c56d454cab15` | ✅ | Full article text + 5 Drive-linked photos; another session had built the HTML skeleton with correct filenames but never fetched the actual files; downloaded all 5 and removed the duplicate hero (see above); subject line has a typo ("Tripoli" for "Tiepolo") — title itself is correct |
+| Jul 4  | Annie | Classic Chicago Article: Global Purr-spective: Cats Around the World (Ethan Cotton) | `19f2c6279ad78524` | ✅ | Article built; hero "1-Cat in grass.jpg" + 13 photos from "Cats 2 (1).zip" (downloaded manually by John); zip included a 14th photo (IMG_4951.jpg) that was byte-identical to the hero — removed as a duplicate, leaving exactly 13 for the 13 open slots |
+| Jul 4  | Judy | Here is the Spark! Photo with Rob Ellis, Stuart Dyer, Kassy Welsh Helme, Suzy and Brendan Mulshine | `19f2cabbfde28b32` | 🔁 | Confirms the correct "Photo 12" for spark-gala; still needs manual download (not yet received) |
+| Jul 4  | Judy | Here is Aimee Nolan, Carol and Peter Goldman, Mike Nolan (your request to Emma) | `19f2ca8d76842333` | ✅ | The previously-missing "Photo 11" for spark-gala; downloaded and placed |
+| Jul 4  | Emma | Re: Spark! Raises $5 million... | `19f2cb5747f82957` | ⬛ | Confirms Judy's Photo 12 is correct; no further action |
+| Jul 4  | Emma | Spark! Raises $5 million (original submission) | `19f2b35c21497948` | ✅ | Article built in spark-gala/, all 14 photos in place; byline corrected to Judy Carmack Bross (was misattributed to Emma, who only relayed it); cover/hero is Photo 7 per Judy's explicit "on cover" note, not duplicated inline. Photos 3, 5, 8, and 12 all needed manual download by John since none were fetchable via available tools (real Gmail attachments, not Drive links) |
+| Jul 4  | Judy | Re: Editorial | `19f2ca5a4b7b08f6` | ✅ | John's personal editorial ("My Chicago Began Across the Street from Itself") added to editorial.html per Judy's request to alternate weekly editorials; also cleaned up editorial.html's internal-nav, which still linked to pages removed from dev2 in June |
+
+## July 19 Edition
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jul 2  | Sig  | Next Article | `19f2539e60725e54` | 🔁 | Sig proposing to submit text, photos, and credits for her next article by Wed Jul 15; Judy confirmed slot for the July 19 edition; no content received yet |
+
+## July 5 Edition (continued)
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jul 4 | Emma | Spark! Raises $5 million for the Shirley Ryan AbilityLab | `19f2b35c21497948` | 🔁 | Full article text + 15 photo captions for spark-gala; only 4 photos as real Gmail attachments (Photo 3, Photo 5, and TWO different files both named Photo 12.jpg — ambiguous, need Emma/Judy to clarify which is correct); rest are Google Drive links; caption references "Photo 11" but no Photo 11 file was attached or linked anywhere — missing, needs follow-up |
+| Jul 4 | Emma | Calypso and the Cabana Club: A SoiréeSensation | `19f2b549276b3cd1` | ✅ | Article built in nmh-summer-soiree/ with all 14 photos; 10 fetched via Drive, 4 (24, 26, 27, 28) hit a persistent Drive session error and were downloaded manually by John instead; homepage card updated |
+| Jul 4 | Annie | Re: Linda Miller article — 4 missing photos (June 28) | `19f2b85db05e30bb` | ⬛ | Annie apologized for missing John's Jun 27 follow-up request; John replied it worked out already (article was completed without those photos); no action needed |
+| Jul 4 | Judy | Re: July 5 Edition — Preview Ready + Verbatim Text Audit | `19f2f06e852ecda6` | ✅ | Judy approved the preview; requested 2 fixes (NMH "supportslarge scale" → "supports large scale"; Man Overboard closing quote added to final "As a child..." paragraph) — both applied; also suggested (optional) reordering two Tiepolo Sky photos to match where they're discussed in text — applied per John's choice |
+| Jul 4 | Judy | Here is Francesco's article. Sorry I missed that you still needed it. | `19f2dd7cb4bf8254` | ⬛ | Redundant resend — Annie had already relayed this and it was built correctly (verified verbatim match); no action needed |
+| Jul 4 | Judy | Re: July 5 Edition — Status Update (Kristin's ranking / stats) | `19f2e81a16f36c07` | 🔁 | Judy wants to know current article popularity ranking (Kristin's Versailles piece was #8 as of last stats pull); John told her he'd "rerun the stats" — blocked on missing GA4 credentials (`tools/credentials.json`), same gap found when investigating the "stats" request separately; needs credentials before this can be fulfilled |
