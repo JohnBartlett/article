@@ -9,16 +9,16 @@ Order below is Judy's suggested Sunday order.
 | # | Slug | Title | Author | Coordinator | HTML | Photos | Notes |
 |---|------|-------|--------|-------------|------|--------|-------|
 | 1 | making-history-awards | Making History Awards | Judy Carmack Bross | Ana | ❌ | ✅ 1 cover | Cover: Buddy Guy with Ronnie Baker Brooks (Buddy Guy 22.jpg, on disk); Judy re-sent cover Jul 6 (msg 19f36d6d20b74ddd); article text promised "today" (Jul 6); Eric Miller captions status unconfirmed — Judy checking with Ana |
-| 2 | biba-roesch | Biba Roesch's Favorite People | Biba Roesch (?) | Emma | ❌ | ⏳ cover sent | Cover photo (Biba with Steve Zick, `steven-zick-01 copy.jpeg`) sent Jul 6 (msg 19f373efb4caa832) — **needs manual download**; article text not yet received |
+| 2 | biba-roesch | Biba Roesch's Favorite People | Biba Roesch (?) | Emma | ❌ | ✅ 1 cover | Cover photo (Biba with Steve Zick, `steven-zick-01 copy.jpeg`) on disk (msg 19f373efb4caa832); article text not yet received |
 | 3 | rocky-mountaineer | Rocky Mountaineer Train Trip | Judy Carmack Bross | Ana | ❌ | ❌ | Not yet received |
-| 4 | kintsugi | Kintsugi (Jill Lowe's feature) | Jill Lowe | Emma | ❌ | ⏳ 14 files sent | Article PDF `64) Kintsugi.pdf` + lead photo `shutterstock_2308896621.jpeg` (msg 19f376918ce0cf05, to Judy CC John); 13 photos + 1 screenshot sent direct to John (msg 19f3769fe0b412b8) — **all need manual download**; PDF article → build text first, get placement before placing photos (mistake #29) |
+| 4 | kintsugi | Kintsugi (Jill Lowe's feature) | Jill Lowe | Emma | ❌ | ✅ 15 files | `64) Kintsugi.pdf` + lead photo `shutterstock_2308896621.jpeg` (msg 19f376918ce0cf05) and 13 more files (msg 19f3769fe0b412b8) all on disk, incl. `Screenshot 2026-07-04 at 08.44.00.png` (book cover "Use the Good Dishes" by Dr. Elaine Dembe); no captions in email — check PDF for captions/placement; PDF article → build text first, get placement before placing photos (mistake #29) |
 | 5 | letter-from-paris | Letter from Paris | Russell Lewis | Judy | ❌ | ❌ | To be divided into several parts; Judy will send to John to look at |
 | 6 | adrian-illinois | Adrian Naves Illinois feature | Adrian Naves | Annie | ❌ | ❌ | Not yet received |
 | 7 | golden-triangle | Golden Triangle sale | Judy Carmack Bross | Annie | ❌ | ❌ | Not yet received |
 | — | datebook | DateBook | Annie Delfosse | — | ✅* | — | Copied from July 5; new events pending from Annie |
 | — | daily-star-july | Astrochart | Victoria Martin | — | ✅* | — | Copied from July 5; coverage already extends through July 31 |
 
-Slugs for articles 2–7 are provisional — folders not yet created (`/prep-edition` to run).
+Slugs for articles 3, 5–7 are provisional — folders not yet created (`/prep-edition` to run). biba-roesch/ and kintsugi/ folders exist (photos only, no index.html yet).
 
 ## Pending Deliveries
 
@@ -30,10 +30,7 @@ Slugs for articles 2–7 are provisional — folders not yet created (`/prep-edi
 
 ## Blockers
 
-- **No Gmail API credentials on this machine** (`~/.gmail-mcp/` missing) — attachments cannot be auto-downloaded. Needs John to either run `python3 tools/get_gmail_token.py` (requires client_secret JSON in ~/Downloads) or download manually:
-  - `steven-zick-01 copy.jpeg` (Biba cover, msg 19f373efb4caa832) → `editions/2026-07-12/biba-roesch/`
-  - `64) Kintsugi.pdf` + `shutterstock_2308896621.jpeg` (msg 19f376918ce0cf05) → `editions/2026-07-12/kintsugi/`
-  - 14 Kintsugi photo files (msg 19f3769fe0b412b8) → `editions/2026-07-12/kintsugi/`
+- ~~No Gmail API credentials on this machine~~ **Resolved Jul 6**: new Desktop OAuth client "CCM Gmail CLI (John's Mac)" created in GCP project `classic-chicago-article-mgmt`; token saved to `~/.gmail-mcp/`; all pending attachments downloaded. (GA4 stats credentials `tools/credentials.json` still missing — separate issue.)
 
 ## Notes
 
