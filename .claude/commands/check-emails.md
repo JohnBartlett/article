@@ -19,7 +19,8 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 - FormSubmit (`submissions@formsubmit.co`) — reader votes/comments; checked only during `/send-update` stats run, not here
 
 ### Tier 2 — Unknown writers (keyword search)
-- Search recent unread emails mentioning "Classic Chicago" or "article" from senders not in Tier 1
+- Search recent emails mentioning "Classic Chicago" or "article" from senders not in Tier 1
+- **Never filter by `is:unread`** — John often opens emails in Gmail before the session, so read state means nothing. Filter by date (`after:` the last EMAIL_LOG.md entry) and dedupe against message IDs already in the log instead.
 - Catches writers emailing directly: Bob Glaze, Katherine Harvey, Susan Aurinko, David Sweet, Lee Hamilton, Sophie Bross, Sydney Armstrong, Philip Vidal, Elizabeth Dunlop Richter, etc.
 - Report any matches with sender + subject; apply changes only if content is unambiguous
 
@@ -45,9 +46,10 @@ token = get_access_token()
 tier1_messages = search_messages(token,
     f"from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) after:{after_date}")
 
-# Tier 2 — keyword search for writers, unread only
+# Tier 2 — keyword search for writers (no is:unread — read state is meaningless,
+# John may have opened emails in Gmail already; dedupe against EMAIL_LOG.md msg IDs)
 tier2_messages = search_messages(token,
-    f"(\"Classic Chicago\" OR article) is:unread after:{after_date} -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
+    f"(\"Classic Chicago\" OR article) after:{after_date} -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
