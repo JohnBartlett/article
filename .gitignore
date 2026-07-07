@@ -26,3 +26,4 @@ tools/__pycache__/
 .venv/
 ga4_report_*.json
 .env*
+.claude-bootstrap.env
