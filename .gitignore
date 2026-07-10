@@ -27,3 +27,6 @@ tools/__pycache__/
 ga4_report_*.json
 .env*
 .claude-bootstrap.env
+
+# Internal editorial tooling lives on the `editors` branch only — never on dev2/dev/master
+editors/stats.html

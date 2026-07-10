@@ -13,10 +13,18 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout dev2
+      - name: Checkout dev2 (build tools + site content)
         uses: actions/checkout@v4
         with:
           ref: dev2
+          path: dev2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout editors (publish target)
+        uses: actions/checkout@v4
+        with:
+          ref: editors
+          path: editors-branch
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
@@ -29,7 +37,7 @@ jobs:
         run: pip install google-analytics-data requests
 
       - name: Write GA4 credentials
-        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > tools/credentials.json
+        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > dev2/tools/credentials.json
 
       - name: Write Gmail OAuth keys
         run: echo '${{ secrets.GMAIL_OAUTH_KEYS }}' > /tmp/gmail-oauth-keys.json
@@ -38,14 +46,21 @@ jobs:
         run: echo '${{ secrets.GMAIL_CREDENTIALS }}' > /tmp/gmail-credentials.json
 
       - name: Build stats page
+        working-directory: dev2
         env:
           GA4_PROPERTY_ID: '523654462'
           GOOGLE_APPLICATION_CREDENTIALS: tools/credentials.json
           GMAIL_OAUTH_KEYS_PATH: /tmp/gmail-oauth-keys.json
           GMAIL_CREDENTIALS_PATH: /tmp/gmail-credentials.json
-        run: python3 tools/build_stats_page.py --output editors/stats.html
+        run: python3 tools/build_stats_page.py --output ../stats-output.html
+
+      - name: Copy output into editors branch checkout
+        run: |
+          mkdir -p editors-branch/editors
+          cp stats-output.html editors-branch/editors/stats.html
 
       - name: Commit and push if changed
+        working-directory: editors-branch
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -54,5 +69,5 @@ jobs:
             echo "No changes to stats.html — skipping commit"
           else
             git commit -m "Auto-refresh stats dashboard [$(date -u '+%Y-%m-%d %H:%M UTC')]"
-            git push origin dev2
+            git push origin editors
           fi

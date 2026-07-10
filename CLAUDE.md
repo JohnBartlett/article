@@ -75,22 +75,24 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 Running `vercel deploy --yes` creates a unique preview URL for the current dev2 state. After every such deploy:
 1. Capture the Preview URL from the output line starting with `Preview:`
 2. Update the stable alias to point to the new deployment
-3. Update two links in the editors pages:
-   - `editors/edition.html` — Dev2 Preview button (points to current hero article)
-   - `editors/index.html` — Dev Preview quick link (points to homepage)
-4. Commit both files and push to dev2
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
 vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
-EDITION_DATE="YYYY-MM-DD"   # current edition date
-HERO_SLUG="slug"             # hero article slug (first article in homepage order)
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
-sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
-git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```
 
 **Stable alias:** `https://article-dev2.vercel.app` — always points to the most recent dev2 deploy.
+
+There is no dashboard page on dev2 to update with this URL — `editors/edition.html` and `editors/index.html` were deleted (Jun 22, 2026) and never rebuilt anywhere. If you need a live "internal dashboard" experience again, it has to be built from scratch on the `editors` branch (see below); don't recreate it on dev2.
+
+### Editors branch — internal tooling
+A separate orphan branch, `editors`, hosts internal tools that have no place in the article publishing pipeline. It shares no history with `dev2`/`dev`/`master` and has its own Vercel deployment (routes: `/stats`, `/comments`, `/future`).
+
+- **`editors/stats.html`** — GA4 + vote/comment dashboard. Lives on `editors` **only**. Auto-refreshed every 6 hours by `.github/workflows/refresh-stats.yml`, which checks out `dev2` (for `tools/build_stats_page.py`, GA4/Gmail credentials, and the `editions/` folder it reads from) and `editors` (the publish target) side by side, builds the page from the `dev2` checkout, then commits/pushes the output to `editors` only. Do not add `editors/stats.html` back to `dev2` — it's gitignored there to prevent drift.
+- **`reader-comments.html`** — reader votes/comments log. Lives on `editors` only, maintained by checking out that branch directly; not part of the normal dev2 session workflow.
+- **`future-articles.html`** — unpublished article planning. Was moved to `editors` on Jun 22 but drifted back onto `dev2` on Jul 6 (a `/check-emails` session recreated it per the docs at the time) and has been actively maintained there since. It now lives on `dev2`, not `editors` — treat that as the current source of truth.
+
+**Never merge `editors` into `dev2`/`dev`/`master`, or vice versa** — it's a deliberately disconnected branch.
 
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
@@ -219,9 +221,9 @@ The script generates a timestamped JSON file with the last 30 days of data.
 ├── about.html              About — team bios + "Our Writers This Week"
 ├── subscribe.html          Subscribe — "coming soon" placeholder
 ├── advertise.html          Advertise — "coming soon" placeholder
-├── reader-comments.html    Internal — reader votes/comments log (dev2 only)
 ├── future-articles.html    Internal — unpublished article planning (dev2 only)
 ├── comments.html           Internal — editorial notes (dev2 only)
+                            (reader-comments.html and editors/stats.html live on the `editors` branch, not here)
 ├── logo.jpg                Shared masthead logo
 ├── favicon.ico             Favicon
 ├── _template/
@@ -397,7 +399,7 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 10. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
 11. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
 12. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
-13. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
+13. ~~Update editors pages~~ — Obsolete. `editors/edition.html` and `editors/index.html` were removed Jun 22, 2026 and no longer exist. After `vercel deploy --yes`, just update the stable alias (see Dev2 preview deployments) — nothing else to update.
 14. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
 15. **Sending emails without asking** — Always ask "Should I send this or save as a draft?" before sending any email. Never send autonomously unless explicitly told to.
 16. **Assuming caption = label before image** — The label appearing before an image in an email body is *sometimes* a caption, but may also be a placement instruction (e.g. "Photo 1", "Cover"). Verify from context; when uncertain, ask before writing `<figcaption>`.
@@ -442,8 +444,8 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 **What to expect from FormSubmit:**
 - "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
 - "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
-- Real comments (non-empty, non-dev2) go in `reader-comments.html`
-- If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section
+- Real comments (non-empty, non-dev2) go in `reader-comments.html` — this file lives on the `editors` branch, not `dev2`. Updating it requires checking out `editors` separately (e.g. `git worktree add /tmp/editors-worktree editors`); it isn't part of the normal dev2 session
+- If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section (this one does live on dev2)
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
@@ -456,7 +458,7 @@ The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
-- Do NOT include reader-comments.html or future-articles.html in the internal nav — these have been removed
+- Do NOT include reader-comments.html or future-articles.html in the internal nav — reader-comments.html isn't even on this branch (it's on `editors`), and future-articles.html is a planning doc, not reader-facing
 - Remove any stale edition-specific links from the prior edition
 
 The comment marker convention:
