@@ -179,34 +179,46 @@ def main():
     args = parser.parse_args()
 
     today_str = date.today().strftime("%Y-%m-%d")
-    current_edition = args.edition or find_current_edition()
-    if not current_edition:
+
+    # The "prep" edition is whatever has an active STATUS.md — may be a future,
+    # not-yet-published date (e.g. mid-week prep for next Sunday). Article Status
+    # and Decisions Needed track that one.
+    prep_edition = args.edition or find_current_edition()
+    if not prep_edition:
         print("Error: no edition folders found")
         sys.exit(1)
 
-    print(f"→ Current edition: {current_edition}")
-    status_data = parse_status_md(current_edition)
+    # GA4 can only report on published editions — never query a future date.
+    editions = bsp.detect_editions(5)
+    ga4_edition = editions[0] if editions else None
+
+    print(f"→ Prep edition (Article Status / Decisions): {prep_edition}")
+    print(f"→ GA4 edition (Reader Stats): {ga4_edition}")
+
+    status_data = parse_status_md(prep_edition)
 
     print("  Building Article Status…")
-    article_status_html = build_article_status_section(current_edition, status_data)
+    article_status_html = build_article_status_section(prep_edition, status_data)
 
     print("  Building Decisions Needed…")
     decisions_html = build_decisions_section(status_data)
 
     client = bsp.ga4_client()
 
-    print("  Fetching Current Edition Spotlight…")
-    s1 = bsp.build_section1(client, current_edition, today_str)
+    if ga4_edition:
+        print("  Fetching Current Edition Spotlight…")
+        s1 = bsp.build_section1(client, ga4_edition, today_str)
+    else:
+        s1 = '<p class="no-data">No published editions yet.</p>'
 
     print("  Fetching comment/vote data from Gmail…")
     records = bsp.fetch_gmail_votes_comments()
     print(f"  → {len(records)} vote/comment records found")
 
     print("  Building Votes & Comments…")
-    s4 = bsp.build_section4(records, current_edition)
+    s4 = bsp.build_section4(records, ga4_edition) if ga4_edition else '<p class="no-data">No published editions yet.</p>'
 
     print("  Fetching Edition History…")
-    editions = bsp.detect_editions(5)
     s2 = bsp.build_section2(client, editions, today_str) if editions else '<p class="no-data">No published editions yet.</p>'
 
     print("  Fetching All-Time Stats…")
@@ -216,8 +228,9 @@ def main():
     s5 = bsp.build_section5(records)
 
     generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
-    ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
-    preview_url = f"https://article-dev2.vercel.app/editions/{current_edition}/"
+    ed_label = datetime.strptime(prep_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
+    ga4_ed_label = datetime.strptime(ga4_edition, "%Y-%m-%d").strftime("%B %-d, %Y") if ga4_edition else "—"
+    preview_url = f"https://article-dev2.vercel.app/editions/{prep_edition}/"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -265,12 +278,12 @@ def main():
   </section>
 
   <section id="spotlight">
-    <h2>Current Edition Spotlight</h2>
+    <h2>Latest Published Edition Spotlight — {ga4_ed_label}</h2>
     {s1}
   </section>
 
   <section id="votes">
-    <h2>Votes &amp; Comments — {ed_label}</h2>
+    <h2>Votes &amp; Comments — {ga4_ed_label}</h2>
     {s4}
   </section>
 
