@@ -1,10 +1,11 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/stats", "permanent": false }
+    { "source": "/", "destination": "/dashboard", "permanent": false },
+    { "source": "/stats", "destination": "/dashboard", "permanent": false }
   ],
   "rewrites": [
     { "source": "/comments", "destination": "/reader-comments.html" },
     { "source": "/future",   "destination": "/future-articles.html" },
-    { "source": "/stats",    "destination": "/editors/stats.html" }
+    { "source": "/dashboard", "destination": "/editors/dashboard.html" }
   ]
 }
