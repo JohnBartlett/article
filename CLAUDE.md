@@ -83,14 +83,19 @@ vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
 
 **Stable alias:** `https://article-dev2.vercel.app` — always points to the most recent dev2 deploy.
 
-There is no dashboard page on dev2 to update with this URL — `editors/edition.html` and `editors/index.html` were deleted (Jun 22, 2026) and never rebuilt anywhere. If you need a live "internal dashboard" experience again, it has to be built from scratch on the `editors` branch (see below); don't recreate it on dev2.
+There is no per-article preview-URL button to update anymore — `editors/edition.html` and `editors/index.html` (the old multi-page dashboard) were deleted Jun 22, 2026 and replaced Jul 10, 2026 by a single consolidated `editors/dashboard.html` (see below). Don't recreate the old multi-page structure.
 
 ### Editors branch — internal tooling
-A separate orphan branch, `editors`, hosts internal tools that have no place in the article publishing pipeline. It shares no history with `dev2`/`dev`/`master` and has its own Vercel deployment (routes: `/stats`, `/comments`, `/future`).
+A separate orphan branch, `editors`, hosts internal tools that have no place in the article publishing pipeline. It shares no history with `dev2`/`dev`/`master` and has its own Vercel deployment (routes: `/dashboard`, `/comments`, `/future`; `/` and `/stats` both redirect to `/dashboard`).
 
-- **`editors/stats.html`** — GA4 + vote/comment dashboard. Lives on `editors` **only**. Auto-refreshed every 6 hours by `.github/workflows/refresh-stats.yml`, which checks out `dev2` (for `tools/build_stats_page.py`, GA4/Gmail credentials, and the `editions/` folder it reads from) and `editors` (the publish target) side by side, builds the page from the `dev2` checkout, then commits/pushes the output to `editors` only. Do not add `editors/stats.html` back to `dev2` — it's gitignored there to prevent drift.
+- **`editors/dashboard.html`** — the internal editors dashboard. One scrolling page (no menu/tabs), with sections in order: **Article Status** (live-computed per-article Ready/Text Only/In Progress/Placeholder/Missing badges, from `verify_edition.py`'s check logic), **Decisions Needed** (pending items + blockers, parsed from the current edition's `STATUS.md`), then reader stats — Current Edition Spotlight, Votes & Comments, Edition History, All-Time Stats, Comment Leaderboard (all reused from the old stats-page logic). Lives on `editors` **only**.
+  - Built by `tools/build_editors_dashboard.py`, which imports and reuses `tools/build_stats_page.py`'s GA4/Gmail functions plus `tools/verify_edition.py`'s `check_article_status`.
+  - Auto-refreshed every 6 hours by `.github/workflows/refresh-editors-dashboard.yml`, which checks out `dev2` (for the build scripts, GA4/Gmail credentials, and the `editions/`/`STATUS.md` files it reads from) and `editors` (the publish target) side by side, builds from the `dev2` checkout, then commits/pushes the output to `editors` only.
+  - Two different "current edition" concepts feed the page: the **prep edition** (latest edition folder with an active `STATUS.md` — may be a future, not-yet-published date) drives Article Status/Decisions Needed; the **GA4 edition** (latest *published* edition, `date <= today`) drives all the reader-stats sections, since GA4 can't report on traffic for a page that isn't live yet.
+  - Do not add `editors/dashboard.html` (or the old `editors/stats.html`) back to `dev2` — `editors/stats.html` is gitignored there to prevent drift.
+  - **The GitHub default branch is `actions`, not `dev2` or `master`** — scheduled cron runs read workflow YAML from the default branch, so `.github/workflows/refresh-editors-dashboard.yml` must be kept in sync on both `dev2` and `actions` (e.g. via a temporary `git worktree add /tmp/actions-worktree actions`). The `actions` branch is otherwise just a stale full-repo mirror; nothing else on it is used at runtime.
 - **`reader-comments.html`** — reader votes/comments log. Lives on `editors` only, maintained by checking out that branch directly; not part of the normal dev2 session workflow.
-- **`future-articles.html`** — unpublished article planning. Was moved to `editors` on Jun 22 but drifted back onto `dev2` on Jul 6 (a `/check-emails` session recreated it per the docs at the time) and has been actively maintained there since. It now lives on `dev2`, not `editors` — treat that as the current source of truth.
+- **`future-articles.html`** — unpublished article planning. Was moved to `editors` on Jun 22 but drifted back onto `dev2` on Jul 6 (a `/check-emails` session recreated it per the docs at the time) and has been actively maintained there since. It now lives on `dev2`, not `editors` — treat that as the current source of truth. (A stale, frozen-since-Jun-22 copy still sits on `editors` too — ignore it.)
 
 **Never merge `editors` into `dev2`/`dev`/`master`, or vice versa** — it's a deliberately disconnected branch.
 
@@ -223,7 +228,7 @@ The script generates a timestamped JSON file with the last 30 days of data.
 ├── advertise.html          Advertise — "coming soon" placeholder
 ├── future-articles.html    Internal — unpublished article planning (dev2 only)
 ├── comments.html           Internal — editorial notes (dev2 only)
-                            (reader-comments.html and editors/stats.html live on the `editors` branch, not here)
+                            (reader-comments.html and editors/dashboard.html live on the `editors` branch, not here)
 ├── logo.jpg                Shared masthead logo
 ├── favicon.ico             Favicon
 ├── _template/
