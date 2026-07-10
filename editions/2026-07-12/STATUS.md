@@ -25,7 +25,7 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 - **Adrian / Annie** — Kiddieland article text (Friday Jul 11)
 - **Annie** — updated DateBook events for July 12
 - **Eric Miller** — Making History Awards photo captions (Judy checking with Ana)
-- **John** — decide how to divide the Russell Kelley Letter from Paris (2–3 parts); reply to Judy's readership-growth question (msg 19f38b3174c9aa65); reply to Philip Vidal's questions via Judy (msg 19f397dad3bb3044)
+- **John** — decide how to divide the Russell Kelley Letter from Paris (2–3 parts)
 
 ## Deferred to July 19
 
