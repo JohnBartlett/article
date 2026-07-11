@@ -1,4 +1,4 @@
-name: Refresh Stats Dashboard
+name: Refresh Editors Dashboard
 
 on:
   schedule:
@@ -13,23 +13,30 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout dev2
+      - name: Checkout dev2 (build tools + site content)
         uses: actions/checkout@v4
         with:
           ref: dev2
+          path: dev2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout editors (publish target)
+        uses: actions/checkout@v4
+        with:
+          ref: editors
+          path: editors-branch
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
 
       - name: Install dependencies
         run: pip install google-analytics-data requests
 
       - name: Write GA4 credentials
-        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > tools/credentials.json
+        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > dev2/tools/credentials.json
 
       - name: Write Gmail OAuth keys
         run: echo '${{ secrets.GMAIL_OAUTH_KEYS }}' > /tmp/gmail-oauth-keys.json
@@ -37,22 +44,31 @@ jobs:
       - name: Write Gmail credentials
         run: echo '${{ secrets.GMAIL_CREDENTIALS }}' > /tmp/gmail-credentials.json
 
-      - name: Build stats page
+      - name: Build editors dashboard
+        working-directory: dev2
         env:
           GA4_PROPERTY_ID: '523654462'
           GOOGLE_APPLICATION_CREDENTIALS: tools/credentials.json
           GMAIL_OAUTH_KEYS_PATH: /tmp/gmail-oauth-keys.json
           GMAIL_CREDENTIALS_PATH: /tmp/gmail-credentials.json
-        run: python3 tools/build_stats_page.py --output editors/stats.html
+        run: python3 tools/build_editors_dashboard.py --output ../dashboard-output.html
+
+      - name: Copy output into editors branch checkout
+        run: |
+          mkdir -p editors-branch/editors
+          cp dashboard-output.html editors-branch/editors/dashboard.html
+          rm -f editors-branch/editors/stats.html
 
       - name: Commit and push if changed
+        working-directory: editors-branch
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add editors/stats.html
+          git add editors/dashboard.html
+          git rm --ignore-unmatch --quiet editors/stats.html
           if git diff --cached --quiet; then
-            echo "No changes to stats.html — skipping commit"
+            echo "No changes to dashboard.html — skipping commit"
           else
-            git commit -m "Auto-refresh stats dashboard [$(date -u '+%Y-%m-%d %H:%M UTC')]"
-            git push origin dev2
+            git commit -m "Auto-refresh editors dashboard [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git push origin editors
           fi

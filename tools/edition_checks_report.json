@@ -2,15 +2,8 @@
   "dark_mode_added": [],
   "nav_css_added": [],
   "popup_articles_added": [
-    "ethan-cotton: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline (May 10, 2026)",
-    "ethan-cotton: Steel, Stone, and Stars: The Architectural Symphony of the Chicago Skyline (May 17, 2026)",
-    "francesco-bianchini: Dining Under a Tiepolo Sky (July 5, 2026)",
-    "jen-huang: Chicago&rsquo;s Chinatown: A Place to Visit or Call Home (July 5, 2026)",
-    "judy-carmack-bross: Making History Awards (July 5, 2026)",
-    "judy-carmack-bross: Man Overboard: Stay on Shore While Reading Advised (July 5, 2026)",
-    "judy-carmack-bross: Calypso and the Cabana Club: A Soir\u00e9eSensation (July 5, 2026)",
-    "judy-carmack-bross: Spark! Raises $5 Million for the Shirley Ryan AbilityLab (July 5, 2026)",
-    "scott-holleran: The Reading Room (July 5, 2026)"
+    "russell-kelley: Letter from Paris: Retirement Politics and the Poetry of French (July 12, 2026)",
+    "russell-kelley: Letter from Paris: Paris&rsquo;s Great Museums and Summer Spectacles (July 12, 2026)"
   ],
   "new_authors_needing_bios": [
     {
@@ -31,5 +24,6 @@
         "May 17, 2026: Glessner House Celebrates 60 Years"
       ]
     }
-  ]
+  ],
+  "stale_datebook_months": []
 }

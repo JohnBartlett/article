@@ -75,22 +75,29 @@ All new articles built on dev2 should use the **disabled** form (matching `_temp
 Running `vercel deploy --yes` creates a unique preview URL for the current dev2 state. After every such deploy:
 1. Capture the Preview URL from the output line starting with `Preview:`
 2. Update the stable alias to point to the new deployment
-3. Update two links in the editors pages:
-   - `editors/edition.html` — Dev2 Preview button (points to current hero article)
-   - `editors/index.html` — Dev Preview quick link (points to homepage)
-4. Commit both files and push to dev2
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
 vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
-EDITION_DATE="YYYY-MM-DD"   # current edition date
-HERO_SLUG="slug"             # hero article slug (first article in homepage order)
-sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html
-sed -i "s|href=\"https://article-[^/]*/index\.html\"|href=\"${PREVIEW_URL}/index.html\"|" editors/index.html
-git add editors/edition.html editors/index.html && git commit -m "Update dev2 preview URL" && git push origin dev2
 ```
 
 **Stable alias:** `https://article-dev2.vercel.app` — always points to the most recent dev2 deploy.
+
+There is no per-article preview-URL button to update anymore — `editors/edition.html` and `editors/index.html` (the old multi-page dashboard) were deleted Jun 22, 2026 and replaced Jul 10, 2026 by a single consolidated `editors/dashboard.html` (see below). Don't recreate the old multi-page structure.
+
+### Editors branch — internal tooling
+A separate orphan branch, `editors`, hosts internal tools that have no place in the article publishing pipeline. It shares no history with `dev2`/`dev`/`master` and has its own Vercel deployment (routes: `/dashboard`, `/comments`, `/future`; `/` and `/stats` both redirect to `/dashboard`).
+
+- **`editors/dashboard.html`** — the internal editors dashboard. One scrolling page (no menu/tabs), with sections in order: **Article Status** (live-computed per-article Ready/Text Only/In Progress/Placeholder/Missing badges, from `verify_edition.py`'s check logic), **Decisions Needed** (pending items + blockers, parsed from the current edition's `STATUS.md`), then reader stats — Current Edition Spotlight, Votes & Comments, Edition History, All-Time Stats, Comment Leaderboard (all reused from the old stats-page logic). Lives on `editors` **only**.
+  - Built by `tools/build_editors_dashboard.py`, which imports and reuses `tools/build_stats_page.py`'s GA4/Gmail functions plus `tools/verify_edition.py`'s `check_article_status`.
+  - Auto-refreshed every 6 hours by `.github/workflows/refresh-editors-dashboard.yml`, which checks out `dev2` (for the build scripts, GA4/Gmail credentials, and the `editions/`/`STATUS.md` files it reads from) and `editors` (the publish target) side by side, builds from the `dev2` checkout, then commits/pushes the output to `editors` only.
+  - Two different "current edition" concepts feed the page: the **prep edition** (latest edition folder with an active `STATUS.md` — may be a future, not-yet-published date) drives Article Status/Decisions Needed; the **GA4 edition** (latest *published* edition, `date <= today`) drives all the reader-stats sections, since GA4 can't report on traffic for a page that isn't live yet.
+  - Do not add `editors/dashboard.html` (or the old `editors/stats.html`) back to `dev2` — `editors/stats.html` is gitignored there to prevent drift.
+  - **The GitHub default branch is `actions`, not `dev2` or `master`** — scheduled cron runs read workflow YAML from the default branch, so `.github/workflows/refresh-editors-dashboard.yml` must be kept in sync on both `dev2` and `actions` (e.g. via a temporary `git worktree add /tmp/actions-worktree actions`). The `actions` branch is otherwise just a stale full-repo mirror; nothing else on it is used at runtime.
+- **`reader-comments.html`** — reader votes/comments log. Lives on `editors` only, maintained by checking out that branch directly; not part of the normal dev2 session workflow.
+- **`future-articles.html`** — unpublished article planning. Was moved to `editors` on Jun 22 but drifted back onto `dev2` on Jul 6 (a `/check-emails` session recreated it per the docs at the time) and has been actively maintained there since. It now lives on `dev2`, not `editors` — treat that as the current source of truth. (A stale, frozen-since-Jun-22 copy still sits on `editors` too — ignore it.)
+
+**Never merge `editors` into `dev2`/`dev`/`master`, or vice versa** — it's a deliberately disconnected branch.
 
 ### GitHub repo
 - **Repo:** `JohnBartlett/article`
@@ -219,9 +226,9 @@ The script generates a timestamped JSON file with the last 30 days of data.
 ├── about.html              About — team bios + "Our Writers This Week"
 ├── subscribe.html          Subscribe — "coming soon" placeholder
 ├── advertise.html          Advertise — "coming soon" placeholder
-├── reader-comments.html    Internal — reader votes/comments log (dev2 only)
 ├── future-articles.html    Internal — unpublished article planning (dev2 only)
 ├── comments.html           Internal — editorial notes (dev2 only)
+                            (reader-comments.html and editors/dashboard.html live on the `editors` branch, not here)
 ├── logo.jpg                Shared masthead logo
 ├── favicon.ico             Favicon
 ├── _template/
@@ -397,14 +404,14 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 10. **Use carousels for article photos** — All photos must be inline `<figure>` elements, not carousels. Carousel approach distorts images.
 11. **Put author bio in article** — Author name links to About section in byline only. No bio text in article body.
 12. **Skip internal nav on dev2** — Add `<!-- dev2-only -->` nav section to all articles (commented for dev/master).
-13. **Update editors pages** — After each `vercel deploy --yes`, capture preview URL and update both `editors/edition.html` and `editors/index.html`.
+13. ~~Update editors pages~~ — Obsolete. `editors/edition.html` and `editors/index.html` were removed Jun 22, 2026 and no longer exist. After `vercel deploy --yes`, just update the stable alias (see Dev2 preview deployments) — nothing else to update.
 14. **Verify AFTER publishing** — Run `python3 tools/verify_edition.py YYYY-MM-DD` before marking edition as complete.
 15. **Sending emails without asking** — Always ask "Should I send this or save as a draft?" before sending any email. Never send autonomously unless explicitly told to.
 16. **Assuming caption = label before image** — The label appearing before an image in an email body is *sometimes* a caption, but may also be a placement instruction (e.g. "Photo 1", "Cover"). Verify from context; when uncertain, ask before writing `<figcaption>`.
 17. **Assuming only Annie specifies photo layout** — Any contributor (Ana, Emma, Judy, the author) may define photo placement order in their article. Always check the source email for placement instructions before building. If the intended order is unclear, ask.
 18. **Silently correcting contributor spelling** — Never fix a typo in contributor text without flagging it to the editor first. Use verbatim text and note the suspected error.
 19. **Missing nav thumbnails** — Every article-to-article prev/next link must have a thumbnail `<img>` (70×70px, `object-fit:cover`). Only homepage links (`../../../index.html`) are exempt. `verify_edition.py` now checks this — run it before staging.
-20. **DateBook is persistent — copy it each week** — The DateBook never comes down; its events auto-dim via JS as they pass. Each new edition must copy the previous week's datebook folder: `cp -r editions/PREV-DATE/datebook editions/NEW-DATE/datebook`, then update the title/kicker date. Never remove DateBook nav links from articles.
+20. **DateBook is persistent — copy it each week** — The DateBook never comes down; its events auto-dim via JS as they pass. Each new edition must copy the previous week's datebook folder: `cp -r editions/PREV-DATE/datebook editions/NEW-DATE/datebook`, then update the title/kicker date. Never remove DateBook nav links from articles. **Entire past months must be edited out, not just individually-dimmed past events** — copying forward means whole month sections (e.g. a June `<!-- ═ MONTH ═ -->` block) can linger for editions that are now in July or later. `tools/edition_checks.py` checks for this automatically (`stale_datebook_months` in the report) — remove any flagged month's full block (comment, `month-header` div, and `event-list` div) before staging. Also check the DateBook page's own internal Astrochart nav link (`daily-star-MONTH`) — it can go stale the same way and won't be caught by the homepage's DateBook/Astrochart link check.
 21. **Astrochart (daily-star) must also be copied each week** — Like the DateBook, the Astrochart folder (`daily-star-MONTH/`) must be copied from the previous edition: `cp -r editions/PREV-DATE/daily-star-MONTH editions/NEW-DATE/daily-star-MONTH`. If it is missing, the Astrochart link is a 404. Do this at edition setup, same time as DateBook copy. After copying: (a) delete all `<section>` blocks and `<option>` entries with dates before the current edition date, and (b) verify coverage extends through the end of the current month. If data is missing, add to the To Do list: "Email Victoria (`vconst@aol.com`) for [Month] forecast — current data ends [date]." A 1 KB .docx from Victoria is empty/corrupt — always check file size before trusting it.
 22. **Update DateBook and Astrochart links on the homepage before publishing** — `index.html` has nav links to both `editions/YYYY-MM-DD/datebook/` and `editions/YYYY-MM-DD/daily-star-MONTH/`. These must point to the current edition, not the previous one. Check both before any push to dev or master: `grep -E "datebook|daily-star" index.html`. Stale links send live readers to old content.
 23. **Homepage hero meta: author name only, no date** — The hero article on the homepage shows `<div class="hero-meta">By [Author Name]</div>`. It must not include the edition date. The date appears elsewhere on the page; adding it to the hero byline is redundant and was flagged as incorrect.
@@ -427,6 +434,7 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 36. **Claude can run git push directly — only ask user when token expires** — `git push origin master/dev/dev2` works fine via the Bash tool. Never use the `!` prefix for git pushes (it silently fails when credentials are needed). The only time user action is needed: if a push silently fails and `origin` doesn't advance, the GitHub token in the remote URL has expired. Ask the user to generate a new token at github.com/settings/tokens and run: `git remote set-url origin https://NEW_TOKEN@github.com/JohnBartlett/article.git`
 
 37. **Check EMAIL_LOG.md before searching for emails — never use a fixed `newer_than:Nd` window** — Read the last entry date in `EMAIL_LOG.md` first, then search `after:YYYY/MM/DD` (Gmail date format) to fetch only emails that arrived after the last processed date. Using a fixed window like `newer_than:3d` re-fetches already-logged emails and wastes time re-processing them.
+38. **Multi-part articles always run one part per edition, across consecutive weeks — never bundled in a single edition.** This applies to any article explicitly split into parts (Letter from Paris, Kiddieland's Closing, and any future series). Part 1 goes in the edition it's announced for; Part 2 the following week; Part 3 the week after that, etc. When building a multi-part split, only nav-link and homepage-card the current week's part — the other parts stay built and saved on disk but fully unlinked (no nav entry, no homepage card, no about.html popup entry) until their own week arrives. This was corrected on the July 12, 2026 edition after Letter from Paris was incorrectly built with all 3 parts linked into one edition, despite the source email explicitly agreeing to "run across three consecutive issues" — and after the user had already corrected this exact mistake twice before. Before ever splitting an article into parts, re-read the actual scheduling agreement (don't trust an inherited citation in STATUS.md) and confirm one-part-per-edition explicitly with the user if it isn't unambiguous in the source.
 
 ### Recurring email workflow
 
@@ -442,8 +450,8 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 **What to expect from FormSubmit:**
 - "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
 - "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
-- Real comments (non-empty, non-dev2) go in `reader-comments.html`
-- If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section
+- Real comments (non-empty, non-dev2) go in `reader-comments.html` — this file lives on the `editors` branch, not `dev2`. Updating it requires checking out `editors` separately (e.g. `git worktree add /tmp/editors-worktree editors`); it isn't part of the normal dev2 session
+- If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section (this one does live on dev2)
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
@@ -456,7 +464,7 @@ The `.internal-nav` bar sits below the main nav in the `<header>`. On dev2 it is
 
 To update it for a new edition, edit the `<!-- dev2-only -->` block in `index.html`:
 - Add/remove edition-specific links (e.g. editorial critique, datebook drafts) as needed
-- Do NOT include reader-comments.html or future-articles.html in the internal nav — these have been removed
+- Do NOT include reader-comments.html or future-articles.html in the internal nav — reader-comments.html isn't even on this branch (it's on `editors`), and future-articles.html is a planning doc, not reader-facing
 - Remove any stale edition-specific links from the prior edition
 
 The comment marker convention:

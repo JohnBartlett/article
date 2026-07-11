@@ -56,7 +56,11 @@ results = {
     'nav_css_added': [],
     'popup_articles_added': [],
     'new_authors_needing_bios': [],
+    'stale_datebook_months': [],
 }
+
+MONTH_NAMES = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+               'July', 'August', 'September', 'October', 'November', 'December']
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
@@ -235,6 +239,40 @@ def update_about_popups(articles_by_author):
         write_file(ABOUT, about_html)
 
 
+def check_datebook_stale_months():
+    """Flag month-header sections in the current (STATUS.md-active) edition's
+    DateBook that are chronologically before that edition's own month — these
+    are past events left over from copying the previous week's DateBook and
+    should be edited out before staging."""
+    current_edition_dir = None
+    current_edition_date = None
+    for edition_dir in sorted(EDITIONS.iterdir()):
+        if edition_dir.is_dir() and (edition_dir / 'STATUS.md').exists():
+            current_edition_dir = edition_dir
+    if current_edition_dir is None:
+        return
+    parts = current_edition_dir.name.split('-')
+    if len(parts) != 3:
+        return
+    try:
+        edition_month = int(parts[1])
+    except ValueError:
+        return
+    datebook_path = current_edition_dir / 'datebook' / 'index.html'
+    if not datebook_path.exists():
+        return
+    text = datebook_path.read_text(errors='replace')
+    for m in re.finditer(r'<div class="month-header">(\w+)</div>', text):
+        month_name = m.group(1)
+        if month_name in MONTH_NAMES:
+            month_num = MONTH_NAMES.index(month_name)
+            if month_num < edition_month:
+                results['stale_datebook_months'].append({
+                    'edition': current_edition_dir.name,
+                    'month': month_name,
+                })
+
+
 def check_new_authors(articles_by_author):
     """Flag authors who have articles but no bio in about.html."""
     about_html = ABOUT.read_text()
@@ -277,14 +315,17 @@ def main():
             )
 
     # Run fixes
-    print('\n[1/3] Checking dark-mode.js and nav-thumb CSS…')
+    print('\n[1/4] Checking dark-mode.js and nav-thumb CSS…')
     scan_pages()
 
-    print('[2/3] Updating about.html author popups…')
+    print('[2/4] Updating about.html author popups…')
     update_about_popups(articles_by_author)
 
-    print('[3/3] Checking for new authors needing bios…')
+    print('[3/4] Checking for new authors needing bios…')
     check_new_authors(articles_by_author)
+
+    print('[4/4] Checking DateBook for stale past-month sections…')
+    check_datebook_stale_months()
 
     # Report
     print('\n── Results ──────────────────────────────────────')
@@ -318,6 +359,13 @@ def main():
         print('\n  → Run /edition-checks for guided bio writing')
     else:
         print('✓ about.html bios: all authors covered')
+
+    if results['stale_datebook_months']:
+        print(f'\n⚠  DateBook has {len(results["stale_datebook_months"])} stale past-month section(s):')
+        for s in results['stale_datebook_months']:
+            print(f'    {s["edition"]}/datebook — {s["month"]} (before this edition\'s month, should be removed)')
+    else:
+        print('✓ DateBook: no stale past-month sections')
 
     print('\n── Done ─────────────────────────────────────────')
 
