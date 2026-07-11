@@ -13,7 +13,7 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 | 3 | odyssey | What You Need to Know Before Seeing "The Odyssey" | John Makowski (Q&A) | Annie | ✅ | ✅ 1 photo | Built Jul 7 from email body (msg 19f3bd677202980a) — 8 Q&A questions verbatim; photo `63cebaf7-a253-4d5a-a62f-a1c72794e7a3.jpeg` on disk, caption: "Melinda Sue Gordon/Universal Pictures/Everett Collection" (msg 19f3be100e8c529a); nav updated Jul 10: biba-roesch ← odyssey → rocky-mountaineer |
 | 4 | rocky-mountaineer | Canada's Rocky Mountaineer: Spectacular Scenery and Superb Service | Judy Carmack Bross and George York | Ana | ✅ | ✅ 17 photos | Built Jul 10 from Ana's email (msg `19f4c4d35fa69657`) — full text + cover + 16 numbered photos, all explicitly placed inline via `[PHOTO n - filename - caption]` markers in the email body (cleanest placement instructions of the edition, no guessing needed); Judy replied approving (msg `19f4c543a9b03d1e`): "This looks extraordinary"; co-author George York has no about.html bio yet — byline left unlinked for him, flag to Judy if one should be added; homepage card + odyssey/kintsugi nav thumbs updated to real cover photo |
 | 5 | kintsugi | Use the Good Dishes&hellip; But If They Break, Is Kintsugi an Option? | Jill Lowe | Emma | ✅ | ✅ 14 photos | Built Jul 10 from PDF (`64) Kintsugi.pdf`) — rendered all 11 PDF pages to images to extract Jill's own photo placement order (no placement instructions in email, so used the PDF's own layout per mistake #29); matched all 14 photo files to their exact page positions by visual comparison; real hero is `IMG_9045.jpeg` (gilded porcelain plate, page 1) — not `shutterstock_2308896621.jpeg` as earlier assumed, that one is actually mid-article (page 5) with a real caption "Beautiful seams of gold glint in the conspicuous cracks of ceramic wares."; real personal photos are `IMG_9045.jpeg` (plate) and `IMG_8883.jpeg` (restored mercury pendulum clock, "Presented to Michael B. Lowe"), rest are stock/graphic images from the PDF; category "Facts and Froth" (Jill's column name); homepage card + nav thumbs updated to correct hero |
-| 6 | kiddieland | Kiddieland's Closing (Adrian Naves Illinois feature) — Part 1 of 3 | Adrian Naves | Annie | ⚠ stub | ✅ 1 cover | Topic confirmed: Kiddieland closing soon (msg 19f3bbdc2f0a09d4); cover `IMG_1537.png` on disk (msg 19f3bdce53653692); article text to Annie by Friday Jul 11; stub built Jul 10 (prep). **Multi-part like Letter from Paris: Part 1 runs July 12, Parts 2 and 3 are deferred to the next two editions (July 19 and July 26)** — do not build parts 2/3 into this edition |
+| 6 | kiddieland | Kiddieland's Closing (Adrian Naves Illinois feature) — Part 1 of 3 | Adrian Naves | Annie | **PULLED** | ✅ 1 cover | Adrian's text never arrived despite Judy and Annie both checking in Jul 11 (msgs `19f51b2e76244fde`, `19f51a957f236235`); **pulled from the July 12 nav chain and homepage on publish day** per John's decision — stub + cover (`IMG_1537.png`) remain on disk, unlinked, not referenced from any nav or homepage card. Part 1 now deferred to July 19; Parts 2 and 3 shift to July 26 and Aug 2 |
 | 7 | letter-from-paris | Letter from Paris: France's Record Heatwave (Part 1 of 3) | Russell Kelley | Judy → John | ✅ | ✅ 3 photos | Built Jul 10 from PDF (`Letter from Paris #39 040726.pdf`) — split into 3 parts per Judy's Jul 7 agreement (msg `19f3df740c07880c`); rendered all 17 PDF pages to images to extract embedded photos (no separate attachments — images live inside the PDF) and confirm placement; Part 1 covers "Dear Friends" intro + "La Canicule" (heatwave) through "Cela change la donne"; 3 images (flyover, heatwave satellite map, Loire river map) |
 | 7b | letter-from-paris-2 | Letter from Paris: Retirement Politics and the Poetry of French (Part 2 of 3) | Russell Kelley | Judy → John | ✅ | — 0 photos | Covers "La Reforme de la Retraite" (retirement age history) + Samuel Fitoussi's satirical Figaro column + "La poésie de la langue de Molière"; genuinely no images in the source PDF for this section — not an omission |
 | 7c | letter-from-paris-3 | Letter from Paris: Paris's Great Museums and Summer Spectacles (Part 3 of 3) | Russell Kelley | Judy → John | ✅ | ✅ 8 photos | Covers "Les Grands Musées Parisiens" + "Les Expositions" (Matisse exhibition + Russell's 1970 term paper) + "Les Spectacles" + "Avant et Après" (Atget then/now photos) + "Le Bac Philo" + "La Baignade"; last article in the edition, links back to homepage |
@@ -34,11 +34,15 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 - Golden Triangle sale (Judy) — delayed from this edition (msg 19f3bbdc2f0a09d4)
 - Sig's next article (text/photos/credits promised by Wed Jul 15, msg 19f2539e60725e54)
 - Adrian's next cover feature ("I will send one to start for July 19", msg 19f3bd677202980a subject line)
-- Kiddieland's Closing, Part 2 of 3 (Adrian Naves)
+- Kiddieland's Closing, Part 1 of 3 (Adrian Naves) — pulled from July 12 for missing text, shifted here
 
 ## Deferred to July 26
 
-- Kiddieland's Closing, Part 3 of 3 (Adrian Naves)
+- Kiddieland's Closing, Part 2 of 3 (Adrian Naves) — shifted one edition later since Part 1 slipped to July 19
+
+## Deferred to August 2
+
+- Kiddieland's Closing, Part 3 of 3 (Adrian Naves) — shifted one edition later since Part 1 slipped to July 19
 
 ## Blockers
 
@@ -74,8 +78,14 @@ Philip asked three things — all answered by John via Judy (msg 19f3cc702a89554
 
 ## Notes
 
-- Nav chain (final, wired Jul 10): making-history-awards → biba-roesch → odyssey → rocky-mountaineer → kintsugi → kiddieland → letter-from-paris → letter-from-paris-2 → letter-from-paris-3
+- Nav chain (final, wired Jul 12 for publish): making-history-awards → biba-roesch → odyssey → rocky-mountaineer → kintsugi → letter-from-paris → letter-from-paris-2 → letter-from-paris-3 — kiddieland pulled (see Work Done This Session (Jul 12) below)
 - Jill Lowe (`jill.lowe@mac.com`) is a guest contributor; bio added to about.html
-- Edition now has 9 articles (letter-from-paris split into 3). Ready: making-history-awards, biba-roesch, odyssey, kintsugi, rocky-mountaineer, letter-from-paris (1 & 3 of 3) — 7 of 9. Only kiddieland (Part 1 of 3) still awaiting real text from Adrian, promised Friday night Jul 10/11
+- Edition published with 8 articles (kiddieland pulled; letter-from-paris still split into 3 parts). All 8 Ready: making-history-awards, biba-roesch, odyssey, rocky-mountaineer, kintsugi, letter-from-paris (parts 1–3)
 - John Makowski bio added to about.html (`id="john-makowski"`)
 - Making History Awards article date needs updating to July 12 when article text arrives
+
+## Work Done This Session (Jul 12 — publish day)
+
+- ✅ Pulled `kiddieland` from the nav chain: kintsugi's next link and letter-from-paris's prev link now point directly to each other; stub + cover photo left on disk, unlinked from nav/homepage
+- ✅ Removed kiddieland card from homepage grid (`index.html`)
+- ✅ Updated `future-articles.html` — removed kiddieland row from July 12 lineup table, added "Pulled from July 12" note, renumbered letter-from-paris-2/3 rows (7b/7c → 6b/6c), shifted Kiddieland Parts 1/2/3 to July 19/July 26/Aug 2
