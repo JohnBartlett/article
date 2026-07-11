@@ -1,6 +1,6 @@
 # July 12, 2026 Edition — Status
 
-_Updated: 2026-07-11_
+_Updated: 2026-07-07_
 
 ## Lineup (Judy, Jul 7, msg 19f3bdbfb7e3e937 — "Photos for The Odyssey")
 
@@ -8,12 +8,12 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 
 | # | Slug | Title | Author | Coordinator | HTML | Photos | Notes |
 |---|------|-------|--------|-------------|------|--------|-------|
-| 1 | making-history-awards | Making History Awards | Judy Carmack Bross | Ana | ⚠ text ✅ photos ❌ | ✅ 1 cover + 10 pending | Article text built Jul 11 from Ana Baca email (msg 19f4c932702ae452) — verbatim; hero: `Buddy Guy 22.jpg` on disk; photos 1–10 referenced in HTML but NOT on disk — extract with `tools/extract_article_photos.py 2026-07-12 --contributor ana` in local session; photo credit: Kyle Flubacker Photography |
-| 2 | biba-roesch | Biba Roesch's Favorite People | Biba Roesch | Emma | ⚠ stub | ✅ 1 cover | Cover photo (Biba with Steve Zick, `steven-zick-01 copy.jpeg`) on disk (msg 19f373efb4caa832); article text not yet received; stub built Jul 10 (prep), nav wired making-history-awards ↔ biba-roesch ↔ odyssey |
+| 1 | making-history-awards | Making History Awards: Chicago's Version of the Oscars | Judy Carmack Bross | Ana | ✅ | ✅ 11 photos | Built Jul 11 from Ana's email (msg `19f4c932702ae452`) — full text with explicit `[PHOTO n - filename - caption]` markers, 158-award history, Ali Velshi/Buddy Guy/Linda Johnson Rice/Debra Cafaro/Fred Eychaner/John McCarter Jr coverage; cover re-sent as `COVER Buddy Guy.jpg` (same photo as old `Buddy Guy 22.jpg`, now with caption) — old file removed, all references updated; photo credit Kyle Flubacker Photography |
+| 2 | biba-roesch | Biba's Favorite Things &ndash; Steven Zick | Biba Roesch | Emma | ✅ | ✅ 4 photos | Emma sent a Mia Cohen piece first then retracted it ("saved for a future week"), then sent the correct Steven Zick piece (msg `19f4f1ab6d329848`) matching the existing cover photo (Biba with Steve Zick); built Jul 11, full text + 3 inline photos (Christie's, Giotto & Toots) |
 | 3 | odyssey | What You Need to Know Before Seeing "The Odyssey" | John Makowski (Q&A) | Annie | ✅ | ✅ 1 photo | Built Jul 7 from email body (msg 19f3bd677202980a) — 8 Q&A questions verbatim; photo `63cebaf7-a253-4d5a-a62f-a1c72794e7a3.jpeg` on disk, caption: "Melinda Sue Gordon/Universal Pictures/Everett Collection" (msg 19f3be100e8c529a); nav updated Jul 10: biba-roesch ← odyssey → rocky-mountaineer |
 | 4 | rocky-mountaineer | Canada's Rocky Mountaineer: Spectacular Scenery and Superb Service | Judy Carmack Bross and George York | Ana | ✅ | ✅ 17 photos | Built Jul 10 from Ana's email (msg `19f4c4d35fa69657`) — full text + cover + 16 numbered photos, all explicitly placed inline via `[PHOTO n - filename - caption]` markers in the email body (cleanest placement instructions of the edition, no guessing needed); Judy replied approving (msg `19f4c543a9b03d1e`): "This looks extraordinary"; co-author George York has no about.html bio yet — byline left unlinked for him, flag to Judy if one should be added; homepage card + odyssey/kintsugi nav thumbs updated to real cover photo |
 | 5 | kintsugi | Use the Good Dishes&hellip; But If They Break, Is Kintsugi an Option? | Jill Lowe | Emma | ✅ | ✅ 14 photos | Built Jul 10 from PDF (`64) Kintsugi.pdf`) — rendered all 11 PDF pages to images to extract Jill's own photo placement order (no placement instructions in email, so used the PDF's own layout per mistake #29); matched all 14 photo files to their exact page positions by visual comparison; real hero is `IMG_9045.jpeg` (gilded porcelain plate, page 1) — not `shutterstock_2308896621.jpeg` as earlier assumed, that one is actually mid-article (page 5) with a real caption "Beautiful seams of gold glint in the conspicuous cracks of ceramic wares."; real personal photos are `IMG_9045.jpeg` (plate) and `IMG_8883.jpeg` (restored mercury pendulum clock, "Presented to Michael B. Lowe"), rest are stock/graphic images from the PDF; category "Facts and Froth" (Jill's column name); homepage card + nav thumbs updated to correct hero |
-| 6 | kiddieland | Kiddieland's Closing (Adrian Naves Illinois feature) | Adrian Naves | Annie | ⚠ stub | ✅ 1 cover | Topic confirmed: Kiddieland closing soon (msg 19f3bbdc2f0a09d4); cover `IMG_1537.png` on disk (msg 19f3bdce53653692); article text to Annie by Friday Jul 11; stub built Jul 10 (prep) |
+| 6 | kiddieland | Kiddieland's Closing (Adrian Naves Illinois feature) — Part 1 of 3 | Adrian Naves | Annie | ⚠ stub | ✅ 1 cover | Topic confirmed: Kiddieland closing soon (msg 19f3bbdc2f0a09d4); cover `IMG_1537.png` on disk (msg 19f3bdce53653692); article text to Annie by Friday Jul 11; stub built Jul 10 (prep). **Multi-part like Letter from Paris: Part 1 runs July 12, Parts 2 and 3 are deferred to the next two editions (July 19 and July 26)** — do not build parts 2/3 into this edition |
 | 7 | letter-from-paris | Letter from Paris: France's Record Heatwave (Part 1 of 3) | Russell Kelley | Judy → John | ✅ | ✅ 3 photos | Built Jul 10 from PDF (`Letter from Paris #39 040726.pdf`) — split into 3 parts per Judy's Jul 7 agreement (msg `19f3df740c07880c`); rendered all 17 PDF pages to images to extract embedded photos (no separate attachments — images live inside the PDF) and confirm placement; Part 1 covers "Dear Friends" intro + "La Canicule" (heatwave) through "Cela change la donne"; 3 images (flyover, heatwave satellite map, Loire river map) |
 | 7b | letter-from-paris-2 | Letter from Paris: Retirement Politics and the Poetry of French (Part 2 of 3) | Russell Kelley | Judy → John | ✅ | — 0 photos | Covers "La Reforme de la Retraite" (retirement age history) + Samuel Fitoussi's satirical Figaro column + "La poésie de la langue de Molière"; genuinely no images in the source PDF for this section — not an omission |
 | 7c | letter-from-paris-3 | Letter from Paris: Paris's Great Museums and Summer Spectacles (Part 3 of 3) | Russell Kelley | Judy → John | ✅ | ✅ 8 photos | Covers "Les Grands Musées Parisiens" + "Les Expositions" (Matisse exhibition + Russell's 1970 term paper) + "Les Spectacles" + "Avant et Après" (Atget then/now photos) + "Le Bac Philo" + "La Baignade"; last article in the edition, links back to homepage |
@@ -22,17 +22,23 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 
 ## Pending Deliveries
 
-- **Ana (local session)** — Making History Awards photos 1–10 (msg 19f4c932702ae452) — extract with `tools/extract_article_photos.py 2026-07-12 --contributor ana`; also `COVER Buddy Guy.jpg` from same msg (hero currently using `Buddy Guy 22.jpg` as substitute)
-- **Judy / editorial.html** — Editor's Letter correction: remove "a couple of sentences" from paragraph after "tick" sentence (msg 19f4c9ae32d02c43, docx attachment); requires local session to download docx
+- **Judy** — Making History Awards article text (promised Jul 6); Rocky Mountaineer text + photos (to Ana by Wed Jul 8); more Odyssey photos (she's looking)
 - **Biba Roesch / Emma** — Biba's Favorite People article text (Judy says Emma has it)
-- **Adrian / Annie** — Kiddieland article text (promised Friday Jul 11)
+- **Adrian / Annie** — Kiddieland article text (Friday Jul 11)
 - **Annie** — updated DateBook events for July 12
+- **Eric Miller** — Making History Awards photo captions (Judy checking with Ana)
+- **John** — decide how to divide the Russell Kelley Letter from Paris (2–3 parts)
 
 ## Deferred to July 19
 
 - Golden Triangle sale (Judy) — delayed from this edition (msg 19f3bbdc2f0a09d4)
 - Sig's next article (text/photos/credits promised by Wed Jul 15, msg 19f2539e60725e54)
 - Adrian's next cover feature ("I will send one to start for July 19", msg 19f3bd677202980a subject line)
+- Kiddieland's Closing, Part 2 of 3 (Adrian Naves)
+
+## Deferred to July 26
+
+- Kiddieland's Closing, Part 3 of 3 (Adrian Naves)
 
 ## Blockers
 
@@ -45,12 +51,6 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 - ✅ Copied datebook + daily-star-july from July 5; updated datebook title/kicker to July 12
 - ✅ Created `editions/2026-06-{28,21,14,07}/index.html` — fixes Philip Vidal's "past editions not accessible" report
 - ✅ Added John Makowski bio to `about.html` (More Contributors section, `id="john-makowski"`)
-
-## Work Done This Session (Jul 11 — check-emails)
-
-- ✅ Built `making-history-awards/index.html` — full article text from Ana Baca email (msg 19f4c932702ae452); category "Society"; hero `Buddy Guy 22.jpg` (on disk); 10 inline figures referencing correct filenames (photos NOT on disk yet — need local extraction); photo credit Kyle Flubacker Photography; chicagohistory.org link in footer
-- ⚠ Editor's Letter correction (editorial.html) — Judy sent corrected docx (msg 19f4c9ae32d02c43) removing sentences from paragraph after "tick"; docx cannot be downloaded in remote session; flagged for local follow-up
-- ⚠ Biba Roesch / Kiddieland — no new text received in this session; both remain stubs
 
 ## Work Done This Session (Jul 10 — prep-edition)
 
@@ -76,6 +76,6 @@ Philip asked three things — all answered by John via Judy (msg 19f3cc702a89554
 
 - Nav chain (final, wired Jul 10): making-history-awards → biba-roesch → odyssey → rocky-mountaineer → kintsugi → kiddieland → letter-from-paris → letter-from-paris-2 → letter-from-paris-3
 - Jill Lowe (`jill.lowe@mac.com`) is a guest contributor; bio added to about.html
-- Edition now has 9 articles (letter-from-paris split into 3). Ready: odyssey, kintsugi, rocky-mountaineer, letter-from-paris (1 & 3 of 3). Still need real text: biba-roesch, kiddieland, making-history-awards (all have cover photos, awaiting article text)
+- Edition now has 9 articles (letter-from-paris split into 3). Ready: making-history-awards, biba-roesch, odyssey, kintsugi, rocky-mountaineer, letter-from-paris (1 & 3 of 3) — 7 of 9. Only kiddieland (Part 1 of 3) still awaiting real text from Adrian, promised Friday night Jul 10/11
 - John Makowski bio added to about.html (`id="john-makowski"`)
 - Making History Awards article date needs updating to July 12 when article text arrives
