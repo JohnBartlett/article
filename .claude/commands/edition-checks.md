@@ -46,6 +46,7 @@ The script handles:
 - Adds `dark-mode.js` to any article missing it
 - Adds nav-thumb CSS (70×70px, `object-fit:cover`) to any article missing it
 - Appends new articles to existing author popups in `about.html`
+- Flags any DateBook month-header sections dated before the current edition's own month (`stale_datebook_months` in the report) — these are past events left over from copying the previous week's DateBook (see mistake #20). If flagged, remove that month's entire `<!-- ═ MONTH ═ -->` block (comment, `month-header` div, and its `event-list` div) from `editions/YYYY-MM-DD/datebook/index.html` before staging. Do not touch months that are the current or a future month.
 
 ## Step 3 — Handle new authors
 
@@ -142,6 +143,8 @@ Update both editors pages with the final pre-stage preview URL, commit, push, re
 - [ ] `python3 tools/edition_checks.py` ran clean
 - [ ] `python3 tools/verify_edition.py YYYY-MM-DD` — no structural issues, no oversized images
 - [ ] DateBook link in `index.html` points to current edition
+- [ ] DateBook has no stale past-month sections (checked by `edition_checks.py`, `stale_datebook_months`)
+- [ ] DateBook Astrochart nav link inside `datebook/index.html` itself points to the current month's `daily-star-MONTH` folder, not a stale one
 - [ ] Astrochart link in `index.html` points to current edition
 - [ ] Homepage hero meta is `By [Author Name]` only — no date
 - [ ] No dangling git submodules (`git ls-files --stage | grep "^160000"` returns nothing)
