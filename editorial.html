@@ -43,11 +43,19 @@
     .placeholder-note{font-family:'Lato',sans-serif;font-size:13px;color:#aaa;font-style:italic;border:1px dashed #ddd;padding:16px 20px;border-radius:2px;background:#fafafa;}
     .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
     .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
-    .feedback-widget{background:#f9f5f0;border:1px solid #e0d8ce;padding:20px 24px;margin-top:0;text-align:center;font-family:'Lato',sans-serif;}
-    .feedback-widget p{margin:0 0 12px;font-size:15px;color:#555;}
-    .feedback-widget .vote-buttons{display:flex;justify-content:center;gap:12px;}
-    .feedback-widget button{background:#d41f1f;color:#fff;border:none;padding:8px 24px;font-family:'Lato',sans-serif;font-size:14px;cursor:pointer;letter-spacing:0.05em;}
-    .feedback-widget button:hover{background:#b51c20;}
+    .mini-feedback{margin-top:24px;padding-top:14px;border-top:1px solid #ece5dd;font-family:'Lato',sans-serif;}
+    .mini-feedback-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .mini-feedback-label{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.06em;margin-right:2px;}
+    .mini-feedback-row button.mini-vote-btn{background:none;border:1px solid #e0d8ce;border-radius:3px;padding:3px 9px;font-size:14px;line-height:1;cursor:pointer;}
+    .mini-feedback-row button.mini-vote-btn:hover{background:#f5f0ea;}
+    .mini-feedback-row button.mini-vote-btn:disabled{cursor:default;}
+    .mini-comment-toggle{margin-left:auto;background:none;border:none;padding:0;font-size:12px;color:#b51c20;text-decoration:underline;cursor:pointer;font-family:'Lato',sans-serif;}
+    .mini-vote-confirm{font-size:12px;color:#2e7d32;}
+    .mini-comment-box{display:none;margin-top:10px;}
+    .mini-comment-box.open{display:block;}
+    .mini-comment-box textarea{width:100%;box-sizing:border-box;padding:7px 9px;font-family:Georgia,serif;font-size:14px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:44px;margin-bottom:6px;}
+    .mini-comment-box .mini-comment-submit{background:#b51c20;color:#fff;border:none;padding:5px 16px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;border-radius:2px;cursor:pointer;}
+    .mini-comment-sent{display:none;font-size:12px;color:#555;margin-top:8px;}
     footer{background:#1a1a1a;color:#fff;padding:40px 20px;text-align:center;}
     .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap;}
     .footer-links a{color:#ccc;text-decoration:none;}
@@ -90,7 +98,7 @@
   </div>
 
   <!-- POST: Judy Carmack Bross — How Classic Chicago Magazine Began — July 12, 2026 -->
-  <div class="post">
+  <div class="post" id="post-1">
     <div class="post-meta">July 12, 2026</div>
     <h2 class="post-title">How Classic Chicago Magazine Began</h2>
     <div class="post-byline">By Judy Carmack Bross, Editor-in-Chief</div>
@@ -108,10 +116,25 @@
       <p>Thank you for continuing to read our magazine. We welcome your comments each week and your story ideas at <a href="mailto:judycbross@aol.com">judycbross@aol.com</a>.</p>
       <p><em>&mdash; Judy Carmack Bross, Editor</em></p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-1" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(1)" id="mini-comment-toggle-1">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-1">
+        <textarea id="mini-comment-text-1" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,1)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-1">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST: John Bartlett — My Chicago Began Across the Street from Itself — July 3, 2026 -->
-  <div class="post">
+  <div class="post" id="post-2">
     <div class="post-meta">July 3, 2026</div>
     <h2 class="post-title">My Chicago Began Across the Street from Itself</h2>
     <div class="post-byline">By John Bartlett, Managing Editor</div>
@@ -123,10 +146,25 @@
       <p>I&rsquo;m a technologist by training, but my experience having lived in Chicago, Rome, London, and a couple of California stops besides, is that I learned what American culture actually is from Chicago. Not because it&rsquo;s the oldest American city, but because it&rsquo;s the one that looked at what it didn&rsquo;t have and built it anyway, on purpose, and kept building it for a hundred and fifty years. If you ask me what Chicago is, I&rsquo;d say Chicago is the embodiment of the American Classic.</p>
       <p>I wish you all a wonderful 4th of July celebration.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-2" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(2)" id="mini-comment-toggle-2">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-2">
+        <textarea id="mini-comment-text-2" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,2)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-2">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST: Judy Carmack Bross — What Are We Doing for the Fourth of July? — June 28, 2026 -->
-  <div class="post">
+  <div class="post" id="post-3">
     <div class="post-meta">June 28, 2026</div>
     <h2 class="post-title">What Are We Doing for the Fourth of July?</h2>
     <div class="post-byline">By Judy Carmack Bross, Editor-in-Chief</div>
@@ -139,10 +177,25 @@
       <p>As recent Revolutionary War scholars have said, the Revolution wasn&rsquo;t a top-down idea, people in small towns across the colonies read newspapers and rallied on town squares to support the cry for freedom.</p>
       <p><em>&mdash; Judy Carmack Bross, Editor-in-Chief</em></p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-3" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(3)" id="mini-comment-toggle-3">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-3">
+        <textarea id="mini-comment-text-3" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,3)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-3">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 1: Jean Colonomos introduction — June 21, 2026 -->
-  <div class="post">
+  <div class="post" id="post-4">
     <div class="post-meta">June 21, 2026</div>
     <h2 class="post-title">Editor&rsquo;s Note &mdash; Jean Colonomos: Poems for Summer</h2>
     <div class="post-byline">By Judy Carmack Bross, Editor-in-Chief</div>
@@ -152,10 +205,25 @@
       <p>We hope you enjoy her work as much as we do, and we look forward to sharing more of Jean&rsquo;s writing in the weeks ahead.</p>
       <p><em>&mdash; Judy Carmack Bross, Editor-in-Chief</em></p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-4" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(4)" id="mini-comment-toggle-4">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-4">
+        <textarea id="mini-comment-text-4" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,4)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-4">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 1b: Jean Colonomos — Turning Points — June 21, 2026 -->
-  <div class="post">
+  <div class="post" id="post-5">
     <div class="post-meta">June 21, 2026</div>
     <h2 class="post-title">Jean Colonomos: Turning Points</h2>
     <div class="post-byline">By Judy Carmack Bross, Editor-in-Chief</div>
@@ -168,10 +236,25 @@
       <p>Chicago has become home. Here I have found a community of artists and writers who take their work seriously and each other generously. It is the kind of city that rewards attention. I am still paying attention.</p>
       <p>When I look back at the turning points, the moments that changed direction, I see my parents&rsquo; faith most clearly. They could not have known where those lessons would lead. They gave me the beginnings, and trusted that I would find my way. I am still living the dream they helped me dream.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-5" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(5)" id="mini-comment-toggle-5">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-5">
+        <textarea id="mini-comment-text-5" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,5)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-5">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 2: John's introduction as Managing Editor -->
-  <div class="post">
+  <div class="post" id="post-6">
     <div class="post-meta">June 14, 2026</div>
     <h2 class="post-title">Meet Our Managing Editor, John Bartlett</h2>
     <div class="post-byline">By Judy Carmack Bross</div>
@@ -180,10 +263,25 @@
       <p>John built Classic Chicago Magazine from the ground up. A software engineer with more than forty years of experience, he brought to our little magazine the same craftsmanship he has applied throughout a distinguished career - and the result is the elegant, seamless publication you enjoy every Sunday. Every article you read, every photograph you see, every beautifully composed page of our Sunday Edition has been shaped by John&rsquo;s hand. He works quietly behind the scenes each week, turning the words and images our writers and photographers send him into the magazine you hold in your hands. His taste, his care for detail, and his dedication to getting it right are evident in every edition.</p>
       <p>We are delighted to introduce John formally to our readers, and to give him the title he has so thoroughly earned. And we have more to come - watch for an interview with John, to be featured in these pages in the near future. In the meantime, you are welcome to reach him at <a href="mailto:john@classicchicagomag.com">john@classicchicagomag.com</a> - he is as approachable as he is talented.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-6" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(6)" id="mini-comment-toggle-6">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-6">
+        <textarea id="mini-comment-text-6" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,6)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-6">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 2: Sig's introduction as Arts Editor -->
-  <div class="post">
+  <div class="post" id="post-7">
     <div class="post-meta">June 14, 2026</div>
     <h2 class="post-title">Introducing Our Arts Editor, Sigalit Zetouni</h2>
     <div class="post-byline">By Judy Carmack Bross</div>
@@ -192,10 +290,25 @@
       <p>Sigalit&rsquo;s work is splendid - there is no other word for it. She sets a tone of sophistication and depth that elevates every edition in which she appears. Her articles take our readers inside the world&rsquo;s great museums and galleries, illuminating not just what is on the walls but why it matters, and why Chicago belongs in that conversation. She has an eye for the extraordinary and the gift of making you feel that you were there beside her.</p>
       <p>We are also delighted to announce that Arts will be the first dedicated section of Classic Chicago Magazine - a home for the coverage that Sigalit has made so essential to who we are. It is a fitting tribute to the standard she has set, and we look forward to growing it with her at the helm.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-7" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(7)" id="mini-comment-toggle-7">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-7">
+        <textarea id="mini-comment-text-7" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,7)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-7">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 3: Introduction of the page -->
-  <div class="post">
+  <div class="post" id="post-8">
     <div class="post-meta">June 14, 2026</div>
     <h2 class="post-title">Welcome to Our Editors&rsquo; Page</h2>
     <div class="post-byline">By Judy Carmack Bross &amp; John Bartlett</div>
@@ -205,10 +318,25 @@
       <p>This is our Editors&rsquo; Page: a space where we will introduce the remarkable people who contribute to these pages, share a thought or two about what we are working on, and occasionally say something we could not quite fit anywhere else. Think of it as a letter from us to you - informal, personal, and always with Chicago at heart.</p>
       <p>We begin this week with some wonderful news: two introductions we are very proud to make. We hope you will visit this page each Sunday, and we welcome your thoughts at any time. Classic Chicago has always been a conversation, and we are glad to finally have a proper place for our part of it.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-8" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(8)" id="mini-comment-toggle-8">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-8">
+        <textarea id="mini-comment-text-8" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,8)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-8">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 4: Jean Colonomos introduction -->
-  <div class="post">
+  <div class="post" id="post-9">
     <div class="post-meta">June 21, 2026</div>
     <h2 class="post-title">A Poet in Our Pages: Introducing Jean Colonomos</h2>
     <div class="post-byline">By Judy Carmack Bross</div>
@@ -218,10 +346,25 @@
       <p>This week we publish two of her poems: <em>A Meditation on Balance</em> and <em>Playtime with Texts</em>. They are brief, but they are not small. We hope you will read them slowly, and perhaps more than once.</p>
       <p>We are grateful to Jean for sharing her work with our readers, and we look forward to more.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-9" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(9)" id="mini-comment-toggle-9">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-9">
+        <textarea id="mini-comment-text-9" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,9)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-9">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 5: Jean Colonomos — Turning Points -->
-  <div class="post">
+  <div class="post" id="post-10">
     <div class="post-meta">June 21, 2026</div>
     <h2 class="post-title">Turning Points</h2>
     <div class="post-byline">By Jean Colonomos</div>
@@ -243,10 +386,25 @@
       <p>Poems and plays still come to me: <em>The Hold-Up,</em> my first one act about two petty criminals holding up a ghost in Central Park, <em>Carrie,</em> a play in verse about the loss of my marriage and 7 full length dramas as Cupid&rsquo;s arrows sling art&rsquo;s beauty in words that still possess me.</p>
       <p>A stroke in California sends me to the Admiral by the Lake in Chicago. I&rsquo;m happily close to my daughter, Sarah, and my family living in Lincoln Park.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-10" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(10)" id="mini-comment-toggle-10">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-10">
+        <textarea id="mini-comment-text-10" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,10)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-10">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST 6: Ferris Bueller reader letter -->
-  <div class="post">
+  <div class="post" id="post-11">
     <div class="post-meta">June 14, 2026</div>
     <h2 class="post-title">An Alternate Take on Ferris Bueller&rsquo;s Day Off</h2>
     <div class="post-byline">A Reader</div>
@@ -260,45 +418,60 @@
       <p>The film&rsquo;s famous message &mdash; &ldquo;Life moves pretty fast. If you don&rsquo;t stop and look around once in a while, you could miss it.&rdquo; &mdash; isn&rsquo;t an endorsement of irresponsibility. It&rsquo;s a reminder not to become so consumed by obligations, schedules, and expectations that you forget to actually live.</p>
       <p>Forty years later, that&rsquo;s exactly why Ferris Bueller&rsquo;s Day Off remains beloved. It isn&rsquo;t because Ferris is perfect. It&rsquo;s because, for one glorious day, he reminds us what freedom feels like.</p>
     </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-11" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(11)" id="mini-comment-toggle-11">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-11">
+        <textarea id="mini-comment-text-11" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,11)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-11">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
 
 </div>
 
-<div style="max-width:780px;margin:0 auto 0;padding:0 20px;">
-  <div class="feedback-widget">
-    <p>Did you enjoy the Editors&rsquo; Page?</p>
-    <div class="vote-buttons">
-      <button onclick="submitVote('Yes')">&#128077; Yes</button>
-      <button onclick="submitVote('No')">&#128078; No</button>
-    </div>
-    <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
-    <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
-      <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
-      <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
-        <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-        <input type="hidden" name="_next" id="feedbackReturn">
-        <input type="hidden" name="Page" id="page-tracking">
-        <input type="hidden" name="Environment" id="env-tracking">
-        <textarea name="comment" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
-        <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
-        <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
-      </form>
-    </div>
-    <script>
-      var base=window.location.href.split('?')[0];
-      document.getElementById('feedbackReturn').value=base+'?feedback=sent';
-      document.getElementById('page-tracking').value=document.title+' — '+base;
-      document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
-      function submitVote(vote){
-        fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
-        document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
-        document.querySelector('.vote-buttons button:'+(vote==='Yes'?'first':'last')+'-child').style.opacity='1';
-        document.getElementById('voteConfirm').style.display='block';
-      }
-    </script>
-  </div>
-</div>
+<script>
+  (function(){
+    var ENV=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
+    var BASE=window.location.href.split('?')[0];
+    function postTitle(postEl){
+      var t=postEl.querySelector('.post-title');
+      return t?t.textContent:document.title;
+    }
+    window.miniVote=function(btn,vote){
+      var row=btn.closest('.mini-feedback-row');
+      var postEl=btn.closest('.post');
+      var page=postTitle(postEl)+' — '+BASE+'#'+postEl.id;
+      fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:page,Environment:ENV,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
+      row.querySelectorAll('.mini-vote-btn').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
+      btn.style.opacity='1';
+      row.querySelector('.mini-vote-confirm').style.display='inline';
+    };
+    window.miniToggleComment=function(n){
+      document.getElementById('mini-comment-box-'+n).classList.toggle('open');
+    };
+    window.miniSubmitComment=function(btn,n){
+      var box=document.getElementById('mini-comment-box-'+n);
+      var postEl=box.closest('.post');
+      var comment=document.getElementById('mini-comment-text-'+n).value;
+      if(!comment.trim())return;
+      var page=postTitle(postEl)+' — '+BASE+'#'+postEl.id;
+      fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({comment:comment,Page:page,Environment:ENV,_subject:'Classic Chicago Reader Comment'})}).catch(function(){});
+      btn.disabled=true;
+      document.getElementById('mini-comment-text-'+n).style.display='none';
+      btn.style.display='none';
+      document.getElementById('mini-comment-sent-'+n).style.display='block';
+    };
+  })();
+</script>
 
 <div style="max-width:780px;margin:32px auto 60px;padding:0 20px;text-align:center;">
   <a href="index.html" style="font-family:'Lato',sans-serif;font-size:14px;font-weight:700;color:#d41f1f;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;">&larr; Back to Classic Chicago</a>
