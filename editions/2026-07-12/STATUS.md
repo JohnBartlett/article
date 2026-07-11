@@ -1,6 +1,6 @@
 # July 12, 2026 Edition — Status
 
-_Updated: 2026-07-07_
+_Updated: 2026-07-11_
 
 ## Lineup (Judy, Jul 7, msg 19f3bdbfb7e3e937 — "Photos for The Odyssey")
 
@@ -8,7 +8,7 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 
 | # | Slug | Title | Author | Coordinator | HTML | Photos | Notes |
 |---|------|-------|--------|-------------|------|--------|-------|
-| 1 | making-history-awards | Making History Awards | Judy Carmack Bross | Ana | ⚠ stub | ✅ 1 cover | Cover: Buddy Guy with Ronnie Baker Brooks (`Buddy Guy 22.jpg`, on disk); Judy re-sent cover Jul 6 (msg 19f36d6d20b74ddd); article text promised "today" (Jul 6); Eric Miller captions unconfirmed — Judy checking with Ana; nav chain fixed Jul 7 |
+| 1 | making-history-awards | Making History Awards | Judy Carmack Bross | Ana | ⚠ text ✅ photos ❌ | ✅ 1 cover + 10 pending | Article text built Jul 11 from Ana Baca email (msg 19f4c932702ae452) — verbatim; hero: `Buddy Guy 22.jpg` on disk; photos 1–10 referenced in HTML but NOT on disk — extract with `tools/extract_article_photos.py 2026-07-12 --contributor ana` in local session; photo credit: Kyle Flubacker Photography |
 | 2 | biba-roesch | Biba Roesch's Favorite People | Biba Roesch | Emma | ⚠ stub | ✅ 1 cover | Cover photo (Biba with Steve Zick, `steven-zick-01 copy.jpeg`) on disk (msg 19f373efb4caa832); article text not yet received; stub built Jul 10 (prep), nav wired making-history-awards ↔ biba-roesch ↔ odyssey |
 | 3 | odyssey | What You Need to Know Before Seeing "The Odyssey" | John Makowski (Q&A) | Annie | ✅ | ✅ 1 photo | Built Jul 7 from email body (msg 19f3bd677202980a) — 8 Q&A questions verbatim; photo `63cebaf7-a253-4d5a-a62f-a1c72794e7a3.jpeg` on disk, caption: "Melinda Sue Gordon/Universal Pictures/Everett Collection" (msg 19f3be100e8c529a); nav updated Jul 10: biba-roesch ← odyssey → rocky-mountaineer |
 | 4 | rocky-mountaineer | Canada's Rocky Mountaineer: Spectacular Scenery and Superb Service | Judy Carmack Bross and George York | Ana | ✅ | ✅ 17 photos | Built Jul 10 from Ana's email (msg `19f4c4d35fa69657`) — full text + cover + 16 numbered photos, all explicitly placed inline via `[PHOTO n - filename - caption]` markers in the email body (cleanest placement instructions of the edition, no guessing needed); Judy replied approving (msg `19f4c543a9b03d1e`): "This looks extraordinary"; co-author George York has no about.html bio yet — byline left unlinked for him, flag to Judy if one should be added; homepage card + odyssey/kintsugi nav thumbs updated to real cover photo |
@@ -22,12 +22,11 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 
 ## Pending Deliveries
 
-- **Judy** — Making History Awards article text (promised Jul 6); Rocky Mountaineer text + photos (to Ana by Wed Jul 8); more Odyssey photos (she's looking)
+- **Ana (local session)** — Making History Awards photos 1–10 (msg 19f4c932702ae452) — extract with `tools/extract_article_photos.py 2026-07-12 --contributor ana`; also `COVER Buddy Guy.jpg` from same msg (hero currently using `Buddy Guy 22.jpg` as substitute)
+- **Judy / editorial.html** — Editor's Letter correction: remove "a couple of sentences" from paragraph after "tick" sentence (msg 19f4c9ae32d02c43, docx attachment); requires local session to download docx
 - **Biba Roesch / Emma** — Biba's Favorite People article text (Judy says Emma has it)
-- **Adrian / Annie** — Kiddieland article text (Friday Jul 11)
+- **Adrian / Annie** — Kiddieland article text (promised Friday Jul 11)
 - **Annie** — updated DateBook events for July 12
-- **Eric Miller** — Making History Awards photo captions (Judy checking with Ana)
-- **John** — decide how to divide the Russell Kelley Letter from Paris (2–3 parts)
 
 ## Deferred to July 19
 
@@ -46,6 +45,12 @@ Order updated from original Jul 6 schedule. Golden Triangle replaced by John Mak
 - ✅ Copied datebook + daily-star-july from July 5; updated datebook title/kicker to July 12
 - ✅ Created `editions/2026-06-{28,21,14,07}/index.html` — fixes Philip Vidal's "past editions not accessible" report
 - ✅ Added John Makowski bio to `about.html` (More Contributors section, `id="john-makowski"`)
+
+## Work Done This Session (Jul 11 — check-emails)
+
+- ✅ Built `making-history-awards/index.html` — full article text from Ana Baca email (msg 19f4c932702ae452); category "Society"; hero `Buddy Guy 22.jpg` (on disk); 10 inline figures referencing correct filenames (photos NOT on disk yet — need local extraction); photo credit Kyle Flubacker Photography; chicagohistory.org link in footer
+- ⚠ Editor's Letter correction (editorial.html) — Judy sent corrected docx (msg 19f4c9ae32d02c43) removing sentences from paragraph after "tick"; docx cannot be downloaded in remote session; flagged for local follow-up
+- ⚠ Biba Roesch / Kiddieland — no new text received in this session; both remain stubs
 
 ## Work Done This Session (Jul 10 — prep-edition)
 
