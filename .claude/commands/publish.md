@@ -64,6 +64,8 @@ Cloudflare detects the push and deploys automatically to `chicagoclassicmag.com`
 
 ## Step 4 — Send publication notification
 
+**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation.
+
 **Option A — Python script** (requires `~/.gmail-mcp/credentials.json`):
 ```python
 import sys; sys.path.insert(0, 'tools')
