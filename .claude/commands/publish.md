@@ -43,9 +43,7 @@ Both hrefs must match the current edition date. Fix on dev2, re-stage, then publ
 python3 tools/enable_ga4.py
 ```
 
-Verify the file count is non-zero and plausible (should match total HTML files in the repo).
-If it prints 0, check that the merge brought in files with a GA4 comment — it may mean
-`-X theirs` resolved files in favor of master's already-enabled form (safe to proceed).
+Verify the file count printed looks right (should match all HTML files in the repo).
 
 ## Step 3 — Commit and push to master
 
@@ -55,7 +53,7 @@ git commit -m "Publish <edition date> edition to production
 
 Re-enables GA4 for production deployment.
 
-Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>"
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 
 git push origin master
 ```
@@ -64,7 +62,8 @@ Cloudflare detects the push and deploys automatically to `chicagoclassicmag.com`
 
 ## Step 4 — Send publication notification
 
-**Option A — Python script** (requires `~/.gmail-mcp/credentials.json`):
+**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation.
+
 ```python
 import sys; sys.path.insert(0, 'tools')
 from gmail_api import get_access_token, send_email
