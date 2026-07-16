@@ -1,6 +1,6 @@
 # July 19, 2026 Edition — Status
 
-_Updated: 2026-07-15_
+_Updated: 2026-07-16_
 
 ## Confirmed Articles (from Judy's emails, Jul 13–14)
 
@@ -18,6 +18,10 @@ _Updated: 2026-07-15_
 - Golden Triangle sale (Judy) — delayed from July 12 (msg 19f3bbdc2f0a09d4)
 - Sig's next article (text/photos/credits promised by Wed Jul 15, msg 19f2539e60725e54)
 - Adrian's next cover feature ("I will send one to start for July 19", msg 19f3bd677202980a)
+
+## Email Check Log
+- 2026-07-15: Initial emails catalogued from Judy (Jul 13–14)
+- 2026-07-16: Re-checked inbox (newer_than:2d). Same 3 emails — no new emails from any contributor. All content still in attachments; no body text extractable in remote session.
 
 ## Content Waiting to Be Extracted
 
