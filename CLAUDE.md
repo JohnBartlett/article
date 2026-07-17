@@ -224,7 +224,7 @@ The script generates a timestamped JSON file with the last 30 days of data.
 /
 ├── index.html              Homepage — "The Sunday Edition" hero + card grid
 ├── about.html              About — team bios + "Our Writers This Week"
-├── subscribe.html          Subscribe — "coming soon" placeholder
+├── subscribe.html          Subscribe — live FormSubmit form (active Jul 13, 2026)
 ├── advertise.html          Advertise — "coming soon" placeholder
 ├── future-articles.html    Internal — unpublished article planning (dev2 only)
 ├── comments.html           Internal — editorial notes (dev2 only)
@@ -270,9 +270,10 @@ The script generates a timestamped JSON file with the last 30 days of data.
 - Google Analytics G-5J2HWKC0B1 — disabled on dev/dev2, enabled on master
 
 ### Forms
-- Subscribe and Advertise pages have Formsubmit.co integration (currently commented out/disabled)
 - Formsubmit endpoints: `subscribe@2ccmag.com`, `advertise@2ccmag.com`
-- Forms show "coming soon" placeholder until Formsubmit activation emails are confirmed
+- **Subscribe form is LIVE** — the FormSubmit activation for `subscribe@2ccmag.com` was confirmed July 13, 2026. Submissions arrive as "New Subscriber" emails from `submissions@formsubmit.co`. Note: activation released a backlog of queued submissions with older submitted-at dates (Jul 6–10) — the email arrival date is not the signup date.
+- Advertise form: still pending activation; page shows "coming soon"
+- There is **no subscriber-list file yet** — as of July 2026, where subscribers get recorded is an open decision. Until then, log New Subscriber emails in `EMAIL_LOG.md` and ask.
 
 ### Adding a new edition
 1. Create folder: `editions/YYYY-MM-DD/`
@@ -436,6 +437,12 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 37. **Check EMAIL_LOG.md before searching for emails — never use a fixed `newer_than:Nd` window** — Read the last entry date in `EMAIL_LOG.md` first, then search `after:YYYY/MM/DD` (Gmail date format) to fetch only emails that arrived after the last processed date. Using a fixed window like `newer_than:3d` re-fetches already-logged emails and wastes time re-processing them.
 38. **Multi-part articles always run one part per edition, across consecutive weeks — never bundled in a single edition.** This applies to any article explicitly split into parts (Letter from Paris, Kiddieland's Closing, and any future series). Part 1 goes in the edition it's announced for; Part 2 the following week; Part 3 the week after that, etc. When building a multi-part split, only nav-link and homepage-card the current week's part — the other parts stay built and saved on disk but fully unlinked (no nav entry, no homepage card, no about.html popup entry) until their own week arrives. This was corrected on the July 12, 2026 edition after Letter from Paris was incorrectly built with all 3 parts linked into one edition, despite the source email explicitly agreeing to "run across three consecutive issues" — and after the user had already corrected this exact mistake twice before. Before ever splitting an article into parts, re-read the actual scheduling agreement (don't trust an inherited citation in STATUS.md) and confirm one-part-per-edition explicitly with the user if it isn't unambiguous in the source.
 
+39. **Always `git pull --rebase` before pushing any branch — remotes advance mid-session.** Parallel Claude sessions push to `dev2`, and the GitHub Actions dashboard refresh (every 6 hours) pushes to `editors`, so a branch that was current at session start is often behind by push time. Both pushes in the Jul 14 session were rejected as non-fast-forward on the first try. Pattern: commit → `git pull --rebase origin <branch>` → push. Never force-push to resolve it.
+
+40. **A fix isn't done until the person who reported the problem is answered.** Judy's Jul 12 "photo is still on its side" follow-up was fixed in-repo the same day (EXIF strip + cache-bust rename), but no one told her — the fix sat invisible to her for two days. When closing out a reported problem, draft the confirmation reply to the reporter as part of the fix (send only after asking, per mistake #15), and mark "reply owed" in `EMAIL_LOG.md` if it can't go out yet.
+
+41. **Judy's edition lineup email is the source of truth for what runs — reconcile it against prior plans.** Her "The July 19th Issue" lineup omitted Kiddieland Part 2 even though a 3-part schedule had been agreed days earlier. When a lineup arrives, diff it against STATUS.md / future-articles.html / prior multi-part agreements and flag every discrepancy to her rather than silently following either version.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
@@ -450,6 +457,8 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 **What to expect from FormSubmit:**
 - "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
 - "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
+- "New Subscriber" (to `subscribe@2ccmag.com`) — subscriber signups from the live subscribe form (active since Jul 13, 2026); log in `EMAIL_LOG.md` (no subscriber-list file exists yet)
+- **Tallying votes/comments:** search `subject:"Classic Chicago Quick Vote" OR subject:"Classic Chicago Reader Comment" after:YYYY/MM/DD` and paginate — one page is rarely all of them. Gmail snippets truncate at "comment:", so a snippet ending there does NOT mean the comment is empty — fetch the full message for every Reader Comment before classifying it. Commenter identity is in the `email:` field (sometimes with a signed name in the comment body, e.g. Linda Landis Andrews).
 - Real comments (non-empty, non-dev2) go in `reader-comments.html` — this file lives on the `editors` branch, not `dev2`. Updating it requires checking out `editors` separately (e.g. `git worktree add /tmp/editors-worktree editors`); it isn't part of the normal dev2 session
 - If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section (this one does live on dev2)
 
