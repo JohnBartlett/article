@@ -47,6 +47,7 @@
     .social-links svg { width: 24px; height: 24px; fill: #fff; vertical-align: middle; }
     .copyright { font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 <body>
   <header>
@@ -179,10 +180,12 @@
       <!-- Article Navigation — nav chain TBD: wire prev/next when all July 19 articles are built -->
       <div class="edition-nav">
         <div class="nav-item">
-          <a href="../../../index.html" class="back-link">&larr; Home</a>
+          <img class="nav-thumb" src="../blakely-fourth/navthumb.jpg" alt="">
+          <a href="../blakely-fourth/" class="back-link">&larr; Previous: A Blakely Fourth</a>
         </div>
         <div class="nav-item" style="text-align:right; justify-content:flex-end;">
-          <a href="../../../index.html" class="back-link">Home &rarr;</a>
+          <a href="../letter-from-paris-2/" class="back-link">Next: Letter from Paris, Part 2 &rarr;</a>
+          <img class="nav-thumb" src="../letter-from-paris-2/navthumb.jpg" alt="">
         </div>
       </div>
 
@@ -213,8 +216,8 @@
   <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
 
   <script>
-    var prevUrl = '../../../index.html';
-    var nextUrl = '../../../index.html';
+    var prevUrl = '../blakely-fourth/';
+    var nextUrl = '../letter-from-paris-2/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;

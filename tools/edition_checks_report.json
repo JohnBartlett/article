@@ -1,9 +1,26 @@
 {
-  "dark_mode_added": [],
+  "dark_mode_added": [
+    "editions/2026-07-19/banff/index.html",
+    "editions/2026-07-19/blakely-fourth/index.html",
+    "editions/2026-07-19/bob-glaze/index.html",
+    "editions/2026-07-19/francee-harrington/index.html",
+    "editions/2026-07-19/guild-event/index.html",
+    "editions/2026-07-19/john-nichols-collection/index.html",
+    "editions/2026-07-19/martha-graham-poem/index.html",
+    "editions/2026-07-19/twa-flight-800/index.html"
+  ],
   "nav_css_added": [],
   "popup_articles_added": [
+    "bob-glaze: My Favorite Food Memories Along the Jersey Shore (July 19, 2026)",
+    "elizabeth-dunlop-richter: A Blakely Fourth (July 19, 2026)",
+    "jean-colonomos: The Queen: A Poem for Martha Graham (July 19, 2026)",
+    "judy-carmack-bross: Banff: Marveling at Nature&rsquo;s Majesty (July 19, 2026)",
+    "judy-carmack-bross: Francee Harrington: A Family Focus Dream Builder Recipient (July 19, 2026)",
+    "judy-carmack-bross: The John Nichols Collection: 4000 Years of Chinese Tomb Pottery at the Golden Triangle (July 19, 2026)",
     "russell-kelley: Letter from Paris: Retirement Politics and the Poetry of French (July 12, 2026)",
-    "russell-kelley: Letter from Paris: Paris&rsquo;s Great Museums and Summer Spectacles (July 12, 2026)"
+    "russell-kelley: Letter from Paris: Paris&rsquo;s Great Museums and Summer Spectacles (July 12, 2026)",
+    "russell-kelley: Letter from Paris: Retirement Politics and the Poetry of French (July 19, 2026)",
+    "scott-holleran: Mind the Mystery of TWA Flight 800 (July 19, 2026)"
   ],
   "new_authors_needing_bios": [
     {
