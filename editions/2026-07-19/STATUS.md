@@ -87,3 +87,25 @@ Current wiring:
 - Luann Elvey (phlelvey@gmail.com) — Jul 10
 - Michael G Hansen (mghansen@comcast.net) — Jul 6
 - JOHN BARTLETT (ccmnewsl@2heer.com) — Jul 13 (test)
+
+---
+
+## BUILD COMPLETE — Jul 18 (updated)
+
+All 9 articles Ready (verify_edition + edition_checks clean). Lineup order (nav chain + homepage):
+1. bob-glaze ✅ (hero)  2. guild-event ✅  3. banff ✅  4. john-nichols-collection ✅
+5. francee-harrington ✅  6. blakely-fourth ✅  7. twa-flight-800 ✅  8. letter-from-paris-2 ✅ (Part 2 of 3)  9. martha-graham-poem ✅
+
+Editor's Page: **kept "On Mentoring"** (John's decision; Judy's Jul 17 plan was Obama Center by John — flag to Judy).
+Kiddieland Part 2: does not run (no content exists; the multi-part piece is Letter from Paris).
+
+Deployed: https://article-dev2.vercel.app
+
+### OPEN ITEMS for Judy/Emma before publish
+- **guild-event photo 6**: Emma's Drive link duplicated photo 5; need the real "Lisa Malkin & Virginia Cudecki" photo.
+- **bob-glaze cover**: used Kohr's (photo 4) — Emma never confirmed Judy's cover question.
+- **john-nichols**: confirm the two dropped editorial parentheticals; typos "form the 18th" & "goldentrangle.biz" kept verbatim.
+- **banff**: confirm Photo 9 caption ("of The Boss:" prefix removed).
+- **blakely**: "Ice cream. available...,would" punctuation kept verbatim.
+- **guild**: verbatim typos kept — "Wildrow Wilson", "LindLinda Crowe", "anti-womens".
+- **Editor's Page**: confirm keeping Mentoring vs Judy's Obama-Center-by-John plan.
