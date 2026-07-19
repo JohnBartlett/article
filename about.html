@@ -2015,15 +2015,35 @@
     (function() {
       var overlay = document.getElementById('articles-overlay');
       var current = null;
+      // A bio/popup may live inside a collapsed <details> (More Contributors).
+      // iOS Safari does not auto-open <details> on fragment navigation, and a
+      // closed <details> also hides its position:fixed popup children — so open
+      // any ancestor <details> before showing the target.
+      function openAncestorDetails(el) {
+        var d = el && el.closest ? el.closest('details') : null;
+        if (d && !d.open) d.open = true;
+      }
       function openPopup(id) {
         if (current) current.classList.remove('open');
         current = document.getElementById(id);
-        if (current) { current.classList.add('open'); overlay.classList.add('open'); }
+        if (current) { openAncestorDetails(current); current.classList.add('open'); overlay.classList.add('open'); }
       }
       function closePopup() {
         if (current) current.classList.remove('open');
         overlay.classList.remove('open');
         current = null;
+      }
+      // When a byline links to about.html#author-id, reveal the bio if it is
+      // inside a collapsed <details>, then scroll it into view.
+      function revealHashTarget() {
+        if (!location.hash || location.hash.length < 2) return;
+        var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (!el) return;
+        var d = el.closest ? el.closest('details') : null;
+        if (d && !d.open) {
+          d.open = true;
+          setTimeout(function() { el.scrollIntoView(); }, 0);
+        }
       }
       document.querySelectorAll('.articles-trigger').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
@@ -2035,6 +2055,8 @@
         btn.addEventListener('click', function(e) { e.stopPropagation(); closePopup(); });
       });
       overlay.addEventListener('click', closePopup);
+      window.addEventListener('hashchange', revealHashTarget);
+      revealHashTarget();
     })();
   </script>
 </body>
