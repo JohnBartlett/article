@@ -15,9 +15,11 @@ function jwksFor(teamDomain) {
   return jwksCache.get(teamDomain);
 }
 
-// Real verifier used in production wiring.
-export async function verifyAccessJwt(token, { teamDomain, aud }) {
-  const { payload } = await jwtVerify(token, jwksFor(teamDomain), {
+// Real verifier used in production wiring. `keySet` is injectable so tests
+// can supply a local JWKS instead of hitting the network; production callers
+// never pass it, so they always get the cached remote JWKS.
+export async function verifyAccessJwt(token, { teamDomain, aud }, keySet = jwksFor(teamDomain)) {
+  const { payload } = await jwtVerify(token, keySet, {
     issuer: `https://${teamDomain}`,
     audience: aud,
   });
