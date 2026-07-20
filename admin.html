@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor Logins — Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Lato', system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; color: #222; }
+    h1 { font-size: 22px; border-bottom: 3px solid #b51c20; padding-bottom: 10px; }
+    .row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+    .email { font-family: monospace; font-size: 15px; }
+    button { font-family: inherit; cursor: pointer; }
+    .remove { background: none; border: 1px solid #b51c20; color: #b51c20; border-radius: 3px; padding: 3px 10px; }
+    form { display: flex; gap: 8px; margin-top: 20px; }
+    input[type=email] { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 15px; }
+    .add { background: #b51c20; color: #fff; border: none; border-radius: 3px; padding: 8px 16px; }
+    .msg { margin-top: 14px; font-size: 14px; min-height: 18px; }
+    .msg.err { color: #b51c20; }
+    .muted { color: #888; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Editor Logins</h1>
+  <p class="muted">People who can log in to the editors site. Changes take effect immediately.</p>
+  <div id="list">Loading…</div>
+  <form id="addForm">
+    <input type="email" id="email" placeholder="name@example.com" required>
+    <button class="add" type="submit">Add</button>
+  </form>
+  <div id="msg" class="msg"></div>
+
+  <script>
+    const listEl = document.getElementById('list');
+    const msgEl = document.getElementById('msg');
+    const form = document.getElementById('addForm');
+    const input = document.getElementById('email');
+
+    function setMsg(text, isErr) { msgEl.textContent = text || ''; msgEl.className = 'msg' + (isErr ? ' err' : ''); }
+
+    async function api(method, email) {
+      const opts = { method, headers: { 'Content-Type': 'application/json' } };
+      if (email) opts.body = JSON.stringify({ email });
+      const res = await fetch('/api/access-users', opts);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      return data.emails;
+    }
+
+    function render(emails) {
+      if (!emails.length) { listEl.innerHTML = '<p class="muted">No one yet.</p>'; return; }
+      listEl.innerHTML = '';
+      emails.forEach((e) => {
+        const row = document.createElement('div');
+        row.className = 'row';
+        const span = document.createElement('span');
+        span.className = 'email'; span.textContent = e;
+        const btn = document.createElement('button');
+        btn.className = 'remove'; btn.textContent = 'Remove';
+        btn.onclick = () => remove(e);
+        row.append(span, btn);
+        listEl.append(row);
+      });
+    }
+
+    async function load() {
+      try { render(await api('GET')); setMsg(''); }
+      catch (err) { listEl.innerHTML = ''; setMsg('Could not load: ' + err.message, true); }
+    }
+
+    async function remove(email) {
+      if (!confirm('Remove ' + email + '?')) return;
+      try { render(await api('DELETE', email)); setMsg('Removed ' + email); }
+      catch (err) { setMsg(err.message, true); }
+    }
+
+    form.onsubmit = async (ev) => {
+      ev.preventDefault();
+      try { render(await api('POST', input.value)); setMsg('Added ' + input.value.trim().toLowerCase()); input.value = ''; }
+      catch (err) { setMsg(err.message, true); }
+    };
+
+    load();
+  </script>
+</body>
+</html>
