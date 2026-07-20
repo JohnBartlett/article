@@ -1,10 +1,39 @@
 import { getAuthorizedEmail, verifyAccessJwt } from './lib/auth.js';
 import { getPolicyEmails, setPolicyEmails } from './lib/cloudflare.js';
-import { addEmail, removeEmail } from './lib/access-list.js';
+import { addEmail, removeEmail, validateEmail } from './lib/access-list.js';
 
+// Fails closed when required config is missing/empty. Rationale: jose skips
+// audience validation when `aud` is undefined, and the lockout guard in
+// access-list.js degrades silently if adminEmail is unset/invalid — both
+// must be caught here before any request is processed.
+export function assertConfig(config, authConfig) {
+  const required = [
+    authConfig && authConfig.teamDomain,
+    authConfig && authConfig.aud,
+    authConfig && authConfig.adminEmail,
+    config && config.accountId,
+    config && config.appId,
+    config && config.policyId,
+    config && config.token,
+  ];
+  const missing = required.some((v) => typeof v !== 'string' || v.length === 0);
+  if (missing || !validateEmail(authConfig.adminEmail)) {
+    throw new Error('server misconfigured');
+  }
+}
+
+// CSRF note: this endpoint relies on Cloudflare Access's session model plus
+// requiring `application/json` bodies for state-changing requests (POST/DELETE).
+// Simple HTML forms cannot set a JSON content-type, so a cross-site form post
+// cannot trigger a mutation here — no separate CSRF token is needed.
 export function buildHandler(deps) {
   const { config, authConfig } = deps;
   return async function handler(req, res) {
+    try {
+      assertConfig(config, authConfig);
+    } catch (e) {
+      return res.status(500).json({ error: 'server misconfigured' });
+    }
     // 1) authorize
     let adminEmail;
     try {
@@ -23,12 +52,17 @@ export function buildHandler(deps) {
         const next = req.method === 'POST'
           ? addEmail(current, email)
           : removeEmail(current, email, authConfig.adminEmail);
+        if (next.length === 0) {
+          const e = new Error('refusing to empty the allowlist');
+          e.status = 400;
+          throw e;
+        }
         await deps.setPolicyEmails(config, next);
         return res.status(200).json({ emails: next });
       }
       return res.status(405).json({ error: 'method not allowed' });
     } catch (e) {
-      return res.status(400).json({ error: e.message });
+      return res.status(e.status || 502).json({ error: e.message });
     }
   };
 }
