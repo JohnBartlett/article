@@ -1,7 +1,7 @@
 # Editors Login Admin — Design
 
 **Date:** 2026-07-19
-**Status:** Approved (design), pending implementation plan
+**Status:** Implemented (pending CF_API_TOKEN + redeploy)
 **Author:** John Bartlett (with Claude)
 
 ## Summary
