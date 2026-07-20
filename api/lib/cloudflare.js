@@ -37,8 +37,7 @@ export async function setPolicyEmails(config, emails, fetchFn = fetch) {
   const nonEmail = (policy.include || []).filter((r) => !r.email);
   const emailRules = emails.map((email) => ({ email: { email } }));
   const body = {
-    name: policy.name,
-    decision: policy.decision,
+    ...policy,
     include: [...nonEmail, ...emailRules],
   };
   await callCf(policyUrl(config), { method: 'PUT', body: JSON.stringify(body) }, config.token, fetchFn);

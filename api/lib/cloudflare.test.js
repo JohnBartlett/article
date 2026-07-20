@@ -48,6 +48,24 @@ test('setPolicyEmails PUTs name+decision+rebuilt include, preserving non-email r
   assert.deepEqual(sent.include, [ { everyone: {} }, { email: { email: 'new@x.com' } } ]);
 });
 
+test('setPolicyEmails preserves other policy fields (e.g. session_duration) on write', async () => {
+  const cap = {};
+  let call = 0;
+  const fetchFn = async (url, opts) => {
+    call++;
+    if (call === 1) {
+      return { ok: true, status: 200, json: async () => ({ success: true, result: {
+        name: 'Editors', decision: 'allow', session_duration: '24h',
+        include: [ { email: { email: 'old@x.com' } } ] } }) };
+    }
+    cap.url = url; cap.opts = opts;
+    return { ok: true, status: 200, json: async () => ({ success: true, result: {} }) };
+  };
+  await setPolicyEmails(config, ['new@x.com'], fetchFn);
+  const sent = JSON.parse(cap.opts.body);
+  assert.equal(sent.session_duration, '24h');
+});
+
 test('getPolicyEmails throws on API error', async () => {
   const fetchFn = async () => ({ ok: false, status: 403, json: async () => ({ success: false, errors: [{ message: 'nope' }] }) });
   await assert.rejects(() => getPolicyEmails(config, fetchFn), /cloudflare api/i);
