@@ -6,6 +6,7 @@
   "rewrites": [
     { "source": "/comments", "destination": "/reader-comments.html" },
     { "source": "/future",   "destination": "/future-articles.html" },
-    { "source": "/dashboard", "destination": "/editors/dashboard.html" }
+    { "source": "/dashboard", "destination": "/editors/dashboard.html" },
+    { "source": "/admin",     "destination": "/admin.html" }
   ]
 }

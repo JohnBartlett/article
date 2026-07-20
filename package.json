@@ -1,0 +1,5 @@
+{
+  "name":"ccm-editors","private":true,"type":"module",
+  "dependencies":{"jose":"^5.9.6"},
+  "scripts":{"test":"node --test"}
+}
