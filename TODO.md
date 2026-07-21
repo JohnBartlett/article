@@ -3,13 +3,13 @@
 ## TODO — JULY 26 EDITION (next)
 
 ### Articles / editor's page
-- [ ] **Obama Presidential Center article** — being worked shortly. Two related pieces:
-  - [ ] Sigalit — art in the Sky Room (8th floor), Obama Presidential Center; article + photos + credits promised by Tue Jul 21 (msg `19f6bb631c2c4945`, 3 preview photos attached)
-  - [ ] John — write the Obama Library/Center piece Judy asked for (her Jul 20 text) and mention it in the **July 26 editor's page** (editorial.html); this is the piece deferred from Jul 19 when "On Mentoring" ran instead
-- [ ] Get Judy's July 26 lineup email (source of truth) and reconcile against future-articles.html + this list
+- [ ] **Obama Presidential Center article** — two related pieces approved for July 26:
+  - [ ] Sigalit — art in the Sky Room (8th floor), Obama Presidential Center. **Blast text + 1 photo arriving today (Jul 21 PM); full article + photos + credits arriving tomorrow morning (Jul 22 AM).** Create `editions/2026-07-26/sigalit-sky-room/` (or similar slug) when content arrives. (msgs `19f6bb631c2c4945`, `19f849b59501292d`)
+  - [ ] John — write the Obama Library/Center piece Judy asked for and mention it in the **July 26 editor's page** (editorial.html); deferred from Jul 19
+- [x] Get Judy's July 26 lineup email (source of truth) — **received Jul 20** (msg `19f7f085498aee25`). Confirmed order: 1. Boys & Girls Club (Judy/Emma) · 2. Susan Aurinko Vienna (Emma) · 3. Heritage Lincoln Office (Judy/Ana) · 4. Vienna by Susan Aurinko (Emma — likely dup of #2, asked Judy) · 5. Adrian's Adventures (Annie) · 6. Sydney Garfield Park (Annie) · 7. Russell Kelley Part III (John). Sigalit's Sky Room not yet in lineup (Judy approved separately).
 
 ### Carryover to answer Judy
-- [ ] **LIVE FIX — Guild caption**: photo of blonde woman + woman with purple hair reads "Michael Anderson"; should be **Lisa Malkin and Virginia Cudecki** (Judy, Jul 20 AM; Darcy Evon email). Fix on live site, then confirm back to Judy
+- [x] **LIVE FIX — Guild caption**: ✅ Fixed Jul 20. Duplicate `photo 5.jpg` (mislabeled "Michael Anderson and Connie Barkley") removed; `IMG_4184.jpeg` caption confirmed "Lisa Malkin and Virginia Cudecki"; "Andersen"→"Anderson" in quote. Published to master; Judy confirmed (msg `19f816ab692ea243`).
 - [ ] Reply to Judy's Jul 20 8:58 text (Obama Library + editor's-page mention)
 - [ ] Scott Holleran comments question — John explained policy; Judy relaying to Scott. Decide whether to print the reader comment on Scott's TWA article
 
