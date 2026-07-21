@@ -12,7 +12,7 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>ARTICLE_TITLE | Classic Chicago – Sunday Edition</title>
+  <title>Adrian&rsquo;s Adventures | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -274,7 +274,7 @@
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
         <a href="../datebook/">DateBook</a>
-        <a href="../daily-star-MONTH/">Astrochart</a>
+        <a href="../daily-star-july/">Astrochart</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -292,29 +292,23 @@
   <main>
     <div class="article-wrapper">
 
-      <div class="article-category">CATEGORY</div>
+      <div class="article-category">Adrian&rsquo;s Adventures</div>
 
-      <h1 class="article-title">ARTICLE_TITLE</h1>
-      <p class="article-subtitle">ARTICLE_SUBTITLE</p>
+      <h1 class="article-title">Adrian&rsquo;s Adventures</h1>
 
-      <div class="article-meta">By AUTHOR_NAME &nbsp;&bull;&nbsp; EDITION_DATE</div>
+      <div class="article-meta">By <a href="../../../about.html#adrian-naves">Adrian Naves</a> &nbsp;&bull;&nbsp; July 26, 2026</div>
 
-      <figure class="hero-figure">
-        <img src="HERO_IMAGE.jpg" alt="HERO_ALT">
-        <figcaption>HERO_CAPTION</figcaption>
-      </figure>
-
-      <p class="article-intro">INTRO_PARAGRAPH</p>
+      <!-- HERO IMAGE: awaiting photo from contributor -->
 
       <div class="article-body">
 
-        <p>BODY_CONTENT</p>
+        <p style="color:#999; font-style:italic;">[Article text coming soon]</p>
 
       </div><!-- end article-body -->
 
       <!-- About the Author -->
       <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
-        <a href="../../../about.html#AUTHOR_ANCHOR" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: AUTHOR_NAME &rarr;</a>
+        <a href="../../../about.html#adrian-naves" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Adrian Naves &rarr;</a>
       </div>
 
       <!-- Feedback Widget -->
@@ -376,8 +370,14 @@
 
       <!-- Article Navigation — order must match homepage card order -->
       <div class="edition-nav">
-        <a href="../PREV_SLUG/" class="back-link">&larr; Previous: PREV_TITLE</a>
-        <a href="../NEXT_SLUG/" class="back-link">Next: NEXT_TITLE &rarr;</a>
+        <div class="nav-item">
+          <img class="nav-thumb" src="../heritage-lincoln-office/navthumb.jpg" alt="">
+          <a href="../heritage-lincoln-office/" class="back-link">&larr; Previous: Heritage Auction: Lincoln&rsquo;s Office</a>
+        </div>
+        <div class="nav-item">
+          <img class="nav-thumb" src="../sydney-garfield-park/navthumb.jpg" alt="">
+          <a href="../sydney-garfield-park/" class="back-link">Next: Garfield Park &rarr;</a>
+        </div>
       </div>
       <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
       <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
@@ -410,8 +410,8 @@
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
-    var prevUrl = '../PREV_SLUG/';
-    var nextUrl = '../NEXT_SLUG/';
+    var prevUrl = '../heritage-lincoln-office/';
+    var nextUrl = '../sydney-garfield-park/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
