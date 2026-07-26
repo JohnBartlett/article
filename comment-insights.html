@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Comment Insights (July 26) | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page:#fdfaf7; --bg-card:#fff; --text:#222; --title:#111; --meta:#777;
+      --muted:#888; --red:#b51c20; --border:#e8e0d5; --row:#fdfaf7;
+      --ga:#0b5; --ga-bg:#f0f8f0; --inf:#7a5; --warn-bg:#fff8e6; --warn-bd:#e8d48a; --warn-tx:#7a5c00;
+    }
+    @media (prefers-color-scheme: dark) { :root {
+      --bg-page:#111; --bg-card:#1e1e1e; --text:#ddd; --title:#fff; --meta:#999;
+      --muted:#888; --red:#e0555a; --border:#333; --row:#252525;
+      --ga-bg:#12261a; --warn-bg:#2a2410; --warn-bd:#5a4d1a; --warn-tx:#d8c37a;
+    }}
+    html.dark { --bg-page:#111; --bg-card:#1e1e1e; --text:#ddd; --title:#fff; --meta:#999;
+      --red:#e0555a; --border:#333; --row:#252525; --ga-bg:#12261a; --warn-bg:#2a2410; --warn-bd:#5a4d1a; --warn-tx:#d8c37a; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg-page); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.55; }
+    .wrap { max-width:1200px; margin:0 auto; padding:32px 20px 80px; }
+    .label { font-family:'Lato',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); }
+    h1 { font-family:'Playfair Display',Georgia,serif; font-size:30px; color:var(--title); margin:6px 0 4px; }
+    .meta { font-family:'Lato',sans-serif; font-size:13px; color:var(--meta); margin-bottom:8px; }
+    a.back { font-family:'Lato',sans-serif; font-size:13px; color:var(--red); text-decoration:none; }
+    a.back:hover { text-decoration:underline; }
+    .note { background:var(--warn-bg); border:1px solid var(--warn-bd); color:var(--warn-tx); border-radius:6px; padding:14px 18px; margin:22px 0; font-size:14px; font-family:'Lato',sans-serif; line-height:1.5; }
+    .note b { color:var(--warn-tx); }
+    h2 { font-family:'Lato',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin:34px 0 12px; border-bottom:1px solid var(--border); padding-bottom:8px; }
+    .snap { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
+    .snap .card { background:var(--bg-card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
+    .snap .card .k { font-family:'Lato',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin-bottom:6px; }
+    .snap .card .v { font-size:14px; }
+    .tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:10px; }
+    table { border-collapse:collapse; width:100%; min-width:820px; font-size:13.5px; }
+    thead th { font-family:'Lato',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); text-align:left; padding:10px 12px; border-bottom:2px solid var(--border); vertical-align:bottom; }
+    tbody td { padding:12px; border-bottom:1px solid var(--border); vertical-align:top; }
+    tbody tr:nth-child(even) { background:var(--row); }
+    .t-time { font-family:'Lato',sans-serif; font-size:12px; color:var(--meta); white-space:nowrap; }
+    .t-art { font-family:'Lato',sans-serif; font-size:12px; font-weight:700; color:var(--red); }
+    .cmt { font-style:italic; color:var(--text); }
+    .who { font-family:'Lato',sans-serif; font-size:11px; color:var(--muted); margin-top:5px; }
+    .ga { font-size:12.5px; color:var(--text); }
+    .ga em { color:var(--ga); font-style:normal; font-weight:700; }
+    .conf { display:inline-block; font-family:'Lato',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:1px 6px; border-radius:3px; margin-left:4px; }
+    .c-hi { background:#2e7d3222; color:#3a9d4a; } .c-med { background:#b5891c22; color:#c79a2a; } .c-lo { background:#88888822; color:var(--muted); }
+    .foot { font-family:'Lato',sans-serif; font-size:12px; color:var(--muted); margin-top:36px; border-top:1px solid var(--border); padding-top:16px; line-height:1.6; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="label">Editors&rsquo; Analysis</div>
+    <h1>Comment Insights &mdash; July 26 Edition</h1>
+    <div class="meta">Reader comments cross-referenced against Google Analytics 4 (property 523654462) &nbsp;&bull;&nbsp; GA4 pulled Sun, Jul 26, 2026 (mid-afternoon)</div>
+    <a class="back" href="reader-comments.html">&larr; Back to Reader Comments</a>
+
+    <div class="note">
+      <b>How to read this &mdash; and what it can&rsquo;t do.</b> GA4 reports traffic in <b>aggregate</b>, and there is no shared key between a submitted comment and a specific browsing session. Per-visitor attribution would require the GA4 &rarr; BigQuery export (not enabled) and would still be blocked by GA4&rsquo;s small-count privacy thresholds. <b>So no row below identifies who left a comment.</b> The &ldquo;GA4 signal&rdquo; column is the <em>article&rsquo;s own</em> traffic today plus the site-wide reader backdrop; the &ldquo;Reasonably inferred&rdquo; column is reasoning from the comment&rsquo;s wording, any self-provided identity, its timestamp, and those aggregate patterns &mdash; labeled by confidence. Treat inferences as hunches, not facts.
+    </div>
+
+    <h2>Site-wide GA4 snapshot &mdash; today so far</h2>
+    <div class="snap">
+      <div class="card"><div class="k">Audience</div><div class="v">407 active users &middot; 917 page views</div></div>
+      <div class="card"><div class="k">Geography</div><div class="v">Chicago <b>39%</b> (deep 3m04s reads) &middot; then Seattle, Indianapolis (4m33s!), Boston, San&nbsp;Jose &middot; US = 90%</div></div>
+      <div class="card"><div class="k">International</div><div class="v">Singapore cluster (24) &middot; small but real Europe: Denmark 3, Italy 3, France 2 (~13-min reads), Germany 2 &middot; Israel 2</div></div>
+      <div class="card"><div class="k">Device</div><div class="v">Mobile <b>51%</b> &middot; Desktop 48% &middot; Tablet 2%</div></div>
+      <div class="card"><div class="k">Browser</div><div class="v">Safari <b>51%</b> &middot; Chrome 42% &mdash; an Apple-heavy, affluent/older-skewing profile</div></div>
+      <div class="card"><div class="k">Note</div><div class="v">Ashburn &amp; Boardman rows (~0&ndash;7s dwell) are AWS data-center / bot noise, not readers.</div></div>
+    </div>
+
+    <h2>Per-comment table &mdash; each real comment today</h2>
+    <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:70px;">Time (EDT)</th>
+          <th style="width:110px;">Article</th>
+          <th style="width:300px;">Comment</th>
+          <th style="width:230px;">GA4 signal (aggregate, today)</th>
+          <th>Reasonably inferred (not identification)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="t-time">05:27</td>
+          <td class="t-art">Don&rsquo;t Lose That Joy</td>
+          <td><span class="cmt">&ldquo;Bla Bla Bla!&rdquo;</span><div class="who">no name / email</div></td>
+          <td class="ga">Article drew <em>39 views, 1m21s</em> avg today. This landed pre-dawn, ahead of Chicago&rsquo;s morning ramp.</td>
+          <td>Dismissive drive-by, not engaged feedback. The 5:27&nbsp;a.m. submission hints at an early riser or a non-Central timezone. <span class="conf c-lo">low</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">05:37</td>
+          <td class="t-art">Art in the Sky Room (Obama)</td>
+          <td><span class="cmt">&ldquo;An incredibly ugly building! Be careful-not all Americans are welcome there!&rdquo;</span><div class="who">no name / email &middot; submitted twice</div></td>
+          <td class="ga">Obama piece had the edition&rsquo;s <em>shortest dwell (49s)</em> &mdash; readers bounce. 90% of site traffic is US.</td>
+          <td>Politically motivated, not architecture criticism; the double-submission reads as emphatic/agitated. Pre-dawn again. No location signal available. <span class="conf c-lo">low</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">08:47</td>
+          <td class="t-art">Biba: Gloria Groom</td>
+          <td><span class="cmt">&ldquo;One of my favorite things is Biba&rsquo;s column. A quick glimpse into wonderful &amp; very interesting people!&rdquo;</span><div class="who">no name / email</div></td>
+          <td class="ga">Biba is the #2 article today (<em>89 views, 1m39s</em> &mdash; a genuine read). Morning Chicago traffic building.</td>
+          <td>An engaged repeat reader of Biba&rsquo;s column; warm, familiar tone &rarr; likely inside the Chicago art/society circle. <span class="conf c-med">medium</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">09:31</td>
+          <td class="t-art">Biba: Gloria Groom</td>
+          <td><span class="cmt">&ldquo;Gloria is the best&hellip; remembering people&rsquo;s names, there is no one to equal her. The beauty in her life is not just on the walls.&rdquo;</span><div class="who"><b>Patricia Erens</b> &middot; pberens@msn.com</div></td>
+          <td class="ga">Chicago = 39% of today&rsquo;s users with the deepest dwell (3m). <code>@msn.com</code> = long-tenured email (older demographic).</td>
+          <td>Only self-identified commenter of the day. Patricia Erens is a known Chicago-area film scholar/author; the personal knowledge of Gloria Groom marks an art-world peer &rarr; almost certainly Chicago. <span class="conf c-hi">high</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">09:40</td>
+          <td class="t-art">My Silk Roads: Vienna</td>
+          <td><span class="cmt">&ldquo;Lovely to read and look at the photos. I love Vienna too but always visit THE KISS at the Belvedere, the Hundertwasser buildings&hellip; and take pride on the Ferris Wheel at the Prater.&rdquo;</span><div class="who">no name / email</div></td>
+          <td class="ga">Vienna piece: <em>42 views, 1m24s</em>. Today&rsquo;s traffic has faint European traces (Denmark/Italy/France/Germany) but is Chicago-dominant.</td>
+          <td>Well-traveled, culturally fluent &mdash; names Klimt&rsquo;s <i>The Kiss</i> (Belvedere), Hundertwasser, and the Prater Riesenrad, so has clearly <i>been</i> to Vienna. Older/affluent, fits the Apple-device Chicago-society profile. Local vs. European visitor is indistinguishable. <span class="conf c-med">medium</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">12:08</td>
+          <td class="t-art">Soup on the Verge of Heatstroke</td>
+          <td><span class="cmt">&ldquo;Brillant piece&hellip;perfect for this summer.&rdquo;</span><div class="who">no name / email</div></td>
+          <td class="ga">Soup had the edition&rsquo;s smallest reach (<em>29 views, 1m12s</em>). Italy contributed 3 readers today (3m16s).</td>
+          <td>Appreciative; the &ldquo;Brillant&rdquo; misspelling suggests casual/quick typing &mdash; consistent with the 51% mobile audience. <span class="conf c-lo">low</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">13:26</td>
+          <td class="t-art">Soup on the Verge of Heatstroke</td>
+          <td><span class="cmt">&ldquo;I look forward to enjoying a bowl of gazpacho and the movie. What fun!&rdquo;</span><div class="who">no name / email &middot; submitted twice</div></td>
+          <td class="ga">Same article (aggregate as above).</td>
+          <td>Actually read it &mdash; references the piece&rsquo;s gazpacho and the film it cites. Playful, engaged tone. <span class="conf c-med">medium</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">13:37</td>
+          <td class="t-art">Biba: Gloria Groom</td>
+          <td><span class="cmt">&ldquo;Wonderful article on a truly unique and fascinating person.&rdquo;</span><div class="who">no name / email &middot; submitted three times</div></td>
+          <td class="ga">Biba is the day&rsquo;s <em>most-discussed</em> article &mdash; 3 comments + 6 &ldquo;Yes&rdquo; votes.</td>
+          <td>Another Gloria Groom admirer; the triple-submission is one person re-clicking the form. Biba&rsquo;s profile is clearly the edition&rsquo;s breakout. <span class="conf c-med">medium</span></td>
+        </tr>
+        <tr>
+          <td class="t-time">14:52</td>
+          <td class="t-art">Letter from Paris (Pt 3)</td>
+          <td><span class="cmt">&ldquo;Just fabulous.&rdquo;</span><div class="who">no name / email</div></td>
+          <td class="ga">Paris piece: <em>44 views, 1m58s</em> &mdash; the 2nd-deepest read of the edition. France contributed 2 users today with ~13-minute sessions.</td>
+          <td>Short but positive; the strong site-wide dwell here plus francophone traffic points to a genuinely engaged travel/Francophile readership. <span class="conf c-lo">low</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="foot">
+      <b>What the aggregate actually tells us:</b> today&rsquo;s audience is ~90% US and Chicago-centered (39%), on Apple devices, skewing affluent/older &mdash; exactly the profile of a Chicago society magazine. Biba Roesch&rsquo;s Gloria Groom profile is the runaway engagement leader (most comments + votes). The thin international pockets are quietly on-theme: a Singapore cluster, plus European traffic that mirrors the edition&rsquo;s own subjects &mdash; Paris, Vienna, the Danish painter in Biba&rsquo;s piece, the Italian gazpacho.<br><br>
+      <b>Reminder:</b> every &ldquo;inferred&rdquo; cell is a hunch built from the comment text, timing, and aggregate context &mdash; GA4 cannot tie any comment to an individual. Empty comment-form submissions and dev/test traffic are excluded.
+    </div>
+  </div>
+</body>
+</html>
