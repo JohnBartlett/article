@@ -182,7 +182,21 @@ def fetch_gmail_votes_comments():
 def parse_formsubmit(body, subject, date_str):
     """Parse a FormSubmit email body into a structured record."""
     def field(name, text):
-        m = re.search(rf'^{name}:\s*(.+)$', text, re.MULTILINE | re.IGNORECASE)
+        # [ \t]* (not \s*) so an empty field doesn't swallow the newline and
+        # bleed into the next field's label (e.g. blank "comment:" followed
+        # by "email:" would otherwise capture "email:" as the comment).
+        m = re.search(rf'^{name}:[ \t]*(.+)$', text, re.MULTILINE | re.IGNORECASE)
+        return m.group(1).strip() if m else ''
+
+    def multiline_field(name, text, next_labels=('email', 'Page', 'Environment')):
+        # Comments can legitimately span multiple lines (e.g. a signature on
+        # its own line); capture everything up to the next known field label
+        # or end of text, instead of stopping at the first newline.
+        stop = '|'.join(re.escape(l) for l in next_labels)
+        m = re.search(
+            rf'^{name}:[ \t]*(.*?)(?:\r?\n(?:{stop}):|\Z)',
+            text, re.MULTILINE | re.IGNORECASE | re.DOTALL
+        )
         return m.group(1).strip() if m else ''
 
     env = field('Environment', body)
@@ -190,7 +204,7 @@ def parse_formsubmit(body, subject, date_str):
         return None  # test submission
 
     vote    = field('vote', body)
-    comment = field('comment', body)
+    comment = multiline_field('comment', body)
     page    = field('Page', body)
     article_slug = field('article', body)   # old format: article: versailles-jun28
 
@@ -275,7 +289,9 @@ def tally_votes_comments(records, edition_date=None):
             art['yes'] += 1
         elif rec['vote'] == 'no':
             art['no'] += 1
-        if rec['comment']:
+        # Dedupe: readers sometimes double-submit the same comment (double
+        # click, form retry) — only show each distinct comment text once.
+        if rec['comment'] and rec['comment'] not in art['comments']:
             art['comments'].append(rec['comment'])
         if rec['url'] and not art['url']:
             art['url'] = rec['url']
