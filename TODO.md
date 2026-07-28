@@ -3,21 +3,32 @@
 ## TODO — AUGUST 2 EDITION (next)
 
 ### Incoming lineup (Judy's email Jul 26, 2026)
-- [ ] **David Sweet book interview** — Judy will send to John. Slug TBD.
-- [ ] **Dinner Party on the Bluff** — Emma. Slug TBD.
+- [x] **David Sweet book interview** — Built: `editions/2026-08-02/hindenburg-disaster/` (TEXT ONLY — photos pending extraction)
+- [ ] **Dinner Party on the Bluff** — Emma. Slug TBD. (Lurie Garden dinner; cover photo `group photo (1).jpeg` in msg `19fa89fde1c12b57` — no article text yet)
 - [ ] **Philip Vidal: About the Town in August** — Ana Baca. Slug TBD.
 - [ ] **Katherine Harvey on Antibes** — Annie Delfosse. Cover photo received: `IMG_1882.jpeg` (msg `19f9e74c0584af79`) — extract when building stub. Slug TBD.
-- [ ] **Sydney on Garfield Park** — Annie Delfosse. Held from July 26. Slug: `sydney-garfield-park`.
+- [ ] **Sydney on Garfield Park** — Annie Delfosse. Cover photo `20260710_132414.jpeg` in Judy email Jul 26 (msg `19f9add5cefd7f06`). Slug: `sydney-garfield-park`. No article text yet.
 - [ ] **Adrian's Adventures** — Emma (Adrian delivering by Thursday; Judy will substitute if he can't). Slug TBD.
-- [ ] **Scott Holleran's short story** — Judy will send to John. Slug TBD.
+- [x] **Scott Holleran's short story** — Built: `editions/2026-08-02/beauty-and-the-beast/` (TEXT ONLY — cover photo `image0.jpeg` pending extraction from msg `19fa83463f9e4654`)
 - [ ] **DateBook** — Annie updating.
 - [ ] Possible additional article TBD.
 
+### Photos pending (require Gmail credentials / new session)
+- [ ] Extract `image0.jpeg` → `editions/2026-08-02/beauty-and-the-beast/` (msg `19fa83463f9e4654`)
+- [ ] Extract `Catherine Grace Katz 1 (Photo by Steve Dondero).jpeg`, `Catherine Grace Katz 2.jpeg`, `Catherine Grace Katz 3 Zeppelin Museum in Freidrichshafen.jpeg` → `editions/2026-08-02/hindenburg-disaster/` (msg with David Sweet article)
+- [ ] Extract `group photo (1).jpeg` → Lurie Dinner article folder (msg `19fa89fde1c12b57`)
+- [ ] Extract `20260710_132414.jpeg` → Sydney Garfield Park article folder (msg `19f9add5cefd7f06`)
+- [ ] Download `Classic Chicago August 2026.png` → `ads/` (Heritage Auctions ad, link: `ha.com/43249`)
+- [ ] Update `index.html`: HA ad image `Classic Chicago June 2026.png` → `Classic Chicago August 2026.png`; link → `ha.com/43249`
+- [ ] Create navthumb.jpg for hindenburg-disaster and beauty-and-the-beast (after photos extracted)
+
 ### Setup tasks (do when Judy confirms lineup is final)
-- [ ] Run `/prep-edition 2026-08-02` to create folder skeleton, stubs, nav chain, homepage shell
-- [ ] Copy DateBook forward: `cp -r editions/2026-07-26/datebook editions/2026-08-02/datebook`
-- [ ] Copy Astrochart forward: `cp -r editions/2026-07-26/daily-star-july editions/2026-08-02/daily-star-august` (chase Victoria for August forecast)
+- [x] Copy DateBook forward: `cp -r editions/2026-07-26/datebook editions/2026-08-02/datebook` ✅
+- [x] Copy Astrochart forward: `cp -r editions/2026-07-26/daily-star-july editions/2026-08-02/daily-star-july` ✅ (July forecast; swap for August when Victoria sends text)
+- [ ] Run `/prep-edition 2026-08-02` for remaining stubs when full lineup confirmed
 - [ ] Update "Our Writers This Week" in about.html for Aug 2 writers
+- [ ] Wire final nav chain once all articles built
+- [ ] Update index.html homepage with Aug 2 hero + cards
 
 ## DONE — JULY 26 EDITION (published Jul 26, 2026)
 
