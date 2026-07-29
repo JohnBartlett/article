@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>About the Town: August in Chicago | Classic Chicago Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      max-width: 320px;
+      width: 90%;
+    }
+
+    nav {
+      border-top: 2px solid #b51c20;
+      border-bottom: 2px solid #b51c20;
+      padding: 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8px 16px;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #333;
+      text-decoration: none;
+      padding: 4px 14px;
+      white-space: nowrap;
+    }
+
+    .nav-inner a:hover { color: #b51c20; }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 14px;
+      color: #333;
+    }
+
+    .hamburger-menu {
+      display: none;
+      position: absolute;
+      right: 12px;
+      top: 100%;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 100;
+      min-width: 140px;
+    }
+
+    .hamburger-menu.open { display: block; }
+
+    .hamburger-menu a {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #333;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .hamburger-menu a:last-child { border-bottom: none; }
+    .hamburger-menu a:hover { color: #b51c20; background: #fafafa; }
+
+    .nav-wrapper { position: relative; }
+
+    .internal-nav {
+      background: #f9f5f0;
+      border-bottom: 1px solid #e0d8ce;
+      padding: 6px 0;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+    }
+
+    .internal-nav a {
+      color: #7a5c3a;
+      text-decoration: none;
+      margin: 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .internal-nav a:hover { text-decoration: underline; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
+
+    .article-wrapper { max-width: 660px; margin: 0 auto; }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #b51c20;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    .article-meta a { color: #b51c20; text-decoration: none; }
+    .article-meta a:hover { text-decoration: underline; }
+
+    figure {
+      margin: 28px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .article-body p {
+      margin: 0 0 20px;
+    }
+
+    .article-body a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-body a:hover { text-decoration: underline; }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 48px 0 24px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      gap: 16px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b51c20;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 2px solid #b51c20;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .social-links a { color: #555; display: block; width: 22px; height: 22px; }
+    .social-links a:hover { color: #b51c20; }
+    .social-links svg { width: 22px; height: 22px; fill: currentColor; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="nav-inner">
+          <a href="../../../index.html">Home</a>
+          <a href="../datebook/">DateBook</a>
+          <a href="../daily-star-july/">Astrochart</a>
+          <a href="../../../editorial.html">Editors&rsquo; Page</a>
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+        </div>
+        <div class="hamburger-menu" id="hamburger-menu">
+          <a href="../../../about.html">About</a>
+          <a href="../../../subscribe.html">Subscribe</a>
+          <a href="../../../advertise.html">Advertise</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only -->
+  <div class="internal-nav">
+  </div>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">About the Town</div>
+
+      <h1 class="article-title">About the Town: August in Chicago</h1>
+
+      <div class="article-meta">By <a href="../../../about.html#philip-vidal">Philip Vidal</a> &nbsp;&bull;&nbsp; August 2, 2026</div>
+
+      <figure>
+        <img src="COVER Chicago Black Dance.jpg" alt="Chicago Black Dance Legacy Project" width="100%" height="auto">
+      </figure>
+
+      <div class="article-body">
+
+        <p>Ask any boater in Chicago and they&rsquo;ll tell you that summer, and the boating season on Lake Michigan, is too short! To enjoy the most of it, head to the lake, where the water temperature peaks at 80 degrees in August, and to one of the many outdoor events and festivals.</p>
+
+        <p>The Ravinia Festival, or simply Ravinia, is North America&rsquo;s longest running outdoor festival and features headliners from just about every music genre. This month, Chicago&rsquo;s own <a href="https://www.ravinia.org/events/detail/chance-the-rapper-260808" target="_blank">Chance the Rapper</a> performs on August 8. <a href="https://www.ravinia.org/events/detail/hugh-jackman-chicago-phil-260809" target="_blank">Hugh Jackman</a> performs with the Chicago Philharmonic the following day. If you&rsquo;re a &ldquo;Grease&rdquo; fan, head to Ravinia on August 23 for the <a href="https://www.ravinia.org/events/detail/grease-sing-along-260823" target="_blank">&ldquo;Grease&rdquo; Sing-Along</a>. Sing along to the soundtrack while watching the 1978 film with on-screen lyrics. The musical &ldquo;Grease&rdquo; was first performed at the Kingston Mines in Chicago in 1971.</p>
+
+        <figure>
+          <img src="1 Sunday in Park with Lyric.jpg" alt="Sunday in the Park with Lyric at Jay Pritzker Pavilion" width="100%" height="auto">
+          <figcaption>A perfect summer night! Enjoy performances from Lyric Opera of Chicago&rsquo;s upcoming season at the &ldquo;Sunday in the Park with Lyric&rdquo; on August 23rd at the Jay Pritzker Pavilion. Photo credit to Kyle Flubacker.</figcaption>
+        </figure>
+
+        <p>Millennium Park&rsquo;s Pritzker Pavilion hosts two free concerts this month. Presented with the City of Chicago&rsquo;s Department of Cultural Affairs and Special Events (DCASE), the <a href="https://www.broadwayinchicago.com/broadway-in-chicago-summer-concert-2026/" target="_blank">Broadway in Chicago Summer Concert</a> is August 10 and features performances from current and upcoming Broadway in Chicago productions. Artists from The Patrick G. and Shirley W. Ryan Opera Center perform pieces from the Lyric Opera of Chicago&rsquo;s upcoming season at &ldquo;<a href="https://www.lyricopera.org/shows/upcoming/lyric-opera/sunday-in-the-park-with-lyric/" target="_blank">Sunday in the Park with Lyric</a>&rdquo; concert on August 23.</p>
+
+        <p>It&rsquo;s indoors, but inspired by the outdoors. Award-winning Kokandy Productions presents James Lapine and Stephen Sondheim&rsquo;s &ldquo;<a href="https://www.eventbrite.com/e/sunday-in-the-park-with-george-tickets-1982192272446" target="_blank">Sunday in the Park with George</a>&rdquo; in the Chopin Downstairs Studio, August 13&ndash;November 1. The musical was inspired by George Seurat&rsquo;s 1884 painting &ldquo;<a href="https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884" target="_blank">A Sunday on La Grande Jatte</a>,&rdquo; one of the most famous paintings at the Art Institute of Chicago.</p>
+
+        <figure>
+          <img src="2 Black Ensemble Fridays.jpg" alt="Black Ensemble Theater Fridays on the Green" width="100%" height="auto">
+          <figcaption>Celebrating 50 years of Black Ensemble Theater! Their outdoor musical celebration &ldquo;Fridays on the Green&rdquo; takes place on Fridays from mid-to-late August on their front lawn at the corner of Clark and Sunnyside. Photo credit to Black Ensemble Theater.</figcaption>
+        </figure>
+
+        <p>Black Ensemble Theater&rsquo;s 50<sup>th</sup> anniversary season continues with <a href="https://www.blackensembletheater.org/" target="_blank">Fridays on the Green</a>, a series of free outdoor evening concerts held on the theater&rsquo;s front lawn at 4450 North Clark, August 14, 21 and 28.</p>
+
+        <p>The last concert in the <a href="https://mcachicago.org/whats-on/series/tuesdays-on-the-terrace/" target="_blank">Tuesdays on the Terrace</a> series of free, live outdoor music performances on the Museum of Contemporary Art Chicago&rsquo;s Anne and John Kern Terrace Garden is August 25.</p>
+
+        <figure>
+          <img src="3 Red Line Jazz Project.jpeg" alt="Mandala South Asian Performing Arts Red Line Jazz Project" width="100%" height="auto">
+          <figcaption>Mandala South Asian Performing Arts&rsquo; Red Line Jazz Project has two scheduled performances for the month of August: August 13th at Argyle Station and August 27th at Taylor Park. Photo credit to Mandala South Asian Performing Arts.</figcaption>
+        </figure>
+
+        <p>Mandala Arts&rsquo; <a href="https://www.mandalaarts.org/event/red-line-jazz-project/" target="_blank">Red Line Jazz Project</a> is a series of free live performances at or near Chicago Transit Authority (CTA) Red Line L stations through September with a grand finale at the Harris Theater on October 16. The Tzu-Tsen Wu Quartet performs at the CTA&rsquo;s Argyle Station on August 13.</p>
+
+        <p>The current season of the <a href="https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park_film_series.html" target="_blank">Millennium Park Summer Film Series</a> (Tuesdays) at Jay Pritzker Pavilion in Millennium Park wraps up August 18. The 4<sup>th</sup> <a href="https://www.chicagofilmsociety.org/calendar/current-season/#technicolor" target="_blank">Technicolor Weekend</a> presented by the Chicago Film Society at the Gene Siskel Film Center screens seven original 35mm and 16mm prints using the Technicolor process including William Castle&rsquo;s 1967 comedy &ldquo;<a href="https://www.siskelfilmcenter.org/busy-body" target="_blank">The Busy Body</a>.&rdquo; On August 8, watch that film starring Robert Ryan, Sid Caesar and Anne Baxter, as well as Richard Pryor in his film debut &mdash; all indoors but keep an eye out for &ldquo;beautiful exterior shots of &lsquo;60s Chicago.&rdquo;</p>
+
+        <p>Two of the biggest outdoor events this month are <a href="https://northalsted.com/main-events/northalsted-market-days/" target="_blank">Northalsted Market Days&reg;</a> which is the Midwest&rsquo;s largest outdoor street festival, on North Halsted between Belmont and Addison on August 7&ndash;9, and the 68<sup>th</sup> annual <a href="https://www.chicago.gov/city/en/depts/dca/supp_info/air_water_show.html" target="_blank">Chicago Air and Water Show</a>, billed as &ldquo;the largest FREE show of its kind in the United States,&rdquo; at North Avenue Beach and the lakefront on August 14&ndash;16.</p>
+
+        <p>For something a bit more intimate, the 11th annual <a href="https://acmusic.org/events/thirsty-ears-program/" target="_blank">Thirsty Ears Festival</a> described as &ldquo;Chicago&rsquo;s only classical music street festival&rdquo; runs August 22&ndash;23 on Wilson Avenue from Hermitage and Ravenswood. The 19<sup>th</sup> annual <a href="https://www.downtownoakpark.net/event/oak-park-microbrew-review/" target="_blank">Oak Park Microbrew Review</a> is August 22 on Marion Street. Stroll the streets of downtown Evanston at the <a href="https://amdurproductions.com/evanston-art-and-big-fork-festival/" target="_blank">Evanston Art &amp; Big Fork Festival</a> August 22&ndash;23, which features the works of more than 150 artists plus food, refreshments and live music at The Big Fork.</p>
+
+        <figure>
+          <img src="4 Greektown.JPG" alt="Taste of Greektown festival" width="100%" height="auto">
+          <figcaption>Take part in Chicago&rsquo;s largest celebration of Greek food and culture at the Taste of Greektown festival, August 28&ndash;30. Photo credit to Elios Photography.</figcaption>
+        </figure>
+
+        <p>Chicago&rsquo;s many ethnic outdoor festivals combine culture, music and food. You&rsquo;ve probably seen Holy Resurrection Serbian Orthodox Cathedral just off the Kennedy Expressway near Cumberland. The cathedral hosts its annual <a href="https://serbfestchicago.com/" target="_blank">Serbfest</a> on August 7&ndash;9. The 70<sup>th</sup> <a href="https://ginzaholiday.com/" target="_blank">Ginza Japanese Cultural Holiday Festival</a> at the Midwest Buddhist Temple is also August 7&ndash;9. The 50<sup>th</sup> annual <a href="https://stgregorychicago.org/events/" target="_blank">Armenian Fest</a> at St. Gregory the Illuminator Armenian Church, which is celebrating its centennial, is August 9. The <a href="https://oshows.com/festivals/" target="_blank">Taylor Street Festival</a> in Chicago&rsquo;s Little Italy neighborhood is August 13&ndash;16. Celebrate Hellenic culture and food at the 36<sup>th</sup> <a href="https://greektownchicago.org/taste-of-greektown/" target="_blank">Taste of Greektown</a> on Halsted Street from VanBuren to Adams on August 28&ndash;30. Albany Park is one of Chicago&rsquo;s most diverse neighborhoods. The Albany Park <a href="https://www.albanyparkneighbors.org/worldfest" target="_blank">World Fest</a> at Lawrence and Kimball runs August 16&ndash;17.</p>
+
+        <p>Chicago&rsquo;s diverse and vibrant cultural traditions are also celebrated at the citywide Chicago <a href="https://www.chicago.gov/city/en/depts/dca/supp_info/chicago_summerdance.html" target="_blank">SummerDance in the Parks</a>, the city&rsquo;s free dance series that includes lessons, live performances and music. Presented as part of the Chicago Park District&rsquo;s Night Out in the Parks, the series runs through the end of August. This month, Chicago SummerDance in Grant Park&rsquo;s Spirit of Music Garden features ballroom, Bollywood, Chicago Honky Tonk, country, house music, plena, samba, salsa, and swing.</p>
+
+        <figure>
+          <img src="5 CBDLP Artist.jpg" alt="Chicago Black Dance Legacy Project — Dancing the Archive" width="100%" height="auto">
+          <figcaption>One-night-only performance! &ldquo;Dancing the Archive: Embodied Histories, Collective Power&rdquo; will be performed by ten extraordinary Black dance organizations for a thrilling evening at the Harris Theater, August 28. Photo by Chicago Black Dance Legacy Project.</figcaption>
+        </figure>
+
+        <p>It&rsquo;s indoors, but I&rsquo;d be remiss if I didn&rsquo;t mention the Chicago Black Dance Legacy Project. Their one-night-only performance last year sold out. It&rsquo;s back at the Harris Theater on August 28 with ten Black dance organizations performing &ldquo;<a href="https://www.harristheaterchicago.org/performance/dancing-archive-embodied-histories-collective-power" target="_blank">Dancing the Archive: Embodied Histories, Collective Power</a>&rdquo; and the inaugural Legacy Bearers celebration of &ldquo;ten visionaries and changemakers whose lives and leadership have shaped the city&rsquo;s landscape while inspiring its future.&rdquo;</p>
+
+        <figure>
+          <img src="6 Northlight.jpg" alt="Northlight Theatre Grand Opening Gala" width="100%" height="auto">
+          <figcaption>Northlight Theatre welcomes their new home in Evanston with their Grand Opening Gala &ldquo;Celebrating our Past, Building our Future&rdquo; on August 15 at 1012 Church Street. Photo rendering by Eckenhoff Saunders.</figcaption>
+        </figure>
+
+        <p>August also marks the transition from outdoor to indoor events and a new cultural season. Writers Theatre in Glencoe opens their 35th anniversary season with Matthew Libby&rsquo;s &ldquo;<a href="https://www.writerstheatre.org/events/sisters" target="_blank">Sisters</a>&rdquo; running August 13&ndash;November 8. Northlight Theatre&rsquo;s 50<sup>th</sup> anniversary season in their new home at 1012 Church Street in Evanston begins in September with a very Chicago-centric play, Ben Hecht&rsquo;s &ldquo;The Front Page,&rdquo; but in the meantime, help support them by attending <a href="https://northlight.org/gala/" target="_blank">Northlight&rsquo;s Grand Opening gala</a> at their new space on August 15.</p>
+
+        <p>With summer events winding down, I look forward to curating Chicago&rsquo;s fall events for our <em>Classic Chicago Magazine</em> readers.</p>
+
+        <p><em>Dates, times, locations and availability are subject to change.</em></p>
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#philip-vidal" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Philip Vidal &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation -->
+      <div class="edition-nav">
+        <div class="nav-item">
+          <img class="nav-thumb" src="../beauty-and-the-beast/navthumb.jpg" alt="">
+          <a href="../beauty-and-the-beast/" class="back-link">&larr; Previous: Beauty and the Beast</a>
+        </div>
+        <div class="nav-item">
+          <img class="nav-thumb" src="../hindenburg-disaster/navthumb.jpg" alt="">
+          <a href="../hindenburg-disaster/" class="back-link">Next: Winnetka Author Tackles Hindenburg Disaster &rarr;</a>
+        </div>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script>
+    var prevUrl = '../beauty-and-the-beast/';
+    var nextUrl = '../hindenburg-disaster/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>
