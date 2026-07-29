@@ -164,7 +164,15 @@ def fetch_gmail_votes_comments():
         return []
 
     token = get_access_token()
-    msgs = search_messages(token, 'subject:("Classic Chicago") (vote OR comment OR "Form Submission") newer_than:365d')
+    # Anchor ALL terms to the subject line — an unscoped "(vote OR comment OR ...)"
+    # searches the whole message, so any unrelated email with "Classic Chicago"
+    # in its subject and the word "comment" anywhere in a long body (e.g. a
+    # forwarded article/story) gets swept in and parses into a blank record.
+    msgs = search_messages(
+        token,
+        '(subject:"Classic Chicago Quick Vote" OR subject:"Classic Chicago Reader Comment" '
+        'OR subject:"Classic Chicago Form Submission") newer_than:365d'
+    )
 
     records = []
     for m in msgs:
@@ -271,6 +279,11 @@ def tally_votes_comments(records, edition_date=None):
 
     for rec in records:
         if rec is None:
+            continue
+        # Defensive: a record with no slug couldn't be matched to any article
+        # (e.g. an unrelated email that slipped past the Gmail query, or a
+        # malformed submission) — skip rather than showing a blank leaderboard row.
+        if not rec['slug']:
             continue
         if edition_date and rec['edition_date'] != edition_date:
             continue
