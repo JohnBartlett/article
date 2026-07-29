@@ -1,7 +1,14 @@
 {
   "dark_mode_added": [],
   "nav_css_added": [],
-  "popup_articles_added": [],
+  "popup_articles_added": [
+    "adrian-naves: Adrian's Adventures (August 2, 2026)",
+    "david-sweet: Winnetka Author Tackles Hindenburg Disaster in Latest Historic Tome (August 2, 2026)",
+    "katherine-harvey: Antibes (August 2, 2026)",
+    "philip-vidal: About the Town in August (August 2, 2026)",
+    "scott-holleran: Beauty and the Beast (August 2, 2026)",
+    "sydney-armstrong: Garfield Park (August 2, 2026)"
+  ],
   "new_authors_needing_bios": [
     {
       "id": "emma-muhleman",

@@ -12,7 +12,7 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>About the Town: August in Chicago | Classic Chicago Magazine</title>
+  <title>About the Town in August | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -39,136 +39,176 @@
     }
 
     .logo-container img {
-      max-width: 320px;
-      width: 90%;
+      width: 390px;
+      height: auto;
     }
 
     nav {
-      border-top: 2px solid #b51c20;
-      border-bottom: 2px solid #b51c20;
-      padding: 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
     }
 
     .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 0;
       flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 8px 16px;
     }
 
     .nav-inner a {
       font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #333;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
       text-decoration: none;
-      padding: 4px 14px;
-      white-space: nowrap;
-    }
-
-    .nav-inner a:hover { color: #b51c20; }
-
-    .hamburger-btn {
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 4px 14px;
-      color: #333;
-    }
-
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      right: 12px;
-      top: 100%;
-      background: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      z-index: 100;
-      min-width: 140px;
-    }
-
-    .hamburger-menu.open { display: block; }
-
-    .hamburger-menu a {
-      display: block;
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #333;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-bottom: 1px solid #eee;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
     }
 
-    .hamburger-menu a:last-child { border-bottom: none; }
-    .hamburger-menu a:hover { color: #b51c20; background: #fafafa; }
-
-    .nav-wrapper { position: relative; }
-
-    .internal-nav {
-      background: #f9f5f0;
-      border-bottom: 1px solid #e0d8ce;
-      padding: 6px 0;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
     }
 
-    .internal-nav a {
-      color: #7a5c3a;
-      text-decoration: none;
-      margin: 0 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
     }
-
-    .internal-nav a:hover { text-decoration: underline; }
-
-    main { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
-
-    .article-wrapper { max-width: 660px; margin: 0 auto; }
 
     .article-category {
       font-family: 'Lato', sans-serif;
       font-size: 11px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
       color: #b51c20;
-      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
     }
 
-    .article-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 800;
-      line-height: 1.15;
-      margin: 0 0 16px;
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
       color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
     }
 
     .article-meta {
       font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 28px;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
     }
 
-    .article-meta a { color: #b51c20; text-decoration: none; }
-    .article-meta a:hover { text-decoration: underline; }
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     figure {
-      margin: 28px 0;
+      margin: 36px 0;
     }
 
     figure img {
@@ -177,91 +217,53 @@
       display: block;
     }
 
+    .hero-figure figcaption,
     figure figcaption {
       font-family: 'Lato', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       color: #888;
+      text-align: center;
       margin-top: 8px;
-      line-height: 1.5;
+      font-style: italic;
     }
-
-    .article-body p {
-      margin: 0 0 20px;
-    }
-
-    .article-body a {
-      color: #b51c20;
-      text-decoration: none;
-    }
-
-    .article-body a:hover { text-decoration: underline; }
-
-    .edition-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 48px 0 24px;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
-      gap: 16px;
-    }
-
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-thumb {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .back-link {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #b51c20;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .back-link:hover { text-decoration: underline; }
 
     footer {
-      border-top: 2px solid #b51c20;
-      padding: 32px 24px;
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
+      margin-top: 60px;
     }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
-
-    .social-links a { color: #555; display: block; width: 22px; height: 22px; }
-    .social-links a:hover { color: #b51c20; }
-    .social-links svg { width: 22px; height: 22px; fill: currentColor; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
 
     .copyright {
       font-family: 'Lato', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       color: #aaa;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
     @media (max-width: 600px) {
-      .edition-nav { flex-direction: column; align-items: flex-start; }
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
     }
   </style>
+  <script src="../../../dark-mode.js"></script>
 </head>
 
 <body>
-
   <header>
     <div class="logo-container">
       <a href="../../../index.html">
@@ -269,19 +271,16 @@
       </a>
     </div>
     <nav>
-      <div class="nav-wrapper">
-        <div class="nav-inner">
-          <a href="../../../index.html">Home</a>
-          <a href="../datebook/">DateBook</a>
-          <a href="../daily-star-july/">Astrochart</a>
-          <a href="../../../editorial.html">Editors&rsquo; Page</a>
-          <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
-        </div>
-        <div class="hamburger-menu" id="hamburger-menu">
-          <a href="../../../about.html">About</a>
-          <a href="../../../subscribe.html">Subscribe</a>
-          <a href="../../../advertise.html">Advertise</a>
-        </div>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-august/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
       </div>
     </nav>
   </header>
@@ -431,17 +430,19 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation -->
+      <!-- Article Navigation — order must match homepage card order -->
       <div class="edition-nav">
         <div class="nav-item">
-          <img class="nav-thumb" src="../beauty-and-the-beast/navthumb.jpg" alt="">
-          <a href="../beauty-and-the-beast/" class="back-link">&larr; Previous: Beauty and the Beast</a>
+          <img class="nav-thumb" src="../dinner-on-the-bluff/navthumb.jpg" alt="">
+          <a href="../dinner-on-the-bluff/" class="back-link">&larr; Previous: Dinner Party on the Bluff</a>
         </div>
         <div class="nav-item">
-          <img class="nav-thumb" src="../hindenburg-disaster/navthumb.jpg" alt="">
-          <a href="../hindenburg-disaster/" class="back-link">Next: Winnetka Author Tackles Hindenburg Disaster &rarr;</a>
+          <img class="nav-thumb" src="../antibes/navthumb.jpg" alt="">
+          <a href="../antibes/" class="back-link">Next: Antibes &rarr;</a>
         </div>
       </div>
+      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
 
     </div><!-- end article-wrapper -->
   </main>
@@ -471,8 +472,8 @@
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
-    var prevUrl = '../beauty-and-the-beast/';
-    var nextUrl = '../hindenburg-disaster/';
+    var prevUrl = '../dinner-on-the-bluff/';
+    var nextUrl = '../antibes/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;

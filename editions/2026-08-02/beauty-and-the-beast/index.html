@@ -233,7 +233,7 @@
       <div class="nav-inner">
         <a href="../../../index.html">Home</a>
         <a href="../datebook/">DateBook</a>
-        <a href="../daily-star-july/">Astrochart</a>
+        <a href="../daily-star-august/">Astrochart</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -405,14 +405,14 @@
         </script>
       </div><!-- end feedback widget -->
 
-      <!-- Article Navigation -->
+      <!-- Article Navigation — Aug 2 order TBD; nav thumbs needed when photos extracted -->
       <div class="edition-nav">
         <div class="nav-item">
-          <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
+          <img class="nav-thumb" src="../adrians-adventures/navthumb.jpg" alt="">
+          <a href="../adrians-adventures/" class="back-link">&larr; Previous: Adrian's Adventures</a>
         </div>
         <div class="nav-item">
-          <img class="nav-thumb" src="../about-the-town/navthumb.jpg" alt="">
-          <a href="../about-the-town/" class="back-link">Next: About the Town: August in Chicago &rarr;</a>
+          <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
         </div>
       </div>
 
@@ -444,8 +444,8 @@
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
   <script>
-    var prevUrl = '../../../index.html';
-    var nextUrl = '../about-the-town/';
+    var prevUrl = '../adrians-adventures/';
+    var nextUrl = '../../../index.html';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
