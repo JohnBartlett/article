@@ -358,3 +358,10 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Jul 25 | FormSubmit | 5 Quick Votes (all prod, all Yes) | `19f9b1b223da937d` etc. | ⬛ | 3× "60th Reunion Is Worth Celebrating!" (E. Richter), 2× "A Blakely Fourth" — all positive. Tally for stats (editors branch). |
 | Jul 25 | FormSubmit | 2 Reader Comments | `19f9778cdd8b461b`, `19f96f2db2f97d3b` | ⬛ | Both non-actionable: one bot spam (gibberish page/email `@immenseignite.info`), one empty (opened form on 60th Reunion article, no text). Neither logged to reader-comments. |
 | Jul 29 | FormSubmit | 4 Quick Votes (all prod, all Yes) | `19fadefba43bcb9d`, `19fadef4154c31ca`, `19fadeee6c21f8d3`, `19fadee1f742b860` | ⬛ | All positive, no comments: Heritage/Lincoln Office, Vienna, Biba/Gloria Groom, Boys & Girls Club — all July 26 edition. Tally for stats at next reader-comments/stats sync (editors branch). |
+
+## August 2 Edition — Post-Prep (Jul 30-31)
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Jul 31 | Judy | Here is the Editor's Page for August 2, 2026 | `19fb7a16bdaaa3cf` | 🔁 | Full Q&A text: Scott Holleran on short-story writing (Ayn Rand/O. Henry influences, "Beauty and the Beast" inspired by Alessia Cara's "Scars to the Beautiful"). **Not in Judy's original 7-article Aug 2 lineup** (`19f9de1576133321`) — would be an 8th piece alongside his short story. **Logged only, not built** — John's call: hold for now, revisit before Aug 2 staging. |
+| Jul 30 | Judy | Tueuld love to talk with it is convenient | `19fb4d270fc58ce5` | ⬛ | Personal note — wants to talk by phone tomorrow/Mon/Tue about future story ideas; mentions her cat died this summer; praises John and Sig's recent work. No content action; scheduling only. |
