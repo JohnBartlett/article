@@ -33,10 +33,6 @@ The following are confirmed received in Gmail but not yet downloaded (their arti
 | antibes | 1 cover | `19f9e74c0584af79` |
 | sydney-garfield-park | 1 cover | `19fa83107c90677a` |
 
-## Pending Decisions
-
-- **Editor's Page Q&A (Scott Holleran on short-story writing)** — full text received Jul 31 (`19fb7a16bdaaa3cf`), not in Judy's original 7-article lineup. Would run alongside his short story "Beauty and the Beast" as an 8th piece. **Logged only, not built** — John held off building; revisit before staging.
-
 ## Notes
 
 - Nav chain order (hero → last): hindenburg-disaster → dinner-on-the-bluff → about-the-town-august → antibes → sydney-garfield-park → adrians-adventures → beauty-and-the-beast
