@@ -1,6 +1,6 @@
 # August 2, 2026 Edition — Status
 
-_Updated: 2026-07-29_
+_Updated: 2026-07-31_
 
 ## Articles
 
@@ -13,6 +13,7 @@ _Updated: 2026-07-29_
 | sydney-garfield-park | Garfield Park | Sydney Armstrong | ❌ | ⏳ 1 cover | Carried forward from July 26 (was held). Cover photo received (`20260710_132414.jpeg`, msg `19fa83107c90677a`), not yet extracted. Text pending. |
 | adrians-adventures | Adrian's Adventures | Adrian Naves | ❌ | ❌ | Due Thursday (Jul 30); Judy will substitute if not delivered. |
 | beauty-and-the-beast | "Beauty and the Beast" (short story) | Scott Holleran | ✅ | ✅ 1/1 | Complete Jul 29 — text + cover (`image0.jpeg`) + navthumb, extracted. |
+| editorial.html | On Writing Short Stories (Editor's Page Q&A with Scott Holleran) | Judy Carmack Bross | ✅ | — | Added Jul 31 from Judy's email. New post added to top of editorial.html; nav links updated to Aug 2 edition. |
 | datebook | DateBook | Annie Delfosse | ✅* | — | Copied from July 26; stale July month block removed; new events pending from Annie |
 | daily-star-august | Astrochart | — | ✅* | — | Renamed from daily-star-july; trimmed to Aug 2–3 only. **Data ends Aug 3 — need August forecast from Victoria (vconst@aol.com).** |
 
