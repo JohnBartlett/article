@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Beauty and the Beast | Classic Chicago Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-august/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only
+  <div class="internal-nav">
+  </div>
+  -->
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Short Story</div>
+
+      <h1 class="article-title">Beauty and the Beast</h1>
+
+      <div class="article-meta">By Scott Holleran &nbsp;&bull;&nbsp; August 2, 2026</div>
+
+      <figure class="hero-figure">
+        <img src="image0.jpeg" alt="Beauty and the Beast" width="100%" height="auto">
+      </figure>
+
+      <div class="article-body">
+
+        <p>Beauty begins within the soul. Within every one is an inner light. This light cannot easily be extinguished. The light can get low. It can be muted and dimmed. The light flickers with the belief that one is born malevolent and doomed. If this belief falls into faith, the believer begins to become a beast. Light burns brighter and slower for longer with the conviction that the ego is sacred and life is worth living. And if this conviction becomes confidence, the knowing one becomes beautiful just in being&#8212;in being oneself.</p>
+
+        <p>The rising sun caught and streaked strands of Gerta&#8217;s auburn hair. As she tinkled the lighter keys, Gerta leaned more than she swayed, holding her posture upright yet relaxed as her fingers caressed the piano with slight pressure&#8212;like a feather stroking the ivory keys with the measured force of every muscle and nerve, gently pressing down before lifting up.</p>
+
+        <p>Gerta played in a practice room as plain as others in the university&#8217;s hall of music and fine arts. The gothic building had been there for over a century. Gerta, cloaked in her hooded cape, used the room every week at the same time, slipping in without permission, slipping out without notice. Only the custodian, an administrator and the dean knew she was there. They each had reasons to look away so Gerta could play. Music filled the room with joyful music few remembered and everyone enjoyed.</p>
+
+        <p>Every Wednesday before noon, Gerta began to loosen up in light of the sun high above the Fine Arts Building, shimmering off the lake, piercing through clouds or illuminating campus leaves, trees and lawns. On some days, the sun was heavily covered by dark clouds&#8212;visible through a single, wide, long window. Before the sun began to drop over the western plains, she&#8217;d have closed the piano and hooded herself, exiting the practice room and taking leave down a flight of stairs. Gerta arrived and played every Wednesday morning. She left by mid-afternoon. She alone knew the motive, reason and reward.</p>
+
+        <p>Gerta did not know the girl she&#8217;d look down through the window upon. Seated at the piano bench facing the large, gothic window, she could see that the child lived in a room which she supposed had been the servants&#8217; quarters of a large house on campus set back far from the tree-lined avenue. Gerta could see the girl sitting on her bed wearing a skirt which came above her knees, swinging her legs, hands folded in her lap until the door opened and the mother appeared. Gerta could see everything from the bench: tension in the small face, chewing of her nails, wide, petrified, unblinking eyes as the girl&#8217;s body braced while the mother entered, advancing toward the child. The first time Gerta watched, she stopped playing and, when she did, the girl turned her face to bear the force of the mother&#8217;s willful blow. Gerta noticed the mother paused when the music stopped&#8212;and promptly struck the child again&#8230;but harder.</p>
+
+        <p>Gerta never stopped playing piano while watching the girl again. After a few weeks, it was as if Gerta was absorbing, assimilating and channeling the girl&#8217;s trepidation through her fingertips in dark, dramatic musical notes. The child&#8217;s routine varied. Gerta, seeing what happened below through the house bedroom&#8217;s large, wood-framed window, noticed each varied routine ended with the same result.</p>
+
+        <p>The mother adorned the girl as one would dress a doll. The woman sat on the bed, placing and opening a pink-dotted black case on a bedside vanity table. Reaching for the case, using various hand tools, she dabbed, smudged and painted the child&#8217;s face. The mother pushed, powdered, held still and stifled the girl, and she did so with effort, brushing and sculpting the child into a little adult&#8212;approximating a miniature woman&#8212;dressing her in clothes beyond her age, as if to accentuate a form which was not real. The girl, whom she randomly struck without fuss, was moistened, glistened and positioned. With her hair curled, Gerta saw that she was glamorized into a figurine for show. Taking measure as the girl was prepared for display, Gerta let herself watch as she played the piano.</p>
+
+        <p>Weeks passed, then months. Gerta began to select her repertoire as she developed a sense of the child, noticing, then, anticipating, the girl&#8217;s twitches and slightest movements and sudden, wincing turns of cheek. The furrow of her brow, a recoil&#8212;her small, thin frame shuddering and trembling, how she stood stiff and unmoving before the mother&#8212;how she lay while sleeping during a nap, whether twisting to a scream or smiling in slumber before the mother breached the space, often poking and pulling the girl out of the room.</p>
+
+        <p>Gerta leaned to the left of the piano bench to peer upon a portion of the front porch, watching mother and daughter descend the stairs and walk to the curb. There, she could see the girl corralled into a car, taken to what Gerta supposed were rehearsals for beauty contests. The child was decked in beaded, speckled costumes glued with shards of colored plastic and topped with hats matching shiny, tiny shoes.</p>
+
+        <p>The girl was being groomed, Gerta realized as she closed the fall board and the afternoon sun began to blind her eyes. One time, she looked down at the girl in the room, past the sheer curtain of the wide, wood-framed window, gazing upon a spent, deflated child peeling off her costume. Wiping makeup while seated on a stool before the mirrored vanity, Gerta saw the girl fall onto the bed, curling up to rest and be left alone&#8212;to read a book, to simply be. After she finished playing, Gerta rose from the bench, moved to the window and stood, observing as Gerta&#8217;s heart nearly beat out of her chest, bearing witness to a fellow prisoner in another cell&#8212;whom she could not reach, yet wanted to embrace, strengthen and liberate.</p>
+
+        <p>Disturbed to action, Gerta bolted from the practice room, taking three flights of stairs to make her way home with her coat buttoned up, chenille scarf tossed and tightly wrapped up and around her neck to her chin with the wide, curved brim of a custom-made hat pulled down over her hood, shielding her face. Carrying a loose bag stuffed with sheet music looped over her shoulder, Gerta&#8217;s weekly ritual of observance and swift departure repeated for months&#8212;then, for years.</p>
+
+        <p>When the housebound girl reached the age of 11, filling out her lithe body, Gerta added more abstract music to her repertoire. Gradually, as she played her instrument and observed the girl, Gerta watched the girl becoming woman. Her bed became larger. A new mattress was moved in. The room remained plain. The mother remained stern, though slower to strike, primp and stifle the child.</p>
+
+        <p>The house and music hall were soon covered in snow. Beyond the new season&#8217;s falling snowflakes, through the bedroom window&#8217;s curtain between Gerta and the girl below, Gerta witnessed the child in tears, pulling stockings down or leaving them bundled on the floor as Gerta began to notice the girl using her hands in a way she&#8217;d not previously seen. Observing an orange container dispensing white pills on a palm, the girl, now teenaged, threw back her head as if mocking the world, hating herself.</p>
+
+        <p>The teenaged girl&#8217;s new habit lasted for months until one frosty morning when Gerta arrived in the practice room, uncovering her hood and, taking her seat on the bench and lifting the fall board to play, she saw circling red lights from an ambulance at the curb. As the practice room flashed in crimson, Gerta noticed the door thrown open to the girl&#8217;s room and watched medics carry a slim, lifeless body on a stretcher past the mother&#8217;s shadow against a hallway wall.</p>
+
+        <p>Every week, Gerta continued to play piano&#8212;she didn&#8217;t notice each performance grow more intense&#8212;peering below only to see a dark space lined with a strip of light beneath a closed door until one rainy afternoon, as Gerta finished a long, arduous sonata movement, almost on cue the girl, now a young woman, opened the door, re-entering her bedchamber with a slow, tentative step.</p>
+
+        <p>Gerta knew not where the girl had came from, though she could pre-suppose, and she noticed something different, wiser, in the woman&#8217;s demeanor&#8212;as if in the pause, the young woman had accepted, integrated and owned that which had preceded her return. Gerta observed that she set a basket of books topped by a wrapped object upon the bed. The girl began to remove the items until the mother appeared at the room&#8217;s entrance, looming behind her. At that, the girl turned, rose from the basket and abruptly stepped forth to block the mother&#8217;s way. The mother shrank in retreat as the rain came falling down.</p>
+
+        <p>The girl resumed unpacking to unsheathe the wrapped object, which she held out to behold. Gerta could see her holding an etched glass reproduction of an ancient Greek statue of a nude woman, hands and arms reaching upward, face squarely looking up. The young woman held the statue with intent before setting it down, stepping back to contemplate, examine and admire it, turning her body as if posing in proximity to that which she now owned. Adjusting the statuette atop a pedestal opposite a full-length mirror, she proceeded to lift, unpack and examine the books in her basket, one by one, placing each volume either on a bookshelf beside a chair and floor lamp in the corner or stacked against the vanity mirror.</p>
+
+        <p>Many were thick, wide, hardbound books. Most editions featured pictures of sculptures on the covers. As Gerta watched the young woman re-emerge while listening to the patter of rain, she resumed playing piano, infusing her performance with deliberation. To Gerta&#8217;s amazement, if not shock, the woman who&#8217;d once been a girl suddenly stopped unpacking her box. Purposefully, like a ballerina in pli&#233;, the woman who&#8217;d reclaimed her own room stepped to the rain-soaked window, looking up&#8212;her eyes searching through the rain for the source of the music, her face at last plain, clear and beautiful.</p>
+
+        <p>Drawn by Gerta&#8217;s melody, she pushed the curtain aside, lifting the heavy, slightly open window higher and gazing upon the practice room, where she saw the pianist playing the music she heard&#8212;and, for the first time, that the player was a woman at a large picture window&#8212;performing while matching her gaze through the rain. They studied one another&#8217;s faces as their eyes met. The melody softly played, echoing between house and hall of arts, accompanied by the rain.</p>
+
+        <p>The woman who&#8217;d been a child contestant looked up in awe at the auburn-haired musician. Gerta could see her stricken face filling with curiosity, confusion and something which was not pity but a plea&#8212;a longing to learn. This is the moment a long, dark shadow came over the practice room wall behind Gerta, who heard footsteps behind her. Holding the young woman&#8217;s gaze from the house below, she dared not turn to look. Gerta heard the older female dean&#8217;s blank, lifeless voice say: &#8220;You sound&#8230;off&#8230;today.&#8221;</p>
+
+        <p>Gerta heard heels click as the dean retreated, departing the practice room. The young woman watched as the dean&#8217;s shadow shrank behind Gerta, who was aware that the dean had taken notice of her music, exiting without further comment. The young woman had witnessed the encounter and had kept watch&#8212;observing with her downturned mouth as her eyes looked up, studying the pianist&#8212;as if striving to grasp, to know and to help Gerta were she in distress.</p>
+
+        <p>Out of both their sights, hiding inside the practice room doorway, the dean listened. The next day, the same thing happened. Gerta played her solemn song as the woman heard the notes and looked up in puzzlement, curiosity and longing&#8212;while the dean lurked inside the doorway&#8212;and Gerta looked upon her young neighbor, playing as raindrops fell.</p>
+
+        <p>The downpour lasted five consecutive days, puddling the campus, casting the sky into alternately dark and light gray storm clouds as the temperature turned colder. The women kept their pact of performance and wonder as the young woman rearranged her bedroom, settling into space. The silent exchange became a ritual: young woman watching from a wood-framed window while silk-haired Gerta played music she wrote. Her audience could not have known that Gerta wrote the song when Gerta was a girl.</p>
+
+        <p>Gerta&#8217;s composition was born one Saturday, conceived after Gerta as a girl had resolved herself to inner rebellion. Young Gerta had decided to defy her mother. Like the neighbor girl, the child Gerta had been groomed, too, for the sake of attaining a certain status. One night, after her mother, enrolled in graduate school and accustomed to her daughter cooking and serving dinner, came home and took her usual seat at the dining table, Gerta smiled as she prepared dinner, cooking the stew to a boil. This is when Gerta, who&#8217;d chosen to wear her favorite fall dress, a loose garment in gun-metal gray, paused to announce from the kitchen that she was going out tonight with the one she loved. Stirring the low-boiling pot, pausing to listen for a reaction, Gerta heard her mother slowly push her chair back from the dining table.</p>
+
+        <p>The sound of her mother&#8217;s footsteps followed. Gerta&#8217;s mother entered the kitchen speaking in a low-voiced fury, chastising her daughter, by then a teenage piano prodigy, for acting on her love. Gerta turned from the stove, stepping forward to face her mother. Gerta spoke low when she gravely replied: &#8220;I&#8217;ll be out tonight with the one I love.&#8221;</p>
+
+        <p>The mother seethed, spewing words Gerta would never forget, blocking Gerta&#8217;s way, which the girl had anticipated. Stepping backward, she reached for the stove. Gripping the handle of the boiling pot&#8212;lifting and raising the pot as a kind of threat, she lowered her voice and said: &#8220;Get out of my way or this is on you.&#8221; These were the last words Gerta spoke to her mother, now fine arts dean of the university where Gerta played piano&#8212;the same dean tucking herself inside the doorway to listen to her daughter play.</p>
+
+        <p>This is when Gerta heard the flame crinkling up her sleeve, the edge of which had caught the blue of the stovefront flame, engulfing her arm and chest as she saw a look of horror on her mother&#8217;s face and, immersed in heat, realized her upper body was on fire. Gerta howled as she dropped down and rolled. The rest of what happened went blank in Gerta&#8217;s mind. She would regain consciousness on a Saturday when a melody came to her as a whole composition. Gerta&#8217;s was a song of passion, softness and peace conceived as she lay writhing in a helicopter on the way to a burn clinic before the grafting began.</p>
+
+        <p>Now, as Gerta played the tune to a climax of ascendant notes, easing into a slower progression, like a wedge gently being fitted into place&#8212;sharp edges lining with the mold, snapping into form, Gerta slightly turned. Sensing her mother the dean closing in, Gerta chose instead to focus on the woman looking up from the rain-soaked window below.</p>
+
+        <p>Amid the rhythm of rain, the woman looked into Gerta&#8217;s eyes in unspoken recognition as Gerta played her song, pausing before reaching for and pushing the curtain aside in a swift, strong, single stroke. Then, she clasped and pressed a control in her hand and, suddenly, bright light flooded and swept the bedroom.</p>
+
+        <p>Gerta watched transfixed and played her song&#8217;s gentle notes as the woman swapped the remote control for a wooden tool. Gerta could see that she stood before a wide pedestal topped by a mound of clay. Gerta&#8217;s eyes drifted to a corner of the bedroom while she played&#8212;and she at once noticed the naked feet and legs of a man stepping into the light. For the first time, Gerta saw that the woman, who&#8217;d turned her back and began sculpting the young male model, was wearing a smock.</p>
+
+        <p>Gerta gazed upon the nude model&#8217;s muscled physique, which flowed in sinuous lines and curves from his neck, chest and abdomen to his thighs, calves and feet&#8212;everything in proportion&#8212;as his arms lay loose at the sides, shoulders upright, alert yet at ease. Gerta could see that he was looking past the sculptress, catching sight of himself in the full-length mirror the woman had re-positioned behind her so the model could see himself posing as she cast his figure in clay while Gerta&#8217;s music echoed in the space between the stone hall and the house next door, amplified by steady rain. Only these three knew the sculptress could hear the pianist playing the song as she sculpted the naked man.</p>
+
+        <p>The dean continued to watch her daughter from the doorway. As Gerta&#8217;s melody played, rainfall dissipated. The air turned cold. Quiet befell the campus and the sky turned dark as the bright room glowed. Gerta&#8217;s melody played as snowfall began, as if snowflakes were tossed like slow-motion confetti to accentuate the want and longing of her anguished song. Gerta&#8217;s smoothly scarred, taut face, held between her silken, auburn-coated parenthetical haircut, was unseen, unknown, unborn&#8212;and she felt the warm wave of happiness which ought to have belonged to the girl whom Gerta once had been&#8212;visible only to the sculptress below who, in the moment, sculpted to Gerta&#8217;s music.</p>
+
+        <p>The small room in which she&#8217;d seen the girl beaten&#8212;where the child had returned to the mother&#8217;s domain, remaking herself on a day of deliverance to music Gerta had created and chosen to play&#8212;had been repainted in white, appearing as a block of pure, naked light. Gerta&#8217;s fingers, hands and wrists undulated across the keys to slow-falling snow, as homage to her audience, her dreams and herself.</p>
+
+        <p>The sculptress briefly paused sculpting, turning to look at Gerta. As if in a dare, she lifted her chin with a smile, looking into the eyes of the musician with the scarred face. Gerta&#8217;s eyelids fell and she was stung with tears which flooded down over smooth, thick, hard skin as she played. Against the darkness, Gerta screamed&#8212;or she thought she did. Gerta&#8217;s bellow was like a wail and she could not see that sculptress and model alike had stepped forth in unison and were standing at the window&#8212;because what they&#8217;d heard was a high-pitch hymn sung by a siren calling out to her lost and loved one.</p>
+
+        <p>Young sculptress and nude model stared up to the practice room from where the music came. They watched&#8212;the model and the creator recreating the beauty of man in art form&#8212;both held by the long note they did not want to come to an end. When it did, the mother the dean re-emerged in the practice room. Gerta had performed with perfection, playing beyond her skills as her music permeated the room, the building, the campus and the radiating room below, reducing her mother and the past to smallness, causing Gerta&#8217;s fingers and nerves to feel flush with the rush of her blood.</p>
+
+        <p>The sculptress witnessed Gerta&#8217;s joy and smiled with her eyes. Standing at the window beside her, the model, whose face conveyed a hint of mockery, began to turn, twist and move. Gerta continued to play, observing as the model began to dance within the wood-framed square of white light. Sculptress witnessed him move with rapt attention, which spurred her to grip the sculpting tool, plunge it into the clay and pull through with a sense of purpose, power and grace, like a laser pointed to cut through ice.</p>
+
+        <p>By the time she finished, Gerta&#8217;s tune faded to a whisper. The woman looked backward and up. Their eyes met. Through falling snow, musician and sculptress sealed their mutual bond in an expression which was pride. Having been paid for her performance, the pianist rose without enclosing the keyboard. Lifting her chin, Gerta strode past the dean, exiting the practice room, descending for the last time and, for the first time, uncovered by her hat and hood.</p>
+
+        <p>Just then, the sculptress drew the curtain to close. Watching the dancer in his dance, she finished shaping her first sculpture, which would not be her last, in three final strokes, before setting her tool down. Gerta exited campus, walking on&#8212;revived with love for living. From now on, she played music she wrote for pleasure or pay. Gerta became known throughout music halls and through technology she consented to repurpose her work. Gerta&#8217;s story, wealth and reputation earned respect and rewards and she went about her days wearing a cape without a hood.</p>
+
+        <p>The sculptress sculpted, eventually leaving her room for a private studio in a city on a mesa out West. Gerta and the girl greeted one another for the first time in mutual scars to the beautiful&#8212;remaking themselves in sculpture and song&#8212;years later at the model&#8217;s Carnegie Hall debut in dance. He danced to the music she&#8217;d made with a larger-than-life-sized reproduction of what the sculptress had made. The beautiful birthed a model who danced (and still dances) in a world too ugly to be ready for them. For an invited audience that packed the house, they reveled&#8212;and moved&#8212;in the beauty of what they&#8217;ve made.</p>
+
+      </div><!-- end article-body -->
+
+      <!-- Editor's Page Q&A: On Writing Short Stories, moved here from editorial.html per Judy's Aug 1 note -->
+      <div class="article-body" style="margin-top: 48px; padding-top: 8px; border-top: 1px solid #eee;">
+
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; color: #111; margin: 0 0 4px;">On Writing Short Stories</h2>
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin-bottom: 24px;">By Judy Carmack Bross, Editor-in-Chief</p>
+
+        <p>Adding a monthly short story was an idea we had a few years ago and talented writer Scott Holleran has frequently authored them for our readers. August is a time to do things you really enjoy at a pace that is perfect for you. We asked Scott to share tips on short story writing for those who might have always wanted to try it.</p>
+
+        <p><strong>CCM: Writing short stories is sometimes said to be more difficult than writing a book. Do you agree?</strong></p>
+
+        <p>&ldquo;I&rsquo;ve written fiction throughout my career, both novels &ndash; unpublished novels and ghostwritten fiction for others, as well as my current novel in progress, <em>Speakeasy</em> &ndash; and short stories. The answer depends on how you define <em>difficulty</em>. Writing a full length novel is the greater challenge because explicating a theme at length in a way which engages today&rsquo;s reader without compromising quality or creating something trivial can become a full-time job.</p>
+
+        <p>&ldquo;Short stories lend themselves to shorter bursts of thinking and writing. Either way, writing is thinking. Writing is hard work whether a short story or a novel. Writing fiction is extremely challenging in a way that nonfiction is not because the author creates something out of his imagination. The short story as an art form can be more challenging because there are certain constraints on the art form in terms of length, brevity and clarity. The story has to have enough detail to engage the reader without overloading the reader with too much information, whereas a novel can come off as wispy without enough information.</p>
+
+        <p>&ldquo;Yours is a good question. It reminds me of some great pop songs which can be under a couple minutes. Songs by The Beatles come to mind. Some of the shortest tunes are very clever, even ingenious, though I don&rsquo;t know that they bear comparison to symphonies or compositions by Frederic Chopin and Sergei Rachmaninoff&mdash;just different art forms, each with its own challenge and level of difficulty.</p>
+
+        <p><strong>CCM: How do you get started and what guidelines do you recommend?</strong></p>
+
+        <p>&ldquo;Read short stories. Read what interests you. Start with your favorite author and find out everything you can about what she or he read. That&rsquo;s what I&rsquo;ve done with my favorite writer, Ayn Rand. I delved into reading her short stories, as well as her marginalia, notes and journals as well as listening to her audio lectures on writing fiction and reading works by her favorite authors, including O. Henry, whose short stories inspired Miss Rand to escape Soviet Russia and come to America.</p>
+
+        <p>&ldquo;I read many of O. Henry&rsquo;s short stories and found them very enjoyable, moving and thoughtful. I&rsquo;ve since read short stories by various authors from James Clavell and Shirley Jackson to Ernest Hemingway, Ray Bradbury and John O&rsquo;Hara. Read what interests you, including children&rsquo;s stories, and books by Dr. Seuss and Roald Dahl or whatever you were fond of as a boy or girl.</p>
+
+        <p>&ldquo;The point is to embed the short story with all of its rhythm, tone and economy into your subconscious so that you start to think of fiction writing in short form. Artistically, literarily and philosophically, contemplate what&rsquo;s meaningful, whether it&rsquo;s family, ethics or motorsports, gymnastics or something specific to your taste and philosophy. That ought to get you percolating.&rdquo;</p>
+
+        <p><strong>CCM: Where do you get your ideas?</strong></p>
+
+        <p>&ldquo;I write every day or almost every day. This includes fiction writing. I&rsquo;m always writing several short stories at once. Sometimes the story comes to me at random during a walk in my neighborhood in the suburban San Fernando Valley of Los Angeles or early in the morning as I awaken and occasionally while I&rsquo;m listening to a song &mdash; for the first time or for the 17th time. As a dancer and choreographer, I also find it helpful to dance to the song before I write the story that comes to mind when I listen to it. These are usually pop songs. This week&rsquo;s short story for the current issue of Classic Chicago Magazine, &ldquo;Beauty and the Beast,&rdquo; is inspired by such a song, a live recording of &ldquo;Scars to the Beautiful&rdquo; by Alessia Cara. <a href="https://music.apple.com/us/album/scars-to-your-beautiful-live-off-the-floor-bonus-track/1523769634?i=1523769868" target="_blank">Listen here</a>.&rdquo;</p>
+
+        <p><strong>CCM: What is your advice about sharing your work after it is written?</strong></p>
+
+        <p>&ldquo;Cultivate a readership first. Whether it&rsquo;s your least favorite uncle, a former classmate for whom you have a vague dislike, a teacher, your mother or a friend, colleague or cashier at your favorite store who&rsquo;s always asking about your writing, send what you write after soliciting that person and asking for their permission to send what you&rsquo;ve written &hellip; but give boundaries.</p>
+
+        <p>&ldquo;Tell them you want their honest appraisal and assure them that you only want to send what you&rsquo;ve written if they&rsquo;re willing to spend time and expend effort to read your writing, not skim it and not bluff, flatter or lie about it. This is vital. Be sure to ask for their permission when you solicit their interest to read your work fiction. Ask, don&rsquo;t merely state your desire, for the person to read; put the question to the reader: Will you please read what I&rsquo;ve written and give me your honest appraisal? Then avoid adding a comment after you ask; let the question mark linger. Wait for the answer and be quiet when you do. That&rsquo;s how you&rsquo;ll find your true readership. Be considerate and show gratitude for the reader&rsquo;s time and effort in advance and be sure to solicit the preferred format such as plain text, Word or PDF sent by text or email.</p>
+
+        <p>This can give you the moral courage to send your work for publication from there. It&rsquo;s a start. Read professional guidelines before you send your story as a submission and make sure you&rsquo;re within the general guidelines. Feel free to bend the rules, but not way out of bounds. Above all, don&rsquo;t give up. If what you&rsquo;ve written is good &mdash; if it&rsquo;s coherent and clear &mdash; there&rsquo;s an audience for what you made. Keep at it and don&rsquo;t give up.</p>
+
+        <p><strong>CCM: How does writing, whether short story, a journal or a magazine piece&mdash;give balance or enjoyment to your life?</strong></p>
+
+        <p>&ldquo;In the knowledge and confidence that I&rsquo;m changing the world one story at a time. The evidence is everywhere, though it&rsquo;s rare and it often takes years. But I know it. It&rsquo;s in the voice, the eyes and the tone of the reader who responds after reading what I write. Invariably, the reader response, whether it&rsquo;s in reply to a movie or book review, a history article or a short story, unveils a wayward reader who eventually comes around to letting me know that I&rsquo;ve changed his life for the good.</p>
+
+        <p>This is the greatest reward. I know that my stories are deep, probably too deep and too dense for some readers. My fiction is not for everyone and I can live with that. Knowing that the intelligent reader welcomes the challenge to think twice helps me know that I&rsquo;m making the world a better place. I want to live in a better place so, in this sense, I&rsquo;m making my dreams come true when I write. I&rsquo;m creating the world I want to live in but by bit, plot by plot, story by story. It&rsquo;s a longshot, but I have every reason to think I can make that idealized world real.&rdquo;</p>
+
+        <p><strong>CCM: What other advice would you share with short story writers?</strong></p>
+
+        <p>&ldquo;Challenge yourself and read. Schedule time to write the way you schedule a dentist appointment or time to go to the gym or the grocery store. Treat the creative enterprise as sacred &mdash; something glorious and vital like breathing or taking a medication. Writing is life. Honor time to write.&rdquo;</p>
+
+      </div><!-- end Q&A -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#scott-holleran" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Scott Holleran &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — Aug 2 order TBD; nav thumbs needed when photos extracted -->
+      <div class="edition-nav">
+        <div class="nav-item">
+          <img class="nav-thumb" src="../adrians-adventures/navthumb.jpg" alt="">
+          <a href="../adrians-adventures/" class="back-link">&larr; Previous: Adrian's Adventures</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
+        </div>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script>
+    var prevUrl = '../adrians-adventures/';
+    var nextUrl = '../../../index.html';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>

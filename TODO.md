@@ -1,22 +1,41 @@
 # Classic Chicago Magazine — TODO
 
-## TODO — JULY 26 EDITION (next)
+## TODO — AUGUST 2 EDITION (next)
 
-### Articles / editor's page
-- [ ] **Obama Presidential Center article** — two related pieces approved for July 26:
-  - [ ] Sigalit — art in the Sky Room (8th floor), Obama Presidential Center. **Blast text + 1 photo arriving today (Jul 21 PM); full article + photos + credits arriving tomorrow morning (Jul 22 AM).** Create `editions/2026-07-26/sigalit-sky-room/` (or similar slug) when content arrives. (msgs `19f6bb631c2c4945`, `19f849b59501292d`)
-  - [ ] John — write the Obama Library/Center piece Judy asked for and mention it in the **July 26 editor's page** (editorial.html); deferred from Jul 19
-- [x] Get Judy's July 26 lineup email (source of truth) — **received Jul 20** (msg `19f7f085498aee25`). Confirmed order: 1. Boys & Girls Club (Judy/Emma) · 2. Susan Aurinko Vienna (Emma) · 3. Heritage Lincoln Office (Judy/Ana) · 4. Vienna by Susan Aurinko (Emma — likely dup of #2, asked Judy) · 5. Adrian's Adventures (Annie) · 6. Sydney Garfield Park (Annie) · 7. Russell Kelley Part III (John). Sigalit's Sky Room not yet in lineup (Judy approved separately).
+### Incoming lineup (Judy's email Jul 26, 2026)
+- [x] **David Sweet book interview** — Built: `editions/2026-08-02/hindenburg-disaster/` (TEXT ONLY — photos pending extraction)
+- [ ] **Dinner Party on the Bluff** — Emma. Slug TBD. (Lurie Garden dinner; cover photo `group photo (1).jpeg` in msg `19fa89fde1c12b57` — no article text yet)
+- [ ] **Philip Vidal: About the Town in August** — Ana Baca. Slug TBD.
+- [ ] **Katherine Harvey on Antibes** — Annie Delfosse. Cover photo received: `IMG_1882.jpeg` (msg `19f9e74c0584af79`) — extract when building stub. Slug TBD.
+- [ ] **Sydney on Garfield Park** — Annie Delfosse. Cover photo `20260710_132414.jpeg` in Judy email Jul 26 (msg `19f9add5cefd7f06`). Slug: `sydney-garfield-park`. No article text yet.
+- [ ] **Adrian's Adventures** — Emma (Adrian delivering by Thursday; Judy will substitute if he can't). Slug TBD.
+- [x] **Scott Holleran's short story** — Built: `editions/2026-08-02/beauty-and-the-beast/` (TEXT ONLY — cover photo `image0.jpeg` pending extraction from msg `19fa83463f9e4654`)
+- [ ] **DateBook** — Annie updating.
+- [ ] Possible additional article TBD.
+
+### Photos pending (require Gmail credentials / new session)
+- [ ] Extract `image0.jpeg` → `editions/2026-08-02/beauty-and-the-beast/` (msg `19fa83463f9e4654`)
+- [ ] Extract `Catherine Grace Katz 1 (Photo by Steve Dondero).jpeg`, `Catherine Grace Katz 2.jpeg`, `Catherine Grace Katz 3 Zeppelin Museum in Freidrichshafen.jpeg` → `editions/2026-08-02/hindenburg-disaster/` (msg with David Sweet article)
+- [ ] Extract `group photo (1).jpeg` → Lurie Dinner article folder (msg `19fa89fde1c12b57`)
+- [ ] Extract `20260710_132414.jpeg` → Sydney Garfield Park article folder (msg `19f9add5cefd7f06`)
+- [ ] Download `Classic Chicago August 2026.png` → `ads/` (Heritage Auctions ad, link: `ha.com/43249`)
+- [ ] Update `index.html`: HA ad image `Classic Chicago June 2026.png` → `Classic Chicago August 2026.png`; link → `ha.com/43249`
+- [ ] Create navthumb.jpg for hindenburg-disaster and beauty-and-the-beast (after photos extracted)
+
+### Setup tasks (do when Judy confirms lineup is final)
+- [x] Copy DateBook forward: `cp -r editions/2026-07-26/datebook editions/2026-08-02/datebook` ✅
+- [x] Copy Astrochart forward: `cp -r editions/2026-07-26/daily-star-july editions/2026-08-02/daily-star-july` ✅ (July forecast; swap for August when Victoria sends text)
+- [ ] Run `/prep-edition 2026-08-02` for remaining stubs when full lineup confirmed
+- [ ] Update "Our Writers This Week" in about.html for Aug 2 writers
+- [ ] Wire final nav chain once all articles built
+- [ ] Update index.html homepage with Aug 2 hero + cards
+
+## DONE — JULY 26 EDITION (published Jul 26, 2026)
 
 ### Carryover to answer Judy
 - [x] **LIVE FIX — Guild caption**: ✅ Fixed Jul 20. Duplicate `photo 5.jpg` (mislabeled "Michael Anderson and Connie Barkley") removed; `IMG_4184.jpeg` caption confirmed "Lisa Malkin and Virginia Cudecki"; "Andersen"→"Anderson" in quote. Published to master; Judy confirmed (msg `19f816ab692ea243`).
-- [ ] Reply to Judy's Jul 20 8:58 text (Obama Library + editor's-page mention)
-- [ ] Scott Holleran comments question — John explained policy; Judy relaying to Scott. Decide whether to print the reader comment on Scott's TWA article
-
-### Recurring setup for the edition
-- [ ] Copy DateBook forward (`cp -r editions/2026-07-19/datebook editions/2026-07-26/datebook`); Annie's updated events; strip stale months
-- [ ] Copy Astrochart forward; daily-star-july covers through Jul 31 (Jul 26 OK). Chase Victoria for **August** forecast
-- [ ] Update "Our Writers This Week" in about.html for Jul 26 writers
+- [x] Reply to Judy's Jul 20 8:58 text (Obama Library + editor's-page mention) — covered in Jul 26 publish thread
+- [x] Scott Holleran comments question — policy explained; no action needed
 
 ## TODO — JUNE 28 EDITION
 
