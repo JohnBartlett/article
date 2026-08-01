@@ -15,13 +15,9 @@ _Updated: 2026-08-01_
 | sydney-garfield-park | An Afternoon at the Garfield Park Conservatory | Sydney Armstrong | ✅ | ✅ 5/5 | Complete Aug 1 — full text + 4 numbered photos with explicit captions, relayed by Annie (msg `19fbecdf25103d68`). Hero = Conservatory Exterior. The earlier-extracted cover (`20260710_132414.jpeg`) turned out to be byte-identical to "2-Flower Exhibit.jpeg" — same photo, now placed inline; old file left on disk unused. Also found + fixed a stale about.html popup entry still pointing at the held `2026-07-26` draft. |
 | adrians-adventures | Adrian's Adventures: 2026 Illinois State Fair | Adrian Naves | ✅ | ✅ 4/4 | Complete Aug 1 — built initially from Judy's forward with no placement instructions; Annie's official relay (msg `19fbeec470981b54`) arrived after with the same 4 photos (confirmed byte-identical) but authoritative "Photo N" ordering — fixed to match (Ski lift before Ferris wheel; fairgrounds exterior also placed inline as Photo One, not hero-only). |
 | beauty-and-the-beast | "Beauty and the Beast" (short story) | Scott Holleran | ✅ | ✅ 1/1 | Complete Jul 29 — text + cover (`image0.jpeg`) + navthumb, extracted. |
-| editorial.html | On Writing Short Stories (Editor's Page Q&A with Scott Holleran) | Judy Carmack Bross | ✅ | — | Added Jul 31 from Judy's email. Currently its own standalone post at the top of editorial.html. **Pending decision:** Judy's Aug 1 reply suggested moving it beneath Scott's short story on the beauty-and-the-beast page instead (phrased as a question, not a firm call) — flagged to John, not applied. |
+| beauty-and-the-beast (Q&A) | On Writing Short Stories (Editor's Page Q&A with Scott Holleran) | Judy Carmack Bross | ✅ | — | Moved Aug 1 from its own standalone editorial.html post to beneath Scott's short story on this page, per Judy's suggestion + John's go-ahead. editorial.html's most-recent-post subtitle date rolled back to July 19 (its now-latest remaining post). |
 | datebook | DateBook | Annie Delfosse | ✅* | — | Copied from July 26; stale July month block removed; new events pending from Annie |
 | daily-star-august | Astrochart | Victoria Martin | ✅ | — | Complete Aug 1 — full August 1–31 forecast built from Victoria's docx (msg `19faf1c7179633cf`, `AUGUST 2026 CCM.docx`, 190KB, real content), replacing the 2-day Aug 2–3 stub. 31 dated sections + 3-item August Highlights block, parsed from her forecast/advice/aspect format. Note: Victoria emailed from `viccimartin@gmail.com`, not the `vconst@aol.com` on file in CLAUDE.md — worth updating that reference. Her docx also included Sept 1–6 + early-Sept highlights, not used here (belongs to the September edition when built). |
-
-## Pending Decisions
-
-- **Scott Holleran Q&A placement** — Judy suggested (not instructed) moving it from its own editorial.html post to beneath his short story on beauty-and-the-beast. Awaiting John's call.
 
 ## Notes
 
