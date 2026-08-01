@@ -7,7 +7,7 @@ _Updated: 2026-08-01_
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
 | hindenburg-disaster | Winnetka Author Tackles Hindenburg Disaster in Latest Historic Tome | David A. F. Sweet | ✅ | ✅ 4/4 | Complete Jul 29 — text (italics preserved per David's note) + 3 Catherine Grace Katz photos + navthumb, all extracted. Cover = `Catherine Grace Katz 1 (Photo by Steve Dondero).jpeg`. |
-| dinner-on-the-bluff | Dinner on the Bluff and Pro Am Golf Raise $2.4M for Lurie | Judy Carmack Bross | ❌ | ⚠ 5/23 | Full text received Jul 31 (msg `19fbb951a74048e7`) — **not yet built into HTML**, blocked on remaining photos. 23 numbered photos via Google Drive links (explicit "Photo N: caption" map in email); downloaded 5 (Photos 1, 2, 3, 5, 6) before the Drive MCP connector started failing on individual downloads ("session expired", though metadata calls still worked). John given direct Drive links for the remaining 18 to fetch manually. Photo 9 = designated cover. Photo credit: Robin Subar Photography. |
+| dinner-on-the-bluff | Dinner on the Bluff and Pro Am Golf Raise $2.4M for Lurie | Judy Carmack Bross | ✅ | ✅ 23/23 | Complete Aug 1 — full text (msg `19fbb951a74048e7`) + all 23 numbered photos, built in narrative order per the "Photo N: caption" map in the email. Drive MCP connector kept failing on 4 files (Photos 4, 7, 11, 14) even after repeated retries; John downloaded those 4 (+ Photo 8) to Downloads and they were copied in with original filenames. Photo 9 = cover (hero + homepage card). Photo credit: Robin Subar Photography. Old placeholder cover `group photo (1).jpeg` is now superseded/unused — left on disk, not referenced. |
 | about-the-town-august | About the Town: August in Chicago | Philip Vidal | ✅ | ✅ 7/7 | Complete Jul 29. A parallel session had built this under a different slug (`about-the-town`) — content merged into this slug for nav consistency; duplicate folder removed. |
 | antibes | Antibes | Katherine Harvey | ❌ | ✅ 1 cover extracted | Cover photo extracted Jul 31 (`IMG_1882.jpeg`, msg `19f9e74c0584af79`). Text pending from Katherine Harvey / Annie Delfosse. |
 | sydney-garfield-park | Garfield Park | Sydney Armstrong | ❌ | ✅ 1 cover extracted | Carried forward from July 26 (was held). Cover photo extracted Jul 31 (`20260710_132414.jpeg`, msg `19fa83107c90677a`). Text pending. |
@@ -19,23 +19,19 @@ _Updated: 2026-08-01_
 
 ## Pending Deliveries
 
-- **Emma Muhleman** — Dinner Party on the Bluff (author name + article text); Adrian's Adventures (due Jul 30, or Judy substitutes)
 - **Annie Delfosse** — Antibes article text (Katherine Harvey); Garfield Park article text (Sydney Armstrong); new DateBook events
 - **Victoria (vconst@aol.com)** — August Daily Star forecast; current data ends August 3, 2026
 
 ## Photos — Extracted, Awaiting Text
 
-All 3 remaining cover photos were extracted Jul 31 and now sit in their article folders, ready for when text arrives:
-
 | Article | File | Msg ID |
 |---|---|---|
-| dinner-on-the-bluff | `group photo (1).jpeg` | `19fa3108a8fac607` |
 | antibes | `IMG_1882.jpeg` | `19f9e74c0584af79` |
 | sydney-garfield-park | `20260710_132414.jpeg` | `19fa83107c90677a` |
 
 ## Notes
 
 - Nav chain order (hero → last): hindenburg-disaster → dinner-on-the-bluff → about-the-town-august → antibes → sydney-garfield-park → adrians-adventures → beauty-and-the-beast
-- 3 articles complete with real navthumbs: hindenburg-disaster, about-the-town-august, beauty-and-the-beast. Homepage hero uses the real David Sweet cover; the about-the-town-august and beauty-and-the-beast cards use their real covers too.
-- Remaining 4 slots (dinner-on-the-bluff, antibes, sydney-garfield-park, adrians-adventures) still use placeholder navthumb + `card-placeholder.jpg` pending text/photos.
+- 5 articles complete with real navthumbs: hindenburg-disaster, dinner-on-the-bluff, about-the-town-august, adrians-adventures, beauty-and-the-beast. Homepage hero uses the real David Sweet cover; those 5 cards all use their real covers too.
+- Remaining 2 slots (antibes, sydney-garfield-park) still use placeholder navthumb + `card-placeholder.jpg` pending text.
 - Heritage Auctions August ad (`Classic Chicago August 2026.png`, "Trading Card Games") received Jul 27 — not yet placed in `ads/` or homepage
