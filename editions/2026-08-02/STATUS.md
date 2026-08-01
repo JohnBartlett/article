@@ -15,12 +15,11 @@ _Updated: 2026-08-01_
 | beauty-and-the-beast | "Beauty and the Beast" (short story) | Scott Holleran | ✅ | ✅ 1/1 | Complete Jul 29 — text + cover (`image0.jpeg`) + navthumb, extracted. |
 | editorial.html | On Writing Short Stories (Editor's Page Q&A with Scott Holleran) | Judy Carmack Bross | ✅ | — | Added Jul 31 from Judy's email. New post added to top of editorial.html; nav links updated to Aug 2 edition. |
 | datebook | DateBook | Annie Delfosse | ✅* | — | Copied from July 26; stale July month block removed; new events pending from Annie |
-| daily-star-august | Astrochart | — | ✅* | — | Renamed from daily-star-july; trimmed to Aug 2–3 only. **Data ends Aug 3 — need August forecast from Victoria (vconst@aol.com).** |
+| daily-star-august | Astrochart | Victoria Martin | ✅ | — | Complete Aug 1 — full August 1–31 forecast built from Victoria's docx (msg `19faf1c7179633cf`, `AUGUST 2026 CCM.docx`, 190KB, real content), replacing the 2-day Aug 2–3 stub. 31 dated sections + 3-item August Highlights block, parsed from her forecast/advice/aspect format. Note: Victoria emailed from `viccimartin@gmail.com`, not the `vconst@aol.com` on file in CLAUDE.md — worth updating that reference. Her docx also included Sept 1–6 + early-Sept highlights, not used here (belongs to the September edition when built). |
 
 ## Pending Deliveries
 
 - **Annie Delfosse** — Antibes article text (Katherine Harvey); Garfield Park article text (Sydney Armstrong); new DateBook events
-- **Victoria (vconst@aol.com)** — August Daily Star forecast; current data ends August 3, 2026
 
 ## Photos — Extracted, Awaiting Text
 
