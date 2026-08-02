@@ -26,11 +26,21 @@ function sanitizeHeaderValue(value) {
   return String(value).replace(/[\r\n]+/g, ' ').trim();
 }
 
+// RFC 2047 encoded-word: a header FIELD VALUE (unlike the body) can't just
+// contain raw UTF-8 bytes even though Content-Type declares UTF-8 for the
+// body — that charset doesn't cover header fields. Without this, non-ASCII
+// characters (e.g. the em dash in "Magazine — <date>") arrive mojibake'd.
+function encodeHeaderValue(value) {
+  const sanitized = sanitizeHeaderValue(value);
+  if (/^[\x00-\x7F]*$/.test(sanitized)) return sanitized;
+  return `=?UTF-8?B?${Buffer.from(sanitized, 'utf-8').toString('base64')}?=`;
+}
+
 function buildRawMessage({ to, cc, subject, body }) {
   const headers = [
     `To: ${sanitizeHeaderValue(to)}`,
     cc ? `Cc: ${sanitizeHeaderValue(cc)}` : null,
-    `Subject: ${sanitizeHeaderValue(subject)}`,
+    `Subject: ${encodeHeaderValue(subject)}`,
     'Content-Type: text/plain; charset="UTF-8"',
   ].filter(Boolean).join('\r\n');
   const raw = `${headers}\r\n\r\n${body}`;
