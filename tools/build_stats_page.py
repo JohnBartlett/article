@@ -164,7 +164,15 @@ def fetch_gmail_votes_comments():
         return []
 
     token = get_access_token()
-    msgs = search_messages(token, 'subject:("Classic Chicago") (vote OR comment OR "Form Submission") newer_than:365d')
+    # Anchor ALL terms to the subject line — an unscoped "(vote OR comment OR ...)"
+    # searches the whole message, so any unrelated email with "Classic Chicago"
+    # in its subject and the word "comment" anywhere in a long body (e.g. a
+    # forwarded article/story) gets swept in and parses into a blank record.
+    msgs = search_messages(
+        token,
+        '(subject:"Classic Chicago Quick Vote" OR subject:"Classic Chicago Reader Comment" '
+        'OR subject:"Classic Chicago Form Submission") newer_than:365d'
+    )
 
     records = []
     for m in msgs:
@@ -182,7 +190,21 @@ def fetch_gmail_votes_comments():
 def parse_formsubmit(body, subject, date_str):
     """Parse a FormSubmit email body into a structured record."""
     def field(name, text):
-        m = re.search(rf'^{name}:\s*(.+)$', text, re.MULTILINE | re.IGNORECASE)
+        # [ \t]* (not \s*) so an empty field doesn't swallow the newline and
+        # bleed into the next field's label (e.g. blank "comment:" followed
+        # by "email:" would otherwise capture "email:" as the comment).
+        m = re.search(rf'^{name}:[ \t]*(.+)$', text, re.MULTILINE | re.IGNORECASE)
+        return m.group(1).strip() if m else ''
+
+    def multiline_field(name, text, next_labels=('email', 'Page', 'Environment')):
+        # Comments can legitimately span multiple lines (e.g. a signature on
+        # its own line); capture everything up to the next known field label
+        # or end of text, instead of stopping at the first newline.
+        stop = '|'.join(re.escape(l) for l in next_labels)
+        m = re.search(
+            rf'^{name}:[ \t]*(.*?)(?:\r?\n(?:{stop}):|\Z)',
+            text, re.MULTILINE | re.IGNORECASE | re.DOTALL
+        )
         return m.group(1).strip() if m else ''
 
     env = field('Environment', body)
@@ -190,7 +212,7 @@ def parse_formsubmit(body, subject, date_str):
         return None  # test submission
 
     vote    = field('vote', body)
-    comment = field('comment', body)
+    comment = multiline_field('comment', body)
     page    = field('Page', body)
     article_slug = field('article', body)   # old format: article: versailles-jun28
 
@@ -258,6 +280,11 @@ def tally_votes_comments(records, edition_date=None):
     for rec in records:
         if rec is None:
             continue
+        # Defensive: a record with no slug couldn't be matched to any article
+        # (e.g. an unrelated email that slipped past the Gmail query, or a
+        # malformed submission) — skip rather than showing a blank leaderboard row.
+        if not rec['slug']:
+            continue
         if edition_date and rec['edition_date'] != edition_date:
             continue
         key = (rec['edition_date'], rec['slug'])
@@ -275,7 +302,9 @@ def tally_votes_comments(records, edition_date=None):
             art['yes'] += 1
         elif rec['vote'] == 'no':
             art['no'] += 1
-        if rec['comment']:
+        # Dedupe: readers sometimes double-submit the same comment (double
+        # click, form retry) — only show each distinct comment text once.
+        if rec['comment'] and rec['comment'] not in art['comments']:
             art['comments'].append(rec['comment'])
         if rec['url'] and not art['url']:
             art['url'] = rec['url']
