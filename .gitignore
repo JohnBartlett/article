@@ -1,2 +1,4 @@
 node_modules/
 impl-report.md
+.vercel
+.env*
