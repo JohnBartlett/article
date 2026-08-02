@@ -388,3 +388,16 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 1 | (session action, no email) | Staged August 2 edition: dev2 → dev | — | ✅ | Merged dev2 into dev (one rename/delete false-positive resolved in dev2's favor), commented out internal-nav, confirmed GA4 already disabled from dev2, verified no oversized images/submodules. Pushed to dev; Vercel staging preview confirmed live at https://article-git-dev-johns-projects-e5fce345.vercel.app. Noted (out of scope, pre-existing since before this edition) that many older editions still link `reader-comments.html`/`future-articles.html` from article footers — not introduced by this stage. |
 | Aug 1 | (session action, no email) | Scheduled `/publish` for 9:02 PM ET (session-only) | — | 🔁 | Per John's request to publish "at 9pm tonight (Saturday)" — scheduled via `CronCreate` (session-only; would not survive a closed session). John asked to keep the session open until it fired. |
 | Aug 1 | John → Judy (cc John) | Classic Chicago Magazine — August 2, 2026 Edition Is Live (sent) | — | ✅ | Scheduled `/publish` fired at 9:02 PM ET: merged dev → master (clean, no conflicts), re-enabled GA4, verified DateBook/Astrochart nav links current, pushed to master. Cloudflare deploy confirmed live at https://chicagoclassicmag.com. Publication notification sent to Judy after confirming with John. Edition complete end-to-end. |
+
+## August 2 Post-Publish Check (Aug 2 automated run)
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Aug 2 | (scheduled check) | Email check — 2-day window | — | ✅ | Automated `/check-emails` pass (Aug 2 morning). August 2 edition already published at 9:02 PM ET Aug 1. All 7 articles confirmed live at chicagoclassicmag.com. No new actionable content. |
+| Aug 1 | Annie (relay) | Classic Chicago Article: An Afternoon at the Garfield Park Conservatory, For August 2nd, 2026 | `19fbecdf25103d68` | ⬛ | Re-send of same article/photos already built and published. All 4 numbered photos byte-matched what's on disk. No action needed. |
+| Aug 1 | Annie (relay) | Classic Chicago Article: Antibes Summer 2026, For August 2nd, 2026 | `19fbee6c88a6faf4` | ⬛ | Re-send of same article/photos already built and published. All 6 numbered photos match existing files. No action needed. |
+| Aug 1 | Annie (relay) | Classic Chicago Article: Adrian's Adventures: 2026 Illinois State Fair, For August 2nd, 2026 | `19fbeec470981b54` | ⬛ | Re-send — same 4 photos, byte-identical to what's on disk (confirmed in prior session). No action needed. |
+| Aug 2 | Judy (to Sig + John) | A story for August 9 | `19fc24707521ebe8` | ⏳ | Judy asking Sig and John if they have stories for August 9. Planning for next edition. **Reply owed from John** — no site content yet. |
+| Aug 2 | FormSubmit | New Subscriber (production — ruzzburt@hotmail.com) | `19fc06c11e3bea8a` | ⬛ | Real subscriber: Ruzz Burt submitted via chicagoclassicmag.com at 3:02 AM Aug 2. For informational tracking; no site content action needed. |
+| Aug 1 | FormSubmit | New Subscriber (dev2 — john.bartlett@gmail.com) | `19fbf54a270f3693` | ⬛ | Test submission from dev2; ignore. |
+| Aug 1 | FormSubmit | Action Required: Activate FormSubmit on dev2 | `19fbf4c7d60690b4` | ⬛ | Already activated in prior session. Ignore. |
