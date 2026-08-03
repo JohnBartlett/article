@@ -401,3 +401,16 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 2 | FormSubmit | New Subscriber (production — ruzzburt@hotmail.com) | `19fc06c11e3bea8a` | ⬛ | Real subscriber: Ruzz Burt submitted via chicagoclassicmag.com at 3:02 AM Aug 2. For informational tracking; no site content action needed. |
 | Aug 1 | FormSubmit | New Subscriber (dev2 — john.bartlett@gmail.com) | `19fbf54a270f3693` | ⬛ | Test submission from dev2; ignore. |
 | Aug 1 | FormSubmit | Action Required: Activate FormSubmit on dev2 | `19fbf4c7d60690b4` | ⬛ | Already activated in prior session. Ignore. |
+
+## August 3 Post-Publish Check (Aug 3 automated run)
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
+| Aug 3 | (scheduled check) | Email check — 2-day window | — | ✅ | Automated `/check-emails` pass (Aug 3 morning). August 2 edition live and complete. No new actionable content to build. |
+| Aug 3 | Judy → all | A rough draft for August 9 | `19fc6f2f0b08e75a` | ⏳ | Planning email for Aug 9 edition. 7 articles listed: (1) Josee Nadeau profile by Judy — Ana photos; (2) Jill Lowe — direct to John; (3) Sig dance story — direct to John; (4) This Day in History by Scott — Judy to John; (5) Dance for Life by Judy — Emma photos; (6) Francesco Bianchini — Annie; (7) Poem by Jean Colonomus — Judy to John. No articles received yet. |
+| Aug 2 | Annie (to John, cc Judy) | Re: DateBook — new events? | `19fc39313301a40b` | ⏳ | Annie: tried to send events last night but they didn't go through; will resend after work Aug 2. Also confirmed she has a good system for finding events on her own. Events not yet received as of Aug 3 morning. |
+| Aug 2 | Sigalit (to Judy, cc John) | Re: A story for August 9 | `19fc3d2ba282b5fe` | ⏳ | Sigalit: can submit articles by Wed, Aug 12. Offered to make future articles more personal with anecdotes. Aug 12 date is after the Aug 9 edition — timing TBD. |
+| Aug 2 | Judy (to Sig, cc John) | Re: A story for August 9 | `19fc3e06e6656602` | ✅ | Judy: articles are perfect as they are; encouraged Sigalit to cover MCA and upcoming exhibitions. No action. |
+| Aug 2 | Sigalit (to Judy, cc John) | Re: A story for August 9 | `19fc429ee9f487bf` | ⏳ | Sigalit: will reprint a Chicago Life article about the Miro and Picasso sculptures in the Chicago Loop, with photos. "Let me email you the text with Photos." Article not yet received. |
+| Aug 2 | Judy (to Sig, cc John) | Re: A story for August 9 | `19fc4465c579f006` | ✅ | Judy: "That would be fabulous!" No action. |
+| Aug 2 | FormSubmit | New Subscriber (production — kathihudson4@gmail.com) | `19fc2dfba179b0ef` | ⬛ | Real subscriber: Kathi Hudson submitted via chicagoclassicmag.com at 2:27 PM Aug 2. For informational tracking; no site content action needed. |
