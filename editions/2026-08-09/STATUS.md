@@ -2,51 +2,42 @@
 
 _Updated: 2026-08-06_
 
-**Edition skeleton created. 1 of 7 lineup articles has text; photos pending extraction.**
+**3 of 7 articles have full text placed (2 fully ready with photos, 1 with unconfirmed captions). 4 are stubs awaiting content.**
 
-## Judy's Lineup (received 2026-08-06)
+## Judy's official lineup (`19fd59ca7cdb169d`, received 2026-08-06)
 
 Nav chain order (hero → last):
 1. `nick-wilder-summer` — Nick Wilder's photo essays, Lemonade Stand cover
-2. `sig-august` — Sig's article (Sigalit Zetouni; topic TBD)
+2. `sig-august` — "Spanish Loop" by Sigalit Zetouni (Miró/Picasso sculptures)
 3. `this-date-in-history` — This Date in History by Scott Holleran
 4. `josee-nadeau` — Josee Nadeau, Monet's Anniversary
 5. `jill-lowe-hands` — Jill Lowe's feature on hands
-6. `dance-for-life` — Dance For Life
-7. `jean-poems` — Two poems by Jean
+6. `dance-for-life` — Dance for Life
+7. `jean-poems` — Two poems by Jean Colonomos
 
-Plus John's editorial on `editorial.html` (Editor's Page).
+Plus John's editorial on `editorial.html` (Editor's Page) — not part of this edition's nav chain.
+
+**Note on session history:** this edition was prepped twice in parallel. An earlier pass by this session built a rough-lineup version using slugs that didn't match Judy's later official lineup email; that version was discarded (`git reset --hard`) once the official lineup and newer content arrived. A second, concurrent session built `this-date-in-history` first with real content. This STATUS.md reflects the reconciled, final state.
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| nick-wilder-summer | Nick Wilder Summer Photo Essays | Nick Wilder | ❌ | Cover only | Cover photo `IMG_0312.jpeg` extracted from msg `19fd343a2081cc95` (Judy→John+Emma, Aug 5). No article text yet. |
-| sig-august | Sig's article | Sigalit Zetouni | ❌ | ❌ | No content yet. Topic unknown. |
-| this-date-in-history | This Date in History | Scott Holleran | ✅ | ❌ pending | Full article text built. 3 photos in msg `19fceba301fb7778` (Judy→John, Aug 4): `images-1.jpeg` (hero, caption "Charles Wacker"), `IMG_4085.jpg` (bottom), `IMG_4084.JPG` (bottom). Extract with: `python3 tools/extract_article_photos.py`. Captions for bottom 2 photos unknown — verify before publishing. |
-| josee-nadeau | Josee Nadeau, Monet's Anniversary | Josee Nadeau? | ❌ | Cover only | Cover photo `IMG_20180726_055631_230.jpg` in msg `19fd5818aab34ff3` (Judy→Ana, CC John, Aug 6). No article text yet. |
-| jill-lowe-hands | Jill Lowe's feature on hands | Jill Lowe | ❌ | ❌ | No content yet. |
-| dance-for-life | Dance For Life | TBD | ❌ | ❌ | No content yet. |
-| jean-poems | Two poems by Jean | Jean (last name TBD) | ❌ | Photo only | Martha Graham photo `Martha_Graham-Cave_of_the_Heart.jpg` in msg `19fd206307617732` (Judy→John, Aug 5). Judy suggests using this photo; note in caption that it is Martha Graham. No poem text yet. |
-| datebook | DateBook | Annie Delfosse | ✅ | — | Copied from August 2 edition. New events pending from Annie. |
-| daily-star-august | Astrochart | Victoria Martin | ✅ | — | Copied from August 2 edition (full August forecast). |
-
-## Photo Extraction Needed
-
-Three photos for `this-date-in-history` are in Gmail message `19fceba301fb7778`.
-Run when `~/.gmail-mcp/` credentials are available:
-```bash
-source .venv/bin/activate
-python3 tools/extract_article_photos.py 2026-08-09 --msg-id 19fceba301fb7778 --slug this-date-in-history
-```
-
-The Nick Wilder cover (msg `19fd343a2081cc95`) and Josee Nadeau cover (msg `19fd5818aab34ff3`) also need extraction when their articles are built.
-
-The Martha Graham photo (msg `19fd206307617732`) needs extraction when jean-poems folder is created.
+| nick-wilder-summer | Nick Wilder's Summer Photo Essay | Nick Wilder | Placeholder — cover only | Cover photo placed as hero: `IMG_0312.jpeg` (msg `19fd343a2081cc95`) | Essay text and remaining photos not sent yet. **Nick has no `about.html` bio/anchor** — byline link 404s until one is added. |
+| sig-august | Spanish Loop | Sigalit Zetouni | ✅ Full text built | ✅ 3/3 placed with credits: `IMG_7123.JPG` (hero, "The Picasso"), `IMG_3078.JPG` (climbing photo), `043_20160204_STOCK_MIRO.JPG` (Miró's Chicago — compressed from 18.6MB to ~700KB) | Full article ("Spanish Loop") + captions + a closing credit note — republished/expanded from Sig's Spring 2025 Chicago Life piece, per her own note in the text (kept verbatim). |
+| this-date-in-history | This Date in History | Scott Holleran | ✅ Full text built (by the parallel session) | 3/3 placed — hero `images-1.jpeg` ("Charles Wacker"), plus `IMG_4085.jpg` and `IMG_4084.JPG` at the bottom | **Captions for the 2 bottom photos are not specified anywhere in Judy's email** ("Photos at the Bottom") — verify with her before publishing, don't guess. |
+| josee-nadeau | Josee Nadeau: Monet's Anniversary | Judy Carmack Bross | Placeholder — cover only | Cover photo placed as hero: `IMG_20180726_055631_230.jpg` (msg `19fd5818aab34ff3`) | Article text not sent yet. |
+| jill-lowe-hands | Jill Lowe's Feature on Hands | Jill Lowe | Placeholder | — | No content yet. |
+| dance-for-life | Dance for Life | Judy Carmack Bross | Placeholder | — | No content yet; via Emma. |
+| jean-poems | New Poems by Jean Colonomos ("Grief" & "Revery") | Jean Colonomos | ✅ Full text built | Candidate photo placed as hero, **not fully confirmed** — `Martha_Graham-Cave_of_the_Heart.jpg` (msg `19fd206307617732`, Judy: "Still thinking...") | Both poems + Judy's intro paragraph, in full. |
+| datebook | DateBook | Annie Delfosse | Copied forward, title/date updated to Aug 9 | — | Already includes Annie's new event batch (~20 events, added to the Aug 2 copy in a separate commit before this edition branched off it) — no further action needed here. |
+| daily-star-august | Astrochart | Victoria Martin | Copied forward unchanged | — | Still within August — no rename/edit needed. |
 
 ## Notes
 
-- `this-date-in-history` nav chain links currently point to homepage (placeholder). Update when adjacent articles (`sig-august`, `josee-nadeau`) are built.
-- Sigalit Zetouni's article: her email is `sigalina@aol.com`. Check that inbox for article text.
-- "Your editorial" email (msg `19fd201bd4852c68`): Judy discussed comments section with John. No site changes required.
-- Heritage Auctions August ad noted in Aug 2 STATUS.md as not yet placed — still outstanding.
+- Nav chain order (hero → last): nick-wilder-summer → sig-august → this-date-in-history → josee-nadeau → jill-lowe-hands → dance-for-life → jean-poems
+- Homepage hero uses Nick Wilder's real cover photo; cards for sig-august/this-date-in-history/josee-nadeau/jean-poems use their real photos; jill-lowe-hands/dance-for-life still use `card-placeholder.jpg`.
+- Nav thumbnails across all 7 articles use a shared `thumb-placeholder.jpg` at the edition root — replace with real navthumbs as content/covers arrive. This causes a harmless "duplicate image used 2×" soft warning in `verify_edition.py` (same placeholder used for both prev and next on some pages) — expected until real navthumbs replace it.
+- **Nick Wilder needs an `about.html` bio** before this edition can publish — new contributor, no anchor exists yet.
+- **Open item:** confirm captions for the 2 bottom photos in `this-date-in-history` with Judy before publishing.
+- **Open item:** confirm the Martha Graham photo choice for `jean-poems` with Judy before publishing — she hedged ("still thinking") rather than firmly deciding.
