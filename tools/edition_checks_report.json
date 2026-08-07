@@ -1,14 +1,7 @@
 {
   "dark_mode_added": [],
   "nav_css_added": [],
-  "popup_articles_added": [
-    "jean-colonomos: New Poems by Jean Colonomos (August 9, 2026)",
-    "jill-lowe: Jill Lowe's Feature on Hands (August 9, 2026)",
-    "judy-carmack-bross: Dance for Life (August 9, 2026)",
-    "judy-carmack-bross: Josee Nadeau: Monet's Anniversary (August 9, 2026)",
-    "scott-holleran: This Date in History (August 9, 2026)",
-    "sigalit-zetouni: Spanish Loop (August 9, 2026)"
-  ],
+  "popup_articles_added": [],
   "new_authors_needing_bios": [
     {
       "id": "emma-muhleman",
@@ -20,12 +13,6 @@
       "id": "mary-grant",
       "articles": [
         "May 24, 2026: Stitching a Community Together: The Story Behind Kenilworth&#8217;s Centennial Needlepoint"
-      ]
-    },
-    {
-      "id": "nick-wilder",
-      "articles": [
-        "August 9, 2026: Nick Wilder's Summer Photo Essay"
       ]
     },
     {
