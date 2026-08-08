@@ -353,6 +353,7 @@
         <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-style: italic; color: #666; margin-bottom: 20px; text-align: center;">Do you enjoy the look and feel of <em>Classic Chicago</em>?</div>
         <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
           <input type="hidden" name="_subject" value="Classic Chicago Reader Feedback">
+          <input type="text" name="_gotcha" value="" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
           
           <input type="hidden" name="_next" id="feedbackReturn">
           <div style="display: flex; justify-content: center; gap: 28px; align-items: center; margin-bottom: 20px;">
@@ -365,7 +366,7 @@
             </label>
           </div>
           <div style="margin-bottom: 12px;">
-            <textarea name="message" placeholder="Your message (optional)" rows="3" style="width: 100%; box-sizing: border-box; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 2px; color: #444; background: #fff; resize: vertical;"></textarea>
+            <textarea name="message" minlength="4" placeholder="Your message (optional)" rows="3" style="width: 100%; box-sizing: border-box; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 2px; color: #444; background: #fff; resize: vertical;"></textarea>
           </div>
           <div style="margin-bottom: 16px;">
             <input type="email" name="email" placeholder="Your email address (optional)" style="width: 100%; box-sizing: border-box; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 2px; color: #444; background: #fff;">
