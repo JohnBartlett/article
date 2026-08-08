@@ -409,6 +409,27 @@
           </form>
         </div>
 
+        <!-- Writer Pitch Prompt (shown for long comments) -->
+        <div id="writerPrompt" style="display: none; margin-top: 16px; padding: 16px 18px; background: #fff8f0; border-left: 3px solid #e67e22; font-family: 'Lato', sans-serif; font-size: 14px; color: #555;">
+          <p style="margin: 0 0 12px;">That's quite a bit to say &mdash; sounds like you might have an article in you. Want to submit this as a pitch instead of a comment?</p>
+          <button type="button" id="writerYesBtn" style="background: #b51c20; color: #fff; border: none; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer; margin-right: 8px;">Yes, I'd like to write for you</button>
+          <button type="button" id="writerNoBtn" style="background: none; color: #b51c20; border: 1px solid #b51c20; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer;">No, just post my comment</button>
+        </div>
+
+        <!-- Writer Application Form -->
+        <div id="writerForm" style="display: none; margin-top: 16px; border-top: 1px solid #ece5dd; padding-top: 20px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Write for Classic Chicago</p>
+          <input type="text" id="writerName" placeholder="Your name" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <input type="email" id="writerEmail" placeholder="Your email" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <textarea id="writerTopic" placeholder="What Chicago subject would you like to write about?" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 60px; margin-bottom: 10px;"></textarea>
+          <button type="button" id="writerSubmitBtn" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Submit Pitch</button>
+        </div>
+
+        <div id="writerConfirm" style="display: none; margin-top: 16px; text-align: center; font-family: 'Lato', sans-serif; font-size: 14px; color: #2e7d32;">
+          &#10003; Thanks! Judy and John will be in touch.
+        </div>
+
+
         <script>
           var base = window.location.href.split('?')[0];
           document.getElementById('feedbackReturn').value = base + '?feedback=sent';
@@ -435,7 +456,59 @@
             document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
             document.getElementById('voteConfirm').style.display = 'block';
           }
-        </script>
+        
+
+          // Long-comment writer-pitch prompt
+          (function() {
+            var WRITER_THRESHOLD = 500;
+            var commentForm = document.querySelector('#feedbackForm form');
+            var commentTextarea = commentForm.querySelector('textarea[name="comment"]');
+
+            commentForm.addEventListener('submit', function(e) {
+              if (commentTextarea.value.trim().length > WRITER_THRESHOLD) {
+                e.preventDefault();
+                document.getElementById('feedbackForm').style.display = 'none';
+                document.getElementById('writerPrompt').style.display = 'block';
+              }
+            });
+
+            document.getElementById('writerNoBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('feedbackForm').style.display = 'block';
+              commentForm.submit();
+            });
+
+            document.getElementById('writerYesBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('writerForm').style.display = 'block';
+            });
+
+            document.getElementById('writerSubmitBtn').addEventListener('click', function() {
+              var name = document.getElementById('writerName').value.trim();
+              var email = document.getElementById('writerEmail').value.trim();
+              var topic = document.getElementById('writerTopic').value.trim();
+              if (!name || !email || !topic) {
+                alert("Please fill in your name, email, and what you'd like to write about.");
+                return;
+              }
+              fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                body: JSON.stringify({
+                  name: name,
+                  email: email,
+                  topic: topic,
+                  originalComment: commentTextarea.value,
+                  Page: document.getElementById('page-tracking').value,
+                  Environment: document.getElementById('env-tracking').value,
+                  _subject: 'Classic Chicago Writer Application'
+                })
+              }).catch(function(){});
+              document.getElementById('writerForm').style.display = 'none';
+              document.getElementById('writerConfirm').style.display = 'block';
+            });
+          })();
+</script>
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation — order must match homepage card order -->
