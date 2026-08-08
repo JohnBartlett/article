@@ -266,13 +266,10 @@
 <body>
   <header>
     <div class="logo-container">
-      <a href="../../../index.html">
-        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
-      </a>
+      <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
     </div>
     <nav>
       <div class="nav-inner">
-        <a href="../../../index.html">Home</a>
         <a href="../datebook/">DateBook</a>
         <a href="../daily-star-august/">Astrochart</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
@@ -520,15 +517,8 @@
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation — order must match homepage card order -->
+      <!-- dev2-preview-share: nav temporarily disconnected for Jill's review; restore after she confirms -->
       <div class="edition-nav">
-        <div class="nav-item">
-          <img class="nav-thumb" src="../thumb-placeholder.jpg" alt="">
-          <a href="../josee-nadeau/" class="back-link">&larr; Previous: Josee Nadeau: Monet's Anniversary</a>
-        </div>
-        <div class="nav-item">
-          <img class="nav-thumb" src="../thumb-placeholder.jpg" alt="">
-          <a href="../dance-for-life/" class="back-link">Next: Dance for Life &rarr;</a>
-        </div>
       </div>
       <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
       <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
@@ -560,14 +550,11 @@
   <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
 
   <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <!-- dev2-preview-share: n/p navigation disabled for Jill's review; restore after she confirms -->
   <script>
-    var prevUrl = '../josee-nadeau/';
-    var nextUrl = '../dance-for-life/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
-      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
-      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
       if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
       if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
     });
