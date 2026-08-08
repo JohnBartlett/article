@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audit: "A Helping Hand" vs. Original PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fdfaf7;
+      color: #222;
+      line-height: 1.65;
+    }
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 24px 80px;
+    }
+    .label {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      text-align: center;
+      margin: 0 0 10px;
+      color: #111;
+    }
+    .subtitle {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 44px;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 21px;
+      color: #111;
+      margin: 44px 0 14px;
+      padding-top: 10px;
+      border-top: 1px solid #e8e0d5;
+    }
+    p { font-size: 16px; color: #333; }
+    .summary-box {
+      background: #fff;
+      border: 1px solid #e8e0d5;
+      border-radius: 3px;
+      padding: 22px 26px;
+      margin-bottom: 10px;
+    }
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      background: #fff;
+      border: 1px solid #e8e0d5;
+    }
+    .diff-table th {
+      background: #f5f0eb;
+      text-align: left;
+      padding: 9px 12px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666;
+      border-bottom: 2px solid #ddd;
+    }
+    .diff-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .orig { color: #b51c20; }
+    .fixed { color: #2e7d32; }
+    .note-box {
+      background: #fff8f0;
+      border-left: 3px solid #e67e22;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #555;
+    }
+    .note-box strong { color: #c0392b; }
+    .tag {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 6px;
+    }
+    .tag-typo { background: #e8f5e9; color: #2e7d32; }
+    .tag-dupe { background: #fce4ec; color: #ad1457; }
+    .tag-wording { background: #e3f2fd; color: #1565c0; }
+    .tag-heading { background: #fff3e0; color: #e65100; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15.5px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="label">Editorial Audit</div>
+    <h1>&ldquo;A Helping Hand&rdquo; vs. Original PDF</h1>
+    <div class="subtitle">A line-by-line comparison of the laid-out article against the source PDF, prepared for review.</div>
+
+    <div class="summary-box">
+      <p style="margin: 0;"><strong>Bottom line:</strong> the article is faithful in structure and content &mdash; nothing was dropped, no paragraphs were cut, and all 25 supplied photos are placed. However, a number of small text changes were made silently during layout that should have been flagged instead of corrected outright. They're itemized below for your review and sign-off.</p>
+    </div>
+
+    <h2>Typos silently corrected</h2>
+    <p>These are near-certain typos in the original PDF that were fixed without asking first.</p>
+    <table class="diff-table">
+      <thead><tr><th>Original PDF</th><th>Laid-out article</th></tr></thead>
+      <tbody>
+        <tr><td class="orig">populaton</td><td class="fixed">population</td></tr>
+        <tr><td class="orig">sign langage</td><td class="fixed">sign language</td></tr>
+        <tr><td class="orig">theFrench sign anguage</td><td class="fixed">the French sign language</td></tr>
+        <tr><td class="orig">dupytruyens contracture</td><td class="fixed">dupuytren&rsquo;s contracture</td></tr>
+        <tr><td class="orig">purvue</td><td class="fixed">purview</td></tr>
+        <tr><td class="orig">apropriate stages</td><td class="fixed">appropriate stages</td></tr>
+        <tr><td class="orig">grandaughter</td><td class="fixed">granddaughter</td></tr>
+        <tr><td class="orig">ths feature / thunb</td><td class="fixed">this feature / thumb</td></tr>
+        <tr><td class="orig">Dr Schenk <em>(later in same para: Dr. Robert R. Schenck)</em></td><td class="fixed">Dr. Schenck <em>(normalized both to match)</em></td></tr>
+        <tr><td class="orig">Indira Ghandi</td><td class="fixed">Indira Gandhi <span class="tag" style="background:#ffebee;color:#c62828;">Name spelling</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Duplicated text removed</h2>
+    <p>These go beyond typo-fixing &mdash; actual repeated words or list entries were trimmed.</p>
+    <ul>
+      <li><span class="tag tag-dupe">Dupe</span> &ldquo;not everyone knows that <strong>know that</strong> BSL and ASL are different&rdquo; &rarr; the duplicated &ldquo;know that&rdquo; was removed.</li>
+      <li><span class="tag tag-dupe">Dupe</span> &ldquo;I insert <strong>here</strong> a story <strong>here</strong> concerning&hellip;&rdquo; &rarr; one of the two &ldquo;here&rdquo;s was removed.</li>
+      <li><span class="tag tag-dupe">Dupe</span> &ldquo;Heavy handed&rdquo; appeared <strong>twice</strong> in the closing expressions list in the original &mdash; the article includes it only once.</li>
+    </ul>
+
+    <h2>Wording &amp; punctuation changes</h2>
+    <table class="diff-table">
+      <thead><tr><th>Original PDF</th><th>Laid-out article</th></tr></thead>
+      <tbody>
+        <tr><td class="orig">&ldquo;A bird in the hand is worth <strong>2</strong> in the bush&rdquo;</td><td class="fixed">&ldquo;&hellip;worth <strong>two</strong> in the bush&rdquo;</td></tr>
+        <tr><td class="orig">&ldquo;Lending hand&rdquo;</td><td class="fixed">&ldquo;Lending <strong>a</strong> hand&rdquo;</td></tr>
+        <tr><td class="orig">&ldquo;A hand me down&rdquo;</td><td class="fixed">&ldquo;A hand-me-down&rdquo;</td></tr>
+        <tr><td class="orig">&ldquo;Yes&nbsp;&nbsp;-&nbsp;&nbsp;it is my Dad&rdquo;</td><td class="fixed">&ldquo;Yes &mdash; it is my Dad&rdquo; <em>(dash style)</em></td></tr>
+        <tr><td class="orig">A few commas added or removed for readability</td><td class="fixed">&mdash;</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Section headings reformatted</h2>
+    <p><span class="tag tag-heading">Structure</span> Headings were shortened and re-cased for the web layout. For example, the PDF&rsquo;s own section title &mdash;</p>
+    <p style="font-style: italic; color: #666;">&ldquo;BSL (British Sign Language) and ASL (American Sign Langage)&rdquo;</p>
+    <p>&mdash; became the shorter heading <strong>&ldquo;BSL and ASL&rdquo;</strong>, with the full names of both languages moved into the body paragraph instead. Section headings generally were also shifted from sentence case to Title Case to match the site&rsquo;s house style.</p>
+
+    <h2>Photo gap</h2>
+    <div class="note-box">
+      <strong>Missing image:</strong> the PDF's Shibboleth section calls for two side-by-side photos &mdash; captioned &ldquo;None-German way of indicating three&rdquo; and &ldquo;German way of indicating three&rdquo; &mdash; but only one matching stock photo (the non-German finger count) was included in the photo batch you sent. No substitute was used; the German-way photo slot is simply not in the current layout. Let us know if you have that second image, or if it's fine to run with just the one.
+    </div>
+
+    <h2>What was <em>not</em> changed</h2>
+    <ul>
+      <li>No paragraphs, sentences, or sections were cut.</li>
+      <li>No content was added beyond the one requested intro line before &ldquo;Understood Expressions.&rdquo;</li>
+      <li>All 25 supplied photos (21 stock + 4 personal) are placed somewhere in the article.</li>
+      <li>Photo captions match the PDF exactly where the PDF specified one; photos without a given caption were left uncaptioned rather than invented.</li>
+      <li>The personal anecdote about your father and niece Tess uses your exact caption text (typo corrected as noted above).</li>
+    </ul>
+
+  </div>
+</body>
+</html>
