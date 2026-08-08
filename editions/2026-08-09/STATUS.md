@@ -41,4 +41,4 @@ Plus John's editorial on `editorial.html` (Editor's Page) — not part of this e
 - **Open item:** confirm captions for the 2 bottom photos in `this-date-in-history` with Judy before publishing.
 - **Open item:** confirm the Martha Graham photo choice for `jean-poems` with Judy before publishing — she hedged ("still thinking") rather than firmly deciding.
 - Francesco Bianchini confirmed **not** in this edition — moved to August 16 per Judy (msg `19fdc80b690541f6`).
-- **Open item:** send Jill Lowe a link to the built "A Helping Hand" draft for her review, per her established workflow.
+- ✅ Sent Jill Lowe the preview link for "A Helping Hand" (Aug 8, msg `19fe1bfda37b7d2d`) — awaiting her confirmation. Once confirmed, delete `jill-lowe-hands-preview/` before staging.
