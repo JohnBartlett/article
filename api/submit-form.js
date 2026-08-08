@@ -67,14 +67,21 @@ module.exports = async (req, res) => {
     }
   }
 
-  // If an email address was given, flag (don't reject) addresses whose
-  // domain has no mail servers — catches typos and obviously fake domains
-  // without blocking a genuine reader over a DNS hiccup.
+  // If an email address was given, flag (don't reject) ones that are
+  // malformed or whose domain has no mail servers — catches typos and
+  // obviously fake addresses without blocking a genuine reader over a
+  // DNS hiccup.
+  const EMAIL_FORMAT = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let emailNote = '';
   if (typeof body.email === 'string' && body.email.trim()) {
-    const deliverable = await isDeliverableDomain(body.email.trim());
-    if (!deliverable) {
-      emailNote = '\n\n[Note: the email address above has no valid mail server on its domain — may be a typo or fake address.]';
+    const emailValue = body.email.trim();
+    if (!EMAIL_FORMAT.test(emailValue)) {
+      emailNote = '\n\n[Note: the email address above is not shaped like a valid email address.]';
+    } else {
+      const deliverable = await isDeliverableDomain(emailValue);
+      if (!deliverable) {
+        emailNote = '\n\n[Note: the email address above has no valid mail server on its domain — may be a typo or fake address.]';
+      }
     }
   }
 
