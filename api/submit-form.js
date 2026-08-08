@@ -86,10 +86,13 @@ module.exports = async (req, res) => {
     },
   });
 
+  const isWriterApplication = subject === 'Classic Chicago Writer Application';
+
   try {
     await transporter.sendMail({
       from: 'Classic Chicago Forms <john.bartlett@gmail.com>',
       to: 'john.bartlett@gmail.com',
+      cc: isWriterApplication ? 'judycbross@aol.com' : undefined,
       subject,
       text: fields + emailNote,
     });
