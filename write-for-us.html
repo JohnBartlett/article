@@ -12,7 +12,7 @@
   </script>
   -->
   <meta charset="UTF-8">
-  <title>Subscribe – Classic Chicago Magazine</title>
+  <title>Want to Write for Classic Chicago Magazine? – Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -151,7 +151,7 @@
       margin-bottom: 40px;
     }
 
-    .subscribe-form {
+    .pitch-form {
       background: #fafafa;
       border: 1px solid #eee;
       border-radius: 6px;
@@ -173,7 +173,8 @@
       margin-bottom: 6px;
     }
 
-    .form-group input {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
       padding: 12px 14px;
       font-family: Georgia, serif;
@@ -184,9 +185,11 @@
       color: #222;
       box-sizing: border-box;
       transition: border-color 0.2s;
+      resize: vertical;
     }
 
-    .form-group input:focus {
+    .form-group input:focus,
+    .form-group textarea:focus {
       outline: none;
       border-color: #e8443a;
     }
@@ -197,7 +200,7 @@
       gap: 16px;
     }
 
-    .subscribe-btn {
+    .pitch-btn {
       display: block;
       width: 100%;
       padding: 14px;
@@ -215,7 +218,7 @@
       margin-top: 10px;
     }
 
-    .subscribe-btn:hover {
+    .pitch-btn:hover {
       background: #b51c20;
     }
 
@@ -227,37 +230,54 @@
       margin-top: 16px;
     }
 
-    .benefits {
+    .pitch-confirm {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 6px;
+    }
+
+    .pitch-confirm p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #444;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .expect {
       margin-top: 50px;
       padding-top: 40px;
       border-top: 1px solid #eee;
     }
 
-    .benefits h2 {
+    .expect h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 26px;
       text-align: center;
       margin-bottom: 30px;
     }
 
-    .benefit-grid {
+    .expect-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
 
-    .benefit {
+    .expect-item {
       text-align: center;
       padding: 20px;
     }
 
-    .benefit-icon {
+    .expect-icon {
       font-size: 32px;
       margin-bottom: 12px;
       color: #e8443a;
     }
 
-    .benefit h3 {
+    .expect-item h3 {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
       font-weight: 700;
@@ -267,7 +287,7 @@
       color: #333;
     }
 
-    .benefit p {
+    .expect-item p {
       font-size: 14px;
       line-height: 1.6;
       color: #777;
@@ -313,7 +333,7 @@
       .form-row {
         grid-template-columns: 1fr;
       }
-      .benefit-grid {
+      .expect-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -331,8 +351,8 @@
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
-        <a href="editions/2026-03-08/datebook/">DateBook</a>
-        <a href="editions/2026-03-01/daily-star-march/">Astrochart</a>
+        <a href="editions/2026-08-09/datebook/">DateBook</a>
+        <a href="editions/2026-08-09/daily-star-august/">Astrochart</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
@@ -345,54 +365,58 @@
   </header>
 
   <div class="wrapper">
-    <h1 class="page-title">Subscribe</h1>
-    <div class="page-subtitle">Every Sunday in your inbox</div>
-    <p class="intro">Get Classic Chicago Magazine delivered to your inbox every Sunday morning. Original stories about the people, places, and culture that make Chicago extraordinary.</p>
+    <h1 class="page-title">Write for Us</h1>
+    <div class="page-subtitle">Pitch a story about Chicago</div>
+    <p class="intro">Classic Chicago Magazine is always looking for original voices with something to say about the people, places, and culture that make this city extraordinary. Tell us what you'd like to write about, and Judy and John will be in touch.</p>
 
-    <form class="subscribe-form" action="https://formsubmit.co/subscribe@2ccmag.com" method="POST">
-      <input type="hidden" name="_subject" value="New Subscriber">
-      <input type="hidden" name="_next" value="https://classicchicagomagazine.com/subscribe.html">
-      <input type="text" name="_honey" style="display:none">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="first-name">First Name</label>
-          <input type="text" id="first-name" name="first_name" required>
-        </div>
-        <div class="form-group">
-          <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" name="last_name" required>
-        </div>
+    <form class="pitch-form" id="pitchForm">
+      <input type="text" name="_gotcha" value="" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-group">
+        <label for="pitch-name">Your Name</label>
+        <input type="text" id="pitch-name" required>
       </div>
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <label for="pitch-email">Email Address</label>
+        <input type="email" id="pitch-email" required>
       </div>
-      <button type="submit" class="subscribe-btn">Subscribe &mdash; It's Free</button>
-      <div class="form-note">No spam, ever. Unsubscribe anytime.</div>
+      <div class="form-group">
+        <label for="pitch-topic">What Chicago subject would you like to write about?</label>
+        <textarea id="pitch-topic" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="pitch-notes">Anything else you'd like us to know? (optional)</label>
+        <textarea id="pitch-notes" rows="4"></textarea>
+      </div>
+      <button type="submit" class="pitch-btn">Submit Pitch</button>
+      <div class="form-note">We read every pitch. We can't promise a yes, but we promise a reply.</div>
     </form>
 
-    <div class="benefits">
-      <h2>What You'll Get</h2>
-      <div class="benefit-grid">
-        <div class="benefit">
-          <div class="benefit-icon">&para;</div>
-          <h3>Original Writing</h3>
-          <p>In-depth features and columns from Chicago's best writers, every week.</p>
+    <div class="pitch-confirm" id="pitchConfirm">
+      <p>&#10003; Thanks! Judy and John will be in touch.</p>
+    </div>
+
+    <div class="expect">
+      <h2>What We're Looking For</h2>
+      <div class="expect-grid">
+        <div class="expect-item">
+          <div class="expect-icon">&para;</div>
+          <h3>Chicago Stories</h3>
+          <p>People, places, history, and culture &mdash; the stuff that makes this city singular.</p>
         </div>
-        <div class="benefit">
-          <div class="benefit-icon">&loz;</div>
-          <h3>Sunday Morning</h3>
-          <p>Delivered to your inbox before your coffee gets cold.</p>
+        <div class="expect-item">
+          <div class="expect-icon">&loz;</div>
+          <h3>A Real Voice</h3>
+          <p>We'd rather read something distinctly yours than something generically polished.</p>
         </div>
-        <div class="benefit">
-          <div class="benefit-icon">&clubs;</div>
-          <h3>Free Forever</h3>
-          <p>Classic Chicago is free to read. Always has been, always will be.</p>
+        <div class="expect-item">
+          <div class="expect-icon">&clubs;</div>
+          <h3>Any Experience Level</h3>
+          <p>First-time writers welcome. We're looking for good stories, not bylines.</p>
         </div>
-        <div class="benefit">
-          <div class="benefit-icon">&spades;</div>
-          <h3>No Clutter</h3>
-          <p>One email per week. That's it. No promotions, no noise.</p>
+        <div class="expect-item">
+          <div class="expect-icon">&spades;</div>
+          <h3>No Pressure</h3>
+          <p>A rough idea is a fine place to start. We'll help shape it from there.</p>
         </div>
       </div>
     </div>
@@ -414,7 +438,7 @@
       </a>
     </div>
     <div class="copyright">
-      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      &copy; Classic Chicago Magazine.<br>
       All rights reserved.
     </div>
   </footer>
@@ -433,6 +457,34 @@
         });
       }
     })();
+
+    document.getElementById('pitchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('pitch-name').value.trim();
+      var email = document.getElementById('pitch-email').value.trim();
+      var topic = document.getElementById('pitch-topic').value.trim();
+      var notes = document.getElementById('pitch-notes').value.trim();
+      var gotcha = document.querySelector('#pitchForm input[name="_gotcha"]').value;
+      if (!name || !email || !topic) return;
+
+      fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          topic: topic,
+          notes: notes,
+          _gotcha: gotcha,
+          Page: document.title + ' — ' + window.location.href.split('?')[0],
+          Environment: (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })(),
+          _subject: 'Classic Chicago Writer Application'
+        })
+      }).catch(function(){});
+
+      document.getElementById('pitchForm').style.display = 'none';
+      document.getElementById('pitchConfirm').style.display = 'block';
+    });
   </script>
 </body>
 
