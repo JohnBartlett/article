@@ -71,8 +71,8 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html">Home</a>
-      <a href="editions/2026-08-02/datebook/">DateBook</a>
-      <a href="editions/2026-08-02/daily-star-august/">Astrochart</a>
+      <a href="editions/2026-08-09/datebook/">DateBook</a>
+      <a href="editions/2026-08-09/daily-star-august/">Astrochart</a>
       <a href="editorial.html">Editors&rsquo; Page</a>
       <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
     </div>
@@ -80,6 +80,7 @@
       <a href="about.html">About</a>
       <a href="subscribe.html">Subscribe</a>
       <a href="advertise.html">Advertise</a>
+        <a href="write-for-us.html">Want to Write for Classic Chicago Magazine?</a>
     </div>
   </nav>
 </header>
@@ -94,7 +95,36 @@
   <div class="page-header">
     <div class="page-label">Classic Chicago Magazine</div>
     <h1 class="page-title">Editors&rsquo; Page</h1>
-    <p class="page-subtitle">Notes, introductions, and observations from the editors - July 19, 2026</p>
+    <p class="page-subtitle">Notes, introductions, and observations from the editors - August 9, 2026</p>
+  </div>
+
+  <!-- POST: John Bartlett — A Cleaner Comment Box, and a New Way to Pitch a Story — August 9, 2026 -->
+  <div class="post" id="post-august-9">
+    <div class="post-meta">August 9, 2026</div>
+    <h2 class="post-title">A Cleaner Comment Box, and a New Way to Pitch a Story</h2>
+    <div class="post-byline">By John Bartlett, Managing Editor</div>
+    <div class="post-body">
+      <p>We spent some time this week tightening up the comment box you&rsquo;ll find at the bottom of every article. It&rsquo;s a small thing readers rarely notice when it&rsquo;s working right, but behind the scenes we added a few quiet safeguards &mdash; filtering out the bot traffic and junk submissions that every public comment form eventually attracts &mdash; so that what lands in Judy&rsquo;s inbox and mine is reliably from an actual reader with something to say.</p>
+      <p>While we were in there, we noticed something: some of you don&rsquo;t leave comments so much as essays. A few sentences of reaction is one thing, but every so often a comment runs long enough that it reads less like feedback and more like the opening of a piece. So now, if your comment runs past a certain length, the site will ask whether you&rsquo;d rather submit it as an article pitch instead. Say yes, add your name, email, and what you&rsquo;d like to write about, and it comes straight to us as a proposal &mdash; not just a comment that scrolls away under the article.</p>
+      <p>And if you&rsquo;ve got a story in you that hasn&rsquo;t found its way into a comment box yet, you don&rsquo;t need to wait for one. There&rsquo;s a new page for it &mdash; <a href="write-for-us.html">Want to Write for Classic Chicago Magazine?</a> &mdash; tucked into the menu at the top of every page on the site. Tell us what you&rsquo;d like to write about, and Judy and I will be in touch.</p>
+      <p>We currently have about 40 writers, many of whom started as UIC journalism interns with a rough idea and a lot of enthusiasm. We&rsquo;re not looking for polish &mdash; we&rsquo;re looking for a real voice with something to say about the people, places, and history that make this city what it is.</p>
+      <p><a href="write-for-us.html">Want to Write for Classic Chicago Magazine? &rarr;</a></p>
+    </div>
+
+    <div class="mini-feedback">
+      <div class="mini-feedback-row">
+        <span class="mini-feedback-label">Reactions</span>
+        <button class="mini-vote-btn" onclick="miniVote(this,'Yes')">&#128077;</button>
+        <button class="mini-vote-btn" onclick="miniVote(this,'No')">&#128078;</button>
+        <span class="mini-vote-confirm" id="mini-vote-confirm-12" style="display:none;">&#10003; Thanks!</span>
+        <button class="mini-comment-toggle" onclick="miniToggleComment(12)" id="mini-comment-toggle-12">Leave a comment</button>
+      </div>
+      <div class="mini-comment-box" id="mini-comment-box-12">
+        <textarea id="mini-comment-text-12" placeholder="Your comment..."></textarea>
+        <button class="mini-comment-submit" onclick="miniSubmitComment(this,12)">Send</button>
+        <div class="mini-comment-sent" id="mini-comment-sent-12">Thank you for your comment!</div>
+      </div>
+    </div>
   </div>
 
   <!-- POST: Judy Carmack Bross — On Mentoring — July 19, 2026 -->
