@@ -91,6 +91,10 @@
 
 - [ ] GitHub token expired — update token to re-enable git push to remote [General]
 - [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
+- [ ] `editions/2026-05-24/jonathan-hoenig-review.html` is **live on production**, titled "REVIEW DRAFT — Jonathan Hoenig Interview" with red review-banner styling — appears to be an internal writer-preview page that was never cleaned up (same pattern as the Jill Lowe preview folder this session). Unlinked from any nav, only reachable by direct URL. Decide: delete, or confirm it's meant to stay as an archive. [Site audit, 2026-08-08]
+- [ ] `editions/2026-05-24/jonathan-hoenig-scott-corrections.html` — also live on production, also missing from dev2. Title looks like a normal published article ("Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing") — unclear if this is the canonical version or a superseded draft. Check whether a separate canonical `jonathan-hoenig` article already exists and which one should actually be live. [Site audit, 2026-08-08]
+- [ ] `editions/2026-05-03/daily-star-may/index.html` has a feedback widget on `dev`/`master` that `dev2` does not have — added directly to `dev`, bypassing the normal dev2→dev→master workflow. Decide whether to backport the widget into dev2 (to prevent it being lost on the next `/stage`) or remove it. [Site audit, 2026-08-08]
+- [ ] `editions/2026-05-24/datebook/index.html` differs by ~700 lines between `dev2` and `dev` — not yet determined which side is correct/complete or why they diverged. [Site audit, 2026-08-08]
 
 ---
 
