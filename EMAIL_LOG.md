@@ -492,9 +492,11 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 12 | Judy | Re: Vanja Malloy: The Unexpected at the Smart - August 16, 2026 | `19ff7cc9436c0389` | ✅ | "It just looks great!" — approves Ana's submission as-is. |
 | Aug 12 | Judy (fwd Adrian Naves) | Fwd: The Blast | `19ff56e308a72b49` | ⬛ | Adrian Naves submitted a blast teaser, "The Lincoln and Douglas Debates" (Illinois history, the 1858 Senate race's seven debates), attachment `IMG_1547.jpeg`. Judy: will add to the Aug 16 lineup **only if Adrian gets it in on time** — conditional, full article not yet received. |
 | Aug 13 | John → Judy (sent) | Quick check — is Joe still managing the subscriber list? | `19ffc1368eb4d4ac` | 🔁 | Asked Judy whether Joe Dadessio (per the Apr 2 Constant Contact history, msg `19d4f176fc22b91b`) is still the one manually administering the subscriber list, since her Aug 11 re-subscribe request was addressed to "Joe." Sent per John's explicit approval. **Reply owed** before the Pamela Ratchford resubscribe request can be actioned. |
+| Aug 13 | Judy | Re: Quick check — is Joe still managing the subscriber list? | `19ffc611f751e5d4` | ✅ | Confirms Joe Dadessio is still correct — she says she must have addressed the Pamela Ratchford resubscribe email to John by mistake, and will resend it to Joe directly. Resolves the open subscriber-list decision; no site action needed. |
 
 **Decisions needed before this edition can be built:**
 1. Run `/prep-edition` for 2026-08-16 using Judy's 7-article lineup above.
-2. Reply to Judy on the Pamela Ratchford resubscribe request — no subscriber-list mechanism exists yet on this site.
-3. Reply to Judy on the Reading Room comment-visibility question (Debbie Feyerabend) — do not reply without John's explicit OK.
+2. ~~Pamela Ratchford resubscribe~~ — resolved Aug 13; Judy misaddressed it and is resending to Joe Dadessio directly.
+3. Reply to Judy on the Reading Room comment-visibility question (Debbie Feyerabend) — do not reply without John's explicit OK. Investigation found the underlying comment (`19fd959cda4564ed`) is real, non-empty, and from the same address as her follow-up email — no evidence of fabrication.
 4. Adrian's Blast item is conditional on his timely submission — don't build unless/until confirmed.
+5. **John's Aug 11 reply to Judy on Reading Room (`19ff0e875894fdce`) went out truncated mid-sentence** ("Unfortunately, I still think we don't have a...") and was never followed up — Judy has been waiting on the rest of that thought.
