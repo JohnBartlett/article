@@ -41,13 +41,13 @@ Nav chain order (hero → last):
 | datebook | DateBook | Annie Delfosse | Copied forward, dated Aug 16 | — | Already correctly dated. |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward, unchanged | — | Still within August — no rename needed. |
 
-## Unactioned Emails (Aug 15)
+## Resolved — Michael Traynor held for August 23
 
-- **Michael Traynor — "A Stroll Through a Park"** (thread `1a0055c04cbdd9b1`): Article submitted via Annie with 15 photo attachments. **Not built** — Michael Traynor was dropped from the lineup per Judy's Aug 14 email (`1a0025d6b16583a5`). Needs Judy's confirmation before building.
+**Michael Traynor — "A Stroll Through a Park"** (thread `1a0055c04cbdd9b1`): Article submitted via Annie with photo attachments, real text about walking Lincoln Park. Judy confirmed Aug 15 (`1a005c75f44e7276`): **"I think we will save this for next when, August 23, when we have fewer stories."** Do NOT build into this edition's nav chain or homepage — log in `future-articles.html` as Held for Aug 23 instead. Content stays on disk, saved for that week.
 
 ## Notes
 
 - Nav chain order (hero → last): vanja-malloy → bob-glaze-chicago-theaters → sig-mca-mike-cloud → unsung-gems-venice → cheryl-menton-garden → elizabeth-richter-pacific-northwest → adrian-debates
 - Nav thumbnails use the shared `thumb-placeholder.jpg` at the edition root, matching established convention.
 - Homepage hero (Vanja Malloy) uses her real cover photo with `object-position: center top` to keep her face in frame. Placeholder cards (Sig, Cheryl, Elizabeth Richter, Adrian) use `card-placeholder.jpg`.
-- **Open items:** Sig's and Elizabeth Richter's full articles still need to arrive. Photo files for Adrian (email attachments) and Cheryl (Drive links) need to be downloaded. Reply owed to Judy on the Reading Room and Sarah Zakarneh (Jafra) writer-pitch — tracked in `EMAIL_LOG.md`.
+- **Open items:** Sig's Mike Cloud/MCA article promised by 2pm Chicago time Aug 15, not yet arrived. Elizabeth Richter's full article still needed. Photo files for Adrian (email attachments) and Cheryl (Drive links) need to be downloaded.
