@@ -528,7 +528,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 3. ~~Pamela Ratchford resubscribe~~ — resolved Aug 13; Judy misaddressed it and is resending to Joe Dadessio directly.
 4. ~~Reply to Judy on the Reading Room comment-visibility question~~ — resolved Aug 15, see reply above (thread now fully closed).
 5. ~~Adrian's Debates item~~ — arrived and approved by Judy Aug 15; text + all 4 photos placed, verified READY.
-6. ~~Cheryl's Val Rameh garden article photos~~ — 12 of 14 downloaded from Drive and placed, verified READY. 2 still missing: Photo 7 (Olive tree, Drive link exists but download failed repeatedly — worth a retry) and Photo 11 (Pond 2, no Drive link ever supplied — likely a contributor omission).
+6. ~~Cheryl's Val Rameh garden article photos~~ — 13 of 14 placed, verified READY. Photo 7 (Olive tree) recovered via John's manual Drive download after 6 failed automated attempts. Only Photo 11 (Pond 2) still missing — no Drive link was ever supplied in the source email, likely a contributor omission.
 7. **Michael Traynor's "A Stroll Through a Park" is HELD for August 23** per Judy's explicit Aug 15 reply — do not build into the Aug 16 nav chain or homepage. Log in `future-articles.html` as Held for Aug 23.
 8. **Sig's Mike Cloud/MCA article has fully arrived** (text + 7 photos + credits + 1 spelling fix, all Aug 15) — not yet built into `sig-mca-mike-cloud/index.html`. No explicit photo placement instructions given beyond send order (1-3 = Stella/Euphonia, 4-6 = Cloud installation views, 7 = MCA employee/wall text) — matches the article's own structure (Stella intro, then the Cloud review).
 6. Reply to Judy on the Sarah Zakarneh (Jafra/dabke) writer-pitch decision — not urgent (event is Sept 7).
