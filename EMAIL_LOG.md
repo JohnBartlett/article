@@ -514,7 +514,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 2. ~~Build Bob Glaze's theater article~~ — done Aug 14: full text + 12/12 photos.
 3. ~~Pamela Ratchford resubscribe~~ — resolved Aug 13; Judy misaddressed it and is resending to Joe Dadessio directly.
 4. ~~Reply to Judy on the Reading Room comment-visibility question~~ — resolved Aug 15, see reply above.
-5. ~~Adrian's Debates item~~ — arrived and approved by Judy Aug 15; text in hand, 4 photos need extracting from `1a005623dd420550`.
+5. ~~Adrian's Debates item~~ — arrived and approved by Judy Aug 15; text + all 4 photos placed, verified READY.
 6. Cheryl's Val Rameh garden article — text in hand and approved by Judy, but 14 photos are Google Drive links, not attachments — need manual download (Photo 11/Pond 2 has no link supplied, possible contributor omission).
 7. **Michael Traynor's "A Stroll Through a Park" is HELD for August 23** per Judy's explicit Aug 15 reply — do not build into the Aug 16 nav chain or homepage. Log in `future-articles.html` as Held for Aug 23.
 8. Sig's Mike Cloud/MCA article — promised by 2pm Chicago time Aug 15, not yet arrived as of this check.

@@ -2,7 +2,7 @@
 
 _Updated: 2026-08-15_
 
-**5 of 7 articles have full text built. 2 still need photos (Drive downloads) and 2 remain fully pending (Sig's and Elizabeth Richter's).**
+**4 of 7 articles fully READY (text + photos). Cheryl's text is built but needs 14 Drive-linked photos downloaded. 2 remain fully pending (Sig's and Elizabeth Richter's).**
 
 ## Judy's updated lineup (`1a0025d6b16583a5`, received 2026-08-14)
 
@@ -37,7 +37,7 @@ Nav chain order (hero → last):
 | unsung-gems-venice | Venice Energizes Family That Was Left Holding the Bag | David A. F. Sweet | ✅ Full text built | ✅ 3/3 placed | Extracted from `Unsung Gems Venice.docx`. Captions and cover (Venice 1, Grand Canal) confirmed by David in his Aug 11 reply to Judy. |
 | cheryl-menton-garden | Jardin Botanique Val Rameh | Cheryl Anderson | ✅ Full text built (Aug 15) | ⚠️ 0/14 photos present — Drive links only | Full article received via Annie (thread `1a005710fbbe464f`). 14 photos linked as Google Drive files in the email — not attachments. HTML built with correct filenames from email. Photos need to be downloaded from Drive manually. Note: Photo 11 (Pond 2) has no Drive link in the email — may be an omission by the contributor. Contributor title is "Jardin Botanique Val Rameh" (email subject uses "Val Rameh" but body text uses "Val Rahmeh" with extra h — not corrected, flagged here). |
 | elizabeth-richter-pacific-northwest | The Pacific Northwest | Elizabeth Dunlop Richter | Placeholder | — | New lineup slot, not in the Aug 9 tentative list. No content received yet. |
-| adrian-debates | The Lincoln and Douglas Debates | Adrian Naves | ✅ Full text built (Aug 15) | ⚠️ 0/4 photos present — email attachments not yet extracted | Full article received via Annie (thread `1a005623dd420550`). 4 photos attached to the email: `1-Portrait.png`, `2-Audience.png`, `3-Color Painting.jpeg`, `4-Statue.png`. HTML built with correct filenames. Photos need to be extracted from Gmail message `1a005623dd420550` using `python3 tools/extract_article_photos.py 2026-08-16 --contributor annie` (once Gmail credentials are set up locally). |
+| adrian-debates | The Lincoln and Douglas Debates | Adrian Naves | ✅ Full text built (Aug 15) | ✅ 4/4 placed (Aug 15) | Full article received via Annie (thread `1a005623dd420550`), approved by Judy. Photos extracted directly from the Gmail message. Verified READY via `verify_edition.py`. |
 | datebook | DateBook | Annie Delfosse | Copied forward, dated Aug 16 | — | Already correctly dated. |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward, unchanged | — | Still within August — no rename needed. |
 
