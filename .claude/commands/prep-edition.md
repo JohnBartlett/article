@@ -1,8 +1,8 @@
 # /prep-edition
 
 Run when Judy sends the article list for a new edition. Creates the full folder skeleton,
-article stubs, nav chain, and homepage shell before any content arrives. This is always
-the first step — before `/new-edition`, before any emails are processed.
+article stubs, nav chain, homepage shell, and STATUS.md before any content arrives. This is
+always the first step — before `/new-edition`, before any emails are processed.
 
 ## Input
 
@@ -36,8 +36,15 @@ Rules:
 - Order = keyboard nav order; hero = 1
 - DateBook always gets slug `datebook`
 - Articles Judy marks as "hold", "TBD", or "not yet" = Status: Held
+- If an author/subject in the list is ambiguous (e.g. unclear who's actually writing a piece
+  about a named person), don't guess — hold that slot as Status: Pending Clarification and
+  flag it in STATUS.md rather than assigning a folder/slug you might have to rename later
 
 **Held articles:** Log in `future-articles.html` only — do NOT create a folder or stub.
+
+**Check new authors:** For any author not previously published, verify their `about.html#anchor`
+exists: `grep -n "id=\"author-id\"" about.html`. If missing, flag it — the byline link will be
+broken until it's added.
 
 ## Step 2 — Create edition folder, copy DateBook and Astrochart
 
@@ -78,8 +85,6 @@ Fill in each stub:
 - GA4 disabled (already in template — do not change)
 - `<!-- dev2-only -->` internal nav block
 
-**Check new authors:** For any author not previously published, verify their `about.html#anchor` exists: `grep -n "id=\"author-id\"" about.html`. If missing, flag it — the byline link will be broken until it's added.
-
 ## Step 3 — Update root index.html
 
 - Change date line to new edition date
@@ -102,56 +107,71 @@ Update the pending table with every article — active and held:
 | DateBook | Annie Delfosse | Pending | Email | Arrives last |
 | [Held article] | Author | Held | — | Reason if known |
 
-## Step 5 — Update editors/edition.html
+## Step 5 — Create editions/YYYY-MM-DD/STATUS.md
 
-- Change edition date in page header and edition-tag
-- Populate article inventory table: one row per active article, all badged `Pending`
-- Clear reader votes section (will be populated during Build)
-- Update Dev2 Preview button URL after first deploy (Step 8)
+This is the live source of truth for the edition's build progress — replaces the old
+`editors/edition.html`/`editors/index.html` pages (removed Jun 22, 2026; do not recreate them
+on dev2). It's read directly by `editors/dashboard.html` on the `editors` branch and by anyone
+picking up the edition mid-build. Follow the pattern of a recent edition's STATUS.md (e.g.
+`editions/2026-08-09/STATUS.md`) — structure:
 
-Columns: Article title + sub (order, category), Writer, Status badge, Dev2 link
+```markdown
+# [Month Day, Year] Edition — Status
 
-## Step 6 — Update editors/index.html
+_Updated: YYYY-MM-DD_
 
-- Change edition date and edition-tag to "In Progress — Prep"
-- Reset progress block: "0 of N articles ready", bar at 0%
-- Clear Decisions Needed — add one item: "Edition prepped — awaiting content from contributors"
-- Replace next-edition planning section with current edition's article list and expected contributors
+[One-line summary of where the edition stands.]
 
-## Step 7 — Commit and push
+## Judy's official lineup (`msg-id`, received YYYY-MM-DD)
+
+Nav chain order (hero → last):
+1. `slug` — Title by Author
+2. ...
+
+## Articles
+
+| Slug | Title | Author | HTML | Photos | Notes |
+|------|-------|--------|------|--------|-------|
+| slug | Title | Author | Placeholder | — | Awaiting content from X |
+
+## Notes
+
+- Nav chain order (hero → last): ...
+- Any pending clarifications (e.g. ambiguous authorship), decisions needed, held articles
+```
+
+At prep time, every article row starts as `Placeholder` / `—`. Update this file every time
+content arrives during `/new-edition` — this is how progress gets tracked now, not a separate
+editors page.
+
+## Step 6 — Commit and push
 
 ```bash
-git add editions/$EDITION/ index.html future-articles.html editors/
+git add editions/$EDITION/ index.html future-articles.html
 git commit -m "Prep YYYY-MM-DD edition: skeleton + stubs for N articles"
 git push origin dev2
 ```
 
-## Step 8 — Deploy Vercel preview and update editors pages
+## Step 7 — Deploy Vercel preview
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
 ```
 
-Update `editors/edition.html` Dev2 Preview button to point to the new edition's first article.
-Update `editors/index.html` Dev Preview quick link to point to homepage.
+The stable alias `https://article-dev2.vercel.app` always points to the latest dev2 deploy —
+no per-article or per-edition preview links to update anywhere else.
 
-```bash
-git add editors/edition.html editors/index.html
-git commit -m "Update dev2 preview URL for YYYY-MM-DD prep"
-git push origin dev2
-```
-
-Return the preview URL to the user.
-
-## Step 9 — Email Judy
+## Step 8 — Email Judy
 
 Draft a confirmation email and **show it to the user before sending**:
 
-**To:** judycbross@aol.com  
+**To:** judycbross@aol.com
 **Subject:** Classic Chicago — [Month Day] Edition Structure Ready
 
 Body: confirm edition is prepped, list each article with its author and expected source,
-note any held articles, include preview URL. Style: `Dear Judy,` / `Cheers, John` / first person.
+note any held or pending-clarification articles, include the dev2 preview URL. Style:
+`Dear Judy,` / `Cheers, John` / first person.
 
 Ask: "Should I send this?" — do not send until confirmed.
 
@@ -160,6 +180,9 @@ Ask: "Should I send this?" — do not send until confirmed.
 - Never wait for content before running prep — the skeleton enables parallel work
 - Nav chain must be wired correctly from the start; don't leave it for Build
 - If Judy's list changes after prep (article added, held, or slug renamed): update stubs,
-  rewire nav chain for affected articles, update edition homepage and root index.html
+  rewire nav chain for affected articles, update edition homepage, root index.html, and STATUS.md
 - If an article is held after its folder was created: remove the folder, rewire nav chain,
-  move to future-articles.html as Held
+  move to future-articles.html as Held, remove its row from STATUS.md
+- `editors/edition.html` and `editors/index.html` no longer exist — do not recreate them on
+  dev2. The `editors` branch's `editors/dashboard.html` reads STATUS.md and `verify_edition.py`
+  directly; nothing on dev2 needs to be updated to keep it current.

@@ -137,18 +137,16 @@ After updating EMAIL_LOG.md, also update the relevant `editions/YYYY-MM-DD/STATU
 - Check off any action items that were completed this session
 - Add new action items if the email revealed something outstanding
 
-## Step 4 — Update editors pages
+## Step 4 — Update the edition's STATUS.md
 
+`editors/edition.html` and `editors/index.html` no longer exist (removed Jun 22, 2026) — do
+not recreate them on dev2. Progress now lives in `editions/YYYY-MM-DD/STATUS.md` (only
+active/upcoming editions have one) and is read live by `editors/dashboard.html` on the
+`editors` branch — nothing else needs updating to keep that dashboard current.
 
 After applying all changes:
-
-**`editors/edition.html`:**
-- Update badge for any newly completed article
-- Append new vote tallies to Reader Quick Votes section
-
-**`editors/index.html`:**
-- Update progress count and bar if articles moved to Ready
-- Update Decisions Needed if Judy flagged holds, replacements, or outstanding items
+- Update article rows to reflect newly completed content (text/photos)
+- Note any holds, replacements, or outstanding decisions in STATUS.md's Notes section
 
 ## Step 5 — Commit and push
 
