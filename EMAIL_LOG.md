@@ -511,15 +511,25 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 15 | Judy | Re: The Reading Room | `1a006d33aa4b5258` | ✅ | "This makes much sense... Doing this type of acknowledgement is good." Approves the no-public-comments approach. Asks a follow-up: "Was it just a normal type of comment?" — referring to Debbie's comment content. Replied Aug 15 (see below). |
 | Aug 15 | John → Judy (sent) | Re: The Reading Room | `1a006e9ad3b6a62e` | ✅ | Confirmed the comment was completely normal — a warm, detailed plot recap of "The Reading Room" — and quoted it in full, verbatim. Sent per John's explicit approval. |
 | Aug 15 | Judy | Re: Classic Chicago Writer Application | `1a006d5342ef801a` | ✅ | "I will write to her and I agree that the focus should be on her... I will write to her and set up a time to talk." Agrees with John's framing recommendation for the Sarah Zakarneh/Jafra pitch and will handle outreach herself — no action needed from John. |
+| Aug 15 | Judy | Re: The Reading Room (3rd) | `1a007229f8bb55df` | ✅ | "Yes, thank you so much. I agree, and thank you for writing to her." Closes the thread — no further action. |
+| Aug 15 | Sig | Text | `1a00750913481954` | 🔁 | FULL TEXT for the MCA/Mike Cloud lineup slot — "Expressions in 3-D." Opens with a Frank Stella biographical section (his career, "Sixteen Americans" 1959, the "Circuits" print series, "Euphonia, 1997" at University of Houston), then the actual Mike Cloud review: "Wordless Obstruction," 27th in the MCA's "Chicago Works" series, 7 sculptural works referencing barricades/obstructions, each titled "Poison Arrows, South Africa 2026," runs through Sun Feb 7, 2027. |
+| Aug 15 | Sig | 1 of 7 | `1a007537b1f517a5` | 🔁 | Photo `IMG_7483.JPG` — Frank Stella, view of "Euphonia, 1997," Photo courtesy of Public Art, University of Houston System. |
+| Aug 15 | Sig | 2 of 7 | `1a00756295deb349` | 🔁 | Photo `IMG_7486.PNG` — same Euphonia/Stella credit as above. |
+| Aug 15 | Sig | 3 of 7 | `1a00758736be95d9` | 🔁 | Photo `IMG_7487.JPG` — same Euphonia/Stella credit as above. |
+| Aug 15 | Sig | 4 of 7 | `1a0075ce8d2e2e8f` | 🔁 | Photo `IMG_7350.jpeg` — Mike Cloud, installation view, "Wordless Obstruction," MCA Chicago, Photo: S. Zetouni, 2026. |
+| Aug 15 | Sig | 5 of 7 | `1a007616461cf224` | 🔁 | Photo `IMG_7352.jpeg` — same Mike Cloud installation-view credit as above. |
+| Aug 15 | Sig | 6 of 7 | `1a00766daf6de8ca` | 🔁 | Photo `IMG_7383.jpeg` — same Mike Cloud installation-view credit as above. |
+| Aug 15 | Sig | 7 of 7 | `1a0076aa8705ff46` | 🔁 | Photo `IMG_7389.jpeg` — MCA employee + wall text for the exhibition, Photo: S. Zetouni, 2026. |
+| Aug 15 | Sig | One spelling error | `1a0078658457d563` | 🔁 | Self-caught correction: "becaming" → "becoming" in the first Stella paragraph. **Apply when building the article — do not use the version from the original text email as-is.** |
 
 **Decisions needed before this edition can be built:**
 1. ~~Reconcile the Aug 16 edition build against Judy's updated Aug 14 lineup~~ — done same day: hero moved to Vanja Malloy, Bob Glaze's real title/content built, Bonnie McDonald dropped, Elizabeth Richter added as a placeholder slot.
 2. ~~Build Bob Glaze's theater article~~ — done Aug 14: full text + 12/12 photos.
 3. ~~Pamela Ratchford resubscribe~~ — resolved Aug 13; Judy misaddressed it and is resending to Joe Dadessio directly.
-4. ~~Reply to Judy on the Reading Room comment-visibility question~~ — resolved Aug 15, see reply above.
+4. ~~Reply to Judy on the Reading Room comment-visibility question~~ — resolved Aug 15, see reply above (thread now fully closed).
 5. ~~Adrian's Debates item~~ — arrived and approved by Judy Aug 15; text + all 4 photos placed, verified READY.
 6. ~~Cheryl's Val Rameh garden article photos~~ — 12 of 14 downloaded from Drive and placed, verified READY. 2 still missing: Photo 7 (Olive tree, Drive link exists but download failed repeatedly — worth a retry) and Photo 11 (Pond 2, no Drive link ever supplied — likely a contributor omission).
 7. **Michael Traynor's "A Stroll Through a Park" is HELD for August 23** per Judy's explicit Aug 15 reply — do not build into the Aug 16 nav chain or homepage. Log in `future-articles.html` as Held for Aug 23.
-8. Sig's Mike Cloud/MCA article — promised by 2pm Chicago time Aug 15, not yet arrived as of this check.
+8. **Sig's Mike Cloud/MCA article has fully arrived** (text + 7 photos + credits + 1 spelling fix, all Aug 15) — not yet built into `sig-mca-mike-cloud/index.html`. No explicit photo placement instructions given beyond send order (1-3 = Stella/Euphonia, 4-6 = Cloud installation views, 7 = MCA employee/wall text) — matches the article's own structure (Stella intro, then the Cloud review).
 6. Reply to Judy on the Sarah Zakarneh (Jafra/dabke) writer-pitch decision — not urgent (event is Sept 7).
 5. **John's Aug 11 reply to Judy on Reading Room (`19ff0e875894fdce`) went out truncated mid-sentence** ("Unfortunately, I still think we don't have a...") and was never followed up — Judy has been waiting on the rest of that thought.
