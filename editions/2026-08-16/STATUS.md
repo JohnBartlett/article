@@ -1,8 +1,8 @@
 # August 16, 2026 Edition — Status
 
-_Updated: 2026-08-14_
+_Updated: 2026-08-15_
 
-**Skeleton rebuilt against Judy's updated lineup. 3 of 7 slots fully built (Vanja Malloy, David Sweet's Venice piece, Bob Glaze's theater tour). 4 slots are placeholders awaiting contributor content.**
+**5 of 7 articles have full text built. 2 still need photos (Drive downloads) and 2 remain fully pending (Sig's and Elizabeth Richter's).**
 
 ## Judy's updated lineup (`1a0025d6b16583a5`, received 2026-08-14)
 
@@ -23,7 +23,7 @@ Nav chain order (hero → last):
 2. `bob-glaze-chicago-theaters` — My Top Recent Theater Experiences in Chicago by Bob Glaze
 3. `sig-mca-mike-cloud` — Mike Cloud at the MCA by Sigalit Zetouni
 4. `unsung-gems-venice` — Venice Energizes Family That Was Left Holding the Bag by David A. F. Sweet
-5. `cheryl-menton-garden` — The Garden at Menton by Cheryl Anderson
+5. `cheryl-menton-garden` — Jardin Botanique Val Rameh by Cheryl Anderson
 6. `elizabeth-richter-pacific-northwest` — The Pacific Northwest by Elizabeth Dunlop Richter
 7. `adrian-debates` — The Lincoln and Douglas Debates by Adrian Naves
 
@@ -35,15 +35,19 @@ Nav chain order (hero → last):
 | bob-glaze-chicago-theaters | My Top Recent Theater Experiences in Chicago | Bob Glaze | ✅ Full text built (Aug 14) | ✅ 12/12 placed | Tour of Chicago theater companies/venues (PrideArts, American Blues Theater, Black Ensemble Theater, Porchlight, Apollo Theater, Greenhouse Theater Center, Chicago Shakespeare, TimeLine Theatre, Broadway Playhouse). Explicit inline "Photo N — Venue, Show" map from the source email; Photos 11 and 10 appear in that reversed order in the text (venue shot before the specific production shot) — kept verbatim, not renumbered. |
 | sig-mca-mike-cloud | Mike Cloud at the MCA | Sigalit Zetouni | Placeholder | Blast image + credit in hand (`image0.jpeg`, Aug 13) | Full article promised "tomorrow" per her Aug 13 email — matches her Fri Aug 14 deadline from the Aug 11 schedule Judy approved. Not yet arrived. |
 | unsung-gems-venice | Venice Energizes Family That Was Left Holding the Bag | David A. F. Sweet | ✅ Full text built | ✅ 3/3 placed | Extracted from `Unsung Gems Venice.docx`. Captions and cover (Venice 1, Grand Canal) confirmed by David in his Aug 11 reply to Judy. |
-| cheryl-menton-garden | The Garden at Menton | Cheryl Anderson | Placeholder | — | No content received yet. Slug/title updated from generic "Cheryl on Gardens" now that Judy specified "the Garden at Menton." |
+| cheryl-menton-garden | Jardin Botanique Val Rameh | Cheryl Anderson | ✅ Full text built (Aug 15) | ⚠️ 0/14 photos present — Drive links only | Full article received via Annie (thread `1a005710fbbe464f`). 14 photos linked as Google Drive files in the email — not attachments. HTML built with correct filenames from email. Photos need to be downloaded from Drive manually. Note: Photo 11 (Pond 2) has no Drive link in the email — may be an omission by the contributor. Contributor title is "Jardin Botanique Val Rameh" (email subject uses "Val Rameh" but body text uses "Val Rahmeh" with extra h — not corrected, flagged here). |
 | elizabeth-richter-pacific-northwest | The Pacific Northwest | Elizabeth Dunlop Richter | Placeholder | — | New lineup slot, not in the Aug 9 tentative list. No content received yet. |
-| adrian-debates | The Lincoln and Douglas Debates | Adrian Naves | Placeholder | Blast attachment `IMG_1547.jpeg` in hand (Aug 12) | Full article not yet received. Judy says she'll make sure he sends it in — no longer purely conditional like the earlier "Blast" framing, it's now an actual lineup slot. |
+| adrian-debates | The Lincoln and Douglas Debates | Adrian Naves | ✅ Full text built (Aug 15) | ⚠️ 0/4 photos present — email attachments not yet extracted | Full article received via Annie (thread `1a005623dd420550`). 4 photos attached to the email: `1-Portrait.png`, `2-Audience.png`, `3-Color Painting.jpeg`, `4-Statue.png`. HTML built with correct filenames. Photos need to be extracted from Gmail message `1a005623dd420550` using `python3 tools/extract_article_photos.py 2026-08-16 --contributor annie` (once Gmail credentials are set up locally). |
 | datebook | DateBook | Annie Delfosse | Copied forward, dated Aug 16 | — | Already correctly dated. |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward, unchanged | — | Still within August — no rename needed. |
+
+## Unactioned Emails (Aug 15)
+
+- **Michael Traynor — "A Stroll Through a Park"** (thread `1a0055c04cbdd9b1`): Article submitted via Annie with 15 photo attachments. **Not built** — Michael Traynor was dropped from the lineup per Judy's Aug 14 email (`1a0025d6b16583a5`). Needs Judy's confirmation before building.
 
 ## Notes
 
 - Nav chain order (hero → last): vanja-malloy → bob-glaze-chicago-theaters → sig-mca-mike-cloud → unsung-gems-venice → cheryl-menton-garden → elizabeth-richter-pacific-northwest → adrian-debates
-- Nav thumbnails use the shared `thumb-placeholder.jpg` at the edition root, matching established convention (real cover images are too large for `verify_edition.py`'s nav-thumb size check until dedicated small navthumbs are generated).
-- Homepage hero (Vanja Malloy) uses her real cover photo with `object-position: center top` to keep her face in frame. Remaining 3 placeholder cards (Sig, Cheryl, Elizabeth Richter, Adrian) use `card-placeholder.jpg`.
-- **Open items:** Sig's, Cheryl's, Elizabeth Richter's, and Adrian's full articles still need to arrive. Reply owed to Judy on the Reading Room comment-visibility question and the Sarah Zakarneh (Jafra) writer-pitch decision — tracked in `EMAIL_LOG.md`, not specific to this edition.
+- Nav thumbnails use the shared `thumb-placeholder.jpg` at the edition root, matching established convention.
+- Homepage hero (Vanja Malloy) uses her real cover photo with `object-position: center top` to keep her face in frame. Placeholder cards (Sig, Cheryl, Elizabeth Richter, Adrian) use `card-placeholder.jpg`.
+- **Open items:** Sig's and Elizabeth Richter's full articles still need to arrive. Photo files for Adrian (email attachments) and Cheryl (Drive links) need to be downloaded. Reply owed to Judy on the Reading Room and Sarah Zakarneh (Jafra) writer-pitch — tracked in `EMAIL_LOG.md`.
