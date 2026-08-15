@@ -522,6 +522,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 15 | Sig | 7 of 7 | `1a0076aa8705ff46` | 🔁 | Photo `IMG_7389.jpeg` — MCA employee + wall text for the exhibition, Photo: S. Zetouni, 2026. |
 | Aug 15 | Sig | One spelling error | `1a0078658457d563` | 🔁 | Self-caught correction: "becaming" → "becoming" in the first Stella paragraph. **Apply when building the article — do not use the version from the original text email as-is.** |
 | Aug 15 | John → Annie (sent) | Missing photo — Jardin Botanique Val Rameh (Photo 11, Pond 2) | `1a007aaf8537f514` | 🔁 | Asked Annie to send Photo 11 (Pond 2, no Drive link was ever supplied) as a Drive link or direct attachment. Sent per John's explicit approval. **Reply owed.** |
+| Aug 15 | John → Judy (sent) | Quick check — Elizabeth Richter's Pacific Northwest article | `1a007b00a83c7ef6` | 🔁 | Flagged that nothing has arrived from Elizabeth yet and asked whether she's sending it to Judy or directly to John — everything else in the lineup is built and ready. Sent per John's explicit approval, ahead of the planned Monday check-in. **Reply owed.** |
 
 **Decisions needed before this edition can be built:**
 1. ~~Reconcile the Aug 16 edition build against Judy's updated Aug 14 lineup~~ — done same day: hero moved to Vanja Malloy, Bob Glaze's real title/content built, Bonnie McDonald dropped, Elizabeth Richter added as a placeholder slot.

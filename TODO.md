@@ -78,7 +78,7 @@
 - [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
 - [ ] Reply to Marcy re: ad placement and Instagram question [General]
 - [ ] Email Judy that the Aug 9 edition's link fixes (Past Editions, Glessner House purchase link, photo compression) are now live on production — standard publish notification, not yet sent. [2026-08-14]
-- [ ] **Ask Judy Monday (Aug 17) about Elizabeth Richter's Pacific Northwest article** — added to the Aug 16 lineup Aug 14 with no coordinator specified (every other item said "via Annie/Emma/John"); nothing has arrived from Elizabeth as of Aug 15. Judy already said she wants to touch base Monday — raise it then. [2026-08-15]
+- [x] ~~Ask Judy Monday (Aug 17) about Elizabeth Richter's Pacific Northwest article~~ — sent Aug 15 (`1a007b00a83c7ef6`), didn't wait for Monday. Reply owed.
 
 ---
 
