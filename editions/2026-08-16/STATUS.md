@@ -1,8 +1,8 @@
 # August 16, 2026 Edition — Status
 
-_Updated: 2026-08-15_
+_Updated: 2026-08-16_
 
-**All 7 lineup articles are built. 6 of 7 fully READY (text + all photos); Cheryl's is at 13/14 photos, one still owed by Annie. Edition is publish-ready pending that last photo.**
+**All 7 lineup articles are built. 6 of 7 fully READY (text + all photos); Cheryl's is at 13/14 photos — Judy sent the missing photo Aug 16, needs extraction. Edition publish-ready pending that last photo.**
 
 ## Judy's updated lineup (`1a0025d6b16583a5`, received 2026-08-14)
 
@@ -50,4 +50,14 @@ Nav chain order (hero → last):
 - Nav chain order (hero → last): vanja-malloy → bob-glaze-chicago-theaters → sig-mca-mike-cloud → unsung-gems-venice → cheryl-menton-garden → elizabeth-richter-pacific-northwest → adrian-debates
 - Nav thumbnails use the shared `thumb-placeholder.jpg` at the edition root, matching established convention.
 - Homepage hero (Vanja Malloy) uses her real cover photo with `object-position: center top` to keep her face in frame. Placeholder cards (Sig, Cheryl, Elizabeth Richter, Adrian) use `card-placeholder.jpg`.
-- **Open item:** Cheryl's Photo 11 (Pond 2) — asked Annie for it Aug 15 (`1a007aaf8537f514`), reply owed. Otherwise the edition is publish-ready.
+- **Open item:** Cheryl's Photo 11 (Pond 2) — **Judy sent it Aug 16** (`1a009fc29cd4ace4`, filename `IMG_7829 3.jpeg`, subject "This might be pond #2"). Extract it from that email and add `<figure>` immediately after the Pond 1 figure in the article body, caption verbatim: "Victoria du Parana – Victoria cruziana". File should retain original name `IMG_7829 3.jpeg`. Once added, edition is fully READY.
+
+## August 23 Lineup (Judy's email 1a00a96d0b7338ae, received Aug 16)
+
+1. Michael Anderson, new History Museum Head, by Libbet Richter — Annie handling
+2. Biba Roesch — already built by Emma; Judy sending 2 more photos directly to John
+3. Sig's piece — John will do
+4. Susan Aurinko — Emma
+5. Landmark Preservation's Bonnie McDonald — Emma
+6. Michael Traynor, Lincoln Park stroll — Annie (article already received, held from Aug 16 edition per Judy)
+7. Murray Bay by Judy — Ana handling
