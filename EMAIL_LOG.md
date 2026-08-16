@@ -538,4 +538,4 @@ Track emails that have been processed, are pending action, or need re-addressing
 7. **Michael Traynor's "A Stroll Through a Park" is HELD for August 23** per Judy's explicit Aug 15 reply — do not build into the Aug 16 nav chain or homepage. Logged in `future-articles.html` as Held for Aug 23.
 8. ~~Sig's Mike Cloud/MCA article~~ — built Aug 15 as "Expressions in 3-D," full text + 7/7 photos, verified READY.
 9. ~~Reply to Judy on the Sarah Zakarneh (Jafra/dabke) writer-pitch~~ — sent and closed Aug 15; Judy will handle outreach herself.
-10. **Elizabeth Richter's "The Olympic Peninsula" has arrived as a PDF** (via Judy, after tracking it down — Annie had been sitting on it since Aug 10 without forwarding it). **Not yet extracted or built.** Must apply Libbet's 5 corrections (see above) — do not build from the raw PDF text alone.
+10. ~~Elizabeth Richter's "The Olympic Peninsula"~~ — built Aug 15: 38 photos extracted from the PDF and placed in source order, all 5 of Libbet's corrections applied, verified READY. **All 7 Aug 16 lineup slots are now built.** Only Cheryl's Photo 11 (Pond 2) is still outstanding — edition is otherwise publish-ready.
