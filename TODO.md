@@ -77,6 +77,8 @@
 - [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
 - [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
 - [ ] Reply to Marcy re: ad placement and Instagram question [General]
+- [ ] Email Judy that the Aug 9 edition's link fixes (Past Editions, Glessner House purchase link, photo compression) are now live on production — standard publish notification, not yet sent. [2026-08-14]
+- [x] ~~Ask Judy Monday (Aug 17) about Elizabeth Richter's Pacific Northwest article~~ — sent Aug 15 (`1a007b00a83c7ef6`), didn't wait for Monday. Reply owed.
 
 ---
 
