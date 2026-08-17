@@ -1,8 +1,8 @@
 # August 16, 2026 Edition — Status
 
-_Updated: 2026-08-16_
+_Updated: 2026-08-17_
 
-**All 7 lineup articles are built. 6 of 7 fully READY (text + all photos); Cheryl's is at 13/14 photos — Judy sent the missing photo Aug 16, needs extraction. Edition publish-ready pending that last photo.**
+**All 7 articles built. Elizabeth Richter corrections applied (Aug 17). Cheryl's Photo 11 (Pond 2) still needs manual extraction — photo is in two emails: `IMG_7831.jpeg` in Annie's thread `1a00b2056f371ea7`, or `IMG_7829 3.jpeg` in Judy's thread `1a009fc29cd4ace4`. Open item for John: Judy asked (thread `1a00fb907d895e1d`, Aug 17) to send Cheryl reader comments — reply to Judy manually.**
 
 ## Judy's updated lineup (`1a0025d6b16583a5`, received 2026-08-14)
 
