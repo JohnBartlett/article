@@ -541,6 +541,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 16 | FormSubmit | New Subscriber — Alan Taylor | `1a00b68625919555` | ⬛ | labors_peach.5v@icloud.com, submitted 4:29 PM Aug 16. Log only. |
 | Aug 16 | FormSubmit | New Subscriber — Alan Taylor (duplicate) | `1a00bede95a09400` | ⬛ | Same email, resubmitted 6:55 PM Aug 16 — likely a double-click, not a new subscriber. Log only. |
 | Aug 16 | FormSubmit | New Subscriber — Amanda Ismail | `1a00cb94ff6cbd82` | ⬛ | amandaismail@yahoo.com, submitted 10:37 PM Aug 16. Log only. |
+| Aug 17 | Judy → Annie | Annie is updating DateBook this week | `1a0105529e45e5fe` | ✅ | FYI only: Judy thanking Annie for confirming she'll update the DateBook for Aug 23. No action needed. |
 
 **Decisions needed before this edition can be built:**
 1. ~~Reconcile the Aug 16 edition build against Judy's updated Aug 14 lineup~~ — done same day: hero moved to Vanja Malloy, Bob Glaze's real title/content built, Bonnie McDonald dropped, Elizabeth Richter added as a placeholder slot.
