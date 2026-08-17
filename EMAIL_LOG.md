@@ -537,6 +537,10 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 17 | sigalina | Re: Revised schedule | `1a00fbb1b0b90940` | ✅ | Confirmed, will proceed on the approved schedule. |
 | Aug 17 | Judy (fwd Cheryl) | Fwd: Qusestion from Cheryl | `1a00fb907d895e1d` | 🔁 | Cheryl asked how to view comments people told her they'd left — she can't, because the form is submit-only with no public display. Replied same day with the actual comments to relay, plus proposed two feature ideas: an "(i)" info note near the comment form/confirmation, and a reader opt-in checkbox to let us forward selected comments to the author (screened first, given past racist/derogatory submissions). Reply owed. |
 | Aug 17 | → Judy | Re: Qusestion from Cheryl | — | 📤 | Sent: explained comment-form behavior, relayed her article's actual comments, and asked whether to add the info note + forward-to-author checkbox. |
+| Aug 16 | FormSubmit | New Subscriber — Laurie Toth | `1a00afd54fa1f310` | ⬛ | HRHLaurie1894@msn.com, submitted 2:32 PM Aug 16. Log only. |
+| Aug 16 | FormSubmit | New Subscriber — Alan Taylor | `1a00b68625919555` | ⬛ | labors_peach.5v@icloud.com, submitted 4:29 PM Aug 16. Log only. |
+| Aug 16 | FormSubmit | New Subscriber — Alan Taylor (duplicate) | `1a00bede95a09400` | ⬛ | Same email, resubmitted 6:55 PM Aug 16 — likely a double-click, not a new subscriber. Log only. |
+| Aug 16 | FormSubmit | New Subscriber — Amanda Ismail | `1a00cb94ff6cbd82` | ⬛ | amandaismail@yahoo.com, submitted 10:37 PM Aug 16. Log only. |
 
 **Decisions needed before this edition can be built:**
 1. ~~Reconcile the Aug 16 edition build against Judy's updated Aug 14 lineup~~ — done same day: hero moved to Vanja Malloy, Bob Glaze's real title/content built, Bonnie McDonald dropped, Elizabeth Richter added as a placeholder slot.
@@ -549,6 +553,6 @@ Track emails that have been processed, are pending action, or need re-addressing
 8. ~~Sig's Mike Cloud/MCA article~~ — built Aug 15 as "Expressions in 3-D," full text + 7/7 photos, verified READY.
 9. ~~Reply to Judy on the Sarah Zakarneh (Jafra/dabke) writer-pitch~~ — sent and closed Aug 15; Judy will handle outreach herself.
 10. ~~Elizabeth Richter's "The Olympic Peninsula"~~ — built Aug 15: 38 photos extracted from the PDF and placed in source order, all 5 of Libbet's corrections applied, verified READY. **All 7 Aug 16 lineup slots are now built and fully complete (Cheryl's Photo 11 resolved Aug 16).**
-11. **Two more corrections from Libbet on "The Olympic Peninsula"** (Aug 16, `1a00c082796c23a4`) — delete "and up to 58 inches in circumference" from paragraph 2; change "three days" to "four days" near the end. Not yet applied — needs a build-side fix on `dev2`, then stage/publish.
+11. ~~Two more corrections from Libbet on "The Olympic Peninsula"~~ — applied Aug 17: removed "and up to 58 inches circumference," changed "three days" to "four days." Staged and published to production.
 12. **August 23 lineup proposed by Judy** (`1a00a96d0b7338ae`) — Michael Anderson/History Museum (Libbet, via Annie), Biba Roesch (Emma, adding 2 photos), Sig's Arts Club Garden Project piece (John to build), Susan Aurinko (Emma), Bonnie McDonald/Landmark Preservation (Emma), Mike Traynor's Lincoln Park (Annie, already held), Murray Bay by Judy (Ana). Not yet started.
 13. **Reply owed from Judy** on the comment-form info-note and forward-to-author checkbox proposal (`1a00fb907d895e1d` thread) — sent Aug 17, awaiting her decision before building either.
