@@ -175,15 +175,28 @@ def fetch_gmail_votes_comments():
     )
 
     records = []
+    skipped = 0
     for m in msgs:
-        meta = get_metadata(token, m['id'])
-        body = get_body(token, m['id'])
+        # This now fetches thousands of messages instead of ~20 (see
+        # search_messages' pagination fix) -- get_metadata/get_body already
+        # retry transient 5xx errors, but if a single message still fails
+        # after retries (e.g. a persistently malformed message), skip it
+        # rather than losing the whole leaderboard to one bad email.
+        try:
+            meta = get_metadata(token, m['id'])
+            body = get_body(token, m['id'])
+        except Exception as exc:
+            skipped += 1
+            print(f"  ⚠ skipping message {m['id']}: {exc}")
+            continue
         subject = meta.get('Subject', '')
         date_str = meta.get('Date', '')
 
         rec = parse_formsubmit(body, subject, date_str)
         if rec:
             records.append(rec)
+    if skipped:
+        print(f"  ⚠ skipped {skipped} of {len(msgs)} messages after retries failed")
     return records
 
 
