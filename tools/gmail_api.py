@@ -1,12 +1,37 @@
 #!/usr/bin/env python3
 """Shared Gmail API helpers used by Claude Code skills."""
 
-import os, json, base64, email as emaillib, requests
+import os, json, base64, time, email as emaillib, requests
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 GMAIL_MCP_CREDS = os.environ.get("GMAIL_CREDENTIALS_PATH", os.path.expanduser("~/.gmail-mcp/credentials.json"))
 GMAIL_MCP_KEYS  = os.environ.get("GMAIL_OAUTH_KEYS_PATH",  os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json"))
+
+
+def _get_with_retry(url, headers, params, attempts=3):
+    """GET with retry on transient 5xx/network errors.
+
+    A full-history fetch now makes thousands of sequential per-message calls
+    (see search_messages' pagination fix) instead of the ~20 it used to make,
+    so a single flaky Gmail 500 -- which used to be rare enough to not matter
+    -- reliably shows up somewhere in that volume and used to crash the whole
+    build with no retry. Only retries 5xx/network errors; a 4xx (bad request,
+    auth) fails immediately since retrying won't help.
+    """
+    last_exc = None
+    for attempt in range(attempts):
+        try:
+            r = requests.get(url, headers=headers, params=params)
+            if r.status_code >= 500:
+                raise requests.exceptions.HTTPError(f"{r.status_code} Server Error", response=r)
+            r.raise_for_status()
+            return r
+        except requests.exceptions.RequestException as exc:
+            last_exc = exc
+            if attempt < attempts - 1:
+                time.sleep(0.5 * (2 ** attempt))
+    raise last_exc
 
 def get_access_token():
     with open(GMAIL_MCP_CREDS) as f: creds = json.load(f)
@@ -35,9 +60,8 @@ def search_messages(token, query, max_results=None):
         params = {"q": query, "maxResults": 500}
         if page_token:
             params["pageToken"] = page_token
-        r = requests.get("https://gmail.googleapis.com/gmail/v1/users/me/messages",
+        r = _get_with_retry("https://gmail.googleapis.com/gmail/v1/users/me/messages",
             headers={"Authorization": f"Bearer {token}"}, params=params)
-        r.raise_for_status()
         data = r.json()
         messages.extend(data.get("messages", []))
         if max_results and len(messages) >= max_results:
@@ -48,18 +72,16 @@ def search_messages(token, query, max_results=None):
     return messages
 
 def get_metadata(token, msg_id):
-    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+    r = _get_with_retry(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
         headers={"Authorization": f"Bearer {token}"},
         params={"format": "metadata", "metadataHeaders": ["From", "Subject", "Date"]})
-    r.raise_for_status()
     msg = r.json()
     headers = {h["name"]: h["value"] for h in msg.get("payload", {}).get("headers", [])}
     return {"id": msg_id, "snippet": msg.get("snippet", ""), **headers}
 
 def get_body(token, msg_id):
-    r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
+    r = _get_with_retry(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
         headers={"Authorization": f"Bearer {token}"}, params={"format": "raw"})
-    r.raise_for_status()
     raw = base64.urlsafe_b64decode(r.json()["raw"] + "==")
     msg = emaillib.message_from_bytes(raw)
     for part in msg.walk():
