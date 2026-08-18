@@ -19,12 +19,33 @@ def get_access_token():
     resp.raise_for_status()
     return resp.json()["access_token"]
 
-def search_messages(token, query, max_results=20):
-    r = requests.get("https://gmail.googleapis.com/gmail/v1/users/me/messages",
-        headers={"Authorization": f"Bearer {token}"},
-        params={"q": query, "maxResults": max_results})
-    r.raise_for_status()
-    return r.json().get("messages", [])
+def search_messages(token, query, max_results=None):
+    """List all messages matching query, paginating through Gmail's nextPageToken.
+
+    Gmail caps a single page at ~100-500 messages depending on query, so any
+    caller relying on the old single-request default (20) silently dropped
+    every older result once the account had more matches than that — e.g.
+    the reader vote/comment leaderboard undercounted by ~96% because it never
+    paginated past the newest 20 FormSubmit emails. Pass max_results to cap
+    the total for callers that only need a handful (e.g. "latest message").
+    """
+    messages = []
+    page_token = None
+    while True:
+        params = {"q": query, "maxResults": 500}
+        if page_token:
+            params["pageToken"] = page_token
+        r = requests.get("https://gmail.googleapis.com/gmail/v1/users/me/messages",
+            headers={"Authorization": f"Bearer {token}"}, params=params)
+        r.raise_for_status()
+        data = r.json()
+        messages.extend(data.get("messages", []))
+        if max_results and len(messages) >= max_results:
+            return messages[:max_results]
+        page_token = data.get("nextPageToken")
+        if not page_token:
+            break
+    return messages
 
 def get_metadata(token, msg_id):
     r = requests.get(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
