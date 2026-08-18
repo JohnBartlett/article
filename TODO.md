@@ -121,3 +121,5 @@
 - [x] Elizabeth Dunlop Richter archive — 103 articles built, deployed, emailed Judy
 - [x] Writer preview policy: never share dev2 homepage; send direct unlinked article URL only
 - [x] No-emoji rule added to CLAUDE.md and memory
+- [x] Fixed `2ccmag.com` and `www.2ccmag.com` — were pointed at a long-abandoned Next.js/Prisma staff-login app (`2ccm` Vercel project, private GitHub repo `JohnBartlett/2ccm`, last deployed ~141 days ago, no reference anywhere in this repo's docs). Repointed both to the `ccm-editors` project so they now correctly serve the live editors dashboard, same as `editors.2ccmag.com`. The old `2ccm` project itself was left alone (still has a real database and user accounts) — only the domain assignment changed. [2026-08-18]
+- [x] Fixed the editors dashboard's "All-Time Comment Leaderboard" undercounting by ~96% — `tools/gmail_api.py`'s `search_messages()` had no pagination (capped at 20 results), so 1,294 of 1,314 actual vote/comment emails were silently dropped. Added pagination plus retry/skip resilience for the much larger per-run API call volume. `dev2`-only change (tools/), verified live via a manual dashboard rebuild. [2026-08-18]
