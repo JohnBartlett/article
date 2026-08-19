@@ -92,7 +92,7 @@
 
 ## TODO — SITE / ONGOING
 
-- [ ] GitHub token expired — update token to re-enable git push to remote [General]
+- [x] ~~GitHub token expired — update token to re-enable git push to remote~~ — re-checked 2026-08-19: `git remote -v` shows a plain `https://github.com/...` URL with no token embedded at all; `git fetch`/`git push --dry-run` both succeed cleanly (auth is coming from a credential helper, not an embedded PAT). Whatever prompted this note appears resolved or was specific to a different session's local credential state.
 - [ ] Susan Aurinko silk-roads article: verify brand spelling "LensFlair Editions" vs "lensflaireditions.com" [General]
 - [ ] `editions/2026-05-24/jonathan-hoenig-review.html` is **live on production**, titled "REVIEW DRAFT — Jonathan Hoenig Interview" with red review-banner styling — appears to be an internal writer-preview page that was never cleaned up (same pattern as the Jill Lowe preview folder this session). Unlinked from any nav, only reachable by direct URL. Decide: delete, or confirm it's meant to stay as an archive. [Site audit, 2026-08-08]
 - [ ] `editions/2026-05-24/jonathan-hoenig-scott-corrections.html` — also live on production, also missing from dev2. Title looks like a normal published article ("Jonathan Hoenig: Chicago, Capitalism, and the Art of Investing") — unclear if this is the canonical version or a superseded draft. Check whether a separate canonical `jonathan-hoenig` article already exists and which one should actually be live. [Site audit, 2026-08-08]
