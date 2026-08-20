@@ -1,6 +1,6 @@
 # August 23, 2026 Edition — Status
 
-_Updated: 2026-08-19 (session 2)_
+_Updated: 2026-08-20 (scheduled check-emails run)_
 
 8 articles. 2 Ready (Biba's Favorite Things, Unsung Gems), 2 In Progress (Bonnie McDonald, Murray Bay — cover photos placed, body text still pending), 4 Placeholder.
 
@@ -53,6 +53,8 @@ Nav chain order (hero → last):
 | `1a01a096111a368a` | Aug 19 | Judy | Cover photo for Murray Bay Aug 23 | Cover photo `2026-08-17 Sundowner (20).jpeg` noted; pending download |
 | `1a0105529e45e5fe` | Aug 17 | Judy | Annie is updating DateBook this week | No content yet; monitoring |
 | `1a016a313fee8bbb` | Aug 18 | FormSubmit | New Subscriber | RACHEL GUBMAN (rgubman@yahoo.com) subscribed via site form; no editorial action needed |
+| `1a01bbc91752a92a` | Aug 19 | Judy | Cover shot for Lincoln Park stroll | `image7.jpeg` already placed as hero in session 2; no further action |
+| `1a01be8d147df449` | Aug 19 | Judy | Cover photo for David Sweet article | `Croatia Hvar.jpeg` added as hero-figure; removed from inline Hvar section (rule #30); homepage card updated |
 
 ## Notes
 
