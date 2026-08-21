@@ -1,8 +1,8 @@
 # August 23, 2026 Edition — Status
 
-_Updated: 2026-08-21 (scheduled check-emails run)_
+_Updated: 2026-08-21 (session 2)_
 
-8 articles. 2 Ready (Biba's Favorite Things, Unsung Gems), 1 Text Only (Murray Bay — full text built, photos need downloading), 2 In Progress (Bonnie McDonald, Lincoln Park Stroll — cover photos placed, body text still pending), 3 Placeholder.
+8 articles. 3 Ready (Biba's Favorite Things, Unsung Gems, Murray Bay), 3 In Progress (Sig's Arts Club piece, Bonnie McDonald, Lincoln Park Stroll — all have cover photos, body text still pending), 2 Placeholder (Michael Anderson, Susan Aurinko — nothing received yet).
 
 ## Judy's lineup (`1a00a96d0b7338ae`, received 2026-08-16)
 
@@ -37,7 +37,7 @@ Nav chain order (hero → last):
 | susan-aurinko-aug23 | My Silk Roads | Susan Aurinko | Placeholder | — | Not yet received |
 | bonnie-mcdonald-landmarks | Bonnie McDonald and the Fight for Landmarks Illinois | Emma Muhleman | Placeholder | ✅ Cover placed | Cover photo `Frank Butterfield Photo #1.jpeg` (Bonnie at a Chicago Past Forward event) downloaded and set as hero. Body text not yet received. |
 | lincoln-park-stroll | A Stroll Through a Park | Michael Traynor | Placeholder | ✅ Cover placed | Text in hand via Annie (`1a0055c04cbdd9b1`), not yet extracted/built. Cover photo `image7.jpeg` (Lincoln Park equestrian statue at sunset, Judy's suggestion Aug 19) placed as hero and homepage card. |
-| murray-bay | Only in Murray Bay: Part 1 | Judy Carmack Bross | ✅ Full text built | ⚠️ Hero only (cover placed) | Full text built from Ana's layout email (`1a02040378a83241`, Aug 20). 11 body photos referenced by exact filename but not yet downloaded to server (no Gmail API credentials in this environment). Photo 9 (`unnamed-6.jpg`) was sent by Judy separately (`1a023f03bfc7a7c3`, Aug 21). Tandana Foundation link added per Judy's instruction (`1a023da65ddc9926`). Photos still needed: `1 Peter Taft.jpg`, `2 Reeve Schley.jpg`, `3 Philippe de Montebello.jpeg`, `4 Charles de Montebello.jpg`, `5 Harvey Sloane.jpg`, `6 Book Cover.jpeg`, `7 Reeve Schley Geary.jpg`, `8 Hope and Anna Taft.jpeg`, `unnamed-6.jpg`, `10 Lucinda and Dave.jpeg`, `11 Church Performance.jpeg`, `COVER Murray Bay.jpeg` (for homepage card). Run `python3 tools/extract_article_photos.py 2026-08-23 --contributor ana` when credentials available. |
+| murray-bay | Only in Murray Bay: Part 1 | Judy Carmack Bross | ✅ Full text built | ✅ 12/12 placed | **READY.** All 12 photos downloaded and placed (Ana's complete resend, `1a0247d910a79bb8`, Aug 21). Cover (`COVER Murray Bay.jpeg`) confirmed byte-identical to the earlier Sundowner cover photo — kept the original hero, deleted the duplicate. Photo 9 exists under two contributor filenames (`unnamed-6.jpg` from Judy's separate send, `9 Group Photo.jpg` from Ana's numbered set) — confirmed byte-identical, used Ana's original numbered filename to match the rest of the set. Tandana Foundation link added per Judy's instruction. **Open: "Part 1" in the title is genuine (Ana's own subject line), but no explicit scheduling agreement for Part 2/3 was found in the source emails — confirm timing with Judy before assuming a specific future edition, per the multi-part rule.** |
 | unsung-gems | The Pleasures of Discovering a New Country | David A. F. Sweet | ✅ Full text built | ✅ 3/3 placed | **READY.** Extracted from `Unsung Gems Croatia.docx`. Real title used (column name "Unsung Gems" moved to category label, matching site convention). All 3 photos placed with David's confirmed captions, one per city section (Zadar/Hvar/Dubrovnik). |
 | datebook | DateBook | Annie Delfosse | Copied forward, dated Aug 23 | — | Judy confirmed Aug 17 Annie is updating this week (`1a0105529e45e5fe`). No content received yet. |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward, unchanged | — | Still within August; coverage confirmed through Aug 31 |
