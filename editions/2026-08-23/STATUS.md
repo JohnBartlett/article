@@ -1,8 +1,8 @@
 # August 23, 2026 Edition — Status
 
-_Updated: 2026-08-20 (scheduled check-emails run)_
+_Updated: 2026-08-21 (scheduled check-emails run)_
 
-8 articles. 2 Ready (Biba's Favorite Things, Unsung Gems), 2 In Progress (Bonnie McDonald, Murray Bay — cover photos placed, body text still pending), 4 Placeholder.
+8 articles. 2 Ready (Biba's Favorite Things, Unsung Gems), 1 Text Only (Murray Bay — full text built, photos need downloading), 2 In Progress (Bonnie McDonald, Lincoln Park Stroll — cover photos placed, body text still pending), 3 Placeholder.
 
 ## Judy's lineup (`1a00a96d0b7338ae`, received 2026-08-16)
 
@@ -37,7 +37,7 @@ Nav chain order (hero → last):
 | susan-aurinko-aug23 | My Silk Roads | Susan Aurinko | Placeholder | — | Not yet received |
 | bonnie-mcdonald-landmarks | Bonnie McDonald and the Fight for Landmarks Illinois | Emma Muhleman | Placeholder | ✅ Cover placed | Cover photo `Frank Butterfield Photo #1.jpeg` (Bonnie at a Chicago Past Forward event) downloaded and set as hero. Body text not yet received. |
 | lincoln-park-stroll | A Stroll Through a Park | Michael Traynor | Placeholder | ✅ Cover placed | Text in hand via Annie (`1a0055c04cbdd9b1`), not yet extracted/built. Cover photo `image7.jpeg` (Lincoln Park equestrian statue at sunset, Judy's suggestion Aug 19) placed as hero and homepage card. |
-| murray-bay | Murray Bay | Judy Carmack Bross | Placeholder | ✅ Cover placed | Cover photo `2026-08-17 Sundowner (20).jpeg` downloaded and set as hero. Body text not yet received. |
+| murray-bay | Only in Murray Bay: Part 1 | Judy Carmack Bross | ✅ Full text built | ⚠️ Hero only (cover placed) | Full text built from Ana's layout email (`1a02040378a83241`, Aug 20). 11 body photos referenced by exact filename but not yet downloaded to server (no Gmail API credentials in this environment). Photo 9 (`unnamed-6.jpg`) was sent by Judy separately (`1a023f03bfc7a7c3`, Aug 21). Tandana Foundation link added per Judy's instruction (`1a023da65ddc9926`). Photos still needed: `1 Peter Taft.jpg`, `2 Reeve Schley.jpg`, `3 Philippe de Montebello.jpeg`, `4 Charles de Montebello.jpg`, `5 Harvey Sloane.jpg`, `6 Book Cover.jpeg`, `7 Reeve Schley Geary.jpg`, `8 Hope and Anna Taft.jpeg`, `unnamed-6.jpg`, `10 Lucinda and Dave.jpeg`, `11 Church Performance.jpeg`, `COVER Murray Bay.jpeg` (for homepage card). Run `python3 tools/extract_article_photos.py 2026-08-23 --contributor ana` when credentials available. |
 | unsung-gems | The Pleasures of Discovering a New Country | David A. F. Sweet | ✅ Full text built | ✅ 3/3 placed | **READY.** Extracted from `Unsung Gems Croatia.docx`. Real title used (column name "Unsung Gems" moved to category label, matching site convention). All 3 photos placed with David's confirmed captions, one per city section (Zadar/Hvar/Dubrovnik). |
 | datebook | DateBook | Annie Delfosse | Copied forward, dated Aug 23 | — | Judy confirmed Aug 17 Annie is updating this week (`1a0105529e45e5fe`). No content received yet. |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward, unchanged | — | Still within August; coverage confirmed through Aug 31 |
@@ -55,6 +55,11 @@ Nav chain order (hero → last):
 | `1a016a313fee8bbb` | Aug 18 | FormSubmit | New Subscriber | RACHEL GUBMAN (rgubman@yahoo.com) subscribed via site form; no editorial action needed |
 | `1a01bbc91752a92a` | Aug 19 | Judy | Cover shot for Lincoln Park stroll | `image7.jpeg` already placed as hero in session 2; no further action |
 | `1a01be8d147df449` | Aug 19 | Judy | Cover photo for David Sweet article | `Croatia Hvar.jpeg` added as hero-figure; removed from inline Hvar section (rule #30); homepage card updated |
+| `1a02040378a83241` | Aug 20 | Ana Baca | Only in Murray Bay: Part 1 - August 23, 2026 | Full article text and 11 photos. Text built into murray-bay/index.html. Photos not yet downloaded (no credentials). |
+| `1a02042819474b61` | Aug 20 | Ana Baca | Judy's Murray Bay Article | Ana noting Photo 9 (Bob, Anna, John, Hope) was missing from layout email |
+| `1a023da65ddc9926` | Aug 21 | Judy | A link to add to the Murray Bay article at the end | Tandana Foundation link added: tandanafoundation.org |
+| `1a023f03bfc7a7c3` | Aug 21 | Judy | Ana, here is the photo of Bob, Anna, John and Hope | Photo 9 for Murray Bay — `unnamed-6.jpg`. Needs downloading. Caption: "Bob Taft, Anna Taft, John Tsukayama, and Hope Taft at Tandana's Ecuador headquarters in Panecillo, Ecuador." |
+| `1a02449a163c68dc` | Aug 21 | Judy | Checking in | Personal note about payment. No site action needed. |
 
 ## Notes
 
