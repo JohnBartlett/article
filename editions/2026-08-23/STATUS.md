@@ -45,7 +45,7 @@ Nav chain order (hero → last):
 1. ~~Two missing `about.html` bio anchors~~ — resolved Aug 22: added minimal cards for both. Michael Traynor's is a bare name + generic "Contributing Writer" role (no other info available — nothing to source it from). Ronald Clewer's role ("Board Chair, Landmarks Illinois") was sourced directly from his own bylined article.
 2. **Murray Bay "Part 1"** — genuine per Ana's subject line, but no confirmed Part 2/3 schedule found. Worth a quick confirmation with Judy so a future edition doesn't get built without it, or so this one doesn't imply a promise that isn't kept.
 3. **DateBook** — Annie confirmed Aug 17 she'd update it "this week" but nothing has arrived as of Aug 22, one day before publish.
-4. **Susan Aurinko** — the only remaining fully-blank slot. No text, no photos, no contact from her or Emma about it yet.
+4. **Susan Aurinko — status uncertain, needs your confirmation.** Emma replied Aug 22: Susan actually sent her the article and photos that morning, so it exists — but Emma believes you two may have already agreed to push it to next week (Aug 30) since this edition already has another travel piece. She explicitly asked you to confirm. Not building or dropping this slot until that's settled, either way.
 
 ## Notes
 
