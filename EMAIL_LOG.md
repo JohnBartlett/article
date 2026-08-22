@@ -569,6 +569,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 22 | sigalina | Text | `1a029427a5e395d0` | 🔁 | Full article text, "Past Present and Future Steps" — real title, not the working title used for the slug. Built into `sig-arts-club-garden`, verified READY. |
 | Aug 22 | sigalina | Image and Credit 1-5 of 5 | `1a02963fc8c1254d`, `1a029677f111a3bd`, `1a0296d64bed18b2`, `1a02970b189ceb5d`, `1a0297548a44827e` | 🔁 | 5 photos with credits. #1 arrived as `.TIFF` (converted to `.jpg`, browsers can't render TIFF); #5 confirmed byte-identical to the already-placed hero/blast photo, not duplicated. All placed with her given credits as captions. |
 | Aug 22 | sigalina | 1 spelling error | `1a02982fd606e4e3` | ✅ | "functionsl" → "functional" — corrected in the built article text. |
+| Aug 22 | → Judy | Two quick things for August 23 | — | 📤 | Sent: asked for short bios/headshots for Michael Traynor and Ronald Clewer (both now have minimal placeholder entries on the site), and asked whether Murray Bay's "Part 1" has a confirmed Part 2/3 schedule. |
 
 **Decisions needed before this edition can be built:**
 1. ~~Reconcile the Aug 16 edition build against Judy's updated Aug 14 lineup~~ — done same day: hero moved to Vanja Malloy, Bob Glaze's real title/content built, Bonnie McDonald dropped, Elizabeth Richter added as a placeholder slot.
