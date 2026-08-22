@@ -2,7 +2,7 @@
 
 _Updated: 2026-08-22 (session 3)_
 
-**7 of 7 lineup articles Ready.** Susan Aurinko was confirmed by Judy to be held for Aug 30 (not this edition) and has been fully removed — folder deleted, nav chain rewired, homepage card removed. One unresolved issue: Michael Anderson's photos are still too low-resolution; a "fix" attempt from Judy did not actually solve it (see below).
+**7 of 7 lineup articles Ready.** Susan Aurinko was confirmed by Judy to be held for Aug 30 (not this edition) and has been fully removed — folder deleted, nav chain rewired, homepage card removed. Michael Anderson's photo resolution issue is mostly resolved (7 of 11 upgraded to full-res via Libbet; 4 remain small — she genuinely doesn't have better originals for those).
 
 ## Judy's lineup (`1a00a96d0b7338ae`, received 2026-08-16)
 
@@ -28,7 +28,7 @@ Nav chain order (hero → last):
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| michael-anderson | Michael Anderson: The New Voice at the Chicago History Museum | Elizabeth Dunlop Richter | ✅ Full text built | ⚠️ 11/11 placed, but low-res | **Ready but photo quality unresolved.** All 11 original PNGs are tiny (300-600px), causing visible softness at article width. Asked Annie for full-resolution originals (Aug 22); Judy forwarded to Libbet, who sent back a "Michael Anderson Profile.pdf" as "the original" — but its embedded images are 230-475px, essentially the same size or smaller. **This did not solve the problem** — likely the same Word doc just exported to PDF, not fresh camera-roll photos. Still waiting on genuine originals. |
+| michael-anderson | Michael Anderson: The New Voice at the Chicago History Museum | Elizabeth Dunlop Richter | ✅ Full text built | ✅ 7/11 upgraded to full-res, 4/11 still small | **READY, photo quality mostly resolved.** Libbet's PDF attempt (Aug 22 afternoon) didn't help, but her follow-up batch of 11 individual photo emails ("Sent as many as I can find") mostly did. Replaced 7 of 11 with genuine full-resolution originals (headshot, examining-the-book, podium, both dancer photos, Alaska mountain, Anderson-and-Caruso) — 3 needed EXIF rotation baked in, all converted PNG→JPG. Libbet explicitly couldn't find originals for 4: Anderson speaking on stage, Lincoln honor roll book, Cafaro handshake, and the bicycle photo — these remain at their original small size (she confirmed "I didn't take any of them myself" and sent duplicates of what she had). Note: the "Alaska trip" photo caption was softened from "...in Alaska" to just "Michael Anderson with Andrew Caruso" since the replacement photo is clearly not set in Alaska (garden setting) — Libbet offered it as a fallback for a store photo she couldn't locate, not a confirmed match. |
 | biba-favorites-aug23 | Biba's Favorite Things: Mia Cohen | Biba Roesch | ✅ Full text built | ✅ 5/5 placed | **READY.** Photo 4 is explicitly the cover per Emma's own text ("Photo 4- cover photo") — correctly hero-only, not duplicated inline. Photo 5 (`IMG_2724.JPG`) had its EXIF rotation baked in (was sideways). |
 | sig-arts-club-garden | Past Present and Future Steps | Sigalit Zetouni | ✅ Full text built | ✅ 5/5 placed | **READY.** Real title used (subtitle: "The Arts Club Garden Project"). One photo arrived as `.TIFF` — converted to `.jpg`. |
 | bonnie-mcdonald-landmarks | Bonnie McDonald: Changing What—and Who—Preservation Is For | Ronald Clewer | ✅ Full text built | ✅ 9/9 placed | **READY.** Byline is Ronald Clewer, not Emma (she was only forwarding). |
@@ -45,8 +45,7 @@ Nav chain order (hero → last):
 
 ## Open items requiring your input
 
-1. **Michael Anderson's photos are still low-resolution.** Judy's PDF attempt didn't fix it (see above) — someone (Annie, Libbet, or Michael Anderson's team directly) needs to send the actual full-size originals, not a Word/PDF export of them.
-2. **DateBook** — Annie confirmed Aug 17 she'd update it "this week" but nothing has arrived as of Aug 22, one day before publish.
+1. **DateBook** — Annie confirmed Aug 17 she'd update it "this week" but nothing has arrived as of Aug 22, one day before publish.
 
 ## Notes
 
