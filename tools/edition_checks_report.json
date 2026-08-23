@@ -1,24 +1,25 @@
 {
   "dark_mode_added": [],
   "nav_css_added": [],
-  "popup_articles_added": [],
+  "popup_articles_added": [
+    "adrian-naves: The Lincoln and Douglas Debates (August 16, 2026)",
+    "biba-roesch: Biba's Favorite Things: Mia Cohen (August 23, 2026)",
+    "bob-glaze: My Top Recent Theater Experiences in Chicago (August 16, 2026)",
+    "cheryl-anderson: Jardin Botanique Val Rameh (August 16, 2026)",
+    "david-sweet: Venice Energizes Family That Was Left Holding the Bag (August 16, 2026)",
+    "david-sweet: The Pleasures of Discovering a New Country (August 23, 2026)",
+    "elizabeth-dunlop-richter: The Olympic Peninsula: Where are the Vampires? (August 16, 2026)",
+    "elizabeth-dunlop-richter: Michael Anderson: The New Voice at the Chicago History Museum (August 23, 2026)",
+    "judy-carmack-bross: Vanja Malloy: The Unexpected at the Smart (August 16, 2026)",
+    "judy-carmack-bross: Only in Murray Bay: Part 1 (August 23, 2026)",
+    "sigalit-zetouni: Expressions in 3-D (August 16, 2026)",
+    "sigalit-zetouni: Past Present and Future Steps (August 23, 2026)"
+  ],
   "new_authors_needing_bios": [
-    {
-      "id": "emma-muhleman",
-      "articles": [
-        "May 10, 2026: An Enchanted Evening: The Newberry Library Awards Dinner"
-      ]
-    },
     {
       "id": "mary-grant",
       "articles": [
         "May 24, 2026: Stitching a Community Together: The Story Behind Kenilworth&#8217;s Centennial Needlepoint"
-      ]
-    },
-    {
-      "id": "william-tyre",
-      "articles": [
-        "May 17, 2026: Glessner House Celebrates 60 Years"
       ]
     }
   ],
