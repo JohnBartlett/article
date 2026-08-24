@@ -598,3 +598,16 @@ Track emails that have been processed, are pending action, or need re-addressing
 13. **Reply owed from Judy** on the comment-form info-note and forward-to-author checkbox proposal (`1a00fb907d895e1d` thread) — sent Aug 17, awaiting her decision before building either.
 14. ~~Reply owed from Annie on Michael Anderson's photos~~ — **RESOLVED Aug 22.** Libbet (not Annie) ultimately supplied real full-resolution originals for 7 of 11 photos; the other 4 she confirmed she doesn't have better copies of. Judy's Aug 23 "GO ahead and publish" message explicitly acknowledged the remaining photo limitations and approved shipping anyway.
 15. ~~Susan Aurinko status uncertain~~ — **RESOLVED Aug 22.** Judy confirmed held for Aug 30. Removed from Aug 23 edition entirely; logged in `future-articles.html` as Held.
+
+## August 24 — Post-Publish Follow-up
+
+| Aug 23 | Judy | How wonderful the issue looks! | `1a02dbc7efe986b6` | ✅ | Thank-you note. No action. |
+| Aug 23 | Annie Delfosse | UPDATED DateBook | `1a02dfc7540cb0fa` | ✅ | Full refreshed events listing, Aug 28 through December. A parallel session had already applied this (commit `350401ec`, "18 new events") by the time this session got to it — independently verified the two builds cover the same 38 events in the same correct chronological order, so kept the already-pushed version rather than duplicating the work. |
+| Aug 23 | Judy | What a great issue! Many, many thanks | `1a02e630509ec117` | ✅ | Thank-you to the whole team (Ana, Annie, Emma, John). No action. |
+| Aug 23 | Judy | Re: Classic Chicago Magazine — August 23 Edition Is Live | `1a030969e2858ebc` | ✅ | "Saw that Annie sent some today, should we add in today? ... Do whatever you think is best." Referring to the DateBook update above — applied it same-day per her explicit discretion. |
+| Aug 23 | Suzette Bross (fwd) / sigalina | Fwd: Classic Chicago Magazine Presents: August 23rd Edition | `1a03110a8a9184e0` | ⬛ | Reader forward + "Nice article!" / Sig's "Thank you!" reply. Positive feedback, no action. |
+| Aug 24 | Judy (fwd Gloria Groom) | Fwd: So great to see this article on former Joffrey dancer | `1a033143e2f5a367` | ✅ | Gloria Groom (Art Institute) caught a repeated sentence in Libbet's Michael Anderson piece — "The Joffrey moved to Chicago in 1995..." appeared at the end of one paragraph and the start of the next. Removed the duplicate from `michael-anderson/index.html`. |
+| Aug 24 | Judy | Also included for August 30 | `1a03315f72b0a964` | 🔁 | New lineup addition for the Aug 30 edition: Philip Vidal's September "About the Town," via Ana Baca. **Aug 30 prep hasn't started — noting only, not building.** Triggers `/prep-edition` when that session begins. |
+
+**Decisions needed:**
+16. **Aug 30 lineup note** — Philip Vidal's September About the Town (via Ana) confirmed for Aug 30, on top of the already-known Murray Bay Part 2 and (per Judy Aug 22) Susan Aurinko's held My Silk Roads piece. Full lineup not yet confirmed as complete — check for a fuller list when `/prep-edition` runs for Aug 30.
