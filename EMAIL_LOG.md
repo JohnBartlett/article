@@ -613,3 +613,13 @@ Track emails that have been processed, are pending action, or need re-addressing
 
 **Decisions needed:**
 16. **Aug 30 lineup note** — Philip Vidal's September About the Town (via Ana) confirmed for Aug 30, on top of the already-known Murray Bay Part 2 and (per Judy Aug 22) Susan Aurinko's held My Silk Roads piece. Full lineup not yet confirmed as complete — check for a fuller list when `/prep-edition` runs for Aug 30.
+
+## August 25
+
+| Aug 23 | FormSubmit | New Subscriber | `1a02f2fae26e5227` | ⬛ | Debbie Siegel (`debpsych99@gmail.com`) subscribed from chicagoclassicmag.com. No action needed. |
+| Aug 25 | Judy | Re: What a great issue! Many, many thanks | `1a03867ed50ac1c4` | ✅ | **Griffin Museum delayed to September 6.** Sydney Armstrong's article removed from Aug 30 lineup; Ana's Aug 30 slot is now Philip Vidal + Murray Bay Part 2 only. Full Aug 30 lineup: 7 articles (Chicago Innovation — Emma; Murray Bay Part 2 — Ana; Soma Roy Feature — Annie; David Sweet — Judy→John; Susan Aurinko Heath retreat — Emma; Young dancer's perspective — Annie; Philip Vidal About the Town — Ana). |
+| Aug 25 | Judy | This photo of Maria Huertas could be the cover photo of the Chicago Innovation article | `1a0387104eaf3717` | 🔁 | Photo attachment: "Women's Mentoring Co-op Mentee Monica Huertas.jpeg" — suggested as cover for the Aug 30 Chicago Innovation article (Emma's). **Note: subject says "Maria" but filename says "Monica Huertas" — confirm correct name before using.** Aug 30 article folder not yet created; photo saved in Gmail; download and place when `/new-edition` runs for Aug 30. |
+
+**Decisions needed:**
+17. **Aug 30 Griffin Museum removed** — Sydney Armstrong's article moved to September 6. The Aug 30 lineup is now confirmed at 7 articles (see Aug 25 entry above). Philip Vidal + Murray Bay (Ana); Chicago Innovation + Susan Aurinko Heath retreat (Emma); Soma Roy + young dancer (Annie); David Sweet + Sig Garfield Park (John-direct).
+18. **Huertas photo name discrepancy** — Judy's email says "Maria Huertas" but the attachment filename is "Monica Huertas." Confirm with Judy or Emma which name is correct before using in an article byline or caption.
