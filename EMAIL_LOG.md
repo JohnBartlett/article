@@ -612,14 +612,43 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 24 | Marcy Carmack | Get together | `1a033aaa5b047c71` | 🔁 | Personal note (not editorial) — Marcy suggests a get-together for all Classic Chicago writers. Not yet replied to; asked John whether/how to respond. |
 
 **Decisions needed:**
-16. **Aug 30 lineup note** — Philip Vidal's September About the Town (via Ana) confirmed for Aug 30, on top of the already-known Murray Bay Part 2 and (per Judy Aug 22) Susan Aurinko's held My Silk Roads piece. Full lineup not yet confirmed as complete — check for a fuller list when `/prep-edition` runs for Aug 30.
+16. ~~Aug 30 lineup note~~ — **RESOLVED.** Full lineup confirmed by Judy Aug 23/25; most articles now received and a parallel session has already started building `editions/2026-08-30/`. See August 30 Edition section below.
 
-## August 25
+## August 30 Edition (prep in progress — `editions/2026-08-30/` exists with `sporting-life` complete, `murray-bay-part-2` and `about-the-town` text-only stubs, `datebook`/`daily-star-august` copied forward; no STATUS.md yet, nav chain and homepage not yet wired)
 
+**Confirmed lineup (Judy, Aug 23, `1a02e630509ec117`; Griffin Museum removed Aug 25 per `1a03867ed50ac1c4`):**
+1. Chicago Innovation — Emma — text not yet received; cover photo sent by Judy separately (Huertas, see below)
+2. Murray Bay, Part 2 — Ana/Judy — **RECEIVED**, text-only stub built (`murray-bay-part-2/`); photos (27) and cover not yet extracted; cover choice decided (see below)
+3. Soma Roy Feature — Annie — not yet received
+4. David Sweet's "The Sporting Life" (Olympia) — **COMPLETE**, full text + 3 photos built and placed
+5. Susan Aurinko's Heath retreat story — Emma — not yet received (her My Silk Roads piece held from Aug 23 per Aug 22 log)
+6. Young dancer's perspective, by Judy — Annie — not yet received
+7. ~~Sydney Armstrong's Griffin Museum — Ana~~ — **DELAYED to Sept 6**. Removed from Aug 30 lineup.
+8. Sig's Garfield Park Conservatory ("Pigments!") article — **PARTIAL**: only "blast" (promotional teaser) text + 1 credited image received so far, not full article text — confirm with Sig whether full article is still coming
+
+**Also added (Judy, Aug 24, `1a03315f72b0a964`):**
+9. Philip Vidal's "About the Town in September" (via Ana) — **RECEIVED**, text-only stub built (`about-the-town/`); photos 1-8+10 not yet extracted (photo 9 is Google Drive-only, not attached)
+
+| Date | From | Subject / Summary | Msg ID | Status | Notes |
+|------|------|-------------------|--------|--------|-------|
 | Aug 23 | FormSubmit | New Subscriber | `1a02f2fae26e5227` | ⬛ | Debbie Siegel (`debpsych99@gmail.com`) subscribed from chicagoclassicmag.com. No action needed. |
-| Aug 25 | Judy | Re: What a great issue! Many, many thanks | `1a03867ed50ac1c4` | ✅ | **Griffin Museum delayed to September 6.** Sydney Armstrong's article removed from Aug 30 lineup; Ana's Aug 30 slot is now Philip Vidal + Murray Bay Part 2 only. Full Aug 30 lineup: 7 articles (Chicago Innovation — Emma; Murray Bay Part 2 — Ana; Soma Roy Feature — Annie; David Sweet — Judy→John; Susan Aurinko Heath retreat — Emma; Young dancer's perspective — Annie; Philip Vidal About the Town — Ana). |
-| Aug 25 | Judy | This photo of Maria Huertas could be the cover photo of the Chicago Innovation article | `1a0387104eaf3717` | 🔁 | Photo attachment: "Women's Mentoring Co-op Mentee Monica Huertas.jpeg" — suggested as cover for the Aug 30 Chicago Innovation article (Emma's). **Note: subject says "Maria" but filename says "Monica Huertas" — confirm correct name before using.** Aug 30 article folder not yet created; photo saved in Gmail; download and place when `/new-edition` runs for Aug 30. |
+| Aug 25 | Judy | Re: What a great issue! Many, many thanks | `1a03867ed50ac1c4` | ✅ | Griffin Museum (Sydney Armstrong, via Ana) delayed to Sept 6 — removed from Aug 30 lineup. |
+| Aug 25 | Judy | This photo of Maria Huertas could be the cover photo of the Chicago Innovation article | `1a0387104eaf3717` | ⏳ | Cover photo attached (`Women's Mentoring Co-op Mentee Monica Huertas.jpeg`) for Emma's not-yet-received Chicago Innovation article. **Subject says "Maria," filename says "Monica" — confirm correct name before use.** |
+| Aug 26 | Ana Baca | About the Town in September - August 30, 2026 | `1a03e7058a67ec91` | 🔁 | Full text by Philip Vidal + cover (`COVER - About the Town.jpeg`) + 9 numbered photos with captions, all in body. Text-only stub already built; photos still need extraction (photo 9 missing — Drive only). |
+| Aug 26 | sigalina | Blast Image | `1a03f9c91401cb2f` | ⏳ | `IMG_7887.jpeg` (Garfield Park Conservatory) with credit "Photo: S. Zetouni" — for a promotional "blast," not necessarily the article's own photo. Full article text for the Garfield Park Conservatory piece not yet confirmed received. |
+| Aug 26 | Judy | Cover Photo for the Murray Bay Part 2 article coming tonight | `1a03fa09319d42d5` | ✅ | Superseded same evening by Ana's full article + the Aug 28 cover-photo decision thread below. |
+| Aug 26 | sigalina | Blast text | `1a04037349a36bcb` | ⏳ | Promotional teaser text for the Garfield Park Conservatory "Pigments!" piece. Same open question as the blast image above — confirm whether a full article follows. |
+| Aug 26 | Ana Baca | Only in Murray Bay: Part II - August 30, 2026 | `1a0418ce54288589` | 🔁 | Full article text by Judy Carmack Bross + 27 numbered photos with side-by-side placement instructions and captions, all specified in body. Text-only stub already built; photos and cover still need extraction (cover choice resolved in the Aug 28 thread below). |
+| Aug 27 | Judy | Fwd: The Sporting Life for Sunday, Aug. 30 (David Sweet) | `1a04272fa3e28430` | ✅ | Forwarded from David Sweet: full Olympia column text (.docx) + 3 photos, captions specified in order. Built complete — `sporting-life/` article is done. |
+| Aug 27 | Judy | Re: Passing along | `1a0488296b67453d` | ⬛ | Personal thread (Judy thanking John for sharing a Yayoi Kusama tribute Instagram reel). Also asks to schedule a call Mon/Tue/this-week about payment and catching up — **not yet scheduled, flag for John.** |
+| Aug 27 | sigalina | Re: Passing along | `1a04367b32b2c1ed` | ⬛ | Personal reply in the same Kusama thread (Sig shares a personal memory + 2 photos). No editorial action. |
+| Aug 28 | Judy (via icloud) | Which do you like better for the cover for the Murray Bay Part 2 story? | `1a047c7f9e33637b` → `1a0480f32c908143` → `1a048cb154fad832` | ✅ | **Resolved thread** (Judy emailed from `judycbross@icloud.com`, not her usual aol address). 3 candidate photos (`IMG_1149.jpg`, `IMG_1776.jpg`, `IMG_1780.jpg`); John picked the middle "just the house" shot as cover — Judy confirmed "Perfect." Photo #2 (Auberge Romance team) to be placed mid-article with caption "The Auberge team: Nadine, Louise and Patricia Bellay and Roland Bouchard" where the article discusses the Auberge. Decision recorded here for when Murray Bay Part 2's photos are placed. |
 
-**Decisions needed:**
-17. **Aug 30 Griffin Museum removed** — Sydney Armstrong's article moved to September 6. The Aug 30 lineup is now confirmed at 7 articles (see Aug 25 entry above). Philip Vidal + Murray Bay (Ana); Chicago Innovation + Susan Aurinko Heath retreat (Emma); Soma Roy + young dancer (Annie); David Sweet + Sig Garfield Park (John-direct).
-18. **Huertas photo name discrepancy** — Judy's email says "Maria Huertas" but the attachment filename is "Monica Huertas." Confirm with Judy or Emma which name is correct before using in an article byline or caption.
+**Decisions needed before Aug 30 can be staged:**
+17. **Huertas photo name discrepancy** — Judy's email says "Maria Huertas" but the attachment filename is "Monica Huertas." Confirm with Judy or Emma before using in a byline or caption.
+18. Confirm with Sig whether the Garfield Park Conservatory piece has full article text coming, separate from the "blast" teaser text/image.
+19. Emma's Chicago Innovation article text not yet received (cover photo is in hand).
+20. Annie's Soma Roy Feature and Judy's "young dancer's perspective" pieces not yet received.
+21. Schedule Judy's requested call (Mon/Tue or sooner, before she leaves for a 2.5-day drive Wednesday) re: payment/catch-up — ask John.
+22. Extract and place photos for `murray-bay-part-2` (27 photos + cover, per the Aug 28 decision above) and `about-the-town` (9 of 10 photos; photo 9 needs a Google Drive download).
+23. `future-articles.html` still says "no folders built yet" for Aug 30 — stale, needs updating to match actual build state next time that file is touched.
