@@ -614,7 +614,9 @@ Track emails that have been processed, are pending action, or need re-addressing
 **Decisions needed:**
 16. ~~Aug 30 lineup note~~ — **RESOLVED.** Full lineup confirmed by Judy Aug 23/25; most articles now received and a parallel session has already started building `editions/2026-08-30/`. See August 30 Edition section below.
 
-## August 30 Edition (prep in progress — `editions/2026-08-30/` exists with `sporting-life` complete, `murray-bay-part-2` and `about-the-town` text-only stubs, `datebook`/`daily-star-august` copied forward; no STATUS.md yet, nav chain and homepage not yet wired)
+## August 30 Edition (`/prep-edition` run 2026-08-28 — full 8-article nav chain, homepage, and `STATUS.md` wired; `murray-bay-part-2`, `sporting-life`, `about-the-town` Ready; `chicago-innovation`, `soma-roy`, `silk-roads-health-retreat`, `young-dancers-perspective`, `garfield-park-pigments` are placeholder stubs)
+
+| Aug 28 | (site work, no new email) | Ran `/prep-edition` for Aug 30: built stub folders + nav chain for the 4 not-yet-received lineup articles plus Sig's Garfield Park piece, wired all 8 articles into the homepage hero/card grid and keyboard nav, moved Aug 23 to Past Editions (dropped Jul 26), created `editions/2026-08-30/STATUS.md`, corrected a stale `future-articles.html` note that had wrongly claimed Susan Aurinko's article was "in hand" (Gmail confirms it was never forwarded by Emma). Deployed to `article-dev2.vercel.app`. | — | ✅ | Bylines for Chicago Innovation (Emma Muhleman) and Soma Roy Feature (Annie Delfosse) are tentative — Judy's lineup names only the coordinator, same pattern as the Susan Aurinko row; confirm once real content arrives. |
 
 **Confirmed lineup (Judy, Aug 23, `1a02e630509ec117`; Griffin Museum removed Aug 25 per `1a03867ed50ac1c4`):**
 1. Chicago Innovation — Emma — text not yet received; cover photo sent by Judy separately (Huertas, see below)
@@ -650,7 +652,9 @@ Track emails that have been processed, are pending action, or need re-addressing
 19. Emma's Chicago Innovation article text not yet received (cover photo is in hand).
 20. Annie's Soma Roy Feature and Judy's "young dancer's perspective" pieces not yet received.
 21. Schedule Judy's requested call (Mon/Tue or sooner, before she leaves for a 2.5-day drive Wednesday) re: payment/catch-up — ask John.
-22. ~~Extract and place photos for `murray-bay-part-2` and `about-the-town`~~ — **DONE.** Both articles now verify READY (content + photos). `murray-bay-part-2`: 26 numbered body photos + cover (`IMG_1776.jpg`) + team photo (`IMG_1149.jpg`) placed; `.heic` file converted to `.jpeg`. `about-the-town`: cover + 9 of 10 photos placed (photo 9 "Trisha Brown Dance Company" still needs a Google Drive download — not attached to any email). Nav chain and homepage still not wired — waiting on the rest of the Aug 30 lineup.
-23. `future-articles.html` still says "no folders built yet" for Aug 30 — stale, needs updating to match actual build state next time that file is touched.
+22. ~~Extract and place photos for `murray-bay-part-2` and `about-the-town`~~ — **DONE.** Both articles now verify READY (content + photos). `murray-bay-part-2`: 26 numbered body photos + cover (`IMG_1776.jpg`) + team photo (`IMG_1149.jpg`) placed; `.heic` file converted to `.jpeg`. `about-the-town`: cover + 9 of 10 photos placed (photo 9 "Trisha Brown Dance Company" still needs a Google Drive download — not attached to any email).
+   ~~Nav chain and homepage still not wired~~ — **DONE Aug 28.** Full 8-article nav chain and homepage wired via `/prep-edition`; see the Aug 28 entry above.
+23. ~~`future-articles.html` still says "no folders built yet" for Aug 30~~ — **DONE Aug 28**, updated to match actual build state (see Aug 28 entry above).
 24. **Roland vs. Raymond Bouchard** — confirm with Judy which name is correct for Patricia's husband before Murray Bay Part 2 is published (see Aug 28 entry above).
 25. **`IMG_1780.jpg`** from the Aug 28 cover-photo thread appears to be an unrelated personal/family photo, not part of the Murray Bay story — left downloaded but unused in `murray-bay-part-2/`; flag to Judy in case she meant to send something else.
+26. **Chicago Innovation and Soma Roy Feature bylines are tentative** (Emma Muhleman and Annie Delfosse respectively) — Judy's Aug 23 lineup email names only the coordinator for these two slots, not necessarily the author. Confirm the real byline once each article's content arrives.
