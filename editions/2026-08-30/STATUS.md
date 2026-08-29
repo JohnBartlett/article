@@ -1,8 +1,8 @@
 # August 30, 2026 Edition — Status
 
-_Updated: 2026-08-29_
+_Updated: 2026-08-29 (auto-check)_
 
-Nav chain, homepage, and folder skeleton wired for the full 8-article lineup. Chicago Innovation and Susan Aurinko's health retreat piece both arrived with full text and are now fully built — 5 of 8 articles are Ready; 3 remain placeholder stubs awaiting content.
+Nav chain, homepage, and folder skeleton wired for the full 8-article lineup. Chicago Innovation and Susan Aurinko's health retreat piece both arrived with full text — 5 of 8 articles are Ready; Soma Roy is now Text Only (text built, 15 photos pending download); 2 remain placeholder stubs awaiting content.
 
 ## Judy's official lineup (`1a02e630509ec117`, received 2026-08-23)
 
@@ -33,7 +33,7 @@ Nav chain order (hero → last):
 |------|-------|--------|------|--------|-------|
 | chicago-innovation | Rallying Chicago's Next Innovators | Judy Carmack Bross | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b5981d924552`) — full text + 11 Gmail attachments. Byline is Judy Carmack Bross, not Emma (she was only forwarding) — confirms the tentative-byline guess was wrong. Also resolves the Huertas name discrepancy: article's own caption reads "Monica Huertas," confirming the filename was correct and Judy's earlier email ("Maria") was the error. |
 | murray-bay-part-2 | Only in Murray Bay: Part II | Judy Carmack Bross | ✅ Full text built | ✅ 29/29 placed | **READY.** Cover (`IMG_1776.jpg`) and team photo (`IMG_1149.jpg`) resolved via Judy's Aug 28 cover-photo thread. Name discrepancy in team-photo caption ("Roland" vs. article body's "Raymond" Bouchard) still needs Judy's confirmation before publish. |
-| soma-roy | Soma Roy Feature | Annie Delfosse (tentative) | Placeholder | — | Content not yet received. |
+| soma-roy | Hyperlink, a connection | Soma Roy | ✅ Full text built | ⚠️ 15 photos pending download | **TEXT ONLY.** Article + 15 images received from Soma Roy via Judy's forwarded email (`1a04cf16737dffc3`, Aug 29). Full HTML built with verbatim text and correct image filenames. Images must be downloaded from Gmail attachment IDs in that message — MCP cannot download binary attachments. Byline confirmed as Soma Roy (not Annie, who was coordinator). Note: "Museum Reitberg" (vs "Rietberg") in para 8 — verbatim typo from contributor, flagged for Judy. |
 | sporting-life | Birthplace of the Olympics Reveals Naked Truth | David A. F. Sweet | ✅ Full text built | ✅ 4/4 placed | **READY.** Forwarded by Judy from David Sweet, Olympia column. |
 | silk-roads-health-retreat | Health in the Austrian Alps: Dispatch from MAYRLIFE | Susan Aurinko | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b2da5e5e6b2c`) — full text. Photos arrived as Google Drive links (not Gmail attachments); 10 of 11 downloaded via the Drive connector, the 11th (`photo 9.JPG`, "A Walk Around the Lake") failed repeatedly with a connector session-expired error specific to that one file — John downloaded it manually from the Drive link and it was placed from `~/Downloads`. |
 | young-dancers-perspective | A Young Dancer's Perspective | Judy Carmack Bross (tentative) | Placeholder | — | Content not yet received. |
@@ -44,10 +44,11 @@ Nav chain order (hero → last):
 
 ## Open items requiring your input
 
-1. **Soma Roy Feature byline is still tentative** (Annie Delfosse) — Judy's lineup lists only "Annie" for this slot, same pattern that turned out wrong for Chicago Innovation (listed as "Emma," actual byline was Judy). Confirm the real byline once content arrives — don't assume Annie is the author just because she's the coordinator.
-2. **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy, carried over from Aug 28 log entry, still unresolved.
-3. **Garfield Park Conservatory** — confirm with Sig whether full article text is still coming, separate from the promotional blast already received.
-4. **About the Town's slot** — placed last per its traditional end-of-month position since it wasn't in Judy's numbered lineup; flag if she intended a different placement.
+1. **Soma Roy — 15 photos need downloading** — Article HTML is fully built with correct filenames. Images must be downloaded from Gmail message `1a04cf16737dffc3` (Judy's forwarded email from Soma Roy, Aug 29). MCP cannot download binary attachments; use download_attachments.py or Gmail web UI. Original filenames: Image 1_Cover Image.jpg, Image 2_Giacometti.jpg, Image 3_Guhyamanjuvajra.jpg, Image 4_Indian miniature paintings.jpg, Image 5_Buddha.jpeg, Image 6_female attendant.jpg, Image 7_sugar.jpeg, Image 8.jpeg, Image 9.png, Image 10_Triton.jpg, Image 11_Art Institute.jpg, Image 12_Huber 2.jpg, Image 13_Vernon.jpeg, Image 14.jpeg, Image 15_Roulet jpeg.jpeg.
+2. **Soma Roy — possible typo** — Article para 8 uses "Museum Reitberg" (vs "Rietberg" used everywhere else). Verbatim text preserved; flag to Judy whether to correct.
+3. **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy, carried over from Aug 28 log entry, still unresolved.
+4. **Garfield Park Conservatory** — confirm with Sig whether full article text is still coming, separate from the promotional blast already received.
+5. **About the Town's slot** — placed last per its traditional end-of-month position since it wasn't in Judy's numbered lineup; flag if she intended a different placement.
 
 ## Notes
 
