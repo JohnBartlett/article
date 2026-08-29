@@ -1,8 +1,8 @@
 # August 30, 2026 Edition — Status
 
-_Updated: 2026-08-28 (session 2)_
+_Updated: 2026-08-29_
 
-Nav chain, homepage, and folder skeleton wired for the full 8-article lineup. Chicago Innovation and Susan Aurinko's health retreat piece both arrived this session with full text — 4 (soon 5) of 8 articles are Ready; 3 remain placeholder stubs awaiting content.
+Nav chain, homepage, and folder skeleton wired for the full 8-article lineup. Chicago Innovation and Susan Aurinko's health retreat piece both arrived with full text and are now fully built — 5 of 8 articles are Ready; 3 remain placeholder stubs awaiting content.
 
 ## Judy's official lineup (`1a02e630509ec117`, received 2026-08-23)
 
@@ -35,7 +35,7 @@ Nav chain order (hero → last):
 | murray-bay-part-2 | Only in Murray Bay: Part II | Judy Carmack Bross | ✅ Full text built | ✅ 29/29 placed | **READY.** Cover (`IMG_1776.jpg`) and team photo (`IMG_1149.jpg`) resolved via Judy's Aug 28 cover-photo thread. Name discrepancy in team-photo caption ("Roland" vs. article body's "Raymond" Bouchard) still needs Judy's confirmation before publish. |
 | soma-roy | Soma Roy Feature | Annie Delfosse (tentative) | Placeholder | — | Content not yet received. |
 | sporting-life | Birthplace of the Olympics Reveals Naked Truth | David A. F. Sweet | ✅ Full text built | ✅ 4/4 placed | **READY.** Forwarded by Judy from David Sweet, Olympia column. |
-| silk-roads-health-retreat | Health in the Austrian Alps: Dispatch from MAYRLIFE | Susan Aurinko | ✅ Full text built | 🔁 In progress | Received from Emma Aug 28 (`1a04b2da5e5e6b2c`) — full text. Photos arrived as Google Drive links (not Gmail attachments) — download in progress. |
+| silk-roads-health-retreat | Health in the Austrian Alps: Dispatch from MAYRLIFE | Susan Aurinko | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b2da5e5e6b2c`) — full text. Photos arrived as Google Drive links (not Gmail attachments); 10 of 11 downloaded via the Drive connector, the 11th (`photo 9.JPG`, "A Walk Around the Lake") failed repeatedly with a connector session-expired error specific to that one file — John downloaded it manually from the Drive link and it was placed from `~/Downloads`. |
 | young-dancers-perspective | A Young Dancer's Perspective | Judy Carmack Bross (tentative) | Placeholder | — | Content not yet received. |
 | garfield-park-pigments | Pigments! at Garfield Park Conservatory | Sigalit Zetouni | Placeholder | — | Only a promotional "blast" teaser text + 1 credited image received so far (`IMG_7887.jpeg`); full article text not yet confirmed. |
 | about-the-town | About the Town in September | Philip Vidal | ✅ Full text built | ✅ 10/10 placed | **READY.** Via Ana Baca. |
