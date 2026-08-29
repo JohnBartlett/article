@@ -1,6 +1,25 @@
 # Classic Chicago Magazine — TODO
 
-## TODO — AUGUST 2 EDITION (next)
+## TODO — AUGUST 30 EDITION (next)
+
+### Article status (5 of 8 Ready)
+- [x] **Chicago Innovation** — "Rallying Chicago's Next Innovators" by Judy Carmack Bross. Built: `editions/2026-08-30/chicago-innovation/` (11 photos placed, READY)
+- [x] **Only in Murray Bay: Part II** — Judy Carmack Bross. Built: `editions/2026-08-30/murray-bay-part-2/` (29 photos placed, READY)
+- [ ] **Soma Roy Feature** — Annie Delfosse (byline tentative). Placeholder stub only; content not received. Check-in email sent Aug 29 (cc Judy), awaiting reply.
+- [x] **The Sporting Life** (David Sweet, Olympia column) — Built: `editions/2026-08-30/sporting-life/` (4 photos placed, READY)
+- [x] **My Silk Roads: Dispatch from MAYRLIFE** — Susan Aurinko. Built: `editions/2026-08-30/silk-roads-health-retreat/` (11 photos placed, READY)
+- [ ] **Young Dancer's Perspective** — Judy Carmack Bross (via Annie, tentative). Placeholder stub only; content not received. Check-in email sent Aug 29 (cc Judy), awaiting reply.
+- [ ] **Garfield Park Conservatory ("Pigments!")** — Sigalit Zetouni. Only the promo blast text + 1 photo received (Aug 26); full article not confirmed. Check-in email sent Aug 29 (cc Judy), awaiting reply.
+- [x] **About the Town in September** — Philip Vidal. Built: `editions/2026-08-30/about-the-town/` (10 photos placed, READY)
+
+### Open decisions
+- [ ] **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy; confirm with Judy which name is correct before publish
+- [ ] **About the Town's nav position** — placed last (traditional end-of-month slot) since it wasn't in Judy's numbered Aug 23 lineup; flag if she intended otherwise
+- [ ] Schedule Judy's requested call re: payment/catch-up (before her Wed drive) — ask John when
+
+See `editions/2026-08-30/STATUS.md` for full detail.
+
+## TODO — AUGUST 2 EDITION
 
 ### Incoming lineup (Judy's email Jul 26, 2026)
 - [x] **David Sweet book interview** — Built: `editions/2026-08-02/hindenburg-disaster/` (TEXT ONLY — photos pending extraction)
@@ -73,6 +92,8 @@
 
 ## TODO — PENDING REPLIES / ACTIONS
 
+- [ ] Awaiting Annie's reply to Aug 29 check-in re: Soma Roy Feature + Young Dancer's Perspective (cc Judy) [2026-08-29]
+- [ ] Awaiting Sig's reply to Aug 29 check-in re: full Garfield Park Conservatory article (cc Judy) [2026-08-29]
 - [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
 - [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
 - [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
