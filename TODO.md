@@ -2,19 +2,22 @@
 
 ## TODO — AUGUST 30 EDITION (next)
 
-### Article status (5 of 8 Ready)
+Nav order (final, per Judy's Aug 29 request — Murray Bay Part 2 last): chicago-innovation (hero) → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
+
+### Article status (6 of 7 Ready)
 - [x] **Chicago Innovation** — "Rallying Chicago's Next Innovators" by Judy Carmack Bross. Built: `editions/2026-08-30/chicago-innovation/` (11 photos placed, READY)
-- [x] **Only in Murray Bay: Part II** — Judy Carmack Bross. Built: `editions/2026-08-30/murray-bay-part-2/` (29 photos placed, READY)
-- [ ] **Soma Roy Feature** — Annie Delfosse (byline tentative). Placeholder stub only; content not received. Check-in email sent Aug 29 (cc Judy), awaiting reply.
+- [x] **About the Town in September** — Philip Vidal. Built: `editions/2026-08-30/about-the-town/` (10 photos placed, READY)
 - [x] **The Sporting Life** (David Sweet, Olympia column) — Built: `editions/2026-08-30/sporting-life/` (4 photos placed, READY)
 - [x] **My Silk Roads: Dispatch from MAYRLIFE** — Susan Aurinko. Built: `editions/2026-08-30/silk-roads-health-retreat/` (11 photos placed, READY)
-- [ ] **Young Dancer's Perspective** — Judy Carmack Bross (via Annie, tentative). Placeholder stub only; content not received. Check-in email sent Aug 29 (cc Judy), awaiting reply.
-- [ ] **Garfield Park Conservatory ("Pigments!")** — Sigalit Zetouni. Only the promo blast text + 1 photo received (Aug 26); full article not confirmed. Check-in email sent Aug 29 (cc Judy), awaiting reply.
-- [x] **About the Town in September** — Philip Vidal. Built: `editions/2026-08-30/about-the-town/` (10 photos placed, READY)
+- [x] **"Hyperlink, a Connection"** — Soma Roy (real byline, not Annie). Built: `editions/2026-08-30/soma-roy/` (15 photos placed, READY). Text verified word-for-word against the contributor's Word doc.
+- [ ] **Garfield Park Conservatory ("Pigments!")** — Sigalit Zetouni. Only the promo blast text + 1 photo received (Aug 26); Sig confirmed Aug 29 the full article would follow by ~10am, not yet received.
+- [x] **Only in Murray Bay: Part II** — Judy Carmack Bross. Built: `editions/2026-08-30/murray-bay-part-2/` (29 photos placed, READY). Moved to last position per Judy's request.
+
+### Held for Sept 6
+- [ ] **Young Dancer's Perspective** — Judy Carmack Bross, Q&A format with the young dancer + her company's director. Delayed a week (Judy, Aug 29) — sensitive subject, wants to be careful it stays about the dancer, not political. Placeholder stub removed from Aug 30 entirely; needs a fresh prep pass for Sept 6.
 
 ### Open decisions
 - [ ] **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy; confirm with Judy which name is correct before publish
-- [ ] **About the Town's nav position** — placed last (traditional end-of-month slot) since it wasn't in Judy's numbered Aug 23 lineup; flag if she intended otherwise
 - [ ] Schedule Judy's requested call re: payment/catch-up (before her Wed drive) — ask John when
 
 See `editions/2026-08-30/STATUS.md` for full detail.
@@ -92,8 +95,8 @@ See `editions/2026-08-30/STATUS.md` for full detail.
 
 ## TODO — PENDING REPLIES / ACTIONS
 
-- [ ] Awaiting Annie's reply to Aug 29 check-in re: Soma Roy Feature + Young Dancer's Perspective (cc Judy) [2026-08-29]
-- [ ] Awaiting Sig's reply to Aug 29 check-in re: full Garfield Park Conservatory article (cc Judy) [2026-08-29]
+- [x] ~~Awaiting Annie's reply to Aug 29 check-in re: Soma Roy Feature + Young Dancer's Perspective~~ — Judy resolved both directly: Soma Roy's article received complete and built; Young Dancer's delayed to Sept 6. [2026-08-29]
+- [ ] Awaiting Sig's full Garfield Park Conservatory article — she confirmed Aug 29 it would follow by ~10am (cc Judy) [2026-08-29]
 - [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
 - [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
 - [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]

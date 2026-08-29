@@ -1,59 +1,54 @@
 # August 30, 2026 Edition — Status
 
-_Updated: 2026-08-29 (auto-check)_
+_Updated: 2026-08-29 (session 2)_
 
-Nav chain, homepage, and folder skeleton wired for the full 8-article lineup. Chicago Innovation and Susan Aurinko's health retreat piece both arrived with full text — 5 of 8 articles are Ready; Soma Roy is now Text Only (text built, 15 photos pending download); 2 remain placeholder stubs awaiting content.
+Lineup revised to 7 articles: Young Dancer's Perspective confirmed delayed to next week (Judy, Aug 29), and Soma Roy's actual article ("Hyperlink, a Connection") arrived complete via Judy's forward. Nav order rewired per Judy's request — Murray Bay Part 2 moved to last. 6 of 7 articles are Ready; only Garfield Park Conservatory (Sig) remains a placeholder, with full text promised by ~10am Aug 29.
 
-## Judy's official lineup (`1a02e630509ec117`, received 2026-08-23)
+## Judy's lineup, as revised
 
-1. Chicago Innovation — Emma
-2. Murray Bay, Part 2 — Ana (photos), Judy (author)
-3. Soma Roy Feature — Annie
-4. David Sweet — Judy sending directly to John
-5. Susan Aurinko Health retreat story — Emma
-6. Young dancer's perspective, Judy — Annie
-7. Sydney Armstrong's Griffin Museum — Ana — **delayed to Sept 6** (Judy, Aug 25, `1a03867ed50ac1c4`), removed from this lineup
-8. Sig's article: Garfield Park Conservatory — Sig sends to John
+Original numbered lineup (`1a02e630509ec117`, received 2026-08-23): Chicago Innovation, Murray Bay Part 2, Soma Roy Feature, David Sweet, Susan Aurinko health retreat, Young Dancer's Perspective, Griffin Museum (delayed to Sept 6), Sig's Garfield Park piece. Plus Philip Vidal's "About the Town" (not in the numbered list, added separately Aug 24).
 
-**Not in Judy's numbered lineup:** Philip Vidal's "About the Town" (via Ana, `1a03315f72b0a964`) — slotted in at the traditional end-of-month position, last in the nav chain.
+**Revisions (Judy, Aug 29, `1a04cf7910ef1fb2` and `1a04ceba55a44d54`):**
+- Young Dancer's Perspective — **delayed to next week.** Removed from Aug 30 entirely (folder deleted, nav rewired, homepage card removed); will be a fresh prep item for the Sept 6 edition.
+- Order: Judy asked for Murray Bay Part 2 to run **last** ("such a little place"), and left the rest of the order to editorial judgment.
 
-Nav chain order (hero → last):
+Nav chain order (hero → last), as now built:
 1. `chicago-innovation` — Rallying Chicago's Next Innovators by Judy Carmack Bross
-2. `murray-bay-part-2` — Only in Murray Bay: Part II by Judy Carmack Bross
-3. `soma-roy` — Soma Roy Feature by Annie Delfosse (byline tentative — see Notes)
-4. `sporting-life` — Birthplace of the Olympics Reveals Naked Truth by David A. F. Sweet
-5. `silk-roads-health-retreat` — Health in the Austrian Alps: Dispatch from MAYRLIFE by Susan Aurinko
-6. `young-dancers-perspective` — A Young Dancer's Perspective by Judy Carmack Bross
-7. `garfield-park-pigments` — Pigments! at Garfield Park Conservatory by Sigalit Zetouni
-8. `about-the-town` — About the Town in September by Philip Vidal
+2. `about-the-town` — About the Town in September by Philip Vidal
+3. `sporting-life` — Birthplace of the Olympics Reveals Naked Truth by David A. F. Sweet
+4. `silk-roads-health-retreat` — Health in the Austrian Alps: Dispatch from MAYRLIFE by Susan Aurinko
+5. `soma-roy` — Hyperlink, a Connection by Soma Roy
+6. `garfield-park-pigments` — Pigments! at Garfield Park Conservatory by Sigalit Zetouni
+7. `murray-bay-part-2` — Only in Murray Bay: Part II by Judy Carmack Bross
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| chicago-innovation | Rallying Chicago's Next Innovators | Judy Carmack Bross | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b5981d924552`) — full text + 11 Gmail attachments. Byline is Judy Carmack Bross, not Emma (she was only forwarding) — confirms the tentative-byline guess was wrong. Also resolves the Huertas name discrepancy: article's own caption reads "Monica Huertas," confirming the filename was correct and Judy's earlier email ("Maria") was the error. |
-| murray-bay-part-2 | Only in Murray Bay: Part II | Judy Carmack Bross | ✅ Full text built | ✅ 29/29 placed | **READY.** Cover (`IMG_1776.jpg`) and team photo (`IMG_1149.jpg`) resolved via Judy's Aug 28 cover-photo thread. Name discrepancy in team-photo caption ("Roland" vs. article body's "Raymond" Bouchard) still needs Judy's confirmation before publish. |
-| soma-roy | Hyperlink, a connection | Soma Roy | ✅ Full text built | ⚠️ 15 photos pending download | **TEXT ONLY.** Article + 15 images received from Soma Roy via Judy's forwarded email (`1a04cf16737dffc3`, Aug 29). Full HTML built with verbatim text and correct image filenames. Images must be downloaded from Gmail attachment IDs in that message — MCP cannot download binary attachments. Byline confirmed as Soma Roy (not Annie, who was coordinator). Note: "Museum Reitberg" (vs "Rietberg") in para 8 — verbatim typo from contributor, flagged for Judy. |
-| sporting-life | Birthplace of the Olympics Reveals Naked Truth | David A. F. Sweet | ✅ Full text built | ✅ 4/4 placed | **READY.** Forwarded by Judy from David Sweet, Olympia column. |
-| silk-roads-health-retreat | Health in the Austrian Alps: Dispatch from MAYRLIFE | Susan Aurinko | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b2da5e5e6b2c`) — full text. Photos arrived as Google Drive links (not Gmail attachments); 10 of 11 downloaded via the Drive connector, the 11th (`photo 9.JPG`, "A Walk Around the Lake") failed repeatedly with a connector session-expired error specific to that one file — John downloaded it manually from the Drive link and it was placed from `~/Downloads`. |
-| young-dancers-perspective | A Young Dancer's Perspective | Judy Carmack Bross (tentative) | Placeholder | — | Content not yet received. |
-| garfield-park-pigments | Pigments! at Garfield Park Conservatory | Sigalit Zetouni | Placeholder | — | Only a promotional "blast" teaser text + 1 credited image received so far (`IMG_7887.jpeg`); full article text not yet confirmed. |
+| chicago-innovation | Rallying Chicago's Next Innovators | Judy Carmack Bross | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b5981d924552`) — full text + 11 Gmail attachments. Byline is Judy Carmack Bross, not Emma (she was only forwarding). Also resolves the Huertas name discrepancy: article's own caption reads "Monica Huertas," confirming the filename was correct and Judy's earlier email ("Maria") was the error. |
 | about-the-town | About the Town in September | Philip Vidal | ✅ Full text built | ✅ 10/10 placed | **READY.** Via Ana Baca. |
+| sporting-life | Birthplace of the Olympics Reveals Naked Truth | David A. F. Sweet | ✅ Full text built | ✅ 4/4 placed | **READY.** Forwarded by Judy from David Sweet, Olympia column. |
+| silk-roads-health-retreat | Health in the Austrian Alps: Dispatch from MAYRLIFE | Susan Aurinko | ✅ Full text built | ✅ 11/11 placed | **READY.** Received from Emma Aug 28 (`1a04b2da5e5e6b2c`). Photos arrived as Google Drive links; 10 of 11 downloaded via the Drive connector, the 11th (`photo 9.JPG`) hit a persistent connector error specific to that one file — John downloaded it manually and it was placed from `~/Downloads`. |
+| soma-roy | Hyperlink, a Connection | Soma Roy | ✅ Full text built | ✅ 15/15 placed | **READY.** Real byline is Soma Roy (author of "The Nourishment Projects NFP," an educational nonprofit) — not Annie Delfosse, who was only relaying. Confirms (again) that the coordinator-name pattern in Judy's lineup emails is unreliable. Second in an 8-part Nourishment Projects series; text verified against the attached Word doc (`Aug 30 2026 article for CC magazine.docx`) word-for-word before building — no lossy conversion. Received via Judy's forward of Soma Roy's original Aug 25 email to Annie/Judy (`1a04cf16737dffc3`). |
+| garfield-park-pigments | Pigments! at Garfield Park Conservatory | Sigalit Zetouni | Placeholder | — | Only the promotional "blast" teaser text + 1 credited image received so far (`IMG_7887.jpeg`). Sig confirmed Aug 29 (`1a04c1c1d0a10da1`) the full article, photos, and credits would follow by ~10am that day — not yet received as of this update. |
+| murray-bay-part-2 | Only in Murray Bay: Part II | Judy Carmack Bross | ✅ Full text built | ✅ 29/29 placed | **READY.** Cover (`IMG_1776.jpg`) and team photo (`IMG_1149.jpg`) resolved via Judy's Aug 28 cover-photo thread. Name discrepancy in team-photo caption ("Roland" vs. article body's "Raymond" Bouchard) still needs Judy's confirmation before publish. Moved to last position in the nav chain per Judy's Aug 29 request. |
 | datebook | DateBook | Annie Delfosse | Copied forward from Aug 23 | — | Text-only (no photos expected). |
 | daily-star-august | Astrochart | Victoria Martin | Copied forward from Aug 23 | — | Text-only (no photos expected); verify coverage still extends through end of August. |
 
+## Held for next week (Sept 6)
+
+- **Young Dancer's Perspective** — Judy Carmack Bross, a Q&A with the young dancer and her company's director. Judy confirmed Aug 29 this is delayed a week (responses came in late); she wanted to be careful getting it right since it touches a sensitive subject and she wants it to stay about the dancer, "not something political." Not yet resubmitted — will need a fresh check-in next prep cycle.
+
 ## Open items requiring your input
 
-1. **Soma Roy — 15 photos need downloading** — Article HTML is fully built with correct filenames. Images must be downloaded from Gmail message `1a04cf16737dffc3` (Judy's forwarded email from Soma Roy, Aug 29). MCP cannot download binary attachments; use download_attachments.py or Gmail web UI. Original filenames: Image 1_Cover Image.jpg, Image 2_Giacometti.jpg, Image 3_Guhyamanjuvajra.jpg, Image 4_Indian miniature paintings.jpg, Image 5_Buddha.jpeg, Image 6_female attendant.jpg, Image 7_sugar.jpeg, Image 8.jpeg, Image 9.png, Image 10_Triton.jpg, Image 11_Art Institute.jpg, Image 12_Huber 2.jpg, Image 13_Vernon.jpeg, Image 14.jpeg, Image 15_Roulet jpeg.jpeg.
-2. **Soma Roy — possible typo** — Article para 8 uses "Museum Reitberg" (vs "Rietberg" used everywhere else). Verbatim text preserved; flag to Judy whether to correct.
-3. **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy, carried over from Aug 28 log entry, still unresolved.
-4. **Garfield Park Conservatory** — confirm with Sig whether full article text is still coming, separate from the promotional blast already received.
-5. **About the Town's slot** — placed last per its traditional end-of-month position since it wasn't in Judy's numbered lineup; flag if she intended a different placement.
+1. **Soma Roy — possible typo** — Article body uses "Museum Reitberg" once (vs. "Rietberg" used everywhere else). Verbatim text preserved per convention; flag to Judy/Soma whether to correct.
+2. **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy, still unresolved.
+3. **Garfield Park Conservatory** — full article still awaited from Sig (promised ~10am Aug 29).
+4. **About the Town's slot** — placed second per its traditional end-of-month-ish position since it wasn't in Judy's numbered lineup; flag if she intended a different placement.
+5. Schedule Judy's requested call re: payment/catch-up (before her Wed drive).
 
 ## Notes
 
-- Nav chain order (hero → last): chicago-innovation → murray-bay-part-2 → soma-roy → sporting-life → silk-roads-health-retreat → young-dancers-perspective → garfield-park-pigments → about-the-town
-- Remaining not-yet-received articles (Soma Roy, Young Dancer's Perspective, Garfield Park/Pigments) have real placeholder stubs (header/nav/byline wired, body text "[Article text coming soon]") so the nav chain and homepage didn't have to wait on content — per prep-edition convention.
-- Stub articles use a generic `card-placeholder.jpg`-derived `navthumb.jpg` until real content/photos arrive; swap in a real 70×70 crop of each article's hero photo once built.
-- Homepage hero and card teasers for the 3 remaining stub articles read "[Teaser coming]" — replace with real copy once article text is in hand.
-- `about.html`'s "Our Writers This Week" section was intentionally left untouched — that's owned by `/edition-checks`, not this prep pass.
+- Nav chain order (hero → last): chicago-innovation → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
+- `about.html`'s "Our Writers This Week" section is still intentionally untouched — that's owned by `/edition-checks`, not this prep pass. Will need Soma Roy added if not already present as a "this week" writer.
+- Once Sig's full article arrives, its homepage card teaser and navthumb need to be built — currently still on the generic `card-placeholder.jpg`-derived navthumb.
