@@ -4,13 +4,13 @@
 
 Nav order (final, per Judy's Aug 29 request — Murray Bay Part 2 last): chicago-innovation (hero) → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
 
-### Article status (6 of 7 Ready)
+### Article status (7 of 7 Ready — full edition built)
 - [x] **Chicago Innovation** — "Rallying Chicago's Next Innovators" by Judy Carmack Bross. Built: `editions/2026-08-30/chicago-innovation/` (11 photos placed, READY)
 - [x] **About the Town in September** — Philip Vidal. Built: `editions/2026-08-30/about-the-town/` (10 photos placed, READY)
 - [x] **The Sporting Life** (David Sweet, Olympia column) — Built: `editions/2026-08-30/sporting-life/` (4 photos placed, READY)
 - [x] **My Silk Roads: Dispatch from MAYRLIFE** — Susan Aurinko. Built: `editions/2026-08-30/silk-roads-health-retreat/` (11 photos placed, READY)
 - [x] **"Hyperlink, a Connection"** — Soma Roy (real byline, not Annie). Built: `editions/2026-08-30/soma-roy/` (15 photos placed, READY). Text verified word-for-word against the contributor's Word doc.
-- [ ] **Garfield Park Conservatory ("Pigments!")** — Sigalit Zetouni. Only the promo blast text + 1 photo received (Aug 26); Sig confirmed Aug 29 the full article would follow by ~10am, not yet received.
+- [x] **"Colors of Nature"** — Sigalit Zetouni. Built: `editions/2026-08-30/garfield-park-pigments/` (6 photos placed, READY). Renoir's "Two Sisters" at the Art Institute + Garfield Park Conservatory's Pigments! garden show. Applied Sig's own requested "1974"→"1874" correction.
 - [x] **Only in Murray Bay: Part II** — Judy Carmack Bross. Built: `editions/2026-08-30/murray-bay-part-2/` (29 photos placed, READY). Moved to last position per Judy's request.
 
 ### Held for Sept 6
