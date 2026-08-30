@@ -454,6 +454,8 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 41. **Judy's edition lineup email is the source of truth for what runs — reconcile it against prior plans.** Her "The July 19th Issue" lineup omitted Kiddieland Part 2 even though a 3-part schedule had been agreed days earlier. When a lineup arrives, diff it against STATUS.md / future-articles.html / prior multi-part agreements and flag every discrepancy to her rather than silently following either version.
 
+42. **Link-heavy contributor articles (Philip Vidal's About the Town, and any similar roundup piece) need a link-count check against the source email before marking Ready.** The Sept. 2026 "About the Town" article was built with all 39 of Philip's inline links to event/venue pages silently dropped — the article read coherently with plain text where links should have been, so it passed every other check and was almost published without them. Before marking such an article Ready, count the `<a href="http...">` links in the source email and confirm the same count (matched to the same anchor text/venue names) appears in the built HTML — this is the same failure mode as mistake #6's Q&A count check: a dropped link, like a dropped question, leaves no visible gap.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
