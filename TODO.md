@@ -1,6 +1,28 @@
 # Classic Chicago Magazine — TODO
 
-## TODO — AUGUST 2 EDITION (next)
+## TODO — AUGUST 30 EDITION (next)
+
+Nav order (final, per Judy's Aug 29 request — Murray Bay Part 2 last): chicago-innovation (hero) → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
+
+### Article status (7 of 7 Ready — full edition built)
+- [x] **Chicago Innovation** — "Rallying Chicago's Next Innovators" by Judy Carmack Bross. Built: `editions/2026-08-30/chicago-innovation/` (11 photos placed, READY)
+- [x] **About the Town in September** — Philip Vidal. Built: `editions/2026-08-30/about-the-town/` (10 photos placed, READY)
+- [x] **The Sporting Life** (David Sweet, Olympia column) — Built: `editions/2026-08-30/sporting-life/` (4 photos placed, READY)
+- [x] **My Silk Roads: Dispatch from MAYRLIFE** — Susan Aurinko. Built: `editions/2026-08-30/silk-roads-health-retreat/` (11 photos placed, READY)
+- [x] **"Hyperlink, a Connection"** — Soma Roy (real byline, not Annie). Built: `editions/2026-08-30/soma-roy/` (15 photos placed, READY). Text verified word-for-word against the contributor's Word doc.
+- [x] **"Colors of Nature"** — Sigalit Zetouni. Built: `editions/2026-08-30/garfield-park-pigments/` (6 photos placed, READY). Renoir's "Two Sisters" at the Art Institute + Garfield Park Conservatory's Pigments! garden show. Applied Sig's own requested "1974"→"1874" correction.
+- [x] **Only in Murray Bay: Part II** — Judy Carmack Bross. Built: `editions/2026-08-30/murray-bay-part-2/` (29 photos placed, READY). Moved to last position per Judy's request.
+
+### Held for Sept 6
+- [ ] **Young Dancer's Perspective** — Judy Carmack Bross, Q&A format with the young dancer + her company's director. Delayed a week (Judy, Aug 29) — sensitive subject, wants to be careful it stays about the dancer, not political. Placeholder stub removed from Aug 30 entirely; needs a fresh prep pass for Sept 6.
+
+### Open decisions
+- [ ] **Roland vs. Raymond Bouchard** — Murray Bay Part 2 team-photo caption discrepancy; confirm with Judy which name is correct before publish
+- [ ] Schedule Judy's requested call re: payment/catch-up (before her Wed drive) — ask John when
+
+See `editions/2026-08-30/STATUS.md` for full detail.
+
+## TODO — AUGUST 2 EDITION
 
 ### Incoming lineup (Judy's email Jul 26, 2026)
 - [x] **David Sweet book interview** — Built: `editions/2026-08-02/hindenburg-disaster/` (TEXT ONLY — photos pending extraction)
@@ -73,10 +95,13 @@
 
 ## TODO — PENDING REPLIES / ACTIONS
 
+- [x] ~~Awaiting Annie's reply to Aug 29 check-in re: Soma Roy Feature + Young Dancer's Perspective~~ — Judy resolved both directly: Soma Roy's article received complete and built; Young Dancer's delayed to Sept 6. [2026-08-29]
+- [ ] Awaiting Sig's full Garfield Park Conservatory article — she confirmed Aug 29 it would follow by ~10am (cc Judy) [2026-08-29]
 - [ ] Reply to Judy with Soma Roy direct preview URL to forward to Soma [Jun 28]
 - [ ] Chase Victoria for July astrochart full text (ask her to paste into email) [Jun 28]
 - [ ] DMSF article: replace "contact the author" with real URL once received from David Sweet or Judy [Jun 28]
 - [ ] Reply to Marcy re: ad placement and Instagram question [General]
+- [ ] Reply to Marcy re: "Get together" — she suggested a get-together for all Classic Chicago writers (`1a033aaa5b047c71`, 2026-08-24). On hold per John. [2026-08-24]
 - [ ] Email Judy that the Aug 9 edition's link fixes (Past Editions, Glessner House purchase link, photo compression) are now live on production — standard publish notification, not yet sent. [2026-08-14]
 - [ ] **Cheryl's "Jardin Botanique Val Rameh" (Aug 16) is missing Photo 11 (Pond 2)** — no Drive link was ever included in Annie's original email. Asked Annie for it Aug 15 (`1a007aaf8537f514`); no reply yet as of Aug 15 evening. Figure was removed from the article entirely (not left as a placeholder) until the real photo arrives — add it back in at that point, same caption as Photo 10: "Victoria du Parana – Victoria cruziana". [2026-08-15]
 - [x] ~~Ask Judy Monday (Aug 17) about Elizabeth Richter's Pacific Northwest article~~ — sent Aug 15 (`1a007b00a83c7ef6`), didn't wait for Monday. Reply owed.

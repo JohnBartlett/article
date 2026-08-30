@@ -1,6 +1,6 @@
 # August 23, 2026 Edition — Status
 
-_Updated: 2026-08-22 (session 3)_
+_Updated: 2026-08-23 (session 4, post-publish)_
 
 **7 of 7 lineup articles Ready.** Susan Aurinko was confirmed by Judy to be held for Aug 30 (not this edition) and has been fully removed — folder deleted, nav chain rewired, homepage card removed. Michael Anderson's photo resolution issue is mostly resolved (7 of 11 upgraded to full-res via Libbet; 4 remain small — she genuinely doesn't have better originals for those).
 
@@ -50,7 +50,7 @@ Nav chain order (hero → last):
 ## Notes
 
 - Nav chain order (hero → last): michael-anderson → biba-favorites-aug23 → sig-arts-club-garden → bonnie-mcdonald-landmarks → lincoln-park-stroll → murray-bay → unsung-gems
-- Nav thumbnails use the shared `thumb-placeholder.jpg` at the edition root.
 - Real bios for Michael Traynor and Ronald Clewer received from Judy Aug 22 (`1a02ad1e4421e789`) and added to `about.html`, replacing the earlier bare-minimum placeholders.
 - Multiple EXIF-rotation fixes applied this session (Biba's, Sig's photos) — baked in via `ImageOps.exif_transpose()` rather than relying on browser EXIF support, consistent with this site's documented history of EXIF rotation not reliably working in production even when previews look correct.
 - Multiple oversized-source-photo compressions applied this session (Bonnie's photo 1: 14.7MB→265KB; Sig's TIFF: 15.7MB→840KB; Sig's "leticia install": 8.7MB→1.3MB) — none were ever close to the 25MB Cloudflare limit, but compressed proactively for page-weight reasons.
+- **Post-publish audit fix (2026-08-23):** prev/next nav thumbnails across this edition (and Aug 9 and Aug 16, also already live) were all showing a generic shared `thumb-placeholder.jpg` instead of the linked article's actual photo — a regression from the correct per-article `navthumb.jpg` convention used through Aug 2. `verify_edition.py` had been flagging this the whole time as a "duplicate image" structural warning; it was misread in an earlier session as an intentional shared-icon pattern rather than the bug it was. Generated real 70×70 `navthumb.jpg` crops for all 21 affected articles across the 3 editions and rewired every prev/next thumbnail to point to the correct neighbor. Fixed and pushed to dev2, dev, and master (already live at chicagoclassicmag.com). `verify_edition.py` now reports zero structural issues on all 3 editions.
