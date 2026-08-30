@@ -49,5 +49,5 @@ Nav chain order (hero → last), as now built:
 ## Notes
 
 - Nav chain order (hero → last): chicago-innovation → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
-- `about.html`'s "Our Writers This Week" section is still intentionally untouched — that's owned by `/edition-checks`, not this prep pass. Will need Soma Roy and Sigalit Zetouni confirmed/added.
+- **RESOLVED Aug 29 (post-publish audit).** `about.html` was found to have a single "Our Writers" grid (renamed from "Our Writers This Week" — there is no separate rotating/permanent split), and it was missing all 7 Aug 30 articles' popup entries entirely — a real gap that had shipped to production. Fixed via `edition_checks.py`: all 7 articles now appear in their authors' popups (David Sweet, Judy Carmack Bross ×2, Philip Vidal, Sigalit Zetouni, Soma Roy, Susan Aurinko).
 - Annie separately sent her own build of the Soma Roy article (renamed/converted image files, msg `1a04f868f8f0d955`) after Judy had already forwarded the authoritative original — superseded, not used, since the already-built version uses the original filenames per convention.

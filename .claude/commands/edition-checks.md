@@ -51,8 +51,8 @@ The script handles:
 ## Step 3 — Handle new authors
 
 For each author in `report['new_authors_needing_bios']`, add a `<div class="team-member">` entry
-to the **More Contributors** section in `about.html` (just before the closing `</div>` of that
-section's `<div class="team-grid">`).
+to the **Our Writers** section in `about.html` (just before the closing `</div>` of that
+section's `<div class="team-grid">`) — this is the only writers grid; see the note in Step 4.
 
 Use this template:
 
@@ -78,18 +78,17 @@ Author bio source (in priority order):
 2. The article itself — byline or author note
 3. Ask Judy if unknown
 
-## Step 4 — Update "Our Writers This Week"
+## Step 4 — Update "Our Writers" author popups
 
-The "Our Writers This Week" section in `about.html` should list **only this edition's writers**.
-
-1. Find this edition's author IDs:
-   ```bash
-   EDITION=2026-05-03
-   grep -rh 'about\.html#' editions/$EDITION/ --include="index.html" | grep -oP 'about\.html#\K[\w-]+' | sort -u
-   ```
-2. Replace the `<div class="team-grid">` inside "Our Writers This Week" with cards for only those authors
-3. Each card references the author's existing `id` — bio and popup already exist in their section
-4. Keep trigger buttons pointing to existing popups (e.g. `data-popup="articles-biba-roesch"`)
+**Note (2026-08-29):** `about.html` has a single "Our Writers" heading (renamed from
+"Our Writers This Week") with one flat, permanent `team-grid` containing every
+contributor ever published — there is no separate rotating/"this week only" section
+and no separate permanent "More Contributors" section; they were the same section
+all along. **Never replace or prune this grid** — doing so deletes other
+contributors' bio cards. `edition_checks.py`'s `popup_articles_added` step already
+handles the actual per-edition work: appending this edition's articles into each
+author's existing `articles-popup` grid. There is nothing else to do here — this
+step is a no-op beyond what the automated script already did in Step 2.
 
 ## Step 5 — Verify nav chain
 
@@ -111,32 +110,25 @@ Confirm the first href is `../../../index.html`, the last href is `../../../inde
 Confirm root `index.html` card order matches the nav chain order (hero = article #1,
 cards = articles #2 onward in nav order).
 
-## Step 7 — Update editors pages
+## Step 7 — Commit and push
 
-**`editors/edition.html`:**
-- Mark all articles as Ready (update any remaining Pending badges)
-- Add final photo counts to article subtitles
-
-**`editors/index.html`:**
-- Progress bar to 100%: "N of N articles ready"
-- Edition tag: "Ready for Staging"
-- Decisions Needed: remove resolved items; add "All articles ready — awaiting stage approval"
-
-## Step 8 — Commit and push
+`editors/edition.html` and `editors/index.html` no longer exist (removed Jun 22, 2026) —
+do not recreate them or reference them here. Nothing on dev2 needs updating for the
+`editors` branch dashboard; it reads `STATUS.md` and `verify_edition.py` directly.
 
 ```bash
-git add about.html editions/ editors/ index.html
+git add about.html editions/ index.html
 git commit -m "Edition YYYY-MM-DD checks: dark-mode, nav-thumb, about.html — ready for staging"
 git push origin dev2
 ```
 
-## Step 9 — Deploy Vercel preview
+## Step 8 — Deploy Vercel preview
 
 ```bash
 PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
 ```
 
-Update both editors pages with the final pre-stage preview URL, commit, push, return URL to user.
+Return the Vercel preview URL to the user.
 
 ## Checklist
 
@@ -148,11 +140,9 @@ Update both editors pages with the final pre-stage preview URL, commit, push, re
 - [ ] Astrochart link in `index.html` points to current edition
 - [ ] Homepage hero meta is `By [Author Name]` only — no date
 - [ ] No dangling git submodules (`git ls-files --stage | grep "^160000"` returns nothing)
-- [ ] New author bios added to More Contributors (if any)
-- [ ] "Our Writers This Week" updated for this edition
+- [ ] New author bios added to Our Writers (if any)
+- [ ] "Our Writers" author popups updated for this edition (handled by edition_checks.py)
 - [ ] Nav chain verified end-to-end
 - [ ] Homepage card order matches nav chain
-- [ ] `editors/edition.html` — all articles Ready
-- [ ] `editors/index.html` — 100% progress, "Ready for Staging"
 - [ ] Changes committed and pushed to dev2
 - [ ] Vercel preview deployed and URL returned

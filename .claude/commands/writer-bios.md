@@ -35,9 +35,9 @@ The italic line that appears at the end of their articles.
 ## Adding a new writer
 
 1. Create `_bios/<slug>.md` with their info.
-2. Add a `<div class="team-member" id="<slug>">` entry to the **More Contributors** section of `about.html` (permanent bio card, persists across editions).
+2. Add a `<div class="team-member" id="<slug>">` entry to the **Our Writers** section of `about.html` (the only writers grid — one flat, permanent list of every contributor ever published, not a rotating "this week" section; see CLAUDE.md's "Common bio locations" note).
 3. If they have an articles popup (most recurring writers do), add it after the team-member div following the pattern used for David Sweet, Susan Aurinko, Jen Huang, etc.
-4. The "Our Writers This Week" section is updated each edition (via `/edition-checks`) — it is not updated here.
+4. Per-edition popup updates (appending new articles into an existing author's popup) happen via `/edition-checks` — not here.
 
 ## Updating an existing bio
 

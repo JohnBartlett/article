@@ -16,7 +16,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - **Megan McKinney** — Publisher & Founder
 - **John Bartlett** — Developer (`john.bartlett@gmail.com`)
 
-### Writers (update "Our Writers This Week" on about.html each edition)
+### Writers (update "Our Writers" on about.html each edition)
 - Bob Glaze — Culinary & Cultural Guide
 - Katherine Harvey — Travel Writer
 - Susan Aurinko — Arts & Photography (My Silk Roads column)
@@ -143,7 +143,7 @@ Skills run in this order each week:
 | 0 | `/check-emails` | Run at session start: check Judy's emails and FormSubmit votes; apply changes; feeds into whichever phase is active |
 | 1 | `/prep-edition` | When Judy sends article list: create folder skeleton, stubs, nav chain, homepage shell, editors pages — before any content arrives |
 | 2 | `/new-edition` | Fill in articles and photos as contributor emails arrive; runs repeatedly until all articles are Ready |
-| 3 | `/edition-checks` | Quality gate before staging: fix dark-mode, nav-thumbs, about.html popups, "Our Writers This Week", verify nav chain |
+| 3 | `/edition-checks` | Quality gate before staging: fix dark-mode, nav-thumbs, about.html popups, "Our Writers" popups, verify nav chain |
 | 4 | `/stage` | Promote dev2 → dev: disable GA4, comment out internal-nav, push to Vercel staging preview |
 | 5 | `/publish` | Promote dev → master: re-enable GA4, push to Cloudflare, email Judy |
 | 6 | `/send-update` | After publish: pull GA4 stats and vote tallies, draft and send weekly update to Judy |
@@ -234,7 +234,7 @@ If a suspected-insider comment needs resolving: (1) require a name/email on the 
 ```
 /
 ├── index.html              Homepage — "The Sunday Edition" hero + card grid
-├── about.html              About — team bios + "Our Writers This Week"
+├── about.html              About — team bios + "Our Writers"
 ├── subscribe.html          Subscribe — live FormSubmit form (active Jul 13, 2026)
 ├── advertise.html          Advertise — "coming soon" placeholder
 ├── future-articles.html    Internal — unpublished article planning (dev2 only)
@@ -291,7 +291,7 @@ If a suspected-insider comment needs resolving: (1) require a name/email on the 
 2. Create article subfolders with `index.html` and images
 3. Create `thumb-*.jpg` thumbnails in the edition root
 4. Update `index.html` homepage with new hero + card grid (see "Updating the homepage" below)
-5. Update `about.html` "Our Writers This Week" section
+5. Update `about.html` "Our Writers" section
 6. Update keyboard nav links across all new articles (order must match homepage)
 7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
 8. Use GA4 **disabled** form in new articles (matching `_template/article.html`)
@@ -475,8 +475,7 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 
 **Common bio locations in `about.html`:**
 - Judy and Megan: Our Team section
-- Writers and curators: More Contributors section (permanent bio cards — persists across editions)
-- "Our Writers This Week" section: edition-specific rotation, updated each week by `/edition-checks`
+- Writers and curators: "Our Writers" section (renamed from "Our Writers This Week" 2026-08-29 — there is no separate rotating/permanent split; it's one flat grid of every contributor ever published, added to by `/edition-checks` each week and never pruned)
 - Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
 
 ### Editors menu (Internal nav — dev2 only)
