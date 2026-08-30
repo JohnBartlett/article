@@ -7,11 +7,12 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 ## Email Sources
 
 ### Tier 1 — CCM staff and coordinators (checked by address)
-- Judy Carmack Bross (`judycbross@aol.com`) — editorial instructions, article text, bio updates, article replacements, holds
+- Judy Carmack Bross (`judycbross@aol.com`, also occasionally `judycbross@icloud.com`) — editorial instructions, article text, bio updates, article replacements, holds
 - Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (also relays Katherine Harvey's articles)
 - Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — article content and photos (intern, coordinator)
 - Sig (`sigalina@aol.com`) — article submissions
+- Victoria Martin (`viccimartin@gmail.com`) — monthly Astro Chart / Daily Star content (Word doc attachment). **Added 2026-08-29** after her Sept chart (sent Aug 26) was missed by a full check-emails pass and only surfaced when John asked directly — she wasn't in this list before.
 - Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing (not currently in tier1 search)
 
 **Not in tier1 search:**
@@ -44,12 +45,12 @@ token = get_access_token()
 
 # Tier 1 — known addresses, only after last processed date
 tier1_messages = search_messages(token,
-    f"from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com) after:{after_date}")
+    f"from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com) after:{after_date}")
 
 # Tier 2 — keyword search for writers (no is:unread — read state is meaningless,
 # John may have opened emails in Gmail already; dedupe against EMAIL_LOG.md msg IDs)
 tier2_messages = search_messages(token,
-    f"(\"Classic Chicago\" OR article) after:{after_date} -from:(judycbross@aol.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com)")
+    f"(\"Classic Chicago\" OR article) after:{after_date} -from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com)")
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
