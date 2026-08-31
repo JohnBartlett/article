@@ -86,5 +86,44 @@ def main():
     total_users = sum(int(r.metric_values[1].value) for r in page_response.rows)
     print(f"\n--- Total ---\n{total_views} views, {total_users} users across all daily-star pages")
 
+    # Session-level engagement for sessions that included an astrochart page
+    engagement_request = RunReportRequest(
+        property=f"properties/{property_id}",
+        dimensions=[],
+        metrics=[
+            Metric(name="sessions"),
+            Metric(name="engagedSessions"),
+            Metric(name="engagementRate"),
+            Metric(name="averageSessionDuration"),
+            Metric(name="screenPageViewsPerSession"),
+            Metric(name="userEngagementDuration"),
+        ],
+        date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
+        dimension_filter=FilterExpression(
+            filter=Filter(
+                field_name="pagePath",
+                string_filter=Filter.StringFilter(value="daily-star", match_type=Filter.StringFilter.MatchType.CONTAINS),
+            )
+        ),
+    )
+    engagement_response = client.run_report(engagement_request)
+
+    print("\n--- Session engagement (sessions that included an astrochart page) ---")
+    if not engagement_response.rows:
+        print("(no data)")
+    else:
+        row = engagement_response.rows[0]
+        sessions = int(row.metric_values[0].value)
+        engaged = int(row.metric_values[1].value)
+        rate = float(row.metric_values[2].value)
+        avg_duration = float(row.metric_values[3].value)
+        views_per_session = float(row.metric_values[4].value)
+        total_engagement_secs = float(row.metric_values[5].value)
+        print(f"Sessions: {sessions}")
+        print(f"Engaged sessions: {engaged} ({rate*100:.1f}% engagement rate)")
+        print(f"Average session duration: {avg_duration:.1f}s")
+        print(f"Screen page views per session: {views_per_session:.2f}")
+        print(f"Total user engagement time: {total_engagement_secs:.0f}s ({total_engagement_secs/60:.1f} min)")
+
 if __name__ == "__main__":
     main()
