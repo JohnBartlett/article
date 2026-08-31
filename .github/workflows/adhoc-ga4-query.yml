@@ -1,0 +1,33 @@
+name: Ad-hoc GA4 Query
+
+on:
+  workflow_dispatch:
+    inputs:
+      days_ago:
+        description: 'Number of days to look back'
+        required: false
+        default: '90'
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-analytics-data
+
+      - name: Write GA4 credentials
+        run: echo '${{ secrets.GA4_CREDENTIALS_JSON }}' > tools/credentials.json
+
+      - name: Run astrochart query
+        env:
+          GA4_PROPERTY_ID: '523654462'
+          GOOGLE_APPLICATION_CREDENTIALS: tools/credentials.json
+        run: python3 tools/ga4_astrochart_query.py "${{ github.event.inputs.days_ago }}"
