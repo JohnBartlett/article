@@ -668,6 +668,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 | Aug 31 | Judy | Here is the cover photo for the Rush benefit for the story for September 6 | `1a0575715a1e8423` | ⬛ | Cover photo for item #4 above (Rush Benefit, Emma's piece), sent to John and Emma. Not yet placed — no article folder built for Sept 6 yet. |
 | Aug 31 | FormSubmit | New Subscriber — Diane Saint-Georges | `1a058f1e683807da` | ✅ | `dsg6@icloud.com`. Logged. |
 | Aug 31 | FormSubmit | New Subscriber — Patricia Belley | `1a058f25fa5a82c4` | ✅ | `patricia@aubergelaromance.com` — same Patricia Belley/Bellay from the Murray Bay Part 2 photo correction thread (note the site's own article spells it "Belley," Judy's iMessage spelled it "Bellay" — another instance of the same-person spelling drift, not a new person). Logged. |
+| Aug 31 | Victoria Martin | Thanks re Highlights | `1a059b76e2803926` | ✅ | Thank-you note only — pleased with the new August Highlights accordion added to `daily-star-august` (see Jul 29 entry). No new content, no action needed. |
 
 **Decisions needed before Aug 30 can be staged:**
 17. ~~Huertas photo name discrepancy~~ — **RESOLVED Aug 28.** The Chicago Innovation article's own caption confirms "Monica Huertas" — the filename was correct, Judy's earlier email ("Maria") was the error.
