@@ -112,9 +112,18 @@ A separate orphan branch, `editors`, hosts internal tools that have no place in 
 ### Before claiming any status, run:
 ```bash
 python3 tools/verify_edition.py YYYY-MM-DD
+python3 tools/edition_checks.py YYYY-MM-DD
+python3 tools/content_audit.py YYYY-MM-DD
 ```
 
-This checks ACTUAL state: what has content, what has photos, what's placeholder.
+`verify_edition.py` checks ACTUAL state: what has content, what has photos, what's placeholder.
+`edition_checks.py` checks dark-mode/nav-thumb CSS, about.html popups/bios, stale DateBook months.
+`content_audit.py` (added Sept 2026, dev2-only) covers 5 gaps the other two scripts miss: the
+DateBook page's own internal Astrochart link (mistake #20 — distinct from the homepage's link),
+stale past-date entries left in the Astrochart page (mistake #21), a dated homepage hero-meta
+(mistake #23), a photo duplicated as both hero and inline (mistake #30), and emoji in article
+content (mistake #34). None of these were part of any repeatable audit before — run this
+alongside the other two, not instead of them.
 
 ### Article Status Definitions
 - **Ready** = content + photos both exist
