@@ -92,6 +92,7 @@ def check_duplicate_photos(article_dirs):
         imgs = [
             i for i in imgs
             if not i.startswith("http") and "navthumb" not in i and "logo" not in i.lower()
+            and "thumb-placeholder" not in i and "card-placeholder" not in i
         ]
         seen = {}
         for i in imgs:
