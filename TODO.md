@@ -1,5 +1,24 @@
 # Classic Chicago Magazine — TODO
 
+## TODO — PENDING REPLIES / ACTIONS (new, Sept 1-3 session)
+
+- [ ] **September Astrochart went live on production (chicagoclassicmag.com) ahead of Victoria's approval.** We told her explicitly on Aug 31 ("the moment you give me the okay, I'll push it live") — she had not replied as of this push (Sept 3, per John's direct instruction). Follow up with her to confirm the published version is acceptable, or be ready to correct it if she has changes.
+- [ ] **Reply still owed to Judy re: the Jafra/Canaan Wellspring draft** (`1a0526f7b944412d`, Aug 30) — she asked whether interview form is the right call and whether it's OK the piece leans on the cause more than dancing. Needs John's actual answer, not a build decision.
+- [ ] **Dr. Ruth Cook byline spelling** — "Marcie Harrison" vs "Marcie Harrington" across Judy's two Sept 6 lineup emails. Confirm with Judy before building.
+- [ ] **Sept 6 prep not started** — lineup: Francesco Bianchini (lead, 100th story), Student Dancer (Jafra/Canaan Wellspring, text in hand), Silvia Krehbiel Driehaus curator (Annie, Judy sending draft by Thu Sept 3), Rush Benefit (Emma, cover photo in hand), Sounds Good Choir on the River (Emma), Dr. Ruth Cook (Ana), Tadoussac photo trip (Annie, may delay), David Sweet piece (TBD).
+
+## DONE — Sept 1-3 session (audit + fixes)
+
+- [x] **Restored Philip Vidal's 39 dropped links** in "About the Town in September" — silently missing from the built HTML vs. the source email; added CLAUDE.md mistake #42 (link-count check) to prevent recurrence.
+- [x] **Fixed missing past-edition landing pages** for Aug 16 and Aug 23 — neither `editions/2026-08-16/index.html` nor `editions/2026-08-23/index.html` had ever been built, so Cloudflare's fallback silently served the current homepage instead of a 404. This was the root cause of a reader (Shelley, via Judy) being unable to find last week's Bonnie McDonald article. Rebuilt both from git history; confirmed live; replied to Judy.
+- [x] **Fixed stray internal-nav bar exposed on production** in Murray Bay Part 2 — leftover from the Aug 30 post-publish photo hotfix, which rewrote the file without re-commenting the dev2-only block.
+- [x] **Fixed a real GA4 leak on dev2**: 6 articles in the March 22 edition (`pokemon-fossil-museum`, `unsung-gems-lfhs`, `two-sisters-and-a-piano`, `kanuga`, `chicago-chamber-music-society`, `building-blocks`) had fully live, uncommented GA4 tracking on dev2 — meaning every `vercel deploy` from dev2 was sending real traffic into production analytics. Normalized to the standard `<!-- GA4-disabled -->` convention, plus 2 sibling files with non-standard-but-working comment variants.
+- [x] **Fixed a ~6-month-old GA4 gap on production**: `moneyball` and `wells-street-kitchen-juice` (March 1 edition) had their gtag.js loader commented out while the config call stayed live — meaning zero analytics data was ever actually sent for these two pages since publish. Fixed directly on master.
+- [x] **Added `astro_day_change` GA4 event tracking** to the Astrochart's Prev/Next/dropdown navigation (previously untracked — GA4 couldn't distinguish a visitor who browsed all 30 days from one who loaded the page and left). Added to the live Aug 30 page, the Sept 6 page, and pushed to production for both.
+- [x] Built `tools/content_audit.py` — automates 5 content-fidelity checks that were previously gaps in every audit pass: DateBook's own internal Astrochart link (mistake #20), stale past-date Astrochart entries (mistake #21), dated homepage hero-meta (mistake #23), duplicate hero+inline photos (mistake #30), emoji in article content (mistake #34).
+- [x] Built `tools/ga4_astrochart_query.py` + `.github/workflows/adhoc-ga4-query.yml` for one-off GA4 queries beyond the standard dashboard report (used for Astrochart page-view and session-engagement stats).
+- [x] Sent Victoria the September Astrochart preview (dev2), then pushed it to production per John's direct instruction — see the pending-reply item above.
+
 ## TODO — AUGUST 30 EDITION (next)
 
 Nav order (final, per Judy's Aug 29 request — Murray Bay Part 2 last): chicago-innovation (hero) → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2
