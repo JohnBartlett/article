@@ -8,15 +8,32 @@ Skeleton, nav chain, homepage, DateBook, and Astrochart all wired Sept 3. Full d
 - [ ] **September Astrochart went live on production (chicagoclassicmag.com) ahead of Victoria's approval.** We told her explicitly on Aug 31 ("the moment you give me the okay, I'll push it live") — she had not replied as of this push (Sept 3, per John's direct instruction). Follow up with her to confirm the published version is acceptable.
 - [ ] **Reply still owed to Judy re: the Jafra/Canaan Wellspring draft** (`1a0526f7b944412d`, Aug 30) — she asked whether interview form is the right call and whether it's OK the piece leans on the cause more than dancing. Needs John's actual answer before that article's text is finalized.
 - [x] ~~Dr. Ruth Cook byline spelling~~ — **RESOLVED Sept 3.** Confirmed "Marcie Harrison" via her own bio email (`1a066d81336c9639`); about.html entry added.
-- [ ] **Dr. Ruth Gannon-Cook article: extract full text + 5 photos** from the original Aug 22 email attachments in thread `1a05886ff5706d06` — content is fully in hand, not yet built. Highest-priority next pass.
+- [x] ~~Dr. Ruth Gannon-Cook article: extract full text + 5 photos~~ — **TEXT BUILT Sept 3** from Ana Baca's laid-out version (`1a06898d75d7c71f`), which supersedes the Aug 22 attachments: full text + explicit photo placement, cover, and captions. Title corrected to the contributor's own, "Meet Dr. Ruth Gannon Cook—the Female Robert Langdon" (no hyphen in the name). **Photos still need downloading** — see below.
 - [ ] **Jafra/Canaan Wellspring: build full article** once John's reply to Judy (above) resolves the approach — text and most photos already in hand.
 - [ ] **Confirm "Silvia Beltrametti and Satire" naming with Judy directly** — John treated it as the same article as the original lineup's "Silvia Krehbiel Driehaus curator" (name corrected) per his own judgment call; not yet confirmed with Judy herself.
 - [ ] **Confirm which "Sounds Good Choir" cover photo Judy wants** — river-music photo (msg `1a05d171149a00d8`) vs. Hallelujah Chorus sing-a-long photo (msg `1a05c81fbf12bf31`), same event.
 - [ ] **Marjorie Schwebel's bio** still needed for about.html (currently marked "[Bio pending]").
-- [ ] **Francesco Bianchini's 100th-story content** — check with Ana directly; Judy said it's going to her, not John.
+- [x] ~~Francesco Bianchini's 100th-story content~~ — **ARRIVED and TEXT BUILT Sept 3.** Ana sent it (`1a068a69a0218757`); the article's real title is **"Chopsticks"** (Cuandixia, China), not "Francesco Bianchini's 100th Story" — homepage hero, about.html mini-card and the article itself all renamed. Category changed Milestone → Travel to match the content. **Photos still need downloading** — see below.
+- [ ] **Judy still owes the milestone line** to run below Chopsticks' cover photo marking it as Francesco's 100th story (promised in the Aug 31 lineup email `1a05977b5615c844`). A `PREP NOTE` comment marks the spot in the article HTML.
 - [ ] **Rush Benefit and Sounds Good Choir article text** not yet received from Emma.
 - [ ] **Tadoussac article text** not yet received from Marjorie/Annie; may be delayed further per original lineup note.
+- [ ] **Download the 12 Gmail photo attachments for Chopsticks and Dr. Ruth** — both articles' text and `<figure>` markup are built and reference the exact original filenames, but the image files themselves are not on disk (this session had no Gmail OAuth credentials; `~/.gmail-mcp/` was absent). `verify_edition.py` currently reports both as TEXT ONLY with broken images. Run locally:
+  ```bash
+  source .venv/bin/activate
+  python3 - <<'EOF'
+  import sys; sys.path.insert(0, 'tools')
+  from gmail_api import get_access_token, list_attachments, download_attachment
+  t = get_access_token()
+  for msg, dest in [('1a068a69a0218757', 'editions/2026-09-06/francesco-bianchini'),
+                    ('1a06898d75d7c71f', 'editions/2026-09-06/dr-ruth-gannon-cook')]:
+      for a in list_attachments(t, msg):
+          download_attachment(t, msg, a['attachmentId'], f"{dest}/{a['filename']}")
+          print(dest, a['filename'])
+  EOF
+  ```
+  Then set the two homepage cards to `COVER - Chopsticks.jpeg` and `COVER - Ruth Gannon Cook.png` (currently `card-placeholder.jpg`) and build real nav thumbnails.
 - [ ] **Fill The Stands photo #2** blocked by Google Drive permissions (msg `1a05d0c35428c573`) — ask David Sweet to re-share or email the file directly.
+- [ ] **Flag two verbatim-text quirks to Judy/Marcie** in the Dr. Ruth piece, left unchanged per the never-edit-contributor-text rule: (1) the paragraph beginning "She points out that signs are all around us" opens with a quotation mark and closes with one, but is written in the third person — it reads like a quote wrapper applied to narration; (2) the article spells the subject's surname "Gannon Cook" throughout while earlier lineup emails and the stub used "Gannon-Cook." Used the contributor's spelling.
 - [ ] **Confirm with Judy whether Griffin Museum (Sydney Armstrong)** is still planned for a future edition — flagged delayed-to-Sept-6 on Aug 25 but absent from the final Sept 6 lineup emails.
 
 ## DONE — Sept 1-3 session (audit + fixes)
