@@ -72,20 +72,11 @@
 <main class="wrapper">
   <article>
     <div class="article-header">
-      <img class="hero-img" src="96An Omelette and a Glass of Wine4.jpeg" alt="An Omelette and a Glass of Wine">
 <h1>An Omelette and a Glass of Wine</h1>
       <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 31, 2026</div>
     </div>
     <div class="article-body">
-<div class="article-container">
-
-      <div class="article-label">Food &amp; Travel</div>
-
-      <h1>An Omelette and a Glass of Wine</h1>
-
-      <p class="byline">By <a href="../../../about.html#francesco-bianchini">Francesco Bianchini</a> &nbsp;&bull;&nbsp; May 31, 2026</p>
-
-      <figure><img src="96An Omelette and a Glass of Wine4.jpeg" alt="Omelette &agrave; la M&egrave;re Pollard"><figcaption>Omelette &agrave; la M&egrave;re Pollard.</figcaption></figure>
+<figure><img src="96An Omelette and a Glass of Wine4.jpeg" alt="Omelette &agrave; la M&egrave;re Pollard"><figcaption>Omelette &agrave; la M&egrave;re Pollard.</figcaption></figure>
 
       <p>I found out by chance that Dan had secretly organized a party in the P&eacute;rigord, where we were living, for my sixtieth birthday. The news kept me awake most of the night. The following morning I explained, as gently as I could, that I did not want that sort of celebration. I prefer one-to-one friendships to social gatherings, and I have never enjoyed being the centre of attention. Dan agreed to call everything off. The only exception was a friend who had already bought her plane ticket.</p>
 
@@ -118,55 +109,6 @@
       <div style="margin:32px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
         <a href="../../../about.html#francesco-bianchini" style="color:#d41f1f;text-decoration:none;border-bottom:1px dashed #d41f1f;">About the Author: Francesco Bianchini &rarr;</a>
       </div>
-
-      <!-- Feedback Widget -->
-      <div class="feedback-widget">
-        <p>Did you enjoy this article?</p>
-        <div class="vote-buttons">
-          <button onclick="submitVote('Yes')">&#128077; Yes</button>
-          <button onclick="submitVote('No')">&#128078; No</button>
-        </div>
-        <div id="voteConfirm" style="display:none;margin-top:10px;font-size:14px;color:#2e7d32;">&#10003; Thanks for your vote!</div>
-        <div style="margin-top:20px;border-top:1px solid #e0d8ce;padding-top:16px;text-align:left;">
-          <p style="font-size:13px;color:#888;margin-bottom:8px;">Leave a comment</p>
-          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
-            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
-            <input type="text" name="_gotcha" value="" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="_next" id="feedbackReturn">
-            <input type="hidden" name="Page" id="page-tracking">
-            <input type="hidden" name="Environment" id="env-tracking">
-            <textarea name="comment" minlength="4" placeholder="Your comment..." style="width:100%;box-sizing:border-box;padding:10px;font-family:Georgia,serif;font-size:15px;border:1px solid #ddd;border-radius:2px;resize:vertical;min-height:80px;margin-bottom:10px;"></textarea>
-            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;box-sizing:border-box;padding:10px;font-family:'Lato',sans-serif;font-size:14px;border:1px solid #ddd;border-radius:2px;margin-bottom:14px;">
-            <button type="submit" style="background:#b51c20;color:#fff;border:none;padding:10px 28px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:2px;cursor:pointer;">Send</button>
-          </form>
-        </div>
-        <script>
-          var base=window.location.href.split('?')[0];
-          document.getElementById('feedbackReturn').value=base+'?feedback=sent';
-          document.getElementById('page-tracking').value=document.title+' — '+base;
-          document.getElementById('env-tracking').value=(function(){var h=window.location.hostname;if(h.indexOf('dev2')!==-1)return 'dev2';if(h.indexOf('vercel')!==-1||h.indexOf('localhost')!==-1)return 'dev';return 'prod';})();
-          function submitVote(vote){
-            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({vote:vote,Page:document.getElementById('page-tracking').value,Environment:document.getElementById('env-tracking').value,_subject:'Classic Chicago Quick Vote'})}).catch(function(){});
-            document.querySelectorAll('.vote-buttons button').forEach(function(b){b.disabled=true;b.style.opacity='0.35';});
-            document.querySelector('.vote-buttons button:'+(vote==='Yes'?'first':'last')+'-child').style.opacity='1';
-            document.getElementById('voteConfirm').style.display='block';
-          }
-        </script>
-      </div>
-
-      <!-- Article Navigation -->
-      <nav class="article-nav">
-        <a class="prev" href="../pitching-washingtons-tent/">
-          <img src="../pitching-washingtons-tent/_DSC1775.jpeg" alt="">
-          <div><span class="nav-label">&#8592; Previous</span>Pitching George Washington&rsquo;s Tent: Celebrate America 250 at the Newberry</div>
-        </a>
-        <a class="next" href="../about-the-town-june/">
-          <img src="../about-the-town-june/COVER Chicago Dance Month.jpg" alt="">
-          <div><span class="nav-label">Next &#8594;</span>About the Town in June</div>
-        </a>
-      </nav>
-
-    </div>
     </div>
   </article>
 </main>
