@@ -7,8 +7,8 @@ _Updated: 2026-09-03_
 ## Judy's official lineup (`1a05977b5615c844`, received 2026-08-31, refined through Sept 3 emails)
 
 Nav chain order (hero → last):
-1. `francesco-bianchini` — Francesco Bianchini's 100th Story (his 100th published piece — lead article)
-2. `silvia-beltrametti-satire` — Silvia Beltrametti and Satire, by Judy (Annie building)
+1. `silvia-beltrametti-satire` — Ink and Outrage at the Driehaus Museum, by Silvia Beltrametti (lead article, confirmed by Judy Sept 4)
+2. `francesco-bianchini` — Francesco Bianchini's 100th Story (his 100th published piece)
 3. `jafra-canaan-wellspring` — Young Dancer's Perspective, by Judy (Jafra / Canaan Wellspring Q&A)
 4. `rush-benefit` — Rush Woman's Board Benefit, by Emma
 5. `sounds-good-choir-river` — Sounds Good Choir on the River, by Emma
@@ -25,7 +25,7 @@ Judy is also writing a separate Editor's Page piece about Francesco's 100th-arti
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
 | francesco-bianchini | Francesco Bianchini's 100th Story | Francesco Bianchini | Placeholder | — | Judy says content is going directly to Ana, not John — check with Ana before assuming it hasn't arrived. |
-| silvia-beltrametti-satire | Silvia Beltrametti and Satire | Judy Carmack Bross | Placeholder | Cover photo in hand (`IMG_4010.jpeg`, msg `1a05f306943b5e4d`), not yet placed | Confirmed by John (Sept 3) to be the same article the Aug 31 lineup called "Silvia Krehbiel Driehaus curator" — name corrected to Beltrametti. **Confirmed via iMessage (Sept 3) this is genuinely Silvia's maiden name** — she wants to use it for the byline (article has an Italian angle) even though most people know her married name. Article text **still not received** — Judy's Sept 3 text says she "owes" this profile, along with Marjorie's. **Nav position may change** — Judy asked John Sept 3 whether Silvia's piece should run first (ahead of Francesco's); unresolved as of last text. |
+| silvia-beltrametti-satire | Ink and Outrage at the Driehaus Museum | Silvia Beltrametti | ✅ Full Q&A text built (msg `1a06bca122ee0497`, Sept 4) — 9 questions verified against source, tracked changes accepted, "10 days" corrected to "7 days" per Judy | ✅ 7/8 photos placed, matched by visual inspection against Silvia's numbered caption list (table photo #2 excluded per Judy; caption #7 unavailable — Dropbox link only) | **Now the lead article** (Judy confirmed Sept 4). Bio still `[Bio pending]` in about.html. |
 | jafra-canaan-wellspring | Young Dancer's Perspective | Judy Carmack Bross | Placeholder | Photos in hand (Google Drive folder + `hananpicture.JPG`/`sarahpicture.jpeg`, msg `1a0536f036aaa3e6`; cover-photo options sent Sept 2, msg `1a06174ba14099e2`), not yet placed | Q&A with dancer Sarah Zakarneh and choreographer Hanan (Canaan Wellspring / Jafra event at the Athenaeum Center). Judy's draft docx in hand (`Canaan Wellspring.docx`, msg `1a0526f7b944412d`). John's approach-question to Judy is still unanswered by John, but **Judy said via iMessage (Sept 3) "I think you have what you need to publish Sarah's story"** — she considers content sufficient regardless. Still worth John giving his actual opinion before finalizing, per the standing rule not to skip replies just because a lineup keeps moving. |
 | rush-benefit | Rush Woman's Board Benefit | Judy Carmack Bross (byline TBD — likely Emma) | Placeholder | Cover photo in hand (msg `1a0575715a1e8423`), not yet placed | By Emma per lineup. Article text not yet received. |
 | sounds-good-choir-river | Sounds Good Choir on the River | Judy Carmack Bross (byline TBD — likely Emma) | Placeholder | Two candidate cover photos sent Sept 1 (msg `1a05d171149a00d8` "river music" and msg `1a05c81fbf12bf31` "Hallelujah Chorus sing-a-long") — same event; need to confirm which Judy prefers before placing | By Emma per lineup. Article text not yet received. |
@@ -37,15 +37,17 @@ Judy is also writing a separate Editor's Page piece about Francesco's 100th-arti
 
 ## Notes
 
-- Nav chain order (hero → last): francesco-bianchini → silvia-beltrametti-satire → jafra-canaan-wellspring → rush-benefit → sounds-good-choir-river → dr-ruth-gannon-cook → tadoussac → fill-the-stands
-- Homepage hero and all 7 non-Fill-The-Stands cards use `card-placeholder.jpg` — replace with real cover images as they're extracted/received.
+- Nav chain order (hero → last): **silvia-beltrametti-satire** → francesco-bianchini → jafra-canaan-wellspring → rush-benefit → sounds-good-choir-river → dr-ruth-gannon-cook → tadoussac → fill-the-stands
+- Homepage hero and remaining placeholder cards use `card-placeholder.jpg` — replace with real cover images as they're extracted/received.
 - Nav thumbnails across the edition use a shared `thumb-placeholder.jpg` at the edition root — replace with real navthumbs as content/covers arrive. Same harmless "duplicate image used 2×" pattern as prior editions (`content_audit.py` now excludes this from its duplicate-photo check).
+- **Silvia Beltrametti's "Ink and Outrage at the Driehaus Museum" is now READY** (Sept 4) — full Q&A text (9 questions, verified against source count) built from her clean docx (tracked changes accepted per Judy's instruction), 7 photos placed matched by visual inspection against her numbered caption list (not filename), typo corrected per Judy's explicit instruction ("10 days" → "7 days," since the exhibition closes Sept 13 and this runs Sept 6). Table photo (her caption #2) deliberately left out per Judy. Caption #7 (Robert Chase Heishman's "Bob" installation shot) could not be built — it was only a Dropbox link in Silvia's email, not an attachment; not included in the article. **Judy confirmed this morning (Sept 4) it's the lead article** — nav chain and homepage swapped so Silvia now leads, Francesco moved to #2 (his content is still pending from Ana). Silvia's about.html bio is still "[Bio pending]" — Judy is getting it from her today.
 - **Open decisions needed from Judy/contributors:**
-  - ~~Confirm Silvia Beltrametti naming with Judy directly~~ — **RESOLVED via iMessage Sept 3**: it's her real maiden name, she wants it used for the byline.
-  - **Whether Silvia's article should run first** (ahead of Francesco's 100th-story lead) — Judy raised this via iMessage Sept 3, unresolved.
-  - Silvia's and Marjorie's actual article text — Judy confirmed via iMessage Sept 3 she still owes both.
+  - Silvia's bio — Judy said she wrote to Silvia again for it Sept 4; about.html entry added with `[Bio pending]` placeholder so the byline link isn't broken.
+  - Caption #7 photo (Bob00333 / Robert Chase Heishman) — only a Dropbox link was sent, not an attachment; ask Silvia to send the file directly if it should be included.
+  - Marjorie's/Tadoussac's actual article text — still not received; Judy's Sept 4 email says Annie has the photos + lead + Marjorie's opening paragraphs and it can run with just those (no captions needed).
   - Which "Sounds Good Choir" cover photo to use (river music vs. Hallelujah Chorus sing-a-long).
   - Dr. Ruth Cook byline: confirmed "Marcie Harrison" (resolves the earlier Harrison/Harrington ambiguity).
   - Marjorie Schwebel's bio is still needed for about.html.
   - John owes Judy a reply on the Jafra/Canaan Wellspring interview-form approach — though Judy said via iMessage Sept 3 she thinks the content in hand is enough to publish regardless.
-- Two new authors this edition: Marcie Harrison, Marjorie Schwebel — both added to about.html "More Contributors."
+  - Francesco's 100th-article tribute note (Judy's suggested text for the Writer's Page cross-reference) — not yet built into his article; Judy says she'll send it today along with the piece Ana already sent.
+- Three new authors this edition: Marcie Harrison, Marjorie Schwebel, Silvia Beltrametti — all added to about.html "More Contributors."
