@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waves of the (Not-So-Blue) Danube | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/Waves-of-the-Not-So-Blue-Danube1.jpeg" alt="Waves of the (Not-So-Blue) Danube">
+<h1>Waves of the (Not-So-Blue) Danube</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; August 9, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>I arrived in Szentendre (pronounced &#8216;Sentendre&#8217;) on a scorching late summer afternoon. The river cruise from Budapest, which I’d postponed several times due to the heat and the crowds, had failed to deliver on its promise of cool breezes and watery relief. I&#8217;d imagined a majestic waterway nestled among vine-covered hills and dotted with lookout towers and quaint villages—something akin to the Rhine or the Douro. But this stretch of the Danube flowed broad and slow between low, scrubby banks, with little to catch the eye beyond the occasional tamarisk, poplar, or oak tree. Scattered among them were the weekend cottages of Budapest’s middle class, complete with glassed-in porches and boats dragged up onto dry land.</span></p>
+
+<p><span>Cruising up the river on a summer afternoon</span></p>
+<p><span>A white light shimmered off the river, dazzling my vision, so that when the boat docked, the village appeared pixellated, like a water-blurred mosaic in pastel tones—a Paul Klee watercolor come to life. It took a good fifteen minutes for the glare to fade, during which time the village revealed itself to my other senses: the uneven cobblestones under my sandals, the welcome shade of the tall linden trees spilling over garden walls, and the squat church towers capped with bulbous spires; the spicy scent of stews and fresh bread.</span></p>
+<p><span>Szentendre is one of those villages that can be unashamedly described as picturesque—the kind of place that, once settled by artists, takes on a vaguely Mediterranean air. Once filled with studios and galleries tucked behind baroque facades and wrought-iron grilles, the village today is a string of taverns, souvenir stalls, and shops selling Swarovski crystals and Herend porcelain.</span></p>
+
+<p><span>Quayside, Szentendre</span></p>
+<p><span>When I learned that the artists’ house-museums, which I had planned to visit, were inexplicably closed that day—despite what the guidebook had promised—and that the only cultural attraction left was a Marzipan Museum featuring, among other things, life-size statues of Michael Jackson and Princess Diana, I lost my bearings. What was I doing here, in this stifling heat at the tail end of September, with no boat back to Budapest until 5 p.m., and only one weekly service during the low season?</span></p>
+<p><span>I began wandering the village lanes, hugging the painted walls, passing short, squat doorways, with a strange sense of déjà vu. I was sure I had never been here before, yet images surfaced in my mind—of an equally sultry afternoon at Lake Wannsee near Berlin, with its flowering villas once inhabited by impressionist painters; of the waterlilies at Giverny; of the wisteria, lilac, and jasmine cascading over the garden walls of Barbizon in springtime. Why is it that one place is never just one place, but a hundred others? And why, when feeling a bit disoriented, do we always let ourselves follow our worst instincts?</span></p>
+<p><span>Hoping to spend a quiet hour enjoying some local cuisine, I ignored the terraces of the gelaterias, beer gardens, and sandwich shops, and stepped instead into an historic inn with an appropriately theatrical name—the Golden Dragon or something like it. The place was nearly empty. The cook and the waitress, idle and chatting behind the bar, were sipping beer.</span></p>
+
+<p><span> Elegant dining, Aranysárkány Vendéglő, Szentendre</span></p>
+<p><span>I ordered a cold raspberry soup, which turned out to be more of a dessert, but it was refreshing. Then I asked for goulash, knowing full well that it was over 30°c outside. I’d already sampled Hungary’s signature dish in all its fanciful variations, including one memorable presentation served in a miniature cauldron suspended over a tea light. This time, it arrived in a more sober form, with a warning: the paprika paste served on the side was <em>very hot!</em> So hot, in fact, that I should add it using only the tip of a toothpick.</span></p>
+
+<p><span>Paprika and spice, and everything nice</span></p>
+<p><span>I tend not to take that kind of alarmist warning seriously. When a waiter serves a dish labeled &#8216;scalding&#8217; using a thick dish towel to protect his hands, I simply <em>must</em> touch the plate to test the truth of the claim. I eyed the steaming bowl. <em>Gulyás</em>—which in Hungarian is only an adjective, meaning something like &#8216;herdsman-style&#8217;—is first and foremost a visual spectacle: chunks of prized beef from the hardy local grey cattle, swimming in a primordial stew of onions, carrots, potatoes, sour cream, and paprika. The cook was spying on me from the kitchen, and, unnerved by his watchful gaze, I decided to follow the instructions. I added a few tiny dabs of paprika paste to the stew using the tip of the toothpick—and I was very glad I did.</span></p>
+<p><span>Now came the problem of digesting that protein-rich magma in a shady, tranquil place. I&#8217;d noticed earlier a small riverside beach protected by a fringe of trees. A few people were swimming in the Danube. I had my swimsuit with me in case I felt like a dip, but the damp, clumpy sand didn’t invite lounging. Instead, I found shelter beneath a plane tree in the middle of a grassy field, and resolved to correct my Italian students’ homework from Eötvös Loránd University. A noble plan—and a hopeless one. I was soon struck by a bout of the kind of bone-deep drowsiness the French call a <em>coup de barre</em>—a wallop of sudden fatigue.</span></p>
+
+<p><span>Eötvös Loránd University, department of Humanities</span></p>
+<p><span>I dreamt of an approaching summer storm: dark clouds piling up overhead, rustling branches, distant thunder, and the first drops tapping on the leaves. I woke to find the sky cloudless and the boat still far from departure. I went to sit at the terrace of a café facing the pier, assaulted by the kind of pop music that seems to plague cafés at every latitude. I ordered what no Hungarian can resist on a hot day: a lemonade in a tall glass filled with ice and lemon wedges—a blessing after the assault of Magyar cuisine.</span></p>
+<p><span>At last, it was time to cast off. The passengers had all claimed spots on the benches of the upper deck, fanning themselves with hats and napkins, as if we were navigating the Magdalena River through the Colombian jungle. For a while, a man on a jet-ski buzzed us like a pesky fly, looping figure-eights around our boat at full speed. The passengers watched him with sly smiles that masked a probably universal—if unspoken—desire to see him lose control and crash into the reeds. Towards evening, a gentle coolness settled over the river, just as the boat passed under Budapest’s bridges, and the city’s grand buildings faded into a bluish haze.</span></p>
+<p><span> The Hungarian Parliament, in evening&#8217;s ebbing light</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

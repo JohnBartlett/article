@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On the Good Ship Sardine Can | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/81On-the-Good-Ship-Sardine-Can1.jpeg" alt="On the Good Ship Sardine Can">
+<h1>On the Good Ship Sardine Can</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; July 26, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>At the end of summer, my father would take us sailing around the Mediterranean. The rented sailboat was spacious, but he always managed to fill it to the brim. If we — already a large family, though never quite complete — weren’t enough, he would invite cousins, in-laws, or sweethearts, until the boat ended up looking like a floating can of sardines.</span></p>
+
+<p><span>Matching uniforms, mismatching tempers</span></p>
+<p><span>I both loved and hated those holidays. I hated the frantic packing before departure, the absurd stockpiles of <i>pipe rigate</i> — a kind of pasta we called ‘<em><span>shells</span>’</em> at home — the five-kilo bags of Carnaroli rice, the giant cans of peeled tomatoes and peaches in syrup, as if we were planning not to hop from one island to another but to cross the Seven Seas. Years later, visiting an exhibit at the Archivo de Indias in Seville about Magellan’s circumnavigation, I stopped in front of a display showing the supply lists for his caravels and smiled at the comparison.</span></p>
+<p><span>I loved the sound of the wind filling the sails, pushing the boat forward with nothing but its own force, and the lively lapping of the water against the hull. I loved reading at night under the warm amber light of the cabin lamp, imagining that little walnut shell cradling us between two endless black immensities, picturing fish and jellyfish slipping through the pitch-dark water right beneath my pillow. At the same time, I hated the frenzy on deck whenever the wind picked up: pull here, ease off there, hard to starboard, slack to port, and the whole sailor’s jargon <em>de rigueur</em>. I always wondered why, for the same money, we didn’t just rent a motorboat complete with crew and cook. I hated when it rained for two or three days straight and there was nothing to do but stay cooped up inside while tension and bad moods crept in.</span></p>
+<p><span>Sailing always gave me a sharp sense of claustrophobia. Once, there was a sudden storm off the Calabrian coast. The boat was anchored far from the dock in the port of Lipari. I woke up in the middle of the night in a panic attack, desperate to get ashore, find a train, and go home. Everyone else was sleeping, rain drumming on the deck and the hull. I couldn’t breathe, and there was no way to open even a porthole.</span></p>
+
+<p><span>Anchored in paradise, floating on glass</span></p>
+<p><span>I loved when we dropped anchor in a hidden cove. The mast stood tall against the blue sky and the green of myrtle and mastic bushes. The water was so clear that the boat seemed to float in mid-air, its shadow sharply outlined on the seabed. I also loved watching my brother Stanislao — the only one qualified as a pilot — bent over the nautical charts, tracing fine lines with a compass.</span></p>
+<p><span>I hated it when we sailed for days in a row, and when water for showers had to be rationed. Salt would sting under our clothes and our hair stood on end. I hated when everyone left their things scattered about and I’d end up tripping over someone’s bag or flippers. I couldn’t stand the dirty footprints or the puddles of stale water on deck, the sand left unwashed in the tiny shower stall. I loved the endless card games, with points jotted down on scraps of paper under laughably abbreviated nicknames: <em>pa–fra–fa–fi–so–sa–fe–sta</em> (Papa, Francesco, Fabrizio, Filippo, Sofia, Sabina, Federico, Stanislao). I loved — though not always — wearing the sailor outfits my father had unearthed from who knows where: a blue-striped shirt and red pants for the crew, and, inversely, a red-striped shirt and blue pants for him and Stanislao — Admirals of the Fleet.</span></p>
+<p><span>I hated the bickering between Papa and Stanislao about how the docking maneuvers should be handled, sounding like the rants of two jealous Olympian gods, while my sister Sabina — at the far end of the deck — played the part of a Greek chorus as the boat spun round and round. I loved ordering ouzo at a harbor bar and pretending I had nothing to do with the boat flying the Italian flag. I loved getting ashore and being able to get the hell away: to spend a few hours wandering the streets of Valletta or reading a newspaper in an all-stucco, neoclassical café in Ermoupoli.</span></p>
+
+<p><span>A promise of feta and ouzo</span></p>
+<p><span>I loathed the seasickness patch I tried once — it gave me hallucinations, and I never used one again. Only once, in Malta, when it was just my father, Stanislao, and me — everyone else had already flown home — did I have to lie down in my cabin while they chased after a regatta in strong afternoon winds. That evening, they insisted on celebrating their stunt with dinner at a fancy restaurant, but I couldn’t swallow a bite. My insides were still pitching, and the ground swayed beneath my feet.</span></p>
+<p><span>I hated cooking on board, especially at sea when it was necessary to unhook the tilting galley stove so the water — which never boiled — wouldn’t spill. I hated my shift in the kitchen, when it was my turn to wash the dishes for seven or eight people in that tiny sink. On the other hand, I love the memory of meals eaten on land — especially the taste of every Greek salad I ever had under the vine-covered pergola of a taverna, or at an <em>ouzeri</em> overlooking a pier from a dazzling white citadel perched on the summit of some island, dry and sun-baked like a donkey’s back. Tomatoes, cucumbers, red onions, black olives, feta cheese, olive oil, and a sprinkling of fresh oregano.</span></p>
+
+<p><span> A salad of memory</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

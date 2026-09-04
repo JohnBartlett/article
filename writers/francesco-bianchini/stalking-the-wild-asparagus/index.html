@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stalking the Wild Asparagus | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/77Stalking-the-Wild-Asparagus6-1024x768.jpg" alt="Stalking the Wild Asparagus">
+<h1>Stalking the Wild Asparagus</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 17, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>Just lightly steamed, the French domesticated variety</span></p>
+<p><span>With winter over, the first sunny days carry me back to walks in the Umbrian countryside, scouring the slopes in search of wild asparagus to cook for lunch. Hunting it combines the pleasure of warm air, the soft green palette of new grass, and the yellow patches of rapeseed. It is a game of hide and seek — looking for the slender spears, armored in tiny scales like little warriors — accompanied by the anticipation of a plate of tagliatelle or strangozzi, tossed in a rich sauce of bacon (guanciale) and onion, soaked with white wine or broth.</span></p>
+
+<p><span>The village asparagus fête &#8211; who could not be tempted?</span></p>
+<p><span>Dan once bought wild asparagus at a market stall in Sarlat, but the French ones weren’t quite the same: woody, bitter — not worth repeating. Yet cultivated asparagus, grown in France since the 15th century, is revered so much that it has inspired an entire category of ceramic dishes, decorated in vivid relief.</span></p>
+
+<p><span>My find in the Italian wild</span></p>
+<p><span>The cook in the Proust household serves them one year with obsessive regularity. “What, Françoise, more asparagus?” cries young Marcel. “It’s a real craze for asparagus you’ve got this year, which will eventually tire our Parisians.” Green and slender, or fat and albino, even violet — according to Proust’s own description, “tinged with ultramarine and rosy pink which ran from their heads, finely stippled in mauve and azure, through a series of imperceptible changes to their white feet, still stained a little by the soil of their garden-bed: a rainbow-loveliness that was not of this world.”</span></p>
+<p><span>A few years ago, an American lady entrusted Dan and me with the decoration of a house she had just purchased in a village nestled in the <em>garrigue</em>, in the heart of the triangle formed by Nîmes, Uzès, and Avignon. The beauty of the landscape seduced us — the blue crown of the Cévennes, the cypress groves and umbrella pines, the sunflower fields like those painted by van Gogh. So did the quality of the investment: a portion of the village wall, with spacious rooms connected by a stone spiral staircase, and the prospect of throwing out the remaining ugly furniture to start from scratch.</span></p>
+
+<p><span>A ciel de lit with toile de Jouy &#8211; très français, très chic!</span></p>
+<p><span>The region — between Languedoc and Provence — is a haven for flea market enthusiasts, junk shop scavengers, and seekers of discounted fabric. During the weeks we dedicated to the project, we scoured them all, spending the lady’s money with abandon. We bought furniture and curios, commissioned curtains and canopies in toile de Jouy. Sometimes the brocantes offered food too: at one in Villeneuve-lès-Avignon, we found — among many treasures — a 17th-century carved panel we mounted over a crooked fireplace hood to correct its tilt, and lunched in the March sun on oysters and glasses of Pays d’Oc. In Carpentras we stumbled upon eight portraits of courtiers from the time of Henri II — perfect for a wall that had resisted all our efforts — and a Louis-Philippe desk we placed beside the fireplace in the master bedroom. I remember it so precisely because of the snack we devoured at a wobbly bistro table: an omelette with Provençal herbs and caramelized tomatoes, soaking in a coulis rich with garlic and basil. If we had closed our eyes, we might have sworn we heard cicadas — in April! We had to arrive early in Beaucaire to strike the best deals. The brocanteurs gathered beneath the lime trees along the Rhône, unloading crates of loot rescued from cellars and attics. By ten, they had cleared out. Everything must go! There was just enough time for a <em>grand crème</em> and a <em>chocolatine</em> from the bakery on the Quai de la Paix. For me — you may have guessed — paradise is an endless flea market on a warm spring morning.</span></p>
+
+<p> Our completed salon decor, warm and cozy</p>
+<p><span>Two Renaissance windows of the house, and its rooftop terrace, overlooked the town square. Beneath the plane trees that shaded the old fountain, villagers gathered from morning till night for long games of pétanque. From the open windows came the clacking of boules and bursts of cheers and laughter. It was also the site of the annual asparagus fête, a perfect excuse to mingle with the locals. Asparagus was served boiled, steamed, griddled, sautéed, or baked <em>au gratin</em>. Dan took inspiration for a salad he still prepares: asparagus cut into short lengths, each section boiled to the second depending on how close to the base it grows. While they cool and drain, he whisks a vinaigrette, peels and chops boiled eggs, and throws in a handful of garlic croutons. Eating so much asparagus, and drinking countless glasses of Coteaux du Pont du Gard transformed – to quote Proust once again – ‘my humble chamber pot into a bower of aromatic perfume.’</span></p>
+
+<p><span>The medieval tower house, Vers Pont du Gard</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

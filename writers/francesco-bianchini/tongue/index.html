@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tongue | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/85Tongue2jpg.jpeg" alt="Tongue">
+<h1>Tongue</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; October 25, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>Boiled tongue was one of my childhood nightmares, an image transformed and softened over time to the point of taming the haunting memory—the gruesome sight of that severed muscle lying on the kitchen marble. Tongue is rarely found on restaurant menus, although many Italian regions claim it as their own. That was precisely why I ordered it in a well-known trattoria on Via Vittorio Emanuele in Palermo, where it was trumpeted as the house specialty along with tortellini in broth, outshining other, more typically Sicilian dishes—also on the menu—such as </span><i><span>sarde a beccafico</span></i><span> and eggplant rolls. During my long winter stay in Palermo, I was accustomed to restaurants offering exactly what I smelled while ambling down the streets, odors drifting from half-open kitchen windows. And it was home cooking I was craving on that damp, windy morning.</span></p>
+
+<p><span>Well-disposed to what I&#8217;d selected as my first course—homemade tortellini in a broth perfumed with spices, vegetables, and long-simmered meats—I turned my attention to the </span><i><span>secondo</span></i><span>, opting for tongue. The rosy slices arrived, both firm and tender, yielding easily to my fork. The taste of tongue differs from other cuts used in the classic </span><i><span>bollito misto</span></i><span>; richer, almost buttery, as it comes from an especially fatty part. A dish born of poverty—using the “fifth quarter” (the lesser cuts)—it is usually ennobled by the addition of </span><i><span>bagnetto verde</span></i><span>, that exquisitely aromatic sauce of minced parsley, garlic, and salt-cured anchovies, said to have been created at the nineteenth-century court of the Sardinian king, Carlo Alberto. I thought to myself that, while savoring the pairing and gladly dipping salsa verde again and again, there never was a more felicitous marriage in the kitchen.</span></p>
+
+<p><span>But, as I said, it was not always so. My memory darts back to Augusta, my parents’ cook during the Golden Age of my Umbrian childhood, lifting the tongue from the basin where it had been soaking, and slapping it unceremoniously onto the kitchen table. Tinged with white fatty speckles, its shriveled tip lolling over the marble’s edge, it looked for all the world to me like an alien creature.</span></p>
+
+<p><span>“What’s that?” I’d ask.</span><span><br />
+</span><span>“Ox tongue,” Augusta replied laconically. She had deliberately chosen the most brutal term—ox—instead of something more comforting, like calf, beef, or even veal. I remember Augusta as a skilled cook, but she was rough as sandpaper in her manner.</span><span><br />
+</span><span>“And what will you do with it?”</span><span><br />
+</span><span>“Fix it for lunch.”</span></p>
+<p><span>I wailed, nausea rising in my throat, staring again at that repellent thing; motionless, yet seeming to pulsate like an enormous earthworm, wrinkled like skin after a long bath, its surface dotted with pink taste buds—making it all the more horrific.</span><span><br />
+</span><span>“I won’t eat it,” I&#8217;d declare.</span><span><br />
+</span><span>“We’ll see,” she&#8217;d say with a wicked little smile. Augusta knew the rigid protocol of my parents at meals, and that I&#8217;d have little chance of being fussy.</span></p>
+
+<p><span>The tongue Augusta prepared would appear at the table sliced into thin pieces, arranged on an oblong platter in a circle, like a conveyor belt, with its green mash heaped in the center. The part of each slice nearer the root—stringy, laced with little veins and nerves—was carefully hidden beneath each preceding piece. Even so, I&#8217;d still conjure the vivid image I&#8217;d seen in the kitchen. I would make a fuss, but my parents paid no mind. On my plate, the tongue, even with its supposed redeeming sauce, was no more appealing. There was no leafy garnish to offer a refuge where I might discreetly hide what I wished to discard. I had a strategy: trim away the most offensive parts with my knife, push them aside, and cut the rest into bits as tiny as confetti. Despite this, I could not manage a swallow. Not even with a crust of bread to mask the taste, nor with great gulps of water to wash it down. Certainly not with Augusta&#8217;s pathetic green mush. My throat convulsed involuntarily, and I&#8217;d feel my grandmother’s eyes burning into me. My last resort, kept for the most desperate case, was to spread my napkin on my lap and, with the stealth of a pickpocket, slip the bits into it—later to be flushed down the toilet at the end of the meal.</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

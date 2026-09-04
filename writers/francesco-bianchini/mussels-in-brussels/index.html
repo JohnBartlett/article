@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mussels in Brussels | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/76Mussels-in-Brussels1-1024x768.jpeg" alt="Mussels in Brussels">
+<h1>Mussels in Brussels</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; April 5, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>I grew up in a landlocked region. Fresh, quality saltwater fish was reserved for special occasions. Seafood restaurants were rare; their names were passed on by word of mouth, and the journey to get there didn’t put anyone off. In our salad days, my friend Luisa and I could barely scrape together enough money to buy a kilo of mussels from the fishmonger. It was another era: supermarkets had yet to appear in Umbrian villages, and the fishmonger only opened on certain days of the week—Tuesdays and Fridays, in keeping with Catholic tradition—offering whatever he had sourced at dawn from suppliers along the Adriatic coast. The mussels were usually covered in grit, and we had to scrub away the encrustations and remove the beards before soaking them in salted water. Once drained, we’d toss them into a pot where oil, garlic, and chili pepper sizzled at the bottom. The steam would cause the shells to pop open and reveal their succulent contents. Off the heat we’d finish them with a shower of chopped parsley. Enjoying them in heaps of linguine, or plucking them straight from their steamy broth, were simple pleasures, though not always assured ones. Sometimes, the fishmonger got a particularly fine batch, and they’d sell out as soon as he opened his stall.</span></p>
+<p><span>The fishmonger’s first customer</span></p>
+<p><span>It was years later when I would first taste <em>moules frites</em>—Belgium’s celebrated specialty—in Paris and at countless country fairs across France. Only then did I realize the fundamental misunderstanding in the name: the mussels aren’t fried—too much do I love their briny, tender flesh to imagine them encased in a crispy batter—but rather served with thin, fried potatoes, the kind over which the French and Belgians have quarreled for ages. (Just as <em>steak frites</em> in the Francophone world means steak with a side of fries).</span></p>
+
+<p><span>Moules frites en cocotte</span></p>
+<p><span>To savor <em>moules frites</em> in the country that claims them as a national treasure, I made a stopover in Charleroi, which somewhat inconveniently connects Perugia with smaller airports near my home in France. A short bus ride—thirty minutes, perhaps a little more—takes you from Charleroi to the center of Brussels. And never mind that the capital of Belgium, some seven hundred kilometers north of my final destination, is not exactly on the way! But who could pass up the pleasure of breaking the journey in a renowned European city, human-scaled yet vibrantly cosmopolitan, rich in culture? Perhaps even staying the night, taking in its magnificent museums, strolling its parks, indulging in its restaurants?</span></p>
+<p><span>Pied-à-terre Brussels style</span></p>
+<p><span>One December afternoon I arrived in the city which was already lit up for the holidays; shop windows brimming with tempting delicacies and elegant fineries. I’d booked a room in the quarter abutting the Royal Palace, though I hadn’t anticipated that the owner—an antiquarian with eclectic tastes—had rented out the only bedroom in his home. He welcomed me with a glass of champagne in hand, then left me alone in his extravagant apartment. Hours spent admiring severe triptychs, turbulent skies, and luscious still lifes at the fine arts museum had whetted my appetite. In truth, I had chosen the neighborhood with a particular restaurant in mind—one that boasted of the best <em>moules frites</em> in the city.</span></p>
+
+<p><span>Sleeping splendor</span></p>
+<p><span><em>Le Chou de Bruxelles</em> offers <em>la moule dans tous ses états</em>—mussels in every possible state—some thirty variations in all. Steamed in wine, of course, with every imaginable herb and vegetable; but also in cream or Meaux mustard; <em>à la provençale</em> with tomatoes; Ardennes-style with bacon and mushrooms; truffled or simmered in Chimay beer (Trappist-style); or perhaps in Madeira, sherry, or Calvados (Normandy-style). Mussels with curry, ginger, or saffron. Even a <em>maison</em> specialty with Roquefort cheese and <em>anisette</em>. I let myself be tempted by no exoticism and ordered them the traditional way—white wine and vegetables. Though mussels were the house specialty, I wanted to leave room for more and chose them as a starter. A wise decision, for even with eyes bigger than my stomach, the portion was beyond generous. They arrived in a cast-iron cocotte which, when uncovered, clouded my glasses and filled my nose with the salty vapor of shellfish, the acidity of wine, the sweetness of onions, leeks, and celery. Special rubber tongs were provided to fish them from the steaming broth and bring them to my mouth. The waiter unfolded a large bib and tied it around my neck. The diner nearest to me—also alone—had been similarly outfitted. Each of us saw a reflection of himself in the other, and we exchanged amused smiles at the absurd masquerade.</span></p>
+<p><span>For my main course, I was served sea bass <em>à la mode d’Ostende</em>. The fish is poached, then smothered in a sauce of butter, flour, cream, and lemon juice before being baked under a gratin of grated cheese. As with the mussels, this was no longer the bold, sun-drenched flavors of the Mediterranean littoral, infused with garlic and wild herbs. Rather northern cuisine unfolds in half-tones. Like the liquid light of its landscapes and interiors. Like the deep plum twilight of the vaguely 1950s-style dining room, where the evening glow filtered in, diluted as in a Flemish painting. To understand how the light of northern cities has shaped a particular genre of painting, one must step into a place like this, I mused, savoring the fresh and perfectly tender fish. No violent contrasts. Surfaces catching the fading light are like autumnal pools in a forest. That’s how the bottles on the shelves appeared, how the half-filled glasses shimmered, how the chrome fixtures of the bar glowed. An interior suited for measured conversations, of composed gestures, to music without jolts. Still it was the name of the city—one I’ve never visited—that sparked my reverie—a pleasure one can only indulge when traveling alone, undistracted by conversation. Ostend… conjuring visions of seascapes in muted blues, of yellowed sails, of the tangled rigging of flat-bottomed boats, those built to rest easily on the sandy grey shores of the North Sea.</span></p>
+
+<p><span>Northern light, A</span><span>elbert Cuyp, The Maas at Dordrecht, National Gallery of Washington</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

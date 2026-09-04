@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Cervara | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/10-La-Cervara1-1024x611.jpeg" alt="La Cervara">
+<h1>La Cervara</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; July 3, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span></span></p>
+
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>&#8211; Chomping at the bit on an Umbrian hilltop…</span></p>
+
+<p><span>La Cervara in the distance on its beautiful hillside</span></p>
+<p><span>I have barely mentioned the house where I spent my youth, not dwelling on it because it is one of the places of which I am least fond. Yet my parents placed the highest expectations on this family property on top of a dominant hill, inhabited over time by several generations of farmers, and built around a watchtower dating back to Roman times. Papa made drawings and even built a Lego model to show us how we would all be happier in a house that was sun-kissed from morning till dusk, where everyone – or almost everyone in a family of seven children – would have a room to themselves, and where there would be plenty of bathrooms, unlike the old and badly planned castello we had lived in. In the frenzy of turning over their new leaf after twenty years spent between crumbling and obsolete walls – where every time there was a downpour it was necessary to adjust the buckets in the attics – Mamma and Papa didn’t hesitate to gut their house of dreams; replacing floors, beams, fixtures; inventing a porch to take advantage of the view of the western hills, adding a living room facing south, and a huge kitchen equipped with every imaginable modern convenience.</span></p>
+
+<p><span> </span><span>Large house for a large family</span></p>
+<p><span>Fifteen years separate me – the eldest – from my youngest sister. At the time of our move to La Cervara – the evocative name of the new property which loosely means ‘the deer park’ – my siblings and I attended every kind of school, from kindergarten to the last years of high school. Commuting was complicated and uncomfortable given the isolated location of the house. We had to walk a kilometre and a half to the fork on the main road where there was a bus stop on demand. One by one we began to get our driving licenses, but there were never enough cars. The ones belonging to my father and mother had to be reserved in advance or we would fight over them. For years I hitchhiked and was chauffeured back home – sometimes late at night – by more independent friends. As it was hard to figure out who had come home, and who hadn’t, the presumed last one in often locked the door. The simplest thing would have been for each of us to have a key, but this never happened. Nor was the entrance equipped with an electric doorbell, as in all the houses of this world. (No concession to modernity in that department.) There was an ancient door knocker, even a jangling little bell pulled by a rope, or ultimately the car horn. But none of us ever thought the bell tolled for us, so we never came down to open the door. Besides, as long as you didn&#8217;t lock your bedroom window from the inside, you could still get in by climbing a sequence of roofs. We lived separate lives in that big house, each cultivating dreams that seemed at odds with our confined reality. Years of study began – university for me, boarding schools for my younger brothers – but the illusion of the wider world clashed with any return to La Cervara. Upon arrival at the crossroads – due to a series of miscommunications – there was usually no one waiting.</span></p>
+
+<p><span>  </span><span>Escape from the house, late-night entry: scramble over the low roof!</span></p>
+
+<p><span>If you can’t get the car, a horse will do</span></p>
+<p><span>In spite of everything, I do hold some good memories: my father&#8217;s intimate library, where I spent more time than he did ensconced in front of the fireplace, reading or conversing with friends who had ventured out for tea or dinner; autumn walks in the woods and vineyards; preparing for exams in the south-facing living room with the doors open to the spring sun. And Christmases, when we all helped make decorations with branches and pine cones from the garden; lit fireplaces, cooked and set the table for holiday meals. In our first years there, when it seemed that the promise of ‘prosperity for all’ was kept, a woman would come in the morning to lend an extra hand in the kitchen. She’d make <em>maritozzi</em> for breakfast and that smell wafted up and permeated the house as each new batch was baked. In addition to the vanilla scent, there was also the aroma of orange peel and raisins, and I can remember the cakes neatly lined up in the stacked, eye-level ovens; the moment she extracted them, dark and shiny on top where she’d brushed milk and egg yolk. Unfortunately, I cannot forget the last years of anarchy and decadence when Rodolfo – the only survivor in the kitchen – showed his disdain and insubordination by donning a blue mechanic&#8217;s coat and managed to give birth to the most gruesome of his culinary creations. When the house was sold, all of us kids breathed sighs of relief. Or at least I did since the event marked the beginning of my adult and independent life. </span></p>
+
+<p><span> </span><span>Me in my father’s study</span></p>
+<p><span>I only returned to La Cervara fifteen years later, the place then transformed into nothing less than a five-star hotel and spa. I had just met Dan, and my friend Luisa and I decided to celebrate with a dinner for the three of us, just as the son of celebrity chef Vissani had taken over the restaurant kitchen. For Luisa and me, the house represented vibrant pieces of our lives: the first kiss in the car outside the front door; a phone call that lasted from nine p.m. until seven a.m. the next morning; rounds of cleaning when no one else bothered anymore to tidy the place – to which we submitted solely for the pleasure of organizing an intimate dinner for the two of us. Dan didn&#8217;t understand a word of Italian at that time, and had lost a whole series of explanatory antecedents in translation. For him it was an evening most bizarre, in which he tried to understand why I would ever have to climb across roofs merely to get a room in that hotel; or why the hell Luisa and I were forced to clean the whole dining room before sitting down to dinner in its restaurant. For Luisa and me it was even more extravagant to see the contrived dishes of <em>L’Altro Vissani</em> arrive from the same kitchen where Rodolfo had done his worst, with his cauldrons of overcooked pasta splashing in a swill of sauce, or his rice salad that – having slipped out of his hand – had been scooped up off the floor, arriving at the table embedded with shards of glass. </span></p>
+
+<p><span>Metamorphosis to a five-star hotel</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

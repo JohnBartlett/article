@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articles by Francesco Bianchini | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="/index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+<p class="index-intro">A collection of Francesco Bianchini&rsquo;s &ldquo;Continental Memories&rdquo; column for Classic Chicago Magazine, spanning 2021 to 2026.</p>
+<p class="index-note">This is a partial archive: Francesco has written roughly 100 pieces for Classic Chicago since 2021, but only those recoverable from the site's 2026 backup snapshot (and the ones already rebuilt on the current site) are shown here. A multi-year gap (2022–2024) was not captured in the available backup.</p>
+<div class="year-group">
+<div class="year-label">2026</div>
+<a class="article-card" href="francesco-bianchini/index.html">
+  <img class="card-thumb" src="francesco-bianchini/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">September 6, 2026</div>
+    <div class="card-title">Chopsticks</div>
+  </div>
+</a>
+<a class="article-card" href="on-the-verge-of-a-heatstroke/index.html">
+  <img class="card-thumb" src="on-the-verge-of-a-heatstroke/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 26, 2026</div>
+    <div class="card-title">Soup on the Verge of Heatstroke</div>
+  </div>
+</a>
+<a class="article-card" href="tiepolo-sky/index.html">
+  <img class="card-thumb" src="tiepolo-sky/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 5, 2026</div>
+    <div class="card-title">Dining Under a Tiepolo Sky</div>
+  </div>
+</a>
+<a class="article-card" href="ciorba-de-perisoare/index.html">
+  <img class="card-thumb" src="ciorba-de-perisoare/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">June 21, 2026</div>
+    <div class="card-title">Ciorba de Perisoare</div>
+  </div>
+</a>
+<a class="article-card" href="omelette-and-wine/index.html">
+  <img class="card-thumb" src="omelette-and-wine/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">May 31, 2026</div>
+    <div class="card-title">An Omelette and a Glass of Wine</div>
+  </div>
+</a>
+<a class="article-card" href="guinness-inis-mor/index.html">
+  <img class="card-thumb" src="guinness-inis-mor/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">May 10, 2026</div>
+    <div class="card-title">The First Guinness on Inis Mór</div>
+  </div>
+</a>
+<a class="article-card" href="madeira/index.html">
+  <img class="card-thumb" src="madeira/madeira-1.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">April 26, 2026</div>
+    <div class="card-title">Madeira: An Island Revealed from Above</div>
+  </div>
+</a>
+<a class="article-card" href="shape-of-bread/index.html">
+  <img class="card-thumb" src="shape-of-bread/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">April 12, 2026</div>
+    <div class="card-title">The Shape of Bread</div>
+  </div>
+</a>
+<a class="article-card" href="guardian-san-pietro/index.html">
+  <img class="card-thumb" src="guardian-san-pietro/ascenzio-portrait.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">March 15, 2026</div>
+    <div class="card-title">The Guardian of San Pietro</div>
+  </div>
+</a>
+<a class="article-card" href="case-of-the-missing-caramel/index.html">
+  <img class="card-thumb" src="case-of-the-missing-caramel/../../../logo.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">March 1, 2026</div>
+    <div class="card-title">The Case of the Missing Caramel</div>
+  </div>
+</a>
+</div>
+<div class="year-group">
+<div class="year-label">2025</div>
+<a class="article-card" href="tongue/index.html">
+  <img class="card-thumb" src="tongue/imgs/85Tongue2jpg.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">October 25, 2025</div>
+    <div class="card-title">Tongue</div>
+  </div>
+</a>
+<a class="article-card" href="when-in-rome/index.html">
+  <img class="card-thumb" src="when-in-rome/imgs/84When-in-Rome1-1024x768.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">September 13, 2025</div>
+    <div class="card-title">When in Rome</div>
+  </div>
+</a>
+<a class="article-card" href="croque-madame/index.html">
+  <img class="card-thumb" src="croque-madame/imgs/83Croque-Madame2-1024x576.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">August 23, 2025</div>
+    <div class="card-title">Croque Madame</div>
+  </div>
+</a>
+<a class="article-card" href="waves-of-the-not-so-blue-danube/index.html">
+  <img class="card-thumb" src="waves-of-the-not-so-blue-danube/imgs/Waves-of-the-Not-So-Blue-Danube1.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">August 9, 2025</div>
+    <div class="card-title">Waves of the (Not-So-Blue) Danube</div>
+  </div>
+</a>
+<a class="article-card" href="on-the-good-ship-sardine-can/index.html">
+  <img class="card-thumb" src="on-the-good-ship-sardine-can/imgs/81On-the-Good-Ship-Sardine-Can1.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 26, 2025</div>
+    <div class="card-title">On the Good Ship Sardine Can</div>
+  </div>
+</a>
+<a class="article-card" href="seafood-tryptic-iii-ceviche/index.html">
+  <img class="card-thumb" src="seafood-tryptic-iii-ceviche/imgs/80Seafood-tryptic-Ceviche6-944x1024.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 5, 2025</div>
+    <div class="card-title">Seafood tryptic III: Ceviche</div>
+  </div>
+</a>
+<a class="article-card" href="seafood-tryptic-a-soup-in-provence/index.html">
+  <img class="card-thumb" src="seafood-tryptic-a-soup-in-provence/imgs/79Seafood-tryptic-II-A-Soup-in-Provence1-scaled.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">June 14, 2025</div>
+    <div class="card-title">Seafood tryptic – A Soup in Provence</div>
+  </div>
+</a>
+<a class="article-card" href="seafood-triptych-clam-chowder/index.html">
+  <img class="card-thumb" src="seafood-triptych-clam-chowder/imgs/78Seafood-Triptych-I-Clam-chowder1.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">June 1, 2025</div>
+    <div class="card-title">Seafood Triptych — Clam Chowder</div>
+  </div>
+</a>
+<a class="article-card" href="stalking-the-wild-asparagus/index.html">
+  <img class="card-thumb" src="stalking-the-wild-asparagus/imgs/77Stalking-the-Wild-Asparagus6-1024x768.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">May 17, 2025</div>
+    <div class="card-title">Stalking the Wild Asparagus</div>
+  </div>
+</a>
+<a class="article-card" href="mary-cassatt-on-mothers-day/index.html">
+  <img class="card-thumb" src="mary-cassatt-on-mothers-day/imgs/Screenshot-2025-05-10-12.23.08-AM-150x150.png" alt="">
+  <div class="card-info">
+    <div class="card-date">May 10, 2025</div>
+    <div class="card-title">Mary Cassatt on Mother’s Day</div>
+  </div>
+</a>
+<a class="article-card" href="mussels-in-brussels/index.html">
+  <img class="card-thumb" src="mussels-in-brussels/imgs/76Mussels-in-Brussels1-1024x768.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">April 5, 2025</div>
+    <div class="card-title">Mussels in Brussels</div>
+  </div>
+</a>
+<a class="article-card" href="soupe-a-loignon/index.html">
+  <img class="card-thumb" src="soupe-a-loignon/imgs/75Soupe-a-loignon1-768x576.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">March 22, 2025</div>
+    <div class="card-title">Soupe à l’oignon</div>
+  </div>
+</a>
+<a class="article-card" href="the-footsteps-of-saint-francis/index.html">
+  <img class="card-thumb" src="the-footsteps-of-saint-francis/imgs/74In-the-footsteps-of-Saint-Francis1.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">February 15, 2025</div>
+    <div class="card-title">The Footsteps of Saint Francis</div>
+  </div>
+</a>
+<a class="article-card" href="blood-oranges/index.html">
+  <img class="card-thumb" src="blood-oranges/imgs/73Blood-oranges1.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">January 25, 2025</div>
+    <div class="card-title">Blood Oranges</div>
+  </div>
+</a>
+<a class="article-card" href="legend-on-the-golden-horn/index.html">
+  <img class="card-thumb" src="legend-on-the-golden-horn/imgs/72A-Legend-on-the-Golden-Horn1.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">January 11, 2025</div>
+    <div class="card-title">Legend on the Golden Horn</div>
+  </div>
+</a>
+</div>
+<div class="year-group">
+<div class="year-label">2021</div>
+<a class="article-card" href="remembrance-of-things-proust/index.html">
+  <img class="card-thumb" src="remembrance-of-things-proust/imgs/12-Remembrance-of-things-Proust-1.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">August 7, 2021</div>
+    <div class="card-title">Remembrance of things Proust</div>
+  </div>
+</a>
+<a class="article-card" href="may-i-borrow-your-chateau/index.html">
+  <img class="card-thumb" src="may-i-borrow-your-chateau/imgs/11-May-I-borrow-your-chateau1-1024x768.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 17, 2021</div>
+    <div class="card-title">May I Borrow Your Chateau?</div>
+  </div>
+</a>
+<a class="article-card" href="la-cervara/index.html">
+  <img class="card-thumb" src="la-cervara/imgs/10-La-Cervara1-1024x611.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">July 3, 2021</div>
+    <div class="card-title">La Cervara</div>
+  </div>
+</a>
+<a class="article-card" href="san-pietro-summers/index.html">
+  <img class="card-thumb" src="san-pietro-summers/imgs/9Sanpietrosummers2-1024x768.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">June 20, 2021</div>
+    <div class="card-title">San Pietro Summers</div>
+  </div>
+</a>
+<a class="article-card" href="rodolfo-ode-to-my-fathers-faithful-valet/index.html">
+  <img class="card-thumb" src="rodolfo-ode-to-my-fathers-faithful-valet/imgs/8Rodolfo1-842x1024.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">June 5, 2021</div>
+    <div class="card-title">Rodolfo – Ode to my father’s faithful valet</div>
+  </div>
+</a>
+<a class="article-card" href="pangs-of-childhood-and-remembrance-of-kitchens-past/index.html">
+  <img class="card-thumb" src="pangs-of-childhood-and-remembrance-of-kitchens-past/imgs/Pangs-of-childhood2-731x1024.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">May 22, 2021</div>
+    <div class="card-title">Pangs of Childhood – and Remembrance of Kitchens Past</div>
+  </div>
+</a>
+<a class="article-card" href="pancakes-to-go/index.html">
+  <img class="card-thumb" src="pancakes-to-go/imgs/Pancakes-to-go3-1-500x339.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">May 8, 2021</div>
+    <div class="card-title">Pancakes to go</div>
+  </div>
+</a>
+<a class="article-card" href="la-palombaccia/index.html">
+  <img class="card-thumb" src="la-palombaccia/imgs/Brick-madness1-500x375.jpeg" alt="">
+  <div class="card-info">
+    <div class="card-date">April 24, 2021</div>
+    <div class="card-title">La Palombaccia</div>
+  </div>
+</a>
+<a class="article-card" href="see-naples-and-eat/index.html">
+  <div class="card-thumb-placeholder"><span>Classic Chicago</span></div>
+  <div class="card-info">
+    <div class="card-date">April 12, 2021</div>
+    <div class="card-title">See Naples – and eat!</div>
+  </div>
+</a>
+<a class="article-card" href="san-pietro-honeymoon/index.html">
+  <img class="card-thumb" src="san-pietro-honeymoon/imgs/San-Pietro-Honeymoon-2.jpg" alt="">
+  <div class="card-info">
+    <div class="card-date">March 27, 2021</div>
+    <div class="card-title">San Pietro Honeymoon</div>
+  </div>
+</a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

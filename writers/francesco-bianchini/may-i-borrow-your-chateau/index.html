@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>May I Borrow Your Chateau? | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/11-May-I-borrow-your-chateau1-1024x768.jpeg" alt="May I Borrow Your Chateau?">
+<h1>May I Borrow Your Chateau?</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; July 17, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span></span></p>
+
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>There was a time around the turn of the millennium when a run-down farmhouse in Tuscany cost as much as a castle in France. I don&#8217;t know how Dan and I managed to fool the owners of a chateau in Burgundy that we were interested in buying it. We visited the property on a bright June morning and fell in love with it the instant the square 17th-century facade appeared at the end of an avenue of chestnut trees. When we entered the house – uninhabited and long since emptied – we were hit by the smell of its past, as if it had been imprisoned in a vacuum jar. At that point, we were convinced that the place spoke a language that only we could understand. It lured us with its wax-thirsty parquet floors, its dusty marble fireplaces, the dirt-encrusted glass of its large French windows overlooking the garden, chipped woodwork, and tattered wallpaper. The house begged us to come to its rescue. It goes without saying that we didn&#8217;t have a penny of what the owners were asking, but we bamboozled them so well that eventually, they agreed to let us spend a summer month &#8216;trying it out.</span></p>
+
+<p><span>Our  borrowed chateau, Allier, France</span></p>
+<p><span>If this sounds like a generous concession on their part, when a few weeks later we retrieved the keys (left in a crevice of the surrounding wall) and started opening doors and windows, we fully realized the task that awaited us. The chateau – main body and outbuildings – was huge, filthy, and practically devoid of furnishings. We found a room with an iron bed and a seemingly innocuous mattress, but we immediately had to buy new pillows not daring to lay our heads on those old ones, yellow from use and antiquity. We left our clothes in our suitcases and hanging on nails on the wall. There were three bathrooms, none of them fully functional, one with a working sink, one with a toilet, and one with a usable bathtub. Every day we had to use all three. The kitchen lacked almost everything and – to top it all off – there was no refrigerator. Accustomed to the spartan summers at San Pietro (where we didn&#8217;t even have running water or electricity) I wasn&#8217;t bothered. Within a week we had cleaned the spaces we intended to occupy. The tile floors smelled good, the parquet floors glistened with wax, the windows shone brightly in the sun, and large bunches of wildflowers and roses from the garden perfumed the air. We stocked up on candles, firewood, pâté de foie gras, charcuterie, olives, cheese, fruit, plenty of vegetables for the traditional ratatouille, and of course wine and Crémant de Bourgogne. We bought a cooler that we filled with ice from a nearby campground. Every few days or so we had to fish the most perishable items out of the stagnating swamp at the bottom and renew our stock of ice. We visited the local junktique shops and found one of those Limoges dinner sets strewn with tiny cornflowers that were the pride of the housewives of yesteryear, the heirs of which now dispose of at leisure. We found glass tumblers, a cream-colored majolica tureen, brass candlesticks, scratched and tarnished Christofle cutlery, even old monogrammed linen tablecloths.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p><span>Cleared of dust and cobwebs the majestic enfilade of rooms</span></td>
+<td></p>
+<p><span>The wonky kitchen</span></td>
+</tr>
+</tbody>
+</table>
+
+<p><span>Loot and spoils</span></p>
+<p><span>Enjoying the glorious yet late French twilights, and the chatter of insects in the jasmine and lavender, our dinners stretched for hours under a hundred-year-old lime tree as we devoured baguettes, demolished whole wheels of <em>Époisses</em> (a local cheese with a wrinkled orange skin so soft it dripped like honey when cut and smelled so strongly we couldn&#8217;t preserve it in any way), and sipped noble wines from the region. We composed litanies with the names of the precious appellations that we mouthed in the sonorous silence of the countryside:</span></p>
+<p><span>          <em>Mercurey, Gevrey Chambertin, Chambolle-Musigny</em><em>…</em><em><br />
+Chassagne-Montrachet, Volnay, Mersault</em><em>…</em><em><br />
+Pommard, Nuits-Saint-Georges, Marsannay</em><em>…</em><em><br />
+Mâcon-villages, <span>Pouilly Fuissé</span>!<br />
+</em></span><br />
+<span>If it cooled after a rainstorm, we lit a fire in the fireplace of the immense dining room, setting the table with the treasures we had gathered in our raids. We lit candles on every flat surface and carried from the kitchen omelets aux fines herbes, terrines de campagne, rosettes du Morven, cornichons, and trays of bread and cheese.</span><br />
+<span></span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p>Dining to the music of cicadas, Dan at the table</td>
+<td></p>
+<p><span>Dining to the whispers of the house</span></td>
+</tr>
+</tbody>
+</table>
+<p><span>That first summer flew by, and continuing our ploy with the chateau owners, we managed to gain another stay the following year. Lacking the money for an outright purchase we proposed a long lease but they didn&#8217;t want to hear of it, fearing what changes we might make and undermining the integrity of the place which they seemed to care more about than its monetary value. They finally found a Dutch buyer and that was it. Just as a murderer returns to the scene of the crime, we found ourselves in Burgundy three years later and could not resist the temptation to pass by and peek through the gate. The courtyard in front of the beautiful, sober facade was unrecognizable. The imposing tree that had sheltered our al fresco dinners had been felled. In its place, we saw a swimming pool surrounded by a circular peristyle in a poor imitation of that of Hadrian&#8217;s Villa in Tivoli. I shook Dan, who was staring as if he were looking at something horrifying. Let&#8217;s go, I said.</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

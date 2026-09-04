@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remembrance of things Proust | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/12-Remembrance-of-things-Proust-1.jpeg" alt="Remembrance of things Proust">
+<h1>Remembrance of things Proust</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; August 7, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span></span></p>
+
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>I want to add my voice to the universal, full-throated chorus of readers of Marcel Proust on the 150th anniversary of his birth. Those who have read the entirety of his most famous novel, and also those who have only tried, know that it is not easy. Not so much for the burden of the undertaking, but also – and above all – for the syzygy required between each reader and Proust himself. Unique and magical is the moment when our sensibility is in tune with the author. </span></p>
+
+<p>Marcel Proust (1871-1922)</p>
+<p><span>I was barely twenty when my mother gave me the French Gallimard paperback edition in eight volumes – all rather plump – hoping to entice me to read it. I admired them, lined up on my bookshelf; I took them one at a time, considered the ugly drawings from the 1970s that illustrated the covers, thumbed through, and sniffed the pages. As if for a huge mansion, I pushed open the front door to get a feel for it by judging from the vestibule. The opening sentence intrigued me: <em>For a long time, I used to go to bed early</em>. But after that, I got lost in all the objects and people the narrator drowsily conjured in his sleep. Several times I put the first volume – <em>Du côté de chez Swann</em> – in my suitcase with the idea that travel rather than stasis would encourage the project. I took it with me to Bermuda. Those pages, glued tightly to the vicious spine, became filled with the pink sand grains of that island&#8217;s beautiful beaches.</span></p>
+
+<p>Swann’s Way through Ajat</p>
+<p><span> To satisfy my fetishistic relationship with the book, I paid the price of buying the Pléiade edition, in red morocco leather – three volumes printed on fine India paper – and I got rid of the paperbacks. More years went by. By now I&#8217;d gotten into the habit with Dan of reading something aloud every night. We enjoyed some classics of English literature that way. Proust came to mind because a mutual American friend had tackled him in a reading group. I then procured a twelve-volume, postwar edition in the translation by Scott Moncrieff – a contemporary of Proust – and with the evocative English title, borrowed from a Shakespeare sonnet, <em>Remembrance of Things Past</em>. </span></p>
+<p><span>In the spring of 2012, in the kitchen of our farmhouse in Dordogne, sometimes on the porch overlooking our forest of oak and chestnut trees, we began our reading that continued with slowness (due to my long absences during the fall and spring semesters) throughout 2013 and 2014 – the latter years as we moved from apartment to apartment in our Sarlat house as renovations proceeded up to the summer of 2017. It took us five full years – five years of reading aloud before dinner – to reach Proust&#8217;s summit. It is true that, as we climbed higher, the thinner the air became, the more our view expanded to infinity. We became intoxicated by our perception of the height, paralyzed by vertigo at the sight of the bodies of other climbers lying prone on the slopes. We were enraptured by certain passages; we were often indignant by Marcel&#8217;s hypocrisy; we were amused by his malice. At dinner, the characters followed us in animated discussions as if they were neighbors.</span></p>
+
+<p>Tea with Proust</p>
+<p><span>Like Marcel, I too have always been under the spell of a name, capable as it is to capture the essence of a place. Geographic appellations work in two ways: either they crystalize their character for us, or we can form a complex impression of a place by assimilating its name alone. In other words, which comes first? Which one bestows to the other its magic?</span></p>
+<p><span>During my childhood, two places competed for my little world: the Umbrian village of Collevalenza – much of which was occupied by my family home – and Rome, where I was born, and where my family had its roots. In between the two, before the completion of the superhighway, a long and tortuous route twisted along river gorges and climbed countless hills, often making me sick. Returning to Collevalenza hinted at the aches and pains of the journey to reach that single hilltop, the <em>colle</em>, whereas reaching Rome – built on no less than seven, as I was always told – seemed relatively easy. My incredulity that such a short name as &#8216;Roma&#8217; could contain such an immense city was great. At that early age, I loved my birthplace with unconditional love, and I thought I was the first to have discovered it; and that, when reading its name backward, it proclaims &#8216;Amor&#8217;.</span></p>
+
+<p>My Combray – Collevalenza</p>
+<p><span>My family moved from Collevalenza to a country estate called La Cervara. No other toponym has had so much evocative power for me, with its last broad vowels suggesting certain pastoral grandeur. The word <em>cervo</em> – deer – a noble animal that was never seen in the environs, added a touch of exquisite exoticism. It was like admiring a seventeenth-century Italian engraving, where the vista was gracefully framed by oak trees whose leaves were rendered by repetitive finger-like pencil strokes. La Cervara, our family home for almost twenty years was, however, rarely referred to as such: we didn&#8217;t go &#8216;home&#8217; as much as come and go from La Cervara. That subtle difference made me indisputably sensitive to my fascination with onomastics.</span></p>
+<p><span>Even before landing in Fossemagne, Dordogne, I was prepared for a bad surprise. The &#8216;big ditch&#8217; that its late Latin root brings to mind, and the sense of stalemate that the series of consonants imply, materialized before our eyes on our first visit to the village – with its double row of houses clad in colorless resignation. To remedy that impression, we added the adjective &#8216;haute&#8217; to the name of the property we had just purchased. Yet, even though it was on the heights of Fossemagne, at a fair distance from the village, La Placette Haute still possessed a diminutive ring to it, inexorably rhyming with words like <em>midinette</em> or <em>salopette</em>. During our stay, I must confess that this was a sore point for both of us. By virtue of the fact that part of our land fell under the jurisdiction of the neighboring hamlet of Ajat – a gem of a village gathered around its chateau – Dan adopted that as his address. As for me, what I would have given to make mine that of Auriac-du-Périgord, only fifteen minutes away, a name as delightfully sonorous as a cavity carved by prehistoric waters in sandstone.</span></p>
+
+<p>Where the reading began: La Placette Haute</p>
+<p><span>Later, as we were searching for a new property, we chewed on its name first. The manor house of Montchoisi was a tantalizing option for a while. Not only did it look like a decorous country home amidst mature trees, but the place name contained the idea of elevation and exclusivity, calling to mind scenes of rustic bacchanalia à la Watteau. Another property caught our attention in the haughty town of Hautefort, most regrettably sitting along the Allée de Bastard. The de Bastard family, that had ruled the village and its phenomenal castle for centuries must have made up for the unsavoriness of their name with the allure of landed prestige. But for us, it was an all too uncomfortable allusion to the Umbrian town of Bastardo that Dan and I dubbed &#8216;the town that dare not speak its name&#8217;. Of all the places where we ended up settling, Sarlat-la-Canéda has undoubtedly the most appetizing moniker. Whatever cooks in your mouth when you utter its name is redolent with traditional Périgourdin potatoes sautéed in duck fat.</span></p>
+<p><span>Proust&#8217;s greatest gift to his readers – we know – is the key to lost time. His lost time is ours: Combray is our childhood; grandmother, aunt, mother and father, Gilberte, Albertine, the Verdurins, are there to remind us of our affections, our points of reference, our karmic knots. But I didn&#8217;t understand it right away. At the end of the reading, I rather thought that the characters would frequent the living room of my mind forever; that the breath of that unrepeatable era would continue to waft through my head. </span></p>
+<p><span>Then came September 2019 and my friend Silvia Buitoni invited me to participate in her Internet group under the banner of the most Proustian of elements: the madeleine. I let myself get involved. But there again, it wasn&#8217;t immediately apparent to me that one madeleine would conjure another – a bit like what happened to Marcel himself – and that over the course of the year and a half that kept the whole world at home in lockdown, I would send Silvia as many as ninety &#8216;madeleines&#8217;. Several times – reasoning about the past in Aristotelian terms – I thought I&#8217;d run out of material. But memory, like creativity, does not follow a linear path, but unravels in cycles, or rather spirals. And on these spirals, like galaxies of time, memories shine indelibly.</span></p>
+    </div>
+  </article>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>
