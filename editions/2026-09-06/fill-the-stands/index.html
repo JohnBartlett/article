@@ -458,13 +458,15 @@
       </div><!-- end feedback widget -->
 
       <!-- Article Navigation — order must match homepage card order -->
-      <!-- David Sweet is last article; prev = Tadoussac (slug TBD), next = homepage -->
       <div class="edition-nav">
         <div class="nav-item">
           <img class="nav-thumb" src="../thumb-placeholder.jpg" alt="">
           <a href="../tadoussac/" class="back-link">&larr; Previous</a>
         </div>
-        <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
+        <div class="nav-item">
+          <img class="nav-thumb" src="../thumb-placeholder.jpg" alt="">
+          <a href="../edgelord/" class="back-link">Next &rarr;</a>
+        </div>
       </div>
 
     </div><!-- end article-wrapper -->
@@ -496,7 +498,7 @@
   <!-- Keyboard nav -->
   <script>
     var prevUrl = '../tadoussac/';
-    var nextUrl = '../../../index.html';
+    var nextUrl = '../edgelord/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
