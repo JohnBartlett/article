@@ -1,8 +1,8 @@
 # September 6, 2026 Edition — Status
 
-_Updated: 2026-09-04_
+_Updated: 2026-09-05_
 
-**Skeleton, nav chain, homepage, DateBook, and Astrochart are wired.** 4 of 8 articles are Ready (silvia-beltrametti-satire, francesco-bianchini, dr-ruth-gannon-cook, fill-the-stands). Edgelord pulled from the edition (Sept 5, John's call — first-person violence not right for CCM; asked Judy for her read too). Francesco tribute text received and placed. Marjorie Schwebel bio filled in. Remaining 4 articles still placeholder stubs.
+**Skeleton, nav chain, homepage, DateBook, and Astrochart are wired.** 6 of 8 articles are Ready (silvia-beltrametti-satire, francesco-bianchini, dr-ruth-gannon-cook, fill-the-stands, rush-benefit, sounds-good-choir-river). Edgelord pulled — **Judy confirmed removal via email Sept 5 11:12 AM** ("Let's take it out. I just replied to the text."). Silvia sent corrected photo caption ordering Sept 5 12:42 PM — captions verified correct (visual matching in prior session aligned with both orderings; no HTML changes needed). No FormSubmit votes or comments received. Remaining 2 articles (jafra-canaan-wellspring, tadoussac) still placeholder stubs — Annie promised tadoussac by Sept 5 morning but no email received yet. Silvia's about.html bio still `[Bio pending]`.
 
 ## Judy's official lineup (`1a05977b5615c844`, received 2026-08-31, refined through Sept 3 emails)
 
