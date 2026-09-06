@@ -5,6 +5,11 @@ on:
     # Every 6 hours (midnight, 6am, noon, 6pm Chicago time = 5,11,17,23 UTC)
     - cron: '0 5,11,17,23 * * *'
   workflow_dispatch:  # allow manual trigger from GitHub Actions UI
+    inputs:
+      tools_ref:
+        description: 'Branch to build from (tools/ + site content). Use a feature branch to test a dashboard change against real GA4 data before merging it to dev2.'
+        required: false
+        default: 'dev2'
 
 jobs:
   refresh:
@@ -13,10 +18,11 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout dev2 (build tools + site content)
+      - name: Checkout build branch (tools + site content)
         uses: actions/checkout@v4
         with:
-          ref: dev2
+          # Scheduled runs pass no inputs, so the fallback keeps them on dev2.
+          ref: ${{ inputs.tools_ref || 'dev2' }}
           path: dev2
           token: ${{ secrets.GITHUB_TOKEN }}
 
