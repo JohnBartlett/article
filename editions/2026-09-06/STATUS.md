@@ -1,6 +1,8 @@
 # September 6, 2026 Edition — Status
 
-_Updated: 2026-09-05_
+_Updated: 2026-09-06_
+
+**PUBLISHED to production 2026-09-06 12:20 AM ET** — https://chicagoclassicmag.com. Judy, Annie, and Sig notified by email; asked to flag anything wrong with the site.
 
 **All 8 articles are now Ready.** silvia-beltrametti-satire, francesco-bianchini, dr-ruth-gannon-cook, fill-the-stands, rush-benefit, sounds-good-choir-river, jafra-canaan-wellspring, and tadoussac are all built and verify Ready. Edgelord pulled — **Judy confirmed removal via email Sept 5 7:12 AM ET** ("Let's take it out. I just replied to the text."). Silvia's bio and final copy edits applied (Sept 5). Tadoussac's full text + 25 photos arrived from Annie Sept 5 7:33 PM ET and were built the same night. Jafra/Canaan Wellspring built from Judy's original Q&A docx + 12 photos (10 from the Drive folder, plus hananpicture.jpeg/sarahpicture.jpeg) per John's direct instruction to lay it out as the content arrived — **note: Judy's 8:00 PM ET reply moved logistics forward but never actually answered John's standing question about the "cause vs. dancing" framing and the occupation-related passage; that concern was not resolved before publishing, just overtaken by the instruction to build.** *(All times in this file are Eastern — corrected Sept 5 after discovering earlier entries had mistakenly used raw UTC timestamps as if already Eastern.)*
 
