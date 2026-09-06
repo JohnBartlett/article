@@ -9,7 +9,8 @@ three-page split with one scrolling page:
     2. Article Status       — live-computed per-article status (from verify_edition.py)
     3. Decisions Needed     — pending items / blockers, parsed from STATUS.md
     4. Current Edition Spotlight, Votes & Comments, Edition History,
-       All-Time Stats, Comment Leaderboard — reused from build_stats_page.py
+       All-Time Stats, Heritage Auctions Ad, Comment Leaderboard — reused
+       from build_stats_page.py
 
 Output is meant to live on the `editors` branch only (editors/dashboard.html),
 published by .github/workflows/refresh-stats.yml. Never commit the output to
@@ -224,6 +225,9 @@ def main():
     print("  Fetching All-Time Stats…")
     s3 = bsp.build_section3(client, today_str)
 
+    print("  Fetching Heritage Auctions ad impressions…")
+    s6 = bsp.build_section6(client, ga4_edition, today_str)
+
     print("  Building Comment Leaderboard…")
     s5 = bsp.build_section5(records)
 
@@ -264,6 +268,7 @@ def main():
     <a href="#votes">Votes &amp; Comments</a>
     <a href="#history">Edition History</a>
     <a href="#alltime">All-Time Stats</a>
+    <a href="#ha-ad">Heritage Auctions Ad</a>
     <a href="#leaderboard">Comment Leaderboard</a>
   </nav>
 
@@ -295,6 +300,11 @@ def main():
   <section id="alltime">
     <h2>All-Time Site Stats</h2>
     {s3}
+  </section>
+
+  <section id="ha-ad">
+    <h2>Heritage Auctions Ad — Impressions</h2>
+    {s6}
   </section>
 
   <section id="leaderboard">
