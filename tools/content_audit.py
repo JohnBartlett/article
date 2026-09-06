@@ -200,6 +200,85 @@ def check_astrochart_stale_dates(edition_dir, edition_date):
         print(f"  ✓ coverage extends through month-end ({max_date.isoformat()})")
 
 
+def check_writer_retrospective_nav():
+    """Mistake #35: standalone writers/<author>/ archive pages must have
+    working Previous/Next navigation (with thumbnails) on every article page,
+    matching the order shown on the archive's own index.html. Bookend
+    articles (first/last) link to ../index.html instead of a sibling."""
+    print("\n--- Writer retrospective nav check (mistake #35) ---")
+
+    archive_indexes = sorted(glob.glob("writers/*/index.html"))
+    if not archive_indexes:
+        print("  (no writers/*/ archive pages found — nothing to check)")
+        return
+
+    card_pattern = re.compile(
+        r'<a class="article-card" href="([^"/]+)/[^"]*">\s*'
+        r'(<img class="card-thumb"|<div class="card-thumb-placeholder")'
+    )
+
+    any_problems = False
+    for index_path in archive_indexes:
+        author_dir = os.path.dirname(index_path)
+        with open(index_path, encoding="utf-8", errors="replace") as f:
+            index_html = f.read()
+
+        cards = card_pattern.findall(index_html)
+        if not cards:
+            print(f"  ⚠ {index_path}: no article-card entries found — skipping")
+            continue
+
+        slugs = [slug for slug, _ in cards]
+        has_thumb = {slug: (marker.startswith("<img")) for slug, marker in cards}
+
+        for i, slug in enumerate(slugs):
+            article_path = os.path.join(author_dir, slug, "index.html")
+            if not os.path.isfile(article_path):
+                print(f"  ✗ {article_path}: missing (linked from {index_path})")
+                any_problems = True
+                continue
+
+            with open(article_path, encoding="utf-8", errors="replace") as f:
+                article_html = f.read()
+
+            if 'class="retro-nav"' not in article_html:
+                print(f"  ✗ {article_path}: no retro-nav block found")
+                any_problems = True
+                continue
+
+            expected_prev = f"../{slugs[i-1]}/" if i > 0 else "../index.html"
+            expected_next = f"../{slugs[i+1]}/" if i < len(slugs) - 1 else "../index.html"
+
+            nav_block_match = re.search(
+                r'<div class="retro-nav">(.*?)</div>', article_html, re.S
+            )
+            nav_block = nav_block_match.group(1) if nav_block_match else ""
+
+            if f'href="{expected_prev}"' not in nav_block:
+                print(f"  ✗ {article_path}: expected prev link to {expected_prev!r} not found")
+                any_problems = True
+            if f'href="{expected_next}"' not in nav_block:
+                print(f"  ✗ {article_path}: expected next link to {expected_next!r} not found")
+                any_problems = True
+
+            # Non-bookend neighbors should carry a thumbnail image alongside the
+            # link, unless that neighbor genuinely has no photo of its own
+            # (has_thumb[slug] is False, e.g. a text-only recovered article).
+            if i > 0 and has_thumb.get(slugs[i - 1], True):
+                if "retro-nav-thumb" not in nav_block.split(f'href="{expected_prev}"')[-1].split("</a>")[0]:
+                    print(f"  ✗ {article_path}: prev link to {expected_prev!r} is missing its thumbnail image")
+                    any_problems = True
+            if i < len(slugs) - 1 and has_thumb.get(slugs[i + 1], True):
+                if "retro-nav-thumb" not in nav_block.split(f'href="{expected_next}"')[-1].split("</a>")[0]:
+                    print(f"  ✗ {article_path}: next link to {expected_next!r} is missing its thumbnail image")
+                    any_problems = True
+
+        print(f"  checked {len(slugs)} articles under {author_dir}/")
+
+    if not any_problems:
+        print("  ✓ clean — every retrospective article has correct prev/next nav")
+
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 tools/content_audit.py YYYY-MM-DD")
@@ -218,6 +297,7 @@ def main():
     check_hero_meta_date(edition_date)
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
+    check_writer_retrospective_nav()
 
     print("\n" + "=" * 80)
 

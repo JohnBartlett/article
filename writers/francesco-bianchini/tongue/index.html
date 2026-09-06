@@ -57,6 +57,17 @@
       .wrapper{padding:0 16px;margin:24px auto;}
       .article-body{font-size:16px;}
     }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
   </style>
 </head>
 <body>
@@ -94,6 +105,10 @@
 <p><span>The tongue Augusta prepared would appear at the table sliced into thin pieces, arranged on an oblong platter in a circle, like a conveyor belt, with its green mash heaped in the center. The part of each slice nearer the root—stringy, laced with little veins and nerves—was carefully hidden beneath each preceding piece. Even so, I&#8217;d still conjure the vivid image I&#8217;d seen in the kitchen. I would make a fuss, but my parents paid no mind. On my plate, the tongue, even with its supposed redeeming sauce, was no more appealing. There was no leafy garnish to offer a refuge where I might discreetly hide what I wished to discard. I had a strategy: trim away the most offensive parts with my knife, push them aside, and cut the rest into bits as tiny as confetti. Despite this, I could not manage a swallow. Not even with a crust of bread to mask the taste, nor with great gulps of water to wash it down. Certainly not with Augusta&#8217;s pathetic green mush. My throat convulsed involuntarily, and I&#8217;d feel my grandmother’s eyes burning into me. My last resort, kept for the most desperate case, was to spread my napkin on my lap and, with the stealth of a pickpocket, slip the bits into it—later to be flushed down the toilet at the end of the meal.</span></p>
     </div>
   </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../case-of-the-missing-caramel/"><img class="retro-nav-thumb" src="../case-of-the-missing-caramel/marie-claire.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">The Case of the Missing Caramel</span></span></a>
+  <a class="retro-nav-item next" href="../when-in-rome/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">When in Rome</span></span><img class="retro-nav-thumb" src="../when-in-rome/imgs/84When-in-Rome1-1024x768.jpg" alt=""></a>
+</div>
 </main>
 <footer>
   Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
