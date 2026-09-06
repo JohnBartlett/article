@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chopsticks | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="COVER - Chopsticks.jpeg" alt="Chopsticks">
+<h1>Chopsticks</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; September 6, 2026</div>
+    </div>
+    <div class="article-body">
+<div class="article-body">
+
+        <p>On a lightly veiled September morning, I left Beijing&rsquo;s suffocating haze behind and set off for the mountain village of Cuandixia. Over the next two hours, my driver threaded his way out of the sprawling tentacles of the capital before turning onto a steep road climbing into the hills. Tower blocks, tangled expressways and forests of power pylons gradually gave way to cultivated fields, wooded slopes and jagged mountain ridges.</p>
+
+        <figure>
+          <img src="1 Mountaintop.jpeg" alt="Cuandixia clinging to its mountaintop">
+          <figcaption>Clinging to its mountaintop.</figcaption>
+        </figure>
+
+        <p>This was exactly the China I had come looking for. Not the hyper-modern, restless giant, but Pearl Buck&rsquo;s Good Earth and the vast rural heartland of Mo Yan. Leaving the car park behind, I climbed a footpath until Cuandixia suddenly revealed itself: a sea of Ming-era rooftops pressed against forests of pine, oak and tall poplars carpeting the valley and climbing the surrounding mountainsides, broken here and there by ancient terraces.</p>
+
+        <figure>
+          <img src="2 Courtyard.jpeg" alt="A Ming-era courtyard in Cuandixia">
+          <figcaption>A Ming-era courtyard in Cuandixia.</figcaption>
+        </figure>
+
+        <p>From that vantage point I could look over the entire village below, its narrow alleys alive with activity and vegetable gardens stretching along the outer walls. The path ended at what appeared to be an abandoned monastery. Beyond its locked gate rose one of those twisted pines I had already encountered elsewhere in China, trees that seemed to defy time itself.</p>
+
+        <figure>
+          <img src="3 Lunch Prep.jpeg" alt="Lunch in the making">
+          <figcaption>Lunch in the making.</figcaption>
+        </figure>
+
+        <p>I wandered back down just as the courtyards of village houses, temporarily transformed into family restaurants, were coming alive around steaming woks and bubbling pots. Aromas drifted through the alleys, mingling and separating at every corner. Following my nose, I settled on a house near the top of the village, where a shaded terrace commanded a view of the surrounding peaks. Several tables were already occupied, the diners pausing between mouthfuls to gaze over the stone parapet at the landscape beyond.</p>
+
+        <figure>
+          <img src="4 Terrace.jpeg" alt="A terrace with a view">
+          <figcaption>A terrace with a view.</figcaption>
+        </figure>
+
+        <p>In places like this, painfully aware of standing out, I always try to make myself as small and inconspicuous as possible. The others&mdash;the Chinese diners&mdash;had naturally noticed me, though they seemed to think little of it. If anything, they appeared prepared for my inevitable bewilderment.</p>
+
+        <p>They were not disappointed.</p>
+
+        <p>The menu proved completely indecipherable. Even my translation app failed to reveal what the house was serving.</p>
+
+        <p>A lively family and two or three silent couples were enjoying the cheerful abundance and gentle disorder of a typical Chinese meal. When a woman came to take my order, I simply pointed to the magnificent fish someone at the next table had chosen.</p>
+
+        <p>It was probably a common carp.</p>
+
+        <p>The young waiter carried it upstairs from the outdoor kitchen below and placed it before me on a long rectangular ceramic platter. Blue foaming waves, unmistakably reminiscent of Hokusai, rippled around the rim, lapping against a crimson lagoon from which the carp emerged. Its skin had split during frying, revealing richly braised flesh beneath. Cooked ginger, softened cloves of garlic and deep-red dried chillies clung to the lacquered pattern of scales and gills, and for a fleeting instant those dark textures merged in my mind with the rugged bark of those ancient pines.</p>
+
+        <p>Then came the awkward question.</p>
+
+        <p>How, exactly, was I supposed to fillet and eat an entire fish with nothing but chopsticks?</p>
+
+        <p>Even as I typed my request into the translation app, I realised how hopeless the enterprise was.</p>
+
+        <p>Could I possibly have a knife and fork?</p>
+
+        <p>The question bounced from the young waiter to one of the diners before someone finally understood.</p>
+
+        <p>Where, I wondered, could anyone possibly find cutlery in a remote mountain village like this? And even if they did, the steaming fish would be cold by the time it arrived. For a moment I pictured the waiter dashing through the winding alleys, knocking on doors&mdash;or perhaps even heading to the next village&mdash;in search of such exotic objects. Then, remembering other perfectly reasonable requests that had quietly vanished into thin air during my travels in China, I looked once more at the elusive fish and finally picked up my chopsticks.</p>
+
+        <figure>
+          <img src="5 Finished Plate.jpeg" alt="The finished plate">
+          <figcaption>Worth mastering chopsticks for.</figcaption>
+        </figure>
+
+        <p>As I began, I became aware of the silence around me. Only the occasional whisper broke the stillness. I could feel people watching.</p>
+
+        <p>The tips of the chopsticks pierced the bronze armour of the skin and exposed the backbone beneath. To my surprise, separating the flesh turned out to be easier than expected. Slowly, carefully, I teased away each mouthful, trying not to splatter the table&mdash;or worse, my shirt&mdash;with a splash of the dark soy-based sauce.</p>
+
+        <p>Out of the corner of my eye I sensed the people around me relaxing, as though their own lunch could now continue without concern.</p>
+
+        <p>Just then the young waiter reappeared, slightly out of breath, triumphantly carrying a knife and fork.</p>
+
+        <p>They were no longer needed.</p>
+
+        <p>He smiled broadly when he saw that the job had already been done.</p>
+
+        <div style="margin: 48px 0 40px; padding: 32px 36px; border-top: 2px solid #b51c20; border-bottom: 2px solid #b51c20; background: #fdfaf7;">
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #b51c20; margin: 0 0 18px; text-align: center; letter-spacing: 0.02em;">Celebrating the 100th Article by Francesco Bianchini</h3>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 16px;">We asked our international correspondent Francesco Bianchini what it felt like to be celebrating his 100th story published in Classic Chicago. Food and family have partially defined the many enticing journeys we have traveled with Francesco in his column entitled &ldquo;Continental Memories&rdquo; and we anticipate many more. Part of the privilege in publishing Classic Chicago is the excellent writers we call our own.</p>
+          <p style="font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 700; color: #555; margin: 24px 0 10px; text-transform: uppercase; letter-spacing: 0.06em;">Here is Francesco&rsquo;s reply:</p>
+          <blockquote style="margin: 0 0 20px; padding: 0 0 0 20px; border-left: 3px solid #b51c20;">
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;I&rsquo;m still rather astonished by the thought that we have reached number 100. When I began writing these pieces in 2021, I certainly never imagined that there would be a hundred of them &mdash; let alone that they might one day begin to look like a book.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;I think what has kept me writing them is the discovery that memory is not simply a way of preserving the past, and certainly not an exercise in style. For me, it has increasingly become one of the ways in which we discover who we really are. Once prompted &mdash; Proust, forever Proust! &mdash; memory seems to acquire a will of its own. It summons people, places, objects, tastes and smells according to a filter that is intensely personal and often unpredictable. I may think I am writing about a soup, a house or a journey, only to discover that memory has chosen them to lead me somewhere else.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;Food has been particularly good at doing that. It is rarely the real subject of these stories, although of course I love cooking and eating and have spent a considerable part of my life doing both! A taste or a smell often turns out to be simply the quickest route back to a person, a room, a landscape, a journey, or a version of myself I had forgotten. Family has entered the stories in much the same oblique way &mdash; through tables, kitchens, gardens, objects and gestures rather than because I consciously set out to write about it.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;As for particular pieces, that is almost impossible after a hundred! Some remain very close to me because of the people in them; others because writing them unexpectedly changed my understanding of something I thought I already knew. And some of the smallest memories have proved the most persistent. Perhaps that unpredictability is precisely what I have enjoyed most about Continental Memories: I never quite know what will knock at the door next.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;Dan has, of course, been part of the adventure from the beginning &mdash; as travelling companion, fellow eater, first reader and, very often, merciless native-English-language department! Many of the places in the pieces belong to the life we have made together over more than twenty-five years, between Italy, France and wherever else curiosity has taken us.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;And yes, there may now be a book. I have spent much of this summer going back through the pieces, choosing, cutting and revising them, and trying to understand what connects the ones that still seem alive to me. I don&rsquo;t think the answer is geography or food. It has much more to do with the way we look back: how the passing of time changes what we see in an experience, and sometimes changes the person who is doing the looking. Whether that becomes a published book remains to be seen, but for the first time I can see its shape.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;As for what comes after number 100, I hope memory will decide that for me. I have no intention of telling it to stop simply because we have reached a satisfyingly round number. There are still people, places and meals beginning to make noises in the waiting room.&rdquo;</p>
+          </blockquote>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 16px;">Francesco&rsquo;s partner Dan Blagg has not only been, as Francesco describes, a fellow traveler and discerning first reader; he has become a great friend to us at the Magazine as well. Here is what Dan shared about Francesco&rsquo;s writing:</p>
+          <blockquote style="margin: 0 0 20px; padding: 0 0 0 20px; border-left: 3px solid #b51c20;">
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0; font-style: italic;">&ldquo;I am always amazed at how artfully he chooses myriad &mdash; and sometimes arcane &mdash; English words and phrases to impeccably dredge feelings and emotions he felt at the time of whatever event he is describing. I feel sometimes that I am partnered with a new F. Scott Fitzgerald, an Ernest Hemingway, or Somerset Maugham. And I sincerely hope others glimpse the masterful way Francesco combines exactly the right words, and can follow and appreciate his tangential yet usually entertaining and compelling stories. I love his ironic and humorous touches. Humor is a constant touchstone in our twenty-five year plus relationship; laugh and the world laughs with you.&rdquo;</p>
+          </blockquote>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0; text-align: center; font-style: italic;">So anticipating your next article, Francesco!</p>
+        </div>
+
+      </div><!-- end article-body -->
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../index.html"><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">All Articles</span></span></a>
+  <a class="retro-nav-item next" href="../on-the-verge-of-a-heatstroke/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Soup on the Verge of Heatstroke</span></span><img class="retro-nav-thumb" src="../on-the-verge-of-a-heatstroke/99Soup on the Verge of Heatstroke1.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

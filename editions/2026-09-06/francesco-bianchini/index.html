@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Francesco Bianchini's 100th Story | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-meta a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-september/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <a href="../../../write-for-us.html">Write for Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only
+  <div class="internal-nav">
+  </div>
+  -->
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Milestone</div>
+
+      <h1 class="article-title">Chopsticks</h1>
+      
+      <div class="article-meta">By <a href="../../../about.html#francesco-bianchini">Francesco Bianchini</a> &nbsp;&bull;&nbsp; September 6, 2026</div>
+
+      <div class="article-body">
+
+        <div style="background:#fdfaf7; border:1px solid #e8e0d5; border-radius:2px; padding:16px 20px; margin:0 0 32px; text-align:center;">
+          <a href="../../../writers/francesco-bianchini/" style="font-family:'Playfair Display', Georgia, serif; font-size:20px; font-weight:700; color:#b51c20; text-decoration:none;">Celebrating Francesco Bianchini&rsquo;s 100th Article &rarr;</a>
+        </div>
+
+        <p>On a lightly veiled September morning, I left Beijing&rsquo;s suffocating haze behind and set off for the mountain village of Cuandixia. Over the next two hours, my driver threaded his way out of the sprawling tentacles of the capital before turning onto a steep road climbing into the hills. Tower blocks, tangled expressways and forests of power pylons gradually gave way to cultivated fields, wooded slopes and jagged mountain ridges.</p>
+
+        <figure>
+          <img src="1 Mountaintop.jpeg" alt="Cuandixia clinging to its mountaintop">
+          <figcaption>Clinging to its mountaintop.</figcaption>
+        </figure>
+
+        <p>This was exactly the China I had come looking for. Not the hyper-modern, restless giant, but Pearl Buck&rsquo;s Good Earth and the vast rural heartland of Mo Yan. Leaving the car park behind, I climbed a footpath until Cuandixia suddenly revealed itself: a sea of Ming-era rooftops pressed against forests of pine, oak and tall poplars carpeting the valley and climbing the surrounding mountainsides, broken here and there by ancient terraces.</p>
+
+        <figure>
+          <img src="2 Courtyard.jpeg" alt="A Ming-era courtyard in Cuandixia">
+          <figcaption>A Ming-era courtyard in Cuandixia.</figcaption>
+        </figure>
+
+        <p>From that vantage point I could look over the entire village below, its narrow alleys alive with activity and vegetable gardens stretching along the outer walls. The path ended at what appeared to be an abandoned monastery. Beyond its locked gate rose one of those twisted pines I had already encountered elsewhere in China, trees that seemed to defy time itself.</p>
+
+        <figure>
+          <img src="3 Lunch Prep.jpeg" alt="Lunch in the making">
+          <figcaption>Lunch in the making.</figcaption>
+        </figure>
+
+        <p>I wandered back down just as the courtyards of village houses, temporarily transformed into family restaurants, were coming alive around steaming woks and bubbling pots. Aromas drifted through the alleys, mingling and separating at every corner. Following my nose, I settled on a house near the top of the village, where a shaded terrace commanded a view of the surrounding peaks. Several tables were already occupied, the diners pausing between mouthfuls to gaze over the stone parapet at the landscape beyond.</p>
+
+        <figure>
+          <img src="4 Terrace.jpeg" alt="A terrace with a view">
+          <figcaption>A terrace with a view.</figcaption>
+        </figure>
+
+        <p>In places like this, painfully aware of standing out, I always try to make myself as small and inconspicuous as possible. The others&mdash;the Chinese diners&mdash;had naturally noticed me, though they seemed to think little of it. If anything, they appeared prepared for my inevitable bewilderment.</p>
+
+        <p>They were not disappointed.</p>
+
+        <p>The menu proved completely indecipherable. Even my translation app failed to reveal what the house was serving.</p>
+
+        <p>A lively family and two or three silent couples were enjoying the cheerful abundance and gentle disorder of a typical Chinese meal. When a woman came to take my order, I simply pointed to the magnificent fish someone at the next table had chosen.</p>
+
+        <p>It was probably a common carp.</p>
+
+        <p>The young waiter carried it upstairs from the outdoor kitchen below and placed it before me on a long rectangular ceramic platter. Blue foaming waves, unmistakably reminiscent of Hokusai, rippled around the rim, lapping against a crimson lagoon from which the carp emerged. Its skin had split during frying, revealing richly braised flesh beneath. Cooked ginger, softened cloves of garlic and deep-red dried chillies clung to the lacquered pattern of scales and gills, and for a fleeting instant those dark textures merged in my mind with the rugged bark of those ancient pines.</p>
+
+        <p>Then came the awkward question.</p>
+
+        <p>How, exactly, was I supposed to fillet and eat an entire fish with nothing but chopsticks?</p>
+
+        <p>Even as I typed my request into the translation app, I realised how hopeless the enterprise was.</p>
+
+        <p>Could I possibly have a knife and fork?</p>
+
+        <p>The question bounced from the young waiter to one of the diners before someone finally understood.</p>
+
+        <p>Where, I wondered, could anyone possibly find cutlery in a remote mountain village like this? And even if they did, the steaming fish would be cold by the time it arrived. For a moment I pictured the waiter dashing through the winding alleys, knocking on doors&mdash;or perhaps even heading to the next village&mdash;in search of such exotic objects. Then, remembering other perfectly reasonable requests that had quietly vanished into thin air during my travels in China, I looked once more at the elusive fish and finally picked up my chopsticks.</p>
+
+        <figure>
+          <img src="5 Finished Plate.jpeg" alt="The finished plate">
+          <figcaption>Worth mastering chopsticks for.</figcaption>
+        </figure>
+
+        <p>As I began, I became aware of the silence around me. Only the occasional whisper broke the stillness. I could feel people watching.</p>
+
+        <p>The tips of the chopsticks pierced the bronze armour of the skin and exposed the backbone beneath. To my surprise, separating the flesh turned out to be easier than expected. Slowly, carefully, I teased away each mouthful, trying not to splatter the table&mdash;or worse, my shirt&mdash;with a splash of the dark soy-based sauce.</p>
+
+        <p>Out of the corner of my eye I sensed the people around me relaxing, as though their own lunch could now continue without concern.</p>
+
+        <p>Just then the young waiter reappeared, slightly out of breath, triumphantly carrying a knife and fork.</p>
+
+        <p>They were no longer needed.</p>
+
+        <p>He smiled broadly when he saw that the job had already been done.</p>
+
+        <div style="margin: 48px 0 40px; padding: 32px 36px; border-top: 2px solid #b51c20; border-bottom: 2px solid #b51c20; background: #fdfaf7;">
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #b51c20; margin: 0 0 18px; text-align: center; letter-spacing: 0.02em;">Celebrating the 100th Article by Francesco Bianchini</h3>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 16px;">We asked our international correspondent Francesco Bianchini what it felt like to be celebrating his 100th story published in Classic Chicago. Food and family have partially defined the many enticing journeys we have traveled with Francesco in his column entitled &ldquo;Continental Memories&rdquo; and we anticipate many more. Part of the privilege in publishing Classic Chicago is the excellent writers we call our own.</p>
+          <p style="font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 700; color: #555; margin: 24px 0 10px; text-transform: uppercase; letter-spacing: 0.06em;">Here is Francesco&rsquo;s reply:</p>
+          <blockquote style="margin: 0 0 20px; padding: 0 0 0 20px; border-left: 3px solid #b51c20;">
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;I&rsquo;m still rather astonished by the thought that we have reached number 100. When I began writing these pieces in 2021, I certainly never imagined that there would be a hundred of them &mdash; let alone that they might one day begin to look like a book.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;I think what has kept me writing them is the discovery that memory is not simply a way of preserving the past, and certainly not an exercise in style. For me, it has increasingly become one of the ways in which we discover who we really are. Once prompted &mdash; Proust, forever Proust! &mdash; memory seems to acquire a will of its own. It summons people, places, objects, tastes and smells according to a filter that is intensely personal and often unpredictable. I may think I am writing about a soup, a house or a journey, only to discover that memory has chosen them to lead me somewhere else.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;Food has been particularly good at doing that. It is rarely the real subject of these stories, although of course I love cooking and eating and have spent a considerable part of my life doing both! A taste or a smell often turns out to be simply the quickest route back to a person, a room, a landscape, a journey, or a version of myself I had forgotten. Family has entered the stories in much the same oblique way &mdash; through tables, kitchens, gardens, objects and gestures rather than because I consciously set out to write about it.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;As for particular pieces, that is almost impossible after a hundred! Some remain very close to me because of the people in them; others because writing them unexpectedly changed my understanding of something I thought I already knew. And some of the smallest memories have proved the most persistent. Perhaps that unpredictability is precisely what I have enjoyed most about Continental Memories: I never quite know what will knock at the door next.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;Dan has, of course, been part of the adventure from the beginning &mdash; as travelling companion, fellow eater, first reader and, very often, merciless native-English-language department! Many of the places in the pieces belong to the life we have made together over more than twenty-five years, between Italy, France and wherever else curiosity has taken us.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;And yes, there may now be a book. I have spent much of this summer going back through the pieces, choosing, cutting and revising them, and trying to understand what connects the ones that still seem alive to me. I don&rsquo;t think the answer is geography or food. It has much more to do with the way we look back: how the passing of time changes what we see in an experience, and sometimes changes the person who is doing the looking. Whether that becomes a published book remains to be seen, but for the first time I can see its shape.</p>
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 14px; font-style: italic;">&ldquo;As for what comes after number 100, I hope memory will decide that for me. I have no intention of telling it to stop simply because we have reached a satisfyingly round number. There are still people, places and meals beginning to make noises in the waiting room.&rdquo;</p>
+          </blockquote>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0 0 16px;">Francesco&rsquo;s partner Dan Blagg has not only been, as Francesco describes, a fellow traveler and discerning first reader; he has become a great friend to us at the Magazine as well. Here is what Dan shared about Francesco&rsquo;s writing:</p>
+          <blockquote style="margin: 0 0 20px; padding: 0 0 0 20px; border-left: 3px solid #b51c20;">
+            <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0; font-style: italic;">&ldquo;I am always amazed at how artfully he chooses myriad &mdash; and sometimes arcane &mdash; English words and phrases to impeccably dredge feelings and emotions he felt at the time of whatever event he is describing. I feel sometimes that I am partnered with a new F. Scott Fitzgerald, an Ernest Hemingway, or Somerset Maugham. And I sincerely hope others glimpse the masterful way Francesco combines exactly the right words, and can follow and appreciate his tangential yet usually entertaining and compelling stories. I love his ironic and humorous touches. Humor is a constant touchstone in our twenty-five year plus relationship; laugh and the world laughs with you.&rdquo;</p>
+          </blockquote>
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.75; color: #333; margin: 0; text-align: center; font-style: italic;">So anticipating your next article, Francesco!</p>
+        </div>
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#francesco-bianchini" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Francesco Bianchini &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="text" name="_gotcha" value="" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" minlength="4" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <!-- Writer Pitch Prompt (shown for long comments) -->
+        <div id="writerPrompt" style="display: none; margin-top: 16px; padding: 16px 18px; background: #fff8f0; border-left: 3px solid #e67e22; font-family: 'Lato', sans-serif; font-size: 14px; color: #555;">
+          <p style="margin: 0 0 12px;">That's quite a bit to say &mdash; sounds like you might have an article in you. Want to submit this as a pitch instead of a comment?</p>
+          <button type="button" id="writerYesBtn" style="background: #b51c20; color: #fff; border: none; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer; margin-right: 8px;">Yes, I'd like to write for you</button>
+          <button type="button" id="writerNoBtn" style="background: none; color: #b51c20; border: 1px solid #b51c20; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer;">No, just post my comment</button>
+        </div>
+
+        <!-- Writer Application Form -->
+        <div id="writerForm" style="display: none; margin-top: 16px; border-top: 1px solid #ece5dd; padding-top: 20px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Write for Classic Chicago</p>
+          <input type="text" id="writerName" placeholder="Your name" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <input type="email" id="writerEmail" placeholder="Your email" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <textarea id="writerTopic" placeholder="What Chicago subject would you like to write about?" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 60px; margin-bottom: 10px;"></textarea>
+          <button type="button" id="writerSubmitBtn" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Submit Pitch</button>
+        </div>
+
+        <div id="writerConfirm" style="display: none; margin-top: 16px; text-align: center; font-family: 'Lato', sans-serif; font-size: 14px; color: #2e7d32;">
+          &#10003; Thanks! Judy and John will be in touch.
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+
+          // Long-comment writer-pitch prompt
+          (function() {
+            var WRITER_THRESHOLD = 500;
+            var commentForm = document.querySelector('#feedbackForm form');
+            var commentTextarea = commentForm.querySelector('textarea[name="comment"]');
+
+            commentForm.addEventListener('submit', function(e) {
+              if (commentTextarea.value.trim().length > WRITER_THRESHOLD) {
+                e.preventDefault();
+                document.getElementById('feedbackForm').style.display = 'none';
+                document.getElementById('writerPrompt').style.display = 'block';
+              }
+            });
+
+            document.getElementById('writerNoBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('feedbackForm').style.display = 'block';
+              commentForm.submit();
+            });
+
+            document.getElementById('writerYesBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('writerForm').style.display = 'block';
+            });
+
+            document.getElementById('writerSubmitBtn').addEventListener('click', function() {
+              var name = document.getElementById('writerName').value.trim();
+              var email = document.getElementById('writerEmail').value.trim();
+              var topic = document.getElementById('writerTopic').value.trim();
+              if (!name || !email || !topic) {
+                alert("Please fill in your name, email, and what you'd like to write about.");
+                return;
+              }
+              fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                body: JSON.stringify({
+                  name: name,
+                  email: email,
+                  topic: topic,
+                  originalComment: commentTextarea.value,
+                  Page: document.getElementById('page-tracking').value,
+                  Environment: document.getElementById('env-tracking').value,
+                  _subject: 'Classic Chicago Writer Application'
+                })
+              }).catch(function(){});
+              document.getElementById('writerForm').style.display = 'none';
+              document.getElementById('writerConfirm').style.display = 'block';
+            });
+          })();
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — order must match homepage card order -->
+      <div class="edition-nav">
+        <img class="nav-thumb" src="../silvia-beltrametti-satire/navthumb.jpg" alt=""><a href="../silvia-beltrametti-satire/" class="back-link">&larr; Previous</a>
+        <img class="nav-thumb" src="../jafra-canaan-wellspring/navthumb.jpg" alt=""><a href="../jafra-canaan-wellspring/" class="back-link">Next &rarr;</a>
+      </div>
+      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script>
+    var prevUrl = '../silvia-beltrametti-satire/';
+    var nextUrl = '../jafra-canaan-wellspring/';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>

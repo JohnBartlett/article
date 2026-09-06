@@ -607,14 +607,31 @@
     const startDate = todayIdx >= 0 ? today : dates.find(d => d >= today) || dates[0];
     showDay(startDate);
 
-    select.addEventListener('change', () => showDay(select.value));
+    function trackDayChange(dateStr, method) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'astro_day_change', { day: dateStr, method: method });
+      }
+    }
+
+    select.addEventListener('change', () => {
+      showDay(select.value);
+      trackDayChange(select.value, 'select');
+    });
     prevBtn.addEventListener('click', () => {
       const idx = currentIndex();
-      if (idx > 0) showDay(select.options[idx - 1].value);
+      if (idx > 0) {
+        const target = select.options[idx - 1].value;
+        showDay(target);
+        trackDayChange(target, 'prev');
+      }
     });
     nextBtn.addEventListener('click', () => {
       const idx = currentIndex();
-      if (idx < select.options.length - 1) showDay(select.options[idx + 1].value);
+      if (idx < select.options.length - 1) {
+        const target = select.options[idx + 1].value;
+        showDay(target);
+        trackDayChange(target, 'next');
+      }
     });
 
     document.addEventListener('keydown', function(e) {

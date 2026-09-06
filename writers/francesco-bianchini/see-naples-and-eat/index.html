@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>See Naples – and eat! | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <h1>See Naples – and eat!</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; April 12, 2021</div>
+    </div>
+    <div class="article-body">
+<h1><span>Fending for food in the shadow of Vesuvius</span></h1>
+
+<p>By <span>Francesco Bianchini</span></p>
+
+<p><span>If pressed to link exceptional flavors to a single geographic place, I have no doubt I would choose Naples. For if Paris is a ‘moveable feast’ – as says Hemingway – Naples is fireworks for the taste buds – so say I. No other place has surprised and delighted me as much with the variety and quality of its cuisine. And Naples welcomed me in the same way it always has embraced outsiders over the centuries permitting us to become Neapolitans by choice.</span></p>
+
+<p>The view from my balcony in Naples</p>
+<p><span>I thought I was a decent connoisseur of Italian cooking traditions, but my winter stay in Naples forced me to revise that belief, leading me even to adopt a new lexicon for the local dishes, ingredients, kitchen utensils. It all began in the Pignasecca market as the frenzy of the end-of-year festivities was fast approaching. I was queued at one of the noisy fish stalls where a woman Samurai was cutting juicy white cod fillets with a hatchet-like knife. I didn&#8217;t know which fish to take; on top of that, I was intimidated by the proximity of two matrons who were regarding each other somewhat menacingly. One was especially fearsome in appearance and was mumbling loudly some hostility toward the other who seemed poised to push in front of her.</span></p>
+
+<p>Holiday procession in the Pignasecca market</p>
+<p><span>A fight was in the air, so to avert it, I asked them how they might recommend cooking the cod. The first woman&#8217;s face was instantly transformed, like an actor who changes mask and mood. Fried, of course, she exclaimed. Don&#8217;t you like fried food? I replied I was fairly hopeless with fried food. Come to my place, then, I’ll fry it for you, she responded gaily. Now her nemesis intervened. Cook it with <em>piennoli</em> and Gaeta olives, referring to those heart-shaped tomatoes you see everywhere in Naples, those grown on the slopes of Mount Vesuvius. I’d added those tomatoes to a salad already, where the sulphureous flavor, conferred by the lava soil, had not been at its best. No, you must eat them with fish, said the rival, bursting out laughing – laughter that was a little unnerving – but you could tell it was good-natured. She didn’t mean to mock me but found it amusing, perhaps, that I’d arrived in Naples without having consulted her in the first place.</span></p>
+
+<p>Neapolitan grocery boutique</p>
+<p><span>The dish is exceptional and, like all recipes that use ingredients with great personality, disconcertingly simple. I recommend having the fish cut into pieces because if you don&#8217;t have the right knife at home, you risk mangling it. In a <em>ruoto</em> (round, high-sided baking pan) sauté garlic and chili flakes, then add the chopped <em>piennoli</em> tomatoes. Once a sauce is formed, arrange the pieces of cod in the pan, add whole Gaeta olives, salt, and pepper. Depending on the thickness of the fillets, twenty to thirty minutes of cooking ought to be sufficient. Don’t forget to turn the pieces of cod from time to time, and sprinkle with chopped parsley at the end of cooking.</span></p>
+
+<p>Neapolitan graffiti</p>
+<p><span>From the windows of the apartment I rented, the most cosmopolitan city on The Boot stretched in the winter sun like a cat. If you don&#8217;t know everything about Naples, it&#8217;s only because it has too much to offer; everything is in plain sight and within everyone&#8217;s reach. I became acquainted with <em>scialatielli</em> – a local type of fresh pasta, superb with vegetables and fish; with <em>cicenielli</em> and <em>travagli</em> – two varieties of tiny fish to be deep-fried. In fact, almost everything is fried in Naples, and nothing much is thrown away. And I discovered with delight the bread called <em>cafone</em>, remarkable for its sour aftertaste given by natural leavening – something I truly miss but haven’t found anywhere else. Neapolitan trattorias are usually so cheap that many people have lunch and dinner there every day. And the menus change all the time and the endless buffet of vegetables renewed: eggplant parmigiana; greens like <em>scarola</em> and <em>friarielli</em>; au gratin and marinated peppers (<em>caponata</em>); fried zucchini and eggplant; stuffed squash flowers (<em>sciurilli</em>); sautéed, mashed, and potato <em>crocché</em> (croquets).</span></p>
+
+<p>Some of the regulars, Trattoria da Elvira, high up in Vomero</p>
+<p><span>In the restaurants of France, diners whisper and the servers attend with the gravity of prelates. One has the impression of enacting a mystical experience, a bit on edge for fear of committing sacrilege. In Naples, I learned a lesson in gastronomic etiquette, imparted with much tact and humility. In a trattoria where I had become a familiar face, and where at least three generations of the same family worked, I asked for <em>cicenielli</em> accompanied by the inevitable <em>friarielli</em>, and their home-bottled <em>falanghina</em>. To the old grandfather, who had served me the incomparably fried fish, I asked with fatuous automatism for a lemon to squeeze over them. I&#8217;ll bring it, but it&#8217;s not done, he said quietly with a disarming smile.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../la-palombaccia/"><img class="retro-nav-thumb" src="../la-palombaccia/imgs/Brick-madness1-500x375.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">La Palombaccia</span></span></a>
+  <a class="retro-nav-item next" href="../san-pietro-honeymoon/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">San Pietro Honeymoon</span></span><img class="retro-nav-thumb" src="../san-pietro-honeymoon/imgs/San-Pietro-Honeymoon-2.jpg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>DateBook &mdash; September 6, 2026 | Classic Chicago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #f5f1ea;
+      color: #2c2c2c;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; height: auto; }
+
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 16px;
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400;
+      color: #d41f1f; text-decoration: none; text-transform: uppercase;
+      margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d41f1f;
+      padding: 2px 8px;
+      margin-left: 10px;
+      line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .hamburger-btn:hover {
+      color: #b51c20;
+    }
+
+    .hamburger-menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hamburger-menu.open {
+      display: block;
+    }
+
+    .hamburger-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger-menu a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-container { max-width: 780px; margin: 40px auto 60px; padding: 0 16px; }
+
+    .datebook-masthead {
+      background: #1a1a1a; color: #fff; text-align: center;
+      padding: 48px 40px 40px; border-radius: 6px 6px 0 0; margin-bottom: 0;
+    }
+
+    .datebook-kicker {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #c9a96e; margin-bottom: 14px;
+    }
+
+    .datebook-title {
+      font-family: 'Playfair Display', serif; font-size: 64px;
+      font-weight: 800; color: #fff; letter-spacing: 0.05em;
+      margin: 0 0 16px; line-height: 1;
+    }
+
+    .datebook-dek {
+      font-size: 16px; font-weight: 300; color: #bbb;
+      max-width: 480px; margin: 0 auto 20px; line-height: 1.6;
+    }
+
+    .datebook-byline { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.1em; }
+    .datebook-byline strong { color: #c9a96e; }
+
+    .datebook-body {
+      background: #fff; border-radius: 0 0 6px 6px;
+      padding: 0 0 48px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .month-header {
+      background: #b51c20; color: #fff; padding: 18px 40px;
+      font-family: 'Playfair Display', serif; font-size: 28px;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    .event-list { padding: 16px 40px 8px; }
+
+    .event-entry { padding: 24px 0; border-bottom: 1px solid #f0ece4; }
+    .event-entry:last-child { border-bottom: none; }
+    .event-entry.past { opacity: 0.45; }
+    .past-badge { display: inline-block; background: #999; color: #fff; font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 7px; border-radius: 2px; margin-left: 10px; vertical-align: middle; }
+
+    .event-date-row {
+      display: flex; align-items: baseline; gap: 12px;
+      margin-bottom: 6px; flex-wrap: wrap;
+    }
+
+    .event-date {
+      font-family: 'Playfair Display', serif; font-size: 17px;
+      font-weight: 700; color: #b51c20; white-space: nowrap;
+    }
+
+    .event-time { font-size: 13px; font-weight: 400; color: #999; white-space: nowrap; }
+
+    .event-org {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #888; margin-bottom: 4px;
+    }
+
+    .event-name {
+      font-family: 'Playfair Display', serif; font-size: 20px;
+      font-weight: 700; color: #1a1a1a; margin: 0 0 10px; line-height: 1.3;
+    }
+
+    .event-description { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 12px; }
+
+    .event-meta { font-size: 13px; color: #777; line-height: 1.6; }
+    .event-meta .venue { font-weight: 700; color: #444; }
+    .event-meta .contact { margin-top: 4px; }
+    .event-meta a { color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20; }
+    .event-meta a:hover { border-bottom-style: solid; }
+
+    .edition-nav {
+      display: flex; justify-content: space-between; margin-top: 40px; padding: 0 4px;
+    }
+
+    .edition-nav a {
+      font-family: 'Lato', sans-serif; font-size: 14px; color: #b51c20;
+      text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .edition-nav a:hover { text-decoration: underline; }
+
+    footer {
+      background: #1a1a1a; color: #aaa; padding: 30px 16px;
+      text-align: center; font-family: 'Lato', sans-serif; font-size: 14px;
+    }
+
+    .social-links { display: flex; justify-content: center; gap: 18px; margin-bottom: 16px; }
+
+    .social-links a {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%; background: #333; transition: background 0.2s;
+    }
+
+    .social-links a:hover { background: #555; }
+    .social-links svg { width: 18px; height: 18px; fill: #fff; }
+    .copyright { color: #666; font-size: 13px; }
+
+    @media (max-width: 700px) {
+      .datebook-title { font-size: 44px; }
+      .datebook-masthead { padding: 36px 24px 32px; }
+      .month-header { padding: 14px 20px; font-size: 22px; }
+      .event-list { padding: 12px 20px 4px; }
+    }
+
+    @media (max-width: 480px) {
+      .datebook-title { font-size: 36px; }
+      .logo-container img { width: 280px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html"><img src="../../../logo.jpg" alt="Classic Chicago Magazine"></a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="./">DateBook</a>
+        <a href="../daily-star-september/">Astrochart</a>
+        <a href="../../../editorial.html">Editors&rsquo; Page</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <a href="../../../write-for-us.html">Write for Us</a>
+      </div>
+    </nav>
+    <!-- dev2-only
+    <div class="internal-nav" style="background:#f9f0d8;border-bottom:1px solid #e0c97a;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:13px;">
+      <a href="../../../reader-comments.html" style="color:#8a6d00;margin:0 12px;">Reader Comments</a>
+      <a href="../../../future-articles.html" style="color:#8a6d00;margin:0 12px;">Future Articles</a>
+      <a href="../" style="color:#8a6d00;margin:0 12px;">Edition Index</a>
+    </div>
+    -->
+  </header>
+
+  <main>
+    <div class="article-container">
+
+      <div class="datebook-masthead">
+        <div class="datebook-kicker">Classic Chicago &mdash; September 6, 2026</div>
+        <h1 class="datebook-title">DateBook</h1>
+        <p class="datebook-dek">Galas, concerts, lectures, and celebrations &mdash; the essential guide to Chicago&rsquo;s social season</p>
+        <div class="datebook-byline">Curated by <strong><a href="../../../about.html#annie-delfosse" style="color:inherit; text-decoration:none;">Annie Delfosse</a></strong></div>
+      </div>
+
+      <div class="datebook-body">
+
+        <!-- ══════════ SEPTEMBER ══════════ -->
+        <div class="month-header">September</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Peggy Notebaert Nature Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 5</span>
+              <span class="event-time">10:00 a.m. &ndash; 2:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Flutter into Fall</h2>
+            <p class="event-description">Join the annual celebration of beloved butterflies as the monarchs begin their migration! Flutter into Fall features activities for all ages to honor the fluttering friends and their annual migration to the Oyamel fir forest in Mexico. Take part in a craft presented by the National Museum of Mexican Art, join an entomologist for monarch butterfly tagging, explore the outdoor butterfly garden and nature trails, sketch pollinators and flowers with featured artist Tara Preston, see a special performance by Xochitl-Quetzal Aztec Dance company, and witness the daily release of newly emerged tropical butterflies into the Judy Istock Butterfly Haven inside the museum.</p>
+            <div class="event-meta">
+              <span class="venue">Peggy Notebaert Nature Museum</span><br>
+              2430 North Cannon Drive, Chicago<br>
+              <span class="contact"><a href="https://tickets.naturemuseum.org/events/019edb9f-4c62-ed6f-76ce-dbbb2bf8c257" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">September 6 &ndash; January 3</span>
+            </div>
+            <h2 class="event-name">Mary Cassatt: After Impressionism</h2>
+            <p class="event-description">Immerse yourself in the bold and innovative work of Mary Cassatt with this gathering of 75 experimental and ambitious works made at the height of her career. Marking the centennial of her death, <em>Mary Cassatt: After Impressionism</em> celebrates the artist&rsquo;s paintings, pastels, and prints from a period when she took her art in new directions.</p>
+            <div class="event-meta">
+              <span class="venue">The Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.artic.edu/exhibitions/10487/mary-cassatt-after-impressionism" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Mandala Arts South Asian Performing Arts</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 10</span>
+              <span class="event-time">4:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Red Line Jazz Project</h2>
+            <p class="event-description">Mandala South Asian Performing Arts continues its community-building Red Line Jazz Project, a public arts initiative activating public transit and community spaces with free live music and cultural programming. These final free performances feature the brass band Windy City Ramblers, a second-line brass collective dedicated to inspiring youth and uplifting communities through music and culture. Led by Co-Founder and CEO Mario Abney, Windy City Ramblers brings the heartbeat of second-line tradition to the Chicago area, fostering creativity, cultural pride, and community connection.</p>
+            <div class="event-meta">
+              <span class="venue">95th/Dan Ryan Station</span><br>
+              14 West 95th Street, Chicago
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Costume Council of the Chicago History Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 10</span>
+              <span class="event-time">6:00 &ndash; 9:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Chicago Men&rsquo;s Fashion Awards 2026</h2>
+            <p class="event-description">The Costume Council of the Chicago History Museum recognizes and celebrates Chicago&rsquo;s most stylish men. Join us at the historic Walnut Room for an evening of fun and fashion as we honor 10 Men of Style. Co-Chairs: Lizzy Lopez and David Mordini.</p>
+            <div class="event-meta">
+              <span class="venue">The Walnut Room at Macy&rsquo;s, 7th Floor</span><br>
+              111 North State Street, Chicago<br>
+              <span class="contact"><a href="https://www.chicagohistory.org/event/chicago-mens-fashion-awards-2026/" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, September 11</span>
+              <span class="event-time">2:00 &ndash; 3:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Gallery Conversation: Corn and Cosmos</h2>
+            <p class="event-description">Join Elizabeth Pope and Gaby Lavalle to examine how Mayan art, from ancient vessels to modern sculpture, reveals deep, ongoing ties between identity, the land, and community.</p>
+            <div class="event-meta">
+              <span class="venue">Gallery 161, The Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.artic.edu/events/6543/gallery-conversation-corn-and-cosmos" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Newberry Library</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 12</span>
+              <span class="event-time">9:30 &ndash; 10:30 a.m.</span>
+            </div>
+            <h2 class="event-name">Genealogy 101: An Introduction to Genealogical Research at the Newberry</h2>
+            <p class="event-description">In this informal orientation, Newberry reference librarians introduce you to the Newberry&rsquo;s genealogy and local history collections. Aimed at researchers new to the library and/or new to genealogical research, the session covers basic principles of building a family tree, genealogy collection strengths, and effective search strategies. Following the orientation, you&rsquo;re welcome to stick around for a guided tour of the library. No registration required.</p>
+            <div class="event-meta">
+              <span class="venue">Baskes Hall, The Newberry Library</span><br>
+              60 West Walton Street, Chicago<br>
+              <span class="contact"><a href="https://www.newberry.org/calendar/genealogy-101-2026-5" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Vasa Park</div>
+            <div class="event-date-row">
+              <span class="event-date">Sunday, September 13</span>
+              <span class="event-time">10:00 a.m. &ndash; 3:20 p.m.</span>
+            </div>
+            <h2 class="event-name">Scandinavian Day</h2>
+            <p class="event-description">Considered one of Illinois&rsquo; most unique Scandinavian celebrations, the festival gives visitors a chance to experience the cultures of Denmark, Finland, Iceland, Norway, and Sweden all in one place. Come for traditional Scandinavian foods like Swedish meatballs, &aelig;bleskiver, and kringle; folk dancers and live entertainment; Scandinavian artisans and vendors; cultural experiences; family activities; and even Vikings bringing Nordic history to life. Families can also enjoy complimentary children&rsquo;s activities including pony rides, face painting, crafts, and the park&rsquo;s playground.</p>
+            <div class="event-meta">
+              <span class="venue">Vasa Park</span><br>
+              35W217 Route 31, South Elgin<br>
+              <span class="contact"><a href="http://scandinaviandayil.com" target="_blank">scandinaviandayil.com</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Chicago Architecture Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Wednesday, September 16</span>
+            </div>
+            <h2 class="event-name">60th Anniversary Celebration &amp; &ldquo;Designing Futures&rdquo; Gala</h2>
+            <p class="event-description">Proceeds from the event will benefit CAC&rsquo;s civic advocacy, trades apprenticeship program, learning and community engagement programs. More details to come!</p>
+            <div class="event-meta">
+              <span class="venue">Obama Presidential Center</span><br>
+              6001 South Stony Island Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.architecture.org/events-programs/cac-designing-futures-gala" target="_blank">Check for event updates &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 17</span>
+              <span class="event-time">6:00 &ndash; 7:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Conversation: New Stories for Ancient Art</h2>
+            <p class="event-description">Long before any artwork is installed in the galleries, the Interpretation team meets with curators to dig into the stories behind the art. Join the team behind <em>Myth and Marble: Ancient Roman Sculptures from the Torlonia Collection</em> as they pull back the curtain on the planning process behind gallery labels, audio tours, and digital content for the show.</p>
+            <div class="event-meta">
+              <span class="venue">Fullerton Hall, The Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://sales.artic.edu/Events/Event/32813?date=9/17/2026" target="_blank">Register &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Children&rsquo;s Service Board (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 17 &amp; Thursday, September 24</span>
+            </div>
+            <h2 class="event-name">70th Annual Gold Coast Fashion Show</h2>
+            <p class="event-description">Fashion and philanthropy merge as the Children&rsquo;s Service Board celebrates the 70th annual Gold Coast Fashion Show. Cutting-edge fashion is presented in two fast-paced, live runway shows at a luncheon on September 17 at The Drake Hotel and an evening cocktail reception on September 24 at the Geraghty. Funds raised will benefit the Chicago Institute for Fetal Health at the Ann &amp; Robert H. Lurie Children&rsquo;s Hospital of Chicago.</p>
+            <div class="event-meta">
+              <span class="venue">The Drake Hotel</span>, 140 East Walton Place, Chicago<br>
+              <span class="venue">The Geraghty</span>, 2520 South Hoyne Avenue, Chicago<br>
+              <span class="contact"><a href="https://www.goldcoastfashionshow.com" target="_blank">www.goldcoastfashionshow.com</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Newberry Library</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 19</span>
+              <span class="event-time">1:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Rare Map and Book Fair</h2>
+            <p class="event-description">The Newberry Library hosts a rare map and book fair in conjunction with the 50th anniversary of the Chicago Map Society. Programming includes workshops on crafting with maps, speakers on topics including Kevin Mason on the history of maps of Iowa, and a guided tour of maps chosen by charter members of the Map Society. At least a dozen vendors from across the country will showcase rare books, atlases, and related works on paper.</p>
+            <div class="event-meta">
+              <span class="venue">The Newberry Library</span><br>
+              60 West Walton Street, Chicago<br>
+              <span class="contact"><a href="https://www.newberry.org/calendar/rare-map-and-book-fair-2026" target="_blank">Register &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 19</span>
+              <span class="event-time">2:00 &ndash; 3:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Artist Conversation: Jill Mulleady</h2>
+            <p class="event-description">Jill Mulleady prioritizes a tradition in which chaos, instinct, and history drive art making. Join her for a conversation marking the opening of her first solo show at a major museum.</p>
+            <div class="event-meta">
+              <span class="venue">Fullerton Hall, The Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://sales.artic.edu/Events/Event/32426?date=9/19/2026" target="_blank">Register &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Music Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 19</span>
+              <span class="event-time">7:30 p.m.</span>
+            </div>
+            <h2 class="event-name">The Formosa Quartet Kicks Off Music Institute&rsquo;s 2026&ndash;27 Season</h2>
+            <p class="event-description">Opening the Music Institute of Chicago&rsquo;s 2026&ndash;27 Nichols Concert Hall Presents season is the Formosa Quartet, winner of both the First Prize and Amadeus Prize at the Wigmore Hall International String Quartet Competition. The program features Bart&oacute;k&rsquo;s String Quartet No. 5 and a Formosa Quartet Set &mdash; an assortment of shorts from the ensemble&rsquo;s collection of folk, pop, jazz, and poetry arrangements.</p>
+            <div class="event-meta">
+              <span class="venue">Nichols Concert Hall</span><br>
+              1490 Chicago Avenue, Evanston<br>
+              <span class="contact"><a href="https://www.musicinst.org/nch-formosa-quartet" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Women&rsquo;s Board of the Joffrey Ballet</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, September 24</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Women&rsquo;s Night</h2>
+            <p class="event-description">Join the Joffrey Women&rsquo;s Board and friends for a night of networking with a pre-show wine bar and hors d&rsquo;oeuvres before enjoying the evening&rsquo;s performance: <em>Liliom</em>, a ballet by John Neumeier.</p>
+            <div class="event-meta">
+              <span class="venue">Lyric Opera House, Ardis Krainik Theatre</span><br>
+              20 North Wacker Drive, Chicago<br>
+              <span class="contact"><a href="https://joffrey.org/donate/events/women-s-night-liliom/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Art Institute of Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, September 26</span>
+              <span class="event-time">2:00 &ndash; 3:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Lecture: The King, His Armor, and His Armorer &mdash; Conserving Britain&rsquo;s Royal Collection</h2>
+            <p class="event-description">Join Simon Metcalf, formerly The King&rsquo;s Armourer at the Royal Collection in Britain, to learn about the craft and conservation of centuries-old arms and armor and discover how a few rare pieces made their way into the Art Institute&rsquo;s collection.</p>
+            <div class="event-meta">
+              <span class="venue">Fullerton Hall, The Art Institute of Chicago</span><br>
+              111 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://sales.artic.edu/Events/Event/32817?date=9/26/2026" target="_blank">Register &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">The Village Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Tuesday, September 29</span>
+            </div>
+            <h2 class="event-name">Annual Benefit: &ldquo;Then and Now: A Retro Celebration&rdquo;</h2>
+            <p class="event-description">The Village Chicago gathers at Cafe Brauer, a historic Lincoln Park gem, to celebrate the community that makes the Village so special. This year shines a spotlight on the incredible talent within the membership with all entertainment and planning member-driven. The evening celebrates the music, style, and spirit of the 60s and 70s. Expect food, games, music, and plenty of time to reconnect with friends old and new.</p>
+            <div class="event-meta">
+              <span class="venue">Cafe Brauer</span><br>
+              2021 North Stockton Drive, Chicago<br>
+              <span class="contact"><a href="https://thevillagechicago.org/annual-benefit/" target="_blank">Tickets and more information &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list September -->
+
+        <!-- ══════════ OCTOBER ══════════ -->
+        <div class="month-header">October</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Mandala Arts South Asian Performing Arts</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, October 1</span>
+              <span class="event-time">4:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Red Line Jazz Project</h2>
+            <p class="event-description">Mandala South Asian Performing Arts continues its community-building Red Line Jazz Project, a public arts initiative activating public transit and community spaces with free live music and cultural programming. The Project&rsquo;s final free performances feature the brass band Windy City Ramblers, a second-line brass collective dedicated to inspiring youth and uplifting communities through music and culture. Led by Co-Founder and CEO Mario Abney, Windy City Ramblers brings the heartbeat of second-line tradition to the Chicago area, fostering creativity, cultural pride, and community connection.</p>
+            <div class="event-meta">
+              <span class="venue">95th/Dan Ryan Station</span><br>
+              14 West 95th Street, Chicago
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Museum of Contemporary Art | Chicago Humanities</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, October 15</span>
+              <span class="event-time">7:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Jlin + Third Coast Percussion, <em>Vernacular</em></h2>
+            <p class="event-description">Third Coast Percussion presents a new original program, <em>Vernacular</em>, in collaboration with Pulitzer Prize finalist and electronic music artist Jlin. TCP and Jlin will perform live on stage together in brand new arrangements of some of Jlin&rsquo;s most exciting works reimagined for live electronics and acoustic percussion quartet, as well as new works composed specifically for the occasion.</p>
+            <div class="event-meta">
+              <span class="venue">Museum of Contemporary Art Chicago</span><br>
+              220 East Chicago Avenue, Chicago<br>
+              <span class="contact"><a href="https://mcachicago.org" target="_blank">mcachicago.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Mandala South Asian Performing Arts</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, October 16</span>
+              <span class="event-time">7:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Fareed Haque Leads Red Line Jazz Festival</h2>
+            <p class="event-description">Mandala South Asian Performing Arts, working with Artist-in-Residence and acclaimed jazz guitarist Fareed Haque, presents the Red Line Jazz Festival, an evening of music and dance. This multifaceted performance serves as the capstone concert of the community-building Red Line Jazz Project, a five-month public arts initiative that has been activating public transit and community spaces with free live music and cultural programming.</p>
+            <div class="event-meta">
+              <span class="venue">Harris Theater for Music and Dance</span><br>
+              205 East Randolph Street, Chicago<br>
+              <span class="contact"><a href="http://harristheaterchicago.org/performance/red-line-jazz-festiva" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Elmhurst Art Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, October 17</span>
+            </div>
+            <h2 class="event-name">Aces &amp; Art: A Night of Luck and Giving</h2>
+            <p class="event-description">Elmhurst Art Museum presents Aces &amp; Art: A Night of Luck and Giving, an evening filled with style and a touch of casino-night fun &mdash; all in support of the museum&rsquo;s exhibitions and education programs. The evening includes gaming tables featuring roulette, blackjack, craps, and more; complimentary cocktails &amp; delicious bites; a DJ and dancing; and raffles and artful prizes. Whether you&rsquo;re feeling lucky or just love a night out surrounded by creativity, this is the can&rsquo;t-miss event of the season.</p>
+            <div class="event-meta">
+              <span class="venue">Elmhurst Art Museum</span><br>
+              150 Cottage Hill Avenue, Elmhurst<br>
+              <span class="contact"><a href="https://elmhurstartmuseum.org" target="_blank">elmhurstartmuseum.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Artists in Public Schools</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, October 22</span>
+              <span class="event-time">6:00 &ndash; 9:00 p.m.</span>
+            </div>
+            <h2 class="event-name">Annual Gala: Art Means Something</h2>
+            <p class="event-description">Join Artists in Public Schools for their Annual Gala &mdash; a lively night of cocktails, hors d&rsquo;oeuvres, music, silent auction, and inspiring stories about the impact of their artist residency program in Chicago public schools. For nine years, Artists in Public Schools has partnered with professional artists, students, and educators to create and share powerful stories through art. This year&rsquo;s theme, <em>Art Means Something</em>, reflects the heart of that work.</p>
+            <div class="event-meta">
+              <span class="venue">Arts Club of Chicago</span><br>
+              201 East Ontario Street, Chicago<br>
+              <span class="contact">Ticket opportunities to come.</span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Third Coast Percussion</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, October 22</span>
+              <span class="event-time">6:00 p.m.</span>
+            </div>
+            <h2 class="event-name">TCP Fall Benefit</h2>
+            <p class="event-description">Third Coast Percussion offers an intimate evening of cocktails, conversation, music, and celebration with special guest Jlin, Pulitzer Prize-finalist composer, performer, and electronic musician. The Benefit features an exclusive conversation with the artists about their creative process and ongoing collaboration, and a dynamic performance of works from their upcoming album <em>Vernacular</em>. TCP will also present the Resonance Award to James Ginsburg, Founder and President of Cedille Records, for his work promoting more than 180 classical musicians and ensembles from Chicago to listeners worldwide.</p>
+            <div class="event-meta">
+              <span class="venue">Walden Chicago</span><br>
+              2145 West Walnut Street, Chicago<br>
+              <span class="contact"><a href="https://thirdcoastpercussion.com/event/tcp-fall-benefit-with-jlin/" target="_blank">Tickets &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">LUMA8</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, October 24</span>
+              <span class="event-time">6:00 &ndash; 8:00 p.m.</span>
+            </div>
+            <h2 class="event-name">12th Annual Arts in the Dark Halloween Parade</h2>
+            <p class="event-description">LUMA8 presents the 12th Annual Arts in the Dark Halloween Parade, a family-friendly event featuring unique floats, spectacle puppets, and all forms of creative performance. Due to the growth of the parade, Arts in the Dark triumphantly returns to its original larger location along Columbus Drive, with the parade stepping off at Balbo Drive and marching north through Jackson Boulevard. This magical evening procession celebrates Halloween as the &ldquo;artist&rsquo;s holiday&rdquo; and draws together participants from major cultural organizations, inspiring youth programs, and aspiring artists from every ward of Chicago.</p>
+            <div class="event-meta">
+              <span class="venue">Columbus Drive</span><br>
+              Moving north from Balbo to Jackson, Chicago<br>
+              <span class="contact"><a href="https://artsinthedark.com/" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list October -->
+
+        <!-- ══════════ NOVEMBER ══════════ -->
+        <div class="month-header">November</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Elmhurst Art Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">November 5 &ndash; 8</span>
+            </div>
+            <h2 class="event-name">A Revolution of Values &mdash; Veteran Art Triennial and Summit</h2>
+            <p class="event-description">The Elmhurst Art Museum presents <em>A Revolution of Values</em>, a group exhibition as part of the 2026 Veteran Art Triennial and Summit, <em>Resisting the Long War</em>, organized by the Chicago-based Emerging Veteran Art Movement. Building on the legacy of Vietnam Veterans Against the War, this exhibition brings together nearly a dozen local, national, and international artists whose work examines military experience and critiques militarism. The exhibition will be on view September 12, 2026 through January 3, 2027.</p>
+            <div class="event-meta">
+              <span class="venue">Elmhurst Art Museum</span><br>
+              150 South Cottage Hill Avenue, Elmhurst<br>
+              <span class="contact"><a href="https://resistingthelongwar.online/" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">PAWS Chicago</div>
+            <div class="event-date-row">
+              <span class="event-date">Friday, November 13</span>
+              <span class="event-time">6:00 p.m. &ndash; 12:00 a.m.</span>
+            </div>
+            <h2 class="event-name">Fur Ball</h2>
+            <p class="event-description">The PAWS Chicago Fur Ball is Chicago&rsquo;s premier pet-friendly black tie event! Set at the legendary Drake Hotel, this unique gala invites guests to dress their pets in four-legged formal wear and walk the red carpet for an exciting celebration to benefit PAWS Chicago. Guests will delight in the silent and live auctions with one-of-a-kind items, raffle, dancing, and dinner buffets. Lucky dogs in attendance will also be treated to an evening of indulgences &mdash; including a divine dinner served in crystal goblets at the special dog buffet.</p>
+            <div class="event-meta">
+              <span class="venue">Drake Hotel</span><br>
+              140 East Walton Place, Chicago<br>
+              <span class="contact"><a href="https://www.pawschicago.org/events-dog-training/fundraising-events/fur-ball" target="_blank">More information &rarr;</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Hyde Park Art Center</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 14</span>
+              <span class="event-time">5:30 &ndash; 11:30 p.m.</span>
+            </div>
+            <h2 class="event-name">Hyde Park Art Center Gala 2026</h2>
+            <p class="event-description">Hyde Park Art Center&rsquo;s 2026 Gala will honor Candida Alvarez and Nora Daley. A truly special evening celebrating these visionaries while bringing together artists and art lovers to support the Art Center&rsquo;s unique creative ecosystem. From open studios and artist interventions to conversations at your dinner table, this evening centers artists at every moment.</p>
+            <div class="event-meta">
+              <span class="venue">Hyde Park Art Center</span><br>
+              5020 South Cornell Avenue, Chicago<br>
+              <span class="contact">773-324-5520 &nbsp;&bull;&nbsp; <a href="https://www.hydeparkart.org/" target="_blank">hydeparkart.org</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Driehaus Museum</div>
+            <div class="event-date-row">
+              <span class="event-date">Tuesday, November 17</span>
+              <span class="event-time">5:30 p.m.</span>
+            </div>
+            <h2 class="event-name">The Gilded Gala</h2>
+            <p class="event-description">The Driehaus Museum&rsquo;s annual celebration of artistic excellence and Chicago&rsquo;s cultural legacy. This signature event benefits the Museum&rsquo;s transformative public programming and mission of expanding access to extraordinary art, architecture, and design. The 2026 Gilded Gala will honor Mansueto Office, Inc. for advancing the well-being of communities through philanthropic support of holistic educational and cultural initiatives.</p>
+            <div class="event-meta">
+              <span class="venue">Driehaus Museum</span><br>
+              50 East Erie, Chicago<br>
+              <span class="contact"><a href="https://driehausmuseum.org" target="_blank">driehausmuseum.org</a> &nbsp;&bull;&nbsp; 312-874-5912</span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Founder&rsquo;s Board (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Thursday, November 19</span>
+            </div>
+            <h2 class="event-name">Winter Wishes: Annual Holiday Cocktail Celebration</h2>
+            <p class="event-description">This festive celebration has become the official kick-off to Chicago&rsquo;s holiday season. Guests gather to celebrate the holidays and help to make wishes come true for patients treated at Lurie Children&rsquo;s. Proceeds benefit the Founders&rsquo; Board&rsquo;s fundraising commitment to the Lurie Children&rsquo;s Center for Cancer and Blood Disorders.</p>
+            <div class="event-meta">
+              <span class="venue">The Casino</span><br>
+              195 East Delaware Place, Chicago<br>
+              <span class="contact"><a href="https://www.luriechildrens.org/winterwishes" target="_blank">www.luriechildrens.org/winterwishes</a></span>
+            </div>
+          </div>
+
+          <div class="event-entry">
+            <div class="event-org">Allendale Association</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, November 21</span>
+              <span class="event-time">9:30 a.m.</span>
+            </div>
+            <h2 class="event-name">Allendale Youth Board Polar Plunge</h2>
+            <p class="event-description">Take the plunge in Lake Michigan, challenge yourself in the stair climbing competition, or cheer from the shore at Allendale Youth Board&rsquo;s 2nd Annual Polar Plunge. Tickets are $25 and participants are encouraged to invite friends and family to sponsor their plunge or climb. All proceeds benefit Allendale in Lake Villa, a school and residence supporting the behavioral, emotional, and mental health needs of some of Illinois&rsquo;s most vulnerable children.</p>
+            <div class="event-meta">
+              <span class="venue">Forest Park Beach, Lake Forest</span><br>
+              <span class="contact"><a href="https://allendale4kids.org/" target="_blank">allendale4kids.org</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list November -->
+
+        <!-- ══════════ DECEMBER ══════════ -->
+        <div class="month-header">December</div>
+        <div class="event-list">
+
+          <div class="event-entry">
+            <div class="event-org">Children&rsquo;s Research Fund (Lurie Children&rsquo;s)</div>
+            <div class="event-date-row">
+              <span class="event-date">Saturday, December 12</span>
+              <span class="event-time">6:30 p.m.</span>
+            </div>
+            <h2 class="event-name">75th Annual Children&rsquo;s Research Fund Children&rsquo;s Ball</h2>
+            <p class="event-description">The 2026 Children&rsquo;s Ball is the signature fundraising event of the Children&rsquo;s Research Fund at Ann &amp; Robert H. Lurie Children&rsquo;s Hospital of Chicago. This black-tie gala brings together philanthropic leaders for an inspiring evening dedicated to advancing pediatric research. Funds raised support the Children&rsquo;s Research Fund&rsquo;s commitment to Advanced Therapeutics at the Stanley Manne Children&rsquo;s Research Institute, accelerating innovative treatments and transformative discoveries for children in Chicago and beyond.</p>
+            <div class="event-meta">
+              <span class="venue">Hilton Chicago</span><br>
+              720 South Michigan Avenue, Chicago<br>
+              <span class="contact"><a href="https://crf.luriechildrens.org" target="_blank">crf.luriechildrens.org</a></span>
+            </div>
+          </div>
+
+        </div><!-- /event-list December -->
+
+      </div><!-- /datebook-body -->
+
+      <div class="edition-nav">
+        <a href="../../../index.html">Back to Sunday Edition &rarr;</a>
+      </div>
+
+    </div><!-- /article-container -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // Mark past events
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+      document.querySelectorAll('.event-entry').forEach(function(entry) {
+        var dateEl = entry.querySelector('.event-date');
+        if (!dateEl) return;
+        // Extract the last date mentioned (handles ranges like "June 14 & 15")
+        var text = dateEl.textContent.replace(/&amp;/g, '&');
+        var nums = text.match(/\d+/g);
+        if (!nums) return;
+        var day = parseInt(nums[nums.length - 1]);
+        var monthMatch = text.toLowerCase().match(/january|february|march|april|may|june|july|august|september|october|november|december/);
+        if (!monthMatch) return;
+        var month = months[monthMatch[0]];
+        var year = today.getFullYear();
+        // If month is earlier in year than current month, assume next year
+        if (month < today.getMonth() - 1) year++;
+        var eventDate = new Date(year, month, day);
+        if (eventDate < today) {
+          entry.classList.add('past');
+          var badge = document.createElement('span');
+          badge.className = 'past-badge';
+          badge.textContent = 'Past';
+          dateEl.appendChild(badge);
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger-btn');
+      var menu = document.getElementById('hamburger-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

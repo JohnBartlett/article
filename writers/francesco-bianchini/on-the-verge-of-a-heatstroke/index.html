@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soup on the Verge of Heatstroke | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>Soup on the Verge of Heatstroke</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; July 26, 2026</div>
+    </div>
+    <div class="article-body">
+<div class="article-body">
+
+              <figure>
+        <img src="99Soup on the Verge of Heatstroke1.jpeg" alt="Soup on the Verge of Heatstroke" width="100%" height="auto">
+      </figure>
+
+<p>Silence is not the absence of sound; it is the weight of the world giving up on movement. In the dim kitchen, only the fan hisses, a mechanical breath stirring air that is warm, lifeless, flat as yesterday&rsquo;s sparkling wine. We are caught between the hammer and the anvil of a feverish dome of high pressure. In my mind I picture the weather map: a scarlet stain, an inflamed lung pulsing over southwestern France, radiating drought. The yew pyramids seem to burn without flames, while the Pierre de Ronsard roses, exhausted against the sun-baked stone walls, shrivel into potpourri before they have even finished blooming.</p>
+
+        <p>In this suffocating heat, memory becomes fluid. It conspires to carry me elsewhere, toward the archetype of lost coolness. Faded postcards drift by from distant summers: a table laid beneath the linden tree against a backdrop of tall grasses, the corner of a freshly washed blue tablecloth lifting gently in the breeze, a quiche or a tomato tart made with the neighboring farmer&rsquo;s goat cheese.</p>
+
+        <p>I know what I shall do.</p>
+
+        <p>I shall confuse my coordinates.</p>
+
+        <p>I shall answer this thermal delirium with a ritual of geometric precision, cutting through both space and time.</p>
+
+        <figure>
+          <img src="2-Chopped veggies.jpeg" alt="On the chopping block" width="100%" height="auto">
+          <figcaption>On the chopping block</figcaption>
+        </figure>
+
+        <p>On the kitchen counter unfolds a sequence of measured, decisive gestures, demanding the same proud discipline as a dance. Through the gap in the shutters, light slices the darkness into sharp bands, geometric blades of brightness and shadow across the white walls, recreating the protective chiaroscuro of Andalusian patios. Within this abstract space, the tapping of the knife reduces tomatoes, onions, peppers and cucumbers to pieces with the dramatic authority of a heel striking the plank floor. Then the blade crushing the garlic sets the rhythm with the dense, wooden, hypnotic cadence of castanets.</p>
+
+        <p>My wrist turns with ritual precision as I pour the olive oil; the sudden splash of vinegar snaps shut like a folding fan. The illusion is complete. The hiss of the fan blends with the sound of water playing in hidden courtyard fountains, a thread of coolness flowing beneath the burning stones. Finally the garlic and vinegar rise together like the hoarse cry of a <em>cante jondo</em>, deep and raw enough to shake the torpor from a summer afternoon.</p>
+
+        <figure>
+          <img src="3-Bowl of soup.jpeg" alt="Andalusia in a bowl" width="100%" height="auto">
+          <figcaption>Andalusia in a bowl</figcaption>
+        </figure>
+
+        <p>Before Pedro Almod&oacute;var&rsquo;s <em>Women on the Verge of a Nervous Breakdown</em> entered my imagination, I did not even know gazpacho existed. I still remember the astonishment of an overnight film marathon, three or four movies devoured one after another until dawn, when I discovered a filmmaker who seemed almost inconceivable. I had never imagined cinema could be made like that. It was as if Fellini and Blake Edwards had somehow been crossed and injected with unmistakably Spanish DNA. Impossible&mdash;and utterly irresistible.</p>
+
+        <p>I fell in love with the eccentric characters, the delirious dialogue, the glorious kitsch, and Lola Beltr&aacute;n&rsquo;s aching songs. Spain was finally emerging from the gloom of the Franco years, throwing itself into freedom like a girl celebrating her eighteenth birthday. This all-female <em>cage aux folles</em> of love, jealousy, madness and mayhem revolved around a bowl of gazpacho&mdash;albeit one rather unusually laced with sleeping pills.</p>
+
+        <p><em>What&rsquo;s in this gazpacho?</em> asks the bewildered police inspector trying to untangle the web of passions, betrayals and Shiite terrorists. Pepa calmly recites the ingredients while the sleeping pills begin to take effect and the entire comedy slowly drifts off to sleep.</p>
+
+        <figure>
+          <img src="4-Group of people.jpeg" alt="It doesn t have to end this way " width="100%" height="auto">
+          <figcaption>It doesn&rsquo;t have to end this way&hellip;</figcaption>
+        </figure>
+
+        <p><em>What&rsquo;s in this gazpacho?</em> asks the bewildered police inspector trying to untangle the web of passions, betrayals and Shiite terrorists. Pepa calmly recites the ingredients while the sleeping pills begin to take effect and the entire comedy slowly drifts off to sleep.</p>
+
+        <p>As a lifelong film lover, I cannot think of another movie in which a dish plays such a central role, its preparation described in loving detail. In Almod&oacute;var&rsquo;s hands gazpacho becomes a genuine <em>deus ex machina</em>&mdash;the ultimate problem solver. During Spain&rsquo;s blistering summers there is always a chilled bottle waiting in the refrigerator, ready to cool, hydrate and restore.</p>
+
+        <p>Pepa prepares it to escape a tangle of passions.</p>
+
+        <p>I prepare it to survive another infernal summer in the uplands of Quercy.</p>
+
+        <p>For most people gazpacho is simply relief from oppressive heat. For me it has become something far richer. Like the film that introduced it to audiences around the world, it gathers every flavor life has to offer: tart, sweet, savory, bitter, fiery. And if, as Pepa insists, the secret is simply to stir it all together&hellip;then life itself may not be such a bad recipe after all.</p>
+
+      </div><!-- end article-body -->
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../francesco-bianchini/"><img class="retro-nav-thumb" src="../francesco-bianchini/COVER - Chopsticks.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Chopsticks</span></span></a>
+  <a class="retro-nav-item next" href="../tiepolo-sky/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Dining Under a Tiepolo Sky</span></span><img class="retro-nav-thumb" src="../tiepolo-sky/1-Painting with Table.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Guardian of San Pietro | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>The Guardian of San Pietro</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; March 15, 2026</div>
+    </div>
+    <div class="article-body">
+<figure class="hero-figure">
+      <img src="ascenzio-portrait.jpeg" alt="Ascenzio at eighty-seven — portrait by Frances Middendorf">
+      <figcaption>Ascenzio at eighty-seven. Portrait by Frances Middendorf.</figcaption>
+    </figure>
+
+    <div class="article-body">
+
+      <p>Ascenzio looked after San Pietro for more than half his life. On the occasion of his eighty-seventh birthday, an American friend painted his portrait. He wore the knitted cap he never took off and looked sturdy and good-natured, his complexion like a loaf of bread just out of the oven. Light from two windows fell across him as he posed in what had been his bedroom for thirty years, in the house at the foot of the mountain known as Cesagrande, which he and his family had left some twenty years earlier, shortly after electricity arrived.</p>
+
+      <p>When Frances, the painter, bought Cesagrande from my father, the house had been damaged and left uninhabitable by the 1997 earthquake. Only fragments of plaster still clung to the bedroom walls, faint traces of the original turquoise paint. Pigeons and sparrows nested among the beams, flying in and out through a hole in the roof, littering the chipped terracotta floor. And yet, from those windows, you could still watch the olives ripen, the oaks and cypresses change color with the seasons, and spot anyone arriving at the main gate of San Pietro.</p>
+
+      <figure>
+        <img src="cesagrande.jpeg" alt="Cesagrande, at the foot of the hill">
+        <figcaption>Cesagrande, at the foot of the hill.</figcaption>
+      </figure>
+
+      <p>Ascenzio died in 2010, well into his nineties. I did not attend his funeral&mdash;I was living in Paris at the time&mdash;but I like to think of his spirit among my household gods. A true Umbrian, made of the best water, he belonged to that rare breed of wise men who understand that a family is built from materials of unequal worth, and that this is precisely why it deserves every effort to keep it together. His own family&mdash;children, daughters-in-law, grandchildren, one of the last examples of a patriarchal existence I have known&mdash;always gathered closely around him and continued to follow his example after his death.</p>
+
+      <p>Everyone called him Ascenzio, though according to the registry his name was Sensidonio Armadori, the kind of name one could easily imagine marching off to fight the infidels during the Crusades. Ascenzio, however, was a gentle man. I still see him walking down the slope, a blue dot moving slowly, deliberately, tracing a zigzag path to soften the incline. He often had something for me, picked up during his rounds: sometimes a couple of truffles, sometimes a handful of field mushrooms.</p>
+
+      <figure>
+        <img src="land-he-watched.jpeg" alt="The land Ascenzio watched over at San Pietro">
+        <figcaption>The land he watched over.</figcaption>
+      </figure>
+
+      <p>In his later years, Ascenzio suffered from gout. Hardly surprising, given the family&rsquo;s eating habits. Everyone&mdash;men and women alike&mdash;were tireless walkers and workers, sturdy and lean, but at the table they enjoyed the best of Umbrian cooking, rich in protein and animal fats: pasta with goose and truffles, roast guinea fowl, pigeons in liver sauce, stews of game, meat slowly roasted over embers. There was always a full glass of Sangiovese, and grappa at the end of the meal, distilled by Ascenzio himself from berries gathered in a stand of juniper on the barren ridge above San Pietro.</p>
+
+      <p>Every Monday, his daughter-in-law Silvana baked the bread for the week, along with tarts. Wood-fired bread is not my favorite&mdash;too compact, quick to dry&mdash;but for bruschetta, ribollita, and other soups there is nothing better. Her grilled lamb chops were the best I have ever eaten: pink and juicy meat, the skin crisp to perfection. At the Ferragosto breakfast, the roast lamb with potatoes, flavored with garlic, rosemary, and wild thyme, cooked by Ascenzio&rsquo;s wife, was carried all the way up to San Pietro in large pans wrapped in kitchen towels. I have been trying for years to replicate her rotisserie chicken, so crisp and savory, tender inside and golden on the outside.</p>
+
+      <p>Life in Ascenzio&rsquo;s household unfolded in the large kitchen of the family farmhouse, halfway between the village and the gate to San Pietro, with the fireplace always lit and a pot simmering on a tripod. I was invited for a dinner of snails, which they knew I loved. The table had been carefully set in advance, bowls and glasses turned upside down, waiting for the guests. It was usually the youngest members of the family who served.</p>
+
+      <p>The snails were cooked in a stew. I knew the preparation was laborious, starting with gathering them before sunrise, taking advantage of the night&rsquo;s humidity and morning dew. They were left to purge for two days, then washed with water and vinegar, and boiled. In Ascenzio&rsquo;s house they followed the recipe from Spoleto, where the family originated, preparing a broth with a little water, generous olive oil, and plenty of aromatic herbs: finely chopped garlic and fresh scallions, pennyroyal, marjoram, rosemary, and wild fennel, all deglazed with red wine and left to stew with crushed tomatoes.</p>
+
+      <figure>
+        <img src="ascenzio-san-pietro.jpeg" alt="Ascenzio at San Pietro">
+        <figcaption>Ascenzio at San Pietro.</figcaption>
+      </figure>
+
+      <p>Ascenzio sat at the head of the table. He had lived through all the hardships his advanced age suggested, but in the stories his family coaxed from him everything softened into comic paradox. He loved to recall his days as a soldier. He told a story the family had heard countless times and never tired of.</p>
+
+      <p class="pullquote">&ldquo;At the start of the war, Ascenzio was an orderly in a military hospital in Bologna. The medical officer said, we need someone to do a little job. And I answered, all right, I&rsquo;ll do it, but I&rsquo;ll have to learn how. Don&rsquo;t worry, Ascenzio, we&rsquo;ll show you, the doctor said&mdash;and they did. The job was in the hospital morgue.&rdquo;</p>
+
+      <p>Men died of all sorts of things: this one of one illness, that one of another, and another still of something else. When we bring you a dead man, you have to open him up, they told me. The first time, they made me saw open a fellow&rsquo;s skull with a small carpenter&rsquo;s saw. There were a dozen doctors standing there saying, go on, open his head. So I sawed at the back of the skull for a while, then along the sides. And when I got to the front&mdash;what happens? The dead man&rsquo;s eyes suddenly flew wide open. I yelled, damn it. I was just a kid, and I nearly dropped dead myself. Who could do something like that?</p>
+
+      <p>The officer came over and asked, aren&rsquo;t you done yet? Well, I said, I got scared when I saw the eyes open. All right, the doctor said, this will take care of it, and he handed me an electric drill. With that, I opened the head in no time, but then I had to grab the man by the hair and lift the top off like this. Ascenzio mimed the gesture, lifting his cap from his head. <em>A brain is an incredible thing,</em> he said, sipping his wine.</p>
+
+    </div><!-- end article-body -->
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../shape-of-bread/"><img class="retro-nav-thumb" src="../shape-of-bread/bread-istanbul-ferry.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">The Shape of Bread</span></span></a>
+  <a class="retro-nav-item next" href="../case-of-the-missing-caramel/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">The Case of the Missing Caramel</span></span><img class="retro-nav-thumb" src="../case-of-the-missing-caramel/marie-claire.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

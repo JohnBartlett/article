@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ciorba de Perisoare | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>Ciorba de Perisoare</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; June 21, 2026</div>
+    </div>
+    <div class="article-body">
+<figure>
+      <img src="97Ciorba de Perisoare1.jpeg" alt="Ciorba de perisoare" style="width:100%;height:auto;display:block;">
+      <figcaption>Ciorba de perisoare</figcaption>
+    </figure>
+
+    <p>As he lies dying, the protagonist of Muriel Barbery&rsquo;s <em>Gourmet Rhapsody</em>&mdash;a celebrated and despotic food critic&mdash;reviews the highlights of his career in search of the common denominator that links all the tastes he has savored. One flavor in particular eludes him to the very end: a taste abandoned by choice, deliberately overlooked, perhaps something rooted in childhood and therefore impossible to grasp directly.</p>
+
+    <p>That, to me, is the essence of a Proustian madeleine.</p>
+
+    <p>Not the richest dish or the most successful combination of flavors, but something primordial, almost commonplace, that comforts and shields us from our most basic fears and vulnerabilities&mdash;darkness, the unknown, loss, cold, hunger, death. Taste means little on its own without the circumstances that accompanied it and that continue to resonate through time like a Pavlovian reflex. For Proust, it was warmth against the cold to which he was particularly sensitive, together with the circle of affection and security of childhood that we are all destined to miss.</p>
+
+    <p>When I think back on memorable banquets and meals in celebrated restaurants, I am often unable to recall what I actually ate. A dish means very little to me unless it remains attached to a story. Things become more complicated when something emerges from the darkness of a past that does not seem to be ours and yet, at some point, we must somehow have lived it.</p>
+
+    <p>In Romanian cuisine, soups and broths form the foundation of a meal. <em>Ciorba de perisoare</em>&mdash;a soup with small meatballs&mdash;is one of those dishes whose recipe every family guards jealously, adapting it according to taste or the ingredients of the season. It is nourishing and deeply flavorful, with a pleasant tang derived from ingredients that vary from region to region and may be added at the end of cooking: sour cream, yogurt, or lemon.</p>
+
+    <p>I first tasted ciorba at a roadside restaurant somewhere between Bucharest and Bra&#537;ov. I hesitated before going inside because of the dreadful music blaring at full volume. But I was too nervous to continue the journey without stopping for lunch.</p>
+
+    <p>Instead of the familiar Fiat Panda I had reserved, the rental company handed me a large and rather intimidating black Dacia. They had also demanded a disproportionate deposit, citing the fact that Romania&rsquo;s roads have the highest rate of fatal accidents in Europe. Up to that point I had been driving with my foot hovering over the brake pedal, crawling along dual carriageways interrupted by level and even pedestrian crossings, reluctant to exceed eighty kilometres per hour, stiff with tension.</p>
+
+    <p>Before reaching Bra&#537;ov, the road climbs through the foothills of the Carpathians. A handful of ski resorts preserve a faded longing for <em>Mitteleuropa</em>, with holiday homes crowned by steep roofs, pointed turrets and whimsical wooden embellishments. Beyond them unfolds the vast Transylvanian plateau, thickly covered with forests and pastureland, dotted with farming villages, rural churches, monasteries and fortresses, all under the jurisdiction of the baroque city of Bra&#537;ov.</p>
+
+    <figure>
+      <img src="97Ciorba de Perisoare2 2.jpeg" alt="Toward the high Carpathians" style="width:100%;height:auto;display:block;">
+      <figcaption>Toward the high Carpathians</figcaption>
+    </figure>
+
+    <p>The following morning I set out early.</p>
+
+    <p>I had no destination in mind. I simply wanted to escape the hilltop castles with their wooden barbicans and fabricated legends, staged for the amusement of summer crowds. I took secondary roads, alert to the possibility of encountering a modest horse-drawn cart around any bend.</p>
+
+    <p>Transylvania is a region of extraordinary beauty, one of the largest and most unspoiled reservoirs of biodiversity in Europe. As I drove deeper into the mountains, the landscape assumed the serene aspect common to alpine foothills.</p>
+
+    <p>Around noon I entered the name of a secluded inn into the car&rsquo;s GPS. To reach the place I had to drive uphill nearly ten kilometres on an unpaved road through evergreen forests. A scattering of houses among clover fields and wooded slopes appeared somehow to survive in complete isolation. Yet it seemed a prosperous community, perhaps inhabited mostly by weekend residents, judging by the handsome chalets and gleaming new cars.</p>
+
+    <p>The restaurant stood at the top of a steep and rutted incline.</p>
+
+    <p>The view alone was restorative.</p>
+
+    <p>I was shown to a verandah enclosed by plexiglass panels, where only a handful of diners remained. I ordered the famous ciorba along with a pur&eacute;e of seasonal vegetables to spread on bread with tomatoes and olives.</p>
+
+    <p>To drink, I chose Ursus beer, brewed in Cluj-Napoca, the unofficial capital of Transylvania. Its logo features a bear&mdash;a reminder that the animal still roams the forests of the region&mdash;and its slogan proudly proclaims it <em>The Queen of Beer in Romania</em>.</p>
+
+    <p>The taste of the ciorba, traditionally served with a dollop of sour cream and a green pepper, will forever remain entwined with the view across the valley&mdash;the mountains on the horizon, the onion-domed bell tower of the village church, and the pear-shaped haystacks at the edge of the fields.</p>
+
+    <p>But even more with the chance walk I took after lunch along a path that followed the ridge.</p>
+
+    <p>Below the newer houses, half hidden among birch thickets and beneath the sprawling branches of a cherry tree, stood sheds, barns and cottages, derelict as worn-out garments&mdash;crooked, patched and weathered, yet somehow spared abandonment. The old houses, clearly no longer inhabited, still served as shelters for tools, livestock, or whatever else remained useful. Their roofs of thatch, reeds, shingles and stone slabs sagged like threadbare jackets.</p>
+
+    <p>Wooden houses possess a grace in their decay that masonry buildings rarely achieve.</p>
+
+    <figure>
+      <img src="Unknown-1.jpeg" alt="Grace in decay" style="width:100%;height:auto;display:block;">
+      <figcaption>Grace in decay</figcaption>
+    </figure>
+
+    <p>Every detail&mdash;the carved lintels, the weather-bleached planks, the repairs fashioned from mismatched boards and sheets of metal, the fish-scale shingles meticulously laid by hand, and in some cases the shrivelled curtains at the windows&mdash;held me there, telling stories that resonated in a strangely familiar way.</p>
+
+    <figure>
+      <img src="97Ciorba de Perisoare4.jpeg" alt="Still Standing" style="width:100%;height:auto;display:block;">
+      <figcaption>Still Standing</figcaption>
+    </figure>
+
+    <p>Through those austere winters, gathered around a single stove and eating the evening ciorba, I came to know the entire family: the youngest child, the mother, the father, the grandmother, the grandfather, taking turns on Saturday night to wash in the same hot bath with the same bar of soap; the wilted celandine on the windowsill, the dolls fashioned from cornhusks, the floors scrubbed with ashes.</p>
+
+    <p>In that silence I understood that the ciorba had not been merely a flavour but an architecture of comfort: the steaming broth bright with vegetables like a Byzantine mosaic, the golden eyes of fat glistening on the surface, the drifting parsley leaves, and the meatballs of beef, egg, rice and spices floating like an apparition of absolute substance.</p>
+
+    <p>It was that entire composition that returned to me.</p>
+
+    <p>As though, for a moment, it had restored access to a past that had never been mine and that I nevertheless recognized as familiar.</p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../tiepolo-sky/"><img class="retro-nav-thumb" src="../tiepolo-sky/1-Painting with Table.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Dining Under a Tiepolo Sky</span></span></a>
+  <a class="retro-nav-item next" href="../omelette-and-wine/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">An Omelette and a Glass of Wine</span></span><img class="retro-nav-thumb" src="../omelette-and-wine/96An Omelette and a Glass of Wine4.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

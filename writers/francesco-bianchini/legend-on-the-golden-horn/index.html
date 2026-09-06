@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legend on the Golden Horn | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/72A-Legend-on-the-Golden-Horn1.jpg" alt="Legend on the Golden Horn">
+<h1>Legend on the Golden Horn</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; January 11, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>The Pera Palas Oteli opened its doors in 1892, built to accommodate passengers on the Orient Express when Istanbul was still called Constantinople. Soon to become as legendary as the Ritz in Paris or the Savoy in London, due to its location between East and West, and the long list of celebrities who stayed there – royalty and statesmen from every country, writers, spies, and adventurers of every stripe – the Pera was the hotel I dreamed of spending at least one night in, sooner or later. Because of its reputation, I wasn&#8217;t surprised when Dan tried unsuccessfully to book a room for us there some twenty years ago. Whatever date he entered on its website, he got the same disappointing message: the hotel was fully booked. No doubt it was one of those places where undistinguished visitors must reserve even years in advance, I thought. Eventually we opted for a less fairytale-like hotel, in the heart of the old city. We arrived in Istanbul just before Christmas and from our windows were enchanted to see snow flaking on the roofs of the dilapidated wooden houses which, in that part of the world, all look melancholically lopsided.</span></p>
+
+<p><span>Cityscape, Istanbul</span></p>
+<p><span>The Sultanahmet district had so many wonders that we soon forgot about the Pera Palas. But on Christmas Eve, under the pretext of a festive aperitif, we decided to cross the Golden Horn to the so-called European quarter to check it out. The hotel&#8217;s Orient Bar was just as I&#8217;d always imagined it: tall columns creating gulfs of light and shadow, a long and wondrously polished wooden bar, low seductive sofas more like ottomans, muted colors on glazed walls and ceilings, chandeliers lit with large gaslight globes; every element evoking the fusion of two cultures, memories of amazing experiences and dark intrigues. We soaked up the atmosphere over a couple of martinis, and then, wanting to clear up the mystery of the hotel&#8217;s inaccessibility, we sought out the concierge. He gaped in shock when we explained how we couldn&#8217;t reserve a room. In fact, he had plenty available, and he would be happy to show some of them to us. He led us to an astounding elevator, true relic of the Gilded Age, replete with mirrors and blood-red velvet settees. Its iron filigree cage clanked and huffed us up a few stories where we followed our host along a corridor, examining brass plaques on the doors that commemorated illustrious past occupants. The concierge opened a random door bearing the names of John and Jacqueline Kennedy. We inhaled the stale smell as we entered, our footsteps crunching on the hardwood floors of the room furnished with heavy curtains, brass beds, and antiquated pieces. In the ensuite bathroom the old-fashioned voluminous bathtub – reminiscent of the one in my grandmother&#8217;s Roman apartment – was screened by a mundane plastic curtain.</span></p>
+
+<p><span>Enjoying the riches of Sultanahmet, December 2004</span></p>
+
+<p><span>The Orient bar, crucible of adventure and intrigue</span></p>
+<p><span>What to do now? Too late to change hotels, we thought, as we already had decent accommodation in Istanbul, but if nothing else, we&#8217;d dine in the hotel of my wildest fantasies. So we reserved a table for the day after Christmas – our anniversary treat – and two nights later returned to the Pera Palas. We started with another martini at the bar, then wandered around the sumptuous salons while awaiting dinner. In what appeared to be the main reception hall, with its high ceiling and stained-glass domes, the walls were lined with cabinets displaying porcelain and crystal used in the hotel&#8217;s heyday; trails left by various pieces on the dusty shelves could be read as seismographic evidence of the city&#8217;s telluric activity over the years. Finally our dinner hour arrived, and we stepped into the dining room, as vast as an ocean liner in days gone by. We were perhaps well in advance of the acceptable time for dinner by Oriental standards, we thought, as the room was deserted. But the maitre d&#8217;hotel – at least as surprised as we were – came to greet us and then smilingly escorted us to our assigned table. Seated there, on our little island lost in the middle of a sea of empty tables, we stared around; on one side of the table ran a long platform for musicians, decked out in faded Christmas decorations, and under it I thought I saw a mouse making a full circle. In that titanic room, I now could imagine a whole ship going slightly over on its side, about to sink with the majesty due its rank, and I was not surprised if the mouse was scurrying for safety.</span></p>
+
+<p><span> A relic of the belle époque, but still very much in service</span></p>
+<p><span>A flock of waiters – always outnumbering the diners in Turkey – soon began an unproductive coming and going from the kitchen, and from time to time, we caught their faces peering at us through a porthole in the swinging door, intent – we guessed – on spying on all our moves. We chose a rather elaborate menu that included as its <em>pièce de résistance</em> Tournedos Rossini. That duly arrived escorted by no less than three garçons, and what a disappointment to discover that the filet – not wrapped in bacon as it should have been – had been overcooked, as was the slice of ordinary liver that topped it, and that the whole concoction was orphaned of the standard black truffle shavings! And what had become of the toasted bread soaked in Madeira gravy on which the entire assemblage rests? We resolved to take revenge and garner at least one trophy, maybe the white porcelain salt and pepper set emblazoned in gilt with the hotel&#8217;s monogram? As soon as we&#8217;d hatched the plan – perhaps by reading our lips through the magnifying glass effect of the porthole on the kitchen door – a host of waiters rushed to the table and swiftly removed everything. Yet Dan still managed to snatch a set from a nearby table, just as the procession receded in single file. Safely outside the hotel we examined the loot, and this too proved to be a disappointment: the pilfered salt and pepper shakers were the same white ceramic but without any logo! So we left them on a window ledge.</span></p>
+<p><span>One year after our visit the Pera Palas closed its doors for a lengthy and much-needed refurbishing. The work maintained the character of the storied hotel but wiped out decades of gentle decline. When in February 2020 I returned to Istanbul for a few weeks of teaching at the state university, I found an apartment in the Beyoğlu neighborhood but decided to spend my last two nights at the renovated Pera Palas. My room, understatedly elegant, overlooked the Golden Horn and had a bathroom that, with its profusion of rose-colored marble and fretwork partitions of arabesques, harked back to ancient hammams. I again enjoyed a martini in the Orient Bar, and sat under the dome-shaped skylights of the Kubbeli Lounge – but I had no heart to give the now renamed Agatha Restaurant a second chance. Through its imposing French doors I cast a glance: serried ranks of impeccably white-clothed tables on which towered masses of china, goblets, starched napkins – and salt and pepper sets with the gilt Pera Palas monogram that we had tried in vain to pinch.</span></p>
+<table>
+<tbody>
+<tr>
+<td>
+
+<p>Martini hour at the Pera Palas, February 2020</td>
+<td>
+
+<p> Ottoman opulence, the Kubbeli lounge</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../blood-oranges/"><img class="retro-nav-thumb" src="../blood-oranges/imgs/73Blood-oranges1.jpg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Blood Oranges</span></span></a>
+  <a class="retro-nav-item next" href="../remembrance-of-things-proust/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Remembrance of things Proust</span></span><img class="retro-nav-thumb" src="../remembrance-of-things-proust/imgs/12-Remembrance-of-things-Proust-1.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

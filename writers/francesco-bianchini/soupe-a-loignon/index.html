@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soupe à l’oignon | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/75Soupe-a-loignon1-768x576.jpg" alt="Soupe à l’oignon">
+<h1>Soupe à l’oignon</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; March 22, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>Soupe à l’oignon</span></p>
+<p><span>Anyone who suddenly finds themselves with a goodly sum in their pocket has a natural temptation to indulge in a bit of extravagance. The proceeds from selling our palazzo in Umbria allowed Dan and me at least three. The first was leasing an apartment in Paris, in a 17th-century <em>hôtel particulier</em> on the Île Saint-Louis, and paying the annual rental in advance — as much as two yearly incomes. Arriving in Paris by train with only a few suitcases, and our cat Arcadio, we were a bit under-equipped to start a new life, even for the <em>voyageur sans bagages</em> that I am. Our second indulgence was, therefore, to import some of our furniture from Italy, along with a thousand or so books we&#8217;d stashed temporarily in a damp cellar.</span></p>
+<p><span>Our things arrived one November evening, each piece and carton being carried up three flights of stairs by two hefty Romanians. Alerted by their coming and going, Madame and Monsieur peeked through a crack in their door. When the two men had finally finished, it was ten o’clock and dark outside. They told us they&#8217;d planned to head straight back to Italy. &#8216;But why?&#8217; I exclaimed, &#8216;you’re in Paris!&#8217; I slipped some bills into the older man’s hand. &#8216;Grab something to eat nearby; the truck is safe in the courtyard. Come back whenever you like, even if it’s late, and with a full stomach you can hit the road.&#8217; They exchanged a glance. &#8216;Where’s the Eiffel Tower?&#8217; the younger one asked. &#8216;That’s a bit far from here,&#8217; I replied, &#8216;but if you walk around the block to the other riverbank, you’ll see it all lit up. It’s worth it.&#8217; &#8216;And Notre-Dame?&#8217; &#8216;Just a stone’s throw away,&#8217; I said, sketching the route on a piece of paper.</span></p>
+<p><span>We then needed to convince our landlords to get rid of some furnishings, which we disliked and which were in our way. They grudgingly agreed to make room in a ground-floor storeroom for a group of metal chairs and a glass-top table we&#8217;d set aside. The little storeroom was full of interesting pieces: there was an Aubusson tapestry — a lovely narrow panel designed to fit between windows — that hadn’t found a spot with the others in their own apartment. And two Louis XVI <em>bergères</em>, upholstered in petit-point. We pleaded with them to lend us the chairs, delighting in seeing their begrudging faces as they handed them over.</span></p>
+
+<p><span>One of the bergère chairs in our Paris salon</span></p>
+<p><span>But we were not yet satisfied. A small, irregular niche on the wall opposite our handsome entry doors, perhaps once a chimney flue, ruined the visual balance. It was too misshapen to be covered by a painting, or a piece of furniture. So it was at the Saint-Ouen flea market, where we went every weekend no matter what, that we came across a tapestry remarkably similar to the one in Monsieur and Madame&#8217;s storeroom: a sturdy thistle in the foreground, a solitary heron in a clearing surrounded by primeval trees, and in the distance — against a marbled sky — a fanciful arrangement of turrets and dove-gray domes. The most beautiful part, however, was the border, with grotesques interspersed with noble coats-of-arms in ochre on a black background. How had we not thought of something like that before? A tapestry would cover the blemish in a most befitting way. The landlords would never agree to lend us theirs, so we had only one option: to buy a 17th-century Aubusson tapestry! The seller offered, without any commitment on our part, to bring it over so we could see how it looked.</span></p>
+
+<p><span>Smoke and mirrors: the tapestry hiding the marred wall</span></p>
+<p><span>We returned, however, to &#8216;our&#8217; tapestry over the following weeks, and each time a new detail caught our eye: a bridge spanning a stream in the valley below; another bird, almost camouflaged in the foliage, perched on a branch; a barely visible path emerging from the thick of the forest and winding around the gnarled roots of an overhanging oak. And then there were the colors — deep shades of brown, green, and blue that conveyed both the coolness of the scene and the illusion of cooing pigeons in the distance. By way of consolation, we went for lunch and to warm our chilled hands at the brasserie Le Paul Bert, where our eyeglasses instantly fogged in the deliciously steamy vapors from the kitchen.</span></p>
+
+<p><span>The Aubusson at our present home</span></p>
+<p><span>Unlike the solemn murmur of diners in a typical French restaurant, there’s an electric buzz in the air at any Saint-Ouen bistro; everyone speaks loudly, exchanging opinions on the value of antiques they&#8217;ve spotted, boasting about once-in-a-lifetime finds, spinning tales about objects that are impossible not to listen to. On that particular Sunday, the glass-walled and fan-shaped space on the corner of two alleys of stalls was packed, and we had to wait until a table became free. A guitarist was playing Django Reinhardt’s compositions, particularly worshipped in that gypsy-like environment. We always went to Le Paul Bert for this ambiance, but also for the vintage charm of sitting on Baumann bistro chairs, at tables set with rigorously white tablecloths, and savoring piping-hot stews served in individual cast-iron cocottes.</span></p>
+
+<p><span>Les puces de Saint Ouen</span></p>
+<p><span>That day we ordered onion soup, which arrived steaming in mini lion-headed tureens. True to Le Paul Bert tradition, between spoonfuls of that creamy potage, with its golden-brown crust of Byzantine splendor, we began talking again about the tapestry. What was the need to test it in place? We knew it would be perfect, just like the fortified wine that had deglazed the onions. Tears of satisfaction and heat trickled down alongside drops of aromatic broth and strings of onion, simmered to exhaustion — but nothing could shake from our minds the sumptuous threads of wool and silk we had just touched again with such delight. A few days later, Monsieur knocked on our door for some reason, and his face turned comically vivid in surprise when he spied the tapestry hanging on our foyer wall. It was no use assuring him that we’d bought it at the Saint-Ouen flea market, because moments later, through the kitchen window, we saw him hurriedly heading into the courtyard storeroom to check for himself.</span></p>
+
+<p><span>Nothing could be finer than to be a diner at le Paul Bert</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../mussels-in-brussels/"><img class="retro-nav-thumb" src="../mussels-in-brussels/imgs/76Mussels-in-Brussels1-1024x768.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Mussels in Brussels</span></span></a>
+  <a class="retro-nav-item next" href="../the-footsteps-of-saint-francis/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">The Footsteps of Saint Francis</span></span><img class="retro-nav-thumb" src="../the-footsteps-of-saint-francis/imgs/74In-the-footsteps-of-Saint-Francis1.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

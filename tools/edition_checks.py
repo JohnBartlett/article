@@ -295,7 +295,7 @@ def main():
 
     # Collect all article metadata
     articles_by_author = {}  # author_id → [(edition, slug, title, cover_img)]
-    skip_slugs = {'datebook', 'daily-star-april', 'daily-star-march'}
+    skip_slugs = {'datebook', 'daily-star-april', 'daily-star-march', 'edgelord'}
 
     for edition_dir in sorted(EDITIONS.iterdir()):
         if not edition_dir.is_dir():

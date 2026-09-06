@@ -112,9 +112,18 @@ A separate orphan branch, `editors`, hosts internal tools that have no place in 
 ### Before claiming any status, run:
 ```bash
 python3 tools/verify_edition.py YYYY-MM-DD
+python3 tools/edition_checks.py YYYY-MM-DD
+python3 tools/content_audit.py YYYY-MM-DD
 ```
 
-This checks ACTUAL state: what has content, what has photos, what's placeholder.
+`verify_edition.py` checks ACTUAL state: what has content, what has photos, what's placeholder.
+`edition_checks.py` checks dark-mode/nav-thumb CSS, about.html popups/bios, stale DateBook months.
+`content_audit.py` (added Sept 2026, dev2-only) covers 5 gaps the other two scripts miss: the
+DateBook page's own internal Astrochart link (mistake #20 — distinct from the homepage's link),
+stale past-date entries left in the Astrochart page (mistake #21), a dated homepage hero-meta
+(mistake #23), a photo duplicated as both hero and inline (mistake #30), and emoji in article
+content (mistake #34). None of these were part of any repeatable audit before — run this
+alongside the other two, not instead of them.
 
 ### Article Status Definitions
 - **Ready** = content + photos both exist
@@ -229,36 +238,9 @@ The Quick Vote / Reader Comment form collects only `comment`, `email` (optional,
 
 If a suspected-insider comment needs resolving: (1) require a name/email on the form going forward so future feedback can't be anonymous, (2) raise the *pattern* (timing, specificity, tone) directly with the team as a concern, not as IP-backed proof. This was tested directly on Jul 27–28, 2026 (a suspected disgruntled-writer comment on "Don't Lose That Joy") — held the line across several reframed requests; recorded here so a future session doesn't need to re-litigate it from scratch.
 
-## Site Structure
-
-```
-/
-├── index.html              Homepage — "The Sunday Edition" hero + card grid
-├── about.html              About — team bios + "Our Writers This Week"
-├── subscribe.html          Subscribe — live FormSubmit form (active Jul 13, 2026)
-├── advertise.html          Advertise — "coming soon" placeholder
-├── future-articles.html    Internal — unpublished article planning (dev2 only)
-├── comments.html           Internal — editorial notes (dev2 only)
-                            (reader-comments.html and editors/dashboard.html live on the `editors` branch, not here)
-├── logo.jpg                Shared masthead logo
-├── favicon.ico             Favicon
-├── _template/
-│   └── article.html        Article template (GA4 disabled)
-├── ads/                    All advertisement assets (NOT in edition folders)
-│   ├── ha-ad.html          Heritage Auctions ad click-through page
-│   ├── ha-ad.jpg           Heritage Auctions ad image
-│   └── image006.png        Heritage Auctions banner image
-├── tools/                  Analytics and reporting scripts
-├── editions/
-│   ├── YYYY-MM-DD/         One folder per edition (run `ls editions/` for current list)
-│   │   ├── article-slug/   One subfolder per article
-│   │   │   └── index.html
-│   │   ├── datebook/       Copied from previous edition each week
-│   │   ├── daily-star-MONTH/  Copied from previous edition each week
-│   │   └── thumb-*.jpg     Homepage card thumbnails
-```
-
 ## Conventions
+
+Note: `reader-comments.html` and `editors/dashboard.html` live on the `editors` branch, not here — see "Editors branch" above.
 
 ### File paths
 - Each article: `editions/YYYY-MM-DD/<article-slug>/index.html`
@@ -286,24 +268,8 @@ If a suspected-insider comment needs resolving: (1) require a name/email on the 
 - Advertise form: still pending activation; page shows "coming soon"
 - There is **no subscriber-list file yet** — as of July 2026, where subscribers get recorded is an open decision. Until then, log New Subscriber emails in `EMAIL_LOG.md` and ask.
 
-### Adding a new edition
-1. Create folder: `editions/YYYY-MM-DD/`
-2. Create article subfolders with `index.html` and images
-3. Create `thumb-*.jpg` thumbnails in the edition root
-4. Update `index.html` homepage with new hero + card grid (see "Updating the homepage" below)
-5. Update `about.html` "Our Writers This Week" section
-6. Update keyboard nav links across all new articles (order must match homepage)
-7. Add `../../../` paths for root assets, `../<slug>/` for sibling links
-8. Use GA4 **disabled** form in new articles (matching `_template/article.html`)
-9. Use inline `<figure>` elements for photos — never carousels (see mistake #10)
-
-### Updating the homepage for a new edition
-Edit `index.html` (root):
-1. **Date line** — change `March 22, 2026` → next edition date
-2. **Hero section** — update path, image, label, title, byline, and teaser for first article
-3. **Card grid** — replace all cards with the new edition's articles (title, byline, image, teaser)
-4. **Past Editions** — move the previous current edition to the top of Past Editions; drop the oldest one if the grid gets too long (keep ~4 past editions)
-5. Image paths from root: `editions/YYYY-MM-DD/<slug>/<image-file>`
+### Adding a new edition / updating the homepage
+Full step-by-step procedure lives in `.claude/commands/prep-edition.md` (`/prep-edition`) and `.claude/commands/layout.md` (`/layout`) — run those rather than re-deriving the steps here. Key constraints not to lose sight of: keyboard nav links must match homepage order, use the GA4 **disabled** form in new articles (matching `_template/article.html`), and use inline `<figure>` elements for photos — never carousels (see mistake #10).
 
 ### Article Extraction from Contributor Emails
 
