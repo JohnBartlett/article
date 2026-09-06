@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seafood tryptic – A Soup in Provence | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/79Seafood-tryptic-II-A-Soup-in-Provence1-scaled.jpg" alt="Seafood tryptic – A Soup in Provence">
+<h1>Seafood tryptic – A Soup in Provence</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; June 14, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span> L’entrée du port de Marseille, Paul Signac, 1911</span></p>
+<p><span>A breeze through southern France can only be considered complete when one tries its two famed seafood specialties: <em>bouillabaisse</em> from Marseille and <em>bourride</em>—its close cousin—originally from Sète, further west on the taut curve of the Mediterranean coast. The difference? <em>Bourride</em> is made with white fish, includes cream and lemon, and is served with aïoli, while <em>bouillabaisse</em> features rockfish, contains neither cream nor lemon, and is prepared with <em>rouille</em>—a thick sauce made of potatoes, tomatoes, monkfish liver, garlic, olive oil, and saffron, all crushed together and seasoned with a touch of fish stock. Though both chowders share the Provençal root word <em>boulido</em>, evoking a slow simmer, their names carry distinct resonances for me. <em>Bouillabaisse</em> ripples like the greenish-blue waters of the Marseille calanques, slapping against rock. <em>Bourride</em>, earthier in sound, crackles like the aromatic bark of Aleppo pines, underscored by the rasping song of cicadas.</span></p>
+
+<p><span>Château d’If, the Alcatraz of France</span></p>
+<p><span>I carry the echoes of that region in my heart. One June in the mid-1990s, returning from a wedding in Ardèche, my mother, my sister Sabina, and I spent a week roaming untrodden paths between Montpellier and the Italian border. We had no itinerary, no reservations for food or lodging—we simply stopped wherever chance or whim led us. That’s how we ended up one evening in an isolated farmhouse tucked among Languedoc’s cornfields, where we were served a heavenly terrine of eggplant, its tender blend of stewed vegetables, cheese, and basil forever imprinted on my palate. In Aigues-Mortes, we gorged on oysters, slurped down with glasses of Grenache at a bar shaded by the ramparts of Philip the Bold. Then came an epic picnic of <em>pan bagnat</em> while the three of us soaked in the sun beneath the Roman aqueduct over the river Gard. One night in Gordes, we dined <em>al fresco</em> under the plane trees of the village square; the next evening we were sheltered under the arbor of the gracious <em>maison d’hôte</em> that took us in. We splashed in the streams cascading from Mont Sainte-Victoire, through pine woods like the bathers in Cézanne’s canvases we&#8217;d just seen at the museum in Aix-en-Provence, and we savored <em>bouillabaisse</em> in a rustic eatery along the <em>corniche</em>, just outside Marseille.</span></p>
+
+<p><span>Our room with a view</span></p>
+<p><span>I can still see it: my mother’s light blue Panda speeding through the poplar groves of the Cavaillon plain, climbing the switchbacks of Roussillon, against its rust-colored ravines; cutting a path through waves of lavender just coming into bloom around the abbey of Sénanque; finally, pulling over by the roadside to plunder cherry trees heavy with fruit. Sabina, barely in her twenties, was relegated to the back seat for the whole odyssey, while I acted as navigator. She leaned into the gap between the front seats, venting impatience with idle commentary, second-guessing decisions already made, or proposing detours that would further stall our vague eastward drift across the map. In the cramped little car, stuffed with luggage, occasional headwinds stirred, causing slight zigzags through the fair landscape of the Vaucluse and the Lubéron. But truth is, none of us were in a hurry to get home—except for a plaguing sense of worry as we counted our cash: what we had left to make it to Umbria.</span></p>
+
+<p><span>Hiking the Parc National des Calanques, January 15, 2024</span></p>
+<p><span>Twenty-five years later, Dan and I (and our cat Arcadio) returned to Marseille for a few winter weeks. Blue, white, and pink—almost the colors of the French flag—the city welcomed us with the clarity and sharpness of the <em>mistral</em> wind, but the chill didn’t last. One morning the high wind dropped abruptly, and for the rest of our stay the sharp light of the Mediterranean shone steadily again. We found a top-floor apartment looking over the innermost corner of the <em>Vieux Port</em>, and for three weeks woke to a view of the harbor bristling with masts—a sight hardly changed since George Sand and Frédéric Chopin saw the same from the balcony of the hotel next door, before embarking for Mallorca. Van Gogh said he painted “with the enthusiasm of a Marseillais eating <em>bouillabaisse</em>” while working on his great sunflowers in nearby Arles—though whether Marseillais or visitor, one would have to afford that enthusiasm today. A single serving of <em>bouillabaisse</em> in a reputable restaurant now costs between sixty and one hundred euros due to the vast quantity and variety of freshly caught fish: red scorpionfish, snapper, John Dory, conger eel, sea bream, red mullet, whiting, monkfish, and gurnard, all poached in a court-bouillon of water and white wine, then seasoned with garlic, olive oil, and saffron. Traditionally <em>bouillabaisse</em> is served in two stages: first, the broth, into which slices of toasted bread are dipped—rubbed with garlic and topped with <em>rouille</em>—followed by the fish and potatoes.</span></p>
+
+<p><span>Catch of the day, Vieux Port</span></p>
+<p><span>A Marseillaise friend of ours, worried that we might miss the hidden charms at the end of a trail half-concealed by mastic bushes and known only to locals, took us to the city’s southeastern reaches. Leaving her car in a university parking lot, she led us for a long trek along winding paths that followed the jagged spine of the hills. It might have been any season: the shrubs had barely shifted their dress, lizards darted over sun-warmed stones, and the blazing sky mirrored itself in the amethyst-colored sea far below. Over the edge, we spied the islet where Edmond Dantès landed after escaping the Château d’If, and by midday we reached the tiny harbor of Les Goudes, furthest outpost of the city’s 8th district. Fortunately for us, the fish of the day at the Grand Bar des Goudes was <em>bourride</em>.</span></p>
+<table>
+<tbody>
+<tr>
+<td>
+
+<p>A treat for the soul, la bourride</td>
+<td>
+
+<p>Through the looking glass, at Les Goudes, winter turns to spring</td>
+</tr>
+</tbody>
+</table>
+<p><span>The soup came in a wide bowl. In the center, chunks of fish—monkfish, anglerfish, sea bass, turbot, and hake—rose in rust-tinted relief from a molten lagoon of white wine, onion, lemon, dried orange peel, thyme, bay, celery, chard, carrots, leek, potato, and tomato. A lava-like drizzle of crème fraîche, salt and pepper, and aïoli oozed from the rim. It was mid-January, but beyond the expansive windows, boats bobbed in the inlet. Spring had already begun.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../seafood-tryptic-iii-ceviche/"><img class="retro-nav-thumb" src="../seafood-tryptic-iii-ceviche/imgs/80Seafood-tryptic-Ceviche6-944x1024.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Seafood tryptic III: Ceviche</span></span></a>
+  <a class="retro-nav-item next" href="../seafood-triptych-clam-chowder/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Seafood Triptych — Clam Chowder</span></span><img class="retro-nav-thumb" src="../seafood-triptych-clam-chowder/imgs/78Seafood-Triptych-I-Clam-chowder1.jpg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

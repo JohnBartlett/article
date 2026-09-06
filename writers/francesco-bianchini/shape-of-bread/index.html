@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Shape of Bread | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>The Shape of Bread</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; April 12, 2026</div>
+    </div>
+    <div class="article-body">
+<figure>
+      <img src="bread-istanbul-ferry.jpeg" alt="Emin&ouml;n&uuml;, Istanbul, from the ferry">
+      <figcaption>Emin&ouml;n&uuml;, Istanbul&mdash;from the ferry. Photographs by Francesco Bianchini.</figcaption>
+    </figure>
+
+    <p class="article-intro">On a clear winter morning, I was waiting at the &Uuml;sk&uuml;dar ferry dock to cross to the European side of Istanbul when I felt the urge to buy a simit from one of the street vendors who are part of the city&rsquo;s everyday life. A simit is a ring-shaped bread coated in sesame seeds, its dough twisted into strands, briefly dipped in boiling water, then baked until golden.</p>
+
+    <div class="article-body">
+
+      <p>It is traditionally eaten with black tea, sheep&rsquo;s cheese, and olives, and can be enjoyed at any time of day.</p>
+
+      <p>Perhaps it was the crisp air, or the uphill walk to the &Ccedil;inili Mosque&mdash;intimate and luminous inside, like dawn itself with its delicate &Iuml;znik tiles&mdash;but more than anything it was the irresistible mosaic of flavors at every street corner that had made me hungry.</p>
+
+      <figure>
+        <img src="bread-simit-vendor.jpeg" alt="Simit vendor near the dock">
+        <figcaption>Simit vendor near the dock.</figcaption>
+      </figure>
+
+      <p>Seated in the sun on the ferry deck, I bit into the crisp crust, cracked along its twisted seam. Sesame seeds and crumbs from the soft interior fell at my feet, drawing the attention of the seagulls trailing in the ferry&rsquo;s wake toward Emin&ouml;n&uuml;. From both shores, the muezzins began their call to prayer seconds apart, their voices overlapping across the water in a shifting, echoing chorus.</p>
+
+      <p>It was not the simit&rsquo;s toasted flavor but its shape that carried me, through the mists of my Umbrian upbringing, back to a small ring-shaped cheese bread&mdash;the <em>torchietto</em>.</p>
+
+      <p>In the Tiber Valley, local bakeries baked these breads on January 17, and for that reason they were known as <em>torchietti di Sant&rsquo;Antonio</em>. Parish priests would bless them together with the animals&mdash;oxen, donkeys, sheep, and pigs, all under the saint&rsquo;s protection&mdash;in those days, when Umbria was still deeply rooted in a rural way of life. The bread was then taken home and shared with the animals, often mixed into their feed, as a token of protection and well-being.</p>
+
+      <figure>
+        <img src="bread-torchietti.jpeg" alt="Torchietti al formaggio, Tiber Valley">
+        <figcaption>Torchietti al formaggio, Tiber Valley.</figcaption>
+      </figure>
+
+      <p>The <em>torchietti</em> reappeared at Easter, when every household prepared its own cheese bread. Some bakeries produced them year-round. Like simit, they were among the cheapest things one could buy. If you were hungry, you could always afford a <em>torchietto</em>. At times they were still warm, and small cubes of pecorino surfaced on their slightly flattened, browned crust.</p>
+
+      <p>As a child, I had a strong dislike for cheese. I couldn&rsquo;t even stand its smell. In our house there was a room&mdash;fortunately somewhat out of the way&mdash;where wheels of pecorino from the farm were left to age on suspended shelves. Just approaching it made me gag. Before lunch, I would go into the kitchen to make sure Augusta, the cook, had set aside a plate of pasta without grated cheese. My parents, however, would hear none of it. Those were not days when one could claim vague food intolerances. Whenever my mother caught me doing something unpleasant&mdash;like picking my nose&mdash;she would force a small piece of Parmesan into my mouth. My father once promised me a two-volume encyclopedia, bound in red with green cloth spines, if I managed to eat an entire mozzarella.</p>
+
+      <figure>
+        <img src="bread-blessing-animals.jpeg" alt="Blessing of the animals, St. Anthony's Day">
+        <figcaption>Blessing of the animals, St. Anthony&rsquo;s Day.</figcaption>
+      </figure>
+
+      <p>Everything passes, and this aversion eventually did too, turning into its exact opposite. After all, I now live between two countries renowned for their rich and varied cheese traditions. But as a child, I carefully removed every piece of pecorino before eating my <em>torchietto</em>. Handmade, they were all slightly irregular in shape. Some had openings large enough for a child&rsquo;s hand to slip through. When Rodolfo, the household servant, returned with the blessed <em>torchietti</em> in large brown paper sacks and distributed them with solemnity, we would sometimes slip them onto our wrists in play before eating them. He would immediately adopt an expression of affected disapproval. For him, religious practices were a social necessity, upheld above all by the prevailing matriarchal order, but whose excesses he privately mocked.</p>
+
+      <figure>
+        <img src="bread-rodolfo-umbria.jpeg" alt="Rodolfo, Umbria, 1950s">
+        <figcaption>Rodolfo, Umbria, 1950s.</figcaption>
+      </figure>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../madeira/"><img class="retro-nav-thumb" src="../madeira/madeira-1.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Madeira: An Island Revealed from Above</span></span></a>
+  <a class="retro-nav-item next" href="../guardian-san-pietro/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">The Guardian of San Pietro</span></span><img class="retro-nav-thumb" src="../guardian-san-pietro/ascenzio-portrait.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

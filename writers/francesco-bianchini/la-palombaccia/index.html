@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Palombaccia | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/Brick-madness1-500x375.jpeg" alt="La Palombaccia">
+<h1>La Palombaccia</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; April 24, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span>By </span><span>Francesco Bianchini</span></p>
+
+<p>The view from La Palombaccia &#8211; the names translates to « the old dovecote »</p>
+<p><span>My first brick madness was buying a rustic farmhouse in Umbria. The location was enchanting, secluded on the side of a hill, with uninterrupted views of mountains, wooded ridges, and fields bordered by rows of oaks. In the spring, the roadside ditches would be filled with wildflowers. With the rains, the gravel driveway was saturated with water and became impassable. It was necessary to leave the car at the bottom of the hill and walk up clad in boots. The house itself was nothing special, but in the texture of the rough stones and bricks, one could read the lives that had unfolded within its walls.</span></p>
+<p><span>Having spent more than I possessed on the purchase, I soon realized that I could not afford to restore the house. Improvements had been made over the years: new terrazzo floors in the large kitchen on the second floor and even a bathroom &#8211; both unusable because the water had been shut off long ago. The fireplace looked as if it had efficiently provided several generations of good food and heat. The structure was relatively solid but exposed to the elements. The front door was missing, and every window had broken glass.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p>The old stone sink</td>
+<td></p>
+<p>The entry stairs, our double door, our repaired windows</td>
+</tr>
+</tbody>
+</table>
+<p><span>Six months passed after the deed was signed until one morning in early spring &#8211; after a perplexed look at the gaping windows, brambles, and nettles that had laid siege to the house &#8211; Dan and I decided to get to work. First, we cleared the surrounding area, hacking at fig, mulberry, willow, and blackthorn suckers and uncovering the yard’s original configuration. Getting rid of the brambles, nettles, and other refuse was child&#8217;s play: the embers of a bonfire smoldered for days under an unperturbed sky as we threw forks of tangled weeds on top. We improvised as glaziers and replaced broken window panes, applying putty and painting the frames a uniform dove-blue. At a junk shop, we found double doors that perfectly fit the entry, meaning we could finally lock the place with a bolt.</span></p>
+<p><span>All this was enough to erase decades of neglect to give the house back its dignity. Every day when we returned, full of new energy, it was as if the house was anxiously undergoing another beauty treatment. We scraped dirt off of every surface in the interior, and when everything smelled clean, we carted in a table, a few chairs, even a sofa, and other furnishings. My father, who at first had followed us from a distance with some skepticism, took a liking to the place and gave us an old woodstove and a post-war gas-fired refrigerator. Inspecting our progress one afternoon as a man accustomed to country chores, he noticed a sprout of vines next to the entrance that we had mistaken for weeds. He built a simple pergola of bamboo branches and, after having pruned the plant, directed the shoot there. The grape developed quickly, and when summer arrived, the pergola sheltered a rustic bench of worm-eaten wood.</span></p>
+
+<p>My father’s gift: the woodstove</p>
+
+<p>My father’s grape arbor</p>
+<p><span>My contribution was reproducing along the west facade a typical little garden, the inevitable aromatic reservoir of every farmhouse: a climbing rose, some dahlias, zinnias, and herbs aplenty. Farmhouses of my childhood memories, the destination of many walks, had their own vegetable gardens where the farmer used reeds to shape delicate conical structures in tight rows to support tomato plants. At the height of the season, the tomatoes, with their taut almost brown skin, delicately wrinkled and spotted with earth, gave off a honeyed, searing scent; an irresistible invitation to bite into one, to savor the instant, delicious tension before the skin gave way under my teeth, and sprayed the sweetness of the pulp into my mouth.</span></p>
+<p><span>Staying overnight was not an option, but spending the entire day and cooking lunch or dinner on the woodstove or in the fireplace, became our favorite pastime. Lighting them was the first of our activities. With heat from both, and the windows wide open to the sun, the house had dried out nicely. The dish that I never seemed to tire of replicating was pappa al pomodoro. I placed a pot of water on the stove (mineral water, since we didn&#8217;t dare drink from the well) and filled it with dry bread, garlic cloves, and a handful of basil from my garden. In another pot, a sauce of ripe tomatoes and onion simmered. When the sautéed tomatoes and onion were well combined, I poured them into the boiling water for an hour or more, allowing the soup to slowly cook with rhythmic and comforting bubbles.</span></p>
+
+<p>The fireplace</p>
+<p><span>Summer wore on: I have overlapping memories of picnics under the pergola, of friends and family, coming and going for snacks, candlelight dinners in front of the fireplace, of walks in search of blackberries, of quiet afternoons reading under a tree. People also came to view the property because we finally decided to put it up for sale. One morning, hidden in an open window by a vase of geraniums, I overheard a young couple conversing below. What do you like best? he asked her. I don&#8217;t know, she said, seeming to hesitate. But really everything: the smell… The smell? Yes, the smell! Like a long uninterrupted love affair between the house and those who lived here… No longer fat, dusty cobwebs, then; of mouse and bat feces, of ancient soot, of rubble, of decaying birds that we had inhaled on our first visit.</span></p>
+<p><span>That young couple bought our <em>rustico</em>. A year or so went by. Moved by curiosity, Dan and I returned there at a time when the ditches were again filled with wildflowers. But the house was no longer there. On the embankment where it had stood, overlooking the hills and protected by a fringe of cypress trees, there was nothing but loose earth and neat piles of old tiles, bricks, and stones.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../pancakes-to-go/"><img class="retro-nav-thumb" src="../pancakes-to-go/imgs/Pancakes-to-go3-1-500x339.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Pancakes to go</span></span></a>
+  <a class="retro-nav-item next" href="../see-naples-and-eat/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">See Naples – and eat!</span></span></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

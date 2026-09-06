@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Pietro Summers | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/9Sanpietrosummers2-1024x768.jpeg" alt="San Pietro Summers">
+<h1>San Pietro Summers</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; June 20, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span>By Francesco Bianchini</span></p>
+
+<p><span>It takes imagination to picture the lifestyle of those who once dwelled on this mountain. I&#8217;m not talking about my own family but of men long before us – around the year 450 in fact – when, according to the records, only a simple hermitage existed. At that time, several monks lived in &#8220;sanctity and perfection&#8221;, seeking solitude among the beech woods and rocky paths, eating herbs, thistles, mushrooms, and berries; enduring the sleet and icy north winds, disturbed no doubt by visions of frightening demons lurking among the broom. It was not yet the year 1000 when the Benedictines erected their monastery astride the watershed that divided papal lands from the Duchy of Spoleto, the dominion of Desiderio, the last king of the Lombards. I want to imagine it as it was, our mountain, a bit like today: fragrant with wild herbs, thorny with juniper and thistles, but maybe with a few crickets flying in front of the hooves of steeds mounted by knights in chainmail.</span></p>
+
+<p><span>High on the ridge of the Apennines dividing the Tiber valley from the plain of Spoleto</span></p>
+<p><span>After purchasing San Pietro, its surrounding woods, and craggy mountaintops, my great-grandfather gathered stones from the abbey ruins to rebuild its perimeter wall and re-roof what remained of the edifice. He added zinc-lined windows and doors to resist the weather but ignored his architect&#8217;s proposal for neo-renaissance elements – a balustraded loggia and ornate windows – limiting his project to stabilizing the church and its sacristy. In photographs taken a few years later, the building appears as a solid block of severe proportions with a series of windows opening to the west. The Gothic vaults were restored and the church divided into two levels by the creation of a new floor supported by chestnut beams to increase the strength of the walls. On the ground floor, a fireplace in grey sandstone, engraved with coats-of-arms and taken from a Florentine palace, occupied the spot where the altar had once stood. Once the restoration of the abbey was finished and the meadows and woods fenced, San Pietro became the summer refuge for Giuseppe and his children, grandchildren, and great-grandchildren. </span></p>
+<p><span>Family vacations at San Pietro required everyone to adapt to a spartan albeit communal life since before my mother and father renovated the caretaker&#8217;s cottage in the 1970s, creating a more intimate and comfortable dwelling, there were no real bedrooms. Prior to that, there was a strict vertical social segregation (with the family on the second floor; servants on the lower level) and horizontal segregation of the sexes – males and females all on iron camp beds arranged as in a hospital, but separated by folding screens. At first, mattresses were stuffed with corn leaves that crackled all night as you turned over, and had to be fluffed every morning. Then came horsehair mattresses, which were too hard and lumpy; finally, wool-padded ones, made by a mattress maker in the valley, more comfortable but prone to sagging. The deep window wells hid archaic enameled iron dressing tables surmounted by mirrors, each with a tilting basin to discharge soapy water into a chamberpot below.</span><br />
+</p>
+<p><span>The caretaker’s cottage and the Abbey of San Pietro</span></p>
+<p><span>The fire in the abbey&#8217;s huge fireplace – large enough for a man to stand inside without having to stoop – was kept burning at all times, for heating water and for cooking. Providing that water was an activity that kept the servants busy all day long. Up and down the path they trekked to a natural spring located a few hundred yards in the woods; you could hear a constant jangling of metal jugs through the pine branches. The spring was where the maids gathered in the slanting afternoon sun to do the laundry, after which clothes, sheets, and tablecloths were pressed on a refectory table using old irons heated on the fire.</span></p>
+<p><span>The refectory</span><br />
+<span></span></p>
+<p><span>In the spirit of the blessed ones who fed on what they found on the spot, Dan and I picked nettles, recently sprouted and growing where we had mowed the grass. The young leaves of nettles, wrinkled like the skin of infants, when blanched lose their stinging power &#8211; all it takes is a few minutes of boiling. I made an omelet – mixing the cooked nettles with smoked bacon, chili flakes, garlic, and beaten eggs – and a risotto, combining the shredded leaves halfway through the cooking, turning the rice a lovely tender green. On a different night, I tried them in a soup of Castelluccio lentils that had already simmered on the stove, with a drizzle of good oil and a sprinkling of wild mint. At the first spoonful, the herbaceous and slightly bitter taste of the nettles, when blended with the fibrous sweet-aromatic taste of the lentils, reminded me of how much I love this impervious and bewitching place; where I arrived on the back of a mule when I wasn&#8217;t yet a year old, and where still today, almost sixty years later, <em>il naufragar m&#8217;è dolce</em> &#8211; foundering is sweet in such a sea.</span></p>
+<table>
+<tbody>
+<tr>
+<td></p>
+<p>A fistful of nettles</td>
+<td></p>
+<p><span>Castelluccio lentils with nettles</span></td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../la-cervara/"><img class="retro-nav-thumb" src="../la-cervara/imgs/10-La-Cervara1-1024x611.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">La Cervara</span></span></a>
+  <a class="retro-nav-item next" href="../rodolfo-ode-to-my-fathers-faithful-valet/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Rodolfo – Ode to my father’s faithful valet</span></span><img class="retro-nav-thumb" src="../rodolfo-ode-to-my-fathers-faithful-valet/imgs/8Rodolfo1-842x1024.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

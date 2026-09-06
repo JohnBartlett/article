@@ -244,6 +244,70 @@
       margin: 0;
     }
 
+    /* Secondary Hero */
+    .hero-secondary {
+      grid-column: 1 / -1;
+    }
+
+    .hero-secondary > a.hero-secondary-card {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      text-decoration: none;
+      background: #fdfaf7;
+      border: 1px solid #e8e0d5;
+      border-radius: 4px;
+      padding: 16px;
+    }
+
+    .hero-secondary-image {
+      flex: 0 0 42%;
+      width: 42%;
+      height: clamp(160px, 22vw, 260px);
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+    }
+
+    .hero-secondary-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #b51c20;
+      margin-bottom: 8px;
+    }
+
+    .hero-secondary h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+
+    .hero-secondary-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-secondary-teaser {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero-secondary > a.hero-secondary-card { flex-direction: column; align-items: stretch; }
+      .hero-secondary-image { width: 100%; flex: none; height: 220px; }
+    }
+
     /* Card Grid */
     .wrapper {
       max-width: 1200px;
@@ -431,28 +495,22 @@
       }
     }
 
-    .editorial-banner {
-      background: #1a1a2e;
-      color: #f0e6d3;
+    .milestone-banner {
+      background: #fdfaf7;
+      border-bottom: 1px solid #e8e0d5;
       text-align: center;
-      padding: 10px 16px;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      padding: 18px 16px;
     }
-    .editorial-banner a {
-      color: #e8c97e;
-      text-decoration: none;
+    .milestone-banner a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      color: #b51c20;
+      text-decoration: none;
     }
-    .editorial-banner a:hover { text-decoration: underline; }
-    .editorial-banner .banner-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #a89070;
-      margin-right: 10px;
+    .milestone-banner a:hover { color: #d41f1f; text-decoration: underline; }
+    @media (max-width: 600px) {
+      .milestone-banner a { font-size: 20px; }
     }
   </style>
   <script src="dark-mode.js"></script>
@@ -468,8 +526,8 @@
     <nav>
       <div class="nav-inner">
         <a href="index.html">Home</a>
-        <a href="editions/2026-08-30/datebook/">DateBook</a>
-        <a href="editions/2026-08-30/daily-star-august/">Astrochart</a>
+        <a href="editions/2026-09-06/datebook/">DateBook</a>
+        <a href="editions/2026-09-06/daily-star-september/">Astrochart</a>
         <a href="editorial.html">Editors&rsquo; Page</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
       </div>
@@ -481,25 +539,25 @@
       </div>
     </nav>
   </header>
-  <div class="editorial-banner">
-    <span class="banner-label">New</span>Visit our <a href="editorial.html">Editors&rsquo; Page</a> &mdash; letters, thoughts, and a look behind the magazine.
+  <div style="text-align: center; padding: 24px 16px 10px;">
+    <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
+    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">September 6, 2026</div>
   </div>
 
-  <div style="text-align: center; padding: 30px 16px 10px;">
-    <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222;">The Sunday Edition</h1>
-    <div style="font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px;">August 30, 2026</div>
+  <div class="milestone-banner">
+    <a href="writers/francesco-bianchini/">Celebrating Francesco Bianchini&rsquo;s 100th Article &rarr;</a>
   </div>
 
   <!-- Hero Feature + Ad -->
   <div class="hero-row">
     <div class="hero" style="flex: 2;">
-      <a href="editions/2026-08-30/chicago-innovation/">
-        <img class="hero-image" src="editions/2026-08-30/chicago-innovation/Photo 5- cover photo.jpg" alt="Rallying Chicago's Next Innovators">
+      <a href="editions/2026-09-06/silvia-beltrametti-satire/">
+        <img class="hero-image" src="editions/2026-09-06/silvia-beltrametti-satire/IMG_4010.jpeg" alt="Ink and Outrage at the Driehaus Museum">
       </a>
-      <div class="hero-label">Community</div>
-      <h2><a href="editions/2026-08-30/chicago-innovation/">Rallying Chicago&rsquo;s Next Innovators</a></h2>
+      <div class="hero-label">Arts &amp; Culture</div>
+      <h2><a href="editions/2026-09-06/silvia-beltrametti-satire/">Ink and Outrage at the Driehaus Museum</a></h2>
       <div class="hero-meta">By Judy Carmack Bross</div>
-      <p class="hero-teaser">Nearly 500 leaders and innovators gathered at the Bridgeport Art Center for Chicago Innovation&rsquo;s 25th anniversary In-Gala &mdash; inducting Chuck Templeton, Diane Swonk, and Tom Kuczmarski into its Hall of Fame while rallying the community around the next generation of innovators.</p>
+      <p class="hero-teaser">Classic Chicago interviews curator and catalogue author Silvia Beltrametti on her exhibition &ldquo;Ink &amp; Outrage: 18th-Century Satirical Prints in London &amp; Dublin&rdquo; at the Driehaus Museum.</p>
     </div>
     <div class="hero-ad" style="flex-direction: column; gap: 12px; justify-content: center;">
       <a href="https://comics.ha.com/itm/coming-soon-/p/7468-98001.s?ic4=GalleryView-Thumbnail-071515" target="_blank">
@@ -508,63 +566,77 @@
       <img src="ads/geary-ad.png" alt="Geary" style="width: 45%; display: block; border-radius: 3px; margin: 0 auto; position: relative; right: 12px;">
     </div>
   </div>
+
   <div class="wrapper">
 
     <div class="card-grid" style="margin-bottom: 0;">
 
-      <div class="card">
-        <a href="editions/2026-08-30/about-the-town/">
-          <img class="card-image" src="editions/2026-08-30/about-the-town/COVER - About the Town.jpeg" alt="About the Town in September" style="object-position: center top;">
+      <div class="hero-secondary">
+        <a class="hero-secondary-card" href="writers/francesco-bianchini/">
+          <img class="hero-secondary-image" src="editions/2026-09-06/francesco-bianchini/COVER - Chopsticks.jpeg" alt="Francesco Bianchini's 100th Article">
+          <div>
+            <div class="hero-secondary-label">Milestone</div>
+            <h2>Celebrating Francesco Bianchini&rsquo;s 100th Article</h2>
+            <div class="hero-secondary-meta">Continental Memories, 2021&ndash;2026</div>
+            <p class="hero-secondary-teaser">A special retrospective marking Francesco&rsquo;s 100th story for Classic Chicago &mdash; his new piece &ldquo;Chopsticks,&rdquo; a tribute from Judy Carmack Bross, and 35 recovered articles from the Continental Memories archive.</p>
+          </div>
         </a>
-        <h2><a href="editions/2026-08-30/about-the-town/">About the Town in September</a></h2>
-        <div class="meta">By Philip Vidal &nbsp;&bull;&nbsp; About the Town</div>
-        <p>Chicago&rsquo;s cultural institutions launch their 2026&ndash;2027 seasons and the city&rsquo;s festivals send off the summer &mdash; Philip Vidal&rsquo;s guide to September in Chicago.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-08-30/sporting-life/">
-          <img class="card-image" src="editions/2026-08-30/sporting-life/Olympia 1.jpeg" alt="Birthplace of the Olympics Reveals Naked Truth">
+        <a href="editions/2026-09-06/jafra-canaan-wellspring/">
+          <img class="card-image" src="editions/2026-09-06/jafra-canaan-wellspring/IMGC1990.jpg" alt="Young Dancer's Perspective">
         </a>
-        <h2><a href="editions/2026-08-30/sporting-life/">Birthplace of the Olympics Reveals Naked Truth</a></h2>
-        <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; The Sporting Life</div>
-        <p>At ancient Olympia, competitors ran, wrestled, and threw for olive wreaths rather than medals &mdash; and every one of them competed naked. David A. F. Sweet on the birthplace of the Games, two years ahead of LA28.</p>
+        <h2><a href="editions/2026-09-06/jafra-canaan-wellspring/">Young Dancer&rsquo;s Perspective</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Society</div>
+        <p>15-year-old dancer Sarah Zakarneh and Canaan Wellspring founder Hanan Hamel on bringing Jafra, a Palestinian dabke and storytelling production, to Chicago.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-08-30/silk-roads-health-retreat/">
-          <img class="card-image" src="editions/2026-08-30/silk-roads-health-retreat/Photo 1 cover photo.JPG" alt="Health in the Austrian Alps: Dispatch from MAYRLIFE">
+        <a href="editions/2026-09-06/rush-benefit/">
+          <img class="card-image" src="editions/2026-09-06/rush-benefit/photo 2.jpeg" alt="All Are Welcome at the Queen's Table">
         </a>
-        <h2><a href="editions/2026-08-30/silk-roads-health-retreat/">Health in the Austrian Alps: Dispatch from MAYRLIFE</a></h2>
-        <div class="meta">By Susan Aurinko &nbsp;&bull;&nbsp; My Silk Roads</div>
-        <p>A week at MAYRLIFE in the Austrian Alps &mdash; cryotherapy, aerial yoga, and gourmet meals prepared to the gut-health principles of Dr. Franz Mayr, alongside a lake so pure you can drink it.</p>
+        <h2><a href="editions/2026-09-06/rush-benefit/">All Are Welcome at the Queen&rsquo;s Table</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Society</div>
+        <p>The Rush Woman&rsquo;s Board&rsquo;s Fall Benefit brings royal flair and playful elegance to Artifact Events, celebrating the idea that everyone deserves a seat at the table.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-08-30/soma-roy/">
-          <img class="card-image" src="editions/2026-08-30/soma-roy/Image 1_Cover Image.jpg" alt="Hyperlink, a Connection">
+        <a href="editions/2026-09-06/sounds-good-choir-river/">
+          <img class="card-image" src="editions/2026-09-06/sounds-good-choir-river/photo 7.jpeg" alt="Sounds Good Choir on the River">
         </a>
-        <h2><a href="editions/2026-08-30/soma-roy/">Hyperlink, a Connection</a></h2>
-        <div class="meta">By Soma Roy &nbsp;&bull;&nbsp; Arts</div>
-        <p>Linking Chicago to Zurich&rsquo;s Museum Rietberg &mdash; Soma Roy on how a community art workshop for Chicago residential-wiring students found an unexpected connection with a curator half a world away.</p>
+        <h2><a href="editions/2026-09-06/sounds-good-choir-river/">Sounds Good Choir on the River</a></h2>
+        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Society</div>
+        <p>Dame Jane Glover leads a citywide Hallelujah Chorus sing-along on the Chicago River, with 200 Sounds Good Choir singers joining from the banks.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-08-30/garfield-park-pigments/">
-          <img class="card-image" src="editions/2026-08-30/garfield-park-pigments/IMG_7887.jpeg" alt="Colors of Nature">
+        <a href="editions/2026-09-06/dr-ruth-gannon-cook/">
+          <img class="card-image" src="editions/2026-09-06/dr-ruth-gannon-cook/COVER - Ruth Gannon Cook.png" alt="Dr. Ruth Gannon-Cook: The Female Robert Langdon">
         </a>
-        <h2><a href="editions/2026-08-30/garfield-park-pigments/">Colors of Nature</a></h2>
-        <div class="meta">By Sigalit Zetouni &nbsp;&bull;&nbsp; Arts</div>
-        <p>Renoir&rsquo;s &ldquo;Two Sisters&rdquo; at the Art Institute meets the Garfield Park Conservatory&rsquo;s Pigments! garden &mdash; Sigalit Zetouni on the plants that have colored art for thousands of years.</p>
+        <h2><a href="editions/2026-09-06/dr-ruth-gannon-cook/">Dr. Ruth Gannon-Cook: The Female Robert Langdon</a></h2>
+        <div class="meta">By Marcie Harrison &nbsp;&bull;&nbsp; Profile</div>
+        <p>An emeritus DePaul professor known as the female Robert Langdon on symbols, signs, and her new book, <em>Your Life in Time, Signs, and Alchemy</em>.</p>
       </div>
 
       <div class="card">
-        <a href="editions/2026-08-30/murray-bay-part-2/">
-          <img class="card-image" src="editions/2026-08-30/murray-bay-part-2/IMG_1776.jpg" alt="Only in Murray Bay: Part II">
+        <a href="editions/2026-09-06/tadoussac/">
+          <img class="card-image" src="editions/2026-09-06/tadoussac/IMG_0838.jpeg" alt="A Photo Trip to Tadoussac">
         </a>
-        <h2><a href="editions/2026-08-30/murray-bay-part-2/">Only in Murray Bay: Part II</a></h2>
-        <div class="meta">By Judy Carmack Bross &nbsp;&bull;&nbsp; Travel</div>
-        <p>La Malbaie&rsquo;s summer regulars return for another chapter &mdash; Judy Carmack Bross continues her dispatch from Charlevoix&rsquo;s beloved corner of Quebec.</p>
+        <h2><a href="editions/2026-09-06/tadoussac/">A Photo Trip to Tadoussac</a></h2>
+        <div class="meta">By Marjorie Schwebel &nbsp;&bull;&nbsp; Travel</div>
+        <p>Marjorie Schwebel photographs the charming Quebec village of Tadoussac &mdash; its history, its historic hotel, and the whale-watching that draws visitors to the confluence of the Saguenay and St. Lawrence Rivers.</p>
       </div>
+
+      <div class="card">
+        <a href="editions/2026-09-06/fill-the-stands/">
+          <img class="card-image" src="editions/2026-09-06/fill-the-stands/FTS 1.jpeg" alt="How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports">
+        </a>
+        <h2><a href="editions/2026-09-06/fill-the-stands/">How Sweet It Is: Fill The Stands Gives Boost to Girls&rsquo; Sports</a></h2>
+        <div class="meta">By David A. F. Sweet &nbsp;&bull;&nbsp; Society</div>
+        <p>Fill The Stands founder Elizabeth Sweet is helping girl athletes attend their first women&rsquo;s pro sporting events &mdash; David A. F. Sweet on the nonprofit boosting Chicago&rsquo;s youngest fans.</p>
+      </div>
+
     </div>
   </div><!-- end wrapper -->
 
@@ -572,6 +644,15 @@
     <div class="past-editions-inner">
       <h1 class="page-title">Past Editions</h1>
       <div class="card-grid">
+
+        <div class="card">
+          <a href="editions/2026-08-30/">
+            <img class="card-image" src="editions/2026-08-30/chicago-innovation/Photo 5- cover photo.jpg" alt="August 30, 2026 Edition">
+          </a>
+          <h2><a href="editions/2026-08-30/">August 30, 2026</a></h2>
+          <div class="meta">Sunday Edition</div>
+          <p>Rallying Chicago&rsquo;s Next Innovators, About the Town in September, Birthplace of the Olympics Reveals Naked Truth, Health in the Austrian Alps, Hyperlink a Connection, Colors of Nature, and Only in Murray Bay: Part II.</p>
+        </div>
 
         <div class="card">
           <a href="editions/2026-08-23/">
@@ -598,15 +679,6 @@
           <h2><a href="editions/2026-08-09/">August 9, 2026</a></h2>
           <div class="meta">Sunday Edition</div>
           <p>Nick Wilder's Summer Photo Essay, Spanish Loop, This Date in History, Painting Giverny, A Helping Hand, Dance for Life, and New Poems by Jean Colonomos.</p>
-        </div>
-
-        <div class="card">
-          <a href="editions/2026-08-02/">
-            <img class="card-image" src="editions/2026-08-02/hindenburg-disaster/Catherine Grace Katz 1 (Photo by Steve Dondero).jpeg" alt="August 2, 2026 Edition" style="object-position: center top;">
-          </a>
-          <h2><a href="editions/2026-08-02/">August 2, 2026</a></h2>
-          <div class="meta">Sunday Edition</div>
-          <p>Winnetka Author Tackles Hindenburg Disaster, Dinner on the Bluff and Pro Am Golf Raise $2.4M for Lurie, About the Town: August in Chicago, Antibes Summer 2026, An Afternoon at the Garfield Park Conservatory, Adrian&rsquo;s Adventures, and &ldquo;Beauty and the Beast.&rdquo;</p>
         </div>
 
       </div>

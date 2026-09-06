@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pangs of Childhood – and Remembrance of Kitchens Past | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/Pangs-of-childhood2-731x1024.jpeg" alt="Pangs of Childhood – and Remembrance of Kitchens Past">
+<h1>Pangs of Childhood – and Remembrance of Kitchens Past</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 22, 2021</div>
+    </div>
+    <div class="article-body">
+<p><span>By Francesco Bianchini</span></p>
+
+<p>Collevalenza, with my childhood home stretching across the entire bottom of the picture</p>
+<p><span>In my childhood home, a lot of space was devoted to storing food. Milk, cheese, sausage, eggs, vegetables, oil, and wine came from our farm below the house. From the scullery, there were a series of rooms, each with a specific function, and each distinguished by its smell: nauseating to me, pecorino, caciotta, and ricotta cheese, lying on long wooden boards; the acrid and sweetish aroma of must and wine; the appetizing perfume of salami, sausage, capocollo and hams that hung in festoons from the beams. There were also cupboards of preserves, pickles, and jams, and little rooms with ancient terracotta oil vats.</span></p>
+<p><span>Nothing was kept under lock and key, a Garden of Eden where temptations were part of the divine plan. I never had a sweet tooth, unlike my brother Fabrizio who perfected the art of emptying a box of chocolates by making an invisible incision in the cellophane. It is certain that my mother, who kept boxes of sweets stacked in her linen closet, was stunned when she opened them. A burglary worthy of Arsène Lupin, the fictional gentleman thief of our favorite TV series. </span></p>
+
+<p>Sausage stealer, front left, chocolate candy thief on Mama’s lap, and my angelic brother Filippo</p>
+<p><span>On some Fridays, a day of abstinence from meat, even worse during Lent – the sacred Ramadan of Catholics – I was taken by an afternoon languor for a dry sausage. I didn&#8217;t need a snake to be tempted by those coiled garlands that I sometimes merely visited to inhale the smell. Not enough to maintain my righteous intentions! With a knife, I cut the connecting thread and detached a sausage from the twisted gut that held the chain together. The good ventilation of the charcuterie room ensured perfect drying. The skin came off effortlessly and floated in the air, leaving the pinkish-brown sausage naked and ready to be bitten. At times, what with the risk of being caught, I didn&#8217;t even have time to peel it.</span></p>
+
+<p>They’ll never miss one&#8230;</p>
+<p><span>In the absence of guests, breakfast in our house was a hurried affair. By the time we arrived at the kitchen table, Augusta had already boiled the fresh milk that arrived early each morning from the farm, ferried in the aluminum containers that are seen nowadays in flea markets, and Rodolfo had set the marble table with mismatched cups, bread, butter, and jam. If we were daydreaming or had come down late, the Ovaltine would have congealed on the surface of the scalded milk. We called that &#8220;veil&#8221; in disgust and fished it out with a fork, or demanded that Rodolfo start all over again. </span></p>
+<p><span>During school terms, my mother invented health protocols: a spoonful of cod liver oil, for example, administered before breakfast was met with a multitude of antics on our part to make the process as exasperating as possible. Our elementary school was only a few hundred yards from home, which we reached by passing the bar and grocery store where my classmates stocked up for recess. But I was never given money, moreover, my mother had an intense aversion to snacking. When the school bell rang at ten thirty, there would be a great deal of unwrapping and sandwiches would appear, overflowing with mortadella, finocchiona, prosciutto, or a warm schiacciata – a typical Tuscan bread, baked in an oven with olive oil and salt, onion and rosemary, or tomato. I would find myself looking into a corner with my mouth watering, except for the times when Rodolfo – predisposed to indulgence and happy to subvert the educational rigors of my parents &#8211; would sneak something into my school satchel.</span></p>
+
+<p>The poor starving boy in his 1st-grade uniform</p>
+<p><span>We write about the food of the heart and soul, about memories and people, but rarely about the place where food is prepared. I&#8217;m not referring to the precious gastronomic boudoirs of our times &#8211; immaculate, super-technological, fancy, or retro – but to the workshops of old, the purely utilitarian rooms where guests didn&#8217;t stick their noses, and which exert a poignant fascination on me. Eons passed and the equipment evolved, but without the pressing need to get rid of the old. The stufa economica, relegated to a corner, continued to provide warmth especially in times of energy-saving. Cooking had moved on from gas stoves &#8211; whose cast-iron burners, operated by large bakelite knobs, hissed when lit &#8211; to slimmer and safer models, perhaps with a ventilated oven. The refrigerator had also been modernized; next to the travertine or white ceramic sink a dishwasher had found its place, and on a shelf or sideboard the microwave made a discreet appearance. Fashions followed one another, but due to providential indifference or lack of means, the old terracotta floor, sometimes chipped and sagging; the early twentieth-century cement tiles or the 1920s terrazzo had been preserved and polished with devotion. The kitchen was also the point where everything in the house bounced, settled, and fermented. Kitchens still are, but not in the same way. In middle-class homes, there was a filter between the kitchen and the rest of the house, like those used for distilling alcohol: the cook and the household staff. Everything that happened was digested as if the house possessed two separate stomachs.</span></p>
+<p><span>Only children were allowed to move from one sphere to another and absorb its different moods. I ate in the kitchen for years before being admitted to the dining room with which it communicated through a service hatch. The vast room had two windows, one overlooking the garden and the other the village street; two large marble tables, one of which was in the center of the room, two sideboards against the walls, a fireplace, and a stone sink. From there a door led down a steep staircase to two dimly lit rooms festooned with cobwebs that served as a cellar. Another went up to the servants&#8217; room, where once Gilda, Rodolfo&#8217;s mother, was seized with such a fit of laughter that a rivulet of pee dripped down the stairs. She squirmed like a big supine insect, unable to turn around, the white flesh of her thighs pressed into thick black stockings. Another maid, who didn&#8217;t last long and ended up becoming a cloistered nun, dismayed everyone by her habit of drying damp dishcloths in the oven and ironing with one hand while reading the story of some mystic with the other.</span></p>
+
+<p>The kitchen of my memory</p>
+<p><span>The kitchen of my memories is not always a serene and hospitable place. The threat of the &#8216;guards&#8217;, whom Rodolfo invoked to bring me to my senses, was, for a child of four or five, akin to the arrival of big men, hooded and wrapped in black cloaks, like the sinister figures who arrested poor Pinocchio. Or the end-of-year eel twisted on itself in a box that I took for a frightening black snake. I vividly recall that kitchen disfigured by the excitement on the morning the radio announced the invasion by Soviet tanks of Prague. Augusta, who had absorbed the general nervousness, let the milk overflow, spill, and drip from the stovetop. Against her phlegmatic nature, she exploded into a sequence of expletives barely softened by the presence of us children. But on certain evenings, when – to put my courage to the test – I offered to go into the garden, plunged in semi-darkness, to pick wild arugula for the dinner salad, the yellow rectangle of the window, lit by the old hanging lamp, guided and reassured me.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../rodolfo-ode-to-my-fathers-faithful-valet/"><img class="retro-nav-thumb" src="../rodolfo-ode-to-my-fathers-faithful-valet/imgs/8Rodolfo1-842x1024.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Rodolfo – Ode to my father’s faithful valet</span></span></a>
+  <a class="retro-nav-item next" href="../pancakes-to-go/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Pancakes to go</span></span><img class="retro-nav-thumb" src="../pancakes-to-go/imgs/Pancakes-to-go3-1-500x339.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

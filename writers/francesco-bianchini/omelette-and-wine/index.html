@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An Omelette and a Glass of Wine | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>An Omelette and a Glass of Wine</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 31, 2026</div>
+    </div>
+    <div class="article-body">
+<figure><img src="96An Omelette and a Glass of Wine4.jpeg" alt="Omelette &agrave; la M&egrave;re Pollard"><figcaption>Omelette &agrave; la M&egrave;re Pollard.</figcaption></figure>
+
+      <p>I found out by chance that Dan had secretly organized a party in the P&eacute;rigord, where we were living, for my sixtieth birthday. The news kept me awake most of the night. The following morning I explained, as gently as I could, that I did not want that sort of celebration. I prefer one-to-one friendships to social gatherings, and I have never enjoyed being the centre of attention. Dan agreed to call everything off. The only exception was a friend who had already bought her plane ticket.</p>
+
+      <p>She was the friend of long walks, of crossing the Pyrenees along the route to Santiago de Compostela. Together we decided to spend the fateful day walking from Sarlat to the property Dan and I had agreed to buy ten days earlier &mdash; nearly thirty kilometres through oak and chestnut woods along the Dordogne valley. Symbolically, we liked the idea that the journey would mark a passage from the house to which we had given eight years of our lives, through worries and pleasures alike, from the town whose fortunes we had shared in good times and bad, towards a new phase of our existence, towards an estate that had bewitched us with the beauty of the surrounding countryside, a blank canvas we could cover with our own whims.</p>
+
+      <figure><img src="96An Omelette and a Glass of Wine1.jpeg" alt="Walking through the P&eacute;rigord"><figcaption>Walking through the P&eacute;rigord.</figcaption></figure>
+
+      <p>The birthday morning dawned bright and cool, like the whole summer, while the rest of the planet seemed to be burning or flooding. We left Sarlat early and followed a disused railway line that had been turned into a cycling path, sheltered for several kilometres from the sun by forming a long green tunnel, at times cut straight through the rock. We crossed the Dordogne over an old iron bridge and continued along narrow country roads travelled only occasionally by a car or a tractor. As noon approached, the countryside grew wider and still beneath the summer sun.</p>
+
+      <p>I have lived in France long enough to know that not every village contains a small country inn waiting for hungry travellers and that, during the week, once half past one has come and gone, the chances of finding lunch diminish rapidly. We found ourselves at a crossroads beneath an oak tree, the nearest villages marked on road signs, all apparently equidistant. Fortunately we still had a telephone and enough signal to call the nearest auberge. The owner wanted to know how far away we were. Barely two and a half kilometres, I answered, though at least another forty minutes on foot.</p>
+
+      <p>More fields edged with poplars and oaks, more rises and dips in the road, a Romanesque church standing alone in a meadow, a village with its ch&acirc;teau and the mustard-yellow postal van parked beside the fountain. A walk through the French countryside tends to resemble an immense toile de Jouy.</p>
+
+      <figure><img src="96An Omelette and a Glass of Wine3.jpeg" alt="The little stone church in the vale"><figcaption>The little stone church in the vale.</figcaption></figure>
+
+      <p>The auberge stood on top of an isolated rise. A few diners still lingered at tables beneath a giant horse chestnut tree. A good sign. They would not turn us away. We ordered the simplest thing imaginable: an omelette and a glass of wine.</p>
+
+      <p>The omelette arrived slightly runny, just as requested, accompanied by Sarlat potatoes saut&eacute;ed in duck fat with garlic and parsley. The bread tasted of natural leaven, the kind bought from the local bakery in dark round loaves dusted with flour. The wine was a chilled ros&eacute;.</p>
+
+      <p>Obvious though it may sound, a French omelette is not quite the same thing as an Italian frittata &mdash; flatter, firmer, cooked in olive oil. Neither is better. They simply belong to different worlds. When you order an omelette, one imagines the taste of fresh eggs and butter, the soft golden fold with a little creaminess escaping from the centre, at least for those who like it slightly runny. Nothing elaborate or overly refined, but rather the pastoral union of newly gathered eggs, the scent of a dairy, and baskets of porcini mushrooms, which that unusually wet season had already produced in abundance.</p>
+
+      <p>And yet I had spent evenings trying to master the perfect omelette: not too dry, not too liquid, neatly folded, unburnt, the ingredients blended exactly as they should be. I had changed frying pans, experimented with different kinds of butter, added cr&egrave;me fra&icirc;che to the eggs, practically gone and collected the eggs from beneath the hen myself. Speaking of perfection, it is said that when the legendary M&egrave;re Poulard finally grew tired of endless speculation and was asked for the recipe of her incomparable omelette, she replied in a letter along these lines: &ldquo;I break some good eggs into a bowl, beat them well, melt a good piece of butter in the pan, pour in the eggs and keep shaking.&rdquo;</p>
+
+      <p>Satisfied and restored beneath the chestnut tree, we raised our glasses to the passing years and expressed the hope that life might always offer an omelette properly made, a glass of wine at a simple country table, good company, and a fine walk beforehand.</p>
+
+      <figure><img src="96An Omelette and a Glass of Wine2.jpeg" alt="Our new home: Payrac en Quercy"></figure>
+
+      <p>Before setting off again, however, we allowed ourselves one last pleasure. We walked down to the Relinqui&egrave;re stream, where the banks had once been turned into a washhouse. We lay on the grass and soaked our feet in the current. At that hour of the afternoon not a single car passed by. One heard only the water skipping over the stones and the rustling of the tall poplars overhead.</p>
+
+      <div style="margin:32px 0 24px;text-align:center;font-family:'Lato',sans-serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.08em;">
+        <a href="../../../about.html#francesco-bianchini" style="color:#d41f1f;text-decoration:none;border-bottom:1px dashed #d41f1f;">About the Author: Francesco Bianchini &rarr;</a>
+      </div>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../ciorba-de-perisoare/"><img class="retro-nav-thumb" src="../ciorba-de-perisoare/97Ciorba de Perisoare1.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Ciorba de Perisoare</span></span></a>
+  <a class="retro-nav-item next" href="../guinness-inis-mor/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">The First Guinness on Inis Mór</span></span><img class="retro-nav-thumb" src="../guinness-inis-mor/photo-01.jpg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

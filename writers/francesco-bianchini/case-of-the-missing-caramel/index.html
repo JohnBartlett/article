@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Case of the Missing Caramel | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>The Case of the Missing Caramel</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; March 1, 2026</div>
+    </div>
+    <div class="article-body">
+</div>
+
+    <div class="article-body">
+
+      <p>Since ours was a large family, my mother bought food in oversized, multi-pack quantities. That was true in the early 1970s, even when there were still only four of us children&mdash;sent one after another to eat in the kitchen until we were deemed properly trained in table manners. There was always at least one grandmother and a great-aunt living with us; then my two sisters arrived, and finally the youngest brother. At the table&mdash;set for eight, nine, sometimes ten or more&mdash;dishes had to be plentiful.</p>
+
+      <figure>
+        <img src="marie-claire.jpeg" alt="Marie Claire.">
+        <figcaption>Marie Claire.</figcaption>
+      </figure>
+
+      <p>Marie Claire did most of the grocery shopping once a month at the region&rsquo;s first cash-and-carry warehouse. Our family farm entitled her to professional status, which allowed her to stock up on milk, coffee, canned tomatoes, pasta, sweets, and cleaning products in large quantities and at wholesale prices. When I went with her, she would say things like, &ldquo;Let&rsquo;s go to the short man with the mustache&mdash;he&rsquo;s the nicest.&rdquo; And if the man with the mustache wasn&rsquo;t there that day, she would be disappointed. Other employees would still help load the shrink-wrapped packages onto the cart and then into the car trunk, but it was clear they lacked the same patience and kindness.</p>
+
+      <figure>
+        <img src="family-routine.jpeg" alt="A family held together by routine.">
+        <figcaption>A family held together by routine.</figcaption>
+      </figure>
+
+      <p>The grocery run took quite some time. My mother carefully walked up and down every aisle, her shopping list clipped to the cart. She was the only one who could make sense of it: some items were written in French, others referred to brands&mdash;often misspelled&mdash;and still others were her own cryptic abbreviations. She never crossed items off as she went along; instead, she recited the entire list out loud, again and again, to see what was still missing. She hushed me if I distracted her, but she enjoyed bantering with the employees&mdash;intrigued by her foreign accent&mdash;or with other regular customers like herself, women trying to feed large families on the modest income of small farms.</p>
+
+      <figure>
+        <img src="plenty.jpeg" alt="Plenty.">
+        <figcaption>Plenty.</figcaption>
+      </figure>
+
+      <p>When it was time to pay, my mother stepped into a glass booth where the accountant&mdash;who, unlike other staff, had no reason to endure the cold required to preserve the goods&mdash;printed out long itemized receipts. At the bottom, the total struck me, as a child, as an outrageous sum. If my parents kept spending that much to feed us, I was certain we would soon be ruined.</p>
+
+      <figure>
+        <img src="me-growing-aware.jpeg" alt="Me, growing aware.">
+        <figcaption>Me, growing aware.</figcaption>
+      </figure>
+
+      <p>At home, there was a large pantry to store all that food. Shelves groaned under the weight of canned tomatoes, cartons of milk, sacks of pasta and rice weighing several kilos, jars of pickled vegetables and fruit in syrup. There were also provisions from our own land: cured meats, cheese, olive oil, wine. Even though food was abundant at the table, it never seemed quite enough&mdash;especially after my parents, aunts, grandmothers, and any passing guests had been served, and even more so when lunch or dinner included something particularly good. We children were entitled to an afternoon snack, but outside the four daily meals, nothing else. Sweets spoiled both teeth and appetite, my mother reminded us, firmly disapproving of impromptu nibbling.</p>
+
+      <p>Yet she herself enjoyed dessert, and she regularly bought dozens of boxes of Elah brand caramel custard. Making it was simplicity itself: the vanilla-flavored powder was added to warm milk and brought just to a boil, careful not to let it spill over. Caramel was poured into a mold, followed by the liquid custard, then everything was left to cool in the refrigerator before being unmolded onto a serving plate. An elementary process, producing an extraordinary result. The custard, smooth and trembling, pale cream in color, steep-sided like a volcano and darkened on top by its hardened lava, filled the dining room with a vanilla scent. For a moment it was a mirage of perfection&mdash;an ethereal Mount Kilimanjaro rising from the savannah, a Mount Fuji at the moment the snow began to melt. I wished I could admire it a little longer in its pristine beauty and anticipate the cold, yielding texture of the vanilla cream. But once it reached the table, the first spoonful demolished its flank, sending the glossy brown summit sliding down into the valley below.</p>
+
+      <figure>
+        <img src="what-desire.jpeg" alt="What desire was supposed to look like.">
+        <figcaption>What desire was supposed to look like.</figcaption>
+      </figure>
+
+      <p>More often, however, when someone in the kitchen set out to make the custard, the clear plastic packet containing the caramel had mysteriously vanished. Not from one box, but from all of them. Every single packet had been plundered! The dessert, as pictured on the box, was irreparably compromised. And yet how good that sticky, black caramel was&mdash;sweet, with a hint of bitterness and toastiness that seduced the palate with aromas of malt, hazelnut, and butter. Why wait to enjoy it melted over the custard when you could suck it straight from the packet, after snipping off the tip and squeezing out every last drop with your fingernail?</p>
+
+      <p>When the caramel-less custard finally appeared on the table&mdash;a pale substitute for the real thing&mdash;my mother would look at us one by one around the table. Anyone pretending innocence gave themselves away at once.</p>
+
+    </div>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../guardian-san-pietro/"><img class="retro-nav-thumb" src="../guardian-san-pietro/ascenzio-portrait.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">The Guardian of San Pietro</span></span></a>
+  <a class="retro-nav-item next" href="../tongue/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Tongue</span></span><img class="retro-nav-thumb" src="../tongue/imgs/85Tongue2jpg.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The First Guinness on Inis Mór | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+<h1>The First Guinness on Inis Mór</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 10, 2026</div>
+    </div>
+    <div class="article-body">
+<figure>
+        <img src="photo-01.jpg" alt="Galway harbour, where it all began">
+        <figcaption>Galway harbour, where it began. Photo: Leigh McAdam / HikeBikeTravel.com</figcaption>
+      </figure>
+
+      <div class="article-body">
+
+        <p>The old McDonagh warehouses still dominated Galway harbour then, along with the fuel tanks lining the quays. What stirred them, on that morning thirty years ago, between the crystalline light slicing through the Atlantic mist and the grey of the stone walls? The iron serpents of the cranes, the coal sheds, the battered fishing boats seemed only an extension of the nightmare of the previous evening, when they had landed in that fallback hotel in town. And yet, amid all the ugliness around them, there breathed an undeniable air of vitality.</p>
+
+        <p>The desire to get rid of the rental car and leave sprang from the contrast itself: the industrial greyness of the dock against the deep blue of the bay pointing toward the islands. More than the islands&mdash;a thin dark line barely distinguishable from the water&mdash;they saw the ferry ready to cast off. Its white-and-blue bulk, loaded with crates and people, was the real spark behind their spur-of-the-moment decision. Inis M&oacute;r, she read on the timetable board. At once they felt snatched away from the stinking asphalt and already lifted aboard, followed by the shrieking gulls she loved because it was the sound of the sea.</p>
+
+        <p>When the boat pulled away from the quay, they gave one last glance at the little parking area where the orange Corolla stood with the rest of their belongings. As the ferry moved into the harbour, a sharp wind rose. It swept away the lingering smell of diesel and rotting seaweed and scented itself with salt. For a brief moment they hesitated. Shelter behind the salt-streaked windows, or sit outside on deck and let the sea gusts lash their skin? She wanted a cigarette, so they chose the open air.</p>
+
+        <p>He held the newspaper tightly in his fist. To keep it from blowing away, he folded it over the article that had caught his eye. It was about the discovery of a prehistoric currach that had emerged from the mud of an intertidal zone. The low tide after a spring storm had shifted the sediment and revealed its charred skeleton. The paper explained how the oak wood had remained intact thanks to the lack of oxygen in the black mud. He looked up from the Irish Times. She had offered a cigarette to the gaunt stranger and now seemed to be talking with him, both of them leaning against a flaking metal rail, without really being able to hear each other. He returned to the paper. The archaeologist being interviewed said the currach still preserved traces of its leather stitching. Those boats, he said, did not cut through the waves&mdash;they danced them.</p>
+
+        <figure>
+          <img src="photo-02.jpg" alt="The wild reaches of Inis Mór">
+          <figcaption>The wild reaches of Inis M&oacute;r. Photo: Leigh McAdam / HikeBikeTravel.com</figcaption>
+        </figure>
+
+        <p>Out in open water, the outline of the city shrank until it faded into the morning haze. Only after an hour at sea did the &ldquo;three rocks&rdquo; of the Arans begin to materialise like limestone giants rising from the water. It gave her the excuse to remind him&mdash;shouting into his ear over the roar of the engine&mdash;how the nearby Cliffs of Moher, sheer and weather-beaten, had dried his lips so badly that he had needed to &ldquo;smear on,&rdquo; as she said, her lipstick.</p>
+
+        <p>They had set out without knowing exactly what they would find. She hoped to sit in a pub and hear Gaelic murmured by old men at the neighbouring tables. She had read that somewhere.</p>
+
+        <p>At the pier, where time seemed measured only by the tides and the arrival of the ferry, they were met by a few horse-drawn carts and a handful of rusty bicycles leaning against the dry-stone walls&mdash;the only way to get around the island. They rented two and pedalled for hours beside the stone boundaries without meeting a soul, without exchanging a word because of the wind. Gusts swept across the little patches of soil wrested from the rock with seaweed and sand, slipping through the skeletons of old buses left to rust by the roadside.</p>
+
+        <figure>
+          <img src="photo-03.jpg" alt="The ancient fort above the Atlantic — Dún Aonghasa">
+          <figcaption>The ancient fort above the Atlantic. Wikimedia Commons</figcaption>
+        </figure>
+
+        <p>The lane led them up onto the bare plateau to the prehistoric fort perched above the Atlantic. They left the bicycles on the cropped grass at the edge of the concentric half-rings of grey stone covered with lichen. Before reaching the heart of the fort, they had to cross a field of pointed stones set into the earth like dragon&rsquo;s teeth. A defensive system from three thousand years ago that forced them to slow their steps, preparing the spirit for the grandeur ahead. Lying on grass thickened by salt spray, the horizon disappeared. They saw only the green ending abruptly against the cobalt blue of the sky. They dragged themselves forward on their stomachs to the edge. There the gaze plunged a hundred metres into the dark ocean waters crashing with a dull roar against the foot of the cliff.</p>
+
+        <p>Back at the harbour, she let herself be guided by the smell of peat smoke. April light came through the small windows of the pub and struck their tulip glass with its gold harp emblem, revealing that Guinness is not black at all, but the darkest ruby when held to the light. They lingered on the threshold of their pint while everything around them smelled of wet wool. The Holy Week of Guinness&mdash;the famous 119 and a half seconds of waiting before the publican gave the final touch, the top-up that creates the perfect dome of foam&mdash;was law on Inis M&oacute;r. Waiting at the counter for the clear division between the dark body and the ivory head became an exercise in contemplation, a small secular Lent before the pleasure of the first sip. The beer slid compact and velvety into his mouth and made him think of the tarred skin of the currach dancing on the white of the crests.</p>
+
+        <figure>
+          <img src="photo-04.jpg" alt="The first Guinness on Inis Mór">
+          <figcaption>Ah, that first Guinness!</figcaption>
+        </figure>
+
+        <p>The moustache of dense, bitter foam remained on their upper lips, followed by the warmth of toasted malt. The ticking of a wall clock. The distant cry of a gull.</p>
+
+        <p>In the years that followed, standing before a pint of Guinness, she never tired of reminding him of that first taste, that flavour somehow more metallic and more alive&hellip; on Inis M&oacute;r.</p>
+
+      </div><!-- end article-body -->
+
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#francesco-bianchini" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Francesco Bianchini &rarr;</a>
+      </div>
+
+      <div style="margin-top:32px; padding-top:20px; border-top:1px solid #eee; font-family:'Lato',sans-serif; font-size:14px; color:#555; line-height:1.6;"><strong>Francesco Bianchini</strong> &mdash; Born in Rome and raised in Umbria, Francesco Bianchini teaches French language and culture at the University of Perugia and writes from between Italy and France. His work explores memory, place, food, travel, and the quiet rituals that shape a life.</div>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../omelette-and-wine/"><img class="retro-nav-thumb" src="../omelette-and-wine/96An Omelette and a Glass of Wine4.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">An Omelette and a Glass of Wine</span></span></a>
+  <a class="retro-nav-item next" href="../madeira/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Madeira: An Island Revealed from Above</span></span><img class="retro-nav-thumb" src="../madeira/madeira-1.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

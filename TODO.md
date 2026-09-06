@@ -1,5 +1,37 @@
 # Classic Chicago Magazine — TODO
 
+## TODO — SEPTEMBER 6 EDITION (prepped, mostly awaiting content)
+
+Skeleton, nav chain, homepage, DateBook, and Astrochart all wired Sept 3. Full detail in
+`editions/2026-09-06/STATUS.md`. 1 of 8 articles (Fill The Stands) Ready.
+
+- [ ] **September Astrochart went live on production (chicagoclassicmag.com) ahead of Victoria's approval.** We told her explicitly on Aug 31 ("the moment you give me the okay, I'll push it live") — she had not replied as of this push (Sept 3, per John's direct instruction). Follow up with her to confirm the published version is acceptable.
+- [ ] **Reply still owed to Judy re: the Jafra/Canaan Wellspring draft** (`1a0526f7b944412d`, Aug 30) — she asked whether interview form is the right call and whether it's OK the piece leans on the cause more than dancing. Needs John's actual answer before that article's text is finalized.
+- [x] ~~Dr. Ruth Cook byline spelling~~ — **RESOLVED Sept 3.** Confirmed "Marcie Harrison" via her own bio email (`1a066d81336c9639`); about.html entry added.
+- [ ] **Dr. Ruth Gannon-Cook article: extract full text + 5 photos** from the original Aug 22 email attachments in thread `1a05886ff5706d06` — content is fully in hand, not yet built. Highest-priority next pass.
+- [ ] **Jafra/Canaan Wellspring: build full article** once John's reply to Judy (above) resolves the approach — text and most photos already in hand.
+- [ ] **Confirm "Silvia Beltrametti and Satire" naming with Judy directly** — John treated it as the same article as the original lineup's "Silvia Krehbiel Driehaus curator" (name corrected) per his own judgment call; not yet confirmed with Judy herself.
+- [ ] **Confirm which "Sounds Good Choir" cover photo Judy wants** — river-music photo (msg `1a05d171149a00d8`) vs. Hallelujah Chorus sing-a-long photo (msg `1a05c81fbf12bf31`), same event.
+- [ ] **Marjorie Schwebel's bio** still needed for about.html (currently marked "[Bio pending]").
+- [ ] **Francesco Bianchini's 100th-story content** — check with Ana directly; Judy said it's going to her, not John.
+- [ ] **Rush Benefit and Sounds Good Choir article text** not yet received from Emma.
+- [ ] **Tadoussac article text** not yet received from Marjorie/Annie; may be delayed further per original lineup note.
+- [ ] **Fill The Stands photo #2** blocked by Google Drive permissions (msg `1a05d0c35428c573`) — ask David Sweet to re-share or email the file directly.
+- [ ] **Confirm with Judy whether Griffin Museum (Sydney Armstrong)** is still planned for a future edition — flagged delayed-to-Sept-6 on Aug 25 but absent from the final Sept 6 lineup emails.
+
+## DONE — Sept 1-3 session (audit + fixes)
+
+- [x] **Restored Philip Vidal's 39 dropped links** in "About the Town in September" — silently missing from the built HTML vs. the source email; added CLAUDE.md mistake #42 (link-count check) to prevent recurrence.
+- [x] **Fixed missing past-edition landing pages** for Aug 16 and Aug 23 — neither `editions/2026-08-16/index.html` nor `editions/2026-08-23/index.html` had ever been built, so Cloudflare's fallback silently served the current homepage instead of a 404. This was the root cause of a reader (Shelley, via Judy) being unable to find last week's Bonnie McDonald article. Rebuilt both from git history; confirmed live; replied to Judy.
+- [x] **Fixed stray internal-nav bar exposed on production** in Murray Bay Part 2 — leftover from the Aug 30 post-publish photo hotfix, which rewrote the file without re-commenting the dev2-only block.
+- [x] **Fixed a real GA4 leak on dev2**: 6 articles in the March 22 edition (`pokemon-fossil-museum`, `unsung-gems-lfhs`, `two-sisters-and-a-piano`, `kanuga`, `chicago-chamber-music-society`, `building-blocks`) had fully live, uncommented GA4 tracking on dev2 — meaning every `vercel deploy` from dev2 was sending real traffic into production analytics. Normalized to the standard `<!-- GA4-disabled -->` convention, plus 2 sibling files with non-standard-but-working comment variants.
+- [x] **Fixed a ~6-month-old GA4 gap on production**: `moneyball` and `wells-street-kitchen-juice` (March 1 edition) had their gtag.js loader commented out while the config call stayed live — meaning zero analytics data was ever actually sent for these two pages since publish. Fixed directly on master.
+- [x] **Added `astro_day_change` GA4 event tracking** to the Astrochart's Prev/Next/dropdown navigation (previously untracked — GA4 couldn't distinguish a visitor who browsed all 30 days from one who loaded the page and left). Added to the live Aug 30 page, the Sept 6 page, and pushed to production for both.
+- [x] Built `tools/content_audit.py` — automates 5 content-fidelity checks that were previously gaps in every audit pass: DateBook's own internal Astrochart link (mistake #20), stale past-date Astrochart entries (mistake #21), dated homepage hero-meta (mistake #23), duplicate hero+inline photos (mistake #30), emoji in article content (mistake #34).
+- [x] Built `tools/ga4_astrochart_query.py` + `.github/workflows/adhoc-ga4-query.yml` for one-off GA4 queries beyond the standard dashboard report (used for Astrochart page-view and session-engagement stats).
+- [x] Sent Victoria the September Astrochart preview (dev2), then pushed it to production per John's direct instruction — see the pending-reply item above.
+- [x] **Set up the September 6 edition**: built on top of a parallel session's Fill The Stands article (fixed its broken nav-thumb path, extracted its 2 remaining photos). Built 7 remaining article stubs with correct nav chain, wired homepage hero+cards, moved Aug 30 into Past Editions, and built the missing `editions/2026-08-30/index.html` (would have hit the same Cloudflare-fallback 404 bug fixed earlier for Aug 16/23). Found and fixed two more real bugs in the copied-forward DateBook: a stale internal Astrochart link and a full stale August month section. Added Marcie Harrison and Marjorie Schwebel to about.html as new authors. Full status in `editions/2026-09-06/STATUS.md`.
+
 ## TODO — AUGUST 30 EDITION (next)
 
 Nav order (final, per Judy's Aug 29 request — Murray Bay Part 2 last): chicago-innovation (hero) → about-the-town → sporting-life → silk-roads-health-retreat → soma-roy → garfield-park-pigments → murray-bay-part-2

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood Oranges | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/73Blood-oranges1.jpg" alt="Blood Oranges">
+<h1>Blood Oranges</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; January 25, 2025</div>
+    </div>
+    <div class="article-body">
+<p><span>There was a time when the simple gift of an orange made my day. Along with chocolate and nougat, an orange helped fill my holiday stocking, which I&#8217;d leave in front of the fireplace on the night of January 5—the same ritual as by children all over central and southern Italy. Of course these &#8216;Old Christmas&#8217; treats were only for kids who&#8217;d behaved well, never for naughty children who&#8217;d find nothing but lumps of coal. And the gifts were not from the Three Kings—the magi of Bethlehem—but from <em>The Befana</em>, an Italian sort of female St. Nicholas who, like Santa, also slips down the chimney. It was every family&#8217;s duty to welcome that wise and kind old crone, and the room where she was expected might be the only one heated, wherein she&#8217;d find a few pieces of fruit, some sweets, and a glass of wine to cheer her on. </span></p>
+
+<p><span>Moment of truth: the Befana assays the naughty and the good (from an early 19th century Roman engraving)</span></p>
+<p><span>Our holiday oranges were not ordinary ones, but Sicilian <em>tarocchi</em>—the blood-red variety exclusively cultivated in the plains stretching between Catania and Syracuse, harvested in those beautifully manicured fields lying in the shadow of Mount Etna. The oranges were transported north in crates, arranged in layers separated by straw or shredded paper, each fruit individually wrapped in colored tissue paper—except for one in one corner, its bare crimson rind leaving no doubt they were all the genuine article. That unwrapped orange stood out, its taut skin tinged with garnet red, and exuding a sharp, intoxicating aroma.</span></p>
+
+<p><span>Pride of Sicily</span></p>
+<p><span>I was particularly enchanted by the tissue paper wrappings. On each, a scene unfolded: a rustic maiden holding bunches of red berries; the Three Graces plucking golden-hued fruit from a small tree; a girl carrying a basket overflowing with citrus. There was a lady with an embroidered mantilla, her blouse suggestively highlighted with naïve strokes, who stood admiring neat rows of red-dotted trees from an ornate balcony. And a Moorish woman with glossy skin and hooped earrings, as well as other depictions of traditional Italian costumes. Some papers bore exotic imagery: a yellow panther speckled with rust-colored spots that could be mistaken for the fruit it concealed; a lion with a ferocious yawning maw, but somehow an amiable expression; or a lancer astride a jet-black horse, his crimson cape billowing as he brandished a reddened orange, just where the severed head of an enemy might have been. One wrapper, clearly destined for export to countries that consider Italy as a land of exotic produce, featured the jester Till Eulenspiegel dressed in red, astride a split orange, surrounded by the iconic vistas of Italy—Rome, Venice, Naples, and Florence—the same sort of views once displayed in black and white posters above train seats. Most haunting of all was the image of Santa Lucia, patron saint of Syracuse, posing against a backdrop of azure skies and parasol pines, with the palm of martyrdom resting delicately on her shoulder, and in her hand a small dish bearing her eyes.</span></p>
+
+<table>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span>Each one tells the tale</span></p>
+<p><span>The memory of <em>tarocchi</em> and their wondrous wrappings takes me back to our old dimly-lit dining room, warmed in winter months by the fireplace and a top-loading, coal-fueled, cast-iron Becchi stove. Its walls were lined with gleaming copper molds and ancient cookware, and the beams above studded with small copper bowls resembling rows of pendulous udders. For me, the pleasure lay in unwrapping the oranges and admiring the wrapper designs, sounding out their inscriptions, syllable by syllable: <em>La Favorita</em>, <em>La Morena</em>, <em>Sanguinello</em>, <em>Sanguigna</em>, <em>Moro</em>; and the town names, usually misplacing the accents: Francofonte, Scordia, Palagonia, Paternò, Valverde.</span></p>
+<p>&#8216;<span>Polished wood and gleaming copper</span></p>
+<p><span>Around the table, we children would beg my father to peel an orange in the way that only he could: fashioning a little basket from the rind. He&#8217;d make two incisions on the sides, then deftly extract the pulp without breaking the strip of peel that served as the basket’s handle. For us, the operation was fraught with suspense—a test of papa&#8217;s reputation as a master craftsman—and he delighted in astonishing us with such feats. Like splitting a large walnut into two perfect halves, filling them with melted wax, embedding two or three toothpicks, and attaching small rectangles of white paper marked with red crosses—Columbus’s fleet of caravels en route to the Indies! </span></p>
+<p><span>And we&#8217;d squabble and fight over his creations, and occasionally the fragile handle of the orange basket would snap during our disputes, or the ship&#8217;s sails come crashing down. Whoever managed to grab the thing would tease the others, holding the broken bits together. &#8216;Broken or fixed? Broken or fixed?&#8217; we&#8217;d taunt. My mother hated the riddles we invented for every possible item—be it a piece of bread or a potato chip. &#8216;Why do you say <em>fixed</em>?&#8217; she’d demand. &#8216;Say broken or <em>whole</em>.&#8217; We’d answer incorrectly, on purpose, so that our siblings could reply, ‘Faked you out, faked you out, made you eat a Brussels sprout&#8217;! This was, after all, the era when silly rhymes and the nicknames we invented—<em>Mary with the eyes so scary</em>—added flavor to our everyday world.</span></p>
+
+<p><span>Me and my magician</span></p>
+<p><span>After a meal my grandmother Margherita would absentmindedly smooth anything she could get her hands on: a napkin, the foil from a chocolate, or the tissue paper from the oranges; a gesture perhaps unconscious and superstitious, that gave her the illusion of ironing out life’s troublesome creases. Once the tissue was smoothed—especially its ends that had been crimped around the fruit like twin navels—my father would perform something else that left us spellbound. He would set one edge of the tissue alight with a match, and it would rise from the plate toward the ceiling, alive with flame, like a tiny hot air balloon that burned quickly and left behind only a delicate fragment of ash—weightless, insubstantial, like the conclusion of a dream.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../the-footsteps-of-saint-francis/"><img class="retro-nav-thumb" src="../the-footsteps-of-saint-francis/imgs/74In-the-footsteps-of-Saint-Francis1.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">The Footsteps of Saint Francis</span></span></a>
+  <a class="retro-nav-item next" href="../legend-on-the-golden-horn/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Legend on the Golden Horn</span></span><img class="retro-nav-thumb" src="../legend-on-the-golden-horn/imgs/72A-Legend-on-the-Golden-Horn1.jpg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>

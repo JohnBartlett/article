@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pancakes to go | Francesco Bianchini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Francesco Bianchini</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <img class="hero-img" src="imgs/Pancakes-to-go3-1-500x339.jpeg" alt="Pancakes to go">
+<h1>Pancakes to go</h1>
+      <div class="byline"><strong>By Francesco Bianchini</strong> &nbsp;&bull;&nbsp; May 8, 2021</div>
+    </div>
+    <div class="article-body">
+<p>By <span><span data-hovercard-id="francesco.bianchini@orange.fr" data-hovercard-owner-id="136"><span>Francesco Bianchini</span></span></span></p>
+
+<p><span>Before Dan, there was another Daniel, and I lived with him for a time between New York and Baltimore. To be with him I vacated the house I was renting in Italy and put my things in storage. I left for America without a thought for the teaching job I was supposed to return to in the fall.</span></p>
+
+<p><span> Daniel and I in Baltimore</span></p>
+<p><span>When the sliding doors of the terminal at JFK opened, I was hit by a wall of hot air that almost pushed me back inside. That was my introduction to a country where everything seemed excessive and oversized. The air conditioning in Daniel&#8217;s Volvo station wagon was out of order. We made the trip to Manhattan on a sultry night with my feet hanging out of the window; thighs, arms, and back glued to the vinyl leather of the seat.</span></p>
+<p><span>Moving from the magnificent apartment in an iconic 1920s building overlooking Central Park – as a friend&#8217;s guest – to Daniel&#8217;s Baltimore house was like being thrown from the carriage to find me astride the pumpkin. Daniel&#8217;s apartment – I call him that to distinguish him from the second Dan – was on the top floor of a brownstone, one of those buildings built in the 19th century with red-brown bricks. Nothing bad so far.</span></p>
+
+<p>Daniel’s brownstone in Baltimore</p>
+<p><span>We arrived at night, and the first task was to install an aged air conditioner hovering between the sill and the raised window in the bedroom. We cut some cardboard to plug the gaps and sealed it with tape. It was so hot that I couldn&#8217;t distinguish between the drips of sweat and my tears of frustration. I didn&#8217;t pay too much attention to the state of the apartment and surprisingly was able to sleep, despite the roar of the air conditioner that the next day resembled the illustration of General Winter: icicles dripping from the grill onto the floor.</span></p>
+<p><span>When I awoke, I found Daniel in the kitchen busily preparing breakfast. I loved watching him make scrambled eggs, crisp the bacon in its oil, combine ingredients for his wonderful Bloody Marys. He did it with a concentration of his own, accompanied by an ironic, detached smile. But that hot morning he decided – with an intent I judged perverse – to also make pancakes.</span></p>
+<p><span>They arrived at the table stacked on a plate next to a jar of maple syrup with vicious streaks along the edges. He asked me if I preferred my pancakes fluffy or thin. Then and there I didn&#8217;t answer because I was staring with fascination at the formidable mess of the window-less, suffocating, smoky kitchen. He loaded my plate with a few of them, and before I could protest, had smeared them irremediably with syrup.</span></p>
+
+<p>The All-American breakfast</p>
+<p><span>I chewed the spongy mixture, occasionally burnt, and smelling of whatever oil he had used to grease the pan. It was still early, and yet the stuffiness had begun to creep in. The thick, cloying, sticky syrup was the measure of how I felt. Daniel ran off to work before I could finish even one of those pancakes.</span></p>
+<p><span>He was editor-in-chief of a local paper that came out twice per week. Typically, the night before his deadline, everything seemed to jeopardize his morning exit: one reporter unavailable, another one drunk, articles that still had to be paged, others never delivered.</span></p>
+<p><span>On those days I only saw Daniel when he stumbled home at dawn, usually dog-tired. I used his absences to put the apartment in order. Sometimes it was easier to throw things away than to tidy up. I filled dozens of garbage bags with books, magazines, newspapers, leaflets, old clothes, shoes, scraps of all kinds, and took them to the dumpster in the street. To stave off boredom and earn a little money, I started writing for that same newspaper, book and restaurant reviews &#8211; but I was often left with enough time to perch on the fire escape, smoking with fellow aspiring journalists.</span></p>
+<p><span>When August rolled around, Baltimore emptied out. Deserted asphalt, parched trees, and shuttered windows increased the feeling of overwhelming heat. And with the heat – what with the frustrations at work and my long lonely days – our relationship began to wear thin. Finally one day I announced to Daniel that &#8211; in need of a break – I would be leaving the next day and would rather not tell him where.</span></p>
+<p><span>Daniel walked me to the bus station wondering why I had chosen that means of locomotion. I did know, and when the blue and silver Greyhound bus spun up the ramp to exit the terminal, I felt the same excitement that Sal Paradise experienced as he set out on his adventure on the roads of America. I was not heading west, but rather north: through five Eastern states toward the woods of Connecticut where I hoped to find some cooler weather and a moment of reflection.</span></p>
+
+<p> Flight to freedom</p>
+<p><span>As I watched the marshlands of Delaware, the refineries of New Jersey, and the silhouette of New York City from the bus, I felt the mad euphoria of having disappeared from any radar. Nobody knew where I was, and nobody knew who I was. I answered my seatmate, a prying African-American woman with amaranth-colored curls, by playing the part of the good student going home for summer vacation.</span></p>
+<p><span>At the other end of the trip, I found Richard waiting for me, a pen pal for some time, who had invited me to visit in every letter. Richard lived in a white clapboard house with green shutters sheltered by white oaks, and that first impression was enough to comfort me. It all seemed like the pastoral America of quiet, whitewashed villages, with their flocks of huge trees, pools of coolness in their meadows.</span></p>
+<p><span>Richard wanted to preserve at all costs the original style of his 18th-century house, inside and out. The lightbulbs were of a type that imitated the flickering lights of candles; in the kitchen, I saw no familiar elements – the refrigerator was hidden in a closet, and the stone sink had an upside-down basket to hide the faucets. The living room featured austere furniture and settees that forced rigid postures, and Richard insisted on accompanying me to my room with a candle in his hand.</span></p>
+
+<p>Richard’s Connecticut house</p>
+<p><span>When I descended the next day for breakfast, the pine table in the dining room was set with pretty earthenware and rough hemp napkins and was guarded by the somewhat sullen portraits of the first owners of the house that Richard had found after a long and painstaking genealogical research. The lady, in particular, had a resentful face with a slightly cross-eyed look but pointed without any doubt whatsoever toward the center of the table. There stood a towering plate of pancakes, already adrip with plenty of maple syrup.</span></p>
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../pangs-of-childhood-and-remembrance-of-kitchens-past/"><img class="retro-nav-thumb" src="../pangs-of-childhood-and-remembrance-of-kitchens-past/imgs/Pangs-of-childhood2-731x1024.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Pangs of Childhood – and Remembrance of Kitchens Past</span></span></a>
+  <a class="retro-nav-item next" href="../la-palombaccia/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">La Palombaccia</span></span><img class="retro-nav-thumb" src="../la-palombaccia/imgs/Brick-madness1-500x375.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Francesco Bianchini
+</footer>
+</body>
+</html>
