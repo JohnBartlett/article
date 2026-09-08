@@ -112,8 +112,15 @@ Update the pending table with every article — active and held:
 This is the live source of truth for the edition's build progress — replaces the old
 `editors/edition.html`/`editors/index.html` pages (removed Jun 22, 2026; do not recreate them
 on dev2). It's read directly by `editors/dashboard.html` on the `editors` branch and by anyone
-picking up the edition mid-build. Follow the pattern of a recent edition's STATUS.md (e.g.
-`editions/2026-08-09/STATUS.md`) — structure:
+picking up the edition mid-build.
+
+**Three of these headings are machine-parsed — get them exactly right.**
+`tools/build_editors_dashboard.py`'s `parse_status_md()` reads `## Lineup`,
+`## Pending Deliveries`, and `## Blockers`, and nothing else. Miss them and the dashboard
+silently falls back to a bare folder scan: slugs auto-titled from directory names, `—` in the
+Author and Coordinator columns, and "Nothing tracked" under Decisions Needed. Every STATUS.md
+before Sept 13, 2026 was missing them, which is why the live Article Status table showed blank
+authors for months. Structure:
 
 ```markdown
 # [Month Day, Year] Edition — Status
@@ -128,6 +135,22 @@ Nav chain order (hero → last):
 1. `slug` — Title by Author
 2. ...
 
+## Lineup
+
+| Order | Slug | Title | Author | Coordinator |
+|---|---|---|---|---|
+| 1 | slug | Title | Author Name | Who is sending it (Emma / Annie / Ana / Judy to John) |
+
+## Pending Deliveries
+
+- **Title** (Author) — who owes it and what's still missing. Not received.
+- **New author's bio** — needed for about.html; the byline link is dead until it exists.
+
+## Blockers
+
+- **Anything that stops the build** — ambiguous authorship, an unanswered editorial question,
+  a lineup that hasn't been finalized, missing Astrochart content for next month.
+
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
@@ -140,9 +163,43 @@ Nav chain order (hero → last):
 - Any pending clarifications (e.g. ambiguous authorship), decisions needed, held articles
 ```
 
+Parser requirements, all of which are easy to break by hand:
+
+- `## Lineup` must have **exactly five columns** in that order (`Order | Slug | Title | Author |
+  Coordinator`). Fewer and the row is skipped silently.
+- It needs a header row **and** a separator row — the parser drops the first two rows.
+- No `|` inside a cell, and no em-dash-only slug: `datebook`, `astrochart`, and anything
+  starting `daily-star` are filtered out deliberately, so leave them out of this table (they
+  still belong in `## Articles`).
+- `## Pending Deliveries` and `## Blockers` need a **blank line after the heading**, then
+  `-` bullets. `**bold**` is converted to `<strong>`; nothing else is.
+- Both sections stop at the next `## ` heading, so don't nest anything under them.
+
+`## Articles` and `## Notes` are for humans only — the dashboard ignores them. Keep the fuller
+per-article detail (message IDs, photo counts, caption decisions) there.
+
 At prep time, every article row starts as `Placeholder` / `—`. Update this file every time
 content arrives during `/new-edition` — this is how progress gets tracked now, not a separate
-editors page.
+editors page. Prune `## Pending Deliveries` and `## Blockers` as items land or get answered;
+they're what the editors dashboard shows under Decisions Needed, so a stale entry there reads
+as an open blocker to everyone looking at the page.
+
+**Verify the parse before moving on** — a broken table looks fine in Markdown:
+
+```bash
+source .venv/bin/activate   # build_editors_dashboard imports the GA4 client at module load
+python3 -c "
+import sys; sys.path.insert(0, 'tools')
+import build_editors_dashboard as bed
+ed = bed.find_current_edition(); sd = bed.parse_status_md(ed)
+print('edition:', ed, '| lineup rows:', len(sd['lineup']),
+      '| pending:', len(sd['pending']), '| blockers:', len(sd['blockers']))
+[print('  ', e['order'], e['slug'], '|', e['author'], '|', e['coordinator']) for e in sd['lineup']]
+"
+```
+
+`lineup rows` must equal the number of articles in the nav chain, and every row must show a
+real author and coordinator. If it prints 0 rows, the table shape is wrong.
 
 ## Step 6 — Commit and push
 
