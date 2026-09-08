@@ -234,7 +234,17 @@ def main():
     generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
     ed_label = datetime.strptime(prep_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
     ga4_ed_label = datetime.strptime(ga4_edition, "%Y-%m-%d").strftime("%B %-d, %Y") if ga4_edition else "—"
-    preview_url = f"https://article-dev2.vercel.app/editions/{prep_edition}/"
+
+    # Once an edition is marked PUBLISHED in its own STATUS.md, point at the
+    # live site instead of the (by-then-stale) dev2 preview.
+    status_md_path = Path(__file__).parent.parent / "editions" / prep_edition / "STATUS.md"
+    is_published = status_md_path.exists() and "PUBLISHED to production" in status_md_path.read_text(encoding="utf-8")
+    if is_published:
+        preview_url = f"https://chicagoclassicmag.com/editions/{prep_edition}/"
+        preview_label = "Live →"
+    else:
+        preview_url = f"https://article-dev2.vercel.app/editions/{prep_edition}/"
+        preview_label = "Preview →"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -257,7 +267,7 @@ def main():
     <h1>Classic Chicago Magazine</h1>
     <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#888; margin-top:4px">Editors Dashboard</div>
     <div class="meta">Current edition: <strong>{ed_label}</strong>
-      &nbsp;·&nbsp; <a href="{preview_url}" target="_blank">Preview →</a>
+      &nbsp;·&nbsp; <a href="{preview_url}" target="_blank">{preview_label}</a>
       &nbsp;·&nbsp; Generated {generated_at}</div>
   </div>
 
