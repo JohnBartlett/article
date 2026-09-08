@@ -2,9 +2,10 @@ name: Refresh Editors Dashboard
 
 on:
   schedule:
-    # Hourly, on the hour (UTC). GitHub routinely runs scheduled jobs 1-3 hours
-    # late under load, so treat this as "at most hourly", not a guarantee.
-    - cron: '0 * * * *'
+    # Hourly at :37 (UTC), deliberately NOT on the hour -- GitHub's scheduler is
+    # most congested at :00 and delays or drops runs there. Even so, scheduled
+    # runs are best-effort: treat this as "at most hourly", not a guarantee.
+    - cron: '37 * * * *'
   workflow_dispatch:  # allow manual trigger from GitHub Actions UI
     inputs:
       tools_ref:
