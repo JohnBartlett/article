@@ -19,6 +19,36 @@ DateBook (Annie) is copied forward and linked from the nav bar, not part of the 
 
 What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's story from Emma to John (already delivered and built); Griffin Museum added to Emma with "we should go ahead and do this week"; The Village (Laurel Baar) added to Annie alongside DateBook.
 
+## Lineup
+
+| Order | Slug | Title | Author | Coordinator |
+|---|---|---|---|---|
+| 1 | chitchat | Chitchat | Jill Lowe | Judy to John |
+| 2 | puget-sound | Puget Sound | Elizabeth Dunlop Richter | Ana |
+| 3 | chef | Chef | Sigalit Zetouni | Sig to John |
+| 4 | futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | Judy to John |
+| 5 | griffin-museum | The Griffin Museum | Sydney Armstrong | Emma |
+| 6 | the-village | The Village | Laurel Baar | Annie |
+| 7 | pokemon | Pokemon | Jackson LeJeune | Emma |
+
+## Pending Deliveries
+
+- **Chitchat** (Jill Lowe) — Judy sending directly to John. Not received.
+- **Puget Sound** (Libbet Richter) — via Ana. Not received.
+- **Chef** (Sig) — delayed from Sept 6; Sig sends directly to John. Not received.
+- **The Griffin Museum** (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.
+- **The Village** (Laurel Baar) — via Annie. Not received.
+- **Pokemon** (Jackson LeJeune) — via Emma. Not received.
+- **Laurel Baar's bio** — needed for about.html; her byline link is dead until it exists.
+
+## Blockers
+
+- **Final lineup not received.** Judy's Sept 7 changes email promised it "by tomorrow" (Sept 8). Everything below is built against the Sept 6 draft plus those changes — slugs and order may move.
+- **Field Museum vs. Griffin Museum.** The draft list says "Field Museum by Sydney"; the changes email and cover-shot email both say Griffin. Built as one article (Griffin). Confirm the Field Museum isn't a separate piece needing its own slot.
+- **"Libbet Richter" assumed to be Elizabeth Dunlop Richter** — byline points at the existing anchor on that assumption; unconfirmed.
+- **October Astrochart not yet requested** from Victoria (`vconst@aol.com`). Current page covers through Sept 30, so this is needed before the Sept 27 edition.
+- **Editorial for next week** — Judy asked what John had in mind; reply owed.
+
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
