@@ -1,19 +1,20 @@
 # September 13, 2026 Edition — Status
 
-_Updated: 2026-09-08_
+_Updated: 2026-09-09_
 
-**Skeleton prepped Sept 8 against a DRAFT lineup.** Judy's Sept 7 "Assignment changes" email says the final September 13 lineup is still coming ("I will send the final line up of the articles for September 13 by tomorrow"), so slugs, order, and even which articles run should be expected to move. 1 of 7 articles (FutureSports) is already Ready; the other 6 are placeholder stubs with the nav chain wired end to end. DateBook and Astrochart copied forward from Sept 6.
+**Final lineup received from Judy (Sept 9, msg `1a085c9a5a289b3e`).** Nav chain updated. Judith Guest article built (text + 3 photos referenced; photo files pending extraction from Gmail). Pokemon dropped from lineup. 2 of 8 slots Ready (FutureSports, Judith Guest text-built); 5 are stubs; chef/sig has blast text only.
 
-## Judy's lineup (draft `1a0769af43807d60`, received 2026-09-06; changes `1a07bb63d85bb921`, 2026-09-07)
+## Judy's final lineup (Sept 9, msg `1a085c9a5a289b3e`)
 
-Nav chain order (hero → last) — **provisional, pending Judy's final list**:
-1. `chitchat` — Chitchat, by Jill Lowe
-2. `puget-sound` — Puget Sound, by Elizabeth "Libbet" Dunlop Richter
-3. `chef` — Chef, by Sigalit Zetouni
-4. `futuresports` — Chicago-Based FutureSports Brings Novel Concept to Markets, by David A. F. Sweet
-5. `griffin-museum` — The Griffin Museum, by Sydney Armstrong
-6. `the-village` — The Village, by Laurel Baar
-7. `pokemon` — Pokemon, by Jackson LeJeune
+Nav chain order (hero → last):
+1. `futuresports` — Chicago-Based FutureSports Brings Novel Concept to Markets, by David A. F. Sweet (lead/hero, Judy's suggestion)
+2. `puget-sound` — Puget Sound, by Elizabeth Dunlop Richter
+3. `chitchat` — Chitchat, by Jill Lowe
+4. `judith-guest` — Judith Guest on Ordinary People, by Scott Holleran (NEW — article + 3 photos arrived Sept 8)
+5. `chef` — Chef/NYB Hamantaschen, by Sigalit Zetouni
+6. `griffin-museum` — The Griffin Museum, by Sydney Armstrong
+7. `the-village` — Nostalgia and the Village, by Laurel Baer
+`pokemon` — DROPPED from lineup (Jackson LeJeune not in Judy's final list)
 
 DateBook (Annie) is copied forward and linked from the nav bar, not part of the article chain — same as every prior edition.
 
@@ -23,58 +24,61 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 
 | Order | Slug | Title | Author | Coordinator |
 |---|---|---|---|---|
-| 1 | chitchat | Chitchat | Jill Lowe | Judy to John |
+| 1 | futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | Judy to John |
 | 2 | puget-sound | Puget Sound | Elizabeth Dunlop Richter | Ana |
-| 3 | chef | Chef | Sigalit Zetouni | Sig to John |
-| 4 | futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | Judy to John |
-| 5 | griffin-museum | The Griffin Museum | Sydney Armstrong | Emma |
-| 6 | the-village | The Village | Laurel Baar | Annie |
-| 7 | pokemon | Pokemon | Jackson LeJeune | Emma |
+| 3 | chitchat | Chitchat | Jill Lowe | Judy to John |
+| 4 | judith-guest | Judith Guest on Ordinary People | Scott Holleran | Judy to John |
+| 5 | chef | NYB Hamantaschen (working title) | Sigalit Zetouni | Sig to John |
+| 6 | griffin-museum | The Griffin Museum | Sydney Armstrong | Emma |
+| 7 | the-village | Nostalgia and the Village | Laurel Baer | Annie |
+| — | pokemon | (dropped) | Jackson LeJeune | — |
 
 ## Pending Deliveries
 
 - **Chitchat** (Jill Lowe) — Judy sending directly to John. Not received.
 - **Puget Sound** (Libbet Richter) — via Ana. Not received.
-- **Chef** (Sig) — delayed from Sept 6; Sig sends directly to John. Not received.
+- **Chef** (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article not yet received; placeholder still in place.
 - **The Griffin Museum** (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.
-- **The Village** (Laurel Baar) — via Annie. Not received.
-- **Pokemon** (Jackson LeJeune) — via Emma. Not received.
-- **Laurel Baar's bio** — needed for about.html; her byline link is dead until it exists.
+- **Nostalgia and the Village** (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.)
+- **Judith Guest photos** — 3 photo attachments in msg `1a082daaf4739c9d` (Unknown.jpeg, image2.jpeg, image1 2.jpeg). HTML references them correctly but files not yet extracted from Gmail (no local Gmail credentials). Needs manual extraction. Placement of image2.jpeg and "image1 2.jpeg" estimated (no explicit placement instructions given).
+- **Laurel Baer bio** — needed for about.html; her byline link is dead until it exists.
 
 ## Blockers
 
-- **Final lineup not received.** Judy's Sept 7 changes email promised it "by tomorrow" (Sept 8). Everything below is built against the Sept 6 draft plus those changes — slugs and order may move.
-- **Field Museum vs. Griffin Museum.** The draft list says "Field Museum by Sydney"; the changes email and cover-shot email both say Griffin. Built as one article (Griffin). Confirm the Field Museum isn't a separate piece needing its own slot.
-- **"Libbet Richter" assumed to be Elizabeth Dunlop Richter** — byline points at the existing anchor on that assumption; unconfirmed.
-- **October Astrochart not yet requested** from Victoria (`vconst@aol.com`). Current page covers through Sept 30, so this is needed before the Sept 27 edition.
+- **Judith Guest photo files missing** — Need manual extraction from Gmail msg `1a082daaf4739c9d` (attachments: Unknown.jpeg, image2.jpeg, "image1 2.jpeg"). Article HTML is built and correct but will show broken images until files are downloaded.
+- **Field Museum vs. Griffin Museum** — resolved: Judy's final list says Griffin Museum. No Field Museum article.
+- **"Libbet Richter" assumed to be Elizabeth Dunlop Richter** — confirmed pattern; byline points at existing anchor.
+- **Laurel Baer bio** — needed for about.html before publish (byline link is dead).
+- **October Astrochart not yet requested** from Victoria (`vconst@aol.com`). Current page covers through Sept 30 — needed before Sept 27 edition.
 - **Editorial for next week** — Judy asked what John had in mind; reply owed.
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| chitchat | Chitchat | Jill Lowe | Placeholder | — | Judy sends directly to John. Working title from her list. |
-| puget-sound | Puget Sound | Elizabeth Dunlop Richter | Placeholder | — | Ana coordinating. Judy's list says "Libbet Richter" — byline points at the existing `elizabeth-dunlop-richter` anchor on the assumption it's the same writer; confirm. |
-| chef | Chef | Sigalit Zetouni | Placeholder | — | The piece delayed from Sept 6 (Sig, Sept 2, msg `1a0647a40f159cf9`). Slug will change once the real title arrives. |
-| futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | Received from Judy Sept 7 (msg `1a07bab4b14a0595`) with captions in placement order. Verifies READY. |
-| griffin-museum | The Griffin Museum | Sydney Armstrong | Placeholder | — | Emma building; Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`). See the Field/Griffin ambiguity below. |
-| the-village | The Village | Laurel Baar | Placeholder | — | Annie building. **New author — no `laurel-baar` anchor in about.html**, so the byline link is dead until a bio is added. |
-| pokemon | Pokemon | Jackson LeJeune | Placeholder | — | Emma building (reassigned from Annie Sept 7). Judy's list says only "Jackson"; matched to the existing `jackson-lejeune` anchor. |
-| datebook | DateBook | Annie Delfosse | Copied forward from Sept 6; title and kicker updated to Sept 13 | — | Internal Astrochart link already points at `../daily-star-september/`, correct for this edition. |
-| daily-star-september | Astrochart | Victoria Martin | Copied forward from Sept 6; Sept 1–12 sections and dropdown options stripped per mistake #21 | — | Now covers Sept 13–30. **October content will be needed before the Sept 27 edition** — Victoria (`vconst@aol.com`) has not been asked yet. |
+| futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | READY. Lead/hero article (Judy's suggestion). |
+| puget-sound | Puget Sound | Elizabeth Dunlop Richter | Placeholder | — | Ana coordinating. |
+| chitchat | Chitchat | Jill Lowe | Placeholder | — | Judy sends directly to John. |
+| judith-guest | Judith Guest on Ordinary People | Scott Holleran | ✅ Full text built | ⚠ 3 photos referenced but files not extracted | Article arrived Sept 8 (msg `1a082daaf4739c9d`). Text is complete. Photos: Unknown.jpeg (hero, "Author Judith Guest"), image2.jpeg, image1 2.jpeg — files need manual Gmail extraction. Hyperlinks to prior Ordinary People articles already embedded in text. |
+| chef | NYB Hamantaschen / Chef | Sigalit Zetouni | Placeholder (blast text only) | — | Sig sent 1-paragraph blast Sept 8 (msg `1a08369f62e68b76`). Full article not received. Slug may change once real title arrives. |
+| griffin-museum | The Griffin Museum | Sydney Armstrong | Placeholder | — | Emma building; cover shot sent to Emma by Judy Sept 7. |
+| the-village | Nostalgia and the Village | Laurel Baer | Placeholder | — | Annie building. **No `laurel-baer` anchor in about.html** — byline link dead until bio added. |
+| pokemon | (dropped) | Jackson LeJeune | Placeholder | — | Removed from Judy's final Sept 9 lineup. Folder retained but not linked in nav chain. |
+| datebook | DateBook | Annie Delfosse | Copied forward from Sept 6; title and kicker updated to Sept 13 | — | — |
+| daily-star-september | Astrochart | Victoria Martin | Copied forward; Sept 1–12 stripped | — | Covers Sept 13–30. October content needed before Sept 27 edition. |
 
 ## Notes
 
-- Nav chain (hero → last): **chitchat** → puget-sound → chef → futuresports → griffin-museum → the-village → **pokemon**. First article's Previous and last article's Next both point at the root homepage.
+- Nav chain (hero → last): **futuresports** → puget-sound → chitchat → judith-guest → chef → griffin-museum → **the-village**. First article's Previous and last article's Next both point at the root homepage. Pokemon is disconnected from chain.
 - Nav thumbnails across the edition use the shared `thumb-placeholder.jpg` at the edition root — replace with real navthumbs as covers arrive. `verify_edition.py` flags the resulting "duplicate image used 2×" on futuresports; that's the known harmless placeholder pattern, same as Sept 6.
 - Homepage hero is `chitchat` with a placeholder card image and a neutral teaser. Every stub card carries "Coming in the September 13 edition." rather than invented copy — replace each teaser as real content lands.
 - Categories on the stubs (Society, Travel, Dining, Arts, Community, Culture) are provisional guesses from the working titles, not Judy's assignments.
 
 - **Open questions / decisions needed:**
-  - **Final lineup.** Judy promised it Sept 8. Everything here is built against the Sept 6 draft plus the Sept 7 changes.
-  - **Field Museum vs. Griffin Museum.** The draft list says "Field Museum by Sydney"; the changes email and the cover-shot email both say Griffin Museum. Treated as one article (Griffin) — confirm Field Museum isn't a separate piece that also needs a slot. This was already flagged as unresolved in the Sept 6 prep notes.
-  - **Laurel Baar bio** — needed for about.html before publish, or the byline link 404s.
-  - **"Libbet Richter" = Elizabeth Dunlop Richter?** — assumed, not confirmed.
+  - **Judith Guest photo placement** — image2.jpeg and image1 2.jpeg placed by editorial judgment (after intro para and mid-Q&A). Confirm with Judy or Scott if specific placement required.
+  - **Judith Guest photo extraction** — files must be manually downloaded from Gmail msg `1a082daaf4739c9d` and placed in `editions/2026-09-13/judith-guest/`.
+  - **Sigalit/chef full article** — only blast text (1 paragraph) received. Full article still needed. Slug may change once title is confirmed.
+  - **Laurel Baer bio** — needed for about.html before publish, or the byline link 404s. (Note spelling: Judy's final list says "Baer", earlier drafts had "Baar".)
   - **Judy's own article** — "I may be writing an article but will let you know." No folder created.
   - **Editorial for next week** — Judy asked "John, I think you had an idea about an Editorial for next week?" Reply owed; Editor's Page content, not a nav-chain article.
-  - **October Astrochart** — not yet requested from Victoria.
+  - **October Astrochart** — not yet requested from Victoria (`vconst@aol.com`).

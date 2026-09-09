@@ -459,11 +459,10 @@
 
       <!-- Article Navigation — order must match homepage card order -->
       <div class="edition-nav">
-        <img class="nav-thumb" src="../thumb-placeholder.jpg" alt=""><a href="../chef/" class="back-link">&larr; Previous</a>
-        <img class="nav-thumb" src="../thumb-placeholder.jpg" alt=""><a href="../griffin-museum/" class="back-link">Next &rarr;</a>
-      </div>
+        <a href="../../../index.html" class="back-link">&larr; Back to Sunday Edition</a>
         <div class="nav-item">
-          <a href="../../../index.html" class="back-link">Next &rarr;</a>
+          <img class="nav-thumb" src="../thumb-placeholder.jpg" alt="">
+          <a href="../puget-sound/" class="back-link">Next &rarr;</a>
         </div>
       </div>
 
@@ -495,8 +494,8 @@
 
   <!-- Keyboard nav -->
   <script>
-    var prevUrl = '../chef/';
-    var nextUrl = '../griffin-museum/';
+    var prevUrl = '../../../index.html';
+    var nextUrl = '../puget-sound/';
     document.addEventListener('keydown', function(e) {
       var tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
