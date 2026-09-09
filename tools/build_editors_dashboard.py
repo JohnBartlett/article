@@ -255,8 +255,12 @@ def main():
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
 {bsp.CSS}
-    .jump-links {{ display:flex; gap:16px; flex-wrap:wrap; margin: 16px 0 28px; font-size:0.8rem; }}
-    .jump-links a {{ color:#888; text-transform:uppercase; letter-spacing:0.5px; }}
+    .jump-links {{ display:flex; gap:8px; flex-wrap:wrap; margin: 20px 0 28px; padding: 14px; background:#fff; border:1px solid #e0ddd8; border-radius:6px; }}
+    .jump-links a {{ display:inline-block; background:#f7f5f0; border:1px solid #ddd8d0; border-radius:20px;
+                      padding:7px 16px; font-size:0.72rem; font-weight:700; text-transform:uppercase;
+                      letter-spacing:0.6px; color:#555; text-decoration:none; white-space:nowrap;
+                      transition: background 0.15s, color 0.15s, border-color 0.15s; }}
+    .jump-links a:hover {{ background:#c41e3a; border-color:#c41e3a; color:#fff; text-decoration:none; }}
     section {{ margin-bottom: 40px; }}
     section h2 {{ font-family:'Playfair Display',serif; font-size:1.3rem; border-bottom:2px solid #1a1a1a; padding-bottom:8px; margin-bottom:14px; }}
   </style>
