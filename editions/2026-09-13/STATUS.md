@@ -1,8 +1,10 @@
 # September 13, 2026 Edition — Status
 
-_Updated: 2026-09-09_
+_Updated: 2026-09-10_
 
 **Final lineup received from Judy (Sept 9, msg `1a085c9a5a289b3e`).** Nav chain updated. Judith Guest article built (text + 3 photos referenced; photo files pending extraction from Gmail). Pokemon dropped from lineup. 2 of 8 slots Ready (FutureSports, Judith Guest text-built); 5 are stubs; chef/sig has blast text only.
+
+**Sept 10 email check:** Chitchat PDF arrived Sept 6 (msg `1a078281b3a3a56d`, attached to original email); photos arrived Sept 7 (msg `1a07b81e5713587c`, 7 attachments: shutterstock_2039784620.jpeg, shutterstock_2779946955.jpeg, shutterstock_2660425777.jpeg, Screenshot 2026-09-05 at 16.51.53.png, Screenshot 2026-09-04 at 13.40.54.png, shutterstock_2537796621.jpeg, shutterstock_2758830333.jpeg). Cannot auto-extract (no local Gmail credentials); needs manual download. Two cover photo candidates for The Village sent by Judy to Annie+John: `TVC 7.jpeg` (msg `1a08b051c167e9e1`) and `collage for 2026 Benefit.png` (msg `1a08b042b7348975`). Ana says Puget Sound in progress, sending by Friday. Sigalit/chef: blast text only, no full article yet.
 
 ## Judy's final lineup (Sept 9, msg `1a085c9a5a289b3e`)
 
@@ -35,7 +37,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 
 ## Pending Deliveries
 
-- **Chitchat** (Jill Lowe) — Judy sending directly to John. Not received.
+- **Chitchat** (Jill Lowe) — PDF article arrived Sept 6 (msg `1a078281b3a3a56d`); 7 photos arrived Sept 7 (msg `1a07b81e5713587c`). Needs manual extraction from Gmail (no local credentials in remote session). Manually download PDF + photos → build article.
 - **Puget Sound** (Libbet Richter) — via Ana. Not received.
 - **Chef** (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article not yet received; placeholder still in place.
 - **The Griffin Museum** (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.
@@ -58,7 +60,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 |------|-------|--------|------|--------|-------|
 | futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | READY. Lead/hero article (Judy's suggestion). |
 | puget-sound | Puget Sound | Elizabeth Dunlop Richter | Placeholder | — | Ana coordinating. |
-| chitchat | Chitchat | Jill Lowe | Placeholder | — | Judy sends directly to John. |
+| chitchat | Chitchat | Jill Lowe | Placeholder | — | PDF arrived msg `1a078281b3a3a56d`; 7 photos arrived msg `1a07b81e5713587c`. Needs manual extraction. |
 | judith-guest | Judith Guest on Ordinary People | Scott Holleran | ✅ Full text built | ⚠ 3 photos referenced but files not extracted | Article arrived Sept 8 (msg `1a082daaf4739c9d`). Text is complete. Photos: Unknown.jpeg (hero, "Author Judith Guest"), image2.jpeg, image1 2.jpeg — files need manual Gmail extraction. Hyperlinks to prior Ordinary People articles already embedded in text. |
 | chef | NYB Hamantaschen / Chef | Sigalit Zetouni | Placeholder (blast text only) | — | Sig sent 1-paragraph blast Sept 8 (msg `1a08369f62e68b76`). Full article not received. Slug may change once real title arrives. |
 | griffin-museum | The Griffin Museum | Sydney Armstrong | Placeholder | — | Emma building; cover shot sent to Emma by Judy Sept 7. |
