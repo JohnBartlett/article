@@ -1,10 +1,12 @@
 # September 13, 2026 Edition — Status
 
-_Updated: 2026-09-10_
+_Updated: 2026-09-11_
 
-**Final lineup received from Judy (Sept 9, msg `1a085c9a5a289b3e`).** Nav chain updated. Judith Guest article built (text + 3 photos referenced; photo files pending extraction from Gmail). Pokemon dropped from lineup. 2 of 8 slots Ready (FutureSports, Judith Guest text-built); 5 are stubs; chef/sig has blast text only.
+**Final lineup received from Judy (Sept 9, msg `1a085c9a5a289b3e`).** Nav chain updated. Judith Guest article built (text + 3 photos referenced; photo files pending extraction from Gmail). Pokemon dropped from lineup. 2 of 8 slots Ready (FutureSports); 1 text-built pending photos (Puget Sound, Judith Guest); 4 are stubs; chef/sig has blast text only.
 
-**Sept 10 email check:** Chitchat PDF arrived Sept 6 (msg `1a078281b3a3a56d`, attached to original email); photos arrived Sept 7 (msg `1a07b81e5713587c`, 7 attachments: shutterstock_2039784620.jpeg, shutterstock_2779946955.jpeg, shutterstock_2660425777.jpeg, Screenshot 2026-09-05 at 16.51.53.png, Screenshot 2026-09-04 at 13.40.54.png, shutterstock_2537796621.jpeg, shutterstock_2758830333.jpeg). Cannot auto-extract (no local Gmail credentials); needs manual download. Two cover photo candidates for The Village sent by Judy to Annie+John: `TVC 7.jpeg` (msg `1a08b051c167e9e1`) and `collage for 2026 Benefit.png` (msg `1a08b042b7348975`). Ana says Puget Sound in progress, sending by Friday. Sigalit/chef: blast text only, no full article yet.
+**Sept 10 email check:** Chitchat PDF arrived Sept 6 (msg `1a078281b3a3a56d`, attached to original email); photos arrived Sept 7 (msg `1a07b81e5713587c`, 7 attachments: shutterstock_2039784620.jpeg, shutterstock_2779946955.jpeg, shutterstock_2660425777.jpeg, Screenshot 2026-09-05 at 16.51.53.png, Screenshot 2026-09-04 at 13.40.54.png, shutterstock_2537796621.jpeg, shutterstock_2758830333.jpeg). Cannot auto-extract (no local Gmail credentials); needs manual download. Two cover photo candidates for The Village sent by Judy to Annie+John: `TVC 7.jpeg` (msg `1a08b051c167e9e1`) and `collage for 2026 Benefit.png` (msg `1a08b042b7348975`). Sigalit/chef: blast text only, no full article yet.
+
+**Sept 11 email check:** Puget Sound full article + 22 photos arrived from Ana (msg `1a08bc49f7b39acb`, sent Sept 10). HTML built with all 22 inline photos and captions per Ana's placement markers. Photo files need downloading from Gmail (22 attachments + COVER). Title: "When Your Lawn Ornament Is an Airplane…". One minor text artifact: "o]er" in "his uncle's 2001 o]er to sell him" — rendered as "offer" (clear PDF/encoding corruption, not contributor's spelling). Judy asked about name correction in Jafra article (Hanan→Hamed, Sept 10 msg `1a08b3cf024db009`) — already fixed in prior session (commit 91c624f). Cover photo candidates for The Village: `TVC 7.jpeg` confirmed from Judy (msg `1a08b051c167e9e1`); article text still not received from Annie/Laurel Baer.
 
 ## Judy's final lineup (Sept 9, msg `1a085c9a5a289b3e`)
 
@@ -38,7 +40,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 ## Pending Deliveries
 
 - **Chitchat** (Jill Lowe) — PDF article arrived Sept 6 (msg `1a078281b3a3a56d`); 7 photos arrived Sept 7 (msg `1a07b81e5713587c`). Needs manual extraction from Gmail (no local credentials in remote session). Manually download PDF + photos → build article.
-- **Puget Sound** (Libbet Richter) — via Ana. Not received.
+- **Puget Sound** (Libbet Richter) — ✅ Full article received Sept 10 (msg `1a08bc49f7b39acb`). HTML built. **Photo files still need manual extraction** from Gmail (22 attachments + COVER; message id `1a08bc49f7b39acb`, from anabaca8@gmail.com).
 - **Chef** (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article not yet received; placeholder still in place.
 - **The Griffin Museum** (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.
 - **Nostalgia and the Village** (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.)
@@ -59,7 +61,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
 | futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | READY. Lead/hero article (Judy's suggestion). |
-| puget-sound | Puget Sound | Elizabeth Dunlop Richter | Placeholder | — | Ana coordinating. |
+| puget-sound | When Your Lawn Ornament Is an Airplane… | Elizabeth Dunlop Richter | ✅ Full text built | ⚠ 22 photos referenced but files not extracted | Full article arrived Sept 10 (msg `1a08bc49f7b39acb` via Ana). 22 inline figures + COVER card image. Photo files need manual Gmail extraction. |
 | chitchat | Chitchat | Jill Lowe | Placeholder | — | PDF arrived msg `1a078281b3a3a56d`; 7 photos arrived msg `1a07b81e5713587c`. Needs manual extraction. |
 | judith-guest | Judith Guest on Ordinary People | Scott Holleran | ✅ Full text built | ⚠ 3 photos referenced but files not extracted | Article arrived Sept 8 (msg `1a082daaf4739c9d`). Text is complete. Photos: Unknown.jpeg (hero, "Author Judith Guest"), image2.jpeg, image1 2.jpeg — files need manual Gmail extraction. Hyperlinks to prior Ordinary People articles already embedded in text. |
 | chef | NYB Hamantaschen / Chef | Sigalit Zetouni | Placeholder (blast text only) | — | Sig sent 1-paragraph blast Sept 8 (msg `1a08369f62e68b76`). Full article not received. Slug may change once real title arrives. |
