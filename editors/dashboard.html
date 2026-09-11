@@ -93,7 +93,7 @@ a:hover { text-decoration: underline; }
     <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#888; margin-top:4px">Editors Dashboard</div>
     <div class="meta">Current edition: <strong>September 13, 2026</strong>
       &nbsp;·&nbsp; <a href="https://article-dev2.vercel.app/editions/2026-09-13/" target="_blank">Preview →</a>
-      &nbsp;·&nbsp; Generated 9/11/2026 at 11:58 AM</div>
+      &nbsp;·&nbsp; Generated 9/11/2026 at 4:59 PM</div>
   </div>
 
   <nav class="jump-links">
@@ -110,7 +110,7 @@ a:hover { text-decoration: underline; }
   <section id="status">
     <h2>Article Status</h2>
     
-    <div class="stat-sub" style="margin-bottom:14px"><span style="color:#2a7a2a; font-weight:700;">Ready</span> 1 &nbsp;·&nbsp; <span style="color:#b5860b; font-weight:700;">Text Only</span> 1 &nbsp;·&nbsp; <span style="color:#b5860b; font-weight:700;">In Progress</span> 2 &nbsp;·&nbsp; <span style="color:#c41e3a; font-weight:700;">Placeholder</span> 4</div>
+    <div class="stat-sub" style="margin-bottom:14px"><span style="color:#2a7a2a; font-weight:700;">Ready</span> 1 &nbsp;·&nbsp; <span style="color:#b5860b; font-weight:700;">Text Only</span> 2 &nbsp;·&nbsp; <span style="color:#b5860b; font-weight:700;">In Progress</span> 2 &nbsp;·&nbsp; <span style="color:#c41e3a; font-weight:700;">Placeholder</span> 3</div>
     <table>
       <thead><tr><th>Article</th><th>Author</th><th>Coordinator</th><th>Status</th></tr></thead>
       <tbody><tr>
@@ -122,7 +122,7 @@ a:hover { text-decoration: underline; }
   <td>Puget Sound<div class="muted" style="font-size:0.75rem">puget-sound</div></td>
   <td>Elizabeth Dunlop Richter</td>
   <td>Ana</td>
-  <td><span style="color:#c41e3a; font-weight:700;">Placeholder</span><div class="muted" style="font-size:0.75rem">no content, no photos</div></td>
+  <td><span style="color:#b5860b; font-weight:700;">Text Only</span><div class="muted" style="font-size:0.75rem">content but no photos</div></td>
 </tr><tr>
   <td>Chitchat<div class="muted" style="font-size:0.75rem">chitchat</div></td>
   <td>Jill Lowe</td>
@@ -160,27 +160,27 @@ a:hover { text-decoration: underline; }
 
   <section id="decisions">
     <h2>Decisions Needed</h2>
-    <div style="margin-bottom:16px"><strong>Pending Deliveries</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Chitchat</strong> (Jill Lowe) — PDF article arrived Sept 6 (msg `1a078281b3a3a56d`); 7 photos arrived Sept 7 (msg `1a07b81e5713587c`). Needs manual extraction from Gmail (no local credentials in remote session). Manually download PDF + photos → build article.</li><li><strong>Puget Sound</strong> (Libbet Richter) — via Ana. Not received.</li><li><strong>Chef</strong> (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article not yet received; placeholder still in place.</li><li><strong>The Griffin Museum</strong> (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.</li><li><strong>Nostalgia and the Village</strong> (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.)</li><li><strong>Judith Guest photos</strong> — 3 photo attachments in msg `1a082daaf4739c9d` (Unknown.jpeg, image2.jpeg, image1 2.jpeg). HTML references them correctly but files not yet extracted from Gmail (no local Gmail credentials). Needs manual extraction. Placement of image2.jpeg and "image1 2.jpeg" estimated (no explicit placement instructions given).</li><li><strong>Laurel Baer bio</strong> — needed for about.html; her byline link is dead until it exists.</li></ul></div><div><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Judith Guest photo files missing</strong> — Need manual extraction from Gmail msg `1a082daaf4739c9d` (attachments: Unknown.jpeg, image2.jpeg, "image1 2.jpeg"). Article HTML is built and correct but will show broken images until files are downloaded.</li><li><strong>Field Museum vs. Griffin Museum</strong> — resolved: Judy's final list says Griffin Museum. No Field Museum article.</li><li><strong>"Libbet Richter" assumed to be Elizabeth Dunlop Richter</strong> — confirmed pattern; byline points at existing anchor.</li><li><strong>Laurel Baer bio</strong> — needed for about.html before publish (byline link is dead).</li><li><strong>October Astrochart not yet requested</strong> from Victoria (`vconst@aol.com`). Current page covers through Sept 30 — needed before Sept 27 edition.</li><li><strong>Editorial for next week</strong> — Judy asked what John had in mind; reply owed.</li></ul></div>
+    <div style="margin-bottom:16px"><strong>Pending Deliveries</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Chitchat</strong> (Jill Lowe) — PDF article arrived Sept 6 (msg `1a078281b3a3a56d`); 7 photos arrived Sept 7 (msg `1a07b81e5713587c`). Needs manual extraction from Gmail (no local credentials in remote session). Manually download PDF + photos → build article.</li><li><strong>Puget Sound</strong> (Libbet Richter) — ✅ Full article received Sept 10 (msg `1a08bc49f7b39acb`). HTML built. <strong>Photo files still need manual extraction</strong> from Gmail (22 attachments + COVER; message id `1a08bc49f7b39acb`, from anabaca8@gmail.com).</li><li><strong>Chef</strong> (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article not yet received; placeholder still in place.</li><li><strong>The Griffin Museum</strong> (Sydney Armstrong) — via Emma. Judy sent the cover shot to Emma Sept 7 (msg `1a07c5bcbb70d346`); article text not received.</li><li><strong>Nostalgia and the Village</strong> (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.)</li><li><strong>Judith Guest photos</strong> — 3 photo attachments in msg `1a082daaf4739c9d` (Unknown.jpeg, image2.jpeg, image1 2.jpeg). HTML references them correctly but files not yet extracted from Gmail (no local Gmail credentials). Needs manual extraction. Placement of image2.jpeg and "image1 2.jpeg" estimated (no explicit placement instructions given).</li><li><strong>Laurel Baer bio</strong> — needed for about.html; her byline link is dead until it exists.</li></ul></div><div><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Judith Guest photo files missing</strong> — Need manual extraction from Gmail msg `1a082daaf4739c9d` (attachments: Unknown.jpeg, image2.jpeg, "image1 2.jpeg"). Article HTML is built and correct but will show broken images until files are downloaded.</li><li><strong>Field Museum vs. Griffin Museum</strong> — resolved: Judy's final list says Griffin Museum. No Field Museum article.</li><li><strong>"Libbet Richter" assumed to be Elizabeth Dunlop Richter</strong> — confirmed pattern; byline points at existing anchor.</li><li><strong>Laurel Baer bio</strong> — needed for about.html before publish (byline link is dead).</li><li><strong>October Astrochart not yet requested</strong> from Victoria (`vconst@aol.com`). Current page covers through Sept 30 — needed before Sept 27 edition.</li><li><strong>Editorial for next week</strong> — Judy asked what John had in mind; reply owed.</li></ul></div>
   </section>
 
   <section id="spotlight">
     <h2>Latest Published Edition Spotlight — September 6, 2026</h2>
     
     <h3>Today (2026-09-11)</h3>
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">14</div><div class="stat-label">Pageviews</div></div><div class="stat-card"><div class="stat-val">13</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">12</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">0:06</div><div class="stat-label">Avg. Engagement</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">31</div><div class="stat-label">Pageviews</div></div><div class="stat-card"><div class="stat-val">27</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">23</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">0:15</div><div class="stat-label">Avg. Engagement</div></div></div>
 
     <h3>Since Publication (2026-09-06 – 2026-09-11)</h3>
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">952</div><div class="stat-label">Pageviews</div><div class="stat-sub">since publication</div></div><div class="stat-card"><div class="stat-val">714</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">588</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">373</div><div class="stat-label">New Users</div></div><div class="stat-card"><div class="stat-val">1:32</div><div class="stat-label">Avg. Engagement</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">954</div><div class="stat-label">Pageviews</div><div class="stat-sub">since publication</div></div><div class="stat-card"><div class="stat-val">717</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">590</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">373</div><div class="stat-label">New Users</div></div><div class="stat-card"><div class="stat-val">1:32</div><div class="stat-label">Avg. Engagement</div></div></div>
 
     <h3>Top Articles This Edition</h3>
     <table>
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
-      <tbody><tr><td><span class="rank">#1</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/silvia-beltrametti-satire/" target="_blank">Ink and Outrage at the Driehaus Museum</a></td><td class="num">210</td><td class="num">150</td><td class="num">1:50</td></tr>
+      <tbody><tr><td><span class="rank">#1</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/silvia-beltrametti-satire/" target="_blank">Ink and Outrage at the Driehaus Museum</a></td><td class="num">211</td><td class="num">151</td><td class="num">1:50</td></tr>
 <tr><td><span class="rank">#2</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/sounds-good-choir-river/" target="_blank">Sounds Good Choir on the River</a></td><td class="num">149</td><td class="num">135</td><td class="num">1:08</td></tr>
 <tr><td><span class="rank">#3</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/rush-benefit/" target="_blank">All Are Welcome at the Queen’s Table</a></td><td class="num">137</td><td class="num">126</td><td class="num">1:18</td></tr>
-<tr><td><span class="rank">#4</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook/" target="_blank">Dr. Ruth Gannon-Cook: The Female Robert Langdon</a></td><td class="num">114</td><td class="num">87</td><td class="num">0:57</td></tr>
+<tr><td><span class="rank">#4</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook/" target="_blank">Dr. Ruth Gannon-Cook: The Female Robert Langdon</a></td><td class="num">114</td><td class="num">88</td><td class="num">0:56</td></tr>
 <tr><td><span class="rank">#5</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/tadoussac/" target="_blank">A Photo Trip to Tadoussac</a></td><td class="num">89</td><td class="num">69</td><td class="num">1:44</td></tr>
-<tr><td><span class="rank">#6</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/fill-the-stands/" target="_blank">How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports</a></td><td class="num">57</td><td class="num">47</td><td class="num">0:41</td></tr>
+<tr><td><span class="rank">#6</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/fill-the-stands/" target="_blank">How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports</a></td><td class="num">58</td><td class="num">47</td><td class="num">0:40</td></tr>
 <tr><td><span class="rank">#7</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/jafra-canaan-wellspring/" target="_blank">Young Dancer's Perspective</a></td><td class="num">29</td><td class="num">21</td><td class="num">2:08</td></tr></tbody>
     </table>
 
@@ -190,6 +190,16 @@ a:hover { text-decoration: underline; }
     <h2>Votes &amp; Comments — September 6, 2026</h2>
     
 <div class="article-vote-row">
+  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/tadoussac" target="_blank">A Photo Trip to Tadoussac</a></div>
+  <div class="vote-bar">
+      <div class="vote-yes" style="width:100%"></div>
+    </div>
+    <span class="vote-label">7 Yes · 0 No · 100% positive</span>
+  <div style="margin-top:8px"><div class="comment-block">Splendid photos, Marjorie! You have captured this charming historic place so beautifully! Thank you for sharing your lovely visit!</div><div class="comment-block">Lovely! Thank you, Judy!</div><div class="comment-block">Superb companion piece to Judy Bross 's articles onMurray Bay.
+ So lovely.
+I want to go!</div></div>
+</div>
+<div class="article-vote-row">
   <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/sounds-good-choir-river" target="_blank">Sounds Good Choir on the River</a></div>
   <div class="vote-bar">
       <div class="vote-yes" style="width:100%"></div>
@@ -198,14 +208,12 @@ a:hover { text-decoration: underline; }
   <div style="margin-top:8px"><div class="comment-block">Uplifting</div></div>
 </div>
 <div class="article-vote-row">
-  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/tadoussac" target="_blank">A Photo Trip to Tadoussac</a></div>
+  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/fill-the-stands" target="_blank">How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports</a></div>
   <div class="vote-bar">
       <div class="vote-yes" style="width:100%"></div>
     </div>
-    <span class="vote-label">6 Yes · 0 No · 100% positive</span>
-  <div style="margin-top:8px"><div class="comment-block">Splendid photos, Marjorie! You have captured this charming historic place so beautifully! Thank you for sharing your lovely visit!</div><div class="comment-block">Lovely! Thank you, Judy!</div><div class="comment-block">Superb companion piece to Judy Bross 's articles onMurray Bay.
- So lovely.
-I want to go!</div></div>
+    <span class="vote-label">5 Yes · 0 No · 100% positive</span>
+  <div style="margin-top:8px"><span class="muted">No written comments.</span></div>
 </div>
 <div class="article-vote-row">
   <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook" target="_blank">Dr. Ruth Gannon</a></div>
@@ -214,14 +222,6 @@ I want to go!</div></div>
     </div>
     <span class="vote-label">5 Yes · 0 No · 100% positive</span>
   <div style="margin-top:8px"><div class="comment-block">Very well done.  Ms Harrison's portrayal of the female Robert Langdon makes us all feel as though we know Ms. Cook well.</div></div>
-</div>
-<div class="article-vote-row">
-  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/fill-the-stands" target="_blank">How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports</a></div>
-  <div class="vote-bar">
-      <div class="vote-yes" style="width:100%"></div>
-    </div>
-    <span class="vote-label">4 Yes · 0 No · 100% positive</span>
-  <div style="margin-top:8px"><span class="muted">No written comments.</span></div>
 </div>
 <div class="article-vote-row">
   <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/silvia-beltrametti-satire" target="_blank">Ink and Outrage at the Driehaus Museum</a></div>
@@ -256,8 +256,8 @@ I want to go!</div></div>
     <div class="edition-grid">
 <div class="edition-card current">
   <h4>9/6<span class="red"> ← current</span></h4>
-  <div class="edition-mini-stat"><span>Pageviews</span><span>952</span></div><div class="edition-mini-stat"><span>Sessions</span><span>714</span></div><div class="edition-mini-stat"><span>New Users</span><span>373</span></div><div class="edition-mini-stat"><span>Avg. Engage</span><span>1:32</span></div>
-  <div class="edition-top"><strong>Top articles:</strong><ol style="padding-left:16px;margin-top:4px"><li>Ink and Outrage at the Driehaus Museum <span class="muted">(210 pv · 1:50)</span></li><li>Sounds Good Choir on the River <span class="muted">(149 pv · 1:08)</span></li><li>All Are Welcome at the Queen’s Table <span class="muted">(137 pv · 1:18)</span></li></ol></div>
+  <div class="edition-mini-stat"><span>Pageviews</span><span>955</span></div><div class="edition-mini-stat"><span>Sessions</span><span>718</span></div><div class="edition-mini-stat"><span>New Users</span><span>373</span></div><div class="edition-mini-stat"><span>Avg. Engage</span><span>1:32</span></div>
+  <div class="edition-top"><strong>Top articles:</strong><ol style="padding-left:16px;margin-top:4px"><li>Ink and Outrage at the Driehaus Museum <span class="muted">(211 pv · 1:50)</span></li><li>Sounds Good Choir on the River <span class="muted">(150 pv · 1:07)</span></li><li>All Are Welcome at the Queen’s Table <span class="muted">(137 pv · 1:18)</span></li></ol></div>
 </div>
 <div class="edition-card ">
   <h4>8/30</h4>
@@ -280,7 +280,7 @@ I want to go!</div></div>
   <section id="alltime">
     <h2>All-Time Site Stats</h2>
     
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">66,586</div><div class="stat-label">Total Pageviews</div><div class="stat-sub">since 2026-02-08</div></div><div class="stat-card"><div class="stat-val">20,503</div><div class="stat-label">Total Users</div></div><div class="stat-card"><div class="stat-val">36,865</div><div class="stat-label">Total Sessions</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">66,607</div><div class="stat-label">Total Pageviews</div><div class="stat-sub">since 2026-02-08</div></div><div class="stat-card"><div class="stat-val">20,515</div><div class="stat-label">Total Users</div></div><div class="stat-card"><div class="stat-val">36,865</div><div class="stat-label">Total Sessions</div></div></div>
     <h3>All-Time Top 10 Articles by Pageviews</h3>
     <table>
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
@@ -409,7 +409,7 @@ I want to go!</div></div>
   <td><span class="rank">#15</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/tadoussac" target="_blank">A Photo Trip to Tadoussac</a></td>
   <td class="num">9/6</td>
   <td class="num">3</td>
-  <td class="num">6</td>
+  <td class="num">7</td>
   <td class="num">0</td>
 </tr><tr>
   <td><span class="rank">#16</span> <a href="https://chicagoclassicmag.com/editions/2026-08-30/soma-roy" target="_blank">Hyperlink, a Connection</a></td>
