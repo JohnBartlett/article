@@ -102,6 +102,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
   - **Laurel Baer bio** — needed for about.html before publish, or the byline link 404s. (Note spelling: Judy's final list says "Baer", earlier drafts had "Baar".)
   - **Judy's own article** — "I may be writing an article but will let you know." No folder created.
   - **Editorial for next week** — Judy asked "John, I think you had an idea about an Editorial for next week?" Reply owed; Editor's Page content, not a nav-chain article.
+  - **Francesco's 100th Article re-run** — John emailed Judy Sept 12 3:10 PM ET (`1a097071b15089da`) asking whether to run it again this week. No reply yet as of the Sept 12 eighth check-emails pass (EMAIL_LOG.md #104).
   - **October Astrochart** — not yet requested from Victoria (`vconst@aol.com`).
   - **Griffin Museum `photo 4.jpeg` role** — placed as the uncaptioned hero on positional grounds only (it's the one photo in Emma's Sept 12 email with no caption, sitting right before the lead paragraph). Confirm with Emma/Sydney that this is correct before publishing.
   - **Griffin Museum `cover photo.jpeg` vs. `images-1.jpeg`** — Emma's Sept 12 package includes its own `cover photo.jpeg`; the homepage card is currently wired to Judy's earlier `images-1.jpeg` (Sept 7). Not confirmed whether these are the same image or Emma's should replace it once extracted.
