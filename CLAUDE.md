@@ -15,7 +15,7 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 - **Judy Carmack Bross** — Editor-in-Chief & Founder (`judycbross@aol.com`)
 - **Megan McKinney** — Publisher & Founder
 - **Sigalit Zetouni** — Arts Editor (`sigalina@aol.com`; email prefix "sigalina" is not her display name — always byline as "Sigalit Zetouni"); also writes her own pieces (Blast teasers, features)
-- **John Bartlett** — Managing Editor & Developer (`john.bartlett@gmail.com`)
+- **John Bartlett** — Managing Editor & Technology Editor (`john.bartlett@gmail.com`)
 
 ### Writers (update "Our Writers" on about.html each edition)
 - Bob Glaze — Culinary & Cultural Guide
