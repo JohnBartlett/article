@@ -93,7 +93,7 @@ a:hover { text-decoration: underline; }
     <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#888; margin-top:4px">Editors Dashboard</div>
     <div class="meta">Current edition: <strong>September 13, 2026</strong>
       &nbsp;·&nbsp; <a href="https://article-dev2.vercel.app/editions/2026-09-13/" target="_blank">Preview →</a>
-      &nbsp;·&nbsp; Generated 9/12/2026 at 11:27 AM</div>
+      &nbsp;·&nbsp; Generated 9/12/2026 at 2:32 PM</div>
   </div>
 
   <nav class="jump-links">
@@ -110,7 +110,7 @@ a:hover { text-decoration: underline; }
   <section id="status">
     <h2>Article Status</h2>
     
-    <div class="stat-sub" style="margin-bottom:14px"><span style="color:#2a7a2a; font-weight:700;">Ready</span> 5 &nbsp;·&nbsp; <span style="color:#b5860b; font-weight:700;">In Progress</span> 1 &nbsp;·&nbsp; <span style="color:#c41e3a; font-weight:700;">Placeholder</span> 2</div>
+    <div class="stat-sub" style="margin-bottom:14px"><span style="color:#2a7a2a; font-weight:700;">Ready</span> 6 &nbsp;·&nbsp; <span style="color:#c41e3a; font-weight:700;">Placeholder</span> 2</div>
     <table>
       <thead><tr><th>Article</th><th>Author</th><th>Coordinator</th><th>Status</th></tr></thead>
       <tbody><tr>
@@ -137,7 +137,7 @@ a:hover { text-decoration: underline; }
   <td>NYB Hamantaschen (working title)<div class="muted" style="font-size:0.75rem">chef</div></td>
   <td>Sigalit Zetouni</td>
   <td>Sig to John</td>
-  <td><span style="color:#b5860b; font-weight:700;">In Progress</span><div class="muted" style="font-size:0.75rem">placeholder text, photos ready</div></td>
+  <td><span style="color:#2a7a2a; font-weight:700;">Ready</span><div class="muted" style="font-size:0.75rem">content + 2 photos</div></td>
 </tr><tr>
   <td>The Griffin Museum<div class="muted" style="font-size:0.75rem">griffin-museum</div></td>
   <td>Sydney Armstrong</td>
@@ -160,23 +160,23 @@ a:hover { text-decoration: underline; }
 
   <section id="decisions">
     <h2>Decisions Needed</h2>
-    <div style="margin-bottom:16px"><strong>Pending Deliveries</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Chitchat</strong> (Jill Lowe) — ✅ <strong>RESOLVED Sept 12.</strong> PDF text extracted (7 pages, "Phatic Communication, or Small Talk — Our Social Lubricant," her "Facts and Froth" column) and built in full. All 7 photos extracted from msg `1a07b81e5713587c` and placed one-per-paragraph in PDF page order (visually matched via embedded-image comparison, since the PDF's re-encoded images don't hash-match the emailed originals). No captions were given for any photo — none invented, per house rule.</li><li><strong>Puget Sound</strong> (Libbet Richter) — ✅ <strong>RESOLVED Sept 12.</strong> All 22 photos + COVER extracted from msg `1a08bc49f7b39acb` and confirmed matching the already-built HTML's filenames exactly. `verify_edition.py` shows READY.</li><li><strong>Chef</strong> (Sigalit Zetouni) — Blast text received Sept 8 (msg `1a08369f62e68b76`): one paragraph about NYB hamantaschen/Jacob Shaw. Full article still not received; placeholder still in place — nothing more to build until it arrives. Her one photo (`IMG_7976.JPEG`) is on disk and now used for the article's own nav thumbnail.</li><li><strong>The Griffin Museum</strong> (Sydney Armstrong) — ✅ <strong>RESOLVED Sept 12.</strong> All 5 photos extracted from msg `1a093f6b41acc4b2` and confirmed matching the already-built HTML. `verify_edition.py` shows READY. Still open: whether Emma's `cover photo.jpeg` duplicates Judy's `images-1.jpeg` (currently used for the homepage card) — not resolved, low priority since the card already works.</li><li><strong>Nostalgia and the Village</strong> (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.) Annie's Sept 12 5:54 AM ET promise of drafts "by noon" has not yet been checked against a later email pass — see next `/check-emails` run.</li><li><strong>Judith Guest photos</strong> — ✅ <strong>RESOLVED Sept 12.</strong> All 6 candidate photos extracted. Hero decided: `images-3.jpeg` (a vintage black-and-white author portrait, previously unused) replaces `Unknown.jpeg` as the hero image. Rationale: the book cover (`image2.jpeg`/`9780143139461.jpeg`) and movie poster (`image1 2.jpeg`/`images-4.jpeg`) are already placed inline in the Q&A body next to the relevant questions about the novel and film — promoting either to hero would duplicate it (house rule #30). The vintage portrait was unused, is more dignified than the casual "sweatshirt" snapshot Judy flagged, and fits the "Author Judith Guest" caption. navthumb.jpg regenerated to match.</li><li><strong>Laurel Baer bio</strong> — needed for about.html; her byline link is dead until it exists.</li></ul></div><div><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px"><li>~~Judith Guest hero photo~~ — <strong>RESOLVED Sept 12</strong>, see Pending Deliveries. `images-3.jpeg` (vintage author portrait) now used as hero.</li><li><strong>Field Museum vs. Griffin Museum</strong> — resolved: Judy's final list says Griffin Museum. No Field Museum article.</li><li><strong>"Libbet Richter" assumed to be Elizabeth Dunlop Richter</strong> — confirmed pattern; byline points at existing anchor.</li><li><strong>Laurel Baer bio</strong> — needed for about.html before publish (byline link is dead).</li><li><strong>October Astrochart not yet requested</strong> from Victoria (`vconst@aol.com`). Current page covers through Sept 30 — needed before Sept 27 edition.</li><li><strong>Editorial for next week</strong> — Judy asked what John had in mind; reply owed.</li></ul></div>
+    <div style="margin-bottom:16px"><strong>Pending Deliveries</strong><ul style="padding-left:18px; margin-top:6px"><li><strong>Chitchat</strong> (Jill Lowe) — ✅ <strong>RESOLVED Sept 12.</strong> PDF text extracted (7 pages, "Phatic Communication, or Small Talk — Our Social Lubricant," her "Facts and Froth" column) and built in full. All 7 photos extracted from msg `1a07b81e5713587c` and placed one-per-paragraph in PDF page order (visually matched via embedded-image comparison, since the PDF's re-encoded images don't hash-match the emailed originals). No captions were given for any photo — none invented, per house rule.</li><li><strong>Puget Sound</strong> (Libbet Richter) — ✅ <strong>RESOLVED Sept 12.</strong> All 22 photos + COVER extracted from msg `1a08bc49f7b39acb` and confirmed matching the already-built HTML's filenames exactly. `verify_edition.py` shows READY.</li><li><strong>Chef</strong> (Sigalit Zetouni) — ✅ <strong>RESOLVED Sept 12.</strong> Full text received 8:27 AM ET (msg `1a095cd5be91bf39`, "Full text") — "Sweet Memories and Cookies," on the Marcel Proust exhibitions in Paris and the madeleine's evolution into Chicago's Not Your Bubbe's Hamantaschen. Built verbatim (several likely source typos kept as-is, not corrected: "residenece," "Unanticipately," "hamantachen," "cinnamon candle," "grinded"). Sig said she'd follow with "additional emails that have images and credits" — none had arrived as of this check, so the article uses only the one photo already on hand (`IMG_7976.JPEG`, the Aug 8 blast photo) as hero, with its verbatim credit — add more if/when they arrive. John already replied to Sig same morning promising to lay it out "as soon as I get home" (msg `1a095d54db5812b7`) — this fulfills that.</li><li><strong>The Griffin Museum</strong> (Sydney Armstrong) — ✅ <strong>RESOLVED Sept 12.</strong> All 5 photos extracted from msg `1a093f6b41acc4b2` and confirmed matching the already-built HTML. `verify_edition.py` shows READY. Still open: whether Emma's `cover photo.jpeg` duplicates Judy's `images-1.jpeg` (currently used for the homepage card) — not resolved, low priority since the card already works.</li><li><strong>Nostalgia and the Village</strong> (Laurel Baer) — via Annie. Not received. (Note: Judy's final list spells it "Laurel Baer", not "Baar" — update if confirmed.) Annie's Sept 12 5:54 AM ET promise of drafts "by noon" checked again in the Sept 12 third-pass `/check-emails` run (EMAIL_LOG.md #89) — still not sent as of that check; only Judy's one-line "Thanks, Annie" courtesy reply had come in. Re-check on the next pass.</li><li><strong>Judith Guest photos</strong> — ✅ <strong>RESOLVED Sept 12.</strong> All 6 candidate photos extracted. Hero decided: `images-3.jpeg` (a vintage black-and-white author portrait, previously unused) replaces `Unknown.jpeg` as the hero image. Rationale: the book cover (`image2.jpeg`/`9780143139461.jpeg`) and movie poster (`image1 2.jpeg`/`images-4.jpeg`) are already placed inline in the Q&A body next to the relevant questions about the novel and film — promoting either to hero would duplicate it (house rule #30). The vintage portrait was unused, is more dignified than the casual "sweatshirt" snapshot Judy flagged, and fits the "Author Judith Guest" caption. navthumb.jpg regenerated to match.</li><li><strong>Laurel Baer bio</strong> — needed for about.html; her byline link is dead until it exists.</li></ul></div><div><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px"><li>~~Judith Guest hero photo~~ — <strong>RESOLVED Sept 12</strong>, see Pending Deliveries. `images-3.jpeg` (vintage author portrait) now used as hero.</li><li><strong>Field Museum vs. Griffin Museum</strong> — resolved: Judy's final list says Griffin Museum. No Field Museum article.</li><li><strong>"Libbet Richter" assumed to be Elizabeth Dunlop Richter</strong> — confirmed pattern; byline points at existing anchor.</li><li><strong>Laurel Baer bio</strong> — needed for about.html before publish (byline link is dead).</li><li><strong>October Astrochart not yet requested</strong> from Victoria (`vconst@aol.com`). Current page covers through Sept 30 — needed before Sept 27 edition.</li><li><strong>Editorial for next week</strong> — Judy asked what John had in mind; reply owed.</li></ul></div>
   </section>
 
   <section id="spotlight">
     <h2>Latest Published Edition Spotlight — September 6, 2026</h2>
     
     <h3>Today (2026-09-12)</h3>
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">3</div><div class="stat-label">Pageviews</div></div><div class="stat-card"><div class="stat-val">3</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">2</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">3:53</div><div class="stat-label">Avg. Engagement</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">59</div><div class="stat-label">Pageviews</div></div><div class="stat-card"><div class="stat-val">62</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">59</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">0:25</div><div class="stat-label">Avg. Engagement</div></div></div>
 
     <h3>Since Publication (2026-09-06 – 2026-09-12)</h3>
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">1,010</div><div class="stat-label">Pageviews</div><div class="stat-sub">since publication</div></div><div class="stat-card"><div class="stat-val">772</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">624</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">407</div><div class="stat-label">New Users</div></div><div class="stat-card"><div class="stat-val">1:31</div><div class="stat-label">Avg. Engagement</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">1,035</div><div class="stat-label">Pageviews</div><div class="stat-sub">since publication</div></div><div class="stat-card"><div class="stat-val">797</div><div class="stat-label">Sessions</div></div><div class="stat-card"><div class="stat-val">648</div><div class="stat-label">Users</div></div><div class="stat-card"><div class="stat-val">431</div><div class="stat-label">New Users</div></div><div class="stat-card"><div class="stat-val">1:28</div><div class="stat-label">Avg. Engagement</div></div></div>
 
     <h3>Top Articles This Edition</h3>
     <table>
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
       <tbody><tr><td><span class="rank">#1</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/silvia-beltrametti-satire/" target="_blank">Ink and Outrage at the Driehaus Museum</a></td><td class="num">216</td><td class="num">154</td><td class="num">1:54</td></tr>
-<tr><td><span class="rank">#2</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/sounds-good-choir-river/" target="_blank">Sounds Good Choir on the River</a></td><td class="num">171</td><td class="num">146</td><td class="num">1:09</td></tr>
+<tr><td><span class="rank">#2</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/sounds-good-choir-river/" target="_blank">Sounds Good Choir on the River</a></td><td class="num">172</td><td class="num">146</td><td class="num">1:09</td></tr>
 <tr><td><span class="rank">#3</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/rush-benefit/" target="_blank">All Are Welcome at the Queen’s Table</a></td><td class="num">139</td><td class="num">127</td><td class="num">1:16</td></tr>
 <tr><td><span class="rank">#4</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook/" target="_blank">Dr. Ruth Gannon-Cook: The Female Robert Langdon</a></td><td class="num">117</td><td class="num">90</td><td class="num">0:56</td></tr>
 <tr><td><span class="rank">#5</span> <a href="https://chicagoclassicmag.com/editions/2026-09-06/tadoussac/" target="_blank">A Photo Trip to Tadoussac</a></td><td class="num">89</td><td class="num">69</td><td class="num">1:44</td></tr>
@@ -208,20 +208,22 @@ a:hover { text-decoration: underline; }
 I want to go!</div></div>
 </div>
 <div class="article-vote-row">
+  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook" target="_blank">Dr. Ruth Gannon</a></div>
+  <div class="vote-bar">
+      <div class="vote-yes" style="width:100%"></div>
+    </div>
+    <span class="vote-label">6 Yes · 0 No · 100% positive</span>
+  <div style="margin-top:8px"><div class="comment-block">When you are of scottish decent, one
+does things like placing a smooth
+stone collected somewhere, as a paperweight on a pile of business papers to give them clarity & meaning!!!</div><div class="comment-block">Very well done.  Ms Harrison's portrayal of the female Robert Langdon makes us all feel as though we know Ms. Cook well.</div></div>
+</div>
+<div class="article-vote-row">
   <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/fill-the-stands" target="_blank">How Sweet It Is: Fill The Stands Gives Boost to Girls' Sports</a></div>
   <div class="vote-bar">
       <div class="vote-yes" style="width:100%"></div>
     </div>
     <span class="vote-label">5 Yes · 0 No · 100% positive</span>
   <div style="margin-top:8px"><span class="muted">No written comments.</span></div>
-</div>
-<div class="article-vote-row">
-  <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/dr-ruth-gannon-cook" target="_blank">Dr. Ruth Gannon</a></div>
-  <div class="vote-bar">
-      <div class="vote-yes" style="width:100%"></div>
-    </div>
-    <span class="vote-label">5 Yes · 0 No · 100% positive</span>
-  <div style="margin-top:8px"><div class="comment-block">Very well done.  Ms Harrison's portrayal of the female Robert Langdon makes us all feel as though we know Ms. Cook well.</div></div>
 </div>
 <div class="article-vote-row">
   <div class="article-vote-title"><a href="https://chicagoclassicmag.com/editions/2026-09-06/silvia-beltrametti-satire" target="_blank">Ink and Outrage at the Driehaus Museum</a></div>
@@ -256,8 +258,8 @@ I want to go!</div></div>
     <div class="edition-grid">
 <div class="edition-card current">
   <h4>9/6<span class="red"> ← current</span></h4>
-  <div class="edition-mini-stat"><span>Pageviews</span><span>1,010</span></div><div class="edition-mini-stat"><span>Sessions</span><span>772</span></div><div class="edition-mini-stat"><span>New Users</span><span>407</span></div><div class="edition-mini-stat"><span>Avg. Engage</span><span>1:31</span></div>
-  <div class="edition-top"><strong>Top articles:</strong><ol style="padding-left:16px;margin-top:4px"><li>Ink and Outrage at the Driehaus Museum <span class="muted">(216 pv · 1:54)</span></li><li>Sounds Good Choir on the River <span class="muted">(171 pv · 1:09)</span></li><li>All Are Welcome at the Queen’s Table <span class="muted">(139 pv · 1:16)</span></li></ol></div>
+  <div class="edition-mini-stat"><span>Pageviews</span><span>1,036</span></div><div class="edition-mini-stat"><span>Sessions</span><span>798</span></div><div class="edition-mini-stat"><span>New Users</span><span>432</span></div><div class="edition-mini-stat"><span>Avg. Engage</span><span>1:28</span></div>
+  <div class="edition-top"><strong>Top articles:</strong><ol style="padding-left:16px;margin-top:4px"><li>Ink and Outrage at the Driehaus Museum <span class="muted">(216 pv · 1:54)</span></li><li>Sounds Good Choir on the River <span class="muted">(172 pv · 1:09)</span></li><li>All Are Welcome at the Queen’s Table <span class="muted">(139 pv · 1:16)</span></li></ol></div>
 </div>
 <div class="edition-card ">
   <h4>8/30</h4>
@@ -280,14 +282,14 @@ I want to go!</div></div>
   <section id="alltime">
     <h2>All-Time Site Stats</h2>
     
-    <div class="stat-row"><div class="stat-card"><div class="stat-val">66,762</div><div class="stat-label">Total Pageviews</div><div class="stat-sub">since 2026-02-08</div></div><div class="stat-card"><div class="stat-val">20,595</div><div class="stat-label">Total Users</div></div><div class="stat-card"><div class="stat-val">36,928</div><div class="stat-label">Total Sessions</div></div></div>
+    <div class="stat-row"><div class="stat-card"><div class="stat-val">66,821</div><div class="stat-label">Total Pageviews</div><div class="stat-sub">since 2026-02-08</div></div><div class="stat-card"><div class="stat-val">20,659</div><div class="stat-label">Total Users</div></div><div class="stat-card"><div class="stat-val">37,035</div><div class="stat-label">Total Sessions</div></div></div>
     <h3>All-Time Top 10 Articles by Pageviews</h3>
     <table>
       <thead><tr><th>Article</th><th class="num">Pageviews</th><th class="num">Users</th><th class="num">Avg. Time</th></tr></thead>
       <tbody><tr><td><span class="rank">#1</span> <a href="https://chicagoclassicmag.com/editions/2026-05-17/peoria-riverfront-museum/" target="_blank">The Promise of Liberty: Peoria’s Gift to the 250th Celebration</a></td><td class="num">656</td><td class="num">509</td><td class="num">1:28</td></tr>
 <tr><td><span class="rank">#2</span> <a href="https://chicagoclassicmag.com/editions/2026-07-19/blakely-fourth/" target="_blank">A Blakely Fourth</a></td><td class="num">556</td><td class="num">254</td><td class="num">1:23</td></tr>
 <tr><td><span class="rank">#3</span> <a href="https://chicagoclassicmag.com/editions/2026-04-19/sporting-life-lfhs/" target="_blank">Game-Changers: The Impact of a North Shore High School on the World of Sports</a></td><td class="num">545</td><td class="num">481</td><td class="num">0:33</td></tr>
-<tr><td><span class="rank">#4</span> <a href="https://chicagoclassicmag.com/editions/2026-03-08/rebecca-tilles/" target="_blank">Dr. Rebecca Tilles: A European Soul, Born in Chicago</a></td><td class="num">483</td><td class="num">370</td><td class="num">2:32</td></tr>
+<tr><td><span class="rank">#4</span> <a href="https://chicagoclassicmag.com/editions/2026-03-08/rebecca-tilles/" target="_blank">Dr. Rebecca Tilles: A European Soul, Born in Chicago</a></td><td class="num">484</td><td class="num">371</td><td class="num">2:32</td></tr>
 <tr><td><span class="rank">#5</span> <a href="https://chicagoclassicmag.com/editions/2026-02-15/alicia-ziegler/" target="_blank">Alicia Ziegler: The Artful Concierge</a></td><td class="num">453</td><td class="num">349</td><td class="num">1:51</td></tr>
 <tr><td><span class="rank">#6</span> <a href="https://chicagoclassicmag.com/editions/2026-06-28/versailles/" target="_blank">Chicagoans Celebrate America’s 250th Anniversary at Versailles</a></td><td class="num">404</td><td class="num">291</td><td class="num">3:25</td></tr>
 <tr><td><span class="rank">#7</span> <a href="https://chicagoclassicmag.com/editions/2026-07-05/nmh-summer-soiree/" target="_blank">Calypso and the Cabana Club: A SoiréeSensation</a></td><td class="num">387</td><td class="num">324</td><td class="num">1:24</td></tr>
