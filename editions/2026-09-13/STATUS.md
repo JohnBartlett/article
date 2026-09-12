@@ -67,7 +67,9 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 
 ## Blockers
 
-- ~~Judith Guest hero photo~~ — **RESOLVED Sept 12**, see Pending Deliveries. `images-3.jpeg` (vintage author portrait) now used as hero.
+- **Judith Guest hero photo — reopened Sept 12 evening.** Judy's reply to John's thank-you email (`1a0978da7b4646ea`, 5:37 PM ET) says "I think the only thing is the photo of Judith Guest. Could just be on the preview?" — ambiguous (could mean she wants the hero swapped, or is just confirming it's only visible on the dev2 preview and not live). No preferred replacement or explicit ask given. Not acted on per house rule against guessing; needs John's/Judy's clarification. See EMAIL_LOG.md #106.
+- **DateBook addition request, Sept 12 — blocked on missing event details.** Judy sent `1a0978d45ed2d965` ("Can we add this to the current Datebook--which really looks great in this issue!") to Annie + John with one image attachment (`Image.jpeg`) and no text describing the event (no date/venue/time/description/price). Cannot build a DateBook entry without those fields. Image not yet in `_attachment-staging/` as of this check. See EMAIL_LOG.md #105.
+- ~~Judith Guest hero photo~~ — **RESOLVED Sept 12** (see above — reopened same evening by Judy's follow-up).
 - **Field Museum vs. Griffin Museum** — resolved: Judy's final list says Griffin Museum. No Field Museum article.
 - **"Libbet Richter" assumed to be Elizabeth Dunlop Richter** — confirmed pattern; byline points at existing anchor.
 - **Laurel Baer bio** — needed for about.html before publish (byline link is dead).
