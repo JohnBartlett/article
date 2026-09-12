@@ -64,12 +64,22 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 ### Judy — article text
 - If `/prep-edition` has already run: fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`
 - If prep has not run yet: note the content and report — run `/prep-edition` first
-- Download attached photos using the original filename — never rename:
+- **Check `_attachment-staging/<message-id>/` first.** An hourly GitHub Actions workflow
+  (`fetch-email-attachments.yml`) pre-downloads every Tier-1 contributor's image/PDF/docx
+  attachments there (see `_attachment-staging/README.md`) — this is what lets a cloud session
+  without local Gmail credentials (the Gmail MCP connector can read email text but not download
+  attachments) still get the actual files. If the folder exists, copy the files into
+  `editions/YYYY-MM-DD/slug/` (preserve filenames exactly) and delete the now-consumed staging
+  folder in the same commit.
+- If running with real local Gmail API credentials (`tools/gmail_api.py`) instead, download
+  attached photos directly using the original filename — never rename:
   ```python
   for att in list_attachments(token, msg_id):
-      download_attachment(token, msg_id, att['id'],
+      download_attachment(token, msg_id, att['attachmentId'],
           f'editions/YYYY-MM-DD/slug/{att["filename"]}')
   ```
+- If neither the staging folder nor local credentials are available yet, note in STATUS.md that
+  photo extraction is pending — it should appear in `_attachment-staging/` within the hour.
 - **Never rename contributor image files.** The original filename is the permanent link between a photo and its caption/position. Renaming to `photo-01.jpeg` etc. severs that link.
 - **Before placing any `<figure>` HTML**, build an explicit photo map: `filename → caption (verbatim from email) → placement (after which sentence/paragraph)`. If any field is unknown, stop and find it — never infer captions or placement.
 - **COVER photos** (filename contains "COVER"): use as the homepage card image only. Do not place in the article body unless the contributor explicitly says to AND it has a caption.
