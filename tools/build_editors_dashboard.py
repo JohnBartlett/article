@@ -105,6 +105,7 @@ STATUS_BADGE = {
     "IN PROGRESS": ("#b5860b", "In Progress"),
     "PLACEHOLDER": ("#c41e3a", "Placeholder"),
     "MISSING":     ("#c41e3a", "Missing"),
+    "DROPPED":     ("#888",    "Dropped"),
 }
 
 
@@ -131,9 +132,12 @@ def build_article_status_section(edition_date, status_data):
         return '<p class="no-data">No articles found for this edition.</p>'
 
     rows = ""
-    counts = {"READY": 0, "TEXT ONLY": 0, "IN PROGRESS": 0, "PLACEHOLDER": 0, "MISSING": 0}
+    counts = {"READY": 0, "TEXT ONLY": 0, "IN PROGRESS": 0, "PLACEHOLDER": 0, "MISSING": 0, "DROPPED": 0}
     for e in entries:
-        info = ve.check_article_status(edition_path, e["slug"])
+        if "dropped" in e["title"].lower():
+            info = {"status": "DROPPED", "reason": "removed from lineup"}
+        else:
+            info = ve.check_article_status(edition_path, e["slug"])
         counts[info["status"]] = counts.get(info["status"], 0) + 1
         rows += f'''<tr>
   <td>{e["title"]}<div class="muted" style="font-size:0.75rem">{e["slug"]}</div></td>
