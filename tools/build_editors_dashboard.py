@@ -9,7 +9,8 @@ three-page split with one scrolling page:
     2. Article Status       — live-computed per-article status (from verify_edition.py)
     3. Decisions Needed     — pending items / blockers, parsed from STATUS.md
     4. Current Edition Spotlight, Votes & Comments, Edition History,
-       All-Time Stats, Comment Leaderboard — reused from build_stats_page.py
+       All-Time Stats, Heritage Auctions Ad, Comment Leaderboard — reused
+       from build_stats_page.py
 
 Output is meant to live on the `editors` branch only (editors/dashboard.html),
 published by .github/workflows/refresh-stats.yml. Never commit the output to
@@ -104,6 +105,7 @@ STATUS_BADGE = {
     "IN PROGRESS": ("#b5860b", "In Progress"),
     "PLACEHOLDER": ("#c41e3a", "Placeholder"),
     "MISSING":     ("#c41e3a", "Missing"),
+    "DROPPED":     ("#888",    "Dropped"),
 }
 
 
@@ -130,9 +132,12 @@ def build_article_status_section(edition_date, status_data):
         return '<p class="no-data">No articles found for this edition.</p>'
 
     rows = ""
-    counts = {"READY": 0, "TEXT ONLY": 0, "IN PROGRESS": 0, "PLACEHOLDER": 0, "MISSING": 0}
+    counts = {"READY": 0, "TEXT ONLY": 0, "IN PROGRESS": 0, "PLACEHOLDER": 0, "MISSING": 0, "DROPPED": 0}
     for e in entries:
-        info = ve.check_article_status(edition_path, e["slug"])
+        if "dropped" in e["title"].lower():
+            info = {"status": "DROPPED", "reason": "removed from lineup"}
+        else:
+            info = ve.check_article_status(edition_path, e["slug"])
         counts[info["status"]] = counts.get(info["status"], 0) + 1
         rows += f'''<tr>
   <td>{e["title"]}<div class="muted" style="font-size:0.75rem">{e["slug"]}</div></td>
@@ -224,13 +229,26 @@ def main():
     print("  Fetching All-Time Stats…")
     s3 = bsp.build_section3(client, today_str)
 
+    print("  Fetching Heritage Auctions ad impressions…")
+    s6 = bsp.build_section6(client, ga4_edition, today_str)
+
     print("  Building Comment Leaderboard…")
     s5 = bsp.build_section5(records)
 
     generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
     ed_label = datetime.strptime(prep_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
     ga4_ed_label = datetime.strptime(ga4_edition, "%Y-%m-%d").strftime("%B %-d, %Y") if ga4_edition else "—"
-    preview_url = f"https://article-dev2.vercel.app/editions/{prep_edition}/"
+
+    # Once an edition is marked PUBLISHED in its own STATUS.md, point at the
+    # live site instead of the (by-then-stale) dev2 preview.
+    status_md_path = Path(__file__).parent.parent / "editions" / prep_edition / "STATUS.md"
+    is_published = status_md_path.exists() and "PUBLISHED to production" in status_md_path.read_text(encoding="utf-8")
+    if is_published:
+        preview_url = f"https://chicagoclassicmag.com/editions/{prep_edition}/"
+        preview_label = "Live →"
+    else:
+        preview_url = f"https://article-dev2.vercel.app/editions/{prep_edition}/"
+        preview_label = "Preview →"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -241,8 +259,15 @@ def main():
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
 {bsp.CSS}
-    .jump-links {{ display:flex; gap:16px; flex-wrap:wrap; margin: 16px 0 28px; font-size:0.8rem; }}
-    .jump-links a {{ color:#888; text-transform:uppercase; letter-spacing:0.5px; }}
+    .jump-links {{ display:flex; gap:6px; flex-wrap:wrap; margin: 14px 0 22px; padding: 8px; background:#fff;
+                    border:1px solid #e0ddd8; border-radius:6px; position:sticky; top:0; z-index:10;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.06); }}
+    .jump-links a {{ display:inline-block; background:#f7f5f0; border:1px solid #ddd8d0; border-radius:14px;
+                      padding:4px 12px; font-size:0.68rem; font-weight:700; text-transform:uppercase;
+                      letter-spacing:0.6px; color:#555; text-decoration:none; white-space:nowrap;
+                      transition: background 0.15s, color 0.15s, border-color 0.15s; }}
+    .jump-links a:hover {{ background:#c41e3a; border-color:#c41e3a; color:#fff; text-decoration:none; }}
+    html {{ scroll-padding-top: 60px; }}
     section {{ margin-bottom: 40px; }}
     section h2 {{ font-family:'Playfair Display',serif; font-size:1.3rem; border-bottom:2px solid #1a1a1a; padding-bottom:8px; margin-bottom:14px; }}
   </style>
@@ -253,7 +278,7 @@ def main():
     <h1>Classic Chicago Magazine</h1>
     <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#888; margin-top:4px">Editors Dashboard</div>
     <div class="meta">Current edition: <strong>{ed_label}</strong>
-      &nbsp;·&nbsp; <a href="{preview_url}" target="_blank">Preview →</a>
+      &nbsp;·&nbsp; <a href="{preview_url}" target="_blank">{preview_label}</a>
       &nbsp;·&nbsp; Generated {generated_at}</div>
   </div>
 
@@ -264,6 +289,7 @@ def main():
     <a href="#votes">Votes &amp; Comments</a>
     <a href="#history">Edition History</a>
     <a href="#alltime">All-Time Stats</a>
+    <a href="#ha-ad">Heritage Auctions Ad</a>
     <a href="#leaderboard">Comment Leaderboard</a>
   </nav>
 
@@ -295,6 +321,11 @@ def main():
   <section id="alltime">
     <h2>All-Time Site Stats</h2>
     {s3}
+  </section>
+
+  <section id="ha-ad">
+    <h2>Heritage Auctions Ad — Impressions</h2>
+    {s6}
   </section>
 
   <section id="leaderboard">

@@ -14,7 +14,8 @@ A weekly digital magazine about Chicago culture, dining, arts, and society. Stat
 
 - **Judy Carmack Bross** — Editor-in-Chief & Founder (`judycbross@aol.com`)
 - **Megan McKinney** — Publisher & Founder
-- **John Bartlett** — Developer (`john.bartlett@gmail.com`)
+- **Sigalit Zetouni** — Arts Editor (`sigalina@aol.com`; email prefix "sigalina" is not her display name — always byline as "Sigalit Zetouni"); also writes her own pieces (Blast teasers, features)
+- **John Bartlett** — Managing Editor & Technology Editor (`john.bartlett@gmail.com`)
 
 ### Writers (update "Our Writers This Week" on about.html each edition)
 - Bob Glaze — Culinary & Cultural Guide
@@ -291,7 +292,7 @@ Full step-by-step procedure lives in `.claude/commands/prep-edition.md` (`/prep-
 - `anabaca8@gmail.com` — Photos and articles (Ana Baca - layout editor, photographer)
 - `aedelfosse1@gmail.com` — Annie Delfosse (DateBook, article content)
 - `muhlemane2@gmail.com` — Emma Muhleman (intern - coordinator for submissions)
-- `sigalina@aol.com` — Sigalit Zetouni (sends articles directly to John; email address uses "sigalina" but her byline name is Sigalit)
+- `sigalina@aol.com` — Sigalit Zetouni, Arts Editor (sends articles directly to John; email address uses "sigalina" but her byline name is Sigalit)
 
 **Tools:**
 - `tools/extract_article_photos.py` — Extract JPEG/PNG attachments from Gmail messages

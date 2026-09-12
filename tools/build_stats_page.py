@@ -13,6 +13,7 @@ Generates a static HTML page with:
     Section 3 — All-Time Site Stats
     Section 4 — Comment & Vote Stats for Current Edition
     Section 5 — All-Time Comment Leaderboard
+    Section 6 — Heritage Auctions Ad Impressions
 """
 
 import os
@@ -31,11 +32,15 @@ sys.path.insert(0, os.path.dirname(__file__))
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
     DateRange, Dimension, Metric, RunReportRequest, OrderBy,
-    FilterExpression, Filter
+    FilterExpression, FilterExpressionList, Filter
 )
 
 PROPERTY_ID = os.environ.get("GA4_PROPERTY_ID", "523654462")
 SITE_LAUNCH  = "2026-02-08"
+
+# Heritage Auctions ad impressions fire this GA4 event once per article load.
+# The event only exists on production (master) — dev/dev2 have GA4 disabled.
+HA_AD_EVENT = "ha_ad_impression"
 
 
 def ga4_client():
@@ -133,6 +138,71 @@ def fetch_top_articles(client, start, end, path_filter, limit=10):
         articles.append({"path": path, "title": title, "pageviews": pv, "users": users,
                          "avgTime": fmt_duration(eng / sess)})
     return articles
+
+
+# ---------------------------------------------------------------------------
+# Heritage Auctions ad impressions
+# ---------------------------------------------------------------------------
+
+def _ha_ad_filter(path_filter=None):
+    """Dimension filter for ha_ad_impression events, optionally scoped to a path."""
+    event_filter = FilterExpression(
+        filter=Filter(
+            field_name="eventName",
+            string_filter=Filter.StringFilter(value=HA_AD_EVENT)
+        )
+    )
+    if not path_filter:
+        return event_filter
+    return FilterExpression(
+        and_group=FilterExpressionList(expressions=[
+            event_filter,
+            FilterExpression(
+                filter=Filter(
+                    field_name="pagePath",
+                    string_filter=Filter.StringFilter(match_type="CONTAINS", value=path_filter)
+                )
+            ),
+        ])
+    )
+
+
+def fetch_ha_ad_total(client, start, end, path_filter=None):
+    """Total HA ad impressions in a date range. Queried without a dimension so
+    the number is a true total, not a sum of however many rows fit the limit."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        metrics=[Metric(name="eventCount")],
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimension_filter=_ha_ad_filter(path_filter),
+    )
+    r = client.run_report(req)
+    if not r.rows:
+        return 0
+    return int(r.rows[0].metric_values[0].value)
+
+
+def fetch_ha_ad_by_page(client, start, end, path_filter=None, limit=15):
+    """HA ad impressions broken down by page, highest first.
+    Returns [{path, title, impressions}]."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        dimensions=[Dimension(name="pagePath")],
+        metrics=[Metric(name="eventCount")],
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimension_filter=_ha_ad_filter(path_filter),
+        order_bys=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="eventCount"), desc=True)],
+        limit=limit,
+    )
+    r = client.run_report(req)
+    return [
+        {
+            "path": row.dimension_values[0].value,
+            "title": slug_to_title(row.dimension_values[0].value),
+            "impressions": int(row.metric_values[0].value),
+        }
+        for row in r.rows
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -431,7 +501,7 @@ function showTab(id) {
 }
 window.addEventListener('DOMContentLoaded', function() {
   var hash = location.hash.replace('#','');
-  var valid = ['tab1','tab2','tab3','tab4','tab5'];
+  var valid = ['tab1','tab2','tab3','tab4','tab5','tab6'];
   showTab(valid.includes(hash) ? hash : 'tab1');
 });
 </script>
@@ -603,6 +673,55 @@ def build_section5(records):
     return body
 
 
+def build_section6(client, current_edition, today_str):
+    """Heritage Auctions Ad Impressions — folds in tools/ha_ad_report.py.
+
+    Impressions only fire on production, so a fresh property (or an edition
+    whose articles carry no ad) legitimately reports zero — say so rather
+    than showing an empty table.
+    """
+    thirty_days_ago = (date.today() - timedelta(days=30)).strftime("%Y-%m-%d")
+
+    all_time = fetch_ha_ad_total(client, SITE_LAUNCH, today_str)
+    if all_time == 0:
+        return ('<p class="no-data">No Heritage Auctions ad impressions recorded. '
+                'The <code>ha_ad_impression</code> event only fires on production '
+                '(GA4 is disabled on dev and dev2).</p>')
+
+    last_30  = fetch_ha_ad_total(client, thirty_days_ago, today_str)
+    edition  = fetch_ha_ad_total(client, current_edition, today_str,
+                                 path_filter=f"/editions/{current_edition}/") if current_edition else 0
+    by_page  = fetch_ha_ad_by_page(client, thirty_days_ago, today_str, limit=15)
+
+    ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%-m/%-d") if current_edition else "—"
+
+    cards = "".join([
+        stat_card("This Edition", f"{edition:,}", f"edition {ed_label}, since publication"),
+        stat_card("Last 30 Days", f"{last_30:,}", f"{thirty_days_ago} – {today_str}"),
+        stat_card("All-Time",     f"{all_time:,}", f"since {SITE_LAUNCH}"),
+    ])
+
+    if by_page:
+        rows = "\n".join(
+            f'<tr><td><span class="rank">#{i+1}</span> '
+            f'<a href="https://chicagoclassicmag.com{p["path"]}" target="_blank">{p["title"]}</a></td>'
+            f'<td class="num">{p["impressions"]:,}</td></tr>'
+            for i, p in enumerate(by_page)
+        )
+        table = f"""
+    <h3>Impressions by Page — Last 30 Days</h3>
+    <table>
+      <thead><tr><th>Page</th><th class="num">Impressions</th></tr></thead>
+      <tbody>{rows}</tbody>
+    </table>"""
+    else:
+        table = '<p class="no-data">No impressions in the last 30 days.</p>'
+
+    return f"""
+    <div class="stat-row">{cards}</div>{table}
+"""
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -647,6 +766,9 @@ def main():
     print("  Building Section 5 (All-Time Leaderboard)…")
     s5 = build_section5(records)
 
+    print("  Fetching Section 6 (Heritage Auctions Ad)…")
+    s6 = build_section6(client, current_edition, today_str)
+
     generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
     ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
 
@@ -685,6 +807,9 @@ def main():
     <button class="tab-btn" data-tab="tab5" onclick="showTab('tab5')">
       Comment Leaderboard<span class="tab-label">All editions</span>
     </button>
+    <button class="tab-btn" data-tab="tab6" onclick="showTab('tab6')">
+      Heritage Auctions Ad<span class="tab-label">Impressions</span>
+    </button>
   </nav>
 
   <div id="tab1" class="tab-panel active">{s1}</div>
@@ -692,6 +817,7 @@ def main():
   <div id="tab3" class="tab-panel">{s3}</div>
   <div id="tab4" class="tab-panel">{s4}</div>
   <div id="tab5" class="tab-panel">{s5}</div>
+  <div id="tab6" class="tab-panel">{s6}</div>
 
   <div class="generated">Data from GA4 Property 523654462 · dev2 internal only</div>
 </div>
