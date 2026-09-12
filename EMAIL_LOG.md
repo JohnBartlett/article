@@ -776,3 +776,7 @@ Track emails that have been processed, are pending action, or need re-addressing
 ## check-emails run, Sept 12 (second pass, cutoff `after:2026/09/12`, per item #86)
 
 88. **Annie Delfosse — "This week" ETA notice, Sept 12 5:54 AM ET** (`1a0942e724060d15`, to John cc Judy) — "I just wanted to confirm that the final drafts for DateBook and the Village article will be sent by noon!" No article text or attachments in this message — purely an ETA confirmation. **No build action taken**; `the-village` remains a placeholder pending the promised draft. Tier 2 keyword search (`after:2026/09/12`) returned 1 hit, a Daily Passport newsletter — nothing actionable.
+
+## check-emails run, Sept 12 (third pass, cutoff `after:2026/09/11`, per item #88)
+
+89. ⬛ **Tier 1/Tier 2 email check, Sept 12** — searched `after:2026/09/11` for both tiers (cutoff = item #88's `1a0942e724060d15`). Tier 1 returned one new message: Judy's `1a09549528563d0f` ("Re: This week," 11:03 AM ET) — a one-line courtesy reply to Annie's ETA notice ("Thanks, Annie. That will be much appreciated"), no content of its own. A targeted search on `aedelfosse1@gmail.com` and on keywords datebook/village/"Laurel Baer" confirmed **no draft has actually arrived yet** — Annie's promised noon delivery is still outstanding as of this check. Tier 2 keyword search returned 40+ hits, all newsletter/subscription/9-11-anniversary noise — nothing actionable. `the-village` and `datebook` remain exactly where item #88 left them; no dev2 changes this pass beyond this log entry.
