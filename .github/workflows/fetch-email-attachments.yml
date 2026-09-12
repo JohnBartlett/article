@@ -49,6 +49,5 @@ jobs:
             echo "No new attachments — skipping commit"
           else
             git commit -m "Stage new email attachments [$(date -u '+%Y-%m-%d %H:%M UTC')]"
-            git pull --rebase origin dev2
             git push origin dev2
           fi
