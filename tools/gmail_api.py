@@ -74,10 +74,10 @@ def search_messages(token, query, max_results=None):
 def get_metadata(token, msg_id):
     r = _get_with_retry(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
         headers={"Authorization": f"Bearer {token}"},
-        params={"format": "metadata", "metadataHeaders": ["From", "Subject", "Date"]})
+        params={"format": "metadata", "metadataHeaders": ["From", "Subject", "Date", "Message-ID", "Message-Id"]})
     msg = r.json()
     headers = {h["name"]: h["value"] for h in msg.get("payload", {}).get("headers", [])}
-    return {"id": msg_id, "snippet": msg.get("snippet", ""), **headers}
+    return {"id": msg_id, "threadId": msg.get("threadId"), "snippet": msg.get("snippet", ""), **headers}
 
 def get_body(token, msg_id):
     r = _get_with_retry(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
@@ -138,6 +138,55 @@ def send_email(token, to, subject, body, cc=None, attachments=None):
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
     r = requests.post("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
         headers={"Authorization": f"Bearer {token}"}, json={"raw": raw})
+    r.raise_for_status()
+    return r.json()
+
+def reply_to_message(token, msg_id, to, body, cc=None, attachments=None):
+    """Reply in-thread to an existing message.
+
+    send_email() only composes a brand-new message -- setting a "Re: ..."
+    subject by hand makes it *look* like a reply but Gmail/other clients
+    won't group it into the original thread, since it carries no In-Reply-To/
+    References headers and no threadId. This fetches those from the original
+    message and sets them correctly, so the reply actually threads.
+    """
+    import mimetypes
+    from email.mime.base import MIMEBase
+    from email import encoders
+
+    original = get_metadata(token, msg_id)
+    thread_id = original.get("threadId")
+    message_id_header = original.get("Message-ID") or original.get("Message-Id")
+    subject = original.get("Subject", "")
+    if not subject.lower().startswith("re:"):
+        subject = f"Re: {subject}"
+
+    msg = MIMEMultipart()
+    msg["To"] = to
+    msg["Subject"] = subject
+    if cc:
+        msg["Cc"] = cc
+    if message_id_header:
+        msg["In-Reply-To"] = message_id_header
+        msg["References"] = message_id_header
+    msg.attach(MIMEText(body, "plain"))
+    for path in (attachments or []):
+        mime_type, _ = mimetypes.guess_type(path)
+        main_type, sub_type = (mime_type or 'application/octet-stream').split('/', 1)
+        with open(path, 'rb') as f:
+            data = f.read()
+        part = MIMEBase(main_type, sub_type)
+        part.set_payload(data)
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment', filename=path.split('/')[-1])
+        msg.attach(part)
+
+    raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
+    payload = {"raw": raw}
+    if thread_id:
+        payload["threadId"] = thread_id
+    r = requests.post("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+        headers={"Authorization": f"Bearer {token}"}, json=payload)
     r.raise_for_status()
     return r.json()
 
