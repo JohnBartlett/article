@@ -274,6 +274,12 @@ Full step-by-step procedure lives in `.claude/commands/prep-edition.md` (`/prep-
 
 ### Article Extraction from Contributor Emails
 
+See `WRITER_SUBMISSION_GUIDELINES.md` for the full checklist of what a complete,
+build-ready submission needs — layout mechanics (text/photo/caption format) plus
+everything else (title, byline, cover preference, format requests, links, multi-part
+scheduling). Useful when a submission is missing something and a contributor needs to be
+asked for it.
+
 **CRITICAL:** Articles and photos arrive in contributor emails to `john.bartlett@gmail.com`, not via shared folders or Drive links.
 
 **Workflow:**
