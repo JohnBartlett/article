@@ -51,9 +51,17 @@ NAV_CSS = (
     "\n    .nav-title { font-size: 13px; line-height: 1.3; color: #333; }"
 )
 
+ARTICLE_META_A_CSS = (
+    "\n\n    .article-meta a {"
+    "\n      color: #b51c20;"
+    "\n      text-decoration: none;"
+    "\n    }"
+)
+
 results = {
     'dark_mode_added': [],
     'nav_css_added': [],
+    'article_meta_a_added': [],
     'popup_articles_added': [],
     'new_authors_needing_bios': [],
     'stale_datebook_months': [],
@@ -162,6 +170,15 @@ def fix_page(html_path, depth):
             changed = True
         if changed:
             results['nav_css_added'].append(str(html_path.relative_to(ROOT)))
+
+    # article-meta a: byline link must not render as a default blue/underlined
+    # link. Only relevant to articles (depth 3) that have a byline link at all.
+    if depth == 3 and 'class="article-meta"' in text and '.article-meta a' not in text:
+        meta_block_pat = r'(\.article-meta \{[^}]+\})'
+        if re.search(meta_block_pat, text):
+            text = re.sub(meta_block_pat, r'\1' + ARTICLE_META_A_CSS, text, count=1)
+            changed = True
+            results['article_meta_a_added'].append(str(html_path.relative_to(ROOT)))
 
     if changed:
         write_file(html_path, text)
@@ -342,6 +359,13 @@ def main():
             print(f'    {p}')
     else:
         print('✓ nav-thumb CSS: all articles OK')
+
+    if results['article_meta_a_added']:
+        print(f'\n✓ article-meta a CSS added to {len(results["article_meta_a_added"])} articles (byline was rendering as a default link):')
+        for p in results['article_meta_a_added']:
+            print(f'    {p}')
+    else:
+        print('✓ article-meta a CSS: all articles OK')
 
     if results['popup_articles_added']:
         print(f'\n✓ about.html popups updated — {len(results["popup_articles_added"])} articles added:')

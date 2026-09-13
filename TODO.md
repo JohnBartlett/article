@@ -1,5 +1,17 @@
 # Classic Chicago Magazine — TODO
 
+## TODO — LAYOUT & PRODUCTION PROCESS IMPROVEMENTS (from Sept 13, 2026 Chitchat fix session)
+
+See CLAUDE.md mistakes #43-47 for the full findings this list is drawn from.
+
+- [ ] **Switch the default PDF text-extraction method from PyPDF2 to `pdftotext -layout`** in the documented Article Extraction workflow (and any tooling, e.g. `tools/extract_article_photos.py`, that currently calls PyPDF2 for text). Same one-command cost, preserves paragraph breaks that PyPDF2 silently discards. (Mistake #43)
+- [ ] **Add a standard "render source pages as images" step** (`pdftoppm -png -r 150`) to the PDF article-building workflow, to be done once while placing photos/headings — not a separate pass, folded into work already happening. Needed before marking any PDF-sourced article Ready. (Mistake #43, #46)
+- [ ] **Audit other previously-published PDF-sourced articles for the same class of loss** (merged paragraphs, dropped italics/titles, misplaced headings) — this is a tool limitation that would have silently affected every PDF-built article before today, not just Chitchat. Not yet done for any article besides Chitchat.
+- [ ] **Update the manual prose/grammar audit process to require exhaustive per-paragraph coverage**, not a sampled read — the Sept 12 audit caught several typos in Chitchat but missed one ("Mucho" for "Much") sitting right next to ones it did catch. (Mistake #45)
+- [ ] **Formalize the bundled-document-vs-individually-captioned-attachment distinction as an explicit fork** in the Article Extraction section of CLAUDE.md — currently only documented as a mistake, not built into the actual step-by-step workflow a session would follow when a new PDF/Word-doc article comes in. (Mistake #46)
+- [ ] **Consider a lightweight helper script** (e.g. `tools/pdf_visual_check.py` wrapping `pdftoppm`) to standardize the page-image-rendering step so it isn't something that has to be remembered under Saturday deadline pressure.
+- [ ] **`.article-meta a` CSS check is now automated** in `edition_checks.py` and was run once across all 158 affected articles (2026-09-13) — no further action needed here, listed for reference. (Mistake #44)
+
 ## TODO — SEPTEMBER 6 EDITION (prepped, mostly awaiting content)
 
 Skeleton, nav chain, homepage, DateBook, and Astrochart all wired Sept 3. Full detail in
