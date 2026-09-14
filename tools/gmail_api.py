@@ -77,7 +77,8 @@ def get_metadata(token, msg_id):
         params={"format": "metadata", "metadataHeaders": ["From", "Subject", "Date", "Message-ID", "Message-Id"]})
     msg = r.json()
     headers = {h["name"]: h["value"] for h in msg.get("payload", {}).get("headers", [])}
-    return {"id": msg_id, "threadId": msg.get("threadId"), "snippet": msg.get("snippet", ""), **headers}
+    return {"id": msg_id, "threadId": msg.get("threadId"), "internalDate": msg.get("internalDate"),
+            "snippet": msg.get("snippet", ""), **headers}
 
 def get_body(token, msg_id):
     r = _get_with_retry(f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}",
