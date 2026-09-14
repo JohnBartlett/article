@@ -1,6 +1,8 @@
 # September 13, 2026 Edition — Status
 
-_Updated: 2026-09-13 (Chitchat/Jill Lowe complaint resolved and published to production)_
+_Updated: 2026-09-14 (Judy sent next-edition schedule; date needs her confirmation)_
+
+**check-emails run, Sept 14 (second cloud pass):** Judy sent a 7-article lineup for the next edition (`1a0a1ed94574209a`) but titled it "September 27," which doesn't match the normal weekly cadence off this Sept 13 edition (that would be Sept 20) — `editions/2026-09-20/` doesn't exist. John already asked her to confirm same evening (`1a0a1f611f0f2a16`, sent before this pass, not by this session). `/prep-edition` should not run until she replies. Full lineup logged in `EMAIL_LOG.md` item #125 so it's ready to act on once the date is confirmed. This Sept 13 edition itself is unaffected — all 7 articles remain Ready and live.
 
 **check-emails run, Sept 13:** Confirmed the Jill Lowe/Chitchat blocker below is fully resolved — a local session (outside this cloud routine, with real PDF-extraction tooling) rebuilt `chitchat` from Jill's original PDF using `pdftotext -layout`, restoring her paragraph breaks, correcting the two swapped photos, restoring italics/pull-quote styling, and fixing a byline CSS gap (also fixed site-wide, 158 articles). Promoted dev2 → dev → master; live on `chicagoclassicmag.com`. John already replied to Jill (`1a09ac874f9b9559`) explaining the cause and confirming the fix — sent before this pass ran, not by this session. `verify_edition.py` reconfirms `chitchat` READY (8 photos) and all 7 lineup articles Ready. See `EMAIL_LOG.md` item #112. Tier 1/Tier 2 sweep (cutoff Sept 13) found nothing else new — only newsletter noise. Francesco's-100th-article question (item #104) and the Judith Guest hero-photo ambiguity (item #106) remain open, awaiting Judy.
 
