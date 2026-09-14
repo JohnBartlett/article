@@ -226,14 +226,46 @@ def detect_editions(n=5):
 # Comment / vote parsing from Gmail
 # ---------------------------------------------------------------------------
 
-def fetch_gmail_votes_comments():
-    """Pull all FormSubmit emails and return parsed vote/comment records."""
+def fetch_gmail_votes_comments(cache_path=None):
+    """Pull FormSubmit emails and return parsed vote/comment records.
+
+    With cache_path, this is incremental: previously-fetched records are
+    loaded from cache_path (keyed by Gmail message id) and only messages
+    newer than the latest cached one are fetched from Gmail, instead of
+    re-querying and re-parsing the full 365-day window every run. Without
+    cache_path, behaves as before (full fetch, no persistence) -- used for
+    local one-off runs where there's no persistent checkout to cache into.
+
+    This was the dashboard refresh's actual bottleneck (12-16 min/run,
+    thousands of sequential Gmail API calls every single run even though
+    most of that history never changes) -- see CLAUDE.md's editors-dashboard
+    section, 2026-09-14.
+    """
     try:
         from gmail_api import get_access_token, search_messages, get_body, get_metadata
     except ImportError:
         return []
 
     token = get_access_token()
+
+    cached_by_id = {}
+    query_suffix = 'newer_than:365d'
+    if cache_path and os.path.exists(cache_path):
+        try:
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                cache = json.load(f)
+            cached_by_id = {r['msg_id']: r for r in cache.get('records', []) if r.get('msg_id')}
+            last_date = cache.get('last_internal_date')
+            if last_date:
+                # 3-day overlap buffer in case messages land out of send-order
+                # or a prior run was interrupted mid-page; dedup by msg_id
+                # below makes re-fetching a few already-cached messages safe.
+                cutoff = datetime.fromtimestamp(int(last_date) / 1000) - timedelta(days=3)
+                query_suffix = f'after:{cutoff.strftime("%Y/%m/%d")}'
+        except (json.JSONDecodeError, KeyError, OSError) as exc:
+            print(f"  ⚠ cache at {cache_path} unreadable ({exc}), falling back to full fetch")
+            cached_by_id = {}
+
     # Anchor ALL terms to the subject line — an unscoped "(vote OR comment OR ...)"
     # searches the whole message, so any unrelated email with "Classic Chicago"
     # in its subject and the word "comment" anywhere in a long body (e.g. a
@@ -241,17 +273,17 @@ def fetch_gmail_votes_comments():
     msgs = search_messages(
         token,
         '(subject:"Classic Chicago Quick Vote" OR subject:"Classic Chicago Reader Comment" '
-        'OR subject:"Classic Chicago Form Submission") newer_than:365d'
+        f'OR subject:"Classic Chicago Form Submission") {query_suffix}'
     )
 
-    records = []
     skipped = 0
+    newest_internal_date = 0
     for m in msgs:
-        # This now fetches thousands of messages instead of ~20 (see
-        # search_messages' pagination fix) -- get_metadata/get_body already
-        # retry transient 5xx errors, but if a single message still fails
-        # after retries (e.g. a persistently malformed message), skip it
-        # rather than losing the whole leaderboard to one bad email.
+        if m['id'] in cached_by_id:
+            continue  # already parsed in a prior run
+        # get_metadata/get_body already retry transient 5xx errors, but if a
+        # single message still fails after retries (e.g. a persistently
+        # malformed message), skip it rather than losing the whole run.
         try:
             meta = get_metadata(token, m['id'])
             body = get_body(token, m['id'])
@@ -261,12 +293,27 @@ def fetch_gmail_votes_comments():
             continue
         subject = meta.get('Subject', '')
         date_str = meta.get('Date', '')
+        internal_date = int(meta.get('internalDate', 0)) if meta.get('internalDate') else 0
+        newest_internal_date = max(newest_internal_date, internal_date)
 
         rec = parse_formsubmit(body, subject, date_str)
         if rec:
-            records.append(rec)
+            rec['msg_id'] = m['id']
+            rec['internal_date'] = internal_date
+            cached_by_id[m['id']] = rec
     if skipped:
         print(f"  ⚠ skipped {skipped} of {len(msgs)} messages after retries failed")
+
+    records = list(cached_by_id.values())
+
+    if cache_path:
+        last_internal_date = max(
+            [r.get('internal_date', 0) for r in records] + [newest_internal_date]
+        )
+        os.makedirs(os.path.dirname(cache_path) or '.', exist_ok=True)
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            json.dump({'last_internal_date': last_internal_date, 'records': records}, f)
+
     return records
 
 

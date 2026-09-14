@@ -59,7 +59,7 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: tools/credentials.json
           GMAIL_OAUTH_KEYS_PATH: /tmp/gmail-oauth-keys.json
           GMAIL_CREDENTIALS_PATH: /tmp/gmail-credentials.json
-        run: python3 tools/build_editors_dashboard.py --output ../dashboard-output.html
+        run: python3 tools/build_editors_dashboard.py --output ../dashboard-output.html --gmail-cache ../editors-branch/editors/gmail-votes-cache.json
 
       - name: Copy output into editors branch checkout
         run: |
@@ -72,7 +72,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add editors/dashboard.html
+          git add editors/dashboard.html editors/gmail-votes-cache.json
           git rm --ignore-unmatch --quiet editors/stats.html
           if git diff --cached --quiet; then
             echo "No changes to dashboard.html — skipping commit"
