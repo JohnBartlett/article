@@ -181,6 +181,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--edition', default=None, help='Edition date YYYY-MM-DD (default: latest with a STATUS.md)')
     parser.add_argument('--output',  default='editors/dashboard.html', help='Output HTML file path')
+    parser.add_argument('--gmail-cache', default=None, help='Path to persist parsed vote/comment records across runs (incremental fetch instead of re-scanning the full 365-day window every time)')
     args = parser.parse_args()
 
     today_str = date.today().strftime("%Y-%m-%d")
@@ -217,7 +218,7 @@ def main():
         s1 = '<p class="no-data">No published editions yet.</p>'
 
     print("  Fetching comment/vote data from Gmail…")
-    records = bsp.fetch_gmail_votes_comments()
+    records = bsp.fetch_gmail_votes_comments(cache_path=args.gmail_cache)
     print(f"  → {len(records)} vote/comment records found")
 
     print("  Building Votes & Comments…")
