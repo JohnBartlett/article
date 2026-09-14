@@ -1,8 +1,10 @@
 name: '📋 Gemini Scheduled Issue Triage'
 
 on:
-  schedule:
-    - cron: '0 * * * *' # Runs every hour
+  # Hourly schedule trigger disabled 2026-09-14 -- this repo has 0 open
+  # issues and doesn't use GitHub Issues as a workflow, so the hourly cron
+  # was firing reliably (~10s/run) with nothing to triage. workflow_dispatch
+  # below still allows a manual run if that changes.
   pull_request:
     branches:
       - 'main'
