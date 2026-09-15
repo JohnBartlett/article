@@ -1,6 +1,8 @@
 # September 13, 2026 Edition — Status
 
-_Updated: 2026-09-14 (Judy sent next-edition schedule; date needs her confirmation)_
+_Updated: 2026-09-15 (FutureSports quote correction applied; next edition confirmed Sept 20)_
+
+**check-emails run, Sept 15 (cloud pass):** David Sweet requested one quote fix in the live FutureSports article, relayed by Judy (`1a0a6ff7d85f76ff`, forwarding David's `dafsweet@aol.com` email). Applied verbatim in `editions/2026-09-13/futuresports/index.html`: Taylforth's quote "our rule is to follow the money... We want partners with significant capital that can provide hedging." → "our aim is to create utility... We want groups with significant capital invested in sports to be able to hedge those investments." This is a live/published article, so the fix needs to go out to `dev`/`master` on the next `/stage`+`/publish` pass (not done by this skill). Also, Judy's Sept 20 (not 27) edition date is now confirmed and the poems/cover-photo items from the prior pass are queued for `/prep-edition`. See `EMAIL_LOG.md` items #135-137.
 
 **check-emails run, Sept 14 (second cloud pass):** Judy sent a 7-article lineup for the next edition (`1a0a1ed94574209a`) but titled it "September 27," which doesn't match the normal weekly cadence off this Sept 13 edition (that would be Sept 20) — `editions/2026-09-20/` doesn't exist. John already asked her to confirm same evening (`1a0a1f611f0f2a16`, sent before this pass, not by this session). `/prep-edition` should not run until she replies. Full lineup logged in `EMAIL_LOG.md` item #125 so it's ready to act on once the date is confirmed. This Sept 13 edition itself is unaffected — all 7 articles remain Ready and live.
 
@@ -93,7 +95,7 @@ What the Sept 7 changes email moved: Pokemon from Annie to Emma; David Sweet's s
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | READY. Lead/hero article (Judy's suggestion). Real navthumb.jpg added Sept 12. |
+| futuresports | Chicago-Based FutureSports Brings Novel Concept to Markets | David A. F. Sweet | ✅ Full text built | ✅ 2/2 photos placed with captions | READY, live. Real navthumb.jpg added Sept 12. Taylforth quote corrected Sept 15 per David Sweet's request (`1a0a6ff7d85f76ff`) — fix is on dev2 only, still needs `/stage`+`/publish` to reach production. |
 | puget-sound | When Your Lawn Ornament Is an Airplane… | Elizabeth Dunlop Richter | ✅ Full text built | ✅ 22/22 photos + COVER extracted and placed | READY as of Sept 12. Full article arrived Sept 10 (msg `1a08bc49f7b39acb` via Ana). |
 | chitchat | Phatic Communication, or Small Talk — Our Social Lubricant | Jill Lowe | ✅ Full text rebuilt Sept 13 from `pdftotext -layout` | ✅ 7/7 photos, swapped pair corrected Sept 13 | READY as of Sept 13, live on production. Sept 12's PyPDF2-based build lost her paragraph breaks and swapped two photos; Jill flagged it (EMAIL_LOG.md #110) and a Sept 13 local session rebuilt against the actual PDF layout, restored italics/pull-quotes, and fixed a byline CSS gap. See EMAIL_LOG.md #112. "Facts and Froth" column. No captions given for any photo (none invented). Two likely typos carried verbatim from source, not corrected: "Mucho" (probably "Much") and "commmunion" (one instance, elsewhere spelled correctly). |
 | judith-guest | Judith Guest on Ordinary People | Scott Holleran | ✅ Full text built | ✅ 6/6 candidate photos extracted | TEXT+PHOTOS READY but **hero choice still open** — see Blockers. Hyperlinks to prior Ordinary People articles already embedded in text. |
