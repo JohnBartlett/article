@@ -1,9 +1,11 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-16_
+_Updated: 2026-09-16 (check-emails pass)_
 
-Skeleton prepped (nav chain, homepage, DateBook/Astrochart carried forward). All 7 articles
-are placeholder stubs — no article text has arrived yet. Two new authors (Basak Notz, Dominic
+Skeleton prepped (nav chain, homepage, DateBook/Astrochart carried forward). `jean-colonomos-poems`
+is now Ready (both poems built verbatim + Nick Wilder cover photo placed as hero with credit,
+per Judy's explicit "at top of page with his credit" instruction). The other 6 articles remain
+placeholder stubs — no article text has arrived yet. Two new authors (Basak Notz, Dominic
 Pacyga) still need about.html bios.
 
 ## Judy's official lineup (`1a0a1ed94574209a`, received 2026-09-14; date corrected to Sept 20 via `1a0a574a949ffeba`, 2026-09-15)
@@ -35,9 +37,9 @@ Nav chain order (hero → last):
 - **Bob Glaze** (Bob Glaze) — topic not yet known; owed by Emma.
 - **Baseball and Ulysses** (David A. F. Sweet) — not yet received.
 - **The Block Museum** (Sigalit Zetouni) — not yet received.
-- **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot (`DominicHeadshot.jpeg`) already staged. **New author's bio** — needed for about.html; the byline link is dead until it exists.
+- **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot (`DominicHeadshot.jpeg`) moved from staging into the article folder and set as the homepage card image (subject line only said "Cover Photo," no "also place in body" instruction and no caption — per house rule #27 it stays out of the article body/hero until text arrives). **New author's bio** — needed for about.html; the byline link is dead until it exists.
 - **The Hawthorne Works Project** (Adrian Naves) — not yet received.
-- **Two Poems** (Jean Colonomos) — both poems' text already received (Sept 15, "The Open Road" and "Rom-Com"); not yet built into the stub. Candidate cover photo received from Nick Wilder (`IMG_0491.jpeg`) but not yet confirmed/placed — Judy also floated using it "at top of page with his credit," not just as the homepage card.
+- ~~**Two Poems** (Jean Colonomos)~~ — done. Both poems built verbatim into the stub; Nick Wilder's photo (`IMG_0491.jpeg`) placed as the hero figure with "Photo: Nick Wilder" credit (per Judy's explicit instruction) and set as the homepage card image. Article is now **Ready**.
 
 ## Blockers
 
@@ -53,9 +55,9 @@ Nav chain order (hero → last):
 | bob-glaze | Bob Glaze | Bob Glaze | Placeholder | — | Topic TBD |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | Placeholder | — | |
 | block-museum | The Block Museum | Sigalit Zetouni | Placeholder | — | |
-| newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | Headshot staged (`DominicHeadshot.jpeg`) | New author, needs bio |
+| newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
 | hawthorne-works | The Hawthorne Works Project | Adrian Naves | Placeholder | — | |
-| jean-colonomos-poems | Two Poems | Jean Colonomos | Placeholder | Candidate cover staged (`IMG_0491.jpeg`) | Text already in hand ("The Open Road", "Rom-Com") — not yet built |
+| jean-colonomos-poems | Two Poems | Jean Colonomos | **Ready** | Hero + homepage card (`IMG_0491.jpeg`, credited to Nick Wilder) | Both poems built verbatim |
 
 ## Notes
 
