@@ -2,12 +2,21 @@
 
 _Updated: 2026-09-16 (check-emails pass)_
 
+**⚠️ Pending lineup swap — not yet executed (see Blockers):** Judy (`1a0ab55918f267c8`, 5:48 PM ET)
+wants `jean-colonomos-poems` pulled from Sept 20 and held for a future thin week; the Coyote vs
+Acme movie review (by Jack LeJeune) takes its slot instead. `jean-colonomos-poems` is still built,
+Ready, and sitting in the nav chain as of this pass — the swap needs a `/prep-edition`/`/layout`
+pass to actually remove it, create a `coyote-vs-acme` stub, and rewire the nav chain/homepage.
+Do not publish this edition with Jean's poems in place without confirming this swap has happened.
+
 Skeleton prepped (nav chain, homepage, DateBook/Astrochart carried forward). `jean-colonomos-poems`
-is now Ready (both poems built verbatim + Nick Wilder cover photo placed as hero with credit,
-per Judy's explicit "at top of page with his credit" instruction). `baseball-ulysses` is now
+is Ready (both poems built verbatim + Nick Wilder cover photo placed as hero with credit,
+per Judy's explicit "at top of page with his credit" instruction) **but per the above is slated
+to come back out of this edition.** `baseball-ulysses` is now
 **Text Only** — full article text built verbatim (msg `1a0ab428d33b38b8`); no photos placed yet,
 see Blockers below. The other 5 articles remain placeholder stubs — no article text has arrived
-yet. Two new authors (Basak Notz, Dominic Pacyga) still need about.html bios.
+yet. Two new authors (Basak Notz, Dominic Pacyga) still need about.html bios, and a third
+(Jack/Jackson LeJeune, Coyote vs Acme) will need one too once the swap above executes.
 
 ## Judy's official lineup (`1a0a1ed94574209a`, received 2026-09-14; date corrected to Sept 20 via `1a0a574a949ffeba`, 2026-09-15)
 
@@ -45,6 +54,7 @@ Nav chain order (hero → last):
 
 ## Blockers
 
+- **Lineup swap pending: Jean's poems out, Coyote vs Acme in.** Judy confirmed this (`1a0ab55918f267c8`) and forwarded Jack LeJeune's full review text + photos (`1a0ab5430c08b4eb`) the same evening, but the photos aren't placeable yet: no captions given for 3 of the 4 images (`CC CvA Car Image.jpg`, `CC CvA Coyote and Road Runner Image.jpg`, `CC CvA Trial Image.jpg`), and Judy herself is asking John whether to extract photos from the embedded odt/PDF positions or have Jack resend cleaner text+photos separately. Needs John's answer to Judy, then a `/prep-edition` pass to build the `coyote-vs-acme` stub and remove `jean-colonomos-poems` from this edition's nav/homepage (poems stay on disk for a future edition, per Judy's "delay... until then" — don't delete).
 - **Baseball and Ulysses photo placement is an open question.** Judy's subject line for `1a0ab428d33b38b8` literally asks "Use book cover for main photo?" — unanswered. Three attachments (`Baseball 1 2.jpeg`, `Baseball 2.jpeg`, `Baseball 3.jpeg`) came with explicit captions "in the order they should appear," but it's unclear whether any of the three IS the book cover Judy is asking about, or whether a separate cover image is still to come. Not staged in `_attachment-staging/` yet either. Needs John's/Judy's decision on (1) which image is the main/hero photo and (2) confirmation the 3 captioned images should run inline in that order once staged.
 - **"Movie review" cover photo arrived with no corresponding lineup entry.** Judy sent a cover photo (`CC CvA Poster.jpeg`, msg `1a0a9e2bd9a7c09d`) captioned "Cover photo for new movie review for Sept, 20. Will send shortly" — this is not one of the 7 confirmed lineup articles. Needs Judy/John to clarify: is this a late 8th addition, and who is the reviewer/byline? No article text has arrived for it either way.
 - **Basak Notz and Dominic Pacyga have no about.html bios yet** — both are new authors; their byline links (`#basak-notz`, `#dominic-pacyga`) are currently dead.
