@@ -1,6 +1,6 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-16 (check-emails pass)_
+_Updated: 2026-09-16 (check-emails pass, second)_
 
 **⚠️ Pending lineup swap — not yet executed (see Blockers):** Judy (`1a0ab55918f267c8`, 5:48 PM ET)
 wants `jean-colonomos-poems` pulled from Sept 20 and held for a future thin week; the Coyote vs
@@ -14,9 +14,12 @@ is Ready (both poems built verbatim + Nick Wilder cover photo placed as hero wit
 per Judy's explicit "at top of page with his credit" instruction) **but per the above is slated
 to come back out of this edition.** `baseball-ulysses` is now
 **Text Only** — full article text built verbatim (msg `1a0ab428d33b38b8`); no photos placed yet,
-see Blockers below. The other 5 articles remain placeholder stubs — no article text has arrived
-yet. Two new authors (Basak Notz, Dominic Pacyga) still need about.html bios, and a third
-(Jack/Jackson LeJeune, Coyote vs Acme) will need one too once the swap above executes.
+see Blockers below. `block-museum` is now also **Text Only** — article text built verbatim
+(msg `1a0ac8315f198ed8`); its one image + full credit line have been sent (`1a0ac872b0343f4e`)
+but aren't staged yet, see Blockers below. The other 3 articles remain placeholder stubs — no
+article text has arrived yet. Two new authors (Basak Notz, Dominic Pacyga) still need about.html
+bios, and a third (Jack/Jackson LeJeune, Coyote vs Acme) will need one too once the swap above
+executes.
 
 ## Judy's official lineup (`1a0a1ed94574209a`, received 2026-09-14; date corrected to Sept 20 via `1a0a574a949ffeba`, 2026-09-15)
 
@@ -46,7 +49,7 @@ Nav chain order (hero → last):
 - **Basak Notz, Illustrator and Artist** (Judy Carmack Bross) — article text not yet sent to John; Ana has it. Cover photo is on a Dropbox link Judy had trouble downloading (`IMG_8450.jpeg`); Ana confirmed she has Dropbox access as of Sept 14.
 - **Bob Glaze** (Bob Glaze) — topic not yet known; owed by Emma.
 - **Baseball and Ulysses** (David A. F. Sweet) — not yet received.
-- **The Block Museum** (Sigalit Zetouni) — not yet received.
+- ~~**The Block Museum** (Sigalit Zetouni)~~ — article text now received and built verbatim (`1a0ac8315f198ed8`, "The Blast's text"). Image + credit sent separately (`1a0ac872b0343f4e`, "Blast's image and credit": `9-ModernMetropolis-Yuichi Idaka - Untitled El.JPEG`, full credit line given) but not yet in `_attachment-staging/1a0ac872b0343f4e/` — email arrived 7:20 PM ET, after the most recent hourly fetch; expected within the hour. Article is **Text Only**.
 - **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot (`DominicHeadshot.jpeg`) moved from staging into the article folder and set as the homepage card image (subject line only said "Cover Photo," no "also place in body" instruction and no caption — per house rule #27 it stays out of the article body/hero until text arrives). **New author's bio** — needed for about.html; the byline link is dead until it exists.
 - **The Hawthorne Works Project** (Adrian Naves) — not yet received.
 - ~~**Baseball and Ulysses** (David A. F. Sweet)~~ — article text now received and built verbatim (`1a0ab428d33b38b8`). Three captioned photos (`Baseball 1 2.jpeg`, `Baseball 2.jpeg`, `Baseball 3.jpeg`) attached with captions given in order — now staged in `_attachment-staging/1a0ab428d33b38b8/`, but placement is still blocked: see Blockers below. Article is **Text Only**.
@@ -67,7 +70,7 @@ Nav chain order (hero → last):
 | basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | Placeholder | Cover photo on Dropbox, not downloaded | Lead/hero |
 | bob-glaze | Bob Glaze | Bob Glaze | Placeholder | — | Topic TBD |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Text Only** | Pending — 3 captioned photos now staged, main-photo/placement question open | Hero photo choice unresolved |
-| block-museum | The Block Museum | Sigalit Zetouni | Placeholder | — | |
+| block-museum | The Block Museum | Sigalit Zetouni | **Text Only** | Pending — image sent (`1a0ac872b0343f4e`), not yet staged | Full credit line given, ready to apply once staged |
 | newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
 | hawthorne-works | The Hawthorne Works Project | Adrian Naves | Placeholder | — | |
 | jean-colonomos-poems | Two Poems | Jean Colonomos | **Ready** | Hero + homepage card (`IMG_0491.jpeg`, credited to Nick Wilder) | Both poems built verbatim |
