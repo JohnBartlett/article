@@ -1,6 +1,6 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-17 (check-emails pass — no new lineup content this pass; only a staging-folder cleanup, see EMAIL_LOG.md #157-158)_
+_Updated: 2026-09-17 (check-emails pass — no new lineup content this pass; only a recurring staging-folder cleanup, see EMAIL_LOG.md #157-160)_
 
 **⚠️ Pending lineup swap — not yet executed (see Blockers):** Judy (`1a0ab55918f267c8`, 5:48 PM ET)
 wants `jean-colonomos-poems` pulled from Sept 20 and held for a future thin week; the Coyote vs
