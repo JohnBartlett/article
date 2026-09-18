@@ -406,7 +406,32 @@ def verify_edition(edition_date):
     else:
         print("ABOUT.HTML POPUPS: all triggers have matching popups\n")
 
-    return {"status_counts": status_counts, "issues": all_issues, "broken_popups": broken_popups}
+    # Past-edition landing pages: every editions/YYYY-MM-DD/ folder referenced
+    # from the homepage's Past Editions section must have its own index.html.
+    # Without one, Cloudflare's fallback serves the root homepage's HTML at
+    # that URL -- and since the homepage's links are relative (no leading
+    # slash), every link on the mis-served page compounds into a doubled,
+    # broken path (editions/DATE/editions/DATE/...). This caused a real
+    # production outage for two editions before an automated check existed
+    # (Scott Holleran's Sept 13 report, then Judy's Sept 17 "popped out
+    # again" report for Sept 6) -- see CLAUDE.md mistake #48.
+    missing_landing_pages = []
+    if homepage.exists():
+        hp = homepage.read_text()
+        past_ed_dates = set(re.findall(r'href="editions/(\d{4}-\d{2}-\d{2})/"', hp))
+        for d in sorted(past_ed_dates):
+            if not (repo_root / "editions" / d / "index.html").exists():
+                missing_landing_pages.append(d)
+    if missing_landing_pages:
+        print("PAST-EDITION LANDING PAGE ISSUES:")
+        for d in missing_landing_pages:
+            print(f"  ✗ editions/{d}/index.html does not exist but is linked from the homepage's Past Editions")
+        print()
+    else:
+        print("PAST-EDITION LANDING PAGES: all homepage-linked editions have their own index.html\n")
+
+    return {"status_counts": status_counts, "issues": all_issues, "broken_popups": broken_popups,
+            "missing_landing_pages": missing_landing_pages}
 
 
 if __name__ == "__main__":

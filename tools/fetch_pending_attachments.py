@@ -9,9 +9,16 @@ Runs on a schedule via .github/workflows/fetch-email-attachments.yml, using
 the same GMAIL_OAUTH_KEYS/GMAIL_CREDENTIALS secrets already provisioned for
 the editors-dashboard refresh workflow.
 
-Idempotent: a message already staged (its _attachment-staging/<msg_id>/
-folder exists and is non-empty) is skipped on subsequent runs, so this is
-safe to run hourly with an overlapping lookback window.
+Idempotent: a message already staged is skipped on subsequent runs, checked
+against a persistent ledger (_attachment-staging/.staged_log.json), not just
+folder existence. This matters because the normal consumption workflow
+DELETES a message's staging folder once its files are copied into the real
+article folder -- if idempotency were based on folder existence alone, every
+consumed message would look "never staged" again and get re-downloaded on
+the next run, forever. This was a confirmed recurring bug (9 occurrences
+across the 2026-09-20 edition alone, see EMAIL_LOG.md) before the ledger
+was added. Never delete .staged_log.json when cleaning up a consumed
+staging folder -- only delete the message's own subfolder.
 
 Usage:
     python3 tools/fetch_pending_attachments.py [--days 14] [--staging-dir _attachment-staging]
@@ -68,6 +75,12 @@ def main():
     staging_root = repo_root / args.staging_dir
     staging_root.mkdir(exist_ok=True)
 
+    ledger_path = staging_root / ".staged_log.json"
+    if ledger_path.exists():
+        staged_ids = set(json.loads(ledger_path.read_text()))
+    else:
+        staged_ids = set()
+
     edition = find_current_edition()
     print(f"Active edition (for context only): {edition}")
 
@@ -82,9 +95,20 @@ def main():
 
     for m in messages:
         msg_id = m["id"]
-        msg_dir = staging_root / msg_id
 
+        # Ledger check first: a message already staged (even if its folder
+        # was since deleted after consumption) is never re-fetched. Folder
+        # existence alone is NOT a safe idempotency signal -- see module
+        # docstring for why.
+        if msg_id in staged_ids:
+            skipped_count += 1
+            continue
+
+        msg_dir = staging_root / msg_id
         if msg_dir.exists() and any(msg_dir.iterdir()):
+            # Folder present but not yet in the ledger (e.g. ledger added
+            # after this folder was staged) -- record it now and move on.
+            staged_ids.add(msg_id)
             skipped_count += 1
             continue
 
@@ -113,9 +137,11 @@ def main():
             "files": saved,
         }, indent=2))
 
+        staged_ids.add(msg_id)
         staged_count += 1
 
-    print(f"\nStaged {staged_count} new message(s); skipped {skipped_count} already-staged message(s).")
+    ledger_path.write_text(json.dumps(sorted(staged_ids), indent=2))
+    print(f"\nStaged {staged_count} new message(s); skipped {skipped_count} already-staged message(s). Ledger now tracks {len(staged_ids)} message(s).")
 
 
 if __name__ == "__main__":
