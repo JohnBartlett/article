@@ -1,35 +1,10 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-19 (cloud pass — dropped opening paragraph in bob-glaze found and fixed; 25 photos now staged but still unplaced)_
+_Updated: 2026-09-19 (John's session, reconciled with a concurrent cloud pass — bob-glaze text finalized incl. a dropped-paragraph fix; Hawthorne Works text found and built, 3 of 4 photos placed)_
 
-**✅ Fixed a silent paragraph drop in `bob-glaze`.** The pass that placed the article's text (below)
-dropped its opening sentence ("As the weather improves and the trees start to change color...My
-top recommendations include:") between extraction and placement — a different, parallel session's
-independent transcription of the same source email caught the mismatch on `git pull --rebase` and
-restored it. `bob-glaze` now has all 19 of the source's paragraphs (was 18). No other content was
-affected. **Also: all 25 of Bob Glaze's photos are now staged** (`_attachment-staging/1a0b85da1188e789/`)
-but still unplaced — the source gives zero per-photo captions or placement instructions, so matching
-them to the article's 16 named locations needs either explicit instructions from Emma/Bob or a
-careful visual-identification pass; left for a future `/new-edition` pass rather than rushed here.
+**✅ Bob Glaze byline + text resolved.** Judy's forward (`1a0b96e5ce14e81c`, "This is the Bob Glaze column for tomorrow. I don't see his name on it.") confirmed Emma Muhleman's "My Favorite Fall Destinations in Chicago" fills the long-open Bob Glaze topic slot. John's explicit call: publish under **Bob Glaze's byline** (Emma wrote it, but it runs as his column). Full text placed verbatim in `bob-glaze/index.html`, category set to "Weekend Road Trips" (matches most of his prior columns; corroborated by his about.html bio linking globalphile.com, which this article's own closing line also points to). A concurrent cloud pass caught and fixed a dropped opening sentence during reconciliation — the article now has its complete paragraph set. One verbatim-but-flagged source issue per house rule #18: the Garfield Park Conservatory paragraph has an unbalanced quotation mark in the source (opens a quote, then opens a second nested quote without closing the first) — left as written. `bob-glaze` is now **Text Only**. **Photos not placed — genuine blocker:** 25 generically-named attachments (`photo 1.jpg`–`photo 25.jpg`, staged in `_attachment-staging/1a0b85da1188e789/`), zero placement/caption instructions, no correspondence to the article's 10+ named locations. Needs an explicit filename→location map from Emma/Judy before any `<figure>` is built (house rules #28/#29).
 
-**✅ Bob Glaze authorship resolved — text placed, photos still blocked.** Judy confirmed by email
-(`1a0b96e5ce14e81c`, Sept 19 11:29 AM UTC): "This is the Bob Glaze column for tomorrow. I don't see
-his name on it." This settles the open question from the prior pass (Emma's Sept 19 "My Favorite
-Fall Destinations in Chicago" email, unsigned, sent as Bob Glaze's coordinator). Corroborating
-detail: the article's own closing line points readers to globalphile.com, which is literally Bob
-Glaze's own site per his about.html bio. Full text placed verbatim in
-`editions/2026-09-20/bob-glaze/index.html` (title "My Favorite Fall Destinations in Chicago",
-category "Weekend Road Trips" matching his prior columns' style). One verbatim-but-flagged source
-issue per house rule #18: the Garfield Park Conservatory paragraph has an unbalanced quotation mark
-in the source (opens with a quote, then opens a second nested quote — "landscape art under glass" —
-without closing the first) — left as written, not corrected. `bob-glaze` is now **Text Only** (was
-Placeholder). **Photos not placed — genuine blocker, not guessed at:** the email's 25 attachments
-are all generically named (`photo 1.jpg` through `photo 25.jpg`, now staged in
-`_attachment-staging/1a0b85da1188e789/`) with zero placement or caption instructions in the email
-body, and no correspondence between filenames and the 10 named locations in the text. Per house
-rules #28/#29, this needs an explicit filename→location map from Emma/Judy before any `<figure>` is
-built — not guessable from content alone (multiple different-looking Chicago park photos could
-belong to any of several locations named in the piece).
+**✅ Hawthorne Works article text found and built — 3 of 4 photos placed.** Judy's "My article" forward (`1a0b97097e6da9d9`) looked photos-only at first glance (the email body just says "Here's my article and photos" plus 4 Drive links) — but it actually carries a real attachment, `History of The Hawthorne Works Complex.docx`, missed on the first body-only read and found by checking the message's MIME parts directly. Extracted via `python-docx`, placed verbatim in `hawthorne-works/index.html` (title "History of The Hawthorne Works Complex"), with the docx's own inline `PHOTO #1/#2/#3` placement labels followed exactly: `IMG_1554.png` (wide exterior view, downloaded via Drive) → "PHOTO #2 - BLACK & WHITE HAWTHORNE WORKS COMPLEX" anchor; `IMG_1555.png` (interior shop-floor view, downloaded via Drive) → "PHOTO #3 - BLACK & WHITE INSIDE THE COMPLEX" anchor; both matches confirmed by looking at the actual images, not guessed. "PHOTO #1 - OLD FIREPROOF WATER TOWER" (`Old fireproof water tower.jpeg`) has an anchor placeholder but no image yet — the source file is 11.7 MB on Drive, over the connector's 10 MB cap. The COVER photo (`COVER - Water tower sideview.jpeg`) stays homepage-card-only per house rule #27 (no caption given). Two verbatim-but-flagged typos per house rule #18, not corrected: "Cermack Rd." (should be Cermak) and a dropped word — "was later i Cicero" (should likely read "later annexed into Cicero" or similar). `hawthorne-works` is now **Text Only** — one photo (old fireproof water tower) still needed.
 
 **✅ Baseball and Ulysses photo question resolved from the source material itself.** Judy's
 subject line asked "Use book cover for main photo?" — unanswered by anyone, but David's own
@@ -68,12 +43,9 @@ published H1/title was left unchanged pending Judy's/John's call on which title 
 `basak-notz` is **Ready** — 5 real Gmail-attachment photos placed (COVER as
 homepage/hero card only, per house rule #27 — no explicit "also use in body" instruction); the
 other 17 of 22 photo positions remain Google Drive-link-only and cannot be auto-staged — still
-open. `hawthorne-works` remains a placeholder stub — but Adrian's actual article text has now
-arrived (docx attachment on `1a0b97097e6da9d9`, Judy forwarding Adrian's own "My article" email to
-Annie, cc John, Sept 19 11:32 AM UTC) — not yet staged in `_attachment-staging/` as of this pass
-(email arrived after the most recent hourly fetch), so the docx has not been extracted or placed
-yet; its cover photo remains placed as the homepage card. `bob-glaze` is now **Text Only** — see
-above; the authorship question is resolved. Dominic Pacyga still needs an about.html bio.
+open. `hawthorne-works` is now **Text Only** — see above; text extracted and placed, 3 of 4 photos
+in, its COVER photo remains the homepage card only. `bob-glaze` is now **Text Only** — see
+above; the byline question is resolved. Dominic Pacyga still needs an about.html bio.
 
 **Sig's 9 promised block-museum photos (msg `1a0b82e61d6002fa`'s follow-up) — 7 of 9 now placed.**
 Photos 3–7 were staged this pass and placed at the exact anchors mapped in the prior pass (all
@@ -132,10 +104,10 @@ Nav chain order (hero → last):
 ## Pending Deliveries
 
 - ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**. The 5 real Gmail-attachment photos are placed: `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only. The other 17 of 22 photo positions remain Google Drive `view`-link-only in the source email — `fetch-email-attachments.yml` cannot stage these; still needs John to download manually or ask Ana/Judy to resend as real attachments.
-- **My Favorite Fall Destinations in Chicago** (Bob Glaze) — text placed, article **Text Only**. 25 generically-named photos staged but un-placeable without an explicit filename→location map.
+- ~~**Bob Glaze** (Bob Glaze)~~ — text in, byline confirmed by John. Photo placement still owed (25 generic-named photos staged in `_attachment-staging/1a0b85da1188e789/`, no filename→location map).
 - ~~**The Block Museum** (Sigalit Zetouni)~~ — done, article **Ready**.
 - **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot in hand and set as the homepage card image. **New author's bio** — needed for about.html; the byline link is dead until it exists.
-- **The Hawthorne Works Project** (Adrian Naves) — cover photo placed as homepage card; article text (docx) has now arrived via Judy's forward (`1a0b97097e6da9d9`) but is not yet staged in `_attachment-staging/` — expected within the hour.
+- ~~**The Hawthorne Works Project** (Adrian Naves)~~ — text found and placed (docx attachment on Judy's forward, missed on first pass), 3 of 4 photos placed. One photo (`Old fireproof water tower.jpeg`) still needed — exceeds Drive connector's 10MB cap.
 - ~~**Baseball and Ulysses** (David A. F. Sweet)~~ — done, article **Ready**. All 3 photos placed; book cover resolved as hero from the source captions themselves.
 - ~~**Coyote vs. Acme Review** (Jackson LeJeune)~~ — done, article **Ready**. Full text + all 4 photos placed at their exact PDF-source positions.
 
@@ -147,20 +119,19 @@ Nav chain order (hero → last):
 - **Annie's DateBook question is still open** — she asked (Sept 13, msg `1a09c1176fa6497d`) whether she can add more events later; needs John's yes/no.
 - **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
 - **`block-museum` — 2 of Sig's 9 promised photos (#8/#9) have no textual anchor at all** (both generic, identically-captioned installation views) — needs John's/Judy's decision on placement once staged, not guessable from the source. 7 of 9 are now placed.
-- ~~**Authorship of Emma Muhleman's "Fall Destinations" email**~~ — resolved. Judy confirmed by email it's the Bob Glaze column; text placed.
-- **NEW — `bob-glaze`'s 25 photos have no placement instructions.** Generic filenames (`photo 1.jpg`–`photo 25.jpg`), no captions or location labels in the email body, no correspondence to the 10 named locations in the text. Needs an explicit filename→location map from Emma or Judy before any figure is built — not guessable from content alone.
-- **NEW — `hawthorne-works` article text (docx) received but not yet staged.** Judy forwarded Adrian's original "My article" email (with the docx attachment) to Annie, cc John, Sept 19 11:32 AM UTC (`1a0b97097e6da9d9`). Not yet in `_attachment-staging/` as of this pass — should appear within the hour; a future pass should extract and place the text once it does. Two more Drive-link-only photos also mentioned in Adrian's original email (`IMG_1555.png`, `IMG_1554.png`, `Old fireproof water tower.jpeg`) beyond the already-placed COVER photo — same Drive-link limitation as Basak Notz's remaining photos.
+- **`bob-glaze`'s 25 photos have no placement instructions.** Generic filenames (`photo 1.jpg`–`photo 25.jpg`), no captions or location labels in the email body, no correspondence to the 10+ named locations in the text. Needs an explicit filename→location map from Emma or Judy before any figure is built — not guessable from content alone.
+- **`hawthorne-works` — 1 of 4 photos still missing.** `Old fireproof water tower.jpeg` (11.7 MB on Drive) exceeds the connector's 10 MB download cap — needs manual download or a re-send as a direct email attachment.
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
 | basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 5/22 placed (COVER as homepage card only; 2/3/4/16 inline, 16 captioned); 17/22 Drive-link only, unreachable by fetch workflow | COVER in-body placement still unconfirmed |
-| bob-glaze | My Favorite Fall Destinations in Chicago | Bob Glaze | **Text Only** | 0/25 placed; staged but no placement map | Authorship confirmed by Judy; photo placement blocked |
+| bob-glaze | My Favorite Fall Destinations in Chicago | Bob Glaze (byline; Emma Muhleman wrote it) | **Text Only** | 0/25 placed; 25 staged, no placement map | Byline confirmed by John Sept 19; photo order still needed |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
 | block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + 6 inline (7/9 of Sig's promised photos placed); 2 of 9 (#8/#9) have no anchor (open question) | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`) |
 | newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
-| hawthorne-works | The Hawthorne Works Project | Adrian Naves | Placeholder | Cover photo placed as homepage card (`COVER - Water tower sideview.jpeg`) | Article text (docx) received, awaiting staging |
+| hawthorne-works | History of The Hawthorne Works Complex | Adrian Naves | **Text Only** | COVER as homepage card; 2 inline (`IMG_1554.png`, `IMG_1555.png`) at docx-specified anchors; 1 of 4 (old fireproof water tower) still missing, over Drive's 10MB cap | Full text placed verbatim from docx attachment |
 | coyote-vs-acme | Coyote vs. Acme Review: A Well-Done Romp in Spite of All Odds | Jackson LeJeune | **Ready** | Hero (poster) + 3 inline, all at exact PDF-source positions | No captions given in source; none invented |
 
 **Held, not in nav/homepage:** `jean-colonomos-poems` (Jean Colonomos) — **Ready**, fully built, kept on disk for a future thin week.
