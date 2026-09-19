@@ -25,9 +25,18 @@ LeJeune, who already has an about.html bio from a previously-dropped article —
 was updated automatically by `edition_checks.py`.
 
 `baseball-ulysses` is now **Ready** — see above. `block-museum` is **Ready** —
-article text built verbatim (msg `1a0ac8315f198ed8`) and its image (`1a0ac872b0343f4e`) placed as
-the hero figure with the full credit line from Sig's email as the figcaption; also the homepage
-card image. `basak-notz` is **Ready** — 5 real Gmail-attachment photos placed (COVER as
+its full article text (msg `1a0b82e61d6002fa`, received Sept 19, subject "Text") replaced the
+earlier one-paragraph "Blast" placeholder (msg `1a0ac8315f198ed8`, Sept 16, subject "Blast's
+text" — a short blurb, not the full piece) with the complete ~10-paragraph verbatim article on
+photographers Yuichi Idaka, Henry Simon, and Vivian Maier at The Block Museum's "Picturing the
+Modern Metropolis" exhibition. Its image (`1a0ac872b0343f4e`) remains placed as the hero figure
+with the full credit line from Sig's email as the figcaption; also the homepage card image. Sig's
+email says 9 more photos with credits will follow in a separate email — not yet received, still
+open. Two items flagged, not corrected, per house rule #18: the source has a typo ("potray" for
+"portray") and a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
+the title "Megalopolis," but Judy's official lineup names this article "The Block Museum" — the
+published H1/title was left unchanged pending Judy's/John's call on which title to use.
+`basak-notz` is **Ready** — 5 real Gmail-attachment photos placed (COVER as
 homepage/hero card only, per house rule #27 — no explicit "also use in body" instruction); the
 other 17 of 22 photo positions remain Google Drive-link-only and cannot be auto-staged — still
 open. `hawthorne-works` remains a placeholder stub (Annie still has Adrian's article text) but its
@@ -75,6 +84,8 @@ Nav chain order (hero → last):
 - **Basak Notz photos — 17 of 22 are Google Drive links, not Gmail attachments, and cannot be staged automatically.** Needs John's decision: download manually, or ask Ana/Judy to resend as real attachments.
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
 - **Annie's DateBook question is still open** — she asked (Sept 13, msg `1a09c1176fa6497d`) whether she can add more events later; needs John's yes/no.
+- **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
+- **`block-museum` — 9 more photos with credits promised** (Sig's Sept 19 email, msg `1a0b82e61d6002fa`) but not yet sent in a follow-up email; article currently runs with only the 1 hero image already in hand.
 
 ## Articles
 
@@ -83,7 +94,7 @@ Nav chain order (hero → last):
 | basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 5/22 placed (COVER as homepage card only; 2/3/4/16 inline, 16 captioned); 17/22 Drive-link only, unreachable by fetch workflow | COVER in-body placement still unconfirmed |
 | bob-glaze | Bob Glaze | Bob Glaze | Placeholder | — | Topic TBD |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
-| block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + homepage card (`9-ModernMetropolis-Yuichi Idaka - Untitled El.JPEG`, credited to Yuichi Idaka) | Full credit line placed verbatim |
+| block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + homepage card (`9-ModernMetropolis-Yuichi Idaka - Untitled El.JPEG`, credited to Yuichi Idaka); 9 more photos promised, not yet received | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`), replacing the earlier one-paragraph "Blast" stub |
 | newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
 | hawthorne-works | The Hawthorne Works Project | Adrian Naves | Placeholder | Cover photo placed as homepage card (`COVER - Water tower sideview.jpeg`) | Article text still with Annie |
 | coyote-vs-acme | Coyote vs. Acme Review: A Well-Done Romp in Spite of All Odds | Jackson LeJeune | **Ready** | Hero (poster) + 3 inline, all at exact PDF-source positions | No captions given in source; none invented |
