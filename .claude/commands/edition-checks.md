@@ -46,37 +46,35 @@ The script handles:
 - Adds `dark-mode.js` to any article missing it
 - Adds nav-thumb CSS (70×70px, `object-fit:cover`) to any article missing it
 - Appends new articles to existing author popups in `about.html`
+- **Adds a stub `team-member` card to the Our Writers grid for any byline with no existing about.html entry** (name derived from the author_id, `[Role pending]`/`[Bio pending]` placeholders, articles popup pre-populated with their real article links) — see Step 3.
 - Flags any DateBook month-header sections dated before the current edition's own month (`stale_datebook_months` in the report) — these are past events left over from copying the previous week's DateBook (see mistake #20). If flagged, remove that month's entire `<!-- ═ MONTH ═ -->` block (comment, `month-header` div, and its `event-list` div) from `editions/YYYY-MM-DD/datebook/index.html` before staging. Do not touch months that are the current or a future month.
 
-## Step 3 — Handle new authors
+## Step 3 — Fill in real bios for new-author stub cards
 
-For each author in `report['new_authors_needing_bios']`, add a `<div class="team-member">` entry
-to the **Our Writers** section in `about.html` (just before the closing `</div>` of that
-section's `<div class="team-grid">`) — this is the only writers grid; see the note in Step 4.
-
-Use this template:
+As of the current version, the script itself already adds a placeholder `team-member` card
+(with the real article link wired up) for any author in `report['new_authors_needing_bios']` —
+you don't need to hand-write the card. What's left is replacing the two placeholders it leaves:
 
 ```html
-        <div class="team-member" id="AUTHOR-ID">
-          <h3>Display Name</h3>
-          <div class="role">Role / Column</div>
-          <p>One or two sentence bio.</p>
-      <button class="articles-trigger" data-popup="articles-AUTHOR-ID">Name&rsquo;s Articles &rarr;</button>
-      <div id="articles-AUTHOR-ID" class="articles-popup">
-        <button class="articles-popup-close">&times;</button>
-        <div class="articles-popup-heading">Name&rsquo;s Articles</div>
-        <div class="articles-grid">
-        </div>
-      </div>
-        </div>
+<div class="team-member" id="AUTHOR-ID">
+  <h3>Display Name</h3>
+  <div class="role">[Role pending]</div>
+  <p>[Bio pending]</p>
+  ...
+</div>
 ```
 
-The automated script will have already populated the articles grid — just add the wrapper.
+Find each `[Role pending]`/`[Bio pending]` pair and replace with the real role/column name and a
+one-or-two sentence bio.
 
 Author bio source (in priority order):
 1. CLAUDE.md Writers section — if the author is listed there
 2. The article itself — byline or author note
 3. Ask Judy if unknown
+
+Do not remove the card even if a bio can't be found immediately — a stub with a real byline link
+is strictly better than a dead `#author-id` anchor; just leave `[Role pending]`/`[Bio pending]` in
+place until the real text arrives.
 
 ## Step 4 — Update "Our Writers" author popups
 
