@@ -40,10 +40,12 @@ open. Two items flagged, not corrected, per house rule #18: the source has a typ
 "portray") and a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
 the title "Megalopolis," but Judy's official lineup names this article "The Block Museum" — the
 published H1/title was left unchanged pending Judy's/John's call on which title to use.
-`basak-notz` is **Ready** — 5 real Gmail-attachment photos placed (COVER as
-homepage/hero card only, per house rule #27 — no explicit "also use in body" instruction); the
-other 17 of 22 photo positions remain Google Drive-link-only and cannot be auto-staged — still
-open. `hawthorne-works` is now **Ready** — see above; text extracted and placed, all 4 photos
+`basak-notz` is **Ready** with all 22/22 photos placed — the remaining 17 Drive-link-only photos
+were downloaded manually via Chrome (the Drive connector's 10MB cap blocked all of them; navigating
+directly to `drive.google.com/uc?export=download&id=<id>` bypassed the flaky download-button UI and
+worked reliably for the last several). All 17 compressed per house rule #26 (max 3000px, quality
+85). COVER stays homepage/hero card only per house rule #27 (no explicit "also use in body"
+instruction, still unconfirmed if it should double as the in-body opener). `hawthorne-works` is now **Ready** — see above; text extracted and placed, all 4 photos
 in, its COVER photo remains the homepage card only. `bob-glaze` is now **Text Only** — see
 above; the byline question is resolved. Dominic Pacyga still needs an about.html bio.
 
@@ -103,7 +105,7 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**. The 5 real Gmail-attachment photos are placed: `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only. The other 17 of 22 photo positions remain Google Drive `view`-link-only in the source email — `fetch-email-attachments.yml` cannot stage these; still needs John to download manually or ask Ana/Judy to resend as real attachments.
+- ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**, all 22/22 photos placed. `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; the other 17 (all Drive-link-only in the source) downloaded manually via Chrome and placed inline at their marked PHOTO N anchors, no captions given for any of them; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only.
 - ~~**Bob Glaze** (Bob Glaze)~~ — text in, byline confirmed by John. Photo placement still owed (25 generic-named photos staged in `_attachment-staging/1a0b85da1188e789/`, no filename→location map).
 - ~~**The Block Museum** (Sigalit Zetouni)~~ — done, article **Ready**.
 - **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot in hand and set as the homepage card image. **New author's bio** — needed for about.html; the byline link is dead until it exists.
@@ -113,8 +115,7 @@ Nav chain order (hero → last):
 
 ## Blockers
 
-- **Basak Notz and Dominic Pacyga have no about.html bios yet.** Basak Notz's byline points to `#judy-carmack-bross` (she's the credited author, already has a bio) so this risk applies to Dominic Pacyga only.
-- **Basak Notz photos — 17 of 22 are Google Drive links, not Gmail attachments, and cannot be staged automatically.** Needs John's decision: download manually, or ask Ana/Judy to resend as real attachments.
+- **Dominic Pacyga has no about.html bio yet.** (Basak Notz's byline points to `#judy-carmack-bross`, already resolved.)
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
 - **Annie's DateBook question is still open** — she asked (Sept 13, msg `1a09c1176fa6497d`) whether she can add more events later; needs John's yes/no.
 - **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
@@ -125,7 +126,7 @@ Nav chain order (hero → last):
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 5/22 placed (COVER as homepage card only; 2/3/4/16 inline, 16 captioned); 17/22 Drive-link only, unreachable by fetch workflow | COVER in-body placement still unconfirmed |
+| basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 22/22 placed (COVER as homepage card only; 21 inline, 1 captioned) | COVER in-body placement still unconfirmed |
 | bob-glaze | My Favorite Fall Destinations in Chicago | Bob Glaze (Emma Muhleman packaged/sent it as his production assistant) | **Text Only** | 0/25 placed; 25 staged, no placement map | Byline confirmed by John Sept 19; photo order still needed |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
 | block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + 6 inline (7/9 of Sig's promised photos placed); 2 of 9 (#8/#9) have no anchor (open question) | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`) |
