@@ -1,6 +1,15 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-18 (local session — lineup swap executed: Jean's poems out, Coyote vs Acme in)_
+_Updated: 2026-09-18 (local session — lineup swap executed; Baseball and Ulysses photos placed)_
+
+**✅ Baseball and Ulysses photo question resolved from the source material itself.** Judy's
+subject line asked "Use book cover for main photo?" — unanswered by anyone, but David's own
+captions answered it: caption 1 reads "Sales of the book have been helped by the release of the
+epic movie The Odyssey," and the actual image (`Baseball 1 2.jpeg`) is literally the cover of
+Christian Sheppard's book, *The Ancient Wisdom of Baseball*. Set as hero/homepage card. The other
+two (`Baseball 2.jpeg`, Sheppard with daughter Cecilia at a game; `Baseball 3.jpeg`, a Sheppard
+portrait) placed inline at the paragraphs matching their given captions verbatim, in the order
+David specified. Article is now **Ready**.
 
 **✅ Lineup swap executed.** Per Judy's request (`1a0ab55918f267c8`, "Like the idea of just having 7
 stories"), `jean-colonomos-poems` has been removed from this edition's nav chain and homepage —
@@ -15,8 +24,7 @@ via annotation extraction, not visible in the plain text) was preserved. Byline 
 LeJeune, who already has an about.html bio from a previously-dropped article — his articles-popup
 was updated automatically by `edition_checks.py`.
 
-`baseball-ulysses` remains **Text Only** — full article text built verbatim (msg
-`1a0ab428d33b38b8`); no photos placed yet, see Blockers below. `block-museum` is **Ready** —
+`baseball-ulysses` is now **Ready** — see above. `block-museum` is **Ready** —
 article text built verbatim (msg `1a0ac8315f198ed8`) and its image (`1a0ac872b0343f4e`) placed as
 the hero figure with the full credit line from Sig's email as the figcaption; also the homepage
 card image. `basak-notz` is **Ready** — 5 real Gmail-attachment photos placed (COVER as
@@ -58,12 +66,11 @@ Nav chain order (hero → last):
 - ~~**The Block Museum** (Sigalit Zetouni)~~ — done, article **Ready**.
 - **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot in hand and set as the homepage card image. **New author's bio** — needed for about.html; the byline link is dead until it exists.
 - **The Hawthorne Works Project** (Adrian Naves) — cover photo placed as homepage card; article text still not received directly — Annie has it from Adrian, still needs to forward.
-- ~~**Baseball and Ulysses** (David A. F. Sweet)~~ — article text received and built verbatim. Three captioned photos staged, placement still blocked — see Blockers below.
+- ~~**Baseball and Ulysses** (David A. F. Sweet)~~ — done, article **Ready**. All 3 photos placed; book cover resolved as hero from the source captions themselves.
 - ~~**Coyote vs. Acme Review** (Jackson LeJeune)~~ — done, article **Ready**. Full text + all 4 photos placed at their exact PDF-source positions.
 
 ## Blockers
 
-- **Baseball and Ulysses photo placement is an open question.** Judy's subject line for `1a0ab428d33b38b8` literally asks "Use book cover for main photo?" — unanswered. Three attachments (`Baseball 1 2.jpeg`, `Baseball 2.jpeg`, `Baseball 3.jpeg`, staged in `_attachment-staging/1a0ab428d33b38b8/`) came with explicit captions "in the order they should appear," but it's unclear whether any of the three IS the book cover Judy is asking about. Needs John's/Judy's decision on (1) which image is the main/hero photo and (2) confirmation the 3 captioned images should run inline in that order.
 - **Basak Notz and Dominic Pacyga have no about.html bios yet.** Basak Notz's byline points to `#judy-carmack-bross` (she's the credited author, already has a bio) so this risk applies to Dominic Pacyga only.
 - **Basak Notz photos — 17 of 22 are Google Drive links, not Gmail attachments, and cannot be staged automatically.** Needs John's decision: download manually, or ask Ana/Judy to resend as real attachments.
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
@@ -75,7 +82,7 @@ Nav chain order (hero → last):
 |------|-------|--------|------|--------|-------|
 | basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 5/22 placed (COVER as homepage card only; 2/3/4/16 inline, 16 captioned); 17/22 Drive-link only, unreachable by fetch workflow | COVER in-body placement still unconfirmed |
 | bob-glaze | Bob Glaze | Bob Glaze | Placeholder | — | Topic TBD |
-| baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Text Only** | Pending — 3 captioned photos now staged, main-photo/placement question open | Hero photo choice unresolved |
+| baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
 | block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + homepage card (`9-ModernMetropolis-Yuichi Idaka - Untitled El.JPEG`, credited to Yuichi Idaka) | Full credit line placed verbatim |
 | newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
 | hawthorne-works | The Hawthorne Works Project | Adrian Naves | Placeholder | Cover photo placed as homepage card (`COVER - Water tower sideview.jpeg`) | Article text still with Annie |
