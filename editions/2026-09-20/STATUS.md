@@ -72,11 +72,13 @@ names):
   generic installation views of the exhibition, with no distinguishing detail and no sentence in
   the article text naming a specific installation shot. **Placement genuinely ambiguous — not
   guessed at, still open.** Needs John's/Judy's call on whether/where these two run (e.g. near the
-  intro paragraph about the exhibition, or omitted as redundant with each other). Not staged yet
-  either as of this pass.
+  intro paragraph about the exhibition, or omitted as redundant with each other). Both files are
+  now downloaded and sitting in `editions/2026-09-20/block-museum/` (copied from
+  `_attachment-staging/` once the hourly fetch caught up), but neither is wired into the HTML —
+  no `<figure>` built for either pending that call.
 
-`block-museum` is now **Ready** with 7/9 of Sig's promised photos placed (was 2/9). Only #8/#9's
-placement remains an open question.
+`block-museum` is now **Ready** with 7/9 of Sig's promised photos placed (was 2/9); #8/#9 are on
+disk but unplaced. Only #8/#9's placement remains an open question.
 
 ## Judy's official lineup (`1a0a1ed94574209a`, received 2026-09-14; date corrected to Sept 20 via `1a0a574a949ffeba`, 2026-09-15; swapped per `1a0ab55918f267c8`, 2026-09-16)
 
@@ -108,7 +110,7 @@ Nav chain order (hero → last):
 - ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**, all 22/22 photos placed. `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; the other 17 (all Drive-link-only in the source) downloaded manually via Chrome and placed inline at their marked PHOTO N anchors, no captions given for any of them; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only.
 - ~~**Bob Glaze** (Bob Glaze)~~ — text in, byline confirmed by John. Photo placement still owed (25 generic-named photos staged in `_attachment-staging/1a0b85da1188e789/`, no filename→location map).
 - ~~**The Block Museum** (Sigalit Zetouni)~~ — done, article **Ready**.
-- **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot in hand and set as the homepage card image. **New author's bio** — needed for about.html; the byline link is dead until it exists.
+- **The Newberry Library: A Book on the Chicago Machine** (Dominic Pacyga) — article text not yet received; cover headshot in hand and set as the homepage card image. **New author's bio** — needed for about.html; the byline link is dead until it exists. Judy chased Annie for this on Sept 19 2:03 PM UTC (`1a0b9faaa04c6144`, "Checking in about the Newberry Library article and Adrian's story") — same email also asks about "Adrian's story on Western Electric," which is Hawthorne Works and is already **Ready** (Judy's message predates/doesn't reflect that); no reply from Annie yet as of this pass.
 - ~~**The Hawthorne Works Project** (Adrian Naves)~~ — done, article **Ready**. Text found (docx attachment on Judy's forward, missed on first pass) and all 4 photos placed (last one pulled manually via Chrome after the Drive connector's 10MB cap blocked it).
 - ~~**Baseball and Ulysses** (David A. F. Sweet)~~ — done, article **Ready**. All 3 photos placed; book cover resolved as hero from the source captions themselves.
 - ~~**Coyote vs. Acme Review** (Jackson LeJeune)~~ — done, article **Ready**. Full text + all 4 photos placed at their exact PDF-source positions.
@@ -119,7 +121,7 @@ Nav chain order (hero → last):
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
 - **Annie's DateBook question is still open** — she asked (Sept 13, msg `1a09c1176fa6497d`) whether she can add more events later; needs John's yes/no.
 - **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
-- **`block-museum` — 2 of Sig's 9 promised photos (#8/#9) have no textual anchor at all** (both generic, identically-captioned installation views) — needs John's/Judy's decision on placement once staged, not guessable from the source. 7 of 9 are now placed.
+- **`block-museum` — 2 of Sig's 9 promised photos (#8/#9) have no textual anchor at all** (both generic, identically-captioned installation views) — both are now downloaded into the article folder, but placement is still John's/Judy's call, not guessable from the source. 7 of 9 are now placed.
 - **`bob-glaze`'s 25 photos have no placement instructions.** Generic filenames (`photo 1.jpg`–`photo 25.jpg`), no captions or location labels in the email body, no correspondence to the 10+ named locations in the text. Needs an explicit filename→location map from Emma or Judy before any figure is built — not guessable from content alone.
 
 ## Articles
@@ -129,7 +131,7 @@ Nav chain order (hero → last):
 | basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 22/22 placed (COVER as homepage card only; 21 inline, 1 captioned) | COVER in-body placement still unconfirmed |
 | bob-glaze | My Favorite Fall Destinations in Chicago | Bob Glaze (Emma Muhleman packaged/sent it as his production assistant) | **Text Only** | 0/25 placed; 25 staged, no placement map | Byline confirmed by John Sept 19; photo order still needed |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
-| block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + 6 inline (7/9 of Sig's promised photos placed); 2 of 9 (#8/#9) have no anchor (open question) | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`) |
+| block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + 6 inline (7/9 of Sig's promised photos placed); 2 of 9 (#8/#9) downloaded into folder but unplaced (open question) | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`) |
 | newberry-chicago-machine | The Newberry Library: A Book on the Chicago Machine | Dominic Pacyga | Placeholder | In article folder, set as homepage card (`DominicHeadshot.jpeg`) | New author, needs bio |
 | hawthorne-works | History of The Hawthorne Works Complex | Adrian Naves | **Ready** | COVER as homepage card; 3 inline (`Old fireproof water tower.jpeg`, `IMG_1554.png`, `IMG_1555.png`) at docx-specified anchors | Full text placed verbatim from docx attachment |
 | coyote-vs-acme | Coyote vs. Acme Review: A Well-Done Romp in Spite of All Odds | Jackson LeJeune | **Ready** | Hero (poster) + 3 inline, all at exact PDF-source positions | No captions given in source; none invented |
