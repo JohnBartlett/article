@@ -62,6 +62,25 @@ matched.
 7. **If part of a multi-part series, explicit confirmation of the run schedule.** One part
    per edition, across consecutive weeks, never bundled into a single edition — confirmed
    directly from the current agreement, not inherited from an old citation. (Mistake #38)
+8. **If someone other than the writer is sending the piece (a coordinator, spouse,
+   assistant), state whose byline it runs under.** Don't assume the sender is the author —
+   check whether they're a known production-assistant/coordinator role for someone else
+   first (e.g. Emma Muhleman sends other writers' finished pieces as well as her own).
+   When it's ambiguous, confirm explicitly rather than guessing either way. (Mistake #56)
+9. **For a returning columnist, match their established category/style, don't default to
+   generic.** Before publishing, check the author's own prior CCM bylines for the category
+   label they've actually been running under (e.g. Bob Glaze's column runs under "Weekend
+   Road Trips," not the template's generic default) — grep their name across `editions/`
+   rather than leaving a placeholder category in place. (Mistake #55)
+
+## Checking whether text has actually arrived
+
+Before logging an email as "no article text" or "photos only," fetch it in full-content
+format and check the actual attachment/MIME part list — not just the rendered body. A
+`.docx` or other attachment can be present with zero mention of it in the visible text,
+and a body-only read will miss it entirely. This caused Adrian Naves's Hawthorne Works
+article (a real `.docx` attachment) to be logged as missing when it had, in fact, already
+arrived. (Mistake #54)
 
 ## Why this exists
 

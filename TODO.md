@@ -1,8 +1,15 @@
 # Classic Chicago Magazine — TODO
 
-## TODO — LAYOUT & PRODUCTION PROCESS IMPROVEMENTS (from Sept 13-18, 2026 Chitchat/Coyote-vs-Acme sessions)
+## TODO — LAYOUT & PRODUCTION PROCESS IMPROVEMENTS (from Sept 13-19, 2026 Chitchat/Coyote-vs-Acme/Sept 20 edition sessions)
 
-See CLAUDE.md mistakes #43-53 for the full findings this list is drawn from.
+See CLAUDE.md mistakes #43-58 for the full findings this list is drawn from.
+
+**Done, not just documented (Sept 19 additions):**
+- [x] **Switched to the native Gmail MCP for all email operations** (search/read/draft/reply/send) rather than `gmail_api.py`/Chrome — see `reference_gmail_mcp_preferred_over_script.md` session memory and CLAUDE.md's updated recurring-email-workflow section. `gmail_api.py` remains only for attachment downloads the Gmail MCP can't fetch.
+- [x] **Standardized the Drive-photo-recovery fallback**: when the Drive MCP connector fails on file size (~10MB cap, common for full-res contributor photos), navigate Chrome directly to `drive.google.com/uc?export=download&id=<fileId>` rather than clicking through the flaky viewer download button. Proven on Hawthorne Works (2 photos) and Basak Notz (17 photos) in one session. (Mistake #57)
+- [x] **Clarified Emma Muhleman's dual role** (contributor + production assistant for other writers) in CLAUDE.md's team roster and the recurring-email-workflow sources list, after her sending Bob Glaze's column under her own name (no byline stated) nearly caused an authorship misattribution. (Mistake #56)
+
+**Still open:**
 
 **Done, not just documented:**
 - [x] **PDF page-image visual-placement check, proven on a real article.** The Coyote vs Acme review (Sept 18) was built by rendering all 4 PDF pages as images (`pdftoppm -png -r 150`) and visually matching each photo to its exact source position before placing — no guessing, no invented captions. This is now the demonstrated standard method for any PDF-sourced article, not just a documented intention. (Mistake #43)
@@ -20,6 +27,9 @@ See CLAUDE.md mistakes #43-53 for the full findings this list is drawn from.
 - [ ] **Consider a lightweight helper script** (e.g. `tools/pdf_visual_check.py` wrapping `pdftoppm` + the annotation-link check) to standardize both steps so they aren't something that has to be remembered under Saturday deadline pressure.
 - [ ] **Redeploy the `dev2` Vercel preview proactively after every meaningful commit batch**, not just when asked — a stale preview is visually indistinguishable from broken code and caused a false "I don't see any articles at all" report mid-session (Sept 18). (Mistake #52)
 - [ ] **Build a proactive-nudge mechanism for confirmed-but-unexecuted editorial instructions.** Judy's Sept 16 lineup-swap decision (Jean's poems out, Coyote vs Acme in) sat re-logged as an open item across 9+ automated check-emails passes before a session actually executed it on Sept 18 — once a decision is *confirmed* (not just proposed), the mechanical follow-through shouldn't wait for someone to happen to notice it in the backlog.
+- [ ] **Make "check for attachments, not just body" a standard first step in `/check-emails`'s per-message read**, not just a documented mistake — a body-only read nearly caused Hawthorne Works' already-arrived docx to be logged as missing text and chased a second time. (Mistake #54)
+- [ ] **Before sending any multi-item status/ask email, re-read STATUS.md's live Blockers section as a checklist step**, not from memory — Dominic Pacyga's bio ask was dropped from a combined email and needed a same-day follow-up. Consider a lightweight habit: paste the current Blockers list into the draft, then delete lines as each is covered, so nothing silently falls off. (Mistake #58)
+- [ ] **When a new byline's category isn't specified, grep the author's name across `editions/` for their established column category before leaving the template default in place** — caught once for Bob Glaze ("Weekend Road Trips") by a parallel session, not by any standard check. (Mistake #55)
 
 ## TODO — SEPTEMBER 6 EDITION (prepped, mostly awaiting content)
 
