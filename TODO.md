@@ -1,16 +1,35 @@
 # Classic Chicago Magazine — TODO
 
-## TODO — LAYOUT & PRODUCTION PROCESS IMPROVEMENTS (from Sept 13, 2026 Chitchat fix session)
+## TODO — LAYOUT & PRODUCTION PROCESS IMPROVEMENTS (from Sept 13-19, 2026 Chitchat/Coyote-vs-Acme/Sept 20 edition sessions)
 
-See CLAUDE.md mistakes #43-47 for the full findings this list is drawn from.
+See CLAUDE.md mistakes #43-58 for the full findings this list is drawn from.
 
+**Done, not just documented (Sept 19 additions):**
+- [x] **Switched to the native Gmail MCP for all email operations** (search/read/draft/reply/send) rather than `gmail_api.py`/Chrome — see `reference_gmail_mcp_preferred_over_script.md` session memory and CLAUDE.md's updated recurring-email-workflow section. `gmail_api.py` remains only for attachment downloads the Gmail MCP can't fetch.
+- [x] **Standardized the Drive-photo-recovery fallback**: when the Drive MCP connector fails on file size (~10MB cap, common for full-res contributor photos), navigate Chrome directly to `drive.google.com/uc?export=download&id=<fileId>` rather than clicking through the flaky viewer download button. Proven on Hawthorne Works (2 photos) and Basak Notz (17 photos) in one session. (Mistake #57)
+- [x] **Clarified Emma Muhleman's dual role** (contributor + production assistant for other writers) in CLAUDE.md's team roster and the recurring-email-workflow sources list, after her sending Bob Glaze's column under her own name (no byline stated) nearly caused an authorship misattribution. (Mistake #56)
+
+**Still open:**
+
+**Done, not just documented:**
+- [x] **PDF page-image visual-placement check, proven on a real article.** The Coyote vs Acme review (Sept 18) was built by rendering all 4 PDF pages as images (`pdftoppm -png -r 150`) and visually matching each photo to its exact source position before placing — no guessing, no invented captions. This is now the demonstrated standard method for any PDF-sourced article, not just a documented intention. (Mistake #43)
+- [x] **Check for embedded PDF hyperlinks via annotation extraction**, not just `pdftotext`. Coyote vs Acme's PDF had a real link to a 1990 New Yorker article, invisible to plain-text extraction and easy to miss even skimming a rendered page — found via `PyPDF2`'s `/Annots` → `/A` → `/URI`. Added as a standard step alongside the page-image check. (Mistake #53)
+- [x] **`.article-meta a` CSS check automated** in `edition_checks.py`, run once across all 158 affected articles (2026-09-13). (Mistake #44)
+- [x] **`fetch-email-attachments.yml`'s re-staging bug fixed** (2026-09-18) after recurring 9 confirmed times — added a permanent ledger (`_attachment-staging/.staged_log.json`) so a consumed-and-deleted message is never mistaken for "never staged" again. (Mistake #49)
+- [x] **Missing past-edition landing pages now caught automatically.** `verify_edition.py` checks every `editions/DATE/` folder the homepage links to via Past Editions for a real `index.html` — this bug had recurred 3 times (Aug 16/23, then Sept 13, then Sept 6, the last of which reached Judy as a live production outage) before the check existed. (Mistake #48)
+- [x] **Dormant one-time deploy cron removed** (`scheduled-deploy.yml`, was still armed to auto-publish every Feb 15 with none of `/publish`'s safety checks). (Mistake #51)
+
+**Still open:**
 - [ ] **Switch the default PDF text-extraction method from PyPDF2 to `pdftotext -layout`** in the documented Article Extraction workflow (and any tooling, e.g. `tools/extract_article_photos.py`, that currently calls PyPDF2 for text). Same one-command cost, preserves paragraph breaks that PyPDF2 silently discards. (Mistake #43)
-- [ ] **Add a standard "render source pages as images" step** (`pdftoppm -png -r 150`) to the PDF article-building workflow, to be done once while placing photos/headings — not a separate pass, folded into work already happening. Needed before marking any PDF-sourced article Ready. (Mistake #43, #46)
-- [ ] **Audit other previously-published PDF-sourced articles for the same class of loss** (merged paragraphs, dropped italics/titles, misplaced headings) — this is a tool limitation that would have silently affected every PDF-built article before today, not just Chitchat. Not yet done for any article besides Chitchat.
+- [ ] **Audit other previously-published PDF-sourced articles for the same class of loss** (merged paragraphs, dropped italics/titles, misplaced headings, dropped hyperlinks) — this is a tool limitation that would have silently affected every PDF-built article before the fix, not just Chitchat. Not yet done for any article besides Chitchat and Coyote vs Acme.
 - [ ] **Update the manual prose/grammar audit process to require exhaustive per-paragraph coverage**, not a sampled read — the Sept 12 audit caught several typos in Chitchat but missed one ("Mucho" for "Much") sitting right next to ones it did catch. (Mistake #45)
 - [ ] **Formalize the bundled-document-vs-individually-captioned-attachment distinction as an explicit fork** in the Article Extraction section of CLAUDE.md — currently only documented as a mistake, not built into the actual step-by-step workflow a session would follow when a new PDF/Word-doc article comes in. (Mistake #46)
-- [ ] **Consider a lightweight helper script** (e.g. `tools/pdf_visual_check.py` wrapping `pdftoppm`) to standardize the page-image-rendering step so it isn't something that has to be remembered under Saturday deadline pressure.
-- [ ] **`.article-meta a` CSS check is now automated** in `edition_checks.py` and was run once across all 158 affected articles (2026-09-13) — no further action needed here, listed for reference. (Mistake #44)
+- [ ] **Consider a lightweight helper script** (e.g. `tools/pdf_visual_check.py` wrapping `pdftoppm` + the annotation-link check) to standardize both steps so they aren't something that has to be remembered under Saturday deadline pressure.
+- [ ] **Redeploy the `dev2` Vercel preview proactively after every meaningful commit batch**, not just when asked — a stale preview is visually indistinguishable from broken code and caused a false "I don't see any articles at all" report mid-session (Sept 18). (Mistake #52)
+- [ ] **Build a proactive-nudge mechanism for confirmed-but-unexecuted editorial instructions.** Judy's Sept 16 lineup-swap decision (Jean's poems out, Coyote vs Acme in) sat re-logged as an open item across 9+ automated check-emails passes before a session actually executed it on Sept 18 — once a decision is *confirmed* (not just proposed), the mechanical follow-through shouldn't wait for someone to happen to notice it in the backlog.
+- [ ] **Make "check for attachments, not just body" a standard first step in `/check-emails`'s per-message read**, not just a documented mistake — a body-only read nearly caused Hawthorne Works' already-arrived docx to be logged as missing text and chased a second time. (Mistake #54)
+- [ ] **Before sending any multi-item status/ask email, re-read STATUS.md's live Blockers section as a checklist step**, not from memory — Dominic Pacyga's bio ask was dropped from a combined email and needed a same-day follow-up. Consider a lightweight habit: paste the current Blockers list into the draft, then delete lines as each is covered, so nothing silently falls off. (Mistake #58)
+- [ ] **When a new byline's category isn't specified, grep the author's name across `editions/` for their established column category before leaving the template default in place** — caught once for Bob Glaze ("Weekend Road Trips") by a parallel session, not by any standard check. (Mistake #55)
 
 ## TODO — SEPTEMBER 6 EDITION (prepped, mostly awaiting content)
 
