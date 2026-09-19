@@ -40,7 +40,7 @@ open. Two items flagged, not corrected, per house rule #18: the source has a typ
 "portray") and a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
 the title "Megalopolis," but Judy's official lineup names this article "The Block Museum" — the
 published H1/title was left unchanged pending Judy's/John's call on which title to use.
-`basak-notz` is **Ready** with all 22/22 photos placed — the remaining 17 Drive-link-only photos
+`basak-notz` is **Ready** with 21/22 photos placed (#10 "Bodrum Closeup" pruned as a near-duplicate of #9, John's call) — the remaining 17 Drive-link-only photos
 were downloaded manually via Chrome (the Drive connector's 10MB cap blocked all of them; navigating
 directly to `drive.google.com/uc?export=download&id=<id>` bypassed the flaky download-button UI and
 worked reliably for the last several). All 17 compressed per house rule #26 (max 3000px, quality
@@ -107,7 +107,7 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**, all 22/22 photos placed. `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; the other 17 (all Drive-link-only in the source) downloaded manually via Chrome and placed inline at their marked PHOTO N anchors, no captions given for any of them; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only.
+- ~~**Basak Notz, Illustrator and Artist** (Judy Carmack Bross)~~ — done, article **Ready**, 21/22 photos placed (#10 "Bodrum Closeup" pruned as a near-duplicate of #9). `2 - Cartier Drawings.jpg`, `3 - Diamond Bracelet.jpg`, `4 - Basak Desk.jpg` inline with no caption (none given in source); `16 - Blue Heeler.jpg` inline with its verbatim caption; the other 16 (all Drive-link-only in the source) downloaded manually via Chrome and placed inline at their marked PHOTO N anchors, no captions given for any of them; `COVER - Basak Colectivo Billboard.jpeg` set as the homepage/hero card image only.
 - ~~**Bob Glaze** (Bob Glaze)~~ — done, article **Ready**. Emma's corrected email had explicit "Photo N" inline markers and a "By Bob Glaze" byline; all 25 photos placed at their marked anchors, photo 3 doubling as cover + inline per explicit instruction.
 - ~~**The Block Museum** (Sigalit Zetouni)~~ — done, article **Ready**.
 - ~~**The Newberry Library: A Book on the Chicago Machine**~~ — done, article **Ready**. Annie sent the full article Sept 19 9:38 PM UTC (`1a0bb9b780c3dc19`) after Judy escalated with her directly. Byline is **Judy Carmack Bross** (the source's own "Author:" line), not Dominic Pacyga — he's the subject/interviewee, quoted throughout, not the writer. This resolves the bio blocker as moot (Judy already has an about.html bio). All 7 numbered photos placed at their explicit anchors (source gave "Photo N, Caption: ..." markers for each) — photos 4/5 (Frank Corr and Richard J. Daley) placed side-by-side per the source's explicit "(side by side with photo five/four)" instruction. Several verbatim-but-flagged typos per house rule #18, not corrected: "Couglin" (should be Coughlin), "Richand M. Daley" (should be Richard), "Chicago soon because the second largest" (should be "became"), a missing space in "1871changed." Title kept as "The Newberry Library: A Book on the Chicago Machine" (Judy's official lineup name, already used on homepage/nav) rather than the source email's own subject line "Dominic Pacyga on Chicago's Political Machines" — same open-title-question pattern as block-museum, not resolved either way, just left as originally published.
@@ -126,7 +126,7 @@ Nav chain order (hero → last):
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 22/22 placed (COVER as homepage card only; 21 inline, 1 captioned) | COVER in-body placement still unconfirmed |
+| basak-notz | Basak Notz, Illustrator and Artist | Judy Carmack Bross | **Ready** | 21/22 placed (COVER as homepage card only; 20 inline, 1 captioned; #10 pruned as near-duplicate) | COVER in-body placement still unconfirmed |
 | bob-glaze | My Favorite Fall Destinations in Chicago | Bob Glaze | **Ready** | 25/25 placed (photo 3 = cover + inline, explicit dual-use instruction) | Byline confirmed both by Judy's forward and Emma's explicit "By Bob Glaze" line |
 | baseball-ulysses | Baseball and Ulysses | David A. F. Sweet | **Ready** | Hero (book cover) + 2 inline, resolved from source captions | Judy's "use book cover?" question answered by caption 1 itself |
 | block-museum | The Block Museum | Sigalit Zetouni | **Ready** | Hero + 6 inline (7/9 of Sig's promised photos placed); 2 of 9 (#8/#9) downloaded into folder but unplaced (open question) | Full ~10-paragraph text placed verbatim (msg `1a0b82e61d6002fa`) |
