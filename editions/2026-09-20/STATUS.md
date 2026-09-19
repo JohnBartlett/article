@@ -118,7 +118,7 @@ Nav chain order (hero → last):
 ## Blockers
 
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
-- **Annie's DateBook question is still open** — she asked (Sept 13, msg `1a09c1176fa6497d`) whether she can add more events later; needs John's yes/no.
+- ~~**Annie's DateBook question**~~ — resolved. John's answer: yes, she can send additions anytime, ideally before publication, but a post-publish hotfix is fine too.
 - **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
 - **`block-museum` — 2 of Sig's 9 promised photos (#8/#9) have no textual anchor at all** (both generic, identically-captioned installation views) — both are now downloaded into the article folder, but placement is still John's/Judy's call, not guessable from the source. 7 of 9 are now placed.
 
