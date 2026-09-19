@@ -1,6 +1,16 @@
 # September 20, 2026 Edition — Status
 
-_Updated: 2026-09-19 (cloud pass — Judy confirmed Emma's "Fall Destinations" piece is Bob Glaze's column; text placed, 25 unplaceable photos still blocked)_
+_Updated: 2026-09-19 (cloud pass — dropped opening paragraph in bob-glaze found and fixed; 25 photos now staged but still unplaced)_
+
+**✅ Fixed a silent paragraph drop in `bob-glaze`.** The pass that placed the article's text (below)
+dropped its opening sentence ("As the weather improves and the trees start to change color...My
+top recommendations include:") between extraction and placement — a different, parallel session's
+independent transcription of the same source email caught the mismatch on `git pull --rebase` and
+restored it. `bob-glaze` now has all 19 of the source's paragraphs (was 18). No other content was
+affected. **Also: all 25 of Bob Glaze's photos are now staged** (`_attachment-staging/1a0b85da1188e789/`)
+but still unplaced — the source gives zero per-photo captions or placement instructions, so matching
+them to the article's 16 named locations needs either explicit instructions from Emma/Bob or a
+careful visual-identification pass; left for a future `/new-edition` pass rather than rushed here.
 
 **✅ Bob Glaze authorship resolved — text placed, photos still blocked.** Judy confirmed by email
 (`1a0b96e5ce14e81c`, Sept 19 11:29 AM UTC): "This is the Bob Glaze column for tomorrow. I don't see
