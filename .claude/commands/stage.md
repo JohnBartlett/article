@@ -155,6 +155,7 @@ Return this URL as the final output — easy to copy and send to Judy.
 
 - Never commit directly to `master` — dev → master happens only via `/publish`
 - Hotfixes (dev2 → dev → master bypassing full stage) skip the `editors/` removal and internal-nav commenting — those files end up on master but are unlinked and harmless. Run a full `/stage` on the next edition to clean them up.
+- Hotfixes that pull individual files via `git checkout dev -- <file>` onto master also bring the GA4-disabled wrapper (dev's form) — always grep for `GA4-disabled` in every pulled file and manually re-enable before committing. This was missed zero times only because it was checked deliberately each time on 2026-09-20; treat it as a required step, not a spot-check (see CLAUDE.md mistake #64).
 - The `<!-- dev2-only -->` block in `index.html` must always be commented out before any push to dev or master
 - GA4 must be disabled on dev and dev2; re-enabled only by `/publish` on master
 - If the merge produces unexpected content conflicts (not just modify/delete): resolve manually, preferring dev2's version for all edition content

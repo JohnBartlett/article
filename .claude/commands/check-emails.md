@@ -64,6 +64,8 @@ Fetch metadata first (From, Subject, Date, Snippet), then full body for actionab
 ### Judy — article text
 - If `/prep-edition` has already run: fill in the existing stub at `editions/YYYY-MM-DD/slug/index.html`
 - If prep has not run yet: note the content and report — run `/prep-edition` first
+- **Check the HTML body, not just the plain-text body, for formatting.** When extracting article text from a Gmail message, fetch `FULL_CONTENT` and check the HTML body for `<i>`/`<b>`/`<em>`/`<strong>` tags or inline italic/bold styles before finalizing — plain-text extraction silently drops all such formatting with no visible gap (see CLAUDE.md mistake #62). This applies in addition to the existing docx/PDF fidelity checks (mistakes #43-47).
+- **Verify the H1/title against the source, not just Judy's lineup name.** Compare the article's actual title (source email subject line or in-body headline) against the working title assigned during `/prep-edition` — if they differ, treat it as an open question requiring confirmation before marking Ready, the same as an ambiguous photo placement (see CLAUDE.md mistake #61).
 - **Check `_attachment-staging/<message-id>/` first.** An hourly GitHub Actions workflow
   (`fetch-email-attachments.yml`) pre-downloads every Tier-1 contributor's image/PDF/docx
   attachments there (see `_attachment-staging/README.md`) — this is what lets a cloud session
