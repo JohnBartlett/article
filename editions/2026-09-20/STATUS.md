@@ -44,9 +44,13 @@ with the full credit line from Sig's email as the figcaption; also the homepage 
 email says 9 more photos with credits will follow in a separate email — not yet received, still
 open. The "potray"/"portray" typo was fixed per Sig's own explicit request (`1a0bc3385a12ae48`,
 Sept 20 12:24 AM UTC) — no longer flagged. One item still flagged, not corrected, per house rule
-#18: a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
-the title "Megalopolis," but Judy's official lineup names this article "The Block Museum" — the
-published H1/title was left unchanged pending Judy's/John's call on which title to use.
+#18: a missing space ("Moholy-Nagy(1895-1946)"). **Title changed to "Megalopolis"** (Sept 20) —
+this was the fourth confirmed instance of the same bug found across the edition: Judy's lineup
+placeholder name ("The Block Museum") had overridden the contributor's own title during the
+original build. Judy independently confirmed the same pattern on two of her own pieces
+(basak-notz, newberry-chicago-machine) and David Sweet on his own (baseball-ulysses); this one
+was flagged as an open question rather than confirmed, but John approved the fix given the
+now-established pattern.
 `basak-notz` is **Ready** with 21/22 photos placed (#10 "Bodrum Closeup" pruned as a near-duplicate of #9, John's call) — the remaining 17 Drive-link-only photos
 were downloaded manually via Chrome (the Drive connector's 10MB cap blocked all of them; navigating
 directly to `drive.google.com/uc?export=download&id=<id>` bypassed the flaky download-button UI and
@@ -126,7 +130,7 @@ Nav chain order (hero → last):
 
 - **Basak Notz COVER photo placement is ambiguous** (hero-in-body vs. homepage-card-only) — file is in hand and set as homepage card image; whether it should *also* run inline as the hero/opening image is still unconfirmed (no caption, no explicit instruction).
 - ~~**Annie's DateBook question**~~ — resolved. John's answer: yes, she can send additions anytime, ideally before publication, but a post-publish hotfix is fine too.
-- **`block-museum`'s title is ambiguous.** The published H1/title is "The Block Museum" (Judy's official lineup name); Sig's own Sept 19 email headed the full article text "Megalopolis." Left unchanged pending John's/Judy's call on which title to publish under.
+- ~~**`block-museum`'s title was ambiguous.**~~ Resolved Sept 20 — changed to "Megalopolis," Sig's own title, matching the pattern found on 3 other articles this edition.
 - **`block-museum` — 2 of Sig's 9 promised photos (#8/#9) have no textual anchor at all** (both generic, identically-captioned installation views) — both are now downloaded into the article folder, but placement is still John's/Judy's call, not guessable from the source. 7 of 9 are now placed.
 
 ## Articles
