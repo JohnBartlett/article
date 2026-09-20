@@ -36,8 +36,9 @@ photographers Yuichi Idaka, Henry Simon, and Vivian Maier at The Block Museum's 
 Modern Metropolis" exhibition. Its image (`1a0ac872b0343f4e`) remains placed as the hero figure
 with the full credit line from Sig's email as the figcaption; also the homepage card image. Sig's
 email says 9 more photos with credits will follow in a separate email — not yet received, still
-open. Two items flagged, not corrected, per house rule #18: the source has a typo ("potray" for
-"portray") and a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
+open. The "potray"/"portray" typo was fixed per Sig's own explicit request (`1a0bc3385a12ae48`,
+Sept 20 12:24 AM UTC) — no longer flagged. One item still flagged, not corrected, per house rule
+#18: a missing space ("Moholy-Nagy(1895-1946)"). Also open: Sig's own text opens with
 the title "Megalopolis," but Judy's official lineup names this article "The Block Museum" — the
 published H1/title was left unchanged pending Judy's/John's call on which title to use.
 `basak-notz` is **Ready** with 21/22 photos placed (#10 "Bodrum Closeup" pruned as a near-duplicate of #9, John's call) — the remaining 17 Drive-link-only photos
