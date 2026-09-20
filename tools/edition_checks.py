@@ -64,6 +64,7 @@ results = {
     'article_meta_a_added': [],
     'popup_articles_added': [],
     'new_authors_needing_bios': [],
+    'new_writer_cards_added': [],
     'stale_datebook_months': [],
 }
 
@@ -290,16 +291,68 @@ def check_datebook_stale_months():
                 })
 
 
+def display_name_from_id(author_id):
+    """Derive a Title Case display name from a kebab-case author_id."""
+    return ' '.join(w.capitalize() for w in author_id.split('-'))
+
+
+def build_new_writer_card(author_id, articles):
+    """Build a stub team-member card (placeholder role/bio) with the
+    author's already-known articles pre-populated in their Articles popup,
+    so the byline link works immediately rather than pointing nowhere."""
+    name = display_name_from_id(author_id)
+    minis = [
+        article_mini_html(edition, slug, title, edition_date_str(edition), cover_img)
+        for (edition, slug, title, cover_img) in articles
+    ]
+    minis_html = '\n'.join(minis)
+    return (
+        f'<div class="team-member" id="{author_id}">\n'
+        f'            <h3>{name}</h3>\n'
+        f'            <div class="role">[Role pending]</div>\n'
+        f'            <p>[Bio pending]</p>\n'
+        f'            <button class="articles-trigger" data-popup="articles-{author_id}">{name}&rsquo;s Articles &rarr;</button>\n'
+        f'            <div id="articles-{author_id}" class="articles-popup">\n'
+        f'              <button class="articles-popup-close">&times;</button>\n'
+        f'              <div class="articles-popup-heading">{name}&rsquo;s Articles</div>\n'
+        f'              <div class="articles-grid">\n'
+        f'{minis_html}\n'
+        f'              </div>\n'
+        f'            </div>\n'
+        f'          </div>'
+    )
+
+
+def insert_new_writer_card(about_html, card_html):
+    """Insert a new stub card as the first entry in the Our Writers grid."""
+    marker = '<div class="team-grid">'
+    idx = about_html.find(marker)
+    if idx == -1:
+        return about_html, False
+    insert_pos = idx + len(marker)
+    return about_html[:insert_pos] + '\n' + card_html + about_html[insert_pos:], True
+
+
 def check_new_authors(articles_by_author):
-    """Flag authors who have articles but no bio in about.html."""
+    """Add a stub card (placeholder role/bio, real article links) to the Our
+    Writers grid for any author with a byline but no existing about.html
+    entry, and flag it for a human to fill in the real bio."""
     about_html = ABOUT.read_text()
+    changed = False
     for author_id in sorted(articles_by_author):
         if f'id="{author_id}"' not in about_html:
             articles = articles_by_author[author_id]
+            card_html = build_new_writer_card(author_id, articles)
+            about_html, ok = insert_new_writer_card(about_html, card_html)
+            if ok:
+                results['new_writer_cards_added'].append(author_id)
+                changed = True
             results['new_authors_needing_bios'].append({
                 'id': author_id,
                 'articles': [f"{edition_date_str(e)}: {t}" for e, s, t, _ in articles]
             })
+    if changed:
+        write_file(ABOUT, about_html)
 
 
 # ── main ─────────────────────────────────────────────────────────────────────
@@ -374,8 +427,13 @@ def main():
     else:
         print('✓ about.html popups: all up to date')
 
+    if results['new_writer_cards_added']:
+        print(f'\n✓ Our Writers: {len(results["new_writer_cards_added"])} new stub card(s) added:')
+        for author_id in results['new_writer_cards_added']:
+            print(f'    id="{author_id}"')
+
     if results['new_authors_needing_bios']:
-        print(f'\n⚠  {len(results["new_authors_needing_bios"])} new author(s) need manual bios in about.html:')
+        print(f'\n⚠  {len(results["new_authors_needing_bios"])} author(s) still need a real role/bio written in about.html:')
         for a in results['new_authors_needing_bios']:
             print(f'\n    id="{a["id"]}"')
             for art in a['articles']:

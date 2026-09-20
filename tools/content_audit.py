@@ -12,6 +12,9 @@ recorded mistakes list:
   - #23: homepage hero-meta must be author-only, no date
   - #30: same photo used as both a hero figure and duplicated inline
   - #34: no emojis anywhere in article content
+  - #60: stale "Coming in the [date] edition" placeholder teaser left on a
+    homepage card/hero after the linked article was actually built and made
+    Ready
 
 Usage:
     python3 tools/content_audit.py YYYY-MM-DD
@@ -120,6 +123,27 @@ def check_hero_meta_date(edition_date):
         print(f"  ⚠ hero-meta contains what looks like a date: \"{hero_text}\"")
     else:
         print(f"  ✓ clean — hero-meta is author-only: \"{hero_text}\"")
+
+
+def check_homepage_stale_teasers(edition_date):
+    print("\n--- Homepage stale placeholder teasers (mistake #60) ---")
+    if not os.path.isfile("index.html"):
+        print("  (root index.html not found — skipping)")
+        return
+    content = open("index.html", encoding="utf-8", errors="ignore").read()
+    stale_patterns = [
+        r"Coming in the [^<]*edition\.?",
+        r"\[Article text coming soon\]",
+        r"[Cc]oming soon\b",
+    ]
+    hits = []
+    for pat in stale_patterns:
+        hits.extend(re.findall(pat, content))
+    if hits:
+        print(f"  ⚠ STALE placeholder teaser(s) still on homepage: {hits}")
+        print(f"    (a card/hero linking to a Ready article must have a real teaser, not prep-edition boilerplate)")
+    else:
+        print("  ✓ clean — no stale placeholder teaser text found on homepage")
 
 
 def check_datebook_astrochart_link(edition_dir, edition_date):
@@ -295,6 +319,7 @@ def main():
     check_emoji(dirs)
     check_duplicate_photos(dirs)
     check_hero_meta_date(edition_date)
+    check_homepage_stale_teasers(edition_date)
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
     check_writer_retrospective_nav()
