@@ -1,6 +1,6 @@
 # September 27, 2026 Edition — Status
 
-_Updated: 2026-09-24_
+_Updated: 2026-09-25_
 
 Skeleton prepped Sept 24 against Judy's finalized lineup. All 7 stubs exist and the nav chain is wired. Two articles are received but not yet built (Amouze Mousse, Deerpath), one is already built (Jean Colonomos), and four are still with coordinators. Stories are due to John by Friday night, Sept 25.
 
@@ -39,6 +39,7 @@ Judy also asked that the October Heritage Auctions ad "run in this issue and all
 
 ## Blockers
 
+- **Judy asks to add two stories** (`1a0d89a6f719d921`, Sept 25): Jack LeJeune's review of a vampire film opening Sept 27, and intern Drake Boehm's piece on the Ravinia School in Lawndale's Fest. John's decision; neither text has arrived. Cover for Jack's review is staged (`_attachment-staging/1a0d89a57c0d61a3/CC TVoNO Header Image.png`). Drake Boehm has no about.html bio.
 - **Amouze Mousse title** — Ana's subject line gives "Margaret Unetich and Matt Ziol Create Amouze Mousse"; Judy's lineup said "Entrepreneur Margaret Unetich and Amouze Mousse". Using the source title per mistake #61 unless Judy says otherwise.
 - **Amouze Mousse suspected typos** — "melts in your month", a double negative in the Toulouse-Lautrec sentence, a missing opening quote on "We've had to invest…", a stray period in "With every bite. You can", and "Holiday House Hampton's". Flag to Judy; do not fix silently.
 - **Deerpath cover choice** — John's pick of `Deerpath 1 2.jpeg`, `Deerpath 2.jpeg`, or `Deerpath 1 3.jpeg` (Judy: "probably the best" is 1 3).
