@@ -46,6 +46,12 @@ git rm -rf editors/
 ```
 The `editors/` folder contains the internal editors' hub and must never appear on dev or master.
 
+**Always remove `john-article-ideas/` from dev — John's private article planning notes:**
+```bash
+git rm -rf --ignore-unmatch john-article-ideas/
+```
+Plain Markdown would be publicly fetchable on Cloudflare if it reached master.
+
 ## Step 2 — Comment out all internal-nav blocks
 
 The `<!-- dev2-only -->` internal editors menu must **not** appear on dev or master.
