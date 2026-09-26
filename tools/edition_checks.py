@@ -7,6 +7,7 @@ Run after adding a new edition to:
   2. Add nav-thumb CSS to any articles missing it
   3. Update about.html author popups with new articles
   4. Report any new authors who need manual bio entries
+  5. Add the red left bar to interview questions (class="qa-question")
 
 Usage:
     python3 tools/edition_checks.py [--dry-run]
@@ -58,10 +59,18 @@ ARTICLE_META_A_CSS = (
     "\n    }"
 )
 
+# Interview house style (John, 2026-09-26): every question gets a red left bar.
+# Appended just before </style> so it overrides any older .qa-question rule.
+QA_QUESTION_CSS = (
+    "\n    .article-body .qa-question { border-left: 3px solid #b51c20; padding-left: 12px; }"
+)
+QA_BAR_RULE_RE = re.compile(r'\.qa-question\s*\{[^}]*border-left:[^;]*#(?:b51c20|d41f1f)', re.I)
+
 results = {
     'dark_mode_added': [],
     'nav_css_added': [],
     'article_meta_a_added': [],
+    'qa_question_bar_added': [],
     'popup_articles_added': [],
     'new_authors_needing_bios': [],
     'new_writer_cards_added': [],
@@ -180,6 +189,13 @@ def fix_page(html_path, depth):
             text = re.sub(meta_block_pat, r'\1' + ARTICLE_META_A_CSS, text, count=1)
             changed = True
             results['article_meta_a_added'].append(str(html_path.relative_to(ROOT)))
+
+    # Interview questions: red left bar. Only articles that mark questions with
+    # class="qa-question"; interviews built without that class aren't detected.
+    if depth == 3 and 'class="qa-question"' in text and not QA_BAR_RULE_RE.search(text) and '</style>' in text:
+        text = text.replace('</style>', QA_QUESTION_CSS + '\n  </style>', 1)
+        changed = True
+        results['qa_question_bar_added'].append(str(html_path.relative_to(ROOT)))
 
     if changed:
         write_file(html_path, text)
@@ -419,6 +435,13 @@ def main():
             print(f'    {p}')
     else:
         print('✓ article-meta a CSS: all articles OK')
+
+    if results['qa_question_bar_added']:
+        print(f'\n✓ Interview question red bar added to {len(results["qa_question_bar_added"])} articles:')
+        for p in results['qa_question_bar_added']:
+            print(f'    {p}')
+    else:
+        print('✓ Interview question red bar: all interviews OK')
 
     if results['popup_articles_added']:
         print(f'\n✓ about.html popups updated — {len(results["popup_articles_added"])} articles added:')
