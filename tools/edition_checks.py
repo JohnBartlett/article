@@ -7,7 +7,7 @@ Run after adding a new edition to:
   2. Add nav-thumb CSS to any articles missing it
   3. Update about.html author popups with new articles
   4. Report any new authors who need manual bio entries
-  5. Add the red left bar to interview questions (class="qa-question")
+  5. Add the red left bar to CCM interview questions (class="qa-question", "CCM:")
 
 Usage:
     python3 tools/edition_checks.py [--dry-run]
@@ -65,6 +65,9 @@ QA_QUESTION_CSS = (
     "\n    .article-body .qa-question { border-left: 3px solid #b51c20; padding-left: 12px; }"
 )
 QA_BAR_RULE_RE = re.compile(r'\.qa-question\s*\{[^}]*border-left:[^;]*#(?:b51c20|d41f1f)', re.I)
+# Only CCM's own interviews (usually Judy's): questions labeled "CCM:". A
+# contributor's interview (e.g. Scott Holleran's Judith Guest Q&A) keeps its own look.
+CCM_QUESTION_RE = re.compile(r'<p class="qa-question">\s*(?:<(?:strong|b)>\s*)?CCM:')
 
 results = {
     'dark_mode_added': [],
@@ -190,9 +193,9 @@ def fix_page(html_path, depth):
             changed = True
             results['article_meta_a_added'].append(str(html_path.relative_to(ROOT)))
 
-    # Interview questions: red left bar. Only articles that mark questions with
-    # class="qa-question"; interviews built without that class aren't detected.
-    if depth == 3 and 'class="qa-question"' in text and not QA_BAR_RULE_RE.search(text) and '</style>' in text:
+    # CCM interview questions: red left bar. Only questions marked with
+    # class="qa-question" and labeled "CCM:" are detected.
+    if depth == 3 and CCM_QUESTION_RE.search(text) and not QA_BAR_RULE_RE.search(text) and '</style>' in text:
         text = text.replace('</style>', QA_QUESTION_CSS + '\n  </style>', 1)
         changed = True
         results['qa_question_bar_added'].append(str(html_path.relative_to(ROOT)))
@@ -437,11 +440,11 @@ def main():
         print('✓ article-meta a CSS: all articles OK')
 
     if results['qa_question_bar_added']:
-        print(f'\n✓ Interview question red bar added to {len(results["qa_question_bar_added"])} articles:')
+        print(f'\n✓ CCM interview question red bar added to {len(results["qa_question_bar_added"])} articles:')
         for p in results['qa_question_bar_added']:
             print(f'    {p}')
     else:
-        print('✓ Interview question red bar: all interviews OK')
+        print('✓ CCM interview question red bar: all OK')
 
     if results['popup_articles_added']:
         print(f'\n✓ about.html popups updated — {len(results["popup_articles_added"])} articles added:')

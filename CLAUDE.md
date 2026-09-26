@@ -333,7 +333,7 @@ Every article must have ALL of the following before it is considered complete. A
 9. **Article nav** — prev and next links, each with a **70×70px thumbnail** (`object-fit:cover`) and article title. Thumbnail omitted only when linking to the homepage.
 10. **Footer** — social links + copyright
 
-**Interview / Q&A articles (house style, set by John 2026-09-26):** every question is its own `<p class="qa-question">`, bold, with a red left bar (`border-left: 3px solid #b51c20; padding-left: 12px`). The rule is in `_template/article.html`, and `edition_checks.py` adds it to any article that uses `qa-question` but lacks the bar. The check only finds questions marked with that class, so an interview built with plain `<p><strong>Q:</strong>` paragraphs gets no bar. Always use the class.
+**CCM interview articles (house style, set by John 2026-09-26):** this applies to interviews CCM conducts itself (usually Judy's), where the questions are labeled "CCM:". Each question is its own `<p class="qa-question">`, bold, with a red left bar (`border-left: 3px solid #b51c20; padding-left: 12px`). The rule is in `_template/article.html`, and `edition_checks.py` adds it to any article with a `qa-question` beginning "CCM:" that lacks the bar. It does **not** apply to a contributor's own interview of someone else (e.g. Scott Holleran's Judith Guest Q&A, Sept 13), which keeps its own formatting. The check only finds questions marked with that class, so always use `class="qa-question"` for CCM interviews.
 
 **If anything is missing after building:** flag it explicitly ("I found X is missing and want to re-check") before moving on. In auto mode, fix silently and log for post-mortem.
 
