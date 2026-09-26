@@ -1,6 +1,6 @@
 # September 27, 2026 Edition — Status
 
-_Updated: 2026-09-25_
+_Updated: 2026-09-26_
 
 Skeleton prepped Sept 24 against Judy's finalized lineup. All 9 stubs exist (7 original + 2 added Sept 25) and the nav chain is wired. Two articles are received but not yet built (Amouze Mousse, Deerpath), one is already built (Jean Colonomos), and four are still with coordinators. Stories are due to John by Friday night, Sept 25.
 
@@ -35,35 +35,27 @@ Judy also asked that the October Heritage Auctions ad "run in this issue and all
 
 ## Pending Deliveries
 
-- **Film Review** (Jackson LeJeune) — Judy asked Jack to send it in email format; the film's title is not known yet. Cover staged: `_attachment-staging/1a0d89a57c0d61a3/CC TVoNO Header Image.png`.
-- **The Ravinia School in Lawndale** (Drake Boehm) — text plus "a couple of photos" requested by Judy; nothing received.
-- **This Day in History** (Scott Holleran) — Annie owes the article text and photos. Two cover options already in hand from Judy.
-- **My Silk Roads** (Susan Aurinko) — Emma owes story, photos, and her cover choice.
-- **American Echoes / Dusty Sang** (Judy Carmack Bross) — Annie owes the article text and ~5 photos/book illustrations. Cover in hand.
-- **Dumpling Fest** (Elizabeth Dunlop Richter) — Emma owes the laid-out piece; source PDF (`1a0c46e603a9b2c3`) and cover `IMG_3409.jpeg` are in hand.
-- **October Astrochart** — Victoria's September data ends Sept 30; the October forecast is needed before the Oct 4 edition.
+- **Dumpling Fest photos 16-21** (Elizabeth Dunlop Richter) — corrupted in Emma's copy; Judy is asking Libbet to resend (`1a0dda74a609e3e3`). Text and photos 1-15 are in hand.
 
 ## Blockers
 
-- **Drake Boehm has no about.html bio** — his byline and About the Author links are dead until one is written. Needs details from Judy/Drake.
-- **Amouze Mousse title** — Ana's subject line gives "Margaret Unetich and Matt Ziol Create Amouze Mousse"; Judy's lineup said "Entrepreneur Margaret Unetich and Amouze Mousse". Using the source title per mistake #61 unless Judy says otherwise.
-- **Amouze Mousse suspected typos** — "melts in your month", a double negative in the Toulouse-Lautrec sentence, a missing opening quote on "We've had to invest…", a stray period in "With every bite. You can", and "Holiday House Hampton's". Flag to Judy; do not fix silently.
-- **Deerpath cover choice** — John's pick of `Deerpath 1 2.jpeg`, `Deerpath 2.jpeg`, or `Deerpath 1 3.jpeg` (Judy: "probably the best" is 1 3).
-- **This Day in History cover choice** — `iu 2.jpeg` or `14Richardwright-superJumbo.jpeg`; Judy says either is fine.
-- **Dumpling Fest byline** — the piece is signed "Libbet"; using the existing `elizabeth-dunlop-richter` anchor. Confirm with Judy.
-- **Jean Colonomos photos** — whether to add Nick Wilder's second photo (`IMG_0518.jpeg`), and whether the credit should read "photograph by Nick Wilder" (Judy's wording) instead of the current "Photo: Nick Wilder".
-- **Heritage October ad + Erika Dufour credit** — both are on dev2 but still need to reach production (via this edition's `/stage` + `/publish`, or a hotfix).
+- **Six articles received but not yet built:** This Date in History, Dusty Sang, My Silk Roads, Dumpling Fest (text only; photos 16-21 missing), Jack's Vampires review, Drake's Ravinia piece. Source messages are in EMAIL_LOG.md items #246-#252.
+- **Titles to change when building** (mistake #61): `this-day-in-history` → "This Date in History"; `dusty-sang` → "Dusty Sang: Echoes from America's Past"; `lejeune-film-review` → "The Vampires of New Orleans – An Indie Editing Accomplishment".
+- **Dumpling Fest text must come from Libbet's PDF, not Emma's email** — Emma's copy has PDF ligature damage ("oLering", "organiza(ons", etc.).
+- **This Date in History photos are low-resolution** (two ~210x320 px, two ~474 px wide) and photos 4-5 have no real captions.
+- **Drake Boehm's bio says "Classics Chicago"** — placed verbatim; flag to Judy.
+- **Heritage October ad + Erika Dufour credit** — both on dev2; reach production with this edition's `/stage` + `/publish`, or a hotfix.
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| amouze-mousse | Margaret Unetich and Matt Ziol Create Amouze Mousse | Judy Carmack Bross | Placeholder | 0/14 + cover staged | Source `1a0d486111ef2168` (Ana, Sept 24). Files in `_attachment-staging/1a0d486111ef2168/`. Photos 9+10 and 13+14 are side-by-side pairs with shared captions; photo 8 has no caption; COVER is homepage-card only. |
+| amouze-mousse | Margaret Unetich and Matt Ziol Create Amouze Mousse | Judy Carmack Bross | Ready | 14/14 + cover | Source `1a0d486111ef2168` (Ana, Sept 24). Files in `_attachment-staging/1a0d486111ef2168/`. Photos 9+10 and 13+14 are side-by-side pairs with shared captions; photo 8 has no caption; COVER is homepage-card only. |
 | this-day-in-history | This Day in History | Scott Holleran | Placeholder | — | Awaiting text from Annie. Covers: `1a0d2ea6532b35c9`, `1a0d2eb7fba723f8`. |
 | silk-roads-scarves | My Silk Roads | Susan Aurinko | Placeholder | — | Awaiting Emma. Slug/title are working names; the column's real headline comes with the text. |
 | dusty-sang | American Echoes: A New Book by Dusty Sang | Judy Carmack Bross | Placeholder | cover only | Cover `1a0c60b2f6517021` / resent `1a0d2ef3b97a908d`; Judy: "Also use at top of page" (cover + hero). |
-| deerpath-golf | No Matter How You Slice It, Deerpath Golf Course Remains a Lake Forest Treasure at 100 | David A. F. Sweet | Placeholder | 0/2 | Source `1a0c3a5f9e688f14` (Judy fwd, Sept 21). Third cover candidate `1a0d2f06c1b52abd`. |
-| jean-colonomos-poems | Two Poems | Jean Colonomos | Ready | 1/1 | Moved from `editions/2026-09-20/` (held there Sept 18). Byline date and nav updated. |
+| deerpath-golf | No Matter How You Slice It, Deerpath Golf Course Remains a Lake Forest Treasure at 100 | David A. F. Sweet | Ready | 2/2 | Source `1a0c3a5f9e688f14` (Judy fwd, Sept 21). Third cover candidate `1a0d2f06c1b52abd`. |
+| jean-colonomos-poems | Two Poems | Jean Colonomos | Ready | 2/2 | Moved from `editions/2026-09-20/` (held there Sept 18). Byline date and nav updated. |
 | dumpling-fest | Dumpling Fest | Elizabeth Dunlop Richter | Placeholder | cover only | Source PDF `1a0c46e603a9b2c3`; cover `1a0c615cd806fce8`. Working title. |
 | lejeune-film-review | Film Review | Jackson LeJeune | Placeholder | cover staged | Added Sept 25 at Judy's request (`1a0d89a6f719d921`), approved by John. Working title until Jack's text arrives. |
 | ravinia-school-lawndale | The Ravinia School in Lawndale | Drake Boehm | Placeholder | — | Added Sept 25 at Judy's request, approved by John. New author, no bio yet. |
