@@ -62,7 +62,7 @@ ARTICLE_META_A_CSS = (
 # Interview house style (John, 2026-09-26): every question gets a red left bar.
 # Appended just before </style> so it overrides any older .qa-question rule.
 QA_QUESTION_CSS = (
-    "\n    .article-body .qa-question { border-left: 3px solid #b51c20; padding-left: 12px; }"
+    "    .article-body .qa-question { font-weight: 700; border-left: 3px solid #b51c20; padding-left: 12px; }\n"
 )
 QA_BAR_RULE_RE = re.compile(r'\.qa-question\s*\{[^}]*border-left:[^;]*#(?:b51c20|d41f1f)', re.I)
 # Only CCM's own interviews (usually Judy's): questions labeled "CCM:". A
@@ -196,7 +196,7 @@ def fix_page(html_path, depth):
     # CCM interview questions: red left bar. Only questions marked with
     # class="qa-question" and labeled "CCM:" are detected.
     if depth == 3 and CCM_QUESTION_RE.search(text) and not QA_BAR_RULE_RE.search(text) and '</style>' in text:
-        text = text.replace('</style>', QA_QUESTION_CSS + '\n  </style>', 1)
+        text = re.sub(r'([ \t]*)</style>', lambda m: QA_QUESTION_CSS + m.group(1) + '</style>', text, count=1)
         changed = True
         results['qa_question_bar_added'].append(str(html_path.relative_to(ROOT)))
 
