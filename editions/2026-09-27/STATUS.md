@@ -1,8 +1,8 @@
 # September 27, 2026 Edition — Status
 
-_Updated: 2026-09-26_
+_Updated: 2026-09-26 (published)_
 
-All nine articles are built and Ready on dev2 as of Sept 26. Remaining work is the flagged items below, then `/edition-checks` → `/stage` → `/publish`.
+**✅ Published to production Sept 26, 2026 ~9:50 PM ET** (`origin/master` `b4b868d5`; staged as dev `5daee6d9`). Verified live without cache-busting: homepage shows September 27, all 12 edition pages and their images load, GA4 active, internal nav hidden, internal files return the homepage fallback. All nine articles were built and Ready on dev2 as of Sept 26. Remaining work is the flagged items below, then `/edition-checks` → `/stage` → `/publish`.
 
 ## Judy's official lineup (`1a0bea8adf366799`, received 2026-09-20; finalized `1a0d2ee0111aa0a8`, 2026-09-24)
 
