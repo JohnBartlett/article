@@ -72,7 +72,7 @@ Cloudflare detects the push and deploys automatically to `chicagoclassicmag.com`
 
 ## Step 4 — Send publication notification
 
-**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation.
+**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation. **Recipients (John's standing practice, confirmed Sept 26, 2026):** To Judy and Sig, Cc Emma, Annie and Ana. Send with `~/.claude/scripts/gmail_api.py` so the link isn't rewritten.
 
 ```python
 import sys; sys.path.insert(0, 'tools')
@@ -80,10 +80,10 @@ from gmail_api import get_access_token, send_email
 
 token = get_access_token()
 send_email(token,
-    to='judycbross@aol.com',
-    subject='Classic Chicago Magazine — <Edition Date> Edition Is Live',
-    body='Dear Judy,\n\nThe <Month Day> edition of Classic Chicago Magazine is now live at:\n\nhttps://chicagoclassicmag.com\n\nCheers, John',
-    cc='john.bartlett@gmail.com')
+    to='judycbross@aol.com, sigalina@aol.com',
+    subject='Classic Chicago Magazine: <Month Day> Edition Is Live',
+    body='Dear Judy and Sig,\n\nThe <Month Day> edition of Classic Chicago Magazine is now live at:\n\nhttps://chicagoclassicmag.com\n\nThank you all for your work on this issue.\n\nCheers,\nJohn',
+    cc='muhlemane2@gmail.com, aedelfosse1@gmail.com, anabaca8@gmail.com')
 ```
 
 ## Step 5 — Switch back to dev2 and update editors pages
