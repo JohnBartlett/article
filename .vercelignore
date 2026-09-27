@@ -4,3 +4,17 @@
 .git
 .claude
 node_modules
+# internal-only files: never serve on any Vercel preview (see tools/strip_internal_files.sh)
+/*.md
+tools
+_template
+_attachment-staging
+_bios
+docs
+dashboard
+editions/*/STATUS.md
+/*.json
+!package.json
+!package-lock.json
+!vercel.json
+deploy.log
