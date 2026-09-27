@@ -11,9 +11,9 @@ paths=(
   deploy.log install-google-gcloud-mcp.sh install-google-workspace-mcp.sh
 )
 for p in "${paths[@]}"; do
-  if git ls-files --error-unmatch "$p" >/dev/null 2>&1; then git rm -r -q "$p"; echo "removed $p"; fi
+  if git ls-files --error-unmatch "$p" >/dev/null 2>&1; then git rm -r -q -f "$p"; echo "removed $p"; fi
 done
 # root-level markdown docs and report dumps
-while IFS= read -r f; do git rm -q "$f"; echo "removed $f"; done < <(git ls-files | grep -E '^[^/]+\.md$|^(ga4_report|ha_ad_report)_[^/]*\.json$')
+while IFS= read -r f; do git rm -q -f "$f"; echo "removed $f"; done < <(git ls-files | grep -E '^[^/]+\.md$|^(ga4_report|ha_ad_report)_[^/]*\.json$')
 # per-edition STATUS.md
-while IFS= read -r f; do git rm -q "$f"; echo "removed $f"; done < <(git ls-files 'editions/*/STATUS.md')
+while IFS= read -r f; do git rm -q -f "$f"; echo "removed $f"; done < <(git ls-files 'editions/*/STATUS.md')
