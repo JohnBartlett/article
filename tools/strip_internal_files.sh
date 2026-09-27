@@ -7,7 +7,7 @@
 set -euo pipefail
 paths=(
   .claude ".claude.backup.20260411_074723" .claude_last_session_id .DS_Store
-  tools _template _attachment-staging _bios docs dashboard
+  tools _template _attachment-staging _bios docs dashboard editors john-article-ideas
   deploy.log install-google-gcloud-mcp.sh install-google-workspace-mcp.sh
 )
 for p in "${paths[@]}"; do

@@ -30,7 +30,7 @@ No output = clean.
 ## Step 1a — No internal-only files on master
 
 ```bash
-git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard)/|/STATUS\.md$'
+git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard|editors|john-article-ideas)/|/STATUS\.md$'
 ```
 
 No output = clean. Any output means `/stage` didn't strip dev (Step 4b there) — these files

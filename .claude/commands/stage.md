@@ -112,7 +112,7 @@ the live site, where Cloudflare served them publicly.
 
 ```bash
 bash tools/strip_internal_files.sh
-git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard)/|/STATUS\.md$' \
+git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard|editors|john-article-ideas)/|/STATUS\.md$' \
   && echo "STOP: internal files still on dev" || echo "clean"
 ```
 
