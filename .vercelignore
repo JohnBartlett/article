@@ -18,3 +18,5 @@ editions/*/STATUS.md
 !package-lock.json
 !vercel.json
 deploy.log
+john-article-ideas
+editors
