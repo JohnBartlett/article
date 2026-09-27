@@ -176,6 +176,16 @@ Return this URL as the final output — easy to copy and send to Judy.
 
 ## Notes
 
+- **Run the merge in a temporary worktree** so the dev2 checkout is never switched:
+  `git worktree add /tmp/stage-wt origin/dev -B stage-wt`, work there, push `stage-wt:dev`, then
+  `git worktree remove --force /tmp/stage-wt && git branch -D stage-wt`. `tools/` is not on dev or master, so run
+  `comment_internal_nav.py` / `disable_ga4.py` / `enable_ga4.py` / `strip_internal_files.sh` from the dev2
+  checkout's `tools/` while inside the worktree — they all operate on the current directory.
+- **Push the merge commit as is (CLAUDE.md mistake #69):** give the message with `git merge -m` (a clean
+  merge commits itself — a follow-up `git commit` fails and, in an `&&` chain, silently skips the push);
+  never `git pull --rebase` it; confirm `origin/dev` still equals `HEAD^1`, then push. Rename-detection
+  conflicts (a deleted internal file "renamed" into an article, `.DS_Store`) resolve to dev's content.
+
 - Never commit directly to `master` — dev → master happens only via `/publish`
 - Hotfixes (dev2 → dev → master bypassing full stage) skip the `editors/` removal and internal-nav commenting — those files end up on master but are unlinked and harmless. Run a full `/stage` on the next edition to clean them up.
 - Hotfixes that pull individual files via `git checkout dev -- <file>` onto master also bring the GA4-disabled wrapper (dev's form) — always grep for `GA4-disabled` in every pulled file and manually re-enable before committing. This was missed zero times only because it was checked deliberately each time on 2026-09-20; treat it as a required step, not a spot-check (see CLAUDE.md mistake #64).

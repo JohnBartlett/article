@@ -82,6 +82,13 @@ for att in attachments:
 If photos arrived via Hightail or Google Drive shortcut (downloads as HTML, not image):
 ask the user to save files to `editions/YYYY-MM-DD/slug/` manually, then continue.
 
+**Unnumbered, renumbered, or PDF-embedded photos:** establish identity by image comparison, not
+filenames or numbers (CLAUDE.md mistake #68) — `pdfimages -png` recovers photos embedded in a PDF in
+document order; a 16–24 px greyscale fingerprint (after `ImageOps.exif_transpose`) plus `md5` settles
+which file is which and catches byte-identical "alternate" covers. Check EXIF orientation on every photo
+(`im.getexif().get(274)`); save any non-1 image upright, keeping its filename. For PDF-sourced text,
+repair ligature damage (`L`→ff, `(`→ti) per mistake #67.
+
 **Before placing any `<figure>` HTML, build an explicit photo map** (now that you have the article text to identify anchor sentences):
 
 | Filename | Caption (verbatim from email) | Placement (after which sentence/paragraph) |
@@ -192,7 +199,7 @@ git push origin dev2
 ## Step 12 — Deploy Vercel preview
 
 ```bash
-PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep -oE 'https://article-[a-z0-9]+-johns-projects-e5fce345\.vercel\.app' | head -1)
 ```
 
 Update both editors pages with the new URL, commit, push, return URL to user.

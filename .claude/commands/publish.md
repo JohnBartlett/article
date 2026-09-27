@@ -116,6 +116,16 @@ curl -s -o /dev/null -w "%{http_code}" https://chicagoclassicmag.com
 
 ## Notes
 
+- **Run the merge in a temporary worktree** so the dev2 checkout is never switched:
+  `git worktree add /tmp/pub-wt origin/master -B pub-wt`, work there, push `pub-wt:master`, then
+  `git worktree remove --force /tmp/pub-wt && git branch -D pub-wt`. `tools/` is not on dev or master, so run
+  `comment_internal_nav.py` / `disable_ga4.py` / `enable_ga4.py` / `strip_internal_files.sh` from the dev2
+  checkout's `tools/` while inside the worktree — they all operate on the current directory.
+- **Push the merge commit as is (CLAUDE.md mistake #69):** give the message with `git merge -m` (a clean
+  merge commits itself — a follow-up `git commit` fails and, in an `&&` chain, silently skips the push);
+  never `git pull --rebase` it; confirm `origin/master` still equals `HEAD^1`, then push. Rename-detection
+  conflicts (a deleted internal file "renamed" into an article, `.DS_Store`) resolve to dev's content.
+
 - Never push to master without GA4 re-enabled — production must always have analytics active
 - Never push to master without Judy having reviewed and approved the staging preview
 - After publishing, dev and master will have diverged slightly (GA4 state) — this is expected and handled automatically on the next `/stage` run

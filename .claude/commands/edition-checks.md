@@ -123,7 +123,7 @@ git push origin dev2
 ## Step 8 — Deploy Vercel preview
 
 ```bash
-PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep -oE 'https://article-[a-z0-9]+-johns-projects-e5fce345\.vercel\.app' | head -1)
 ```
 
 Return the Vercel preview URL to the user.

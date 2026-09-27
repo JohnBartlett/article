@@ -90,7 +90,7 @@ python3 tools/ha_ad_report.py
 Determine the current hero article slug (first article in the homepage card grid), then run:
 
 ```bash
-PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep -oE 'https://article-[a-z0-9]+-johns-projects-e5fce345\.vercel\.app' | head -1)
 EDITION_DATE="YYYY-MM-DD"   # replace with current edition date
 HERO_SLUG="slug"             # replace with hero article slug
 sed -i "s|href=\"https://article-[^/]*/editions/[^\"]*\"|href=\"${PREVIEW_URL}/editions/${EDITION_DATE}/${HERO_SLUG}/\"|" editors/edition.html

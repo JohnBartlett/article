@@ -131,7 +131,10 @@ After updating both files, commit and push to dev2.
 
 ## Step 3 — Update EMAIL_LOG.md
 
-After processing each email, update `EMAIL_LOG.md` at the repo root:
+After processing each email, update `EMAIL_LOG.md` at the repo root.
+
+**Pull dev2 immediately before appending, and number from the current last item.** Parallel sessions and
+the cloud routine append too — on Sept 26, 2026 two sessions both logged a #259.
 
 - **New actionable email not yet in the log** → add a row under the correct edition section with status ⏳
 - **Action fully applied this session** → update status to ✅ and add a note describing what was done

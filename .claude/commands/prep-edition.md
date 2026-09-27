@@ -201,6 +201,16 @@ print('edition:', ed, '| lineup rows:', len(sd['lineup']),
 `lineup rows` must equal the number of articles in the nav chain, and every row must show a
 real author and coordinator. If it prints 0 rows, the table shape is wrong.
 
+## Step 5b — No leftover template placeholders (CLAUDE.md mistake #65)
+
+```bash
+grep -rlE 'ARTICLE_(TITLE|SUBTITLE)|INTRO_PARAGRAPH|AUTHOR_(NAME|ANCHOR)|EDITION_DATE|(PREV|NEXT)_(SLUG|TITLE)|HERO_(IMAGE|ALT|CAPTION)|BODY_CONTENT|daily-star-MONTH' editions/$EDITION/
+```
+
+Must return nothing. Delete unused placeholder lines (e.g. `<p class="article-subtitle">ARTICLE_SUBTITLE</p>`,
+`<p class="article-intro">INTRO_PARAGRAPH</p>`) rather than leaving them; replace `daily-star-MONTH` with the real
+folder name. `WRITER_THRESHOLD` is a real JS variable — leave it.
+
 ## Step 6 — Commit and push
 
 ```bash
@@ -212,7 +222,7 @@ git push origin dev2
 ## Step 7 — Deploy Vercel preview
 
 ```bash
-PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep "^Preview:" | head -1 | awk '{print $2}')
+PREVIEW_URL=$(vercel deploy --yes 2>&1 | grep -oE 'https://article-[a-z0-9]+-johns-projects-e5fce345\.vercel\.app' | head -1)
 vercel alias set ${PREVIEW_URL} article-dev2.vercel.app
 ```
 
