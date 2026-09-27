@@ -103,6 +103,23 @@ grep -r "reader-comments\|future-articles\|comments\.html" \
 
 Any output that is not inside a comment block is a live public link — remove it.
 
+## Step 4b — Strip internal-only files (run LAST, after the tools/ scripts above)
+
+dev and master must contain only reader-facing files. Until Sept 26, 2026 this step didn't exist,
+so every stage/publish carried `EMAIL_LOG.md` (contributor and subscriber email addresses),
+`CLAUDE.md`, `tools/`, `.claude/`, `_attachment-staging/*/meta.json` and `STATUS.md` files onto
+the live site, where Cloudflare served them publicly.
+
+```bash
+bash tools/strip_internal_files.sh
+git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard)/|/STATUS\.md$' \
+  && echo "STOP: internal files still on dev" || echo "clean"
+```
+
+The merge in Step 1 will usually re-add these (dev2 keeps changing them), often as
+modify/delete conflicts; resolve those with `git rm`, then this step removes the rest.
+It deletes `tools/` from dev, so it must run after Steps 2–3.
+
 ## Step 5 — Commit and push
 
 ```bash
