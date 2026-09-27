@@ -35,7 +35,7 @@ Judy also asked that the October Heritage Auctions ad "run in this issue and all
 
 ## Pending Deliveries
 
-- **Libbet's original Dumpling Fest photos** — requested via Judy (`1a0dfb96c3c51dcd`); the article runs with the PDF-extracted photos until they arrive, then swap them in (hotfix if already live).
+- **Dumpling Fest originals are on dev2 but not yet live** — 18 of Libbet's originals swapped in Sept 27 (slots 8, 16, 19 still PDF copies; she sent none for them). Needs a stage/publish or hotfix to reach production.
 
 ## Blockers
 

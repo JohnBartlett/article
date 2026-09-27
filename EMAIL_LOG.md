@@ -1272,3 +1272,7 @@ Tier 2 keyword search (`after:2026/09/25`) returned 33 hits: Jack LeJeune's 4 me
 262. ⬛ **New Subscriber** via FormSubmit (`1a0dfa3c6e8dc6f9`, Sept 26 9:34 PM UTC, from chicagoclassicmag.com): Claudia Fariello Bolnick (farielloc@gmail.com). Logged here per the subscriber convention (no subscriber-list file yet).
 
 263. ✅ **"Edition is live" notification sent to Judy** as `1a0e076864cc6ca4` (Sept 26 ~9:30 PM ET, via `gmail_api.py`, cc John): September 27 edition live at https://chicagoclassicmag.com (master `b4b868d5`).
+
+## check-emails run, Sept 27 (local session, after item #263)
+
+264. ✅ **Libbet sends her original Dumpling Fest photos** in two batches: `1a0e0bfbda82c3da` (14 photos) and `1a0e0bfd5f60e698` (6 photos), Sept 27 2:43-2:44 AM UTC, to John; plus "Sent in 2 batches" to Judy, cc John (`1a0e0c1af393db58`). No captions or numbering; matched to article slots by image comparison against the photos embedded in her PDF (18 clean matches, diff ~1 vs ~50 for the next candidate). **Swapped into `dumpling-fest` on dev2** with Libbet's own filenames (IMG_3379 ... IMG_3421), 3 EXIF-rotated photos saved upright, anything over 3000px shrunk. Slots 8, 16, 19 had no original in her emails and keep the PDF-extracted copies. Two originals (`IMG_3383.jpg`, `IMG_3410.jpg`) match no photo in the article and were not placed. **Production still has the small photos** until this is staged/published or hotfixed.
