@@ -35,13 +35,13 @@ Judy also asked that the October Heritage Auctions ad "run in this issue and all
 
 ## Pending Deliveries
 
-- None. All nine articles are built and Ready on dev2.
+- **Libbet's original Dumpling Fest photos** — requested via Judy (`1a0dfb96c3c51dcd`); the article runs with the PDF-extracted photos until they arrive, then swap them in (hotfix if already live).
 
 ## Blockers
 
 - **Flag to Judy — layout calls made without instructions:** This Date in History's Home Insurance Building postcard was placed in Jenney's section (Annie's copy had it in the Wright section); Drake's five photos have no captions and were placed by topic; Jean's second Nick Wilder photo sits before "Rom-Com".
 - **Flag to Judy — Dumpling Fest:** Emma's copy put the Garda Pipes and Drums caption on the Polmula tent photo and dropped the Wila caption; both follow Libbet's PDF now. Photos 16-21 were recovered from Libbet's PDF, so Libbet does not need to resend them (unless higher-resolution originals are wanted). Emma's "most elective ambassador" was a mis-repair of the PDF's "effective".
-- **Suspected source typos kept verbatim (mistake #18):** Dusty Sang caption "*American Echoes, Volume l*" (lowercase L, likely "I"); Silk Roads photo 3 caption says "Vienna" while the text calls it Marcia's "Mozart" square; Jack's review has "asked my to keep spoilers", "recieves", "Gettyburg"; Drake's bio says "Classics Chicago".
+- **Judy approved the issue (`1a0df4e289adc768`) but has not answered the typo questions.** Suspected source typos kept verbatim (mistake #18): Dusty Sang caption "*American Echoes, Volume l*" (lowercase L, likely "I"); Silk Roads photo 3 caption says "Vienna" while the text calls it Marcia's "Mozart" square; Jack's review has "asked my to keep spoilers", "recieves", "Gettyburg"; Drake's bio says "Classics Chicago".
 - **This Date in History photos are low-resolution** (~210–474 px wide) — acceptable inline, but better originals would help.
 - **Heritage October ad + Erika Dufour credit** — both on dev2; reach production with this edition's `/stage` + `/publish`.
 
