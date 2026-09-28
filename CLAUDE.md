@@ -165,6 +165,8 @@ Other skills:
 | Skill | Purpose |
 |---|---|
 | `/update-editors` | Refresh all four editors pages, pull fresh GA4/HA stats, deploy new Vercel preview |
+| `/autopilot-off` | Put Autopilot to sleep (hourly email-check routine, attachment fetcher, dashboard refresh) before hands-on work |
+| `/autopilot-on` | Wake Autopilot: refresh the routine's prompt, enable all three, test-run each one |
 | `/layout` | Audit and fix homepage order, article nav links, attribution lines, about.html popups |
 | `/preview` | Build a layout review page from an article email; deploy to Vercel; return URL |
 | `/writer-bios` | Look up, add, or update writer bios in `_bios/` and `about.html` |
