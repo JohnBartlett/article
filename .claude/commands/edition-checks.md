@@ -103,6 +103,26 @@ grep -rh 'class="prev"\|class="next"' editions/$EDITION/ --include="index.html" 
 
 Confirm the first href is `../../../index.html`, the last href is `../../../index.html`, and all middle hrefs are `../slug/` paths that exist on disk.
 
+## Step 5b — Verify bio links
+
+For every article in the edition, confirm on the built HTML (with HTML comments stripped):
+- the byline `about.html#<id>` and the "About the Author" link use the same `<id>`;
+- `about.html` has a `team-member` card with that `id`, whose `<h3>` name matches the byline name
+  exactly and has no `[Role pending]`/`[Bio pending]`;
+- that card's articles popup lists this article with its final H1 title and a thumbnail file that exists.
+
+Then check site-wide that no page links to a missing bio:
+
+```bash
+python3 - <<'EOF'
+import re,glob
+ids=set(re.findall(r'\bid="([a-z0-9-]+)"',open("about.html").read()))
+dead=[(a,f) for f in glob.glob("editions/**/*.html",recursive=True)+glob.glob("writers/**/*.html",recursive=True)+["index.html"]
+      for a in re.findall(r'about\.html#([A-Za-z0-9_-]+)',re.sub(r"<!--.*?-->","",open(f,errors="replace").read(),flags=re.S)) if a not in ids]
+print(dead or "all bio links resolve")
+EOF
+```
+
 ## Step 6 — Verify homepage card order
 
 Confirm root `index.html` card order matches the nav chain order (hero = article #1,
@@ -141,6 +161,7 @@ Return the Vercel preview URL to the user.
 - [ ] New author bios added to Our Writers (if any)
 - [ ] "Our Writers" author popups updated for this edition (handled by edition_checks.py)
 - [ ] Nav chain verified end-to-end
+- [ ] Bio links verified (Step 5b): byline + About the Author share one anchor, card name matches, popup lists the article; no dead about.html anchors site-wide
 - [ ] Homepage card order matches nav chain
 - [ ] Changes committed and pushed to dev2
 - [ ] Vercel preview deployed and URL returned
