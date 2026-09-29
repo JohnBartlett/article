@@ -1,6 +1,6 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-09-29_
+_Updated: 2026-09-29 (pm)_
 
 Skeleton prepped Sept 28; **Judy's final lineup** (`1a0ecc3d732ce3a1`, Sept 29) adds Annie's article and Dance for Life. All 7 stubs exist, nav chain wired, homepage and DateBook/Astrochart moved to Oct 4. Judy promises all articles by Wednesday (Sept 30).
 
@@ -42,7 +42,7 @@ Dropped vs working list: none. The Sept 28 "possible" items (AI piece by John, E
 
 - **Book review title unclear** — "Grove Mower book review"; coordinator now confirmed (Judy to John by Thursday). Working title "Book Review" until the text arrives.
 - **Annie's article** — author/title/topic unknown; byline set to Annie Delfosse provisionally (she has no Articles popup in about.html yet; add one if she is the byline).
-- **Sig's Water Terrace piece is partly in hand** — photo `IMG_8418.PNG` (EMAIL_LOG #235) and short text (#236); caption wording "water feature" vs "water installation" still open. Working title "Obama Garden Art" is Judy's lineup name — use Sig's own title when confirmed (mistake #61).
+- **Sig's Water Terrace piece is built (Ready)** — confirm with Sig: (1) caption "sculptural water installation" (her later email, used) vs "feature" (earlier); (2) a real title, since "Obama Garden Art" is Judy's lineup name (mistake #61).
 - **Judy asked John** about writing an AI piece and discussing an Editorial Page article — John's decision.
 
 ## Articles
@@ -50,9 +50,9 @@ Dropped vs working list: none. The Sept 28 "possible" items (AI piece by John, E
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
 | about-the-town-october | About the Town in October | Philip Vidal | Placeholder | — | Hero slot. |
-| meet-us-in-st-louis | Meet Us in St. Louis: Part 1 | Judy Carmack Bross | Placeholder | cover staged | Cover `_attachment-staging/1a0e7a20a6c28d96/IMG_4393.jpeg`. |
-| obama-water-terrace | Obama Garden Art | Sigalit Zetouni | Placeholder | 1 staged | Photo + short text from Sept 23 (#235/#236). |
-| francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Placeholder | cover staged | `_attachment-staging/1a0ecc799724e74a/101Philosophenweg1.jpeg` |
+| meet-us-in-st-louis | Meet Us in St. Louis: Part 1 | Judy Carmack Bross | Placeholder | cover placed | `IMG_4393.jpeg` on homepage card + nav thumbs (EXIF orientation 6 corrected, filename kept). |
+| obama-water-terrace | Obama Garden Art | Sigalit Zetouni | **Ready** | 1 placed | Built Sept 29 from `1a0d01fe0b4393d0` (text) + `1a0cf41a08ddec93` (photo/credit). Caption uses the later "installation" wording (matches her body text); swap one word if "feature" is wanted. Title still Judy's lineup name. |
+| francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Placeholder | cover placed | `101Philosophenweg1.jpeg` on homepage card + nav thumbs. |
 | grove-mower-review | Book Review | Judy Carmack Bross | Placeholder | — | Working title. |
 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Placeholder | — | Working title. |
 | dance-for-life | Dance for Life Show and After Party | Judy Carmack Bross | Placeholder | — | |
