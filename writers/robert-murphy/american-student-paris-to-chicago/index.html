@@ -2,161 +2,225 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>An American Student’s Journey from Paris to Chicago | Dr. Rob Murphy | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>An American Student’s Journey from Paris to Chicago | Dr. Rob Murphy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;}
-    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
-    a{color:#d41f1f;}
-    /* Header */
-    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
-    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
-    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
-    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
-    .site-header .header-links a:hover{text-decoration:underline;}
-    /* Layout */
-    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
-    /* Article */
-    .article-header{margin-bottom:32px;}
-    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
-    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
-    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
-    .article-header .byline strong{color:#555;}
-    .article-body{font-size:17px;line-height:1.75;color:#333;}
-    .article-body p{margin:0 0 1.4em;}
-    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
-    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
-    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
-    .article-body figure{margin:2em 0;}
-    .article-body figure img{margin:0;}
-    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
-    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
-    /* Hero */
-    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
-    /* Index */
-    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
-    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
-    .year-group{margin-bottom:40px;}
-    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
-    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
-    .article-card:last-child{border-bottom:none;}
-    .article-card:hover .card-title{color:#d41f1f;}
-    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
-    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
-    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
-    .card-info{flex:1;}
-    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
-    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
-    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
-    /* Footer */
-    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
-    @media(max-width:600px){
-      .site-header{padding:12px 16px;}
-      .wrapper{padding:0 16px;margin:24px auto;}
-      .article-body{font-size:16px;}
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; max-width: 80%; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a, .nav-inner span { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner span { color: #888; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin: 0 0 20px; }
+    .article-body p.center { text-align: center; }
+    .article-body p.question, .article-body p.qa-question { font-weight: 700; }
+    .article-body p.missing { font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; border: 1px dashed #ddd; padding: 26px 12px; margin: 36px 10% 8px; }
+    .article-body p.missing + p.center { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; font-style: italic; margin-bottom: 36px; }
+    .article-body h2, .article-body h3, .article-body h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: #111; margin: 36px 0 14px; }
+    .article-body h2 { font-size: 24px; } .article-body h3 { font-size: 21px; } .article-body h4 { font-size: 18px; }
+    .article-body a { color: #b51c20; }
+    .article-body blockquote, .article-body .pullquote { font-size: 20px; font-style: italic; color: #555; border-left: 4px solid #b51c20; padding: 10px 20px; margin: 30px 0; }
+    .article-body table { border-collapse: collapse; margin: 24px 0; }
+    .article-body td, .article-body th { border: 1px solid #eee; padding: 6px 10px; vertical-align: top; font-size: 16px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure.tall img { width: auto; max-width: 100%; max-height: 680px; margin: 0 auto; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .retro-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-flex; align-items: center; gap: 10px; max-width: 42%; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.4; text-transform: uppercase; color: #b51c20; text-decoration: none; }
+    .back-link span { border-bottom: 1px dashed #b51c20; }
+    .back-link:hover span { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    .back-link.next { text-align: right; margin-left: auto; }
+    .nav-thumb { width: 70px; height: 70px; object-fit: cover; object-position: center 25%; display: block; flex-shrink: 0; }
+    .retro-nav-count { font-family: 'Lato', sans-serif; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+    .page-head { text-align: center; padding: 24px 16px 10px; }
+    .page-head h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222; }
+    .page-head .sub { font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px 60px; }
+    .index-intro { max-width: 780px; margin: 8px auto 10px; text-align: center; font-size: 18px; color: #555; font-style: italic; }
+    .index-note { max-width: 780px; margin: 0 auto 26px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+    .article-card { display: block; text-decoration: none; color: inherit; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .card-thumb, .card-thumb-placeholder { width: 100%; height: 300px; object-fit: cover; object-position: center 25%; display: block; border-radius: 3px; margin-bottom: 14px; background: #f0ebe3; }
+    .card-thumb-placeholder { display: flex; align-items: center; justify-content: center; }
+    .card-thumb-placeholder span { font-family: 'Lato', sans-serif; font-size: 11px; color: #b9b0a3; text-transform: uppercase; letter-spacing: 0.12em; }
+    .card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.3; color: #222; margin: 0 0 6px; }
+    .article-card:hover .card-title { color: #b51c20; }
+    .card-date { font-family: 'Lato', sans-serif; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-body p { font-size: 16px; }
+      .retro-nav-count { display: none; }
+      .back-link { max-width: 48%; font-size: 12px; }
     }
-    /* Retrospective nav */
-    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
-    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
-    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
-    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
-    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
-    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
-    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
-    @media(max-width:600px){
-      .retro-nav-title{font-size:12px;}
-    }
-
-    /* Rob Murphy retrospective additions */
-    .article-body p.question{font-weight:700;}
-    .article-body p.center{text-align:center;}
-    .article-body p.missing{text-align:center;font-size:12px;color:#aaa;border:1px dashed #d8d0c4;padding:22px 12px;margin:2em 12%;text-transform:uppercase;letter-spacing:0.06em;}
-    .article-body table{border-collapse:collapse;margin:1.4em 0;}
-    .article-body td,.article-body th{border:1px solid #e0d8ce;padding:6px 10px;vertical-align:top;}
-    .retro-nav-count{font-size:12px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;}
-    .header-tagline{font-size:13px;color:#999;font-style:italic;margin-top:2px;}
-    @media(max-width:600px){.retro-nav-count{display:none;}}
   </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div>
-    <div class="site-name">Classic Chicago Magazine</div>
-    <div class="author-name">Dr. Rob Murphy</div>
-  </div>
-  <nav class="header-links">
-    <a href="../index.html">All Articles</a>
-  </nav>
-</header>
-<main class="wrapper">
-  <article>
-    <div class="article-header">
-      <div class="kicker">The Chicago-Paris Connection</div>
-<h1>An American Student’s Journey from Paris to Chicago</h1>
-      <div class="byline"><strong>By Dr. Rob Murphy</strong> &nbsp;&bull;&nbsp; September 28, 2024</div>
+  <header>
+    <div class="logo-container">
+      <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
     </div>
-    <div class="article-body">
+    <nav>
+      <div class="nav-inner">
+        <a href="../index.html">All Articles</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">The Chicago-Paris Connection</div>
+
+      <h1 class="article-title">An American Student’s Journey from Paris to Chicago</h1>
+
+      <div class="article-meta">By Dr. Rob Murphy &nbsp;&bull;&nbsp; September 28, 2024</div>
+
+      <div class="article-body">
+
+
+
+
+
+
+
+
 
 <p><span style="font-weight:400">Paris is the most visited city in the world.  You most likely have visited Paris at some point, perhaps staying for a few days or weeks.  There is so much to do in this rich and vibrant city, that it is impossible to really grasp the Parisian experience in such a short time.  If you really want to know Paris, consider living and working there.  For those Americans who take that step, consider what happens to the children who are raised there.  Last month, I interviewed Genie Godula, a Barrington native and Medill School of Journalism alum who lives and works in Paris as a bilingual TV journalist for France 24 TV.  She and her British husband have raised their two children, including her son who is just starting his second year at Northwestern’s McCormick School of Engineering.  </span></p>
+
 <p><span style="font-weight:400">First, a few facts about the Chicago-Paris Connection.  Paris is Chicago’s “Sister City”.  The relationship goes back to 1996 after a visit to Chicago by former Paris mayor, then President of France, Jacques Chirac, who proposed to Chicago Mayor Richard M. Daley that Chicago and Paris enter into a sister cities agreement.  A joint committee was formed, the Comité Paris-Chicago, which set an agenda that included city planning, increasing French participation in the Chicago Marathon, the Chicago Jazz festival, economic development, fashion, arts and culture.  The relationship continues to this day.</span></p>
+
 <p><span style="font-weight:400">It turns out, there are over 15,000 Americans living in Paris, and that doesn’t include “unregistered” persons like me, who stay less than 90 days per year or who don’t bother to register.  Not every American living in Paris is actually working, but many do, which brings them even closer to the true Parisian experience: renting or buying a flat, getting health insurance, receiving necessary healthcare, working at a job, being paid, paying French taxes, opening a bank account, and interacting with Parisians every single day.</span></p>
-<figure><img alt="Jonah Parrack’s High School Graduation" src="1-Jonah-at-high-school-graduation.png"/><figcaption><em>Jonah Parrack’s High School Graduation</em></figcaption></figure>
+
+<figure class="tall"><img alt="Jonah Parrack’s High School Graduation" src="1-Jonah-at-high-school-graduation.png"/><figcaption><em>Jonah Parrack’s High School Graduation</em></figcaption></figure>
+
+
 <p><span style="font-weight:400">Northwestern University student Jonah Parrack is the epitome of a third culture kid, blending his Parisian upbringing with his family’s American and British roots. He and his younger sister were born and raised in Paris with their American mother and British father, James Parrack, a former Olympic swimmer and sports commentator who runs a swim training camp in Spain. In this interview, I talked with Jonah about his multicultural upbringing and what drew him to Chicago and his mother’s alma mater, Northwestern University, where he is studying mechanical engineering with the aim to pursue a career in the automotive industry.</span></p>
-<figure><img alt="Jonah Parrack and family" src="8-Jonahs-family-at-graduation.png"/><figcaption><em>Jonah Parrack and family</em></figcaption></figure>
+
+<figure class="wide"><img alt="Jonah Parrack and family" src="8-Jonahs-family-at-graduation.png"/><figcaption><em>Jonah Parrack and family</em></figcaption></figure>
+
+
 <p><b>Rob</b><span style="font-weight:400">: Growing up in Paris with your family, you no doubt heard stories about your mother’s life in Chicago and visited family there. What was it about this city and Northwestern University that made you want to live and study here?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: I spent considerable time in the Midwest, but actually not very much in the city of Chicago. I had only been to Chicago proper twice, even though every summer we would all go to Kenosha, Wisconsin to visit my grandmother for a month. I only visited Northwestern once when touring campuses with my mom, but immediately loved it and thought it was beautiful, especially the lake. I was looking for a blend of an urban campus and a “real” campus, and Northwestern offered that perfect mix. Being near Chicago and having that traditional campus feel really drew me in.</span></p>
-<figure><img alt="" src="2-Jonah-at-Northwestern.jpg"/></figure>
+
+<figure class="tall"><img alt="" src="2-Jonah-at-Northwestern.jpg"/></figure>
+
 <p><b>Rob</b><span style="font-weight:400">: You’re a Parisian by birth, but you’re also a British and American citizen. Tell me about your multicultural upbringing and growing up in Paris.</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: I grew up in the 15th arrondissement which is a neighborhood in Paris. It’s a very residential area which has a great shopping street, rue du Commerce, and some fantastic parks. My friends and I would often have picnics near the Eiffel Tower. I went to a bilingual private school called École Jeannine Manuel. The school is a three-minute walk from my family’s apartment, which was super convenient. My academic program was called the French Option International Baccalaureate, which is different from the traditional International Baccalaureate or IB, because it’s basically the French Baccalaureate with an extra international section tagged along. I loved it because they had more of an American approach to the education system. It was not the traditional French approach with lots of work and very little exchange and dialogue with the professors. I absolutely loved my school!</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: In a previous interview, I spoke with your mother, </span><span style="font-weight:400">Genie Godula</span><span style="font-weight:400">, about successfully building her career as an American in Paris. Do you see any parallels in your own journey of establishing yourself as a Parisian in America?</span></p>
-<figure><img alt="The Eiffel Tower at sunset" src="5-The-Eiffel-Tower-at-Sunset.png"/><figcaption><em>The Eiffel Tower at sunset</em></figcaption></figure>
+
+<figure class="tall"><img alt="The Eiffel Tower at sunset" src="5-The-Eiffel-Tower-at-Sunset.png"/><figcaption><em>The Eiffel Tower at sunset</em></figcaption></figure>
+
+
 <p><b>Jonah</b><span style="font-weight:400">: I think my route is much easier than hers. She moved to Paris spontaneously, knowing only one person and barely speaking French. On the other hand, I have my extended family nearby in Chicago and Wisconsin, including my grandmother and other relatives who take me out for lunch on weekends. I’ve had a support system from the start, so it’s been easier for me. But yes, there are parallels in terms of adjusting to a new culture and figuring things out, but it is easier for me because of the support system and being fluent in English.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: Tell us a bit about your dad and the UK influence on your life, other than your British accent!</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: My dad was an Olympic swimmer and now runs the BEST Swim Centre in Mallorca, Spain where teams come to train. I didn’t spend as much time in the UK growing up as I did in the US, but I love my family there. They’ve been a great source of advice, especially since many of my cousins have already gone through the university system there. </span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: Did you think at all about going to university in Paris or the UK?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: Paris, not so much, but I did apply to universities in the UK. I will say the UK application process is far more straightforward than the American one. Basically, you just pick your five schools, write one essay for all of them, send it off, and then they automatically do everything. Whereas the American ones, you must write supplemental essays. These supplemental essays are really important because they allow the schools to get to know you. Also, in the UK, you have to declare your specific area of study very early, as opposed to Northwestern, where you just declare yourself as an engineer in general and only later do you specialize. At the beginning, I wasn’t sure about what branch of engineering to study. That’s another thing that drew me to America. At Northwestern, I was able to take some enjoyable non-engineering classes, such as psychology, another one of my interests, originally thinking to minor in psychology.  In the end, however, this didn’t interest me enough to pursue it as a minor, but it was a really enjoyable class. I also took a creative writing class, which was great! This ability to explore other subjects really drew me to schools in America as opposed to going to the UK, where we would just be studying engineering, engineering, engineering. I considered going to school in France, but by the time I was ready to send off my applications, I’d already been accepted into Northwestern and gotten all my answers from the other American schools. My French high school told us, “If you don’t plan on going to school in France, don’t apply because you’re taking seats from other students who might want to study there.”</span></p>
+
 <p><b>Rob: </b><span style="font-weight:400">Are there big differences between the academic systems in Paris and the US that you’ve noticed in particular?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: Yes, one big difference in the US is how hands-on it is. For example, in my first year, I took a class on circuits where we physically built and coded circuits, whereas my friends studying in France are doing more theoretical work – mostly advanced math and physics. I even worked on a real-world project at the Shirley Ryan Ability Lab in Chicago, designing a better way for paraplegic patients to move from wheelchairs to shower seats. That practical experience is something I really appreciate here.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: What do you notice that’s different from the preparation you got in France compared to your fellow students in the United States who did their pre-college training in the United States?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: I built better study habits in Paris. A lot of my American friends, when they came to college, thought, “Yeah, I did well in high school without having to work too much, so I can just keep up that rhythm.” But that wasn’t the case at all, especially in engineering. Unless you are a genius, you can’t just go to class and then work it out when you get the test.  I learned good study habits in Paris and am very grateful for that. Another difference is my American friends feel very connected to their high schools. In France, any extracurricular activities such as sports, are not affiliated with the schools, but rather other independent athletic organizations.  There is no school team or going to watch your school’s team play a match.  This could explain why Americans are more attached to their high schools and have a lot of school spirit, whereas I loved my school but wasn’t as connected to it after leaving. I just went there to study and be with my friends. </span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: You’ve been in the United States for a little over a year, what elements of Parisian culture do you find yourself missing while you’re here? And have you been able to share some of your culture with your friends at Northwestern?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: One thing that I miss the most is just sitting in a cafe on a street corner and sipping a coffee, chatting with my friends and people-watching. That culture doesn’t exist as much in America as it does in Europe, especially Paris.  That’s something I miss but have been trying to bring it back. I now have a friend with whom I meet every Friday at Colectivo, a coffee shop in Evanston. We get a coffee and just chat for an hour and hang out. I’m really glad to bring that tradition back as it’s really important for my work-life balance.</span></p>
-<figure><img alt="Rue Mouffetard, a pedestrian street with lots of restaurants near major universities" src="10-Rue-Mouffetard-a-pedestrian-street-with-lots-of-restaurants-near-major-universities.png"/><figcaption><em>Rue Mouffetard, a pedestrian street with lots of restaurants near major universities</em></figcaption></figure>
+
+<figure class="tall"><img alt="Rue Mouffetard, a pedestrian street with lots of restaurants near major universities" src="10-Rue-Mouffetard-a-pedestrian-street-with-lots-of-restaurants-near-major-universities.png"/><figcaption><em>Rue Mouffetard, a pedestrian street with lots of restaurants near major universities</em></figcaption></figure>
+
+
 <p><b>Rob</b><span style="font-weight:400">: Tell me about your new friends that you’ve met at Northwestern. Northwestern is an international school with people from all over the world. What kind of Northwestern students do you gravitate towards?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: I gravitate very heavily towards other international students. The main reason for this is that I came early to Northwestern for International Student Orientation a week before all the other freshmen came to campus. The internationals like to stick together because they’re all “different”. We’re all in a new country and we’re all experiencing new things together, which makes us come together. I do have some American friends too, but these are mostly in engineering.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: What have you discovered about Chicago and the culture here that you love?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: The friendliness! I remember walking down Tech Drive (on Northwestern’s campus) and having several people smile at me. In Paris, people rarely do that. The Midwestern friendliness has been a great surprise and I love it.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: You’re a mechanical engineering student and involved in the Northwestern Formula SAE Racing Team. Where did your love for motorsports and the automotive industry come from?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: It started with Legos, which I know is a cliché for engineers! I loved building complex sets with mechanical aspects. Planes fascinated me too—I would always sit by the wing and watch how it moved. Formula One is what truly got me into automotive engineering. I love watching the races and seeing how teams develop their cars.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: Does your global upbringing help you as you pursue internships and opportunities in the automotive industry?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: Not yet. I’m still looking for an internship for the summer of 2025, but I do think my international background will help me connect with people in the future. Last summer, I worked as an engineering camp counselor at Yale, which was great for connecting with other international students.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: Looking ahead, what are your aspirations within the automotive industry?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: Working in Formula One is my dream, however any form of racing would be great like endurance racing, NASCAR, or even something completely different, like MotoGP. Honestly, doing anything with cars or airplanes would be really amazing. Or maybe not, who knows? That’s the beauty of engineering. I’m open to where the opportunities take me.</span></p>
+
 <p><b>Rob</b><span style="font-weight:400">: If your new friends from Northwestern were visiting Paris for a week, what would you tell them to do?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">:  Cycle around the city. There’s nothing like exploring Paris on a bike. While you’re riding around, make sure to visit Shakespeare &amp; Co. an English-language book store founded in 1919 by American Sylvia Beach in the 5th arrondissement.  Then walk a few blocks over to The Abbey Bookshop, which is really lovely and has a charming café next door.  You will find great little bookstores on almost every corner in Paris. After the bookstore visits, get back on your bike and take a good ride through some fun neighborhoods like the Marais and Montmartre. Go to the world’s first department store, the Bon Marché and La Grande Epicerie, the gourmet food shop next door, in the 7th arrondissement, one of my favorite shopping districts. Also, the museums in Paris are phenomenal—some are even free, as are the parks like the Tuileries and Luxembourg, which are great places to enjoy a coffee or play chess at one of the tables in the park.  And of course, just sitting in a café enjoying the atmosphere is a must. </span></p>
-<figure><img alt="The Abbey Bookshop an English shop in a beautiful part of Paris" src="9-The-Abbey-Bookshop-an-English-shop-in-a-beautiful-part-of-Paris.png"/><figcaption><em>The Abbey Bookshop an English shop in a beautiful part of Paris</em></figcaption></figure>
+
+<figure class="tall"><img alt="The Abbey Bookshop an English shop in a beautiful part of Paris" src="9-The-Abbey-Bookshop-an-English-shop-in-a-beautiful-part-of-Paris.png"/><figcaption><em>The Abbey Bookshop an English shop in a beautiful part of Paris</em></figcaption></figure>
+
+
 <p><b>Rob</b><span style="font-weight:400">: Although the food scene in Chicago is great, there are some food differences. It must have been quite a shock coming into American cuisine.</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: One thing I discovered about Chicago is that on top of the amazing pizza and Italian beef, there are really incredible steak restaurants. I went to Chicago Cut downtown and had the best steak of my entire life. Also, there is such a diverse food scene here including great Thai food and Turkish cuisine.  The one thing I haven’t found yet in Chicago is a good traditional French bistro like we have in Paris. I miss the frog legs, snails, confit de canard, boeuf bourguignon and all the quintessentially French foods that you can’t find elsewhere.</span></p>
-<figure><img alt="Sacre-Coeur" src="3-Sacre-Coeur.png"/><figcaption><em>Sacre-Coeur</em></figcaption></figure>
+
+<figure class="tall"><img alt="Sacre-Coeur" src="3-Sacre-Coeur.png"/><figcaption><em>Sacre-Coeur</em></figcaption></figure>
+
+
 <p><b>Rob</b><span style="font-weight:400">: Where do you see yourself in five or ten years? Do you think you’ll end up back in Europe?</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">:  The world is my oyster with my three passports, so I’m open to wherever opportunities take me. But yes, long term, I’d like to live in Europe and raise a family there. Really long term, I would love to live in the south of France, but Brittany is great too. </span></p>
+
 <p><b>Rob</b><span style="font-weight:400">:  Thanks, Jonah. You’re doing amazing things, and I look forward to catching up with you soon. Best of luck with your studies!</span></p>
+
 <p><b>Jonah</b><span style="font-weight:400">: Thank you. It was a pleasure.</span></p>
+
+
 <p><i><span style="font-weight:400">Dr. Rob Murphy is Professor and Executive Director of the Havey Institute for Global Health at Northwestern University; he is a physician at Northwestern Medicine. You may have seen him on WGN-TV morning news in recent years, where he gave daily updates on Covid-19 during the height of the pandemic. While he calls Chicago home, Rob also spends time in Paris, where he has lived on and off for the past 20 years including full time as visiting professor at the Pierre et Marie Curie University.  He has met many other Chicagoans who are living and working in the city. In this series of interviews, “The Chicago-Paris Connection”, Rob will introduce us to some of these Chicagoans who are embracing a new culture and lifestyle in the City of Lights.</span></i></p>
+
 <p><em>Photos courtesy of Jonah and the Parrack family</em></p>
 
+
+
+ 
+      </div><!-- end article-body -->
+
+      <!-- Pagination: order matches the index page (newest first) -->
+      <div class="retro-nav">
+        <a href="../jim-bittermann/" class="back-link prev"><img src="../jim-bittermann/7.-Covering-the-news-from-an-earthquake-in-Turkey.jpeg" class="nav-thumb retro-nav-thumb" alt=""><span>&larr; Previous: Reporting from Paris, Journalist Jim Bittermann’s Chicago Connection</span></a>
+        <span class="retro-nav-count">6 of 9</span>
+        <a href="../genie-godula/" class="back-link next"><span>Next: Genie Godula: From Chicagoan to Parisian TV Celebrity &rarr;</span><img src="../genie-godula/1-Genie-Godula.png" class="nav-thumb retro-nav-thumb" alt=""></a>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
     </div>
-  </article>
-<div class="retro-nav">
-  <a class="retro-nav-item prev" href="../jim-bittermann/"><img class="retro-nav-thumb" src="../jim-bittermann/7.-Covering-the-news-from-an-earthquake-in-Turkey.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Reporting from Paris, Journalist Jim Bittermann’s Chicago Connection</span></span></a>
-  <span class="retro-nav-count">6 of 9</span>
-  <a class="retro-nav-item next" href="../genie-godula/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Genie Godula: From Chicagoan to Parisian TV Celebrity</span></span><img class="retro-nav-thumb" src="../genie-godula/1-Genie-Godula.png" alt=""></a>
-</div>
-</main>
-<footer>
-  Classic Chicago Magazine &mdash; Articles by Dr. Rob Murphy
-</footer>
+  </footer>
 </body>
 </html>

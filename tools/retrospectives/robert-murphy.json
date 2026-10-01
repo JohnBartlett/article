@@ -1,0 +1,23 @@
+{
+  "slug": "robert-murphy",
+  "author": "Dr. Rob Murphy",
+  "column": "The Chicago-Paris Connection",
+  "byline_pattern": "^By\\s+(Dr\\.?\\s+)?(Rob|Robert)\\b.{0,14}Murphy\\.?$",
+  "kicker_pattern": "^The Chicago[-–]Paris Connection$",
+  "search_phrases": ["Rob Murphy", "Robert Murphy", "Robert Leo Murphy"],
+  "intro": "Articles from &ldquo;The Chicago-Paris Connection,&rdquo; Dr. Rob Murphy&rsquo;s column for Classic Chicago Magazine.",
+  "note": "The articles from 2024 and 2025 were recovered from the magazine&rsquo;s archive of its original website. The {missing} photographs from the Rebecca Rosman article could not be recovered; their captions are shown in place.",
+  "archive_articles": [
+    {"old_slug": "molly-in-paris", "slug": "molly-in-paris"},
+    {"old_slug": "audrey-chapuis-a-literary-life-from-chicago-to-paris", "slug": "audrey-chapuis"},
+    {"old_slug": "genie-godula-from-chicagoan-to-parisian-tv-celebrity", "slug": "genie-godula"},
+    {"old_slug": "an-american-students-journey-from-paris-to-chicago", "slug": "american-student-paris-to-chicago"},
+    {"old_slug": "reporting-from-paris-journalist-jim-bittermanns-chicago-connection", "slug": "jim-bittermann"},
+    {"old_slug": "french-cooking-chicago-roots-how-jane-bertch-built-a-successful-cooking-school-in-paris", "slug": "jane-bertch"},
+    {"old_slug": "reporting-from-paris-cultural-curator-elizabeth-cummings-lands-in-paris", "slug": "elizabeth-cummings"},
+    {"old_slug": "reporting-from-paris-journalist-rebecca-rosmans-chicago-connection", "slug": "rebecca-rosman"}
+  ],
+  "current_articles": [
+    {"edition": "2026-03-08", "slug": "rebecca-tilles", "byline": "By Dr. Robert Leo Murphy"}
+  ]
+}

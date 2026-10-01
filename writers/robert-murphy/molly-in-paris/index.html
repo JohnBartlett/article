@@ -2,170 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Molly in Paris | Dr. Rob Murphy | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Molly in Paris | Dr. Rob Murphy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;}
-    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
-    a{color:#d41f1f;}
-    /* Header */
-    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
-    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
-    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
-    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
-    .site-header .header-links a:hover{text-decoration:underline;}
-    /* Layout */
-    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
-    /* Article */
-    .article-header{margin-bottom:32px;}
-    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
-    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
-    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
-    .article-header .byline strong{color:#555;}
-    .article-body{font-size:17px;line-height:1.75;color:#333;}
-    .article-body p{margin:0 0 1.4em;}
-    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
-    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
-    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
-    .article-body figure{margin:2em 0;}
-    .article-body figure img{margin:0;}
-    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
-    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
-    /* Hero */
-    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
-    /* Index */
-    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
-    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
-    .year-group{margin-bottom:40px;}
-    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
-    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
-    .article-card:last-child{border-bottom:none;}
-    .article-card:hover .card-title{color:#d41f1f;}
-    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
-    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
-    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
-    .card-info{flex:1;}
-    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
-    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
-    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
-    /* Footer */
-    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
-    @media(max-width:600px){
-      .site-header{padding:12px 16px;}
-      .wrapper{padding:0 16px;margin:24px auto;}
-      .article-body{font-size:16px;}
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #fff; color: #222; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    header { padding: 20px 0; border-bottom: 1px solid #eee; }
+    .logo-container { text-align: center; margin-bottom: 20px; }
+    .logo-container img { width: 390px; max-width: 80%; height: auto; }
+    nav { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; justify-content: center; flex-wrap: wrap; }
+    .nav-inner a, .nav-inner span { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 400; color: #d41f1f; text-decoration: none; text-transform: uppercase; margin: 0 15px; padding: 5px 0; letter-spacing: 0.05em; }
+    .nav-inner span { color: #888; }
+    .nav-inner a:hover { color: #b51c20; text-decoration: underline; }
+    .article-wrapper { max-width: 780px; margin: 0 auto 60px; padding: 0 20px; }
+    .article-category { font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; color: #b51c20; text-transform: uppercase; letter-spacing: 0.2em; text-align: center; margin: 40px 0 12px; }
+    h1.article-title { font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 0 14px; color: #111; }
+    .article-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 32px; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .article-body p { font-size: 17px; color: #333; margin: 0 0 20px; }
+    .article-body p.center { text-align: center; }
+    .article-body p.question, .article-body p.qa-question { font-weight: 700; }
+    .article-body p.missing { font-family: 'Lato', sans-serif; font-size: 12px; color: #aaa; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; border: 1px dashed #ddd; padding: 26px 12px; margin: 36px 10% 8px; }
+    .article-body p.missing + p.center { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; font-style: italic; margin-bottom: 36px; }
+    .article-body h2, .article-body h3, .article-body h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: #111; margin: 36px 0 14px; }
+    .article-body h2 { font-size: 24px; } .article-body h3 { font-size: 21px; } .article-body h4 { font-size: 18px; }
+    .article-body a { color: #b51c20; }
+    .article-body blockquote, .article-body .pullquote { font-size: 20px; font-style: italic; color: #555; border-left: 4px solid #b51c20; padding: 10px 20px; margin: 30px 0; }
+    .article-body table { border-collapse: collapse; margin: 24px 0; }
+    .article-body td, .article-body th { border: 1px solid #eee; padding: 6px 10px; vertical-align: top; font-size: 16px; }
+    figure { margin: 36px 0; }
+    figure img { width: 100%; height: auto; display: block; }
+    figure.tall img { width: auto; max-width: 100%; max-height: 680px; margin: 0 auto; }
+    figure figcaption { font-family: 'Lato', sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 8px; font-style: italic; }
+    .retro-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; }
+    .back-link { display: inline-flex; align-items: center; gap: 10px; max-width: 42%; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.4; text-transform: uppercase; color: #b51c20; text-decoration: none; }
+    .back-link span { border-bottom: 1px dashed #b51c20; }
+    .back-link:hover span { color: #d41f1f; border-bottom: 1px solid #d41f1f; }
+    .back-link.next { text-align: right; margin-left: auto; }
+    .nav-thumb { width: 70px; height: 70px; object-fit: cover; object-position: center 25%; display: block; flex-shrink: 0; }
+    .retro-nav-count { font-family: 'Lato', sans-serif; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+    .page-head { text-align: center; padding: 24px 16px 10px; }
+    .page-head h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; margin: 0 0 6px; color: #222; }
+    .page-head .sub { font-family: 'Lato', sans-serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px 60px; }
+    .index-intro { max-width: 780px; margin: 8px auto 10px; text-align: center; font-size: 18px; color: #555; font-style: italic; }
+    .index-note { max-width: 780px; margin: 0 auto 26px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+    .article-card { display: block; text-decoration: none; color: inherit; border-bottom: 1px solid #eee; padding-bottom: 24px; }
+    .card-thumb, .card-thumb-placeholder { width: 100%; height: 300px; object-fit: cover; object-position: center 25%; display: block; border-radius: 3px; margin-bottom: 14px; background: #f0ebe3; }
+    .card-thumb-placeholder { display: flex; align-items: center; justify-content: center; }
+    .card-thumb-placeholder span { font-family: 'Lato', sans-serif; font-size: 11px; color: #b9b0a3; text-transform: uppercase; letter-spacing: 0.12em; }
+    .card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.3; color: #222; margin: 0 0 6px; }
+    .article-card:hover .card-title { color: #b51c20; }
+    .card-date { font-family: 'Lato', sans-serif; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.03em; }
+    footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .copyright { font-family: 'Lato', sans-serif; font-size: 14px; color: #aaa; }
+    @media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-body p { font-size: 16px; }
+      .retro-nav-count { display: none; }
+      .back-link { max-width: 48%; font-size: 12px; }
     }
-    /* Retrospective nav */
-    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
-    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
-    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
-    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
-    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
-    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
-    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
-    @media(max-width:600px){
-      .retro-nav-title{font-size:12px;}
-    }
-
-    /* Rob Murphy retrospective additions */
-    .article-body p.question{font-weight:700;}
-    .article-body p.center{text-align:center;}
-    .article-body p.missing{text-align:center;font-size:12px;color:#aaa;border:1px dashed #d8d0c4;padding:22px 12px;margin:2em 12%;text-transform:uppercase;letter-spacing:0.06em;}
-    .article-body table{border-collapse:collapse;margin:1.4em 0;}
-    .article-body td,.article-body th{border:1px solid #e0d8ce;padding:6px 10px;vertical-align:top;}
-    .retro-nav-count{font-size:12px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;}
-    .header-tagline{font-size:13px;color:#999;font-style:italic;margin-top:2px;}
-    @media(max-width:600px){.retro-nav-count{display:none;}}
   </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div>
-    <div class="site-name">Classic Chicago Magazine</div>
-    <div class="author-name">Dr. Rob Murphy</div>
-  </div>
-  <nav class="header-links">
-    <a href="../index.html">All Articles</a>
-  </nav>
-</header>
-<main class="wrapper">
-  <article>
-    <div class="article-header">
-      <div class="kicker">The Chicago-Paris Connection</div>
-<h1>Molly in Paris</h1>
-      <div class="byline"><strong>By Dr. Rob Murphy</strong> &nbsp;&bull;&nbsp; March 16, 2024</div>
+  <header>
+    <div class="logo-container">
+      <a href="../index.html"><img src="../logo.jpg" alt="Classic Chicago Magazine"></a>
     </div>
-    <div class="article-body">
+    <nav>
+      <div class="nav-inner">
+        <a href="../index.html">All Articles</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">The Chicago-Paris Connection</div>
+
+      <h1 class="article-title">Molly in Paris</h1>
+
+      <div class="article-meta">By Dr. Rob Murphy &nbsp;&bull;&nbsp; March 16, 2024</div>
+
+      <div class="article-body">
 
 <p><i><span style="font-weight:400">Dr. Rob Murphy is Professor and Executive Director of the Havey Institute for Global Health at Northwestern University; he is a physician at Northwestern Medicine. You may have seen him on WGN-TV morning news in recent years, where he gave daily updates on COVID-19 during the height of the pandemic. While he calls Chicago home, Rob also spends time in Paris, where he has lived on and off for the past 20 years including full time as visiting professor at the Pierre et Marie Curie University.  He has met many other Chicagoans who are living and working in the city. Rob will introduce us to some of these Chicagoans in Paris who are embracing a new culture and lifestyle in the City of Lights.</span></i></p>
+
+
+
 <p><span style="font-weight:400">Paris is the most visited city in the world, with approximately 44 million visitors in the last year alone, including 2.4 million Americans. It may seem that everyone you know, including yourself, has visited Paris at some point in their lives.  Most people visiting Paris stay for a few days to a week or a little more.  There is so much to do in this rich and vibrant city, that it’s impossible to really grasp the Parisian experience in such a short time. It also leads to many of the cliches we hear about Paris and its citizens.  If you really want to know Paris, consider working there like Chicago native, Molly Minton, an environmental, social and governance analyst in the French financial sector. First, I have a few facts to share about the Chicago/Paris connection.</span></p>
-<figure><img alt="Molly and Rob on the street in the 7 th arrondissement" src="3a6f4126-1202-4b3e-9f6d-8f3154ee13ea.jpeg"/><figcaption><em>Molly and Rob on the street in the 7<sup>th</sup> arrondissement</em></figcaption></figure>
+
+<figure class="tall"><img alt="Molly and Rob on the street in the 7 th arrondissement" src="3a6f4126-1202-4b3e-9f6d-8f3154ee13ea.jpeg"/><figcaption><em>Molly and Rob on the street in the 7<sup>th</sup> arrondissement</em></figcaption></figure>
+
+
 <p><span style="font-weight:400">There are 2.1 million people living and working within the city of Paris, and a total of 11.2 million in Ile de France which includes the surrounding metropolitan area.  Similarly, Chicago, its “Sister City”, has a population of 2.7 million and approximately 9 million living in “Chicagoland”.  Paris is the political, economic, and cultural capital of France, more like a combo of Washington, DC, New York and Chicago all rolled into one.  One of the biggest differences between Chicago and Paris is size. Paris is geographically small, only 40 square miles, six times smaller than the City of Chicago.  That makes Paris one of the most densely populated cities in the world. </span></p>
+
 <p><span style="font-weight:400">It turns out, there are over 15,000 Americans living in Paris, and that doesn’t include “unregistered” persons, like me who stay less than 90 days per year or who don’t bother to register.  Not every American living in Paris is actually working, but many of them do, which brings them even closer to the true Parisian experience: renting or buying a flat, getting health insurance, receiving necessary healthcare, working at a job, getting paid, paying French taxes, opening a bank account, interacting with Parisians every single day. </span></p>
-<figure><img alt="Rue St Dominique, now one of the most photographed streets in Paris" src="Screenshot-2024-03-15-1.52.42-PM.png"/><figcaption><em>Rue St Dominique, now one of the most photographed streets in Paris</em></figcaption></figure>
+
+<figure class="wide"><img alt="Rue St Dominique, now one of the most photographed streets in Paris" src="Screenshot-2024-03-15-1.52.42-PM.png"/><figcaption><em>Rue St Dominique, now one of the most photographed streets in Paris</em></figcaption></figure>
+
+
 <p><span style="font-weight:400">It’s commonly said that Parisians are polite and friendly to their American neighbors, but they will never invite you to their home. I’ve found that to be completely untrue.  As a matter of fact, after living there for the past 20 years, I didn’t meet another American for the first 15 years, and that only occurred because I became a member of the American Library in Paris, an incredible institution which houses the largest collection of English literature outside of an Anglophone country.  It was at the American Library, that I met my guest today, Molly Minton. Not only was she the first American I met in Paris, but it turns out, we live on the same street, rue de la Comète, a street that is only one block long, making us very close neighbors in the Gros Caillou section of the 7th arrondissement. We sat down to talk about her life, growing up in Chicago and its suburbs and then leaving the U.S. to build a successful career in finance in Paris.</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> Your Instagram profile reads, “C’est temps de vivre la vie que tu imagines,” which translates in English to “It’s time to live the life you imagine.” When you tell people about your life today, how do you describe it?</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  It depends on the day. Some days it’s a fantasy, some days a comedy, and others, a tragedy.  My quote actually came from a card I received from a family friend when I was young which ended up changing my entire perspective on life.  Sometimes I look at myself here in Paris and think, I haven’t accomplished anything.  Then I look back at who I was in Chicago, and I realize how much I have accomplished and how far I have come. To live, work, make friends, and find the love of my life, it’s been quite the journey. </span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> Tell me about your childhood. You grew up in the suburbs and attended Lyons Township High School. What was it like growing up in the suburbs, right next to a world-class city like Chicago?</span></p>
-<figure><img alt="Having oysters at La Sablaise on rue Cler" src="IMG_2653-scaled.jpeg"/><figcaption><em>Having oysters at La Sablaise on rue Cler</em></figcaption></figure>
+
+<figure class="tall"><img alt="Having oysters at La Sablaise on rue Cler" src="IMG_2653-scaled.jpeg"/><figcaption><em>Having oysters at La Sablaise on rue Cler</em></figcaption></figure>
+
+
 <p><b>Molly:</b><span style="font-weight:400">  I was actually born at Northwestern Memorial Hospital when my parents were living in Lincoln Park but they moved out to the suburbs in LaGrange.   Although I am a Chicago native, my parents aren’t actually from Chicago. My father is from Louisiana, and was a founding member of the New Orleans Commodity Exchange. His career led him to Chicago when the contract was moved to the Chicago Board of Trade (CBOT).  He may not be a Chicago native, but he’s called Chicago home for the last 40 years and thinks there is no place like it.  My mother is an artist from Canada. We moved to the suburbs when I was young to live the picket fence dream. While it offered many opportunities, I was always drawn to a life in the city. I particularly loved the Art Institute of Chicago and in my early 20s, I was part of the Lyric Opera Young Professionals (LYP).</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  How did foundational experiences, such as interning for two Chicago brokerage firms during your undergrad years and later the LYP, impact you? </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  They taught me the value of hard work.  I learned what a global center Chicago is. We take for granted as Chicagoans that the Chicago Mercantile Exchange (CME) and the former CBOT were located in Chicago and that Chicago is an epicenter for global trade. This opened my eyes to the global nature of financial markets and to all of the opportunities that extend beyond Chicago. The Lyric Opera, the Art Institute, the Chicago Symphony and the other great Chicago cultural institutions gave me a solid foundation for understanding the importance of culture and art in terms of enriched relationships and a better understanding of both myself and the world. </span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  Where did you do your university training?</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  I started at the University of St. Andrews in Scotland. I knew from a young age that I wanted to experience something different. I have to thank my parents for supporting me in this decision. My father worked on ocean-going vessels as a deckhand in his youth and my mother spent a year after high school in Paris as an au pair, an experience which has inspired a novel she’s been working on. They both supported the idea that experience in a foreign culture enhances young people’s understanding of themselves and of the world. </span></p>
-<figure><img alt="" src="IMG_9187-scaled.jpg"/></figure>
+
+<figure class="tall"><img alt="" src="IMG_9187-scaled.jpg"/></figure>
+
 <p><b>Rob:</b><span style="font-weight:400"> Was there something about your childhood or your family that made expat life appealing?</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  Both my parents were, in a way, expats in Chicago who set down their own firm roots and foundations. I had that in me from the beginning, so maybe it’s genetic.  My extended family across many generations has worked and traveled abroad so maybe its genetic.</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> I understand that your grandfather, William Perehudoff, was quite an artist, a very well-known abstract painter. </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  Yes, and my grandmother, Dorothy Knowles was also a well-respected Canadian artist. Both my grandparents were recipients of the highest awards in Canada including the Order of Canada, amongst </span><span style="font-weight:400">other honors. My grandmother also received the </span><span style="font-weight:400">Queen Elizabeth II Platinum Jubilee Medal</span><span style="font-weight:400">. There is a Paris connection here too. My grandmother studied at Goldsmiths Art School in L</span><span style="font-weight:400">ondon. At the time, my grandfather was in Paris. A friend said, “You better go get her and marry her or I will,” so he went to London and whisked her away and they eloped in Paris!</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  You have three Masters degrees, all from European universities.  Tell me about your time studying outside the U. S. and how did that lead you to live and work full time in Paris? </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400"> I was originally looking at schools in the US and Canada, but I couldn’t shake the desire to go abroad.  While educational systems outside the US are a great way of getting into the foreign job market, I also did it because I wanted to learn from people who were not like me.  My first degree was from St. Andrews in Scotland.  After a brief stint of working in New York City, I followed up with a Master’s in Sustainability and Social Innovation from HEC Paris, a top ranked European business school. When I finished there, my goal was to go back to the U.K. where all my friends were and where my life seemed to be, but I couldn’t get a visa! This is the primary reason why I ended up doing a third degree in Norway.  It was a double degree program in a country I loved and I didn’t have to pay tuition, so I thought, “Why not?”</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> I worked in France for 18 months myself as Professeur Associé at Hospital la Pitié-Salpêtrière which was affiliated with the Pierre and Marie Curie University. It’s very different studying and working in France. Can you tell me your favorite parts of it and how you adapted?</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  Universities in every single country are vastly different. For example, in the U.K., it’s very self-taught and academic.  My friends who got perfect scores were able to incorporate ancient Latin texts into modern-day dialogue on geopolitical conflicts. Fast forward to France, where the French advanced degree system is very particular.  It is the high school baccalaureate and early university years that are very challenging, and then it gets easier, focusing more on networking and soft skills.  Compared to the American experience, the French baccalaureate and first two years of university called “Prepa” are complete hell.  They work the students to the bone and if they do not pass their exams at the end of the second year, they can’t get into a good university or any university at all. If they pass, they don’t really have to push as much anymore, because they’ve already got their “golden ticket”.  </span></p>
 <p><span style="font-weight:400">As an American, presentation and networking skills are not difficult for me. I give Lyons Township High School a lot of credit for that, but this seems to be a less emphasized skill in France. In Norway, they’re all about numbers. It was so data-focused, and was the most stressful coursework I’ve ever done. They are not always adept at presenting, but they consider complex mathematical questions to be junior-level fundamentals. </span></p>
-<figure><img alt="" src="PHOTO-2024-03-16-15-47-05.jpg"/></figure>
+
+<figure class="tall"><img alt="" src="PHOTO-2024-03-16-15-47-05.jpg"/></figure>
+
 <p><span style="font-weight:400">Work security in France is very different from what we are used to in the US.  If you get a permanent job contract in France, you are very unlikely to be let go. The concept of being laid off doesn’t exist as in the US, which provides a huge sense of comfort and security.  Another  big difference involves passion about one’s work, a quality much admired in the U.S. It has been implied more than once that I need to appear less excited about my work and less proactive.  It’s simply not part of French corporate where “cool” and “blasé” are the norm. In France, people “work to live and not live to work”.  This key difference dictates how you are expected to conduct yourself in a work setting. But I love how much they prioritize this work life balance (even in the financial sector). </span></p>
 <p><span style="font-weight:400">One of my funniest work stories is from the first year at my company. I had to present at a very high-level committee and needed to get something approved that was going to be a little challenging.  I had prepared like an American, which I can thank the Lyons Township Student Council for. I stood up in front of the large conference room full of mostly elderly, white French men, wearing my kick-ass heels, armed with my incredible PowerPoint presentation, and I gave an impassioned speech on the importance of this project.  When I finished, this entire group of people stared at me in shock, astounded by my intensely emotive presentation. The next presentation was an unemotional recitation of some text on a power point slide.  Absolutely no attempt was made to convince the audience. I was mortified, but I made quite the impression as a new comer and have since learned to adapt and tone things down. Needless to say, people know who I am at the company now. </span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> The Netflix show, </span><i><span style="font-weight:400">Emily in Paris</span></i><span style="font-weight:400">, happens to be about a young Chicago woman working for a big firm in Paris. What are your thoughts about that show? Is there any really any truth in it? I almost got physically ill watching the first episode.</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  I know a lot of French and American people living in Paris hate this show. They say this is a complete lie. I say they’re not in the right position to understand how true this show is. I watched it with my French boyfriend, and he said, “Molly, this is 60 percent of your life.” As a caricature, Emily is over-the-top, but sometimes I feel like a caricature. I’m the smiley American woman who is passionate, wears her heart on her sleeve and wants everyone to get along.  There are so many actual instances in this show that reflect actual French culture and society. If you have never lived it, you can’t understand how true it is. </span></p>
 <p><span style="font-weight:400">I’ll give you some examples which highlight some of the cultural truisms. In one episode Emily realizes that her entire team has gone off to lunch without her. Actually, at a French office, lunch and coffee breaks are where all of the major decisions are made.  Projects rarely move forward in official meetings. The greatest generation of ideas I’ve had with my team, have been during coffee breaks.  We come into work around 9:30 a.m. One of the first things we do is have a 20-minute coffee break.  When I started my job, I wasn’t invited to team breaks and lunches, similar to Emily’s experience in season 1.  In the beginning, I felt very hurt and lonely, as if my coworkers didn’t appreciate having this new American on the team. As it turns out, it wasn’t anything so dramatic. Anyone could just get up and join for coffee, no invite needed! But for lunch, getting invited out to lunch (or dinner) is a sign of trust and respect. French people need time to develop close bonds with others, but once those are formed, they are truly solid. </span></p>
 <p><span style="font-weight:400">Another example is when Emily visits a Chateau. She’s comes across as very rude because she asks for a tour. The first time I was invited to visit a chateau, I was shown essentially nothing except the servants’ quarters.  It turns out, this is where the current family lives, because it’s more practical and has all of the necessary rooms in close proximity. The original noble owners didn’t need a kitchen so formal bedrooms are on one side and the far more practical staff quarters on the other. I found it strange to be invited to stay at this old, beautiful chateau but with no offer of a tour! Fortunately, I’m hopefully more astute than Emily and didn’t say a word. </span></p>
-<figure><img alt="Molly in a lavender field in Provence" src="IMG_0883-scaled.jpg"/><figcaption><em>Molly in a lavender field in Provence</em></figcaption></figure>
+
+<figure class="tall"><img alt="Molly in a lavender field in Provence" src="IMG_0883-scaled.jpg"/><figcaption><em>Molly in a lavender field in Provence</em></figcaption></figure>
+
+
 <p><span style="font-weight:400">One thing that distinguishes us here in the Midwest or America in general, from the French is that in the U.S., we’re very proud of our homes. We love to talk about the interiors we’ve created, and about our gardens and being offered a tour of one’s home is very normal.  In France, you do not overstep your invitation and you are unlikely to be shown much of someone’s house the first time if you are invited to someone’s home at all.  If you are shown only the living room and you have to use the facilities, good luck! As you get to know this person, seeing their home goes is a real sign that the person is becoming more comfortable around you. In my case, as I became a more frequent guest at the chateau, I was slowly shown one or two additional rooms every time. A sign that this American was becoming accepted into the group. </span></p>
 <p><span style="font-weight:400">It’s the same mentality with personal lives. I worked with one colleague for four years before I found out he was married and had a family.  In the U.S. within a few minutes being with a new colleague, I’ve learned marital status, how many kids, how many houses they have and where they vacation.</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  In Paris, it’s impolite to ask anything personal. The only one thing you can safely ask is “where do you live?”  In Paris, it’s all about which of the 20 arrondissements, the formal neighborhoods, that you live.  Each one has its unique character, style and political leanings.  </span></p>
 <p><span style="font-weight:400">One of the biggest challenges for Americans who want to work abroad is mastering a new language. What was that journey like for you, and how did you become proficient in French? </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  I’m the world’s worst language student but have finally passed the French exam that has allowed me to apply for citizenship.  I did well, but it took a lot of work. It’s not that hard to get a visa here compared to other countries like the U.K. or U.S. because the natural barrier is the language. In France, to get a visa, you first have to get a job and if one doesn’t speak French, it will be very difficult to get hired. I was lucky because my company was expanding internationally. They didn’t have a native English speaker and needed me.  Also, I specialize in sustainability and business, a unique and growing field.  At the time I was hired there were not many people with similar experience.  Knowing the language though is essential. There are Americans here in Paris who speak essentially no French who spend their entire lives living very happily but they will never really integrate and thus understand the true magic of this place.  </span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  You must have at least basic French just to move yourself around the city and to communicate at work. I found that it helps no matter what level of French you speak, to be as polite as the French are to you. For example, you just don’t go into a store and say, in French, “Where are the tomatoes?”  That would be very rude.  You have to say, “Bonjour, Madame/Monsieur.  Where are the tomatoes?” You do this with every clerk, worker, or colleague everywhere.  It could be at the little supermarket down the street, getting into a taxi, or you could be at one of the fancy stores. It’s all the same, all the time. </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  Also, don’t forget to pause so that they also can say bonjour back to you. You can’t just say, “Bonjour, where are the tomatoes.” Also, don’t ever ask them how they are doing!</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400"> That’s way too personal. You only do that with a real friend.</span></p>
 <p><span style="font-weight:400">Describe the draw to this city for you, and what do you think is drawing in all these expats? </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  It’s the lifestyle, starting with the two-month vacation, plus all the official holidays including five in May alone. That and the beauty, the culture, and the fact that I can get on a train and go anywhere in Europe. We pay high taxes, and many things are quite expensive; however, we get many benefits:  job security, all healthcare, education including subsidized university, childcare.  There is a support network here which enables one to have a great work-life balance and to have a good quality of life, as long as one isn’t too passionate about one’s job!</span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  What have been the most unexpected parts of living here? </span></p>
+
 <p><b>Molly: </b><span style="font-weight:400">Difficulties making friends, because of language and cultural differences and the loneliness that comes with that. As I said earlier, it depended on the day whether I experienced a fantasy, comedy or tragedy. Paris can be a wonderful city but it can also be a tough place. After six years living here, about 70 percent of my ex-pat friends have left.  One has to adjust, but if you do, it’s a stellar place to live!  I have been very fortunate to have a great French support network here. I met my partner here after I had started working. I feel so lucky to have found him and even luckier that he had a family who welcomed me with open arms despite my poor French. In tough moments when I feel far away from family in Chicago, it is a huge source of comfort to know I have loved ones here too. It also doesn’t hurt that they live in Provence so “family time” often includes walks through lavender fields and olive groves.  </span></p>
+
 <p><b>Rob:</b><span style="font-weight:400">  I think there’s an incredible payoff if you can do it. Tell me about your most iconic Paris experience.</span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  I originally didn’t believe I was going to stay here very long, thinking, “I’m here for six months and will have a great time.”  I did everything on my bucket list including running a full marathon in Bordeaux with 23 wine tastings along the way, in addition to cheese, oysters, and every other French delicacy. The most iconic experience I ever had was attending a costume ball at Versailles that started at 11:00 p.m. in the Orangerie. It wasn’t a historically accurate experience, but one had to wear period costumes. They had fantastical performances and everyone drank champagne and danced the night away. It was wild and the most surreal experience of my life. I was living in a strange Marie Antoinette dream world running through the gardens of Versailles at dawn in full costume. It is in moments like this when I just think, “how is this now my life?” </span></p>
-<figure><img alt="" src="IMG_7959-1024x768.jpeg"/></figure>
+
+<figure class="wide"><img alt="" src="IMG_7959-1024x768.jpeg"/></figure>
+
 <p><b>Rob:</b><span style="font-weight:400"> Final question. For Chicagoans visiting Paris, what are your top three tips to help them have a great experience? </span></p>
+
 <p><b>Molly:</b><span style="font-weight:400">  The first is to avoid the big parks. People often express disappointment when they discuss visiting places like Champs de Mars or the Tuileries gardens.   There are many hidden and much more beautiful gardens that most people don’t realize. Consider Parc Monceau in the 8</span><span style="font-weight:400">th</span><span style="font-weight:400"> arrondissement.  It’s beautiful, calm, and just a short walk from the Arc de Triomphe. There is also a very small “secret” garden by the Grand Palais in the 8</span><span style="font-weight:400">th</span><span style="font-weight:400"> arrondissement that no one knows about. It’s a little sanctuary with a waterfall and it is absolutely beautiful! </span></p>
 <p><span style="font-weight:400">Second tip would be, thinking along the same lines, avoid the big museums.  They are obviously blockbusters, but they’re stressful and often very crowded. Explore the smaller museums. I told a friend who only had a weekend here that if he wanted to see Impressionist work, go to the Musée Marmottan instead of the Musée d’Orsay. Musée Marmottan is a smaller, lovely museum in the 16</span><span style="font-weight:400">th</span><span style="font-weight:400"> arrondissement that has over 300 impressionist and post-impressionist paintings by Claude Monet.  In comparison, the Art Institute of Chicago with the largest Monet collection in the U.S., has 46 of his paintings and drawings.   If you want to see Monet, head over to the Marmottan.  </span></p>
 <p><span style="font-weight:400">The third thing is do what you want to do, not what Instagram tells you to do.  There are so many different beautiful avenues to explore in Paris, each with its own unique character, that you will have a great time wherever you may wander. But as you mentioned before Rob, each arrondissement is so different.  It helps to understand their unique characteristics and histories before going to Paris. Then you can pick the type of Parisian you want to be for your stay! We are obviously steadfast supporters of the 7</span><span style="font-weight:400">th</span><span style="font-weight:400">, but for example, a very glamourous French colleague of mine is a diehard supporter of the 2</span><span style="font-weight:400">nd</span><span style="font-weight:400"> arrondissement near Palais Royale. I have a whole new appreciation for it, seeing it through her eyes. </span></p>
-<p><b>Rob:</b><span style="font-weight:400"> I don’t know what your overall impression is, but after being here for 20 years, I almost feel like I know less. Every time I look somewhere, there’s something else I haven’t seen before. The city and its history are so culturally rich and beautiful. </span></p>
-<p><b>Molly</b><span style="font-weight:400">: It’s truly an incredible city. The longer you live here the more you realize there is more to discover!</span></p>
-<p><b>Rob</b><span style="font-weight:400">:  Molly, it was great hearing of your experiences and even greater meeting another Chicagoan who enjoys living and working in Paris as much as I do!</span></p>
 
+<p><b>Rob:</b><span style="font-weight:400"> I don’t know what your overall impression is, but after being here for 20 years, I almost feel like I know less. Every time I look somewhere, there’s something else I haven’t seen before. The city and its history are so culturally rich and beautiful. </span></p>
+
+<p><b>Molly</b><span style="font-weight:400">: It’s truly an incredible city. The longer you live here the more you realize there is more to discover!</span></p>
+
+<p><b>Rob</b><span style="font-weight:400">:  Molly, it was great hearing of your experiences and even greater meeting another Chicagoan who enjoys living and working in Paris as much as I do!</span></p>
+ 
+      </div><!-- end article-body -->
+
+      <!-- Pagination: order matches the index page (newest first) -->
+      <div class="retro-nav">
+        <a href="../audrey-chapuis/" class="back-link prev"><img src="../audrey-chapuis/1.-Audrey-in-Paris-scaled.jpg" class="nav-thumb retro-nav-thumb" alt=""><span>&larr; Previous: Audrey Chapuis: A Literary Life, from Chicago to Paris</span></a>
+        <span class="retro-nav-count">9 of 9</span>
+        <a href="../index.html" class="back-link next"><span>All Articles &rarr;</span></a>
+      </div>
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
     </div>
-  </article>
-<div class="retro-nav">
-  <a class="retro-nav-item prev" href="../audrey-chapuis/"><img class="retro-nav-thumb" src="../audrey-chapuis/1.-Audrey-in-Paris-scaled.jpg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Audrey Chapuis: A Literary Life, from Chicago to Paris</span></span></a>
-  <span class="retro-nav-count">9 of 9</span>
-  <a class="retro-nav-item next" href="../index.html"><span><span class="retro-nav-label">All Articles &rarr;</span></span></a>
-</div>
-</main>
-<footer>
-  Classic Chicago Magazine &mdash; Articles by Dr. Rob Murphy
-</footer>
+  </footer>
 </body>
 </html>
