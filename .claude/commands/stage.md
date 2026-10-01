@@ -114,6 +114,8 @@ the live site, where Cloudflare served them publicly.
 bash tools/strip_internal_files.sh
 git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard|editors|john-article-ideas)/|/STATUS\.md$' \
   && echo "STOP: internal files still on dev" || echo "clean"
+git grep -l 'name="ccm-retrospective" content="dev2-only"' -- writers/ \
+  && echo "STOP: a dev2-only writer retrospective is on this branch" || echo "no dev2-only retrospectives"
 ```
 
 The merge in Step 1 will usually re-add these (dev2 keeps changing them), often as

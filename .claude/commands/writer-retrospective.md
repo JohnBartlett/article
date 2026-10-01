@@ -24,7 +24,7 @@ Usage: `/writer-retrospective <writer name>` (for example `/writer-retrospective
    headshot, the repeated column kicker and the byline line are lifted out of the body and
    shown in the page header instead. Photos the archive does not have are marked
    "[Photo not recovered from the archive]" with their captions kept.
-5. **Hosted on dev2.** The page to share is the retrospective's own URL,
+5. **Hosted on dev2 only, never staged or published.** The page to share is the retrospective's own URL,
    `https://article-dev2.vercel.app/writers/<slug>/`, and only that URL: because the
    retrospective has no links into the magazine, a reader cannot wander from it into the dev
    site (this is the one case where a dev2 URL may go to someone outside the team; see
@@ -113,7 +113,11 @@ MCP draft).
 - **Never rename photos.** Files keep the names they had on the old site.
 - **Don't add links back to the magazine**, "for convenience" or otherwise, and don't link the
   retrospective from about.html popups or the internal nav.
-- `writers/` is a reader-facing folder, so `/stage` and `/publish` will carry a retrospective
-  to production (still unlinked). If it must stay off production, say so before staging.
+- **Retrospectives never go through `/stage` or `/publish`** (John, Oct 1, 2026: "we are definitely not
+  running stage or publish on this"). Every page carries
+  `<meta name="ccm-retrospective" content="dev2-only">`; `tools/strip_internal_files.sh` removes any
+  `writers/<slug>/` with that marker from dev during `/stage`, and both `/stage` and `/publish` have a
+  guard that stops if one is found. Don't add retrospectives to `.vercelignore`: they must be served
+  on the dev2 preview.
 - The old-site archive stops at its February 8, 2026 snapshot; anything later comes from
   `editions/`.

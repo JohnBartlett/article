@@ -13,6 +13,10 @@ paths=(
 for p in "${paths[@]}"; do
   if git ls-files --error-unmatch "$p" >/dev/null 2>&1; then git rm -r -q -f "$p"; echo "removed $p"; fi
 done
+# writer retrospectives built by /writer-retrospective are dev2-only (John, Oct 1, 2026): their pages carry a
+# ccm-retrospective marker. Older retrospectives (lucia-adams, francesco-bianchini) have no marker and stay.
+while IFS= read -r d; do git rm -r -q -f "$d"; echo "removed $d"; done < <(
+  { git grep -l 'name="ccm-retrospective" content="dev2-only"' -- 'writers/*/index.html' || true; } | cut -d/ -f1-2 | sort -u)
 # root-level markdown docs and report dumps
 while IFS= read -r f; do git rm -q -f "$f"; echo "removed $f"; done < <(git ls-files | grep -E '^[^/]+\.md$|^(ga4_report|ha_ad_report)_[^/]*\.json$')
 # per-edition STATUS.md

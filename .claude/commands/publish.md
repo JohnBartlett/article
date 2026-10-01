@@ -33,7 +33,12 @@ No output = clean.
 git ls-files | grep -E '^[^/]+\.md$|^(tools|\.claude|_template|_attachment-staging|_bios|docs|dashboard|editors|john-article-ideas)/|/STATUS\.md$'
 ```
 
-No output = clean. Any output means `/stage` didn't strip dev (Step 4b there) — these files
+```bash
+git grep -l 'name="ccm-retrospective" content="dev2-only"' -- writers/ \
+  && echo "STOP: a dev2-only writer retrospective is on this branch" || echo "no dev2-only retrospectives"
+```
+
+No output from the first command and "no dev2-only retrospectives" from the second = clean. Any other output means `/stage` didn't strip dev (Step 4b there) — these files
 would be publicly served by Cloudflare (this exposed `EMAIL_LOG.md` and `CLAUDE.md` until
 Sept 26, 2026). **Do not push.** Fix dev with `/stage` Step 4b, then re-run the merge.
 

@@ -12,6 +12,8 @@ What a retrospective is (John, Oct 1, 2026):
     and nothing on the main site links to the retrospective
   - pagination between the article pages: Previous / Next with thumbnails and "n of N"
   - article text verbatim; photos under their original filenames
+  - dev2 only: every page carries <meta name="ccm-retrospective" content="dev2-only">, which
+    tools/strip_internal_files.sh uses to remove the folder from dev/master during /stage
 
 Usage:
     source .venv/bin/activate
@@ -453,6 +455,7 @@ def head(title: str, author: str, up: str) -> str:
   <title>{html.escape(title)} | {html.escape(author)} | Classic Chicago Magazine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
+  <meta name="ccm-retrospective" content="dev2-only">
   <link href="{FONTS}" rel="stylesheet">
   <style>{CSS}  </style>
 </head>
