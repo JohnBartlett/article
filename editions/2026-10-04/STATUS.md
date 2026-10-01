@@ -1,21 +1,22 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-09-29 (pm)_
+_Updated: 2026-10-01_
 
-Skeleton prepped Sept 28; **Judy's final lineup** (`1a0ecc3d732ce3a1`, Sept 29) adds Annie's article and Dance for Life. All 7 stubs exist, nav chain wired, homepage and DateBook/Astrochart moved to Oct 4. Judy promises all articles by Wednesday (Sept 30).
+**Judy revised the lineup Sept 30** (`1a0f42883ab46eb2`): Ethan Cotton's photo story and a Spencer Waller book article are in, Dance for Life moves to October 11, and the Grove Mower book runs only if Annie's article does not. About the Town arrived from Ana and is built (Ready). 2 of 8 stubs are Ready; one of the last two stubs (Grove Mower / Annie) will be dropped.
 
-## Judy's final lineup (`1a0ecc3d732ce3a1`, received 2026-09-29; supersedes working list `1a0e7b88dbe123b7`)
+## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
 Nav chain order (hero → last):
-1. `about-the-town-october` — About the Town in October by Philip Vidal
+1. `about-the-town-october` — About the Town in October by Philip Vidal ("could be our first story depending on John's thoughts")
 2. `meet-us-in-st-louis` — Meet Us in St. Louis: Part 1 by Judy Carmack Bross
 3. `obama-water-terrace` — Obama Garden Art by Sigalit Zetouni
 4. `francesco-travel` — Francesco Bianchini Travel Piece by Francesco Bianchini
-5. `grove-mower-review` — Book Review by Judy Carmack Bross
-6. `annie-delfosse-article` — Annie Delfosse Article (working title)
-7. `dance-for-life` — Dance for Life Show and After Party by Judy Carmack Bross
+5. `ethan-cotton-photo-story` — Photo story by Ethan Cotton (new)
+6. `spencer-waller-book` — Book by Spencer Waller (new; byline provisional)
+7. `grove-mower-review` — Grove Mower book by Judy Carmack Bross (**only if Annie's article is not running**)
+8. `annie-delfosse-article` — Annie Delfosse Article (**Judy is waiting to hear whether Annie wants it this week**)
 
-Dropped vs working list: none. The Sept 28 "possible" items (AI piece by John, Editorial Page, David Sweet, Ethan Cotton photo essay, Rob Murphy) are **not** in the final lineup.
+Moved out: Dance for Life Show and After Party runs **October 11** (stub removed from this edition).
 
 ## Lineup
 
@@ -25,42 +26,49 @@ Dropped vs working list: none. The Sept 28 "possible" items (AI piece by John, E
 | 2 | meet-us-in-st-louis | Meet Us in St. Louis: Part 1 | Judy Carmack Bross | Emma Muhleman |
 | 3 | obama-water-terrace | Obama Garden Art | Sigalit Zetouni | Sig to John |
 | 4 | francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Annie Delfosse |
-| 5 | grove-mower-review | Book Review | Judy Carmack Bross | Judy to John |
-| 6 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Annie Delfosse |
-| 7 | dance-for-life | Dance for Life Show and After Party | Judy Carmack Bross | Emma Muhleman |
+| 5 | ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Emma Muhleman |
+| 6 | spencer-waller-book | Spencer Waller Book | Judy Carmack Bross | Judy to John |
+| 7 | grove-mower-review | Book Review | Judy Carmack Bross | Judy to John |
+| 8 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Annie Delfosse |
 
 ## Pending Deliveries
 
-- **About the Town** (Philip Vidal) — Ana lays out; Ana was to receive it Sept 28. Link-count check per mistake #42.
-- **Meet Us in St. Louis: Part 1** (Judy) — Emma lays out; Judy sends by Wednesday morning. Cover in hand (`IMG_4393.jpeg`, `1a0e7a20a6c28d96`). Multi-part: only Part 1 runs this week (mistake #38).
-- **Francesco's travel piece** — Judy sends to Annie Sept 29; Annie lays out. Cover in hand (`101Philosophenweg1.jpeg`, 1280x746, `1a0ecc799724e74a`).
-- **Book review** (Judy) — Judy sends to John by Thursday Oct 1; 3 photos. Title unknown.
-- **Annie's article** — Annie lays out; topic and title unknown.
-- **Dance for Life Show and After Party** (Judy) — Emma lays out; Judy sends to Emma by Wednesday PM. Note an Aug 9 article `editions/2026-08-09/dance-for-life/` already exists (different edition folder, no slug clash).
+- **Meet Us in St. Louis: Part 1** (Judy) — Emma has the article and photos and lays it out; nothing received by John yet. Cover in hand (`IMG_4393.jpeg`). Multi-part: only Part 1 runs this week (mistake #38).
+- **Francesco's travel piece** — Annie has the article and lays it out; not received. Cover in hand (`101Philosophenweg1.jpeg`).
+- **Ethan Cotton photo story** — Emma lays out; nothing received. Title unknown.
+- **Spencer Waller book article** — Judy sends to John; 2 photos. Cover in hand (`9781350636613.jpg`, the cover of "Power and Greed: Monopolies, Mergers, and Cartels on the American Stage" by Spencer Weber Waller). Text, title and byline not received.
+- **Grove Mower book article** — Judy sends to John (earlier: by Thursday Oct 1, 3 photos). Cover in hand (`IMG_5953.jpeg`). Runs only if Annie's does not.
+- **Annie's article** — Annie lays out, if it runs this week; topic and title unknown.
 
 ## Blockers
 
-- **Book review title unclear** — "Grove Mower book review"; coordinator now confirmed (Judy to John by Thursday). Working title "Book Review" until the text arrives.
-- **Annie's article** — author/title/topic unknown; byline set to Annie Delfosse provisionally (she has no Articles popup in about.html yet; add one if she is the byline).
+- **Grove Mower or Annie's article, not both** — Judy (Sept 30): "Grove Mower book: we will use this if Annie isn't planning hers." Both stubs stay in the nav chain until Annie answers; drop the other one then.
+- **Spencer Waller book article: title and byline unknown** — stub uses the working title "Spencer Waller Book" and a provisional Judy Carmack Bross byline (and an entry in her about.html popup). Confirm both when the text arrives (mistake #61).
+- **Hero order is John's call** — Judy: About the Town "could be our first story depending on John's thoughts." It is the hero now.
+- **About the Town: suspected typos left verbatim, for Judy/Philip** — "David Bryne" (spelled Byrne two lines later); "Inform, Empower & Expire" (the Pulitzer exhibition title is probably "Inspire"; appears in the body link and in caption 7); "Hexgonal Antiprism" (caption 1); "family-friend event"; "artist professor, and civic leader Theaster Gates" (comma); "The League of Chicago Theatre's"; an asterisk in "Kerry James Marshall: The Histories*".
 - **Sig's Water Terrace piece is built (Ready)** — confirm with Sig: (1) caption "sculptural water installation" (her later email, used) vs "feature" (earlier); (2) a real title, since "Obama Garden Art" is Judy's lineup name (mistake #61).
-- **Judy asked John** about writing an AI piece and discussing an Editorial Page article — John's decision.
+- **Robert Murphy file for Judy** — Judy (Sept 30, `1a0f21ffbf397120`) asks for a file of Robert Murphy's Chicago-Paris Connection articles (about 10) to pass to him; John replied he would gather them. Not started in the repo. No hurry per Judy.
 
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| about-the-town-october | About the Town in October | Philip Vidal | Placeholder | — | Hero slot. |
-| meet-us-in-st-louis | Meet Us in St. Louis: Part 1 | Judy Carmack Bross | Placeholder | cover placed | `IMG_4393.jpeg` on homepage card + nav thumbs (EXIF orientation 6 corrected, filename kept). |
-| obama-water-terrace | Obama Garden Art | Sigalit Zetouni | **Ready** | 1 placed | Built Sept 29 from `1a0d01fe0b4393d0` (text) + `1a0cf41a08ddec93` (photo/credit). Caption uses the later "installation" wording (matches her body text); swap one word if "feature" is wanted. Title still Judy's lineup name. |
+| about-the-town-october | About the Town in October | Philip Vidal | **Ready** | 8 placed + cover | Built Oct 1 from Ana's email `1a0f41a1811ea90a` (HTML body). 22 paragraphs, 8 inline figures at Ana's `[PHOTO n]` markers, 42 of 42 links, italics and superscripts kept. `COVER - About the Town.jpg` is the homepage hero only (no caption). Ana's marker named `6 Pretty Good Fest.jpeg`; the attachment is `6 Pretty Good Fest.jpg`. |
+| meet-us-in-st-louis | Meet Us in St. Louis: Part 1 | Judy Carmack Bross | Placeholder | cover placed | `IMG_4393.jpeg` on homepage card + nav thumbs. |
+| obama-water-terrace | Obama Garden Art | Sigalit Zetouni | **Ready** | 1 placed | Built Sept 29 from `1a0d01fe0b4393d0` (text) + `1a0cf41a08ddec93` (photo/credit). Title still Judy's lineup name. |
 | francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Placeholder | cover placed | `101Philosophenweg1.jpeg` on homepage card + nav thumbs. |
-| grove-mower-review | Book Review | Judy Carmack Bross | Placeholder | — | Working title. |
-| annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Placeholder | — | Working title. |
-| dance-for-life | Dance for Life Show and After Party | Judy Carmack Bross | Placeholder | — | |
-| datebook | DateBook | Annie Delfosse | Copied | — | From Sept 27; September block removed (ongoing Mary Cassatt exhibit moved to top of October). |
+| ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Placeholder | — | Stub added Oct 1. Working title. |
+| spencer-waller-book | Spencer Waller Book | Judy Carmack Bross (provisional) | Placeholder | cover placed | Stub added Oct 1. `9781350636613.jpg` (`1a0f431a29390d1b`) on homepage card (shown whole, `object-fit: contain`) + nav thumbs. |
+| grove-mower-review | Book Review | Judy Carmack Bross | Placeholder | cover placed | `IMG_5953.jpeg` (`1a0f46c97b6ee1dd`, 428x640, small) on homepage card + nav thumbs. Conditional on Annie. |
+| annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Placeholder | — | Working title. Conditional. |
+| datebook | DateBook | Annie Delfosse | Copied | — | From Sept 27; September block removed. |
 | daily-star-october | Astrochart | Victoria Martin | Copied | — | Oct 1–3 removed; runs Oct 4 – Nov 2. |
 
 ## Notes
 
-- Nav chain order (hero → last): about-the-town-october → meet-us-in-st-louis → obama-water-terrace → francesco-travel → grove-mower-review → annie-delfosse-article → dance-for-life.
+- Nav chain order (hero → last): about-the-town-october → meet-us-in-st-louis → obama-water-terrace → francesco-travel → ethan-cotton-photo-story → spencer-waller-book → grove-mower-review → annie-delfosse-article.
+- Dance for Life Show and After Party: moved to Oct 11 by Judy (Sept 30). Its Oct 4 stub, homepage card and about.html popup entry were removed; logged in `future-articles.html`.
+- Judy asked Annie (not John) for her article copy "for the Blast tonight" (Sept 30).
+- Victoria asked (Sept 30) about switching the Astrochart to October; John answered her the same day. The October page is this edition's `daily-star-october`.
 - Sept 27 moved to Past Editions (Aug 30 dropped); its landing page `editions/2026-09-27/index.html` built.
-- Autopilot is off (John, Sept 27) — stage attachments locally.
+- Autopilot is off (John, Sept 27) — attachments are staged locally; message IDs are added to `_attachment-staging/.staged_log.json` by hand so the hourly fetcher does not re-stage them when it is turned back on.
