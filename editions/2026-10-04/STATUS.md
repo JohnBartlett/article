@@ -47,7 +47,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 - **Hero order is John's call** — Judy: About the Town "could be our first story depending on John's thoughts." It is the hero now.
 - **About the Town: nine suspected typos left verbatim, awaiting Judy** — note sent Oct 1 to Judy, cc Ana (`1a0f8adbbbfdb0b1`): "David Bryne"; "Empower & Expire" (body and caption 7); "artist professor, and"; "family-friend event"; "League of Chicago Theatre's"; the asterisk in "The Histories*"; "TimeLine Theater" / "Paramount Theater"; "Hexgonal" (caption 1); "The Travelling exhibition" (caption 7). Apply only what she approves.
 - **Sig's Water Terrace piece is built (Ready)** — confirm with Sig: (1) caption "sculptural water installation" (her later email, used) vs "feature" (earlier); (2) a real title, since "Obama Garden Art" is Judy's lineup name (mistake #61).
-- **Robert Murphy file for Judy: built, not yet sent** — nine Chicago-Paris Connection articles as PDFs in `~/Documents/Robert Murphy - Chicago-Paris Connection/` (EMAIL_LOG #282). Five Rebecca Rosman photos are missing from the old-site backup. Waiting on John to send it to Judy.
+- **Robert Murphy retrospective for Judy: built, not yet shared** — `writers/robert-murphy/` on dev2 (nine articles, EMAIL_LOG #283), plus PDFs in `~/Documents/Robert Murphy - Chicago-Paris Connection/` (#282). Five Rebecca Rosman photos are missing from the old-site backup. Goes live with the next /stage and /publish; John then sends Judy the link.
 
 ## Articles
 

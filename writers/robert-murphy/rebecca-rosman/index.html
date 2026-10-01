@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporting from Paris, Journalist Rebecca Rosman’s Chicago Connection | Dr. Rob Murphy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+
+    /* Rob Murphy retrospective additions */
+    .article-body p.question{font-weight:700;}
+    .article-body p.center{text-align:center;}
+    .article-body p.missing{text-align:center;font-size:12px;color:#aaa;border:1px dashed #d8d0c4;padding:22px 12px;margin:2em 12%;text-transform:uppercase;letter-spacing:0.06em;}
+    .article-body table{border-collapse:collapse;margin:1.4em 0;}
+    .article-body td,.article-body th{border:1px solid #e0d8ce;padding:6px 10px;vertical-align:top;}
+    .retro-nav-count{font-size:12px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;}
+    .header-tagline{font-size:13px;color:#999;font-style:italic;margin-top:2px;}
+    @media(max-width:600px){.retro-nav-count{display:none;}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Dr. Rob Murphy</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <div class="kicker">The Chicago-Paris Connection</div>
+<h1>Reporting from Paris, Journalist Rebecca Rosman’s Chicago Connection</h1>
+      <div class="byline"><strong>By Dr. Rob Murphy</strong> &nbsp;&bull;&nbsp; November 1, 2025</div>
+    </div>
+    <div class="article-body">
+
+<p><span style="font-weight:400">Rebecca Rosman is an international journalist and audio producer whose work regularly airs on NPR and PRX’s </span><i><span style="font-weight:400">The World</span></i><span style="font-weight:400">. She is currently based between London and Paris, but her hometown is Chicago. She says Chicago food, music, and of course – people – are the best in the country. Since graduating from University of Illinois Urbana-Champaign in 2012, she has been living and working abroad, reporting between continents, cultures and conflict zones. In this interview we talk with Rebecca about her life in Paris, her Chicago roots and what motivates her to tell stories on a global stage.</span></p>
+<p><p class="missing">[Photo not recovered from the archive]</p></p>
+<p class="center"><em>Rebecca Rosman</em></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Rebecca, you were born in Chicago and often speak passionately about the city. Tell me about your childhood and how the city of Chicago has influenced the way you see the world.</span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: The first thing I should say is that whenever someone mentions Chicago, my eyes light up and I go through a whole spiel about why Chicago is the greatest place on Earth. I was born in Rogers Park, but my family moved to the suburb of Skokie when I was four years old where I lived until leaving for college. Chicago had a big influence on what I ended up doing with my career and life and the way I see the world. For example, 77% of the kids in my high school spoke a second language at home, making Skokie a very diverse and global place on its own.  </span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Where did you go to high school?</span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: Niles North High School. One memorable annual school event was “World Culture Night” where kids would bring in food that their parents would make.  We had families from countries that I had never even heard of! To me, Skokie, in so many ways, was really a melting pot. I never got on a plane until I was 19 years old, but was surrounded by so many different languages, cultures and backgrounds, I didn’t appreciate how special that was. Then there is this other element, my family is Jewish. It has been said that Skokie had the largest number of Holocaust survivors outside of Israel, so I grew up with that influence and the memory of the Holocaust, the lessons from that, and getting to speak with survivors on a regular basis. The survivors would come into school and talk about the importance of embracing your identity, even amid the struggle and trauma of being Jewish which is something that you must learn to be proud of in order to keep your heritage alive. It is so important to be willing to listen. Hearing other people’s stories is just so important. I learned to be a good listener by listening to these survivors. </span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: I was actually born right next door to Skokie in Evanston and ultimately ended up working at Northwestern University for over forty years!  So, we were neighbors so to speak.</span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: We called Evanston “New York” and Skokie “New Jersey” (laughs).</span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: You graduated from University of Illinois Urbana-Champaign in 2012 and while attending college you took your very first international trip. Tell me about that first trip and how that sparked your interest in international affairs.</span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: I studied abroad in Aix-en-Provence in the south of France for four months in the fall of 2010 where I felt like my world went from being black and white to being in color. That is where I started learning French and experiencing the food, the language, the lifestyle, going to the market every day to buy fresh produce, and learning what a strawberry can actually taste like. I lived with a host family who were farmers. I got to learn about agriculture, how it works. That is something I could not have done in Skokie. The experience opened my world completely and I wanted more of that and did not want to leave at the end of the semester. I had a fight with my mom about this when I tried to stay an extra six months and she was worried that if I took a break from school for that long, I would never come back. I did end up returning to college in Urbana-Champaign, but my mission from that moment on was to find a way back to Europe or abroad. I had always known I wanted to be a journalist from a young age, but pushed it aside, thinking I could never make a career of it. I believe that the semester abroad really shifted things for me in terms of “I’m going to go do this, I’m going to pursue it, and I’m going to move abroad. I want to be an international correspondent.”</span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">:  After you graduated from the University of Illinois Urbana-Champaign, you moved to Paris for graduate studies at l’Institut d’Etudes Politiques de Paris, also known as Sciences Po, and there you earned a master’s in Journalism and International Affairs. What drew you to this program? </span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: I had applied to only two schools when I decided to get a master’s. One was at Northwestern University and the other was Sciences Po. I knew I wanted to be an international correspondent. Northwestern has an excellent program, but I felt like I wanted to get a headstart on my career by going to Paris and learning in a different language versus getting my master’s in the U.S.  I made the right decision because I’m still here today, in Paris! </span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Explain your career today and the type of reporting you are doing and the sort of work that interests you. </span></p>
+<p><b>Rebecca Rosman</b><span style="font-weight:400">: The best part about my job is that I get to meet people I never would have been able to meet had it not been for my job. I get to ask questions that I would never be able to ask if not for my job. You are invited into people’s homes and then ask them intimate and sometimes very private questions. Often people think it is easier to open up to a stranger. I was in Turkey for a month this summer and I did a feature story about the decision that Syrian refugees have to face: stay in Turkey or go home? Most people said their biggest fear was that they will not be returning to the same home that they left, which just sent chills through my spine. Those are my favorite kinds of stories – human stories that reveal something unexpected.</span></p>
+<p><p class="missing">[Photo not recovered from the archive]</p></p>
+<p class="center"><em>On assignment in Israel interviewing two survivors of the Oct. 7 attack on Kibbutz Kfar Aza, located near the border with Gaza</em></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: You are also trained for reporting in hostile environments. Tell me more about this. </span></p>
+<p><b>Rebecca Rosman: </b><span style="font-weight:400">As a journalist who works in a conflict zone or any kind of high-risk area, for insurance reasons, you are mandated to have Hostile Environment Awareness Training, also known as HEAT Training. I am actually due to get my HEAT renewal because the certification is only valid for three years. HEAT training is typically run by former military security professionals and over the course of four or five days, where they walk you through how to survive in a conflict zone. They also give different tips such as how not to draw too much attention to yourself with advice, such as: don’t go to the same restaurant twice;  don’t hang out by the hotel bar because you do not want too many people to see you;  if you get into a taxi the safest spot to sit is in the backseat, behind the driver because if the driver turns out to be a kidnapper, it will be much harder for him to reach you if you are sitting directly behind him.  This training gives people an idea of what it will feel like to be in different scenarios and then the different responses you can take. </span></p>
+<p><p class="missing">[Photo not recovered from the archive]</p></p>
+<p class="center"><em>“On a deadline in Calais, France. The hotel lobby became my workspace.”</em></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Thank you for those tips.  I know where to sit in the next hired car I ride in.  Not too long ago, I was in a hired car sitting “shotgun” in the front seat next to the driver because I am very tall and it is usually the most comfortable place. We approached a military road check-point, and the driver not only did not stop, but he accelerated and sped through the blockade.  The military police pointed their rifles at us but he just kept speeding away.  When I regained my composure, I asked him why he would do such a thing.  He answered, “They won’t shoot us because they might kill a White guy and that would get them into trouble.”  I was not so reassured.  </span></p>
+<p><span style="font-weight:400">Being based in Paris, you also report on France’s cultural debates from climate and air conditioning to police violence in Marseille. Is there a special way to frame these French national stories so they resonate globally?</span></p>
+<p><p class="missing">[Photo not recovered from the archive]</p></p>
+<p class="center"><em>Covering the 2022 presidential elections when Macron won his second term. He chose to give his speech from the Eiffel Tower surrounded by EU and French flags</em></p>
+<p><b>Rebecca Rosman: </b><span style="font-weight:400">I think there is widespread American interest in French stories, Paris stories, and French culture, hence your well-received series of articles on Americans working in Paris!  For any story from abroad that is trying to intrigue an American listener, you have to think of the best way to catch their attention.</span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: One such story you had recently was about air conditioning in France. Frankly, I didn’t even know there was air conditioning in France outside of big stores and hotels! I have lived here for twenty-one years and do not know one person in France that has an air conditioner.  The biggest attempt at cooling off on hot summer days and nights is by using a Dyson fan.  </span></p>
+<p><b>Rebecca Rosman: </b><span style="font-weight:400">Well, I’ll tell you, I think that that’s going to have to change. That’s my take anyway and my guess it will happen within the next 10 years.</span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: They keep having these heat waves in the summertime. I mean, it can be really brutal.</span></p>
+<p><b>Rebecca Rosman:</b><span style="font-weight:400"> It’s terrible. I live on the sixth floor of my apartment building, so you can just imagine what it’s like when you have a day where it’s 90 degrees. But, for that story I went out and interviewed people on a 90 degree day. I went along the Seine River and spoke to people and sometimes when I just said the word “air conditioning” they literally pulled back, they were horrified by the word. It was almost as if I had mentioned a ghost. They believe it wastes too much energy and they just focus on other ways to stay cool. They would rather open a window or go sit by a pool, turn on any kind of fan. </span></p>
+<p><span style="font-weight:400">Another story that is always of interest coming from France is wine and cheese stories. I went to a region in the south of France called Ardèche to visit a winemaker who was making wine using American grapes. To this day, that is technically illegal in France. This is somewhat of a rogue guy who is saying “I’m not going to let this law get to me.” That was a very eye-opening experience for me as he had a little bit of a pirate mentality to him, which I really enjoyed. Someone thinking outside the box.</span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Tell us about the neighborhood you live in in Paris and your favorite things about living in Paris?</span></p>
+<p><b>Rebecca Rosman:</b><span style="font-weight:400"> I live on the border between the 20th and the 19th arrondissements. The neighborhood I live in is called the Jourdan. I’ve lived here for six years now. Before that, I lived in a neighborhood that was just next door near Père Lachaise, which is a famous cemetery where among many other famous Parisians, Jim Morrison is buried. Now, I live on top of a hill, which separates me from the city.  They call this area Le Village du Jourdan, because it really does feel like a village within a city. I love that about this neighborhood. If you walk 10 minutes from my place, there’s a beautiful park, Parc de Belleville, which has a great view of the entire Paris skyline. There’s a great cafe there that I sometimes go to sit and look at the skyline. </span></p>
+<p><span style="font-weight:400">Something that I really appreciate about living here is a certain kind of personality in France, a bon vivant.  That’s someone who just really appreciates life and quality things, like a good bottle of wine, a good steak for dinner.  You see how that translates in my neighborhood. Jourdan is not too flashy or anything like that, but the quality of everything is really good. I know I’m going to have a good steak at my local bistro. I know I’m going to have a good glass of wine which is not going to break my bank account. I eat out here regularly, more often than I cook. I just came from a month in the U.S. where I felt like every day, a hundred dollars just flew from my wallet in the morning. But here it’s not like that. I feel like you can find a nice balance. The overall quality of life that I have in Paris is much higher than what I would have if I was doing what I am doing in the U.S. I do not think I could be a freelance journalist in the U.S. My healthcare is paid for here, even though I am a freelancer. I pay an extra 30 euros a month for my healthcare; the rest is covered by the government. I can travel much easier around France and around Europe for stories. I owe a lot to the French state for keeping me able to do what I am doing. In general, this country is a great supporter of the arts. Artists have a special status here called ‘intermittent.’ Let’s say you work in a cabaret show, but that cabaret show only has performances three months of the year. You do your three months of work, get paid, pay your taxes, and then the government pays for your salary for the rest of the year. It’s a way to keep artists, filmmakers, and poets in a job and be able to pursue those careers.</span></p>
+<p><p class="missing">[Photo not recovered from the archive]</p></p>
+<p class="center"><em>The 150-year-old California Sequioa living in Buttes Chaumont. It’s technically still a baby! Some of the sequioas in California are older than Jesus</em></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: I ask this question of everyone I interview, so here goes:  If someone you know is planning a visit to Paris, what are three things you would tell them to do in order to have a great experience.</span></p>
+<p><b>Rebecca Rosman: </b><span style="font-weight:400">There are so many things to do in Paris but here goes.</span><b>  </b><span style="font-weight:400">There is another amazing park in my neighborhood that is not necessarily the first place on anyone’s list to visit, but if you’re coming as a tourist, I encourage you to go experience what real Parisian life is like in the Parc des Buttes-Chaumont which is gorgeous, quite large and very hilly. A fun fact about Buttes-Chaumont is that there is a real sequoia tree in the park. I believe it was planted by some Americans a hundred years ago and they didn’t realize how big it would get and how big it is still going to become! You should then the Jardin des Plantes, a beautiful botanical garden in the 5</span><span style="font-weight:400">th</span><span style="font-weight:400"> arrondissement just on the other side of the Seine. Finally, there is a wine bar called Le Baron Rouge in the 12</span><span style="font-weight:400">th</span><span style="font-weight:400"> arrondissement you should try if you really want to feel like a Parisian. I don’t even think they have seating. You just stand up and they have the wine served from giant wooden barrels. That is why it’s called le Baron Rouge. The staff there is the old guard of Paris, in my opinion. They take their work very seriously. There are definitely true bon vivants in the Le Baron Rouge. Another plus, this great experience is not too expensive, five or six euros for a very high-quality glass of wine.  </span></p>
+<p><b>Rob Murphy</b><span style="font-weight:400">: Rebecca Rosman, thank you so much for joining me today and for telling us about your exciting life and living in Paris.  Thanks also for the free safety tips!</span></p>
+<p><i><span style="font-weight:400">Dr. Rob Murphy is Professor and Executive Director of the Havey Institute for Global Health at Northwestern University.  You may have seen him on WGN-TV morning news or WTTW, where he reports on COVID-19 and other public health issues.  While he calls Chicago home, Rob also spends time in Paris, where he has lived on and off for the past 20 years including full time as visiting professor at the Pierre et Marie Curie University.  He has met many other Chicagoans who are living and working in the city. Rob will introduce us to some of these Chicagoans in Paris who are embracing a new culture and lifestyle in the City of Light.</span></i></p>
+
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../rebecca-tilles/"><img class="retro-nav-thumb" src="../rebecca-tilles/tilles-gloria-restaurant.jpeg" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Dr. Rebecca Tilles: A European Soul, Born in Chicago</span></span></a>
+  <span class="retro-nav-count">2 of 9</span>
+  <a class="retro-nav-item next" href="../elizabeth-cummings/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Reporting from Paris, Cultural Curator Elizabeth Cummings Lands in Paris!</span></span><img class="retro-nav-thumb" src="../elizabeth-cummings/Screenshot-2025-08-29-8.16.13-PM.png" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Dr. Rob Murphy
+</footer>
+</body>
+</html>

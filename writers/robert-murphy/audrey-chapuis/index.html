@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audrey Chapuis: A Literary Life, from Chicago to Paris | Dr. Rob Murphy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;font-family:'Lato',sans-serif;background:#f5f3ef;color:#222;-webkit-font-smoothing:antialiased;}
+    a{color:#d41f1f;}
+    /* Header */
+    .site-header{background:#fff;border-bottom:3px solid #d41f1f;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .site-header .site-name{font-family:'Playfair Display',serif;font-size:13px;color:#999;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+    .site-header .author-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#222;line-height:1.1;}
+    .site-header .header-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+    .site-header .header-links a{color:#d41f1f;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+    .site-header .header-links a:hover{text-decoration:underline;}
+    /* Layout */
+    .wrapper{max-width:780px;margin:40px auto;padding:0 24px;}
+    /* Article */
+    .article-header{margin-bottom:32px;}
+    .article-header .kicker{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:#d41f1f;margin-bottom:10px;}
+    .article-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.15;margin:0 0 16px;}
+    .article-header .byline{font-size:13px;color:#888;border-top:1px solid #e0d8ce;border-bottom:1px solid #e0d8ce;padding:8px 0;margin-bottom:0;}
+    .article-header .byline strong{color:#555;}
+    .article-body{font-size:17px;line-height:1.75;color:#333;}
+    .article-body p{margin:0 0 1.4em;}
+    .article-body h2{font-family:'Playfair Display',serif;font-size:24px;margin:1.8em 0 0.6em;}
+    .article-body h3{font-family:'Playfair Display',serif;font-size:20px;margin:1.4em 0 0.5em;}
+    .article-body img{max-width:100%;height:auto;display:block;margin:2em auto;border-radius:3px;}
+    .article-body figure{margin:2em 0;}
+    .article-body figure img{margin:0;}
+    .article-body figcaption{font-size:13px;color:#888;margin-top:8px;font-style:italic;text-align:center;}
+    .article-body blockquote{border-left:4px solid #d41f1f;margin:1.5em 0;padding:0.5em 1.2em;color:#555;font-style:italic;}
+    /* Hero */
+    .hero-img{width:100%;max-height:480px;object-fit:cover;display:block;border-radius:4px;margin-bottom:28px;}
+    /* Index */
+    .index-intro{font-family:'Playfair Display',serif;font-size:18px;color:#555;font-style:italic;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid #e0d8ce;}
+    .index-note{font-size:13px;color:#888;background:#fff8f0;border-left:3px solid #e67e22;padding:12px 16px;margin-bottom:28px;}
+    .year-group{margin-bottom:40px;}
+    .year-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d41f1f;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid #e0d8ce;}
+    .article-card{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #f0ede8;text-decoration:none;color:inherit;align-items:flex-start;}
+    .article-card:last-child{border-bottom:none;}
+    .article-card:hover .card-title{color:#d41f1f;}
+    .card-thumb{width:90px;height:68px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .card-thumb-placeholder{width:90px;height:68px;border-radius:3px;flex-shrink:0;background:#e8e3dc;display:flex;align-items:center;justify-content:center;}
+    .card-thumb-placeholder span{font-size:9px;color:#bbb;text-transform:uppercase;letter-spacing:0.05em;}
+    .card-info{flex:1;}
+    .card-date{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+    .card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+    .card-excerpt{font-size:13px;color:#777;line-height:1.5;}
+    /* Footer */
+    footer{text-align:center;padding:32px 24px;font-size:12px;color:#aaa;border-top:1px solid #e0d8ce;margin-top:60px;}
+    @media(max-width:600px){
+      .site-header{padding:12px 16px;}
+      .wrapper{padding:0 16px;margin:24px auto;}
+      .article-body{font-size:16px;}
+    }
+    /* Retrospective nav */
+    .retro-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #e0d8ce;}
+    .retro-nav-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;max-width:45%;}
+    .retro-nav-item.next{justify-content:flex-end;text-align:right;margin-left:auto;}
+    .retro-nav-thumb{width:70px;height:70px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#e8e3dc;}
+    .retro-nav-label{font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#d41f1f;display:block;margin-bottom:4px;}
+    .retro-nav-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#222;line-height:1.3;}
+    .retro-nav-item:hover .retro-nav-title{color:#d41f1f;}
+    @media(max-width:600px){
+      .retro-nav-title{font-size:12px;}
+    }
+
+    /* Rob Murphy retrospective additions */
+    .article-body p.question{font-weight:700;}
+    .article-body p.center{text-align:center;}
+    .article-body p.missing{text-align:center;font-size:12px;color:#aaa;border:1px dashed #d8d0c4;padding:22px 12px;margin:2em 12%;text-transform:uppercase;letter-spacing:0.06em;}
+    .article-body table{border-collapse:collapse;margin:1.4em 0;}
+    .article-body td,.article-body th{border:1px solid #e0d8ce;padding:6px 10px;vertical-align:top;}
+    .retro-nav-count{font-size:12px;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;}
+    .header-tagline{font-size:13px;color:#999;font-style:italic;margin-top:2px;}
+    @media(max-width:600px){.retro-nav-count{display:none;}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="site-name">Classic Chicago Magazine</div>
+    <div class="author-name">Dr. Rob Murphy</div>
+  </div>
+  <nav class="header-links">
+    <a href="../index.html">All Articles</a>
+  </nav>
+</header>
+<main class="wrapper">
+  <article>
+    <div class="article-header">
+      <div class="kicker">The Chicago-Paris Connection</div>
+<h1>Audrey Chapuis: A Literary Life, from Chicago to Paris</h1>
+      <div class="byline"><strong>By Dr. Rob Murphy</strong> &nbsp;&bull;&nbsp; April 6, 2024</div>
+    </div>
+    <div class="article-body">
+
+<p><span style="font-weight:400">Paris is the most visited city in the world.  You most likely have visited Paris at some point.  Perhaps you stayed for a few days to a week or more.  There is so much to do in this rich and vibrant city, that it’s impossible to really grasp the Parisian experience in such a short time. It also leads to many of the cliches we hear about Paris and its citizens.  If you really want to know Paris, consider working there like former Chicagoan, Audrey Chapuis, Executive Director of the American Library in Paris.  First, I have a few facts to share about the Chicago/Paris connection. </span></p>
+<figure><img alt="Audrey in Paris Photo: Krystal Kennedy" src="1.-Audrey-in-Paris-scaled.jpg"/><figcaption><sup><em>Audrey in Paris Photo: Krystal Kennedy</em></sup></figcaption></figure>
+<p><span style="font-weight:400">Paris is Chicago’s “Sister City”.  The relationship goes back to 1996 after a visit to Chicago by former Paris mayor, then President of France, Jacques Chirac, who proposed to Chicago Mayor Richard M. Daley that Chicago and Paris enter into a sister cities agreement.  While in Chicago, the Paris Committee hosted a benefit dinner at Bistro 110 featuring renowned Chef Joel Robuchon, who was a guest chef for one week at the restaurant which was celebrating its 10</span><span style="font-weight:400">th</span><span style="font-weight:400"> year anniversary.  I was fortunate enough to attend one of those incredible evenings co-hosted by international food critic, Patricia Wells; up until that time, it was the best meal I ever had in my life.  The Committee set an agenda that included city planning, increasing French participation in the Chicago Marathon, the Chicago Jazz festival, economic development, fashion, arts and culture.  The relationship continues to this day. </span></p>
+<p><span style="font-weight:400">It turns out, there are over 15,000 Americans living in Paris, and that doesn’t include “unregistered” persons like me, who stay less than 90 days per year or who don’t bother to register.  Not every American living in Paris is actually working, but many of them do, which brings them even closer to the true Parisian experience: renting or buying a flat, getting health insurance, receiving necessary healthcare, working at a job, getting paid, paying French taxes, opening a bank account, interacting with Parisians every single day.  </span></p>
+<figure><img alt="The American Library in Paris Photo: Rob Murphy" src="3.-The-American-Library-in-Paris.jpg"/><figcaption><sup><em>The American Library in Paris Photo: Rob Murphy</em></sup></figcaption></figure>
+<p><span style="font-weight:400">After living on and off in Paris for the past 20 years, I actually didn’t meet another American for the first 15 years, and that only occurred because I became a member of the American Library in Paris, an incredible institution which houses the largest collection of English literature outside of an Anglophone country.  It was at the American Library, that I met my guest today, Audrey Chapuis. In our first conversation, she was so happy to be speaking to another Chicagoan!  And not only from Chicago, but a former librarian at Northwestern University.  Audrey had worked for close to a decade at the Pritzker Law Library and has many fond memories of living and working there.  We have become great friends and sat down to talk about her life, living in Chicago and working at Northwestern, then leaving the U.S. to build a successful career in Paris.</span></p>
+<figure><img alt="Front door of the American Library in Paris Photo: Rob Murphy" src="2.-Front-Door-of-the-American-Library-in-Paris.jpg"/><figcaption><sup><em>Front door of the American Library in Paris Photo: Rob Murphy</em></sup></figcaption></figure>
+<p><span style="font-weight:400">Audrey Chapuis has been obsessed with two things since childhood: books and France. These interests have led her to an incredible career that took root in Chicago and has now flourished in France.  The American Library is a vital part of the American community in Paris and brings many expats with Chicago connections together. In this interview we talk about her career and life as an American in Paris. </span></p>
+<p><b>Rob:</b><span style="font-weight:400"> You and I met in Paris several years back, but we have some other important places in common, Chicago and Northwestern University. I’ve worked at Northwestern University my entire professional career, and you spent eight years at the Pritzker Legal Research Center at Northwestern University School of Law. What did you enjoy about living in Chicago and working at Northwestern University?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> I’ve been in Paris almost a decade, but my heart still remains, at least partially, in Chicago where I return every year. Chicago is the city that I first chose to live as an adult. So, the ties and bonds remain very strong. I never really left it behind. Like you, it was such an important chapter of my professional career. I remain in close contact with my colleagues at Northwestern. As you know, Midwesterners typically are supportive, kind and open-hearted. I just had a fantastic experience all around living and working in Chicago. </span></p>
+<p><b>Rob:</b><span style="font-weight:400"> I agree completely.  I grew up in Boston but am a Midwesterner at heart and will never move back East.  Chicago and Paris are Sister Cities.  Can you tell me, in your experience, the similarities and differences between Paris and Chicago? Why is there such a link?</span></p>
+<figure><img alt="Audrey with Catherine Chen, winner of book award Photo: Krystal Kennedy" src="4.-Audrey-with-Catherine-Chen-winner-of-book-award-2.jpg"/><figcaption><sup><em>Audrey with Catherine Chen, winner of book award Photo: Krystal Kennedy</em></sup></figcaption></figure>
+<p><b>Audrey:</b><span style="font-weight:400"> I’m involved with the Comité Paris-Chicago (Committee for Paris-Chicago). So, we’re looking for even more links between the two cities. I would say, more generally, both cities have spectacular urban cityscapes, so moving through these two cities is just sheer joy. They are the nexus of art, science, industry, and education. Both are global centerpieces where all of these disciplines come together to create something much greater than the sum of their parts. As I walk through each city, both give me so much energy. They’re both developing cities, but at the same time they’re historically rooted.  You have the center of the city, that tourists might know, with the iconic cityscapes, and then outside the center is this burgeoning environment where there’s even more multiculturalism and an exciting art scene.  I see parallels in that.  A big plus is that both are super inspiring from an art, literature and gastronomic perspective. Additionally, they’re both walkable cities, the idea of the “15 minute” city, I think that’s where you can really create an affirming civic life.</span></p>
+<p><b>Rob:</b><span style="font-weight:400"> You grew up in Austin, Texas, but no one from your childhood days is surprised to hear that you now live in France and lead the American Library in Paris. Can you tell me about your childhood obsession with books and all things French?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> The French piece really, truly, no one knows where that came from. Maybe on a television show somewhere? I started counting in French and that led to an obsession with the French language. Actually, my high school French teacher in Texas was from Chicago, so there was an early serendipity there. Growing up, France represented an artistic community, and I thought in the imagination, there was nothing more beautiful and profound and inspiring than a group of artists being able to share their ideas among beautiful monuments and cityscape. I was definitely influenced by Henry Miller and Anaïs Nin and their whole set. On the book side, it was very acquisitive. I loved books as objects and loved them as escapes. Everything around the world of books I knew that I wanted to be involved. When I first heard you could get a master’s in library science, I thought, yes, that’s the thing. It was never really about publishing, but when I realized I could do something to support access to books, that felt like a calling.</span></p>
+<p><b>Rob:</b><span style="font-weight:400">  You moved to Paris in 2014 with your husband, Patrick Chapuis, who is President of Canon France, and you joined the American Library in Paris where you have risen through the ranks to executive director. You’ve described this part of your life romantically, not only because you moved to Paris along with your husband, but because you have said the experience of working here reignited, perhaps, a dormant, youthful idealism. Could you describe what you mean by that?</span></p>
+<figure><img alt="Audrey with Barbara Kingsolver and Emilie Biggs Photo: Krystal Kennedy" src="5.-Audrey-with-Barbara-Kingsolver-and-Emilie-Biggs.jpg"/><figcaption><sup><em>Audrey with Barbara Kingsolver and Emilie Biggs Photo: Krystal Kennedy</em></sup></figcaption></figure>
+<p><b>Audrey:</b><span style="font-weight:400">  Paris is a place where people project a lot of fantasy, and sometimes that is just a passing fancy which we indulge by a week abroad.  Even with a short visit, the city definitely delivers in its beauty, mythology, and its layers of history. History is so evident on every single street, you feel like you’re walking through the 18</span><span style="font-weight:400">th</span><span style="font-weight:400"> and 19</span><span style="font-weight:400">th</span><span style="font-weight:400"> centuries. It is a place of fantasy and definitely connected to my early dreams about this artistic colony.  Living here, surpassed that youthful idealism to something that’s more profound, real, and authentic.  As you personally know, being part of the library community, it is truly a nexus of creatives, thinkers, and curious people. Because many of us are drawn to Paris as a site of artistic inquiry, we tend to be like-minded, even if we’re from very different corners of the world, different backgrounds and different disciplines but we share that commonality.  For those of us living here or just passing through, it delivers on multiple fronts.</span></p>
+<p><b>Rob:</b><span style="font-weight:400">  Many Americans I run into ask: why is there an American Library in Paris? Can you describe the American Library in Paris, its history and how it has grown to be the largest English language lending library on the European continent and maybe outside of an English-speaking country?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> Yes, the story of the library is remarkable and it’s worth diving into. I encourage everyone, if you’re in Paris, we have a history tour with a docent who goes into all the juicy details. It’s a fantastic story of philanthropy and librarian ingenuity. At the end of the First World War, there was a massive book drive that was coordinated mostly by the American Library Association and the Library of Congress, to ship millions of books to service people serving abroad.  It was meant to be temporary, but it became, during the war, a lending library to all.  French school teachers and international business people were utilizing it along with the large American ex-pat community.  When it was time to pack up and close the doors as originally planned, there was so much local support, that the library and community leadership said, if we can prove to the powers that be that we can sustain this library, can we create a permanent American Library in Paris? It turns out, there was enough local support. The American Library Association (ALA) let us incorporate, and we still have an ALA Representative on our board continuously. So, those links are still alive. Since then, it has grown and we definitely remain a robust lending library. The number of traditional library books being circulated continues to increase, but we are also a cultural center.  In the 1930s we started to do author talks and that picked up considerably in the last twenty years with incredible support from GRoW @ Annenberg.  Now we have hundreds of programs throughout the year for cultural events, with authors and other speakers as well for readers and those who are curious of all ages. I include you Rob for your virtual presentation on the status of the Covid-19 pandemic in 2021!  We now have 5,000+ members and approximately 10,000 audience participants. </span></p>
+<p><span style="font-weight:400">We’re doing a lot with social outreach as well. We did a big pop-up library tour called “On the Road” that was supported by the U. S. Embassy. We went beyond the walls of our institution and outside the 7th arrondissement, our neighborhood, to reach new communities in Ile de France and Haute de France. The library is more than just a lending library, it really is a community and cultural anchor.  We are American, but open to everyone and that’s important. A lot of people wonder: do I need to be American to participate?  Absolutely not! You don’t even need to speak English. There are aspiring Anglophones who are members that come from over 100 countries, so we are extremely international, welcoming, and inclusive. It’s also located in central Paris, which people appreciate.</span></p>
+<figure><img alt="Audrey and friend at La Coupole Photo: Augusta Sagnelli" src="6.-Audrey-and-friend-at-La-Coupole.jpg"/><figcaption><sup><em>Audrey and friend at La Coupole Photo: Augusta Sagnelli</em></sup></figcaption></figure>
+<p><b>Rob:</b><span style="font-weight:400">  At some of the events that I’ve attended, I was really surprised how many non-Americans were there.</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> Yes, because you can just walk in the door. And I think because we strive to be very warm and welcoming, people quickly feel like this space belongs to, to them. English, for better or worse, has become the language for science, technology, and business. The imperative to learn English is ever greater and continues to grow. The Library is an immersive English environment in the middle of Paris, which is a wonderful oddity.</span></p>
+<p><b>Rob:</b><span style="font-weight:400"> And in my neighborhood, which I really love!</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> You’re a block away!</span></p>
+<p><b>Rob:</b><span style="font-weight:400"> You can’t be at work 24 hours a day, although some people try, but that’s not the Parisian way of doing things. What does Audrey Chapuis do in her non-library time?</span></p>
+<figure><img alt="Rob with friends at La Coupole: Molly Minton, Emilio Williams and Isabelle de Lamotte Photo: Rob Murphy" src="7.-Fun-at-La-Coupole-with-friends-Molly-Minton-Emilio-Williams-and-Isabelle-de-Lamotte.jpg"/><figcaption><sup><em>Rob with friends at La Coupole:  Molly Minton, Emilio Williams and Isabelle de Lamotte Photo: Rob Murphy</em></sup></figcaption></figure>
+<p><b>Audrey:</b><span style="font-weight:400">   I’d say, I’m probably more American than French when it comes to work. Work is definitely an extension of my identity and I think for a lot of people who work in nonprofits, when you’re working toward a mission, it really doesn’t feel like work. It can be all-consuming and you can give more to it because it feels much, much greater than any of us. I’m never really outside of work. But if I was to try to delineate some non-work activities it would be sketching. I enjoy urban sketching. Paris is the place for it. I do watercolor sketching and I also do graphic recording – that is doing live recording and drawing things that are happening simultaneously. That’s my hobby.  I also support other related institutions such as being on the board of the Marymount International School, that’s something that I’m passionate about as well, furthering their educational mission. As mentioned, I’m involved with the Comité Paris-Chicago and also News Decoder which is another educational outfit that is all about information literacy, a global initiative. There’s work and then there’s then there’s side work, but it’s all for increased access to information, boosting media literacy, and positive educational experiences.</span></p>
+<p><b>Rob:</b><span style="font-weight:400"> Since you moved to Paris, can you describe one of your most “memorable experiences”?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> My thoughts first go to visiting the bookshop Librairie Galignani on the rue de Rivoli during the holiday season. There’s a specific smell there that’s lovely, luscious, vanillin smell of books, plus the pine bookshelves themselves.  I think they have some sort of pine scented candle burning somewhere, but it just adds to the romance of a Parisian bookshop. It doesn’t get any better than that. Also, it’s a stone’s throw away from the Louvre and the Tuileries, and it’s just a very, special, magical place.</span></p>
+<figure><img alt="Audrey at the Annual Gala for the American Library in Paris at l’Auto 2023 Photo: Krystal Kennedy" src="8.-Audrey-at-the-Annual-Gala-for-the-American-Library-in-Paris-at-lAuto-2023-rotated.jpg"/><figcaption><sup><em>Audrey at the Annual Gala for the American Library in Paris at l’Auto 2023 Photo: Krystal Kennedy</em></sup></figcaption></figure>
+<p><b>Rob:</b><span style="font-weight:400"> Can you give the readers three top places that they should visit when they come to Paris?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> I will cheat and do four because number one is the American Library and the history tour! </span></p>
+<ol>
+<li style="font-weight:400"><span style="font-weight:400">American Library in Paris. Visiting Americans have to come see the history tour. They will feel right at home, and will learn a lot. </span></li>
+<li style="font-weight:400"><span style="font-weight:400">Eiffel Tower. We’re a block away from the Eiffel Tower, so they can make their first discovery of the Eiffel Tower which was built in 1889, and at the time, was the world’s tallest man-made structure.  </span></li>
+<li style="font-weight:400"><span style="font-weight:400">La Grande Épicerie de Paris. After the tour, they can walk about half an hour to the Grande Épicerie, which is a grocery store that is attached to Le Bon Marché, one of the first department stores in the world.  La Grande Épicerie is like Disney World for anyone interested in gastronomy. I could spend days there. You can have tastes of oysters,  they have a little foie gras bar. It’s just fantastic. You can pick up all of your food souvenirs there. </span></li>
+<li style="font-weight:400"><span style="font-weight:400">Musée Rodin. In the vicinity is Musée Rodin which was Rodin’s former residence.  You can go and actually see the full museum or, for a pence, you can just access the gardens where you can see “The Thinker.”  You can just enjoy the gardens, with the dome of the Invalides and the Eiffel Tower in the distance.  It’s a very sweet place. Sometimes they host fashion shows of iconic brands.  During the day you can go with your sketchbook and commune with Rodin’s masterpieces.</span></li>
+</ol>
+<p><b>Rob:</b><span style="font-weight:400"> You can also have lunch there in the garden.</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> Voilà. Perfect.</span></p>
+<p><b>Rob:</b><span style="font-weight:400"> So, what advice do you have for any young Francophiles back here in the States, who dream of living and working in Paris someday?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> I would say, make connections early. Come for a month and volunteer somewhere. If you’re part of a university program, get an internship. We host about three interns at any given time. It’s quite competitive, but I think that goes a long way to creating those ties. It can feel daunting, but at the same time, it’s fun. Especially in anglophone Paris, it can be quite a small town. So, if you know a few key people, they might be able to open some doors for you and help you participate in the life of Paris. Go to events, go to museum exhibitions, come to library events, just come visit. Try to have as many touch points as possible. If you can’t make it to Paris, which I understand that’s not available to everyone, you can still come to Zoom on your lunch break in Chicago and listen to author talks at the American Library in Paris! You can be there on video and be right here in our reading room listening to amazing experts. This season we had Barbara Kingsolver, Pulitzer Prize winner, the iconic Catherine Mackinnon, and amazing academics like Trica Keaton. We have some incredible Visiting Fellows and Writers-in-Residence sponsored by The De Groot Foundation including Stacey Schiff, another Pulitzer Prize winner, Christian Campbell, Adam Schatz, and Patricia Lockwood. We get incredible people here, so this is one way of taking part in Parisian life without having to leave the comfort of your Chicago living room.</span></p>
+<figure><img alt="The Automobile Club de France Librarie Photo: Krystal Kennedy" src="9.-The-Automobile-Club-de-France-Librarie.jpg"/><figcaption><sup><em>The Automobile Club de France Librarie Photo: Krystal Kennedy</em></sup></figcaption></figure>
+<p><b>Rob:</b><span style="font-weight:400">  The Library’s social agenda is a lot of fun while at the same time, helping with fundraising.  Events include more informal ones such as the 1920’s themed </span><i><span style="font-weight:400">Les Ann</span></i><span style="font-weight:400">é</span><i><span style="font-weight:400">es Folles at La Coupole,</span></i><span style="font-weight:400"> held two weeks ago in the dance hall of La Coupole, one of the Lost Generation hang outs in the Montparnasse neighborhood.  I was there imaging being with Josephine Baker, Man Ray, Pablo Picasso, Ernest Hemmingway, Simone de Beauvoir and the crowd.  I know your biggest fundraising event of the year is the famous </span><i><span style="font-weight:400">Annual Gala of the American Library in Paris</span></i><span style="font-weight:400">, which is held at the Automobile Club de France, or l’Auto. You want to tell us a little more about what’s coming up on June 6th?</span></p>
+<p><b>Audrey:</b><span style="font-weight:400"> We’re very excited because we have Maureen Dowd, the </span><i><span style="font-weight:400">New York Times</span></i><span style="font-weight:400"> opinion columnist, as our gala honoree this year and she’s an incredible political commentator, so we’ll be honoring her body of work and remarkable career.  It’s really a moment of celebration for our community. We get some of our closest writers, friends and supporters together and celebrate literary Paris, support the library, and every year it’s the highlight of the social calendar in Paris. We’ve had some pretty incredible people come as our gala honorees. And of course, the Automobile Club is iconic and the dinner itself takes place in their library, which is an active lending library.  Against a backdrop of books, it’s just a lot of fun with great food, friends, and of course you’re supporting the library!</span></p>
+<p><b>Rob:</b><span style="font-weight:400">  The Annual Gala is an incredibly beautiful, elegant event.  The American ambassador usually comes along with other VIPs in Paris that are working with Americans and with the library. I am looking forward to it!  Audrey, thank you so much. It has been incredible to talk to you today and to learn all about you, the library, and your life in Paris. I thank you very much.</span></p>
+<p><b>Audrey: </b><span style="font-weight:400">Thank you, Rob!</span></p>
+<p><i><span style="font-weight:400">Dr. Rob Murphy is Professor and Executive Director of the Havey Institute for Global Health at Northwestern University; he is a physician at Northwestern Medicine. You may have seen him on WGN-TV morning news in recent years, where he gave daily updates on Covid-19 during the height of the pandemic. While he calls Chicago home, Rob also spends time in Paris, where he has lived on and off for the past 20 years including full time as visiting professor at the Pierre et Marie Curie University.  He has met many other Chicagoans who are living and working in the city. In this series of interviews, Rob will introduce us to some of these Chicagoans who are embracing a new culture and lifestyle in the City of Lights.</span></i></p>
+
+    </div>
+  </article>
+<div class="retro-nav">
+  <a class="retro-nav-item prev" href="../genie-godula/"><img class="retro-nav-thumb" src="../genie-godula/1-Genie-Godula.png" alt=""><span><span class="retro-nav-label">&larr; Previous</span><span class="retro-nav-title">Genie Godula: From Chicagoan to Parisian TV Celebrity</span></span></a>
+  <span class="retro-nav-count">8 of 9</span>
+  <a class="retro-nav-item next" href="../molly-in-paris/"><span><span class="retro-nav-label">Next &rarr;</span><span class="retro-nav-title">Molly in Paris</span></span><img class="retro-nav-thumb" src="../molly-in-paris/3a6f4126-1202-4b3e-9f6d-8f3154ee13ea.jpeg" alt=""></a>
+</div>
+</main>
+<footer>
+  Classic Chicago Magazine &mdash; Articles by Dr. Rob Murphy
+</footer>
+</body>
+</html>
