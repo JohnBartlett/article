@@ -1,8 +1,8 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-10-02_
+_Updated: 2026-10-02 (pm)_
 
-**3 of 8 stubs are Ready** (About the Town, Obama Garden, Grove Mower). Judy's Sept 30 revision (`1a0f42883ab46eb2`) stands: Ethan Cotton's photo story and a Spencer Waller book article are in, Dance for Life moves to October 11. Grove Mower arrived Oct 1 and is built; Judy sends Spencer Waller the morning of Oct 2. Whether Annie's article still runs is unconfirmed.
+**4 of 8 stubs are Ready** (About the Town, Obama Garden, Spencer Waller, Grove Mower). Judy's Sept 30 revision (`1a0f42883ab46eb2`) stands: Dance for Life moves to October 11. Still to arrive: Meet Us in St. Louis and Ethan Cotton's photo story (Emma), Francesco's piece (Annie). Whether Annie's own article still runs is unconfirmed.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
@@ -12,7 +12,7 @@ Nav chain order (hero → last):
 3. `obama-water-terrace` — Obama Garden Art by Sigalit Zetouni
 4. `francesco-travel` — Francesco Bianchini Travel Piece by Francesco Bianchini
 5. `ethan-cotton-photo-story` — Photo story by Ethan Cotton (new)
-6. `spencer-waller-book` — Book by Spencer Waller (new; byline provisional)
+6. `spencer-waller-book` — Spencer Waller: Power and Greed on Stage by Judy Carmack Bross (arrived Oct 2, built)
 7. `grove-mower-review` — Grove Mower: Fun Fast Fiction by Judy Carmack Bross (arrived Oct 1, built)
 8. `annie-delfosse-article` — Annie Delfosse Article (**unconfirmed**: Judy's Sept 30 rule was Grove Mower *or* Annie's)
 
@@ -27,7 +27,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 | 3 | obama-water-terrace | Obama Garden Art | Sigalit Zetouni | Sig to John |
 | 4 | francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Annie Delfosse |
 | 5 | ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Emma Muhleman |
-| 6 | spencer-waller-book | Spencer Waller Book | Judy Carmack Bross | Judy to John |
+| 6 | spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | Judy to John |
 | 7 | grove-mower-review | Grove Mower: Fun Fast Fiction | Judy Carmack Bross | Judy to John |
 | 8 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Annie Delfosse |
 
@@ -36,7 +36,6 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 - **Meet Us in St. Louis: Part 1** (Judy) — Emma has the article and photos and lays it out; nothing received by John yet. Cover in hand (`IMG_4393.jpeg`). Multi-part: only Part 1 runs this week (mistake #38).
 - **Francesco's travel piece** — Annie has the article and lays it out; not received. Cover in hand (`101Philosophenweg1.jpeg`).
 - **Ethan Cotton photo story** — Emma lays out; nothing received. Title unknown.
-- **Spencer Waller book article** — Judy lays it out herself and sends it to John the morning of Oct 2 (her Oct 1 note, `1a0f8e93ccb56055`); 2 photos. Cover in hand (`9781350636613.jpg`, the cover of "Power and Greed: Monopolies, Mergers, and Cartels on the American Stage" by Spencer Weber Waller). Text, title and byline not received.
 - **Annie's article** — Annie lays out, if it runs this week; topic and title unknown.
 
 ## Blockers
@@ -44,7 +43,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 - **Is Annie's article still running?** — Judy (Sept 30): "Grove Mower book: we will use this if Annie isn't planning hers." Grove Mower has now arrived and is built, which suggests Annie's is not this week, but nobody has said so. Annie's stub is still last in the nav chain and on the homepage; remove it once Judy or Annie confirms.
 - **Grove Mower: no photo captions supplied** — Judy's email has placement notes only ("Photo of Grove Mower at the top of the page", "Photo of Cover of Amos and Ike", "Photo of the cover of Dusty Money"; and under the third attachment, "First Book of the Trilogy: Dusty Money"). The three photos are placed without captions. Ask Judy if she wants any.
 - **Grove Mower: small slips left verbatim** — "In Lake Forest" (capital I), "is good way to close", "the help of other", "his parent's garage apartment", and "Amos and Ike" not italicized in the playlist answer (not italic in her email either). Judy's own piece; fix only on her say-so.
-- **Spencer Waller book article: title and byline unknown** — stub uses the working title "Spencer Waller Book" and a provisional Judy Carmack Bross byline (and an entry in her about.html popup). Confirm both when the text arrives (mistake #61).
+- **Spencer Waller: small slips left verbatim** — "Spencer aid" (said); "empresario" and "Empresarios" (impresario); "San Francesco" (San Francisco); "one performed bit part there"; and in the last paragraph the quote opened before "With new technology" is never closed before "Waller, ... said." Judy's own piece; fix only on her say-so.
 - **Hero order is John's call** — Judy: About the Town "could be our first story depending on John's thoughts." It is the hero now.
 - **About the Town: nine corrections applied Oct 2** — Ana approved the two caption fixes (`1a0f8d8fcc2430e3`) and relayed Philip's approval of the article fixes (`1a0f928c58337967`); John told Ana he would apply them. Done. Nothing open.
 - **Sig's Water Terrace piece is built (Ready)** — confirm with Sig: (1) caption "sculptural water installation" (her later email, used) vs "feature" (earlier); (2) a real title, since "Obama Garden Art" is Judy's lineup name (mistake #61).
@@ -59,7 +58,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 | obama-water-terrace | Obama Garden Art | Sigalit Zetouni | **Ready** | 1 placed | Built Sept 29 from `1a0d01fe0b4393d0` (text) + `1a0cf41a08ddec93` (photo/credit). Title still Judy's lineup name. |
 | francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Placeholder | cover placed | `101Philosophenweg1.jpeg` on homepage card + nav thumbs. |
 | ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Placeholder | — | Stub added Oct 1. Working title. |
-| spencer-waller-book | Spencer Waller Book | Judy Carmack Bross (provisional) | Placeholder | cover placed | Stub added Oct 1. `9781350636613.jpg` (`1a0f431a29390d1b`) on homepage card (shown whole, `object-fit: contain`) + nav thumbs. |
+| spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | **Ready** | hero + 3 placed | Built Oct 2 from Judy's email `1a0fd63aef7a7d86` (HTML body): 12 paragraphs, book title italic, text identical to the email. Hero is the book cover `9781350636613.jpg` (byte-identical to the Sept 30 cover; also the homepage card). Inline: `Spencer Waller Full Res Wide.jpeg` (no caption), `i36010aa.jpg` (Iroquois Theatre) and `1f9e3b4d7d4eee7b133024f65c7c3679.jpg` (Pearl Jam poster) with Judy's captions verbatim; her labels under the attachments confirm the map. Byline Judy confirmed by the source. Folder slug kept. |
 | grove-mower-review | Grove Mower: Fun Fast Fiction | Judy Carmack Bross | **Ready** | hero + 2 placed | Built Oct 2 from Judy's email `1a0f98936a109737` (HTML body): 21 paragraphs, 7 CCM questions in house style (`qa-question`), 12 italic titles kept, text identical to the email. `IMG_5953.jpeg` is the hero ("at the top of the page") and the homepage card; `81ICIp1u2yL._SY522_.jpg` (Amos and Ike cover, 350x522) and `images-1.jpeg` (Dusty Money cover, 259x400) sit at Judy's markers at natural size, not stretched. No captions supplied. Folder slug kept as `grove-mower-review`. |
 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Placeholder | — | Working title. Conditional. |
 | datebook | DateBook | Annie Delfosse | Copied | — | From Sept 27; September block removed. |
