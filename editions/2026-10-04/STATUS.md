@@ -1,15 +1,15 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-10-03 (14:30 UTC)_
+_Updated: 2026-10-03 (21:00 UTC)_
 
-**6 of 7 Ready** (About the Town, Meet Us in St. Louis, Philosophenweg, Searching for Clarity in the Storm, Spencer Waller, Grove Mower). **Obama Garden to be rebuilt** when Sig's full article arrives (promised by noon Oct 3); it is the only piece outstanding. Annie's article and Dance for Life both move to October 11.
+**6 of 7 Ready; Sig's "Simply Water" text is built, photos pending.** Her full article arrived Oct 3 (20:08 UTC) with five image-and-credit emails so far; the photos wait for the rest of her emails and John's OK on placement. Annie's article and Dance for Life both move to October 11.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
 Nav chain order (hero → last):
 1. `about-the-town-october` — About the Town in October by Philip Vidal ("could be our first story depending on John's thoughts")
 2. `meet-us-in-st-louis` — Meet Us in St. Louis: The Zoo, the Dining and Much More by Judy Carmack Bross (part 1 of 2; arrived Oct 3, built)
-3. `obama-water-terrace` — Obama Garden Art by Sigalit Zetouni
+3. `obama-water-terrace` — Simply Water by Sigalit Zetouni (full text arrived Oct 3, built)
 4. `francesco-travel` — Philosophenweg by Francesco Bianchini (Word file forwarded by Judy Oct 3; text built)
 5. `ethan-cotton-photo-story` — Searching for Clarity in the Storm: A Mindful Approach to Rainy Day Photography by Ethan Cotton (arrived Oct 3, built)
 6. `spencer-waller-book` — Spencer Waller: Power and Greed on Stage by Judy Carmack Bross (arrived Oct 2, built)
@@ -23,7 +23,7 @@ Moved out: Dance for Life Show and After Party and Annie Delfosse's article both
 |---|---|---|---|---|
 | 1 | about-the-town-october | About the Town in October | Philip Vidal | Ana Baca |
 | 2 | meet-us-in-st-louis | Meet Us in St. Louis: The Zoo, the Dining and Much More | Judy Carmack Bross | **Ready** | 11 placed | Built Oct 3 from Emma's layout email `1a100162ec47624b` (HTML body): 22 paragraphs, 11 photos at Emma's numbered markers with her captions verbatim (photos 2 and 8 have none), both links (stlzoo.org, mohistory.org), "Wild Kingdom" italic; text identical to the email. Every photo checked against its caption by eye. Photos 2, 3 and 8 were stored sideways (EXIF 6) and are saved upright under their own names. Photo 8, the Gateway Arch, is the same image as the card cover `IMG_4393.jpeg` and sits at Emma's "Photo 8/ cover photo" spot near the end; no separate hero (mistake #30). Part 2 runs Oct 11 (mistake #38). |
-| 3 | obama-water-terrace | Obama Garden Art | Sigalit Zetouni | **Stand-in, to be replaced** | 1 placed | Sept 29 build from her short text `1a0d01fe0b4393d0` + photo `1a0cf41a08ddec93`. Full article, photos and credits promised by noon Oct 3 (`1a101ad371309513`). |
+| 3 | obama-water-terrace | Simply Water | Sigalit Zetouni | **Text built, photos pending** | 1 placed (hero) | Text rebuilt Oct 3 from Sig's email `1a1036255758fcff` (HTML body): 7 paragraphs, 1 link, identical to the email; no italics in the source. Title is hers, replacing Judy's "Obama Garden Art." Photo emails so far: `1a1036c7c56411ab`, `1a1036f27eef3549`, `1a103779344ef89a`, `1a1037c3dfe42295`, `1a103811bc536a1d`. Folder slug kept. |
 | 4 | francesco-travel | Philosophenweg | Francesco Bianchini | **Ready** | 3 placed | Built Oct 3 from `101Philosophenweg.docx` in Judy's forward `1a1021d01d8ff8e9`: 21 paragraphs, identical to the Word file paragraph by paragraph, 6 italic runs. Photo 1 is the hero; photos 2 (bull's-eye glass) and 3 (cinnamon roll) placed with Francesco's captions after the "At that hour the windows" and "They were perfect spirals" paragraphs, approved by John Oct 3 (no placement in the source). |
 | 5 | ethan-cotton-photo-story | Searching for Clarity in the Storm | Ethan Cotton | **Ready** | 15 placed | Built Oct 3 from Emma's layout email `1a1002343e857f0b`; photos came as 15 Google Drive links (no attachments) and were downloaded with the read-only Drive token. Title from the subject line, subtitle "A Mindful Approach to Rainy Day Photography" from the body. The email had one paragraph per wrapped line; rejoined into its 3 paragraphs between Emma's photo markers (Photo 1, 2-5, 6-10, 11-15); text identical to the email. `photo 8.HEIC` and `photo 11.HEIC` kept, with same-name `.jpg` copies for browsers (Chinatown precedent). Large photos shrunk to 3000 px, names kept. Photo 1 is the homepage card and nav thumbnail. No captions supplied. |
 | 6 | spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | Judy to John |
@@ -31,7 +31,6 @@ Moved out: Dance for Life Show and After Party and Annie Delfosse's article both
 
 ## Pending Deliveries
 
-- **Sig's full Maya Lin / Obama Center article** — Sig (`1a101ad371309513`, Oct 3 12:11 PM UTC, to Judy and John): "I'll email the article, photos, and credits ... by noon today." The current `obama-water-terrace` build is her short Sept 23 text with one photo; replace it with the full piece when it lands (title, captions, credits from her email).
 
 ## Blockers
 
@@ -44,7 +43,8 @@ Moved out: Dance for Life Show and After Party and Annie Delfosse's article both
 - **St. Louis: small slips left verbatim** — "one year late than first anticipated"; "the grand 1l Palaces"; "but the lack the wonder of Ferris monster of a wheel"; "for the 1893 to rival"; "Louisiana Purchase Exhibition" (Exposition); "828,000 square acres"; "two talkative ostrich"; "public golf trails"; caption 11 says "St. Louis History Museum" where the text says Missouri History Museum; caption 10 has no closing period. Fix only on Judy's say-so.
 - **Hero order is John's call** — Judy: About the Town "could be our first story depending on John's thoughts." It is the hero now.
 - **About the Town: nine corrections applied Oct 2** — Ana approved the two caption fixes (`1a0f8d8fcc2430e3`) and relayed Philip's approval of the article fixes (`1a0f928c58337967`); John told Ana he would apply them. Done. Nothing open.
-- **Sig's Water Terrace piece: superseded** — the Sept 29 build (short text, one photo) is a stand-in; her full article arrives Oct 3. The open questions (caption wording "installation" vs "feature", and a real title instead of Judy's "Obama Garden Art") should be answered by the new email.
+- **Simply Water: photo placement needs John's OK** — Sig sends each photo in its own email with a credit and no position. In hand, staged under `_attachment-staging/<message id>/`: 1 `IMG_8032.jpeg` and 2 `IMG_8054.jpeg` (Roni Horn at MCA Denver, photos by S. Zetouni), 3 `IMG_8865.WEBP` (Maya Lin's "Folding the Chesapeake," Renwick), 4 `IMG_8826.jpg` (Vietnam Veterans Memorial), 5 `IMG_8819.JPG` (Lin receiving the National Medal of Arts). More may follow. The Sept 23 Water Terrace photo `IMG_8418.PNG` is still the hero with its Sept 23 caption. Proposed: 1 and 2 after paragraph 1, 3 after paragraph 2, 4 and 5 after the "Lin began her career" paragraph, Water Terrace photo with the last paragraph.
+- **Simply Water: small slips left verbatim** — "committment"; "crushed passes"; "obtain steam in Toledo"; commas inside closing parentheses throughout ("(MCA Denver,)"); the Obama quote closes with a straight quote; caption 3 says "Folding the Chesapeake" where the text says "Folding the Chesapeake Bay." Sig's own piece; fix only on her say-so.
 - **Robert Murphy retrospective: sent to Judy Oct 1, awaiting her reply** — https://article-dev2.vercel.app/writers/robert-murphy/ (dev2 only, never staged or published; EMAIL_LOG #285). Open with her: the five missing Rebecca Rosman photos, whether a tenth article exists, and whether Rob wants the PDF.
 
 ## Articles
