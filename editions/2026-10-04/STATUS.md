@@ -1,8 +1,8 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-10-03_
+_Updated: 2026-10-03 (am)_
 
-**5 of 8 stubs are Ready** (About the Town, Meet Us in St. Louis, Obama Garden, Spencer Waller, Grove Mower). Judy's Sept 30 revision (`1a0f42883ab46eb2`) stands: Dance for Life moves to October 11. Still to arrive: Ethan Cotton's photo story (Emma) and Francesco's piece (Annie). Whether Annie's own article still runs is unconfirmed.
+**6 of 8 stubs are Ready** (About the Town, Meet Us in St. Louis, Obama Garden, Searching for Clarity in the Storm, Spencer Waller, Grove Mower). Still to arrive: Francesco's piece (Annie). Whether Annie's own article still runs is unconfirmed. Dance for Life moves to October 11.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
@@ -11,7 +11,7 @@ Nav chain order (hero → last):
 2. `meet-us-in-st-louis` — Meet Us in St. Louis: The Zoo, the Dining and Much More by Judy Carmack Bross (part 1 of 2; arrived Oct 3, built)
 3. `obama-water-terrace` — Obama Garden Art by Sigalit Zetouni
 4. `francesco-travel` — Francesco Bianchini Travel Piece by Francesco Bianchini
-5. `ethan-cotton-photo-story` — Photo story by Ethan Cotton (new)
+5. `ethan-cotton-photo-story` — Searching for Clarity in the Storm: A Mindful Approach to Rainy Day Photography by Ethan Cotton (arrived Oct 3, built)
 6. `spencer-waller-book` — Spencer Waller: Power and Greed on Stage by Judy Carmack Bross (arrived Oct 2, built)
 7. `grove-mower-review` — Grove Mower: Fun Fast Fiction by Judy Carmack Bross (arrived Oct 1, built)
 8. `annie-delfosse-article` — Annie Delfosse Article (**unconfirmed**: Judy's Sept 30 rule was Grove Mower *or* Annie's)
@@ -26,7 +26,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 | 2 | meet-us-in-st-louis | Meet Us in St. Louis: The Zoo, the Dining and Much More | Judy Carmack Bross | **Ready** | 11 placed | Built Oct 3 from Emma's layout email `1a100162ec47624b` (HTML body): 22 paragraphs, 11 photos at Emma's numbered markers with her captions verbatim (photos 2 and 8 have none), both links (stlzoo.org, mohistory.org), "Wild Kingdom" italic; text identical to the email. Every photo checked against its caption by eye. Photos 2, 3 and 8 were stored sideways (EXIF 6) and are saved upright under their own names. Photo 8, the Gateway Arch, is the same image as the card cover `IMG_4393.jpeg` and sits at Emma's "Photo 8/ cover photo" spot near the end; no separate hero (mistake #30). Part 2 runs Oct 11 (mistake #38). |
 | 3 | obama-water-terrace | Obama Garden Art | Sigalit Zetouni | Sig to John |
 | 4 | francesco-travel | Francesco Bianchini Travel Piece | Francesco Bianchini | Annie Delfosse |
-| 5 | ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Emma Muhleman |
+| 5 | ethan-cotton-photo-story | Searching for Clarity in the Storm | Ethan Cotton | **Ready** | 15 placed | Built Oct 3 from Emma's layout email `1a1002343e857f0b`; photos came as 15 Google Drive links (no attachments) and were downloaded with the read-only Drive token. Title from the subject line, subtitle "A Mindful Approach to Rainy Day Photography" from the body. The email had one paragraph per wrapped line; rejoined into its 3 paragraphs between Emma's photo markers (Photo 1, 2-5, 6-10, 11-15); text identical to the email. `photo 8.HEIC` and `photo 11.HEIC` kept, with same-name `.jpg` copies for browsers (Chinatown precedent). Large photos shrunk to 3000 px, names kept. Photo 1 is the homepage card and nav thumbnail. No captions supplied. |
 | 6 | spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | Judy to John |
 | 7 | grove-mower-review | Grove Mower: Fun Fast Fiction | Judy Carmack Bross | Judy to John |
 | 8 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Annie Delfosse |
@@ -34,7 +34,6 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 ## Pending Deliveries
 
 - **Francesco's travel piece** — Annie has the article and lays it out; not received. Cover in hand (`101Philosophenweg1.jpeg`).
-- **Ethan Cotton photo story** — Emma lays out; nothing received. Title unknown.
 - **Annie's article** — Annie lays out, if it runs this week; topic and title unknown.
 
 ## Blockers
@@ -43,6 +42,7 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 - **Grove Mower: no photo captions supplied** — Judy's email has placement notes only ("Photo of Grove Mower at the top of the page", "Photo of Cover of Amos and Ike", "Photo of the cover of Dusty Money"; and under the third attachment, "First Book of the Trilogy: Dusty Money"). The three photos are placed without captions. Ask Judy if she wants any.
 - **Grove Mower: small slips left verbatim** — "In Lake Forest" (capital I), "is good way to close", "the help of other", "his parent's garage apartment", and "Amos and Ike" not italicized in the playlist answer (not italic in her email either). Judy's own piece; fix only on her say-so.
 - **Spencer Waller: small slips left verbatim** — "Spencer aid" (said); "empresario" and "Empresarios" (impresario); "San Francesco" (San Francisco); "one performed bit part there"; and in the last paragraph the quote opened before "With new technology" is never closed before "Waller, ... said." Judy's own piece; fix only on her say-so.
+- **Ethan Cotton: no captions, one typo** — Emma's layout gives photo numbers only ("Photo 2-5" etc.), so the 15 photos have no captions; ask Ethan if he wants any. "a living, breathing artwork.." has a doubled period, left verbatim.
 - **St. Louis: title and the part 2 split** — Judy's headline is "Meet Us in St. Louis: The Zoo, the Dining and Much More" (now used everywhere instead of the working "Part 1"), but this week's part has no restaurants: the text says next week brings "three terrific restaurants," the Botanic Garden and three museums. Confirm with Judy whether "the Dining" stays in this week's title.
 - **St. Louis: photo 1 caption** — Emma's marker is "Photo 1 with caption: When friends said, 'meet us in St. Louis,' I said for sure." It is used as the caption, under a photo of two giraffes. If Judy meant it as the opening line of the article, it moves into the text.
 - **St. Louis: small slips left verbatim** — "one year late than first anticipated"; "the grand 1l Palaces"; "but the lack the wonder of Ferris monster of a wheel"; "for the 1893 to rival"; "Louisiana Purchase Exhibition" (Exposition); "828,000 square acres"; "two talkative ostrich"; "public golf trails"; caption 11 says "St. Louis History Museum" where the text says Missouri History Museum; caption 10 has no closing period. Fix only on Judy's say-so.
