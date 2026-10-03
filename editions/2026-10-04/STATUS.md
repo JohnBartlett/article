@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-03 (14:30 UTC)_
 
-**6 of 8 Ready** (About the Town, Meet Us in St. Louis, Philosophenweg, Searching for Clarity in the Storm, Spencer Waller, Grove Mower). **Obama Garden to be rebuilt** when Sig's full article arrives (promised by noon Oct 3). Whether Annie's own article still runs is unconfirmed. Dance for Life moves to October 11.
+**6 of 7 Ready** (About the Town, Meet Us in St. Louis, Philosophenweg, Searching for Clarity in the Storm, Spencer Waller, Grove Mower). **Obama Garden to be rebuilt** when Sig's full article arrives (promised by noon Oct 3); it is the only piece outstanding. Annie's article and Dance for Life both move to October 11.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
@@ -14,9 +14,8 @@ Nav chain order (hero → last):
 5. `ethan-cotton-photo-story` — Searching for Clarity in the Storm: A Mindful Approach to Rainy Day Photography by Ethan Cotton (arrived Oct 3, built)
 6. `spencer-waller-book` — Spencer Waller: Power and Greed on Stage by Judy Carmack Bross (arrived Oct 2, built)
 7. `grove-mower-review` — Grove Mower: Fun Fast Fiction by Judy Carmack Bross (arrived Oct 1, built)
-8. `annie-delfosse-article` — Annie Delfosse Article (**unconfirmed**: Judy's Sept 30 rule was Grove Mower *or* Annie's)
 
-Moved out: Dance for Life Show and After Party runs **October 11** (stub removed from this edition).
+Moved out: Dance for Life Show and After Party and Annie Delfosse's article both run **October 11** (stubs removed from this edition).
 
 ## Lineup
 
@@ -29,16 +28,13 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 | 5 | ethan-cotton-photo-story | Searching for Clarity in the Storm | Ethan Cotton | **Ready** | 15 placed | Built Oct 3 from Emma's layout email `1a1002343e857f0b`; photos came as 15 Google Drive links (no attachments) and were downloaded with the read-only Drive token. Title from the subject line, subtitle "A Mindful Approach to Rainy Day Photography" from the body. The email had one paragraph per wrapped line; rejoined into its 3 paragraphs between Emma's photo markers (Photo 1, 2-5, 6-10, 11-15); text identical to the email. `photo 8.HEIC` and `photo 11.HEIC` kept, with same-name `.jpg` copies for browsers (Chinatown precedent). Large photos shrunk to 3000 px, names kept. Photo 1 is the homepage card and nav thumbnail. No captions supplied. |
 | 6 | spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | Judy to John |
 | 7 | grove-mower-review | Grove Mower: Fun Fast Fiction | Judy Carmack Bross | Judy to John |
-| 8 | annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Annie Delfosse |
 
 ## Pending Deliveries
 
 - **Sig's full Maya Lin / Obama Center article** — Sig (`1a101ad371309513`, Oct 3 12:11 PM UTC, to Judy and John): "I'll email the article, photos, and credits ... by noon today." The current `obama-water-terrace` build is her short Sept 23 text with one photo; replace it with the full piece when it lands (title, captions, credits from her email).
-- **Annie's article** — Annie lays out, if it runs this week; topic and title unknown.
 
 ## Blockers
 
-- **Is Annie's article still running?** — Judy (Sept 30): "Grove Mower book: we will use this if Annie isn't planning hers." Grove Mower has now arrived and is built, which suggests Annie's is not this week, but nobody has said so. Annie's stub is still last in the nav chain and on the homepage; remove it once Judy or Annie confirms. **Asked Annie directly Oct 3 (`1a10230486cf15c9`, cc Judy); awaiting reply.**
 - **Grove Mower: no photo captions supplied** — Judy's email has placement notes only ("Photo of Grove Mower at the top of the page", "Photo of Cover of Amos and Ike", "Photo of the cover of Dusty Money"; and under the third attachment, "First Book of the Trilogy: Dusty Money"). The three photos are placed without captions. Ask Judy if she wants any.
 - **Grove Mower: small slips left verbatim** — "In Lake Forest" (capital I), "is good way to close", "the help of other", "his parent's garage apartment", and "Amos and Ike" not italicized in the playlist answer (not italic in her email either). Judy's own piece; fix only on her say-so.
 - **Spencer Waller: small slips left verbatim** — "Spencer aid" (said); "empresario" and "Empresarios" (impresario); "San Francesco" (San Francisco); "one performed bit part there"; and in the last paragraph the quote opened before "With new technology" is never closed before "Waller, ... said." Judy's own piece; fix only on her say-so.
@@ -62,14 +58,14 @@ Moved out: Dance for Life Show and After Party runs **October 11** (stub removed
 | ethan-cotton-photo-story | Ethan Cotton Photo Story | Ethan Cotton | Placeholder | — | Stub added Oct 1. Working title. |
 | spencer-waller-book | Spencer Waller: Power and Greed on Stage | Judy Carmack Bross | **Ready** | hero + 3 placed | Built Oct 2 from Judy's email `1a0fd63aef7a7d86` (HTML body): 12 paragraphs, book title italic, text identical to the email. Hero is the book cover `9781350636613.jpg` (byte-identical to the Sept 30 cover; also the homepage card). Inline: `Spencer Waller Full Res Wide.jpeg` (no caption), `i36010aa.jpg` (Iroquois Theatre) and `1f9e3b4d7d4eee7b133024f65c7c3679.jpg` (Pearl Jam poster) with Judy's captions verbatim; her labels under the attachments confirm the map. Byline Judy confirmed by the source. Folder slug kept. |
 | grove-mower-review | Grove Mower: Fun Fast Fiction | Judy Carmack Bross | **Ready** | hero + 2 placed | Built Oct 2 from Judy's email `1a0f98936a109737` (HTML body): 21 paragraphs, 7 CCM questions in house style (`qa-question`), 12 italic titles kept, text identical to the email. `IMG_5953.jpeg` is the hero ("at the top of the page") and the homepage card; `81ICIp1u2yL._SY522_.jpg` (Amos and Ike cover, 350x522) and `images-1.jpeg` (Dusty Money cover, 259x400) sit at Judy's markers at natural size, not stretched. No captions supplied. Folder slug kept as `grove-mower-review`. |
-| annie-delfosse-article | Annie Delfosse Article | Annie Delfosse | Placeholder | — | Working title. Conditional. |
 | datebook | DateBook | Annie Delfosse | Copied | — | From Sept 27; September block removed. |
 | daily-star-october | Astrochart | Victoria Martin | Copied | — | Oct 1–3 removed; runs Oct 4 – Nov 2. |
 
 ## Notes
 
-- Nav chain order (hero → last): about-the-town-october → meet-us-in-st-louis → obama-water-terrace → francesco-travel → ethan-cotton-photo-story → spencer-waller-book → grove-mower-review → annie-delfosse-article.
+- Nav chain order (hero → last): about-the-town-october → meet-us-in-st-louis → obama-water-terrace → francesco-travel → ethan-cotton-photo-story → spencer-waller-book → grove-mower-review.
 - Dance for Life Show and After Party: moved to Oct 11 by Judy (Sept 30). Its Oct 4 stub, homepage card and about.html popup entry were removed; logged in `future-articles.html`.
+- Annie's article: Judy (Oct 3, `1a10248014c371a4`) says it is for next week; John agreed (`1a1024b8c9030045`). Stub, homepage card and nav link removed Oct 3; logged for Oct 11.
 - Judy asked Annie (not John) for her article copy "for the Blast tonight" (Sept 30).
 - Victoria asked (Sept 30) about switching the Astrochart to October; John answered her the same day. The October page is this edition's `daily-star-october`.
 - Sept 27 moved to Past Editions (Aug 30 dropped); its landing page `editions/2026-09-27/index.html` built.
