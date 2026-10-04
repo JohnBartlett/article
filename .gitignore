@@ -36,3 +36,6 @@ editors/stats.html
 # that the blanket rules above would otherwise silently swallow.
 !_attachment-staging/**/*.pdf
 !_attachment-staging/**/*.docx
+
+# Downloaded old-site pages and photos used by tools/build_writer_retrospective.py
+.retrospective-cache/
