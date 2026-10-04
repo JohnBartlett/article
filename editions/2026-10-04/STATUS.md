@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-03 (published)_
 
-**PUBLISHED Oct 3, 2026, about 11 PM ET (master `f57e2a3f`); live at https://chicagoclassicmag.com .** All 7 articles, audited clean, staged (dev `00779a8c`) and published the same evening on John's instruction; Judy could not preview that night, so the editorial points under Blockers are still open and would go out as a hotfix. Live-notice email not yet sent. Annie's article and Dance for Life both move to October 11.
+**PUBLISHED Oct 3, 2026, about 11 PM ET (master `f57e2a3f`); live at https://chicagoclassicmag.com .** All 7 articles, audited clean, staged (dev `00779a8c`) and published the same evening on John's instruction; Judy could not preview that night, so the editorial points under Blockers are still open and would go out as a hotfix. Live notice sent to the team (`1a104d75ec9ad777`). Annie's article and Dance for Life both move to October 11.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
