@@ -34,7 +34,6 @@ Moved out: Dance for Life Show and After Party and Annie Delfosse's article both
 
 ## Blockers
 
-- **Reply owed to Sig** — her "that included" fix in Simply Water is live on dev2, dev and master (Oct 4); confirmation reply drafted, awaiting John's OK.
 - **Grove Mower: no photo captions supplied** — Judy's email has placement notes only ("Photo of Grove Mower at the top of the page", "Photo of Cover of Amos and Ike", "Photo of the cover of Dusty Money"; and under the third attachment, "First Book of the Trilogy: Dusty Money"). The three photos are placed without captions. Ask Judy if she wants any.
 - **Grove Mower: small slips left verbatim** — "In Lake Forest" (capital I), "is good way to close", "the help of other", "his parent's garage apartment", and "Amos and Ike" not italicized in the playlist answer (not italic in her email either). Judy's own piece; fix only on her say-so.
 - **Spencer Waller: small slips left verbatim** — "Spencer aid" (said); "empresario" and "Empresarios" (impresario); "San Francesco" (San Francisco); "one performed bit part there"; and in the last paragraph the quote opened before "With new technology" is never closed before "Waller, ... said." Judy's own piece; fix only on her say-so.
