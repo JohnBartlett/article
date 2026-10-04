@@ -1,8 +1,8 @@
 # October 4, 2026 Edition — Status
 
-_Updated: 2026-10-03 (evening)_
+_Updated: 2026-10-03 (staged)_
 
-**All 7 articles Ready; the issue is fully laid out on dev2 and audited clean (Oct 3 evening).** Not staged or published. Annie's article and Dance for Life both move to October 11.
+**Staged Oct 3 (dev `00779a8c`): all 7 articles Ready, audited clean, live on the staging preview https://article-git-dev-johns-projects-e5fce345.vercel.app . Not published.** Annie's article and Dance for Life both move to October 11.
 
 ## Judy's revised lineup (`1a0f42883ab46eb2`, received 2026-09-30; supersedes `1a0ecc3d732ce3a1`)
 
