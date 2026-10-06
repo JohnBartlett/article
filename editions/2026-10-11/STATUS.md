@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-06_
 
-Skeleton prepped Oct 6 from Judy's draft lineup. Nine stubs, nav chain wired, homepage and DateBook/Astrochart moved to Oct 11. **Stories are due Thursday morning, Oct 8** (John is away for the long weekend). Four articles are in hand and not yet built: David Sweet, FACETS, St. Louis Part II and Jill Lowe.
+**4 of 9 Ready** (David Sweet, St. Louis Part II, FACETS, Jill Lowe), built Oct 6 from the material in hand. Five stubs wait for text: Dance for Life and Oscar de la Renta (Emma), Rob Murphy (Ana), the Pokemon piece (Fabrizio) and Sig's article. **Stories are due Thursday morning, Oct 8** (John is away for the long weekend).
 
 ## Judy's draft lineup (`1a1066d15f5fdbe3`, received 2026-10-04; updated by `1a110785a59191f6`, 2026-10-06)
 
@@ -11,7 +11,7 @@ Nav chain order (hero → last):
 2. `david-sweet-symposium` — When Coffee Talk Is Consequential (Unsung Gems) by David A. F. Sweet
 3. `oscar-de-la-renta` — Oscar de la Renta / Field Museum by Judy Carmack Bross
 4. `chicago-paris-issy-van-randwyck` — The Chicago-Paris Connection (Issy van Randwyck) by Dr. Rob Murphy
-5. `meet-us-in-st-louis-part-2` — Meet Us in St. Louis: Part II by Judy Carmack Bross
+5. `meet-us-in-st-louis-part-2` — Meet Us in St. Louis—Part II by Judy Carmack Bross (built)
 6. `facets-jennifer-murray` — Jennifer Murray: FACETS Forward at Fifty by Judy Carmack Bross
 7. `pokemon-show` — Pokemon Show by Fabrizio Paco (intern)
 8. `sigalit-arts-article` — Arts article by Sigalit Zetouni
@@ -23,15 +23,15 @@ Held, no stub: Annie Delfosse's article was slot 1 in Judy's list, but Annie has
 
 | Order | Slug | Title | Author | Coordinator |
 |---|---|---|---|---|
-| 1 | dance-for-life | Dance for Life | Judy Carmack Bross | Emma Muhleman |
-| 2 | david-sweet-symposium | When Coffee Talk Is Consequential: Lake Forest Preservation Symposium Poised to Present Compelling Panels, Ideas | David A. F. Sweet | Judy to John |
-| 3 | oscar-de-la-renta | Oscar de la Renta at the Field Museum | Judy Carmack Bross | Emma Muhleman |
+| 1 | dance-for-life | Dance for Life | Judy Carmack Bross | Placeholder | top photo placed | Judy's photo is on the homepage hero and at the top of the page with her caption (`1a110833fbda4fdd`). Text not received. |
+| 2 | david-sweet-symposium | When Coffee Talk Is Consequential… | David A. F. Sweet | **Ready** | 3 placed | Built Oct 6 from `Unsung Gems Symposium.docx` (Judy's forward `1a10de6bd335abc0`; David's original Oct 3): 15 paragraphs, identical to the Word file, the lfpf.org link kept. Captions verbatim from David's email, in his order. |
+| 3 | oscar-de-la-renta | Oscar de la Renta at the Field Museum | Judy Carmack Bross | Placeholder | top photo placed | `IMG_7711.jpeg` on the card and at the top of the page, caption "Susu Block and Sophie Bross" (`1a110988ba895417`). Text not received. |
 | 4 | chicago-paris-issy-van-randwyck | The Chicago-Paris Connection: Issy van Randwyck | Dr. Rob Murphy | Ana Baca |
-| 5 | meet-us-in-st-louis-part-2 | Meet Us in St. Louis: Part II | Judy Carmack Bross | Ana Baca |
-| 6 | facets-jennifer-murray | Jennifer Murray: FACETS Forward at Fifty | Judy Carmack Bross | Judy to John |
+| 5 | meet-us-in-st-louis-part-2 | Meet Us in St. Louis—Part II | Judy Carmack Bross | **Ready** | 16 placed + cover | Built Oct 6 from Ana's revised layout `1a112b958f9c0931`: 20 paragraphs, identical to the email; 16 photos at Ana's markers with her captions (12 and 13 side by side, as she marked). Title from her subject line. Sideways photos saved upright. Cover is the homepage card only (no caption). Ana's marker says `10 Murals.jpeg`; the file is `10 Murals.jpg`. |
+| 6 | facets-jennifer-murray | Jennifer Murray: FACETS Forward at Fifty | Judy Carmack Bross | **Ready** | 3 placed | Built Oct 6 from Judy's "Updated Copy" `1a111e8caff660f3` (the Milos Stehlik photo note already removed): 18 paragraphs, identical to the email, 1 link. Portrait at the top (caption "Jennifer Murray") and on the card, shown whole; captions "FACETS exterior, Sarah Larson Photography" and "My First Movies, 'No Shhh Zone'" are Judy's labels. |
 | 7 | pokemon-show | Pokemon Show | Fabrizio Paco | Fabrizio Paco |
 | 8 | sigalit-arts-article | Arts Article | Sigalit Zetouni | Sig to John |
-| 9 | jill-lowe-pepper | The daily grind - would you like pepper on that? | Jill Lowe | Jill to John |
+| 9 | jill-lowe-pepper | The daily grind - would you like pepper on that? | Jill Lowe | **Ready** | 12 placed | Built Oct 6 from Jill's PDF (`1a10852223945e2f`) with the full-resolution photos from her Mail Drop zip (`1a10856d60a8d351`): 19 paragraphs, 4 section headings, bold and italic runs taken from the PDF, text identical to the PDF. **All 12 photos at their PDF positions** (her instruction), each matched to its file by image comparison; built page compared with the PDF pages by eye. Her one caption and the address line under photo 10 kept; the closing "A sober footnote" is a paragraph, as in the PDF. |
 
 ## Pending Deliveries
 
@@ -40,10 +40,12 @@ Held, no stub: Annie Delfosse's article was slot 1 in Judy's list, but Annie has
 - **Chicago-Paris Connection** (Rob Murphy) — Ana lays out. Cover in hand. When built, add it to the dev2 retrospective `writers/robert-murphy/`.
 - **Pokemon Show** (Fabrizio Paco, intern) — Fabrizio lays it out himself. Nothing received. New byline: a bio is needed.
 - **Sig's arts article** — Sig said Oct 4 she would write for Oct 11 (artists from Suzette's organization, AiPS) and send details; nothing yet.
-- **In hand, to build**: David Sweet (`_attachment-staging/1a10de6bd335abc0/`, use the Word file), FACETS (text `1a111e8caff660f3`, photos `_attachment-staging/1a111e616dce8907/`), St. Louis Part II (`_attachment-staging/1a112b958f9c0931/`, Ana's revised layout), Jill Lowe (`_attachment-staging/1a10856d60a8d351/placement-map.md`).
 
 ## Blockers
 
+- **Small slips left verbatim in the four built articles** — David Sweet: none seen. FACETS (Judy): "Milos Stelik" in the second paragraph, "Stehlik" later; "Going the movies." St. Louis Part II (Judy): "Missouri Public Garden" twice where the rest says Botanic Garden; "Juaquin Sorolla" (Joaquín); "so as not interfere." Jill Lowe: "Its trade change the course"; "To-day"; "Sebastion Prange" (the book cover in her own photo reads Sebastian R. Prange); "from from"; "Equador"; "65011 Paris" twice (the 11th arrondissement is 75011). Fix only on the author's or Judy's say-so.
+- **Photo choices that were left to John** — David Sweet: David gave the caption order (1, 2, 3) but no positions, and Judy said to choose the cover; photo 1 is at the top, 2 after Sacaridiz's first quote, 3 after the "Lake Forest is lauded" paragraph, and the Market Square watercolor (3) is the homepage card. FACETS: Judy said the two extra photos could go "anywhere"; the exterior follows the second paragraph and "My First Movies" follows the audience paragraph. Jill: the homepage card is `shutterstock_1714067527.jpg`, the photo Judy called "the great photo" for the Blast.
+- **Five of Jill's photos are stock images** (Shutterstock filenames) with no credit line supplied.
 - **Is Annie's article in this edition?** — Judy's Oct 4 list had it first; Annie has not answered, and Judy is lightening her load. No stub until confirmed.
 - **Hero** — with Annie's slot empty, Dance for Life leads by default. John or Judy to choose.
 - **Two bylines have no bio on about.html** — Dr. Rob Murphy (`#robert-murphy`) and Fabrizio Paco (`#fabrizio-paco`). `edition_checks.py` adds placeholder cards; real role and bio text are needed from Judy.
