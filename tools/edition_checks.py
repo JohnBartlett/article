@@ -345,7 +345,9 @@ def build_new_writer_card(author_id, articles):
 def insert_new_writer_card(about_html, card_html):
     """Insert a new stub card as the first entry in the Our Writers grid."""
     marker = '<div class="team-grid">'
-    idx = about_html.find(marker)
+    # about.html has several team-grids; the first one is "Our Team". Anchor on the Our Writers heading.
+    heading = about_html.find('<h2>Our Writers</h2>')
+    idx = about_html.find(marker, heading) if heading != -1 else -1
     if idx == -1:
         return about_html, False
     insert_pos = idx + len(marker)
