@@ -31,6 +31,7 @@ ga4_report_*.json
 # Internal editorial tooling lives on the `editors` branch only — never on dev2/dev/master
 editors/stats.html
 .superpowers/
+.playwright-mcp/
 
 # Attachment staging (tools/fetch_pending_attachments.py) needs to track PDFs/docx
 # that the blanket rules above would otherwise silently swallow.
