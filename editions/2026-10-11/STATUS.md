@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-08_
 
-**5 of 8 Ready** (Issy van Randwyck, FACETS, David Sweet, Jill Lowe, St. Louis Part II). Three wait for text: Oscar de la Renta and Dance for Life (Emma; Judy is not hearing back and is texting her) and Annie's haunted-Chicago article (her computer was updating at 12:50 PM ET Oct 8; not yet received). **Lineup reworked Oct 8 to Judy's order**; Sig's article and the Pokemon piece are out (Oct 18).
+**5 of 8 Ready** (Issy van Randwyck, FACETS, David Sweet, Jill Lowe, St. Louis Part II). Three wait for text: Oscar de la Renta and Dance for Life (Emma; by text at 5:25 PM ET Oct 8 she said she can get both to John tonight) and Annie's haunted-Chicago article (her computer was updating at 12:50 PM ET Oct 8; not yet received). **Lineup reworked Oct 8 to Judy's order**; Sig's article and the Pokemon piece are out (Oct 18).
 
 ## Judy's order (`1a11d6422882d20c`, 2026-10-08; replaces her Oct 4 draft `1a1066d15f5fdbe3`)
 
