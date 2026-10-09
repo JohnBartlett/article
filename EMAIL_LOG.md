@@ -1388,3 +1388,11 @@ Tier 2 keyword search (`after:2026/09/25`) returned 33 hits: Jack LeJeune's 4 me
 
 340. ✅ **Bio for Rob Murphy** — `1a11d6be25e05256` (Oct 8 9:29 PM UTC, Judy to John), subject "Bio for Rob. Murphy." Placed verbatim on about.html at `#robert-murphy`, replacing "[Bio pending]"; **"Dr, Robert Murphy" (comma for period) left as she typed it, to confirm.** She gave no role, so "[Role pending]" became "Contributing Writer" as a stand-in. The bio describes the new series as "viewing Chicago through an international lens" but gives it no name; the article label stays "Interview." Nothing else new: no article yet from Emma or Annie as of 6 PM ET.
 
+## check-emails run, Oct 9 early morning (local session, cutoff after item #340)
+
+341. ✅ **Annie's article arrived and is built (closes #336)** — `1a11e1f45825b13d` (Oct 9 12:45 AM UTC, to Judy and John; her third attempt), "Chicago Haunts to Visit this Spooky Season," nine attached photos numbered 1 to 9. Built into `haunted-chicago`: 23 paragraphs, 5 section headings, word for word identical; 9 photos at her markers with her captions. Slips left verbatim are listed in STATUS.md.
+342. ✅ **Dance for Life arrived and is built** — Emma's layout `1a11e9364c353b5e` (Oct 9 2:52 AM UTC, to Judy and John), "Dance For Life: Galas Galore," 13 photos as Drive links (all downloaded with the local token). 8 paragraphs, word for word identical; 13 photos; 12 links, the 11 Mailchimp tracking redirects replaced by their destinations. Caption names disagree with the body and with Judy's Oct 6 caption (Zunker/Dunker, Mertzner/Metzner); see STATUS.md.
+343. ✅ **Oscar de la Renta arrived and is built** — Emma's layout `1a11ec0d28d2bfb6` (Oct 9 3:41 AM UTC), "Oscar de la Renta Pre-Party Toasts Field Museum Gala," five attachments. 7 paragraphs, word for word identical; 5 photos. `photo 1.JPEG` and `photo 2.JPEG` are the same file; it is used as photo 2 and Judy's `IMG_7711.jpeg` stays as photo 1. **To confirm with Emma or Judy.**
+344. ⬛ **Judy by text, Oct 9 5:25 AM ET** — "I think I answered Rob's questions." Her answers so far: new series (not Chicago-Paris), and the bio (#340). The series name and the byline form are still not stated in any message.
+345. ⬛ **Quick Votes, Oct 8 evening (prod)** — Yes on Simply Water (`1a11e8abf4e1cd72`) and Philosophenweg (`1a11e8a319c768a9`), both Oct 4.
+
