@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-09_
 
-**8 of 8 Ready. Staged Oct 9** (dev `b85e6889`): https://article-git-dev-johns-projects-e5fce345.vercel.app — the dev alias was stale after the push and was repointed by hand. Not yet published. Open points for John and Judy are under Blockers.
+**PUBLISHED Oct 10, 2026 at about 7:53 PM ET** (master `aeaa27d0`), a day early with Judy's agreement. Live at https://chicagoclassicmag.com. All ten edition pages return 200 with GA4 active; no internal files exposed. "Edition is live" email: drafted, awaiting John's go-ahead.
 
 ## Judy's order (`1a11d6422882d20c`, 2026-10-08; replaces her Oct 4 draft `1a1066d15f5fdbe3`)
 
