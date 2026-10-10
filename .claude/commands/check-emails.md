@@ -50,10 +50,25 @@ tier1_messages = search_messages(token,
 # Tier 2 — keyword search for writers (no is:unread — read state is meaningless,
 # John may have opened emails in Gmail already; dedupe against EMAIL_LOG.md msg IDs)
 tier2_messages = search_messages(token,
-    f"(\"Classic Chicago\" OR article) after:{after_date} -from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com)")
+    f"(\"Classic Chicago\" OR article) after:{after_date} -category:promotions -category:social -category:updates -category:forums -from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com OR submissions@formsubmit.co)")
+# The category exclusions matter: without them this query matches every newsletter containing the
+# word "article" (about 200 results on Oct 8, 2026). Also search named occasional senders and
+# anything copied to Judy:  {from:jill.lowe@mac.com from:fabrizioepaco@outlook.com cc:judycbross@aol.com to:judycbross@aol.com}
 ```
 
 Fetch metadata first (From, Subject, Date, Snippet), then full body for actionable messages.
+
+**For any message with attachments, pull it locally instead of opening it through the Gmail connector**
+(the connector returns a long ID for every attachment in every format):
+
+```bash
+source .venv/bin/activate
+python3 tools/pull_msg.py <message-id> <scratch-dir>   # plain.txt, body.html, atts/, plus links and emphasis
+```
+
+`tools/mailhtml.py` turns `body.html` into paragraphs that keep bold, italic and links (mistake #62);
+`tools/fetch_drive.py <file-id> <dir>` downloads Drive-linked photos of any size with the local token;
+`tools/fetch_maildrop.py <dir> <message-id>…` downloads Apple Mail Drop PDFs.
 
 ## Step 2 — Process each email type
 

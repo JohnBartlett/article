@@ -2,7 +2,7 @@
 
 _Updated: 2026-10-09_
 
-**8 of 8 Ready.** Emma's two stories and Annie's article arrived the night of Oct 8 and were built early Oct 9. Not yet staged or published. Open points for John and Judy are under Blockers.
+**8 of 8 Ready. Staged Oct 9** (dev `b85e6889`): https://article-git-dev-johns-projects-e5fce345.vercel.app — the dev alias was stale after the push and was repointed by hand. Not yet published. Open points for John and Judy are under Blockers.
 
 ## Judy's order (`1a11d6422882d20c`, 2026-10-08; replaces her Oct 4 draft `1a1066d15f5fdbe3`)
 
