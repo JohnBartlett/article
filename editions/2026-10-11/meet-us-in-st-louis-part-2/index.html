@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Meet Us in St. Louis&mdash;Part II | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-meta a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    /* CCM interviews: each "CCM:" question is <p class="qa-question">, answer paragraphs are plain <p> */
+    .article-body .qa-question {
+      margin-top: 32px;
+      font-weight: 700;
+      border-left: 3px solid #b51c20;
+      padding-left: 12px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../../../index.html">
+        <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../../index.html">Home</a>
+        <a href="../datebook/">DateBook</a>
+        <a href="../daily-star-october/">Astrochart</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../../about.html">About</a>
+        <a href="../../../subscribe.html">Subscribe</a>
+        <a href="../../../advertise.html">Advertise</a>
+        <a href="../../../write-for-us.html">Write for Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- dev2-only
+  <div class="internal-nav">
+  </div>
+  -->
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Travel</div>
+
+      <h1 class="article-title">Meet Us in St. Louis&mdash;Part II</h1>
+
+      <div class="article-meta">By <a href="../../../about.html#judy-carmack-bross">Judy Carmack Bross</a> &nbsp;&bull;&nbsp; October 11, 2026</div>
+
+      <!-- No separate hero: the cover (COVER St Louis.jpeg) has no caption and is the homepage card only;
+           Ana's layout opens with photo 1. -->
+
+
+      <div class="article-body">
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="1 Botanic Garden.jpeg" alt="A boxwood parterre in the style of English 17th century formal gardens.">
+          <figcaption>A boxwood parterre in the style of English 17<sup>th</sup> century formal gardens.</figcaption>
+        </figure>
+
+        <p>Does your orchid refuse to bloom or your dracaena droop, we have the place to call. If you are finding yourself a little droopy and want to get out of town, for both we say St. Louis.</p>
+
+        <p>A fall day outdoors in St. Louis, first at the Zoo and then at the Missouri Botanic Garden leads me to encourage a visit to a city with more attractions free to the public than any other city than Washington, DC. Delightful dining and three museums added to the long-weekend plans. In last week&rsquo;s issue, we profiled the Zoo and the Missouri History Museum.</p>
+
+        <p>If you are a gardener and need advice, someone from St. Louis can help. Just call the Kemper Center for Home Gardening at the Missouri Botanic Garden, which has become a world resource for frustrated gardeners. What began as a one-volunteer project now handles over 10,000 calls yearly for a staff that offers practical science-based advice. And yes, they answer the phone.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="2 Waterfall.jpeg" alt="A perfectly peaceful place.">
+          <figcaption>A perfectly peaceful place.</figcaption>
+        </figure>
+
+        <p>The Missouri Botanic Garden, founded by Henry Shaw in 1859, is one of the oldest in the country and features 79 acres of rare and endangered plants and includes a 14-acre Japanese strolling gardens to visit at a very low cost. A Frank Stella stands close to statues from the World&rsquo;s Fair and a Victorian garden maze. For the holidays during Garden Glow opening November 14, two million lights twinkle along the varied paths.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="3 Sculptures.jpeg" alt="We were lucky to visit the Missouri Botanic Garden when intricate lighted sculptures by HYBYCOZO artists Serge Beaulieu and Yelena Filipchuk from Ukraine were on display.">
+          <figcaption>We were lucky to visit the Missouri Botanic Garden when intricate lighted sculptures by HYBYCOZO artists Serge Beaulieu and Yelena Filipchuk from Ukraine were on display.</figcaption>
+        </figure>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="4 Waterlilies.jpg" alt="Waterlilies">
+          <figcaption>Waterlilies</figcaption>
+        </figure>
+
+        <p>Henry Shaw came to St. Louis in 1819 to open a business selling hardware and cutlery. The Englishman was influenced by the gardens at Chatsworth and Kew. Early on he added an herbarium, currently housing more than 7.5 million specimens, one of the largest of its kind in the world. His house and grave are on the property, along with a statue of his standing by a bench intertwined with grapevines.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="5 Henry Shaw.jpeg" alt="Henry Shaw, a wine enthusiast, who helped save Bordeaux’s grapes.">
+          <figcaption>Henry Shaw, a wine enthusiast, who helped save Bordeaux&rsquo;s grapes.</figcaption>
+        </figure>
+
+        <p>When France&rsquo;s vineyards were dying from the pest phylloxera in the 1800s, Missouri vineyard experts, led by Shaw, gave French winemakers American rootstock which is resistant to the parasite. The trick involved grafting the majority of France&rsquo;s grape plants with hearty American rootstock.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="6 Gravel.jpeg" alt="The gravel is raked daily and koi swim in the pool nearby.">
+          <figcaption>The gravel is raked daily and koi swim in the pool nearby.</figcaption>
+        </figure>
+
+        <p>&ldquo;Our Japanese Garden, now 50 years old, is dedicated to the idea of peace and harmony and at 14 acres it is one of the largest in North America,&rdquo; Museum Officer Melissa Ettlinger told us as she walked us by the perfectly raked borders and pond with sacred lotus blossoms. &ldquo;It is laid out so at first you can only look ahead, but at the end you can look back at the full garden and is a way I think to look back on our own full lives.&rdquo;</p>
+
+        <p>The Japanese garden features cherry trees which came as seedlings from the historic trees in Potomac Park in Washington, DC. Elsewhere, a moon gate welcomes you to a Chinese garden, the Peter H. Raven Library which contains five miles of bookshelves devoted to botanical literature, and a tropical greenhouse where you&rsquo;d like to spend winter.</p>
+
+        <figure style="max-width: 447px; margin-left: auto; margin-right: auto;">
+          <img src="7 Vicia.jpeg" alt="Enclosed terrace with vegetable garden just outside.">
+          <figcaption>Enclosed terrace with vegetable garden just outside.</figcaption>
+        </figure>
+
+        <p>Although gooey butter cake and toasted ravioli are known as the city&rsquo;s most famous dishes&mdash;and varieties of these themes are found at a variety of hometown spots&mdash;we chose three restaurants with a farm-to-table trend and one actually in a plant store itself.</p>
+
+        <p>Vicia, a finalist in the James Beard 2026 outstanding national restaurant award, describes itself as vegetable-forward and grows many of its offerings in a front garden. Trout cooked over a wood-fired hearth, oysters topped with grape ice and cherry tomato salad with quinoa and fig leaf oil presented by a most personable server were also delicious. A Basque cheesecake, perhaps a tip of the toque to gooey butter cake, was blissful.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="8 Brunch.jpeg" alt="Brunch in a greenhouse featured fall favorites.">
+          <figcaption>Brunch in a greenhouse featured fall favorites.</figcaption>
+        </figure>
+
+        <p>At a Bowood by Niche brunch, served in a working greenhouse filled with fall plants, featured churro waffles with dulce de leche, crab cake eggs benedict, and cacio e pepe--eggs scrambled with pecorino cheese--were delights to eat outdoors in a fall-adorned garden.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="9 Bistro.jpeg" alt="The popular Brasserie in the delightful Central West End.">
+          <figcaption>The popular Brasserie in the delightful Central West End.</figcaption>
+        </figure>
+
+        <p>Dinner in the Central West End at Brasserie, also by Niche, spilled out onto the street in this favorite St. Louis neighborhood. Great onion soup and brasserie burgers, we wished we had tried the floating island for which it is famous. Delighted that there&rsquo;s a return visit to St. Louis planned for next year.</p>
+
+        <p>We also recommend you plan a visit to three St. Louis museums all offering free admission.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="10 Murals.jpg" alt="Anselm Kiefer’s “Becoming the Sea” painted for the St. Louis Art Museum.">
+          <figcaption>Anselm Kiefer&rsquo;s &ldquo;Becoming the Sea&rdquo; painted for the St. Louis Art Museum.</figcaption>
+        </figure>
+
+        <p>On a hill overlooking Forest Park where sledders head in winter, a statue of Saint Louis, the French King during the 1200s who was canonized as a saint, welcomes visitors to the St. Louis Art Museum. The only one remaining of the 11 palaces built for the World&rsquo;s Fair of 1904. Just inside, Anselm Kiefer&rsquo;s &ldquo;Becoming the Sea&rdquo; features site-specific murals designed by the artist to represent the Mississippi and Rhine rivers. The five massive murals are made of unconventional materials such as ash, clay and dried flowers.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="11 Max Beckmann.jpg" alt="A Max Beckmann triptych at the St. Louis Art Museum.">
+          <figcaption>A Max Beckmann triptych at the St. Louis Art Museum.</figcaption>
+        </figure>
+
+        <p>The St. Louis Art Museum has the world&rsquo;s largest collection of paintings by Max Beckmann, thought by many to be the finest German painter of the 20<sup>th</sup> century. A professor at the School of Fine Arts at Washington University in St. Louis from 1947-1949, his work influenced many local artists. Not only does the Museum exhibit the work of Beckmann and other German Expressionists, it contains one of the nation&rsquo;s great collections of postwar German art.</p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 36px 0;">
+          <figure style="flex: 1; min-width: 200px; margin: 0;">
+            <img src="12 Free Art.jpg" alt="Welcoming all.">
+            <figcaption>Welcoming all.</figcaption>
+          </figure>
+          <figure style="flex: 1; min-width: 200px; margin: 0;">
+            <img src="13 Ceramic Plates.jpg" alt="Student art at the Contemporary Art Museum St. Louis reminiscent of Judy Chicago.">
+            <figcaption>Student art at the Contemporary Art Museum St. Louis reminiscent of Judy Chicago.</figcaption>
+          </figure>
+        </div>
+
+        <p>Sitting side by side on Washington Blvd, the Pulitzer Arts Foundation and the Contemporary Art Museum St. Louis offer outstanding visiting exhibitions.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="14 Pulitzer.jpg" alt="The Pulitzer Arts Foundation’s stunning building was designed by Pritzker Prize-winning architect Tadao Ando.">
+          <figcaption>The Pulitzer Arts Foundation&rsquo;s stunning building was designed by Pritzker Prize-winning architect Tadao Ando.</figcaption>
+        </figure>
+
+        <p>&ldquo;Weaving the Infinite&rdquo; by Colombian artist Olga de Amaral is exhibited at the stunning Pulitzer Arts Foundation through January 31 and then goes to the Cooper Hewitt Museum in New York in April. It traces the trailblazing artist&rsquo;s revolution from early weavings in the 1950s to monumental hangings of gold leaf on linen and gesso. A former student at Cranbrook Academy of Art where she met her husband, Amaral still weaves at the age of 94. The Chicago Art Institute has her works in its collection.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="15 Gold Leaf.jpg" alt="Murals of gold leaf on linen and gesso on display at the Pulitzer Arts Foundation.">
+          <figcaption>Murals of gold leaf on linen and gesso on display at the Pulitzer Arts Foundation.</figcaption>
+        </figure>
+
+        <p>The Pulitzer Arts Foundation was established in 2001 by Emily Rauh Pulitzer, a former curator at the St. Louis Arts Museum, and her late husband Joseph Pulitzer, Jr. whose publisher father established the Pulitzer Prize in 1904. Her friend the artist Ellsworth Kelly supervised the installation of his monumental painting of auto paint on metal, recommending to the architect Tadao Ando to make the height of a doorway nearby a little shorter so as not to interfere with his painting.</p>
+
+        <p>Now featured at the Contemporary Art Museum St. Louis, the Great Rivers Biennial which recognizes and fosters talent in the St. Louis area. Every two years the program grants three emerging or under-recognized artists, chosen by national jurors, with an honorarium and the exhibition opportunity.</p>
+
+        <figure style="max-width: 500px; margin-left: auto; margin-right: auto;">
+          <img src="16 Awning.jpg" alt="Joaquin Sorolla’s “Under the Awning”. The St. Louis Art Museum.">
+          <figcaption>Joaquin Sorolla&rsquo;s &ldquo;Under the Awning&rdquo;. The St. Louis Art Museum.</figcaption>
+        </figure>
+
+        <p>Although the river isn&rsquo;t the Mississippi but the sea in Northern Spain, Joaquin Sorolla&rsquo;s &ldquo;Under the Awning&rdquo; seemed to catch the time when people from around the world said &ldquo;Meet Me in St. Louis&rdquo; for the 1904 World&rsquo;s Fair. More than 120 years later it makes sense to say the same thing.</p>
+
+      </div><!-- end article-body -->
+
+      <!-- About the Author -->
+      <div style="margin: 32px 0 24px; text-align: center; font-family: 'Lato', sans-serif; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.08em;">
+        <a href="../../../about.html#judy-carmack-bross" style="color: #b51c20; text-decoration: none; border-bottom: 1px dashed #b51c20;">About the Author: Judy Carmack Bross &rarr;</a>
+      </div>
+
+      <!-- Feedback Widget -->
+      <div style="margin: 56px 0 40px; padding: 28px 32px; border: 1px solid #e8e0d5; border-radius: 2px; background: #fdfaf7;">
+
+        <!-- Thumbs -->
+        <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 14px;">Did you enjoy this article?</p>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+          <button id="thumbUp" onclick="submitVote('Yes')" style="background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128077;</button>
+          <button id="thumbDown" onclick="submitVote('No')" style="background: #fff8f8; border: 1px solid #ffcdd2; border-radius: 4px; padding: 10px 22px; font-size: 22px; cursor: pointer; transition: all 0.15s;">&#128078;</button>
+        </div>
+        <div id="voteConfirm" style="display: none; font-family: 'Lato', sans-serif; font-size: 13px; color: #2e7d32; margin-bottom: 20px; letter-spacing: 0.04em;">&#10003; Thanks for your vote!</div>
+
+        <!-- Comment Form -->
+        <div id="feedbackConfirm" style="display: none; text-align: center; padding: 12px 0;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 16px; color: #555; margin: 0;">Thank you for your comment!</p>
+        </div>
+        <div id="feedbackForm" style="border-top: 1px solid #ece5dd; padding-top: 20px; margin-top: 16px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Leave a comment</p>
+          <form action="https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form" method="POST">
+            <input type="hidden" name="_subject" value="Classic Chicago Reader Comment">
+            <input type="text" name="_gotcha" value="" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_next" id="feedbackReturn">
+            <input type="hidden" name="Page" id="page-tracking">
+            <input type="hidden" name="Environment" id="env-tracking">
+            <textarea name="comment" minlength="4" placeholder="Your comment..." style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 80px; margin-bottom: 10px;"></textarea>
+            <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 14px;">
+            <button type="submit" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+        <!-- Writer Pitch Prompt (shown for long comments) -->
+        <div id="writerPrompt" style="display: none; margin-top: 16px; padding: 16px 18px; background: #fff8f0; border-left: 3px solid #e67e22; font-family: 'Lato', sans-serif; font-size: 14px; color: #555;">
+          <p style="margin: 0 0 12px;">That's quite a bit to say &mdash; sounds like you might have an article in you. Want to submit this as a pitch instead of a comment?</p>
+          <button type="button" id="writerYesBtn" style="background: #b51c20; color: #fff; border: none; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer; margin-right: 8px;">Yes, I'd like to write for you</button>
+          <button type="button" id="writerNoBtn" style="background: none; color: #b51c20; border: 1px solid #b51c20; padding: 8px 20px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; cursor: pointer;">No, just post my comment</button>
+        </div>
+
+        <!-- Writer Application Form -->
+        <div id="writerForm" style="display: none; margin-top: 16px; border-top: 1px solid #ece5dd; padding-top: 20px;">
+          <p style="font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin: 0 0 10px;">Write for Classic Chicago</p>
+          <input type="text" id="writerName" placeholder="Your name" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <input type="email" id="writerEmail" placeholder="Your email" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: 'Lato', sans-serif; font-size: 14px; border: 1px solid #ddd; border-radius: 2px; margin-bottom: 10px;">
+          <textarea id="writerTopic" placeholder="What Chicago subject would you like to write about?" style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-family: Georgia, serif; font-size: 15px; border: 1px solid #ddd; border-radius: 2px; resize: vertical; min-height: 60px; margin-bottom: 10px;"></textarea>
+          <button type="button" id="writerSubmitBtn" style="background: #b51c20; color: #fff; border: none; padding: 10px 28px; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 2px; cursor: pointer;">Submit Pitch</button>
+        </div>
+
+        <div id="writerConfirm" style="display: none; margin-top: 16px; text-align: center; font-family: 'Lato', sans-serif; font-size: 14px; color: #2e7d32;">
+          &#10003; Thanks! Judy and John will be in touch.
+        </div>
+
+        <script>
+          var base = window.location.href.split('?')[0];
+          document.getElementById('feedbackReturn').value = base + '?feedback=sent';
+          document.getElementById('page-tracking').value = document.title + ' — ' + base;
+          document.getElementById('env-tracking').value = (function(){ var h = window.location.hostname; if(h.indexOf('dev2') !== -1) return 'dev2'; if(h.indexOf('vercel') !== -1 || h.indexOf('localhost') !== -1) return 'dev'; return 'prod'; })();
+          if (window.location.search.indexOf('feedback=sent') !== -1) {
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('feedbackConfirm').style.display = 'block';
+          }
+          function submitVote(vote) {
+            fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify({
+                vote: vote,
+                Page: document.getElementById('page-tracking').value,
+                Environment: document.getElementById('env-tracking').value,
+                _subject: 'Classic Chicago Quick Vote'
+              })
+            }).catch(function(){});
+            document.getElementById('thumbUp').disabled = true;
+            document.getElementById('thumbDown').disabled = true;
+            document.getElementById('thumbUp').style.opacity = (vote === 'Yes') ? '1' : '0.35';
+            document.getElementById('thumbDown').style.opacity = (vote === 'No') ? '1' : '0.35';
+            document.getElementById('voteConfirm').style.display = 'block';
+          }
+
+          // Long-comment writer-pitch prompt
+          (function() {
+            var WRITER_THRESHOLD = 500;
+            var commentForm = document.querySelector('#feedbackForm form');
+            var commentTextarea = commentForm.querySelector('textarea[name="comment"]');
+
+            commentForm.addEventListener('submit', function(e) {
+              if (commentTextarea.value.trim().length > WRITER_THRESHOLD) {
+                e.preventDefault();
+                document.getElementById('feedbackForm').style.display = 'none';
+                document.getElementById('writerPrompt').style.display = 'block';
+              }
+            });
+
+            document.getElementById('writerNoBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('feedbackForm').style.display = 'block';
+              commentForm.submit();
+            });
+
+            document.getElementById('writerYesBtn').addEventListener('click', function() {
+              document.getElementById('writerPrompt').style.display = 'none';
+              document.getElementById('writerForm').style.display = 'block';
+            });
+
+            document.getElementById('writerSubmitBtn').addEventListener('click', function() {
+              var name = document.getElementById('writerName').value.trim();
+              var email = document.getElementById('writerEmail').value.trim();
+              var topic = document.getElementById('writerTopic').value.trim();
+              if (!name || !email || !topic) {
+                alert("Please fill in your name, email, and what you'd like to write about.");
+                return;
+              }
+              fetch('https://article-git-dev-johns-projects-e5fce345.vercel.app/api/submit-form', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                body: JSON.stringify({
+                  name: name,
+                  email: email,
+                  topic: topic,
+                  originalComment: commentTextarea.value,
+                  Page: document.getElementById('page-tracking').value,
+                  Environment: document.getElementById('env-tracking').value,
+                  _subject: 'Classic Chicago Writer Application'
+                })
+              }).catch(function(){});
+              document.getElementById('writerForm').style.display = 'none';
+              document.getElementById('writerConfirm').style.display = 'block';
+            });
+          })();
+        </script>
+      </div><!-- end feedback widget -->
+
+      <!-- Article Navigation — order must match homepage card order -->
+      <div class="edition-nav">
+        <a href="../haunted-chicago/" class="back-link"><img src="../haunted-chicago/navthumb.jpg" class="nav-thumb" alt=""> &larr; Previous: Chicago Haunts to Visit this Spooky Season</a>
+        <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a>
+      </div>
+      <!-- First article: <a href="../index.html" class="back-link">&larr; Back to Sunday Edition</a> -->
+      <!-- Last article:  <a href="../../../index.html" class="back-link">Back to Sunday Edition &rarr;</a> -->
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+
+  <!-- Keyboard nav — prevUrl/nextUrl must match the edition-nav links above -->
+  <script>
+    var prevUrl = '../haunted-chicago/';
+    var nextUrl = '../../../index.html';
+    document.addEventListener('keydown', function(e) {
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'n' || e.key === 'N') { window.location.href = nextUrl; }
+      if (e.key === 'p' || e.key === 'P') { window.location.href = prevUrl; }
+      if (e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); window.scrollBy(0, window.innerHeight * 0.85); }
+      if (e.key === 'PageUp') { e.preventDefault(); window.scrollBy(0, -window.innerHeight * 0.85); }
+    });
+  </script>
+
+</body>
+</html>
