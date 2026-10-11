@@ -27,6 +27,7 @@ None. Everything in the lineup has arrived.
 
 ## Blockers
 
+- **St. Louis Part II caption, one word (Judy, Oct 10)** — "Vicia’s enclosed terrace with vegetable garden just outside." Applied on dev2 on Oct 11; **not yet on dev or live.**
 - **Spelling corrections** — 25 applied Oct 9 (EMAIL_LOG #350); Judy approved on Oct 10 ("Please fix all spelling mistakes… I definitely don’t need to know where"). Annie's "rumour" changed to "rumor" (twice) on that approval. Jill's "To-day" is now "Today" (see the Jill Lowe item). Annie's Congress Hotel passage stays as written (Judy: "leaving Annie’s as is").
 - **Photo choices that were left to John** — David Sweet: David gave the caption order (1, 2, 3) but no positions, and Judy said to choose the cover; photo 1 is at the top, 2 after Sacaridiz's first quote, 3 after the "Lake Forest is lauded" paragraph, and the Market Square watercolor (3) is the homepage card. FACETS: Judy said the two extra photos could go "anywhere"; the exterior follows the second paragraph and "My First Movies" follows the audience paragraph. Jill: the homepage card is `shutterstock_1714067527.jpg`, the photo Judy called "the great photo" for the Blast.
 - **Jill's Shutterstock note: added Oct 10** — her wording (`1a1261df76abad01`): "some images reprinted under license from Shutterstock," placed under the footnote with a "Note" label, as in her screenshot. "To-day" changed to "Today" on Oct 10: Jill left it to John ("Please print today as you think it should be spelled") and John chose the modern spelling.
