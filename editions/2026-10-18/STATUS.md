@@ -44,7 +44,7 @@ Judy's list gave positions 1 to 8 with Francesco's article at 4; Libbet's articl
 
 ## Blockers
 
-- **Libbet's photos are too small** — every photo John received is 320 px or smaller (the "high res" José Ochoa is 320x180); the PDF holds them at 280 to 625 px. Full-size originals needed from Libbet or from what Annie received. Annie is laying the article out.
+- **Libbet's photos are too small, and three were never sent** — matched Oct 16 by image comparison against PDF v3: 14 of the PDF's 17 photos match files she emailed (all 320 px or smaller; the small Ochoa portrait on p.16 is a crop of the "high res" 320x180 file; the teaser photo is the same as `IMG_3459.jpeg`, p.4). **No file at all for three, all museum or artist photos:** p.3 "Familia Ricardo Lianres - Ofrenda de Día de Muertos, 2026, Cartonería" (406 px in the PDF), p.6 "David Rios – Ofrenda a Tonantzín…" (326 px), p.11 "Family Ofrenda, Day of the Dead, Harrison Park, 2024" (399 px). Full-size originals needed for all 17, from Libbet or the museum. `IMG_3459.jpeg` is the only emailed photo not used in the PDF except as the teaser.
 - **Lausanne split** — Judy's lineup says Part I this week and Part II on Oct 25, break point to be decided; Ana sent the whole article (about 1,860 words). Choose the break (#38).
 - **David Sweet cover** — Judy asks John to choose among `Andrew 1.jpeg` to `Andrew 3.jpeg`.
 - **Authors to confirm** — Rush Gala and The Village Gala are bylined Judy Carmack Bross as a working assumption (the Sept 6 Rush piece was hers; an earlier Village piece was by Laurel Baer).
