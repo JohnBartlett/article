@@ -39,7 +39,7 @@ Judy's list gave positions 1 to 8 with Francesco's article at 4; Libbet's articl
 - **Rush Gala** — Emma; Judy is reminding her. Both covers in hand (`1a134f75d1c694de` is the cover; `1a134f4ae86f500a` goes at the top of the page).
 - **The Village Gala** — Annie; "very short." Cover `IMG_1662.jpeg` in hand (not the Elvis photo).
 - **Artists in Public Schools** (Sig) — full text with photos and credits promised Saturday morning. Blast text and image in hand.
-- **Portage Park** (Drake Boehm) — Judy thinks John has it; nothing from Drake has arrived. Bio in hand.
+- **Portage Park** (Drake Boehm) — received and built Oct 17 (sent to john@classicchicagomag.com; forwarded).
 - **DateBook update** — Annie.
 
 ## Blockers
