@@ -1,6 +1,6 @@
 # October 18, 2026 Edition — Status
 
-_Updated: 2026-10-16_
+_Updated: 2026-10-17_
 
 **Prepped Oct 16, 2026.** Nine stubs. Text in hand for three (David Sweet, Lausanne, Fabrizio) and Libbet's PDF; Sig's arrives Saturday morning; Emma's two, Annie's Village Gala and the DateBook update, and Drake's article are not yet in.
 
