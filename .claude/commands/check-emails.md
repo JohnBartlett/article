@@ -157,13 +157,13 @@ After reading and **before** processing any email, append to `EMAIL_LOG.md` and 
 - Sources searched: Tier 1 addresses, Tier 2 keywords, FormSubmit votes/comments
 - Queries: `after:<epoch> from:(...)`, ...
 - Found: N Tier 1 threads, N FormSubmit, N unknown writers
-- Texts/calls: asked John, <answer>
+- Texts: read from chat.db, <result>; calls/voicemail: asked John, <answer>
 - Result: N actionable, N spam, N already logged
 ```
 
 Then one ⏳ row per actionable email (message ID, sender, subject, one-line content), ⬛ for spam. Rows move to ✅ or 🔁 as work is done. The epoch recorded is the time this check **began**, so nothing arriving mid-check is skipped next time.
 
-End the report to John with the cutoff used and: "Did anything arrive by text or call since then?"
+Read texts yourself (CLAUDE.md #74: `chat.db`, magazine keywords only, since the cutoff) and log them without phone numbers. End the report to John with the cutoff used and: "Did anything arrive by phone call or voicemail since then? I read your texts."
 
 ## Step 3 — Update EMAIL_LOG.md
 

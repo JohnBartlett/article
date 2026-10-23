@@ -1503,4 +1503,4 @@ Tier 2 keyword search (`after:2026/09/25`) returned 33 hits: Jack LeJeune's 4 me
 414. ⬛ **Readers, Oct 18-23** — Quick Votes and comments for the Oct 18 edition (mostly Yes; Portage Park and Lausanne Part I each drew one No) plus three spam comments with no page. Tally and `reader-comments.html` update pending on the `editors` branch.
 
 ### Check — 2026-10-23 (second check, branch dev2, cutoff epoch 1792775428; this check began epoch 1792781000)
-No new magazine email since the 1:10 PM ET check: 35 threads in the window, all newsletters, promotions or John's personal mail; zero from Judy, Ana, Annie, Emma, Sig or FormSubmit. Texts/calls: John has not answered yet.
+No new magazine email since the 1:10 PM ET check: 35 threads in the window, all newsletters, promotions or John's personal mail; zero from Judy, Ana, Annie, Emma, Sig or FormSubmit. Texts (read from chat.db, Oct 19 06:48 ET onward, magazine keywords only): one relevant inbound on Oct 21, 6:04 AM, praising Sig's story and John's layout of the Oct 18 edition. No lineup, assignment or photo texts. Calls/voicemail: not readable, not asked yet.
