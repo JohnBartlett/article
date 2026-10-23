@@ -8,6 +8,9 @@ already exist. This skill fills them in, not creates them.
 
 ## Step 1 — Check emails
 
+Run `/check-emails` first (branch check, cutoff from the latest `### Check` header in `EMAIL_LOG.md`, log the check before building).
+
+
 Search `john.bartlett@gmail.com` for contributor emails since the last build pass:
 
 ```python

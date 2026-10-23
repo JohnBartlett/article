@@ -17,6 +17,10 @@ email. Example:
     5. Philip Vidal About the Town
     6. DateBook — Annie
 
+## Step 0 — Reconcile lineup emails
+
+On dev2, read the latest `### Check` header in `EMAIL_LOG.md`. Search `subject:"Line up"` and Judy's "tentative order" emails since the last edition published. List every article present in one lineup but not another and ask Judy about the gaps in one message. Use coordinators and authors from the earlier lineup before asking her for them.
+
 ## Step 1 — Parse the list
 
 Convert Judy's list into a structured table:

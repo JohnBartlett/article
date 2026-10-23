@@ -25,9 +25,13 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 - Catches writers emailing directly: Bob Glaze, Katherine Harvey, Susan Aurinko, David Sweet, Lee Hamilton, Sophie Bross, Sydney Armstrong, Philip Vidal, Elizabeth Dunlop Richter, etc.
 - Report any matches with sender + subject; apply changes only if content is unambiguous
 
+## Step 0 — Branch
+
+Run `git branch --show-current`. If it is not `dev2`, run `git fetch origin dev2 && git checkout dev2` and re-read this skill from dev2 before continuing (`actions` carries stale copies).
+
 ## Step 1 — Determine the search cutoff date
 
-**Before fetching any emails**, read `EMAIL_LOG.md` and find the date of the most recent entry. Use that date as the `after:` cutoff — do NOT use a fixed `newer_than:Nd` window, which re-fetches already-logged emails.
+**Before fetching any emails**, read `EMAIL_LOG.md` and find the date of the most recent entry. Use the epoch time in the latest `### Check` header (or, if none, that entry's date) as the `after:` cutoff, e.g. `after:1792406892` — do NOT use a fixed `newer_than:Nd` window, which re-fetches already-logged emails.
 
 ```python
 # Read EMAIL_LOG.md, find last entry date, format as YYYY/MM/DD for Gmail
@@ -143,6 +147,23 @@ Tally Yes/No counts by article. Fetch body of "Classic Chicago Reader Comment" t
 - Add any late-vote rows near the bottom of their original edition's entries.
 
 After updating both files, commit and push to dev2.
+
+## Step 2.5 — Log the check immediately
+
+After reading and **before** processing any email, append to `EMAIL_LOG.md` and commit that file on its own (`git add EMAIL_LOG.md && git commit -m "Log check <date>" && git push origin dev2`):
+
+```
+### Check — YYYY-MM-DD HH:MM ET (branch dev2, cutoff <previous cutoff> / epoch <this check's start, seconds>)
+- Sources searched: Tier 1 addresses, Tier 2 keywords, FormSubmit votes/comments
+- Queries: `after:<epoch> from:(...)`, ...
+- Found: N Tier 1 threads, N FormSubmit, N unknown writers
+- Texts/calls: asked John, <answer>
+- Result: N actionable, N spam, N already logged
+```
+
+Then one ⏳ row per actionable email (message ID, sender, subject, one-line content), ⬛ for spam. Rows move to ✅ or 🔁 as work is done. The epoch recorded is the time this check **began**, so nothing arriving mid-check is skipped next time.
+
+End the report to John with the cutoff used and: "Did anything arrive by text or call since then?"
 
 ## Step 3 — Update EMAIL_LOG.md
 

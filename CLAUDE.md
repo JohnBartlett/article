@@ -483,6 +483,12 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 72. **No "[Role pending]" or "[Bio pending]" on the About page at stage time.** `/prep-edition` adds placeholder cards for new bylines and nothing removes or fills them. Before `/stage`, `grep -n 'pending\]' about.html` must return nothing; fill the card from the editor, or remove the card of any writer whose article left the edition.
 
+73. **Start every check on dev2, from the last logged entry.** Run `git branch --show-current` first; sessions can open on `actions`, whose `CLAUDE.md` and `.claude/commands/` are stale. If not on dev2: `git fetch origin dev2 && git checkout dev2`, then re-read `CLAUDE.md` and the skill from dev2. Take the cutoff from the latest `### Check` header in `EMAIL_LOG.md` (stored as a Gmail epoch time, used as `after:<epoch>`); never use `newer_than:Nd` or `is:unread`. On Oct 23, 2026 a `newer_than:2d` search missed Judy's Oct 19 lineup email (9 pieces) and an Oct 25 skeleton and email to Judy went out from her 7-piece Oct 23 list.
+
+74. **Log the check immediately after reading, before acting.** Write a `### Check` header plus one ⏳ row per actionable email to `EMAIL_LOG.md` and commit that file by itself first (see `/check-emails` Step 2.5). End every check by stating the cutoff used and asking John whether anything arrived by text or call since then; texts cannot be read by Claude and are only known when John says so.
+
+75. **Reconcile every lineup email before prepping or writing to Judy.** Search `subject:"Line up"` (and her "tentative order" emails) from Judy since the last edition published. List every article that appears in one lineup but not the other and ask about the gaps in the same message. Do not ask Judy for facts an earlier lineup already answered (coordinators, authors).
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
