@@ -1504,3 +1504,18 @@ Tier 2 keyword search (`after:2026/09/25`) returned 33 hits: Jack LeJeune's 4 me
 
 ### Check — 2026-10-23 (second check, branch dev2, cutoff epoch 1792775428; this check began epoch 1792781000)
 No new magazine email since the 1:10 PM ET check: 35 threads in the window, all newsletters, promotions or John's personal mail; zero from Judy, Ana, Annie, Emma, Sig or FormSubmit. Texts (read from chat.db, Oct 19 06:48 ET onward, magazine keywords only): one relevant inbound on Oct 21, 6:04 AM, praising Sig's story and John's layout of the Oct 18 edition. No lineup, assignment or photo texts. Calls/voicemail: not readable, not asked yet.
+
+### Check — 2026-10-24 (branch dev2, cutoff epoch 1792781000; this check began epoch 1792849641)
+Texts (chat.db, magazine keywords): nothing relevant. Calls/voicemail: not readable; ask John.
+
+| # | Date | From | Subject / content | Status |
+|---|------|------|-------------------|--------|
+| 415 | Oct 23 | Judy `1a16a4d68079650b` | Reply to my structure email. Sarah Spain and Brookfield Zoo are both by Judy. Enlarge captions across the magazine (approved). "Good to swap David's for Susan's. And it can be the lead story." Francesco's piece is "Chez Baillagou"; title may be extended ("Chez Baillagou: An open hearth for all") or left; byline Francesco Bianchini. | ⏳ confirm which swap she means (David with Susan, or David with Francesco); caption CSS change; skeleton fixes |
+| 416 | Oct 23 | Annie `1a16aa72a1162842` | Chez Baillagou full text and 4 photos with captions (1-Village Landscape, 2-Dan, 3-Fireplace One, 4-Meal and fireplace), numbered in placement order | ⏳ build (photos need download) |
+| 417 | Oct 24 | Emma `1a16bd8098f3d513` | Brookfield Zoo "Scene Stealers: Brookfield Zoo Penguins Star in Holiday Movie", by Judy Carmack Bross. Text with CCM Q&A; photos 1-8 as Drive links (not attachments); captions for photos 1 and 8 only; cover photo is the snow-filming one | ⏳ build; Q&A question count check; ask Emma for captions on photos 2-7 |
+| 418 | Oct 24 | Emma `1a16bc46b1e9fd80` | Susan Aurinko "My Silk Roads October 2026: Costumes, A Family Affair": full text, cover photo, photos 1-8 attached; only caption given is for photo 8 ("Louis Jean-Luc definitely does not like his Pumpkin costume!"). Photo labels repeat "Photo 2" twice and skip 4 | ⏳ build; ask Emma/Susan for photo order and captions |
+| 419 | Oct 24 | Judy `1a16dc98303f10dd` | Thanks to Emma for the two stories (Susan, Zoo) | no action |
+| 420 | Oct 24 | Sig `1a16df71deb4ce56` | "Next Week": Graham Foundation "Latinitudes" exhibition; Blast text and image by Wed 10/28, article by Sat 10/31 about 10 am. For the Nov 1 edition, not Oct 25 | ⏳ note for Nov 1 prep |
+| 421 | Oct 24 | Marcy Carmack / Judy `1a16b3226b78c787` | Marcy has two article ideas (Milan leather goods since 1864; a jewelry piece) after her trunk shows. Judy asks John's thoughts; John already replied to Marcy | ⏳ reply to Judy's question |
+| 422 | Oct 23-24 | Judy `1a16dd9afb4f998a` | Fwd: writer application from Gagan Saini (press@jithomebuyers.com), proposed "Before Calling a Chicago Bungalow Room Awkward, Ask What It Was Built to Do". Judy: "What do you think?" Likely promotional (home buyer company) | ⏳ John to decide |
+| 423 | Oct 23 | Judy `1a16a4afbbed2396` | Fwd of Francesco's article to John "just in case" (Annie "has been off lately") | superseded by #416 |
