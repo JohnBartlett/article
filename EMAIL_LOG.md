@@ -1520,3 +1520,11 @@ Texts (chat.db, magazine keywords): nothing relevant. Calls/voicemail: not reada
 | 422 | Oct 23-24 | Judy `1a16dd9afb4f998a` | Fwd: writer application from Gagan Saini (press@jithomebuyers.com), proposed "Before Calling a Chicago Bungalow Room Awkward, Ask What It Was Built to Do". Judy: "What do you think?" Likely promotional (home buyer company) | ⏳ John to decide |
 | 423 | Oct 23 | Judy `1a16a4afbbed2396` | Fwd of Francesco's article to John "just in case" (Annie "has been off lately") | superseded by #416 |
 | 424 | Oct 24 | John to Judy `1a16e34458e5da5e` | Sent (John approved): apology for the missed Oct 19 lineup; bylines set; captions to be enlarged magazine-wide; asks for final order (swap David/Susan?), whether Milwaukee Avenue, The Chicagoan and Sig's piece are in, photo labels/captions for Susan and Brookfield, placements for Sweet and Colonomos photos, 3 typos flagged. Not covered: Marcy's ideas, writer application | 🔁 awaiting Judy |
+
+### Check — 2026-10-24 (third check, branch dev2, cutoff epoch 1792849641; this check began epoch 1792857790)
+Texts (chat.db, magazine keywords since cutoff): none. Calls/voicemail: not readable; ask John. All other mail in the window was newsletters/promotions.
+
+| # | Date | From | Subject / content | Status |
+|---|------|------|-------------------|--------|
+| 425 | Oct 24 | Judy `1a16e94269b3eab3` | Reply to my questions: keep the current order (Sarah Spain, Susan Aurinko, Brookfield Zoo, David Sweet, Chez Baillagou, Lausanne II, Colonomos). Milwaukee Avenue (Fabrizio) delayed; The Chicagoan Republished and Sig's piece go next week, so Oct 25 is the seven pieces. Unsure about Susan's photos ("should I check with Emma?"). Fine to run Brookfield Zoo photos without captions. David's and Nick's photos: put where they go best. "Humboldt penguins" is right (text and caption); "I would also correct David's too." | ⏳ apply: Humboldt fix, David's typos (confirm which), place photos; get Susan photo order from Emma |
+| 426 | Oct 24 | Annie `1a16e3f3f101d2b3` | To Judy, cc John: "double check that this was my only story for the week?" (Chez Baillagou thread) | ✅ no action needed from John (Annie's only piece this week is Chez Baillagou; DateBook aside) |
