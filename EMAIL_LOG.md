@@ -1542,3 +1542,13 @@ Texts (chat.db, magazine keywords): none. Calls/voicemail: not readable; ask Joh
 | 431 | Oct 24 12:18 PM ET | John to Judy `1a16eb4eda18b88f` | Short reply sent from Gmail (not by this session): "Understood. I will keep the current order, omit the delayed pieces, and proceed with the photo placements and typos... I'll reach out to Emma to clarify Susan's photos and will leave the Brookfield ones uncaptioned." Signed "Best, John". Consistent with what was done | no action |
 | 432 | Oct 25 | John to Judy, Sig (cc Emma, Annie, Ana) `1a17267dc178c067` | Publication notice "October 25 Edition Is Live" sent with John's approval. Edition staged to dev (`9041e338`) and published to master (`5e40854b`), live early Oct 25. Open: Madame Zara photo for Susan, Susan cover choice, typo calls. |
 | 433 | Oct 25 | John to Judy, cc Sig `1a1726ab8dc1adc9` | "October 25 edition: a few items still open" sent with John's approval. Asks: forward Susan's original (Madame Zara photo), Susan cover choice, typo calls (David, Susan, Sarah Spain), caption enlargement on past editions, Brookfield http/https. Awaiting Judy. |
+
+### Check — 2026-10-25 (fifth check, branch dev2, cutoff epoch 1792889946; this check began epoch 1792929229)
+Texts (chat.db, magazine keywords): none. Calls/voicemail: not readable; ask John. Rest of inbox is newsletters/promotions.
+
+| # | Date | From | Subject / content | Status |
+|---|---|---|---|---|
+| 434 | Oct 25 5:07 AM CT | Judy `1a17288187ccc4b9` | Reply to my open-items email: "Please change the typos below." Change Susan's cover to what Emma sent (`cover photo-.jpeg`, star antlers). Glad about Billie Jean King catch. Did not answer the Madame Zara photo (still missing). | ⏳ apply typo fixes + cover swap |
+| 435 | Oct 25 5:11 AM CT | Judy `1a1728b1ec7aae58` | Likes the larger captions, does not want to put me to trouble (past editions: leave alone). Thanks for the link fix. | ✅ no action |
+| 436 | Oct 25 5:29 AM CT | Judy `1a1729c44b3ad8fd` (reply to Sig, cc John) | To Sig on "Next Week": fine idea, Graham Foundation "Latinitudes" article. Sig's schedule: blast text/image/credit by Wed 10/28, article text/images/credits Sat 10/31 ~10 AM (Nov 1 edition). Judy talking with Donna (Cultural Stadium) Tuesday. | ✅ FYI, Nov 1 |
+| 437 | Oct 25 | John to Judy (draft) | Draft reply on Gagan Saini writer application ("sounds like a commercial advertisement", recommend decline). Not sent. | ⏳ John to approve |
