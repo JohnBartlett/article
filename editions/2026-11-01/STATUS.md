@@ -21,7 +21,7 @@ _Started: 2026-10-25. Not prepped yet: no folder skeleton, nav chain or homepage
   - Photos: 5 .webp attachments (COVER PHOTO, PHOTO 1-4). Download through Chrome (the Gmail connector cannot return attachment bytes), keep the original names, convert to JPEG only if the browser or tooling needs it. COVER is the homepage card only. Photo 2's file is named "10.25.3036" (probably 2026); leave the name as is. Captions for photos 1-4 are in the text; photos 3 and 4 sit together after the staff paragraph.
   - Drake's bio is already in `about.html#drake-boehm`.
 - **Sig's Graham Foundation piece:** expect the Blast text by Wed Oct 28 and the article by Sat Oct 31 around 10 AM. Check for images, credits and captions before building; fetch the full MIME parts (mistake #54).
-- **Astrochart:** the Oct 25 Astrochart ends Nov 2. Nov 1 needs `daily-star-november`; email Victoria (`vconst@aol.com`) for the November forecast if it has not arrived. Copy the DateBook and Astrochart forward when the edition is prepped (mistakes #20-22).
+- **Astrochart:** the Oct 25 Astrochart ends Nov 2. Nov 1 needs `daily-star-november`; John emailed Victoria (`viccimartin@gmail.com`, cc Judy) on Oct 25 asking for it by Fri Oct 30 (`1a173c6dbfe676ed`); awaiting her reply. Copy the DateBook and Astrochart forward when the edition is prepped (mistakes #20-22).
 - **Judy and Donna (Cultural Stadium):** Judy talks with Donna on Tue Oct 27 and will write about future story possibilities.
 - **Lineup:** when Judy sends the Nov 1 lineup, diff it against every earlier lineup email and this list, and ask about gaps in one message.
 
