@@ -491,7 +491,7 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 ### Recurring email workflow
 
-Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions.
+Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions. A bare "Check" from John (Oct 25, 2026) means exactly this: check messages (texts) and emails.
 
 **Tooling, updated 2026-09-19:** prefer the native Gmail MCP (`mcp__claude_ai_Gmail__*` — `search_threads`, `get_thread`, `get_message`, `create_draft`/`get_draft`/`update_draft`, `reply`, `forward`, `send_message`) over `~/.claude/scripts/gmail_api.py` and Chrome for every Gmail operation in this project. `gmail_api.py`/`tools/extract_article_photos.py` remain necessary only for downloading attachment bytes, since the Gmail MCP connector cannot fetch attachment content. When checking `get_message`/`get_thread`, use a full-content format and check the actual MIME parts — a body-only fetch will miss real attachments (see mistake #54). Before sending any consolidated status/ask email, always show the drafted email in full (via `get_draft`) and cross-check it against STATUS.md's current Blockers list (see mistake #58) before the user approves sending. **Exception for sending:** any email that contains a link goes out via `~/.claude/scripts/gmail_api.py` `send_email` — Gmail MCP drafts rewrite links into `https://www.google.com/url?q=…` redirects, and that is what recipients receive. Show the exact text first as always; delete the MCP draft after sending. `send_email` always starts a new thread, so never describe a link-bearing email as a reply, and give it a subject that stands on its own.
 
