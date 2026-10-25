@@ -21,7 +21,7 @@ Order confirmed by Judy (`1a16e94269b3eab3`, Oct 24): "I like the current order.
 - **Susan's cover and photo 3.** Emma's "photo 3.jpg" (an HEIC file with a .jpg name, converted to JPEG) is the same picture as Judy's cover `IMG_0733.jpeg` (Fox in the iridescent costume). The text calls for the Madame Zara photo at that slot, so Madame Zara is missing. Emma's own "cover photo-.jpeg" (star antlers and veil) is a different picture and is not placed. Homepage card uses Judy's `IMG_0733.jpeg`. Asked Emma (cc Judy) about photo order; no answer yet.
 - **Susan's small photos.** Photos 2, 4, 5, 6, 7 are 450-600 px wide and are shown at their native width, not stretched.
 - **Typos fixed with Judy's OK** (Oct 24 reply): "Humbolt" to "Humboldt" (Brookfield, twice); David's "NFL,published" (space added) and "maneuvering, These" (period). Not changed, flagged: David's "novel idea; draft", "twentieth century" in Susan's piece (probably twenty-first), Sarah Spain answers "Billy Jean King", "GMS", "Evaluations of women's sports teams", "wanna".
-- **Photo placement** for David's Playbook photos and Jean's Nick Wilder photos was my call, as Judy asked.
+- **Photo placement** for David's Playbook photos (Playbook 1 first, then 2, as David listed) and Jean's Nick Wilder photos was my call, as Judy asked.
 - **Captions enlarged** (12px to 15px, darker grey) in `_template/article.html` and this edition only. Past editions untouched; ask Judy whether she wants them changed too.
 - **Susan's bio** updated in about.html from her Oct 24 docx.
 
