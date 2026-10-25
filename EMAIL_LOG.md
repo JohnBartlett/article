@@ -1529,3 +1529,11 @@ Texts (chat.db, magazine keywords since cutoff): none. Calls/voicemail: not read
 | 425 | Oct 24 | Judy `1a16e94269b3eab3` | Reply to my questions: keep the current order (Sarah Spain, Susan Aurinko, Brookfield Zoo, David Sweet, Chez Baillagou, Lausanne II, Colonomos). Milwaukee Avenue (Fabrizio) delayed; The Chicagoan Republished and Sig's piece go next week, so Oct 25 is the seven pieces. Unsure about Susan's photos ("should I check with Emma?"). Fine to run Brookfield Zoo photos without captions. David's and Nick's photos: put where they go best. "Humboldt penguins" is right (text and caption); "I would also correct David's too." | ⏳ apply: Humboldt fix, David's typos (confirm which), place photos; get Susan photo order from Emma |
 | 426 | Oct 24 | Annie `1a16e3f3f101d2b3` | To Judy, cc John: "double check that this was my only story for the week?" (Chez Baillagou thread) | ✅ no action needed from John (Annie's only piece this week is Chez Baillagou; DateBook aside) |
 | 427 | Oct 24 | John to Emma, cc Judy `1a16fe1eb422c24a` | Sent (John approved): asks whether Susan's second "Photo 2" is Photo 4, and whether the other photos run uncaptioned and where each goes. Answers Judy's "should I check with Emma?" (#425) | 🔁 awaiting Emma |
+
+### Check — 2026-10-24 (fourth check, branch dev2, cutoff epoch 1792878030; this check began epoch 1792889946)
+Texts (chat.db, magazine keywords): none. Calls/voicemail: not readable; ask John.
+
+| # | Date | From | Subject / content | Status |
+|---|------|------|-------------------|--------|
+| 428 | Oct 24 8:12 PM ET | Judy `1a170673dd58c7d6` | Reply to my Emma email: "Did you get an answer? Do you want me to text her? I will go to Susan's original email and send to you." Offers to text Susan about the photos and to forward Susan's original email | ⏳ reply to Judy (no answer from Emma yet) |
+| 429 | Oct 24 8:13 PM ET | Judy `1a17068008599e1d` | Fwd of Susan Aurinko's "Corrected bio with links - thank you!" (to Emma, cc Judy, 6:00 PM). Attachment `Classic Chicago bio.docx` (Susan's updated bio, with links) | ⏳ update Susan's bio in about.html (compare with current; links via #70 check) |
