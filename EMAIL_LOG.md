@@ -1610,3 +1610,10 @@ Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 453 | Oct 25 7:14 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Letter from Lausanne: Part I (Oct 18 edition). | ✅ tallied (editors branch update later) |
+
+### Check — 2026-10-26 (first check of the day, branch dev2, cutoff epoch 1792988361 for votes; lineup found at epoch 1793009087; this check began epoch 1793009989)
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
+
+| # | Date | From | Subject / content | Status |
+|---|---|---|---|---|
+| 454 | Oct 26 5:18 AM CT | Judy `1a177b8634a32ecd` (to Ana, John, Emma and `annie.b.breton@gmail.com`) | "Articles for November 1: First Draft", order not final: 1 Philip Vidal About the Town (Ana has it); 2 Drake Boehm neighborhood piece (John has); 3 The Chicagoan by Judy (Emma); 4 Chicago Cultural Stadium by Judy (Emma); 5 Pre-Breakthrough Ball by Judy (Annie); 6 This Day in History by Scott (Judy will get to John); 7 Sig on Graham Foundation (Sig will get to John); 8 Annie will add to DateBook. Reconciled against Nov 1 STATUS: Fabrizio's Milwaukee Avenue piece is not on this list (ask Judy); Astro-Chart not mentioned (Victoria due Fri). Annie is addressed at `annie.b.breton@gmail.com`, not her usual `aedelfosse1@gmail.com` (possible typo; she may not have received it). | ⏳ run /prep-edition for Nov 1; ask Judy about Fabrizio; flag Annie's address |
