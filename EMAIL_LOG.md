@@ -1617,3 +1617,11 @@ Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 454 | Oct 26 5:18 AM CT | Judy `1a177b8634a32ecd` (to Ana, John, Emma and `annie.b.breton@gmail.com`) | "Articles for November 1: First Draft", order not final: 1 Philip Vidal About the Town (Ana has it); 2 Drake Boehm neighborhood piece (John has); 3 The Chicagoan by Judy (Emma); 4 Chicago Cultural Stadium by Judy (Emma); 5 Pre-Breakthrough Ball by Judy (Annie); 6 This Day in History by Scott (Judy will get to John); 7 Sig on Graham Foundation (Sig will get to John); 8 Annie will add to DateBook. Reconciled against Nov 1 STATUS: Fabrizio's Milwaukee Avenue piece is not on this list (ask Judy); Astro-Chart not mentioned (Victoria due Fri). Annie is addressed at `annie.b.breton@gmail.com`, not her usual `aedelfosse1@gmail.com` (possible typo; she may not have received it). | ⏳ run /prep-edition for Nov 1; ask Judy about Fabrizio; flag Annie's address |
+
+### Check — 2026-10-29 (John asked about Libbet; Gmail search "Libbet newer_than:7d" found a message the sender filter had missed, check began epoch 1793301586)
+
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
+
+| # | Date | From | Subject / content | Status |
+|---|---|---|---|---|
+| 455 | Oct 29 11:37 AM CT | Libbet (Elizabeth Dunlop Richter, `erichter5453@gmail.com`) to Judy, John, Annie | "Help on photos" (`1a188860ce0de197`): asks how to send photos so they post well. She used to send a PDF, was then asked for originals, sent them a few at a time at higher resolution (up front on the Mexican Museum story), yet the story ran with fuzzy photos and nothing changed after Judy's email (#413). "The Mexican Museum was not happy, having seen my original photos in higher resolution." **Reply owed.** Her address was not in the check filter, so the Oct 25 quarter-hour checks could not see it; added from now on. | ⏳ awaiting John |
