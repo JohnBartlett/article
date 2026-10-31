@@ -121,11 +121,11 @@ python3 tools/content_audit.py YYYY-MM-DD
 
 `verify_edition.py` checks ACTUAL state: what has content, what has photos, what's placeholder.
 `edition_checks.py` checks dark-mode/nav-thumb CSS, about.html popups/bios, stale DateBook months.
-`content_audit.py` (added Sept 2026, dev2-only) covers 5 gaps the other two scripts miss: the
+`content_audit.py` (added Sept 2026, dev2-only; punctuation and spacing scan added Oct 31, 2026) covers 6 gaps the other two scripts miss: the
 DateBook page's own internal Astrochart link (mistake #20 — distinct from the homepage's link),
 stale past-date entries left in the Astrochart page (mistake #21), a dated homepage hero-meta
-(mistake #23), a photo duplicated as both hero and inline (mistake #30), and emoji in article
-content (mistake #34). None of these were part of any repeatable audit before — run this
+(mistake #23), a photo duplicated as both hero and inline (mistake #30), emoji in article
+content (mistake #34), and punctuation spacing and run-together words (a space before punctuation, a missing space after it, "asmayor"; it reports only and never fixes contributor text). None of these were part of any repeatable audit before — run this
 alongside the other two, not instead of them.
 
 ### Article Status Definitions
