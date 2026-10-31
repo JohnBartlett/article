@@ -1692,3 +1692,22 @@ Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable;
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 481 | Oct 31 9:57 AM | Libbet `erichter5453@gmail.com` `1a1927792fb25db3` | Reply in "Help on photos": "Thanks…" only; no attachments, no photos yet. | ✅ read; no reply needed; ⏳ still watching for her photos in the LIBBET folder |
+
+### Check — 2026-10-31 evening (date search after:2026/10/31 compared to internalDate; cutoff epoch 1793459815; this check began epoch 1793483828)
+Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable; ask John. Also logged below: Judy emails Oct 25-31 not logged earlier in the week.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 482 | Oct 31 11:50 AM | Judy `1a192de7b6ad62f0` | Reply to my Gagan Saini correction: "Yes I agree. Let's give him a chance. Please send this excellent letter below." Approves the invitation draft (read a draft; bio link to his own writing only). | ⏳ John to approve sending to press@jithomebuyers.com |
+| 483 | Oct 28 12:57 AM | Judy `1a1811833972ca41` | "I think you are right" on declining Gagan Saini (superseded by #482). | ✅ superseded |
+| 484 | Oct 26-30 | Judy `1a177b8634a32ecd`, `1a180e557f7b9dd6`, `1a18c523eadc92f3` | Nov 1 lineups: first draft (Oct 26), update (Oct 28: Cultural Stadium postponed to Nov 8, Ethan Cotton photo essay added), "Order of Stories" (Oct 30: Breakthrough Ball, Vidal, Chicagoan, Sig, Cotton, Scott, Drake; DateBook, maybe Astrocast). Judy defers to John on order. Milwaukee Avenue (Fabrizio) in none. | ⏳ reconcile (#75) |
+| 485 | Oct 28-29 | Judy `1a1845c4b5fa76ec`, `1a187242347b7c27` | Drake: Judy sends PHOTO 3 as "the right cover photo"; told Drake to fix Halloween references and send back to John. | ⏳ waiting for Drake's revision |
+| 486 | Oct 28 | Judy `1a181011edff500c`, `1a180e7a5e964a9e` | Scott Holleran This Date in History text + 4 images (Haley, Merriam, Washington, images.jpeg); cover unsure (suggests Merriam); Chicagoan cover photo. | ⏳ build; check HTML body for italics (#62) |
+| 487 | Oct 28-29 | Judy `1a187492b65f72a5`, `1a1820b4a285f6b6`, `1a1820c95c374abf` | Breakthrough Ball: edited docx, only 3 photos, no Jennifer Rhind photo (she will send), top photo Pauline Chow and Matthew Jacob, Jane and Teddy Chun anywhere. | ⏳ Annie builds text; photos |
+| 488 | Oct 29 / Oct 31 | Judy `1a1872a95686792d`, `1a191ea1193dea56` | Asks if she is behind on payment (UPS checks); Editor's Page idea wanted; travelling Sun-Thu (LA), reachable by phone. | ⏳ reply owed |
+| 489 | Oct 25 | Judy `1a17068008599e1d` | Susan Aurinko corrected bio with links (docx). | ⏳ confirm applied to about.html |
+| 490 | Oct 31 | Emma `1a1902051444551e` | Neil Harris / The Chicagoan, by Judy, 5 photos (Chicagoan 1-5.JPG). | ✅ already logged earlier as the Chicagoan item; ⏳ build |
+| 491 | Oct 31 4:26 PM | Sig `1a193a4cd202d5fb` | Graham Foundation article text "Grand Marquise" (pasted). | ⏳ build |
+| 492 | Oct 31 3:44-4:52 PM | Sig `1a193b4ee25a04b4`, `1a193bd69bf83ec1`, `1a193c4d56351489`, `1a193d0816a600a7`, `1a193d1d80cda280`, `1a193ec289400045`, `1a193f061ffb98c9`, `1a193f35f4fcde45` | Images 1-7 with credits, one per email (second "6" is really 7, per her note). | ⏳ attachments not yet pulled |
+| 493 | Oct 31 4:43 PM | Annie `1a193ead93ba5980` | Updated DateBook for Nov 1 (Nov 1 to Dec 12). | ⏳ build |
+| 494 | Oct 30-31 | FormSubmit | 3 Quick Votes (Yes) and 1 Reader Comment (signed Carol and John Eding, no email) on "A Closet Looking for a Home" (May 31 edition): "beautifully written and inspiring" and asks if the 43rd ward alderman's office has been contacted about a new space. | ⏳ editors branch tally; editorial note for Judy |
