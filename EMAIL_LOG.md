@@ -1707,3 +1707,12 @@ Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable;
 | 488 | Oct 31 | John to Judy `1a192de7b6ad62f0` (reply owed) | Judy approved inviting Gagan Saini's draft; letter to press@jithomebuyers.com not yet sent. Also owed to Judy: payment question, Editor's Page idea, lineup order. | ⏳ John to approve |
 | 489 | Oct 31 | John to Gagan Saini `press@jithomebuyers.com` | Invitation to send a draft of the bungalow floor-plan essay; bio link only to his own writing, not a company (Judy approved, #482). Sent with John's approval. Closes #488 for Gagan. | ✅ sent; ⏳ watch for his reply |
 | 490 | Oct 31 | John to Judy | "My new address for payment": John moved Wed Oct 28; asks Judy to use the new address; her Friday Oct 30 UPS checks went to the old address, John will collect them Monday. Sent with John's approval. Her "am I behind?" question, Editor's Page idea and lineup order are still unanswered. | ✅ sent; ⏳ other replies owed |
+
+### Check — 2026-10-31 evening (second; date search after:2026/10/31 compared to internalDate; cutoff epoch 1793483828; this check began epoch 1793488227)
+Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable; ask John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 491 | Oct 31 5:36 PM | Judy `1a1941b3e98171b9` | Reply to the dev2 review email: Drake edits fine; no Jennifer Rhind photo wanted; take out the Chicagoan "for further information" line; no caption needed for Scott's Tribune photo; no Fabrizio story this week (next week). | ✅ all already matched or applied |
+| 492 | Oct 31 5:39 PM | Judy `1a1941e8cdc33c7a` | Chicagoan page: "a gap between the night lights photo and the caption otherwise it all looks great." Measured: 8px, same as the other photos; black bottom edge of that cover makes it look larger. | ⏳ John to decide whether to tighten caption gaps |
+| 493 | Oct 31 5:47 PM | Sig `1a194254fb8de209` | "Credit and image 8 of 8": red Peruvian wool, `IMG_9324.jpeg` (601 px), credit "Photo: S. Zetouni". | ✅ added to the Graham article after the first installation view |
