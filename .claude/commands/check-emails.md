@@ -165,6 +165,8 @@ Then one ⏳ row per actionable email (message ID, sender, subject, one-line con
 
 Read texts yourself (CLAUDE.md #74: `chat.db`, magazine keywords only, since the cutoff) and log them without phone numbers. End the report to John with the cutoff used and: "Did anything arrive by phone call or voicemail since then? I read your texts."
 
+**Before adding any row,** grep its message ID in `EMAIL_LOG.md` (`grep -c <id> EMAIL_LOG.md`) and skip it if present. Take every time you quote from the message's `internalDate`, never from memory (CLAUDE.md #78).
+
 ## Step 3 — Update EMAIL_LOG.md
 
 After processing each email, update `EMAIL_LOG.md` at the repo root.

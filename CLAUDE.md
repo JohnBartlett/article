@@ -314,7 +314,7 @@ asked for it.
 # First time only
 python3 -m venv .venv
 source .venv/bin/activate
-pip install PyPDF2 requests
+pip install PyPDF2 requests beautifulsoup4 pillow
 
 # For future sessions, just activate
 source .venv/bin/activate
@@ -492,6 +492,8 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 76. **Never report "no reply" or "not received" from a keyword search or from STATUS.md.** `STATUS.md` and the log show only what was last processed. Before saying a person has not replied, or that something has not arrived, run `from:<sender> after:<date of my last message to them>` for each person involved and read every result, not only those matching the topic. This applies to "status" and carried-over-item checks as well as `/check-emails`. On Oct 31, 2026 keyword searches missed Judy's Oct 28 "I think you are right" on Gagan Saini, and a status built from `STATUS.md` said no Nov 1 lineup had arrived though she had sent two lineup drafts and "Order of Stories".
 
 77. **Read the source before drafting any reply about a submission.** For an application, pitch or article, open the original (form email, attachment or doc) before characterizing it in a reply, even when an editor has already given a verdict. Do not repeat that verdict in outgoing wording ("promotional," "an essay," "we enjoyed it") unless the source supports it; if a claim can't be verified, leave it out. On Oct 31, 2026 a decline to a writer applicant described a pitch as an advertisement and a piece; reading it showed neither was true.
+
+78. **State email facts from the record, not memory.** Before writing any send time, count, or "not logged / not received", read it from the message (`internalDate`) or from the log. Before adding a row to `EMAIL_LOG.md`, run `grep -c <message-id> EMAIL_LOG.md`, and read every log entry since the last published edition, not only the latest header. On Oct 31, 2026 a send time was written from memory, about 13 log entries were duplicated, and Victoria's Oct 30 Astrochart and Judy's Oct 28 and Oct 30 lineups were reported as missing when they were already logged.
 
 ### Recurring email workflow
 
