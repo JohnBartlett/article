@@ -1685,3 +1685,10 @@ Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 480 | Oct 31 8:52 AM | Judy `1a1923bba84887ff` to John, Cc Libbet and Annie D. (`aedelfosse1@gmail.com`) | Reply in "Help on photos": thanks John for the update and "this fine recommendation." Says she **mistakenly used the address of the wrong Annie** on her lineup emails and has written to "Annie Breton" to say so. So `annie.b.breton@gmail.com` (and `anniebbreton@gmail.com`) is NOT Annie Delfosse; Annie D. is `aedelfosse1@gmail.com`. That means #454 and #462 (Judy's lineups) never reached Annie D. through that address, and John's #456 reply to Libbet was Cc'd to that other person. Correct Annie address: `aedelfosse1@gmail.com`. Remove `annie.b.breton@gmail.com` from the check filter. | ✅ read; no reply needed; correct the Cc list on future mail |
+
+### Check — 2026-10-31 10:17 AM CT (date search after:2026/10/30 plus wide newer_than:2d; cutoff epoch 1793455486; this check began epoch 1793459815)
+Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable; ask John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 481 | Oct 31 9:57 AM | Libbet `erichter5453@gmail.com` `1a1927792fb25db3` | Reply in "Help on photos": "Thanks…" only; no attachments, no photos yet. | ✅ read; no reply needed; ⏳ still watching for her photos in the LIBBET folder |
