@@ -1664,3 +1664,10 @@ Texts: not re-queried for this entry. Calls/voicemail: not readable; ask John.
 | 475 | Oct 30 11:03 PM | Emma `1a1902051444551e` to John, Judy | "Neil Harris: Bringing Chicago's Jazz Age to Life- 11/1/26" (The Chicagoan), by Judy; 5 photos (`Chicagoan 2.JPG`, `Chicagoan 5.JPG`, `Chicago 1.JPG`, `Chicagoan 3.JPG`, `Chicagoan 4.JPG`), captions in text; ends "For more information about The Chicagoan, visit:" with no link; typos for the editor: "helpedformulate", "San Francesco". | ⏳ build; flag the missing link and typos |
 | 476 | Oct 31 2:48 AM | Annie `1a190ee4c6ae94af` to John, Judy | "Breakthrough Ball Preview" by Judy Carmack Bross for Nov 1; two photos (`1-Pauline and Matthew.jpeg`, `2-Jane and Teddy.jpeg`), captions in text. Judy's message #468 says three photos exist (cover `BB_2025_367 2.jpeg`). | ⏳ build |
 | 477 | Oct 31 12:21 AM | FormSubmit `1a19067be47e1057` to `subscribe@2ccmag.com` | "Action Required: Activate FormSubmit" for the subscribe form. The form was activated Jul 13; an activation request now is unexpected. Not clicked. | ⏳ John to decide |
+
+### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793448285; this check began epoch 1793449186)
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 478 | Oct 31 7:15 AM | FormSubmit vote (prod) | Quick Vote Yes: A Closet Looking for a Home (May 31 edition). | ✅ tallied later |
