@@ -1671,3 +1671,10 @@ Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 478 | Oct 31 7:15 AM | FormSubmit vote (prod) | Quick Vote Yes: A Closet Looking for a Home (May 31 edition). | ✅ tallied later |
+
+### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793449186; this check began epoch 1793450085)
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 479 | Oct 31 7:23 AM | Judy `1a191ea1193dea56` to John | "Checking in": "it looks like you have all the articles. Let me know if you are missing anything. Please change anything in the lineup that you think would look better in another order." UPSed checks yesterday and asks John to say if she is still behind (arrive Monday). Leaving tomorrow (Sun Nov 1) for LA to see a family member. Offers help. Not true that everything is in: Sig's Graham article, Drake's revision, Annie's DateBook and the Chicagoan cover are still missing. | ⏳ **reply owed** (money question #467 plus missing items and lineup OK) |
