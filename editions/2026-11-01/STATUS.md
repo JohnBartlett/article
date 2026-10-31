@@ -29,17 +29,17 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- **Drake Boehm** — revised text with the Halloween references changed and "Classic Chicago" in the first reference (Judy asked him Oct 29). Not received; the article is built from his original text.
+- **Drake Boehm** — revised text (Judy asked him Oct 29). Not received; John approved applying Judy's two edits ourselves (Oct 31), done on the build.
 - **Judy** — Jennifer Rhind photo for the Breakthrough Ball ("I will send photos"). Not received.
-- **Emma / Judy** — the link for "For more information about The Chicagoan, visit:" (the sentence ends with no link).
+- **Emma / Judy** — the closing line "For more information about The Chicagoan, visit:" had no link. John: leave it out; check with Judy whether she has a link to add.
 
 ## Blockers
 
-- **Drake's text.** Built verbatim from his Oct 25 email. If his revision does not arrive, decide whether Judy's two edits (first-paragraph Halloween sentence; "Classics Chicago" to "Classic Chicago") are made by us. Also flag: a paragraph breaks off mid-sentence ("Many enthusiastically participate in the") and is followed by a near-repeat; "Tommy-Gun's" vs "Tommy Gun's"; the Oct 30 "Spookeasy" show is already past.
-- **Sig's title.** Her heading is "Grand Marquise"; Judy's lineup says only "Sig on Graham Foundation." Built under Sig's title. Confirm with Sig or Judy (mistake #61).
+- **Drake's text.** Judy's edits applied (Oct 31, John's OK): the first-paragraph Halloween sentence removed and "Classics Chicago" changed to "Classic Chicago" in the first reference. Still to check: the dek's "As the end of October nears"; the Q&A mention of the Oct 30 "Spookeasy" show, now past; a paragraph that breaks off mid-sentence ("Many enthusiastically participate in the") followed by a near-repeat; "Tommy-Gun's" vs "Tommy Gun's".
+- **Sig's title.** "Grand Marquise" confirmed by John.
 - **Sig's photo placement.** She gave credits for images 1 to 7 but no placement. Placed by subject: park view and Niemeyer portrait after the first paragraph, Marquise view after the Marquise paragraph, installation views after the Latinitudes paragraphs, library books last. Card image is installation view `20260522_GF_0007.JPG`.
 - **Scott's article.** Verbatim; typos flagged, not fixed: "Jane Skinner Sawyer" (once) vs "June Skinner Sawyer"; "Federation'sdissolution"; "asmayor"; "to to teach"; "Brittanica"; caption "fro the Chicago Public Library Collection". The Chicago Tribune front page (Nov 26, 1987) has no caption; Judy's note "I don't know if this headline works because of its size" may refer to it. Cover chosen: Merriam, per Judy's suggestion.
-- **Emma's Chicagoan text.** Typos flagged, not fixed: "helpedformulate", "San Francesco".
+- **Emma's Chicagoan text.** Typos fixed with John's OK: "helpedformulate" to "helped formulate", "San Francesco" to "San Francisco". The closing "visit:" line is left out (no link).
 - **Breakthrough Ball photos.** Cover (card) is `BB_2025_367 2.jpeg` and the top-of-page photo is Pauline Chow and Matthew Jacob, per Judy's docx. The close-up of Jane and Teddy Chun in the body is `BB_2025_344.jpeg`; Annie's email had put the cover file there.
 - **Gagan Saini.** Judy agreed (Oct 31) to invite a draft. John to approve sending the letter to press@jithomebuyers.com.
 
