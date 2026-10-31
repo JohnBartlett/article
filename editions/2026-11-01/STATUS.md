@@ -1,33 +1,65 @@
 # November 1, 2026 Edition — Status
 
-_Started: 2026-10-25. Not prepped yet: no folder skeleton, nav chain or homepage shell. Run `/prep-edition` when Judy sends the November 1 lineup, and reconcile every lineup email first (CLAUDE.md #75)._
+_Updated: 2026-10-31 (evening)_
 
-## Known so far (from Judy's emails of Oct 24-25)
+All seven articles, the DateBook and the November Astrochart are built and verified on dev2. Open items below are editorial questions, not missing files, except Drake's revised text and Jennifer Rhind's photo.
 
-| Piece | Author | Source | Status |
-|---|---|---|---|
-| Jefferson Park Dinner-Theater Prepares for Holiday Events (Vito's Vault) | Drake Boehm | `1a17177ea4f2b7ac` (Oct 25, to John, cc Judy); Judy's reply `1a17316a1783c5cb` | Judy: "definitely run this next Sunday." Text and 5 photos in hand; not built. See To Do. |
-| Graham Foundation "Latinitudes" exhibition (article plus a short Blast text) | Sigalit Zetouni | Sig `1a16df71deb4ce56` (Oct 24); Judy's OK `1a1729c44b3ad8fd` | Blast text, image and credit due Wed Oct 28. Article text, images and credits due Sat Oct 31 about 10 AM. |
-| The Chicagoan Republished | (per Judy) | Judy `1a16e94269b3eab3` (Oct 24) | Moved from Oct 25 to Nov 1. |
-| Milwaukee Avenue | Fabrizio | Judy `1a16e94269b3eab3` (Oct 24) | Delayed; Nov 1 or later. |
+## Judy's official lineup (`1a18c523eadc92f3`, received 2026-10-30; she defers to John on order)
 
-## To Do
+Nav chain order (hero → last):
+1. `breakthrough-ball-preview` — Breakthrough Ball Preview by Judy Carmack Bross
+2. `about-the-town-november` — About the Town in November by Philip Vidal
+3. `neil-harris-chicagoan` — Neil Harris: Bringing Chicago's Jazz Age to Life by Judy Carmack Bross
+4. `graham-foundation-latinitudes` — Grand Marquise by Sigalit Zetouni
+5. `lost-in-the-right-direction` — Lost in the Right Direction by Ethan Cotton
+6. `this-day-in-history` — This Date in History by Scott Holleran
+7. `vitos-vault` — Jefferson Park Dinner-Theater Prepares for Holiday Events by Drake Boehm
 
-- **Drake Boehm article (Judy's edits):**
-  - Remove or adapt the sentence about Halloween in the first paragraph, since it now runs the Sunday after. Judy gave the instruction to Drake; confirm who changes the text before touching it (contributor text is verbatim).
-  - Use "Classic Chicago" in the first reference to the magazine. Drake wrote "Classics Chicago" in the Q&A.
-  - Judy: "I will re-read and John, make any suggestions." John to send suggestions.
-  - Flag to Judy: one paragraph breaks off mid-sentence ("Many enthusiastically participate in the") and is followed by a near-repeat ("Although the event has passed..."); "Tommy-Gun's" vs "Tommy Gun's"; the Oct 30 "Spookeasy" show will be past by Nov 1.
-  - Photos: 5 .webp attachments (COVER PHOTO, PHOTO 1-4). Download through Chrome (the Gmail connector cannot return attachment bytes), keep the original names, convert to JPEG only if the browser or tooling needs it. COVER is the homepage card only. Photo 2's file is named "10.25.3036" (probably 2026); leave the name as is. Captions for photos 1-4 are in the text; photos 3 and 4 sit together after the staff paragraph.
-  - Drake's bio is already in `about.html#drake-boehm`.
-- **Sig's Graham Foundation piece:** expect the Blast text by Wed Oct 28 and the article by Sat Oct 31 around 10 AM. Check for images, credits and captions before building; fetch the full MIME parts (mistake #54).
-- **Astrochart:** the Oct 25 Astrochart ends Nov 2. Nov 1 needs `daily-star-november`; John emailed Victoria (`viccimartin@gmail.com`, cc Judy) on Oct 25 asking for it by Fri Oct 30 (`1a173c6dbfe676ed`); awaiting her reply. Copy the DateBook and Astrochart forward when the edition is prepped (mistakes #20-22).
-- **Judy and Donna (Cultural Stadium):** Judy talks with Donna on Tue Oct 27 and will write about future story possibilities.
-- **Lineup:** when Judy sends the Nov 1 lineup, diff it against every earlier lineup email and this list, and ask about gaps in one message.
+## Lineup
 
-## Carried over from Oct 25
+| Order | Slug | Title | Author | Coordinator |
+|---|---|---|---|---|
+| 1 | breakthrough-ball-preview | Breakthrough Ball Preview | Judy Carmack Bross | Annie (text); Judy (docx, photos) |
+| 2 | about-the-town-november | About the Town in November | Philip Vidal | Ana |
+| 3 | neil-harris-chicagoan | Neil Harris: Bringing Chicago's Jazz Age to Life | Judy Carmack Bross | Emma |
+| 4 | graham-foundation-latinitudes | Grand Marquise | Sigalit Zetouni | Sig to John |
+| 5 | lost-in-the-right-direction | Lost in the Right Direction | Ethan Cotton | Ana |
+| 6 | this-day-in-history | This Date in History | Scott Holleran | Judy to John |
+| 7 | vitos-vault | Jefferson Park Dinner-Theater Prepares for Holiday Events | Drake Boehm | Drake to John, Judy |
 
-- Susan Aurinko's Madame Zara photo is still missing; Judy has not sent Susan's original. If it arrives, add it to the live Oct 25 article at the "photo 3" slot.
-- Gagan Saini writer application: John told Judy he recommends declining (Oct 25). Awaiting Judy.
-- Marcy Carmack's article ideas: set aside by John.
-- Reader votes and comments for Oct 18 and Oct 25 still to be added to `reader-comments.html` on the `editors` branch.
+## Pending Deliveries
+
+- **Drake Boehm** — revised text with the Halloween references changed and "Classic Chicago" in the first reference (Judy asked him Oct 29). Not received; the article is built from his original text.
+- **Judy** — Jennifer Rhind photo for the Breakthrough Ball ("I will send photos"). Not received.
+- **Emma / Judy** — the link for "For more information about The Chicagoan, visit:" (the sentence ends with no link).
+
+## Blockers
+
+- **Drake's text.** Built verbatim from his Oct 25 email. If his revision does not arrive, decide whether Judy's two edits (first-paragraph Halloween sentence; "Classics Chicago" to "Classic Chicago") are made by us. Also flag: a paragraph breaks off mid-sentence ("Many enthusiastically participate in the") and is followed by a near-repeat; "Tommy-Gun's" vs "Tommy Gun's"; the Oct 30 "Spookeasy" show is already past.
+- **Sig's title.** Her heading is "Grand Marquise"; Judy's lineup says only "Sig on Graham Foundation." Built under Sig's title. Confirm with Sig or Judy (mistake #61).
+- **Sig's photo placement.** She gave credits for images 1 to 7 but no placement. Placed by subject: park view and Niemeyer portrait after the first paragraph, Marquise view after the Marquise paragraph, installation views after the Latinitudes paragraphs, library books last. Card image is installation view `20260522_GF_0007.JPG`.
+- **Scott's article.** Verbatim; typos flagged, not fixed: "Jane Skinner Sawyer" (once) vs "June Skinner Sawyer"; "Federation'sdissolution"; "asmayor"; "to to teach"; "Brittanica"; caption "fro the Chicago Public Library Collection". The Chicago Tribune front page (Nov 26, 1987) has no caption; Judy's note "I don't know if this headline works because of its size" may refer to it. Cover chosen: Merriam, per Judy's suggestion.
+- **Emma's Chicagoan text.** Typos flagged, not fixed: "helpedformulate", "San Francesco".
+- **Breakthrough Ball photos.** Cover (card) is `BB_2025_367 2.jpeg` and the top-of-page photo is Pauline Chow and Matthew Jacob, per Judy's docx. The close-up of Jane and Teddy Chun in the body is `BB_2025_344.jpeg`; Annie's email had put the cover file there.
+- **Gagan Saini.** Judy agreed (Oct 31) to invite a draft. John to approve sending the letter to press@jithomebuyers.com.
+
+## Articles
+
+| Slug | Title | Author | HTML | Photos | Notes |
+|------|-------|--------|------|--------|-------|
+| breakthrough-ball-preview | Breakthrough Ball Preview | Judy Carmack Bross | Built | 2 in body, 1 card | Judy's EDITED docx (`1a187492b65f72a5`); photos `1a1820c95c374abf`, `1a1820b4a285f6b6`, `1a1874d9017909a6` |
+| about-the-town-november | About the Town in November | Philip Vidal | Built | 7 in body, 1 card | `1a18e7cb07b47a97`; 31 of 31 inline links kept; photos 5-7 from Drive; `6 Home Darling.jpg` (27 MB) and cover compressed; "7 Lightscape.jpg" is the real filename, the email's marker says "Lightscapes" |
+| neil-harris-chicagoan | Neil Harris: Bringing Chicago's Jazz Age to Life | Judy Carmack Bross | Built | 5 in body, 1 card | Emma `1a1902051444551e`; cover `1a180e7a5e964a9e`; photos matched by number and checked by image |
+| graham-foundation-latinitudes | Grand Marquise | Sigalit Zetouni | Built | 7 in body | Text `1a193a4cd202d5fb`; images 1-7 `1a193b4ee25a04b4` to `1a193f061ffb98c9`; Vimeo link kept; broken lines in her email joined |
+| lost-in-the-right-direction | Lost in the Right Direction | Ethan Cotton | Built | 11 in body, 1 card | Ana `1a188f53a5143766`; no captions supplied, none added; Mary Oliver poem included |
+| this-day-in-history | This Date in History | Scott Holleran | Built | 4 in body | Judy `1a181011edff500c` |
+| vitos-vault | Jefferson Park Dinner-Theater Prepares for Holiday Events | Drake Boehm | Built | 4 in body, 1 card | Drake `1a17177ea4f2b7ac`; card is Judy's PHOTO 3 JPEG (`1a1845c4b5fa76ec`) |
+| datebook | DateBook | Annie Delfosse | Built | — | Annie `1a193ead93ba5980`, a full replacement of the list (21 events); Guarneri Hall entry has no title in her email, shown as "Revolutions" from her text |
+| daily-star-november | Astrochart | Victoria Martin | Built | — | `1a18e6c58e20d936`; word-diff against the docx is clean; runs Nov 1 to Dec 5 |
+
+## Notes
+
+- Nav chain order (hero → last): breakthrough-ball-preview, about-the-town-november, neil-harris-chicagoan, graham-foundation-latinitudes, lost-in-the-right-direction, this-day-in-history, vitos-vault.
+- Sig's Blast text and image (Oct 28, `1a1855089d0d071f`, `1a1855e215cd242b`, `1a18563f54d0831d`) were not used on this build; confirm where Blast items run.
+- Judy's Oct 31 note asks John to reply on the lineup, the payment question and an Editor's Page idea; she is away Nov 1 to Nov 5.
+- Annie's address is `aedelfosse1@gmail.com`; Judy's lineup emails went to a different Annie.
