@@ -208,6 +208,9 @@ git commit -m "Check emails: [summary of what changed — votes logged, bio upda
 git push origin dev2
 ```
 
+## Step 6 — Close open "awaiting" items (CLAUDE.md #76, #77)
+Before ending a check, list every "awaiting X" item in the current `STATUS.md` and the latest `EMAIL_LOG.md` entries. For each X, run `from:<X> after:<date of my last message to them>` and mark the item answered or still open from what the search returns. Add a row to `EMAIL_LOG.md` for every email sent or reply received during the session and commit that file alone. Read the original submission before drafting any reply about it.
+
 ## Key conventions
 - Always work on dev2 — never commit to dev or master
 - GA4 disabled in all new article HTML

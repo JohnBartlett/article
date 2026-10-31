@@ -489,6 +489,10 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 75. **Reconcile every lineup email before prepping or writing to Judy.** Search `subject:"Line up"` (and her "tentative order" emails) from Judy since the last edition published. List every article that appears in one lineup but not the other and ask about the gaps in the same message. Do not ask Judy for facts an earlier lineup already answered (coordinators, authors).
 
+76. **Never report "no reply" or "not received" from a keyword search or from STATUS.md.** `STATUS.md` and the log show only what was last processed. Before saying a person has not replied, or that something has not arrived, run `from:<sender> after:<date of my last message to them>` for each person involved and read every result, not only those matching the topic. This applies to "status" and carried-over-item checks as well as `/check-emails`. On Oct 31, 2026 keyword searches missed Judy's Oct 28 "I think you are right" on Gagan Saini, and a status built from `STATUS.md` said no Nov 1 lineup had arrived though she had sent two lineup drafts and "Order of Stories".
+
+77. **Read the source before drafting any reply about a submission.** For an application, pitch or article, open the original (form email, attachment or doc) before characterizing it in a reply, even when an editor has already given a verdict. Do not repeat that verdict in outgoing wording ("promotional," "an essay," "we enjoyed it") unless the source supports it; if a claim can't be verified, leave it out. On Oct 31, 2026 a decline to a writer applicant described a pitch as an advertisement and a piece; reading it showed neither was true.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions. A bare "Check" from John (Oct 25, 2026) means exactly this: check messages (texts) and emails.
