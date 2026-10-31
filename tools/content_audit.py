@@ -3,7 +3,7 @@
 tools/content_audit.py — Automated content-fidelity checks not covered by
 verify_edition.py or edition_checks.py.
 
-Covers 5 gaps identified in a Sept 2026 audit review against CLAUDE.md's
+Covers 6 gaps identified in a Sept 2026 audit review against CLAUDE.md's
 recorded mistakes list:
   - #20: DateBook page's own internal Astrochart link (distinct from the
     homepage's link, which verify_edition.py / grep already covers)
@@ -12,6 +12,7 @@ recorded mistakes list:
   - #23: homepage hero-meta must be author-only, no date
   - #30: same photo used as both a hero figure and duplicated inline
   - #34: no emojis anywhere in article content
+  - spacing: punctuation spacing and run-together words (added Oct 31, 2026)
   - #60: stale "Coming in the [date] edition" placeholder teaser left on a
     homepage card/hero after the linked article was actually built and made
     Ready
@@ -303,6 +304,118 @@ def check_writer_retrospective_nav():
         print("  ✓ clean — every retrospective article has correct prev/next nav")
 
 
+# ---------------------------------------------------------------------------
+# Punctuation / spacing scan (added Oct 31, 2026)
+# ---------------------------------------------------------------------------
+# Flags visible spacing slips left by copying contributor text: a space before
+# punctuation, a missing space after it, spaces inside brackets or quotes, and
+# words run together ("asmayor", "Federation'sdissolution"). It only reports;
+# contributor text is verbatim, so fix with the editor's OK (mistake #3, #18).
+# Double spaces are counted but not listed: browsers collapse them, so readers
+# never see them.
+SPACING_PATTERNS = [
+    ("space before , . ; : ! ?", r"(?<=\S) +[,.;:!?](?=\s|$|[\u201d\"\u2019)])"),
+    ("no space after , ; :", r"[,;:](?=[A-Za-z\u201c\u2018(])"),
+    ("no space after sentence period",
+     r"(?<![A-Z.\d])(?<!\bSt)(?<!\bDr)(?<!\bMr)(?<!\bMrs)(?<!\bMs)(?<!\bNo)(?<!\bvs)(?<!\bJr)(?<!\bSr)"
+     r"(?<!\bInc)(?<!\bCo)\.(?=[A-Z\u201c\"\u2018][a-z])"),
+    ("no space after ? or !", r"[?!](?=[A-Za-z])"),
+    ("closing quote then letter", r"\u201d(?=[A-Za-z])"),
+    ("letter then opening quote or bracket", r"[a-z](?=[\u201c(])"),
+    ("space after ( or before )", r"\( | \)"),
+    ("space inside curly quotes", r"\u201c +| +\u201d"),
+    ("word run together after 's", r"[a-z][\u2019']s[a-z]{5,}"),
+]
+_DICT = None
+
+
+def _dictionary():
+    global _DICT
+    if _DICT is None:
+        try:
+            _DICT = {w.strip().lower() for w in open("/usr/share/dict/words", encoding="utf-8", errors="ignore")}
+        except OSError:
+            _DICT = set()
+    return _DICT
+
+
+_RUN_ON_ALLOW = {"troubleshooting", "spokesperson", "onsite", "withdrew"}
+_GLUED = re.compile(r"\b(isa|ofa|ofthe|inthe|tothe|onthe|atthe|andthe|forthe|asthe|bythe)\b")
+_FUNCTION_WORDS = ("as", "is", "of", "to", "in", "on", "at", "by", "or", "an", "so", "it", "he", "we", "if",
+                   "the", "and", "but", "for", "with", "from", "was", "are", "has", "had", "his", "her")
+
+
+def _word_ok(w, words):
+    """True if w, or w without a common inflection, is a dictionary word."""
+    if w in words:
+        return True
+    for suf, add in (("ing", ""), ("ing", "e"), ("ed", ""), ("ed", "e"), ("es", ""), ("s", ""), ("ies", "y"), ("ly", ""), ("er", ""), ("ers", "")):
+        if w.endswith(suf) and len(w) > len(suf) + 2 and (w[:-len(suf)] + add) in words:
+            return True
+    return False
+
+
+def _possible_run_ons(text):
+    """Lowercase words 6+ letters that are not words but split into (function word or inflected word) + word."""
+    words = _dictionary()
+    if not words:
+        return []
+    out = []
+    for w in set(re.findall(r"\b[a-z]{6,}\b", text)):
+        if w in _RUN_ON_ALLOW or _word_ok(w, words):
+            continue
+        for i in range(2, len(w) - 3):
+            a, b = w[:i], w[i:]
+            if len(b) < 4 or not _word_ok(b, words):
+                continue
+            if a in _FUNCTION_WORDS or (len(a) >= 4 and (a.endswith("ed") or a.endswith("s")) and _word_ok(a, words)):
+                out.append((w, a, b))
+                break
+    for mm in _GLUED.finditer(text):
+        out.append((mm.group(0), mm.group(0), "(two short words run together)"))
+    return out
+
+
+def check_punctuation_spacing(edition_dir):
+    print("\n--- Punctuation and spacing scan ---")
+    import html as _html
+    problems = False
+    double = 0
+    for name in sorted(os.listdir(edition_dir)):
+        path = os.path.join(edition_dir, name, "index.html")
+        if not os.path.isfile(path):
+            continue
+        h = open(path, encoding="utf-8", errors="ignore").read()
+        if name.startswith("datebook"):
+            m = re.search(r'<div class="datebook-body">(.*?)<!-- /datebook-body', h, re.S)
+        elif name.startswith("daily-star"):
+            m = re.search(r'(<section class="astro-day".*</section>)', h, re.S)
+        else:
+            m = re.search(r'<div class="article-body">(.*?)<!-- end article-body', h, re.S)
+        if not m:
+            continue
+        body = re.sub(r"</(p|h2|figcaption|li|div)>|<br\s*/?>", "\n", m.group(1))
+        text = _html.unescape(re.sub(r"<[^>]+>", "", body))
+        text = re.sub(r"https?://\S+", "URL", text)
+        double += len(re.findall(r"(?<=\S)  +(?=\S)", text))
+        hits = []
+        for label, pat in SPACING_PATTERNS:
+            for mm in re.finditer(pat, text):
+                ctx = text[max(0, mm.start() - 30):mm.end() + 30].replace("\n", " / ")
+                hits.append((label, ctx))
+        for w, a, b in _possible_run_ons(text):
+            hits.append(("possible run-on", f"{w} ({a} + {b})"))
+        if hits:
+            problems = True
+            print(f"  ⚠ {name}: {len(hits)} to look at")
+            for label, ctx in hits[:12]:
+                print(f"      {label}: ...{ctx}...")
+    if not problems:
+        print("  ✓ clean — no spacing or run-together problems found")
+    if double:
+        print(f"  (note: {double} double spaces in the source text; invisible in browsers, not listed)")
+
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 tools/content_audit.py YYYY-MM-DD")
@@ -322,6 +435,7 @@ def main():
     check_homepage_stale_teasers(edition_date)
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
+    check_punctuation_spacing(edition_dir)
     check_writer_retrospective_nav()
 
     print("\n" + "=" * 80)

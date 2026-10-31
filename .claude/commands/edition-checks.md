@@ -29,6 +29,14 @@ git ls-files --stage | grep "^160000"
 ```
 No output = clean. If any: `git rm --cached <folder>` and commit.
 
+**Content audit, including the punctuation and spacing scan:**
+```bash
+python3 tools/content_audit.py YYYY-MM-DD
+```
+The spacing scan lists a space before punctuation, a missing space after it, spaces inside quotes or brackets, and
+words run together ("asmayor", "isa", "Federation'sdissolution"). It only reports. Contributor text is verbatim, so show
+the list to John and fix with his OK (mistakes #3, #18). Double spaces are counted but not listed; browsers collapse them.
+
 ## Step 2 — Run automated fixes
 
 ```bash
@@ -152,6 +160,7 @@ Return the Vercel preview URL to the user.
 
 - [ ] `python3 tools/edition_checks.py` ran clean
 - [ ] `python3 tools/verify_edition.py YYYY-MM-DD` — no structural issues, no oversized images
+- [ ] `python3 tools/content_audit.py YYYY-MM-DD` — clean, including the punctuation and spacing scan (flags shown to John before any fix)
 - [ ] DateBook link in `index.html` points to current edition
 - [ ] DateBook has no stale past-month sections (checked by `edition_checks.py`, `stale_datebook_months`)
 - [ ] DateBook Astrochart nav link inside `datebook/index.html` itself points to the current month's `daily-star-MONTH` folder, not a stale one
