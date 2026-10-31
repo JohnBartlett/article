@@ -1678,3 +1678,10 @@ Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 479 | Oct 31 7:23 AM | Judy `1a191ea1193dea56` to John | "Checking in": "it looks like you have all the articles. Let me know if you are missing anything. Please change anything in the lineup that you think would look better in another order." UPSed checks yesterday and asks John to say if she is still behind (arrive Monday). Leaving tomorrow (Sun Nov 1) for LA to see a family member. Offers help. Not true that everything is in: Sig's Graham article, Drake's revision, Annie's DateBook and the Chicagoan cover are still missing. | ⏳ **reply owed** (money question #467 plus missing items and lineup OK) |
+
+### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793454585; this check began epoch 1793455486)
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 480 | Oct 31 8:52 AM | Judy `1a1923bba84887ff` to John, Cc Libbet and Annie D. (`aedelfosse1@gmail.com`) | Reply in "Help on photos": thanks John for the update and "this fine recommendation." Says she **mistakenly used the address of the wrong Annie** on her lineup emails and has written to "Annie Breton" to say so. So `annie.b.breton@gmail.com` (and `anniebbreton@gmail.com`) is NOT Annie Delfosse; Annie D. is `aedelfosse1@gmail.com`. That means #454 and #462 (Judy's lineups) never reached Annie D. through that address, and John's #456 reply to Libbet was Cc'd to that other person. Correct Annie address: `aedelfosse1@gmail.com`. Remove `annie.b.breton@gmail.com` from the check filter. | ✅ read; no reply needed; correct the Cc list on future mail |
