@@ -15,6 +15,7 @@ recorded mistakes list:
   - byline links to about.html cards (added Oct 31, 2026)
   - root pages' DateBook/Astrochart nav links (added Oct 31, 2026)
   - spacing: punctuation spacing and run-together words (added Oct 31, 2026)
+  - #80: a photo left uncaptioned in an article where most photos have captions (added Nov 1, 2026)
   - #60: stale "Coming in the [date] edition" placeholder teaser left on a
     homepage card/hero after the linked article was actually built and made
     Ready
@@ -471,6 +472,32 @@ def check_bylines(article_dirs):
         print(f"  \u2713 clean \u2014 all {len(article_dirs)} bylines link to a matching about.html card")
 
 
+def check_uncaptioned_figures(article_dirs):
+    """Flag a body photo with no caption when most of the article's photos have one (added Nov 1, 2026).
+
+    Libbet's Oct 18 Mexican Art Museum article went live with photo 3 uncaptioned because its
+    caption was never sent; nothing noticed until she did. Articles with no captions by design
+    (e.g. Lost in the Right Direction) stay quiet because fewer than half their photos are captioned.
+    """
+    print("\n--- Uncaptioned photos (mistake #80) ---")
+    found_any = False
+    for d in article_dirs:
+        h = open(os.path.join(d, "index.html"), encoding="utf-8", errors="ignore").read()
+        h = re.sub(r"<!--.*?-->", "", h, flags=re.S)
+        figs = re.findall(r"<figure\b.*?</figure>", h, re.S)
+        figs = [f for f in figs if "<img" in f]
+        captioned = [f for f in figs if re.search(r"<figcaption>\s*\S", f)]
+        if len(figs) < 3 or len(captioned) * 2 < len(figs):
+            continue
+        for f in figs:
+            if f not in captioned:
+                found_any = True
+                src = re.search(r'<img[^>]*src="([^"]+)"', f).group(1)
+                print(f"  ⚠ {d}: {src} has no caption ({len(captioned)} of {len(figs)} photos captioned)")
+    if not found_any:
+        print("  ✓ clean — no lone uncaptioned photo in a captioned article")
+
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 tools/content_audit.py YYYY-MM-DD")
@@ -491,6 +518,7 @@ def main():
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
     check_bylines(dirs)
+    check_uncaptioned_figures(dirs)
     check_punctuation_spacing(edition_dir)
     check_root_page_nav_links(edition_date)
     check_writer_retrospective_nav()
