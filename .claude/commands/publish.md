@@ -91,19 +91,13 @@ send_email(token,
     cc='muhlemane2@gmail.com, aedelfosse1@gmail.com, anabaca8@gmail.com')
 ```
 
-## Step 5 — Switch back to dev2 and update editors pages
+## Step 5 — Switch back to dev2
 
 ```bash
-git checkout dev2
+git checkout dev2   # not needed when you worked in a temporary worktree
 ```
 
-**`editors/index.html`:**
-- Edition tag: "Published"
-- Add production URL (`https://chicagoclassicmag.com`) to Quick Links
-- Decisions Needed: add "Published [date] at [time]"
-- Archive current reader votes as a dated paragraph (so tallies are preserved before next edition resets)
-
-Commit and push to dev2.
+`editors/index.html` no longer exists (removed Jun 22, 2026; CLAUDE.md mistake #13), so there is nothing else to update. Log the publication in `EMAIL_LOG.md`.
 
 ## Step 6 — Confirm deployment
 
@@ -117,7 +111,7 @@ Note: Cloudflare may take 1–2 minutes to propagate after the push. To confirm 
 curl -s -o /dev/null -w "%{http_code}" https://chicagoclassicmag.com
 ```
 
-200 = live. If not yet up, wait 60 seconds and retry.
+A 200 does not prove the page is live: Cloudflare returns the homepage with 200 for any missing path. Confirm each page by its `<title>` (or a string unique to it), and check the homepage shows the new edition date. Cloudflare took 4 to 8 minutes on Oct 31, 2026; wait and retry every 30 seconds.
 
 ## Notes
 

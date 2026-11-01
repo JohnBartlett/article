@@ -12,6 +12,7 @@ recorded mistakes list:
   - #23: homepage hero-meta must be author-only, no date
   - #30: same photo used as both a hero figure and duplicated inline
   - #34: no emojis anywhere in article content
+  - byline links to about.html cards (added Oct 31, 2026)
   - root pages' DateBook/Astrochart nav links (added Oct 31, 2026)
   - spacing: punctuation spacing and run-together words (added Oct 31, 2026)
   - #60: stale "Coming in the [date] edition" placeholder teaser left on a
@@ -438,6 +439,38 @@ def check_root_page_nav_links(edition_date):
         print(f"  \u2713 clean \u2014 every root page's DateBook and Astrochart links point to {edition_date}")
 
 
+def check_bylines(article_dirs):
+    """Every byline must link to an existing about.html card, matching the About the Author link (added Oct 31, 2026).
+
+    The article template once shipped a plain-text byline and all seven Nov 1 articles went live unlinked.
+    """
+    print("\n--- Byline links (article structure #4 and #7) ---")
+    about = open("about.html", encoding="utf-8", errors="ignore").read()
+    cards = dict(re.findall(r'<div class="team-member" id="([a-z0-9-]+)".*?<h3>(.*?)</h3>', about, re.S))
+    problems = False
+    for d in article_dirs:
+        h = open(os.path.join(d, "index.html"), encoding="utf-8", errors="ignore").read()
+        h = re.sub(r"<!--.*?-->", "", h, flags=re.S)
+        by = re.search(r'class="article-meta">By <a href="[^"]*about\.html#([a-z0-9-]+)">([^<]+)</a>', h)
+        if not by:
+            print(f"  \u2717 {d}: byline is not a link to about.html")
+            problems = True
+            continue
+        aid, name = by.group(1), by.group(2).strip()
+        about_link = re.search(r'about\.html#([a-z0-9-]+)"[^>]*>About the Author', h)
+        if aid not in cards:
+            print(f"  \u2717 {d}: about.html has no card with id {aid!r}")
+            problems = True
+        elif re.sub(r"<[^>]+>", "", cards[aid]).strip() != name:
+            print(f"  \u2717 {d}: byline {name!r} does not match about.html card {cards[aid]!r}")
+            problems = True
+        if not about_link or about_link.group(1) != aid:
+            print(f"  \u2717 {d}: 'About the Author' link is missing or uses a different anchor than the byline")
+            problems = True
+    if not problems:
+        print(f"  \u2713 clean \u2014 all {len(article_dirs)} bylines link to a matching about.html card")
+
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 tools/content_audit.py YYYY-MM-DD")
@@ -457,6 +490,7 @@ def main():
     check_homepage_stale_teasers(edition_date)
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
+    check_bylines(dirs)
     check_punctuation_spacing(edition_dir)
     check_root_page_nav_links(edition_date)
     check_writer_retrospective_nav()

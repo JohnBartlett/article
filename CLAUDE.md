@@ -495,6 +495,8 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 78. **State email facts from the record, not memory.** Before writing any send time, count, or "not logged / not received", read it from the message (`internalDate`) or from the log. Before adding a row to `EMAIL_LOG.md`, run `grep -c <message-id> EMAIL_LOG.md`, and read every log entry since the last published edition, not only the latest header. On Oct 31, 2026 a send time was written from memory, about 13 log entries were duplicated, and Victoria's Oct 30 Astrochart and Judy's Oct 28 and Oct 30 lineups were reported as missing when they were already logged.
 
+79. **A 200 from chicagoclassicmag.com proves nothing.** Cloudflare serves the homepage with status 200 for any path that doesn't exist, so a missing page and an unpublished internal file both "load". After publishing, confirm each page by its `<title>` or a string unique to it, and judge exposure by the body, not the status code. On Oct 31, 2026 `EMAIL_LOG.md` and `CLAUDE.md` returned 200 on the live site and looked exposed; both were the homepage fallback.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions. A bare "Check" from John (Oct 25, 2026) means exactly this: check messages (texts) and emails.
