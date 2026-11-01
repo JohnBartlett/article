@@ -12,6 +12,7 @@ recorded mistakes list:
   - #23: homepage hero-meta must be author-only, no date
   - #30: same photo used as both a hero figure and duplicated inline
   - #34: no emojis anywhere in article content
+  - root pages' DateBook/Astrochart nav links (added Oct 31, 2026)
   - spacing: punctuation spacing and run-together words (added Oct 31, 2026)
   - #60: stale "Coming in the [date] edition" placeholder teaser left on a
     homepage card/hero after the linked article was actually built and made
@@ -416,6 +417,27 @@ def check_punctuation_spacing(edition_dir):
         print(f"  (note: {double} double spaces in the source text; invisible in browsers, not listed)")
 
 
+def check_root_page_nav_links(edition_date):
+    """Every root page with a DateBook or Astrochart nav link must point at the current edition (added Oct 31, 2026).
+
+    edition_checks.py and the homepage grep only looked at index.html, so about, advertise, subscribe, write-for-us and
+    editorial kept linking to August and October DateBooks (October events dimmed as past) for weeks.
+    """
+    print("\n--- Root pages: DateBook and Astrochart nav links ---")
+    problems = False
+    for path in sorted(glob.glob("*.html")):
+        h = open(path, encoding="utf-8", errors="ignore").read()
+        h = re.sub(r"<!--.*?-->", "", h, flags=re.S)
+        for kind, pat in (("DateBook", r'href="[^"]*editions/(\d{4}-\d{2}-\d{2})/datebook/"'),
+                          ("Astrochart", r'href="[^"]*editions/(\d{4}-\d{2}-\d{2})/daily-star[^"]*"')):
+            for found in sorted(set(re.findall(pat, h))):
+                if found != edition_date:
+                    print(f"  \u2717 {path}: {kind} link points to the {found} edition, not {edition_date}")
+                    problems = True
+    if not problems:
+        print(f"  \u2713 clean \u2014 every root page's DateBook and Astrochart links point to {edition_date}")
+
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python3 tools/content_audit.py YYYY-MM-DD")
@@ -436,6 +458,7 @@ def main():
     check_datebook_astrochart_link(edition_dir, edition_date)
     check_astrochart_stale_dates(edition_dir, edition_date)
     check_punctuation_spacing(edition_dir)
+    check_root_page_nav_links(edition_date)
     check_writer_retrospective_nav()
 
     print("\n" + "=" * 80)

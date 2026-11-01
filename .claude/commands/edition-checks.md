@@ -165,6 +165,7 @@ Return the Vercel preview URL to the user.
 - [ ] DateBook has no stale past-month sections (checked by `edition_checks.py`, `stale_datebook_months`)
 - [ ] DateBook Astrochart nav link inside `datebook/index.html` itself points to the current month's `daily-star-MONTH` folder, not a stale one
 - [ ] Astrochart link in `index.html` points to current edition
+- [ ] Root pages (`about`, `advertise`, `subscribe`, `write-for-us`, `editorial`) DateBook and Astrochart nav links point to the current edition (checked by `content_audit.py`; they were stale from Aug and Oct until Oct 31, 2026)
 - [ ] Homepage hero meta is `By [Author Name]` only — no date
 - [ ] No dangling git submodules (`git ls-files --stage | grep "^160000"` returns nothing)
 - [ ] New author bios added to Our Writers (if any)
