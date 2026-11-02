@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Chicago Architecture &amp; Historic Homes (demo) | Classic Chicago</title>
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-meta a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    /* CCM interviews: each "CCM:" question is <p class="qa-question">, answer paragraphs are plain <p> */
+    .article-body .qa-question {
+      margin-top: 32px;
+      font-weight: 700;
+      border-left: 3px solid #b51c20;
+      padding-left: 12px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #666;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+  </style>
+
+    .demo-note { background: #fff4c2; color: #5a4800; font-family: 'Lato', sans-serif; font-size: 14px;
+      text-align: center; padding: 10px 16px; border-bottom: 1px solid #e6d58a; }
+    .arch-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+    .arch-label { font-family: 'Lato', sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #b51c20; text-align: center; }
+    .arch-title { font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1.15; text-align: center; margin: 8px 0 10px; }
+    .arch-deck { text-align: center; font-size: 19px; color: #555; max-width: 720px; margin: 0 auto 18px; }
+    .presented { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 auto 32px;
+      font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #777; }
+    .sponsor-logo { border: 1px dashed #999; padding: 8px 18px; font-size: 13px; letter-spacing: 0.04em; text-transform: none; color: #333; background: #fafafa; }
+    .banner { position: relative; display: block; border-radius: 4px; overflow: hidden; margin-bottom: 44px; color: #fff; text-decoration: none; }
+    .banner img { width: 100%; height: 340px; object-fit: cover; display: block; }
+    .banner-text { position: absolute; inset: auto 0 0 0; padding: 28px 32px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); }
+    .banner-kicker { font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; }
+    .banner-head { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; line-height: 1.2; margin: 6px 0 12px; }
+    .btn { display: inline-block; font-family: 'Lato', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      background: #b51c20; color: #fff; padding: 10px 18px; border-radius: 2px; text-decoration: none; }
+    .section-h { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin: 0 0 20px; }
+    .arch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px; margin-bottom: 52px; }
+    .arch-card { text-decoration: none; color: #222; }
+    .arch-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 10px; }
+    .arch-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.3; margin: 0 0 4px; }
+    .arch-card:hover h3 { color: #b51c20; }
+    .arch-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; }
+    .residence { border: 1px solid #e2ddd3; background: #faf8f4; padding: 28px; margin-bottom: 52px; }
+    .residence-label { font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #777; margin-bottom: 14px; }
+    .residence-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
+    .residence-photos img { width: 100%; display: block; margin-bottom: 10px; }
+    .residence h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; line-height: 1.2; margin: 0 0 12px; }
+    .residence p { margin: 0 0 14px; }
+    .ph { color: #8a6d00; background: #fff4c2; padding: 0 4px; }
+    .residence-facts { font-family: 'Lato', sans-serif; font-size: 14px; color: #555; border-top: 1px solid #e2ddd3; padding-top: 12px; margin-bottom: 18px; }
+    .end-strip { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      border-top: 2px solid #b51c20; border-bottom: 1px solid #ddd; padding: 14px 4px; font-family: 'Lato', sans-serif; font-size: 15px; }
+    .end-strip a { color: #b51c20; text-decoration: none; font-weight: 700; }
+    .caption-note { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin: 8px 0 0; }
+    @media (max-width: 720px) {
+      .arch-title { font-size: 32px; }
+      .banner img { height: 260px; }
+      .banner-head { font-size: 24px; }
+      .residence-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .residence { background: #1f1d1a; border-color: #3a362f; }
+      .demo-note { background: #3a3210; color: #f2e3a0; border-color: #5a4c18; }
+      .sponsor-logo { background: #222; color: #ddd; }
+      .arch-card { color: #ddd; }
+    }
+
+  </style>
+  <script src="../../dark-mode.js"></script>
+</head>
+
+<body>
+  <div class="demo-note">Demo for discussion only. This page is not linked from the magazine. Sponsor branding, listing photos and listing details are placeholders.</div>
+  <header>
+    <div class="logo-container">
+      <a href="../../index.html">
+        <img src="../../logo.jpg" alt="Classic Chicago Magazine" style="max-width:390px;margin-left:auto;margin-right:auto">
+      </a>
+    </div>
+    <nav>
+      <div class="nav-inner">
+        <a href="../../index.html">Home</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <a href="../../about.html">About</a>
+        <a href="../../subscribe.html">Subscribe</a>
+        <a href="../../advertise.html">Advertise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="arch-wrap">
+    <div class="arch-label">A Classic Chicago Section</div>
+    <h1 class="arch-title">Chicago Architecture &amp; Historic Homes</h1>
+    <p class="arch-deck">Landmarks, neighborhoods and the houses that shaped the city, from the pages of Classic Chicago.</p>
+    <div class="presented">Presented by <span class="sponsor-logo">@properties logo</span></div>
+
+    <a class="banner" href="#featured-residence">
+      <img src="../../editions/2026-10-18/bob-glaze-neighborhood-walks/photo%208.jpg" alt="Placeholder photo">
+      <div class="banner-text">
+        <div class="banner-kicker">Featured Residence &middot; Presented by @properties</div>
+        <div class="banner-head">1301 North Astor Street <span class="ph">[listing headline]</span></div>
+        <span class="btn">View the residence</span>
+      </div>
+    </a>
+
+    <h2 class="section-h">From Our Pages</h2>
+    <div class="arch-grid">
+        <a class="arch-card" href="../../editions/2026-10-18/bob-glaze-neighborhood-walks/">
+          <img src="../../editions/2026-10-18/bob-glaze-neighborhood-walks/Photo%201.jpg" alt="">
+          <h3>Historic Residential Architecture in Chicago’s Neighborhoods</h3>
+          <div class="arch-meta">By Bob Glaze</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-05-17/glessner-house/">
+          <img src="../../editions/2026-05-17/glessner-house/glessner-house-cover.jpg" alt="">
+          <h3>Glessner House Celebrates 60 Years</h3>
+          <div class="arch-meta">By William Tyre</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-03-22/building-blocks/">
+          <img src="../../editions/2026-03-22/building-blocks/cover.png" alt="">
+          <h3>Building Blocks: A Legacy to a Chicago Icon</h3>
+          <div class="arch-meta">By Judy Carmack Bross</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-09-20/hawthorne-works/">
+          <img src="../../editions/2026-09-20/hawthorne-works/Old%20fireproof%20water%20tower.jpeg" alt="">
+          <h3>History of The Hawthorne Works Complex</h3>
+          <div class="arch-meta">By Adrian Naves</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-03-22/unsung-gems-lfhs/">
+          <img src="../../editions/2026-03-22/unsung-gems-lfhs/lfhs-1.jpeg" alt="">
+          <h3>The Joys and Challenges of Renovating the Classic Lake Forest High School Building</h3>
+          <div class="arch-meta">By David A. F. Sweet</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-10-18/portage-park/">
+          <img src="../../editions/2026-10-18/portage-park/Photo%201%20%28Classics%20Chicago%20issue%2010.18.2026%29.png" alt="">
+          <h3>Exploring Portage Park; a Deep Dive into A Historic Chicago Neighborhood</h3>
+          <div class="arch-meta">By Drake Boehm</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-02-08/lincoln-park/">
+          <img src="../../editions/2026-02-08/lincoln-park/lincoln-park-landscape.jpg" alt="">
+          <h3>Lincoln Park: History Hiding in Plain Sight</h3>
+          <div class="arch-meta">By Judy Carmack Bross</div>
+        </a>
+        <a class="arch-card" href="../../editions/2026-11-01/graham-foundation-latinitudes/">
+          <img src="../../editions/2026-11-01/graham-foundation-latinitudes/IMG_9544.JPG" alt="">
+          <h3>Grand Marquise</h3>
+          <div class="arch-meta">By Sigalit Zetouni</div>
+        </a>
+    </div>
+
+    <section class="residence" id="featured-residence">
+      <div class="residence-label">Featured Residence &middot; Presented by @properties</div>
+      <div class="residence-grid">
+        <div class="residence-photos">
+          <img src="../../editions/2026-10-18/bob-glaze-neighborhood-walks/photo%208.jpg" alt="Placeholder photo">
+          <img src="../../editions/2026-10-18/bob-glaze-neighborhood-walks/photo%207.jpg" alt="Placeholder photo">
+          <p class="caption-note">Placeholder photos (Charnley-Persky House and 1239 N. Dearborn, from Bob Glaze&rsquo;s October 18 article). The listing&rsquo;s own photos go here.</p>
+        </div>
+        <div>
+          <h2>1301 North Astor Street</h2>
+          <p><span class="ph">[Two or three sentences on the building&rsquo;s history and architecture, written by Classic Chicago.]</span></p>
+          <p><span class="ph">[A short description of the residence, supplied by @properties.]</span></p>
+          <div class="residence-facts"><span class="ph">[Bedrooms &middot; baths &middot; square feet &middot; price, if they wish]</span><br><span class="ph">[Listing agent and contact]</span></div>
+          <a class="btn" href="#">View the listing</a>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-h">At the End of Each Architecture Article</h2>
+    <div class="end-strip">
+      <span>Presented by <strong>@properties</strong> &middot; Featured Residence: 1301 North Astor Street</span>
+      <a href="#featured-residence">View the residence &rarr;</a>
+    </div>
+    <p class="caption-note">A small banner like this would close every article in the section, so readers who arrive from the homepage also see the featured residence.</p>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+</body>
+</html>
