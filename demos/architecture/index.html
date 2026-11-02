@@ -274,7 +274,7 @@
       font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #777; }
     .sponsor-logo { background: #111; padding: 10px 18px; border-radius: 2px; }
     .banner { position: relative; display: block; border-radius: 4px; overflow: hidden; margin-bottom: 44px; color: #fff; text-decoration: none; }
-    .banner img { width: 100%; height: 340px; object-fit: cover; display: block; }
+    .banner img { width: 100%; height: 280px; object-fit: cover; object-position: center 35%; display: block; }
     .banner-text { position: absolute; inset: auto 0 0 0; padding: 28px 32px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); }
     .banner-kicker { display: inline-block; background: rgba(0,0,0,0.72); padding: 7px 12px; font-family: 'Montserrat', 'Lato', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
     .banner-kicker .dot { color: #d22630; }
@@ -282,16 +282,18 @@
     .btn { display: inline-block; font-family: 'Lato', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
       background: #b51c20; color: #fff; padding: 10px 18px; border-radius: 2px; text-decoration: none; }
     .section-h { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin: 0 0 20px; }
-    .arch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px; margin-bottom: 52px; }
+    .arch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; margin-bottom: 52px; }
     .arch-card { text-decoration: none; color: #222; }
-    .arch-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 10px; }
+    .arch-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; margin-bottom: 10px; }
     .arch-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.3; margin: 0 0 4px; }
     .arch-card:hover h3 { color: #b51c20; }
     .arch-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; }
     .residence { border: 1px solid #e2ddd3; background: #faf8f4; padding: 28px; margin-bottom: 52px; }
     .residence-label { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: #111; color: #fff; padding: 10px 14px; font-family: 'Montserrat', 'Lato', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin: -28px -28px 22px; }
     .residence-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
-    .residence-photos img { width: 100%; display: block; margin-bottom: 10px; }
+    .residence-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .residence-photos img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    .residence-photos .caption-note { grid-column: 1 / -1; }
     .residence h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; line-height: 1.2; margin: 0 0 12px; }
     .residence p { margin: 0 0 14px; }
     .ph { color: #8a6d00; background: #fff4c2; padding: 0 4px; }
@@ -302,7 +304,8 @@
     .caption-note { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin: 8px 0 0; }
     @media (max-width: 720px) {
       .arch-title { font-size: 32px; }
-      .banner img { height: 260px; }
+      .banner img { height: 220px; }
+      .residence-photos img { height: 180px; }
       .banner-head { font-size: 24px; }
       .residence-grid { grid-template-columns: 1fr; }
     }
