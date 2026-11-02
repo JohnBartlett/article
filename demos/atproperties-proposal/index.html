@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>A Proposal for @properties (demo) | Classic Chicago</title>
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-meta a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    /* CCM interviews: each "CCM:" question is <p class="qa-question">, answer paragraphs are plain <p> */
+    .article-body .qa-question {
+      margin-top: 32px;
+      font-weight: 700;
+      border-left: 3px solid #b51c20;
+      padding-left: 12px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #666;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+
+    :root { --atp-red:#d22630; --ccm-red:#b51c20; --ink:#111; --line:#e5e2dc; }
+    .demo-note { background:#fff4c2; color:#5a4800; font-family:'Lato',sans-serif; font-size:14px; text-align:center; padding:10px 16px; border-bottom:1px solid #e6d58a; }
+    .cover { position:relative; min-height:440px; display:flex; align-items:flex-end; color:#fff; background:#222; }
+    .cover img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; }
+    .cover-in { position:relative; width:100%; padding:60px 16px 44px; background:linear-gradient(transparent, rgba(0,0,0,.82)); text-align:center; }
+    .eyebrow { font-family:'Montserrat','Lato',sans-serif; font-size:14px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+    .cover h1 { font-family:'Playfair Display',Georgia,serif; font-size:50px; line-height:1.1; margin:12px 0 10px; }
+    .cover p { font-size:19px; margin:0 auto; max-width:760px; }
+    .forline { display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; margin-top:18px; }
+    .wrap { max-width:960px; margin:0 auto; padding:44px 16px; }
+    .wrap h2 { font-family:'Playfair Display',Georgia,serif; font-size:32px; margin:0 0 14px; }
+    .wrap h3 { font-family:'Playfair Display',Georgia,serif; font-size:22px; margin:26px 0 8px; }
+    .wrap p, .wrap li { font-size:18px; }
+    .lede { font-size:21px !important; color:#333; }
+    .part { font-family:'Lato',sans-serif; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--ccm-red); margin-bottom:6px; }
+    .rule { border:0; border-top:1px solid var(--line); margin:0; }
+    .preview { border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#fff; box-shadow:0 6px 24px rgba(0,0,0,.08); margin:18px 0 8px; }
+    .preview-bar { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 12px; background:#f3f1ec; font-family:'Lato',sans-serif; font-size:13px; color:#666; }
+    .preview-bar a { color:var(--ccm-red); font-weight:700; text-decoration:none; }
+    .frame { position:relative; height:620px; overflow:hidden; }
+    .frame iframe { position:absolute; top:0; left:0; width:166.7%; height:166.7%; border:0; transform:scale(.6); transform-origin:0 0; }
+    .callouts { counter-reset:c; list-style:none; padding:0; margin:18px 0 0; }
+    .callouts li { counter-increment:c; position:relative; padding-left:46px; margin-bottom:14px; }
+    .callouts li::before { content:counter(c); position:absolute; left:0; top:1px; width:30px; height:30px; border-radius:50%; background:var(--ink); color:#fff;
+      font-family:'Montserrat','Lato',sans-serif; font-weight:600; font-size:14px; display:flex; align-items:center; justify-content:center; }
+    .callouts b { font-family:'Lato',sans-serif; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; margin-top:16px; }
+    .card { border:1px solid var(--line); border-top:3px solid var(--atp-red); padding:16px 18px; background:#faf8f4; }
+    .card h4 { font-family:'Playfair Display',Georgia,serif; font-size:20px; margin:0 0 6px; }
+    .card p { font-size:16px !important; margin:0; }
+    .tag { display:inline-block; font-family:'Lato',sans-serif; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#777; margin-bottom:6px; }
+    .need li, .steps li { margin-bottom:8px; }
+    .dark { background:var(--ink); color:#fff; }
+    .dark h2 { color:#fff; } .dark p, .dark li { color:#ddd; }
+    .btn { display:inline-block; font-family:'Montserrat','Lato',sans-serif; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+      background:var(--atp-red); color:#fff; text-decoration:none; padding:12px 20px; margin:6px 8px 0 0; }
+    @media (max-width:720px){ .cover h1{font-size:34px} .frame{height:460px} .frame iframe{width:250%;height:250%;transform:scale(.4)} }
+    @media (prefers-color-scheme:dark){ .card{background:#1d1b18;border-color:#3a362f} .preview{background:#111} .preview-bar{background:#222;color:#aaa} .lede{color:#ccc!important} }
+
+  </style>
+  <script src="../../dark-mode.js"></script>
+</head>
+<body>
+  <div class="demo-note">Draft for discussion, not linked from the magazine. Building photos: Warren LeMay, CC BY-SA 2.0. Listing facts: @properties, MLS #12785200.</div>
+  <header>
+    <div class="logo-container"><a href="../../index.html"><img src="../../logo.jpg" alt="Classic Chicago Magazine" style="max-width:390px;margin-left:auto;margin-right:auto"></a></div>
+  </header>
+
+  <section class="cover">
+    <img src="../astor-1301/Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877962374%29.jpg" alt="1301 North Astor Street">
+    <div class="cover-in">
+      <div class="eyebrow">A Proposal from Classic Chicago Magazine</div>
+      <h1>Chicago Architecture &amp; Historic Homes</h1>
+      <p>A new section of the magazine, and a Featured Residence for 1301 North Astor Street, #12&ndash;13</p>
+      <div class="forline"><span class="eyebrow">Prepared for</span><img src="../atproperties-cire-horizontal-inverse.png" alt="@properties Christie&rsquo;s International Real Estate" style="height:28px"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="part">The Idea</div>
+    <h2>Great Houses, Told as Stories</h2>
+    <p class="lede">Classic Chicago is a weekly digital magazine about the city&rsquo;s culture, society, dining and architecture, published every Sunday. Our readers are the people who live in, buy and care about houses like the David Adler residence at 1301 North Astor.</p>
+    <p>We propose a new section, <b>Chicago Architecture &amp; Historic Homes, Presented by @properties</b>, that gathers our architecture coverage in one place, and within it a <b>Featured Residence</b>: a full magazine feature on a property @properties is selling, written by our editors and clearly labeled as presented by @properties. The first would be 1301 North Astor, a home with only three owners in nearly a century, designed for the Potter Palmers II and later owned by Suzette Morton Davidson.</p>
+    <p>This page shows both pieces as working pages, explains each part of the layout, and sets out the ways we could promote the property.</p>
+  </div>
+  <hr class="rule">
+
+  <div class="wrap">
+    <div class="part">Part One</div>
+    <h2>The Section Page</h2>
+    <p>A permanent home for Classic Chicago&rsquo;s writing on landmarks, neighborhoods and great houses. It grows every week as new articles run, and @properties is its presenting sponsor.</p>
+    <div class="preview">
+      <div class="preview-bar"><span>Live demo: Architecture &amp; Historic Homes</span><a href="../architecture/" target="_blank" rel="noopener">Open full page &rarr;</a></div>
+      <div class="frame"><iframe src="../architecture/" title="Architecture section demo" loading="lazy"></iframe></div>
+    </div>
+    <ol class="callouts">
+      <li><b>Section header.</b> &ldquo;Chicago Architecture &amp; Historic Homes&rdquo; with &ldquo;Presented by&rdquo; and the @properties logo, so the sponsorship is the first thing a reader sees.</li>
+      <li><b>Featured Residence banner.</b> A wide photo of the current featured property with its headline and a &ldquo;View the residence&rdquo; button that opens the full feature. It changes whenever @properties features a new home.</li>
+      <li><b>From Our Pages.</b> Our own architecture articles, from Bob Glaze&rsquo;s Gold Coast walk to Glessner House and Hawthorne Works. This is the editorial heart of the page and the reason readers come back.</li>
+      <li><b>Featured Residence block.</b> A compact summary in the magazine&rsquo;s style: two photos, a few lines of history, the key facts (bedrooms, baths, size, price, agent) and a button to the feature.</li>
+      <li><b>End-of-article strip.</b> A one-line banner that closes every architecture article, &ldquo;Presented by @properties &middot; Featured Residence: 1301 North Astor Street,&rdquo; so readers who arrive from the homepage or social media also see the property.</li>
+    </ol>
+  </div>
+  <hr class="rule">
+
+  <div class="wrap">
+    <div class="part">Part Two</div>
+    <h2>The Featured Residence</h2>
+    <p>A full feature of about 2,500 words on the property, written by the editors of Classic Chicago in the magazine&rsquo;s voice, with @properties&rsquo; branding framing it. It reads as a story about a landmark home, not a classified listing, which is why readers finish it.</p>
+    <div class="preview">
+      <div class="preview-bar"><span>Live demo: A Residence at 1301 North Astor</span><a href="../astor-1301/" target="_blank" rel="noopener">Open full page &rarr;</a></div>
+      <div class="frame"><iframe src="../astor-1301/" title="Featured Residence demo" loading="lazy"></iframe></div>
+    </div>
+    <ol class="callouts">
+      <li><b>Sponsor bar.</b> Black, with &ldquo;Featured Residence &middot; Presented by&rdquo; and the @properties logo in white and red, taken from @properties&rsquo; own palette.</li>
+      <li><b>Full-width hero.</b> The building at Astor and Goethe, with the title &ldquo;A Residence at 1301 North Astor&rdquo; and a one-line summary.</li>
+      <li><b>Fact strip.</b> Eight bedrooms, six and a half baths, 7,000 square feet, 19-foot ceilings, $2.5 million, at a glance.</li>
+      <li><b>The story.</b> By the Editors of Classic Chicago Magazine: a tour of the apartment room by room, then its history, with the Palmers and the Gold Coast, Ulysses S. Grant&rsquo;s Palmer House suite, Philip Maher, David Adler, the Mortons, Astor Street and Goudy Square across the street.</li>
+      <li><b>Photo gallery.</b> Exterior photographs of the building and its neighbor. The listing&rsquo;s twenty interior photographs, supplied by @properties, would run here and through the article.</li>
+      <li><b>A chronology.</b> Twenty-one dated moments from 1847 to the listing on October 26, 2026, which turns the home&rsquo;s provenance into something a reader can scan.</li>
+      <li><b>More from Classic Chicago.</b> Links to our related articles, which keep readers on the page and in the magazine.</li>
+      <li><b>Schedule a Private Showing.</b> A black @properties panel with the address, price, key facts, Margaret Baczkowski&rsquo;s name and number, and buttons to the listing and to call.</li>
+      <li><b>Disclosure.</b> A line stating that the feature is presented by @properties, that Classic Chicago wrote it, and that listing details come from @properties.</li>
+    </ol>
+  </div>
+  <hr class="rule">
+
+  <div class="wrap">
+    <div class="part">Promotion</div>
+    <h2>How We Could Advertise the Property</h2>
+    <p>The feature is the centerpiece. Around it, the magazine can put the residence in front of readers in several ways, alone or as a package.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Feature</span><h4>The Featured Residence</h4><p>The full article above, written by our editors, published in a Sunday edition and kept permanently in the section.</p></div>
+      <div class="card"><span class="tag">Sponsorship</span><h4>Section Sponsor</h4><p>&ldquo;Presented by @properties&rdquo; on the Architecture &amp; Historic Homes page and at the end of every architecture article, by the month.</p></div>
+      <div class="card"><span class="tag">Homepage</span><h4>A Sunday Homepage Card</h4><p>The feature runs as a card in that week&rsquo;s edition, with the building&rsquo;s photo and a &ldquo;Presented by @properties&rdquo; label.</p></div>
+      <div class="card"><span class="tag">Design</span><h4>We Design the Ads</h4><p>Banners, the Featured Residence block and the showing panel are designed by Classic Chicago to match the magazine, so @properties need not supply artwork beyond photos and a logo.</p></div>
+      <div class="card"><span class="tag">Events</span><h4>DateBook and a Talk</h4><p>Open houses and broker events can be listed in our weekly DateBook, and Judy Carmack Bross, a Chicago social historian, can speak about the building&rsquo;s history, as she has been invited to do for 1301 North Astor.</p></div>
+      <div class="card"><span class="tag">Social</span><h4>Our Social Channels</h4><p>Posts on Classic Chicago&rsquo;s Facebook, Instagram, X and Pinterest pointing to the feature, with photos of the house.</p></div>
+      <div class="card"><span class="tag">Subscribers</span><h4>Subscriber Email</h4><p>A mention in our notes to subscribers, who sign up on the magazine&rsquo;s site, as that list grows.</p></div>
+      <div class="card"><span class="tag">Reporting</span><h4>Monthly Results</h4><p>Every button and banner carries tracking, and we report readers and clicks through to the listing each month, so @properties can see what the placement delivers.</p></div>
+      <div class="card"><span class="tag">Series</span><h4>More Residences</h4><p>Each new listing @properties wants to feature becomes the next Featured Residence, and the section keeps the earlier ones as an archive of great Chicago houses.</p></div>
+    </div>
+  </div>
+  <hr class="rule">
+
+  <div class="wrap">
+    <div class="part">Standards</div>
+    <h2>How We Keep It Classic Chicago</h2>
+    <ul>
+      <li>Sponsored pages are always labeled &ldquo;Presented by @properties,&rdquo; and the feature carries a disclosure line.</li>
+      <li>Our editors write the article and check the history against published sources; listing details come from @properties and are credited to them.</li>
+      <li>The rest of the section remains our own editorial work. If we write about a property @properties is selling outside the Featured Residence, it is labeled the same way.</li>
+    </ul>
+
+    <h3>What We Would Need from @properties</h3>
+    <ul class="need">
+      <li>The listing&rsquo;s interior photographs and the floor plan, with permission to publish them.</li>
+      <li>Logo files and any brand guidelines.</li>
+      <li>A quote from the listing agent or the owner, and confirmation of the facts, including the dates of each owner.</li>
+      <li>The listing link to use, and the open house or broker event dates, if any.</li>
+    </ul>
+
+    <h3>Next Steps</h3>
+    <ol class="steps">
+      <li>Agree on the package and the term of the sponsorship.</li>
+      <li>@properties sends photos, logo files and the agent&rsquo;s quote.</li>
+      <li>We finalize the feature and the section, and @properties reviews the facts.</li>
+      <li>The feature runs in a Sunday edition, and the section goes live.</li>
+    </ol>
+  </div>
+
+  <section class="dark">
+    <div class="wrap" style="text-align:center">
+      <h2>See the Demos</h2>
+      <p>Both pages are working drafts built on our site.</p>
+      <a class="btn" href="../architecture/" target="_blank" rel="noopener">The Section Page</a>
+      <a class="btn" href="../astor-1301/" target="_blank" rel="noopener">The Featured Residence</a>
+      <p style="margin-top:22px;font-size:15px">Classic Chicago Magazine &middot; Judy Carmack Bross, Editor-in-Chief &middot; John Bartlett, Managing Editor</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+  <script>(function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();</script>
+</body>
+</html>
