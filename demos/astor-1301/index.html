@@ -267,8 +267,10 @@
     :root { --atp-red: #d22630; --atp-ink: #111; --atp-grey: #5e5e5e; --atp-line: #e7e7e7; --ccm-red: #b51c20; }
     .demo-note { background: #fff4c2; color: #5a4800; font-family: 'Lato', sans-serif; font-size: 14px; text-align: center; padding: 10px 16px; border-bottom: 1px solid #e6d58a; }
     .sans { font-family: 'Montserrat', 'Lato', sans-serif; }
-    .sponsor-bar { background: var(--atp-ink); color: #fff; display: flex; justify-content: center; align-items: center; gap: 14px; padding: 12px 16px;
-      font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+    .sponsor-bar { background: var(--atp-ink); color: #fff; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; padding: 16px;
+      font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .sponsor-bar .dot { color: var(--atp-red); font-size: 22px; line-height: 1; }
+    .atp-logo { width: auto; display: inline-block; vertical-align: middle; }
     .sponsor-bar .mark { border: 1px dashed #777; padding: 4px 12px; letter-spacing: 0.02em; text-transform: none; font-size: 14px; }
     .sponsor-bar .mark b { color: var(--atp-red); font-weight: 700; }
     .hero { position: relative; height: 72vh; min-height: 420px; background: #2b2b2b; display: flex; align-items: flex-end; }
@@ -276,7 +278,7 @@
       font-family: 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 12px; }
     .hero .ph-box { position: absolute; inset: 0; }
     .hero-text { position: relative; width: 100%; padding: 48px 16px 40px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; text-align: center; }
-    .kicker { font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; opacity: 0.9; }
+    .kicker { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
     .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 56px; line-height: 1.05; margin: 10px 0 8px; }
     .hero .dek { font-size: 20px; max-width: 760px; margin: 0 auto; opacity: 0.95; }
     .facts { display: flex; justify-content: center; flex-wrap: wrap; border-bottom: 1px solid var(--atp-line); }
@@ -328,14 +330,14 @@
   <script src="../../dark-mode.js"></script>
 </head>
 <body>
-  <div class="demo-note">Demo for discussion only, not linked from the magazine. Building photos are Warren LeMay&rsquo;s (CC BY-SA 2.0); the interior photos and the sponsor logo would come from @properties. Listing facts are from the @properties listing (MLS 12785200, updated Oct 26, 2026).</div>
+  <div class="demo-note">Demo for discussion only, not linked from the magazine. Building photos are Warren LeMay&rsquo;s (CC BY-SA 2.0); the interior photos would come from @properties. Listing facts are from the @properties listing (MLS 12785200, updated Oct 26, 2026).</div>
   <header>
     <div class="logo-container"><a href="../../index.html"><img src="../../logo.jpg" alt="Classic Chicago Magazine" style="max-width:390px;margin-left:auto;margin-right:auto"></a></div>
     <nav><div class="nav-inner"><a href="../../index.html">Home</a><a href="../architecture/">Architecture &amp; Historic Homes</a><button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button></div>
       <div class="hamburger-menu" id="hamburger-menu"><a href="../../about.html">About</a><a href="../../subscribe.html">Subscribe</a><a href="../../advertise.html">Advertise</a></div></nav>
   </header>
 
-  <div class="sponsor-bar">Featured Residence &middot; Presented by <span class="mark"><b>@</b>properties logo</span></div>
+  <div class="sponsor-bar"><span>Featured Residence</span><span class="dot">&middot;</span><span>Presented by</span><img class="atp-logo" src="../atproperties-cire-horizontal-inverse.png" alt="@properties Christie&rsquo;s International Real Estate" style="height:26px"></div>
 
   <section class="hero">
     <img class="hero-img" src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877962374%29.jpg" alt="1301 North Astor Street, Philip Maher's 1929 Art Deco tower at Astor and Goethe">
@@ -343,7 +345,7 @@
     <div class="hero-text">
       <div class="kicker">Architecture &amp; Historic Homes &middot; The Gold Coast</div>
       <h1>A Residence at 1301 North Astor</h1>
-      <p class="dek">A David Adler duplex in Philip Maher&rsquo;s Art Deco co-op, where Gold Coast history is built into the walls.</p>
+      <p class="dek">A David Adler residence in Philip Maher&rsquo;s Art Deco co-op, where Gold Coast history is built into the walls.</p>
     </div>
   </section>
 
@@ -357,21 +359,23 @@
 
   <main>
     <article class="story">
-      <div class="byline">By Classic Chicago &middot; Presented by @properties</div>
+      <div class="byline">By the Editors of Classic Chicago Magazine &middot; Presented by @properties</div>
       <p class="dropcap">On the northeast corner of Astor and Goethe, a block from the lake, stands one of the Gold Coast&rsquo;s most private addresses: an eleven-residence Art Deco cooperative that Philip B. Maher designed in 1928. Inside it is a home that has had only three owners in nearly a century. Its next owner will be the fourth.</p>
       <p>The residence was created for the Potter Palmer family by David Adler, the architect of many of the North Shore&rsquo;s great estates. It spreads across two principal levels and roughly 7,000 square feet, and it is now coming to market through @properties.</p>
 
       <div class="pull">&ldquo;A home that has had only three owners in nearly a century. Its next owner will be the fourth.&rdquo;</div>
 
       <h2>The Building</h2>
-      <p>Maher, the great designer of Chicago&rsquo;s Art Deco co-ops, finished 1301 North Astor in 1929: fifteen stories and just eleven residences, on one of the city&rsquo;s most storied streets. He would return to the same intersection to design a second cooperative diagonally across the corner, and the pair still frame Astor and Goethe today.</p>
-      <p>Original buyers were invited to shape their own apartments, and the Potter Palmers II turned to Adler. The result is less an apartment than a townhouse lifted into the sky, beginning the moment the elevator opens: Adler designed the mirrored and steel elevator entry himself.</p>
+      <p>Philip Brooks Maher was born in Kenilworth in 1894, the son of George W. Maher, one of the leading figures of the Prairie School. He studied architecture at the University of Michigan, served in the army, traveled in Europe and in 1921 became his father&rsquo;s partner. Where the elder Maher had worked in the low, horizontal language of the Prairie, the son turned upward and toward Art Deco.</p>
+      <p>1301 North Astor, finished in 1929, is the purest expression of that turn: fifteen stories of pale limestone, its narrow piers rising unbroken to the roofline, and just eleven residences inside. Two years later Maher completed a second cooperative diagonally across the intersection, at 1260 North Astor. Between them they made the corner of Astor and Goethe his; these pages once called it Philip Maher&rsquo;s Astor Street corner.</p>
+      <p>Original buyers were invited to shape their own apartments. Potter Palmer II, son of the Potter Palmer who built State Street and the Palmer House, turned to David Adler, the most sought-after residential architect in the Chicago region.</p>
+      <p>Adler (1882&ndash;1949) had trained at Princeton, in Munich and at the &Eacute;cole des Beaux-Arts in Paris, and over thirty-five years he designed more than two hundred buildings, among them the great country houses of Lake Forest and Lake Bluff and Castle Hill in Ipswich, Massachusetts. He was a trustee of the Art Institute from 1925. At 1301 North Astor he made something rarer: a townhouse lifted into the sky. It begins the moment the elevator opens, onto an entry of mirror and steel that Adler designed for the Palmers.</p>
 
       <div class="timeline">
         <div><span class="y">1928</span>Philip B. Maher designs the cooperative at Astor and Goethe.</div>
         <div><span class="y">1929</span>The fifteen-story, eleven-residence building is completed.</div>
         <div><span class="y">First owners</span>The Potter Palmers II commission David Adler to design the residence.</div>
-        <div><span class="y">Second owner</span>Salt heiress Suzette Morton Davidson hangs nineteenth-century Chinese Chippendale wallpaper in the grand salon.</div>
+        <div><span class="y">Mid-century</span>Suzette Morton Davidson, granddaughter of Morton Salt founder Joy Morton, becomes the second owner and hangs nineteenth-century Chinese Chippendale wallpaper in the grand salon.</div>
         <div><span class="y">2026</span>Offered by @properties for only the fourth time.</div>
       </div>
     </article>
@@ -391,19 +395,23 @@
       <h2>Upstairs</h2>
       <p>The upper level is given over to private rooms: a primary suite with its own fireplace, walk-in closet, dressing rooms and bath, and three further bedrooms, two with their own baths and one that would serve equally well as a study. More staircases link the levels, in the manner of a house rather than a flat.</p>
 
+      <h2>The Mortons</h2>
+      <p>The home&rsquo;s second owner brought a second great Chicago fortune to its rooms. Suzette Morton Davidson, known to her friends as Susie, was the daughter of Sterling Morton and the granddaughter of Joy Morton, who built Morton Salt. She lived at 1301 North Astor at mid-century, and it was she who hung the nineteenth-century Chinese Chippendale wallpaper that still lines the grand salon.</p>
+
       <h2>A Museum of Details</h2>
       <p>What sets the home apart is how much of the past it has kept. There are original African ebony and French ch&acirc;teau wood floors, carved woodwork, ornate fireplaces, Art Deco bathrooms and lighting, Delft tiles, and marble and granite throughout. Most remarkable of all, a door, a fireplace, paneling and millwork from Ulysses S. Grant&rsquo;s suite at the Palmer House Hotel were built into the rooms. Chicago magazine once named it among the five finest houses in the city.</p>
+      <p>Few homes on the market anywhere can claim a provenance like it: designed for one of Chicago&rsquo;s founding families, enriched by another, and carrying fragments of the Palmer House suite of a president. For its next owner, it offers the scale of a house with the privacy and ease of a cooperative of only eleven residences.</p>
 
       <p style="text-align:center;margin:30px 0"><a class="btn" href="https://www.atproperties.com/12785200/1301-n-astor-street-12-13-chicago-illinois-60610-nei" target="_blank" rel="noopener sponsored">See all 20 photos of the residence</a></p>
 
       <h2>The Neighborhood</h2>
-      <p>Astor Street is the Gold Coast at its most elegant, a quiet run of mansions and prewar co-ops between Division Street and North Avenue. The lakefront is a block away, and Oak Street Beach and the Magnificent Mile are a short walk south.</p>
+      <p>Astor Street is the Gold Coast at its most elegant, a quiet run of mansions and prewar co-ops between Division Street and North Avenue. Within a few blocks stand the Charnley-Persky House, designed by Louis Sullivan and Frank Lloyd Wright and now home to the Society of Architectural Historians, and the Patterson-McCormick Mansion at 1500 North Astor. The lakefront is a block away, and Oak Street Beach and the Magnificent Mile are a short walk south.</p>
     </article>
 
     <section class="cta">
       <figure class="cta-img"><img src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852878250878%29.jpg" alt="1301 North Astor Street"><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852878250878%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption></figure>
       <div class="cta-body">
-        <div class="kicker" style="color:#d22630">@properties Christie&rsquo;s International Real Estate</div>
+        <div style="margin-bottom:8px"><img class="atp-logo" src="../atproperties-cire-horizontal-inverse.png" alt="@properties Christie&rsquo;s International Real Estate" style="height:30px"></div>
         <h3>Schedule a Private Showing</h3>
         <p>1301 North Astor Street, #12&ndash;13 &middot; Coming soon at $2,500,000<br>8 bedrooms &middot; 6 full and 1 half baths &middot; about 7,000 sq ft &middot; co-op<br>Margaret Baczkowski &middot; 312.500.5178</p>
         <a class="btn" href="https://www.atproperties.com/12785200/1301-n-astor-street-12-13-chicago-illinois-60610-nei" target="_blank" rel="noopener sponsored">View the Listing</a>

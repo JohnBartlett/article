@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Chicago Architecture &amp; Historic Homes (demo) | Classic Chicago</title>
   <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -272,11 +272,12 @@
     .arch-deck { text-align: center; font-size: 19px; color: #555; max-width: 720px; margin: 0 auto 18px; }
     .presented { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 auto 32px;
       font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #777; }
-    .sponsor-logo { border: 1px dashed #999; padding: 8px 18px; font-size: 13px; letter-spacing: 0.04em; text-transform: none; color: #333; background: #fafafa; }
+    .sponsor-logo { background: #111; padding: 10px 18px; border-radius: 2px; }
     .banner { position: relative; display: block; border-radius: 4px; overflow: hidden; margin-bottom: 44px; color: #fff; text-decoration: none; }
     .banner img { width: 100%; height: 340px; object-fit: cover; display: block; }
     .banner-text { position: absolute; inset: auto 0 0 0; padding: 28px 32px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); }
-    .banner-kicker { font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; }
+    .banner-kicker { display: inline-block; background: rgba(0,0,0,0.72); padding: 7px 12px; font-family: 'Montserrat', 'Lato', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .banner-kicker .dot { color: #d22630; }
     .banner-head { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; line-height: 1.2; margin: 6px 0 12px; }
     .btn { display: inline-block; font-family: 'Lato', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
       background: #b51c20; color: #fff; padding: 10px 18px; border-radius: 2px; text-decoration: none; }
@@ -288,7 +289,7 @@
     .arch-card:hover h3 { color: #b51c20; }
     .arch-meta { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; }
     .residence { border: 1px solid #e2ddd3; background: #faf8f4; padding: 28px; margin-bottom: 52px; }
-    .residence-label { font-family: 'Lato', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #777; margin-bottom: 14px; }
+    .residence-label { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: #111; color: #fff; padding: 10px 14px; font-family: 'Montserrat', 'Lato', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin: -28px -28px 22px; }
     .residence-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
     .residence-photos img { width: 100%; display: block; margin-bottom: 10px; }
     .residence h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; line-height: 1.2; margin: 0 0 12px; }
@@ -317,7 +318,7 @@
 </head>
 
 <body>
-  <div class="demo-note">Demo for discussion only. This page is not linked from the magazine. The sponsor logo is a placeholder; building photos are Warren LeMay&rsquo;s (CC BY-SA 2.0).</div>
+  <div class="demo-note">Demo for discussion only. This page is not linked from the magazine. Building photos are Warren LeMay&rsquo;s (CC BY-SA 2.0).</div>
   <header>
     <div class="logo-container">
       <a href="../../index.html">
@@ -341,13 +342,13 @@
     <div class="arch-label">A Classic Chicago Section</div>
     <h1 class="arch-title">Chicago Architecture &amp; Historic Homes</h1>
     <p class="arch-deck">Landmarks, neighborhoods and the houses that shaped the city, from the pages of Classic Chicago.</p>
-    <div class="presented">Presented by <span class="sponsor-logo">@properties logo</span></div>
+    <div class="presented">Presented by <span class="sponsor-logo"><img src="../atproperties-cire-horizontal-inverse.png" alt="@properties Christie&rsquo;s International Real Estate" style="height:24px;display:block"></span></div>
 
     <a class="banner" href="../astor-1301/">
       <img src="../astor-1301/Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877962374%29.jpg" alt="1301 North Astor Street">
       <div class="banner-text">
-        <div class="banner-kicker">Featured Residence &middot; Presented by @properties</div>
-        <div class="banner-head">A David Adler Duplex at 1301 North Astor</div>
+        <div class="banner-kicker">Featured Residence <span class="dot">&middot;</span> Presented by @properties</div>
+        <div class="banner-head">A David Adler Residence at 1301 North Astor</div>
         <span class="btn">View the residence</span>
       </div>
     </a>
@@ -397,7 +398,7 @@
     </div>
 
     <section class="residence" id="featured-residence">
-      <div class="residence-label">Featured Residence &middot; Presented by @properties</div>
+      <div class="residence-label">Featured Residence <span style="color:#d22630">&middot;</span> Presented by <img src="../atproperties-cire-horizontal-inverse.png" alt="@properties Christie&rsquo;s International Real Estate" style="height:20px"></div>
       <div class="residence-grid">
         <div class="residence-photos">
           <img src="../astor-1301/Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877223222%29.jpg" alt="1301 North Astor Street">
