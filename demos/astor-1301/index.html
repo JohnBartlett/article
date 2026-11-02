@@ -292,8 +292,17 @@
     .pull { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 28px; line-height: 1.35; text-align: center;
       border-top: 2px solid var(--atp-red); border-bottom: 1px solid var(--atp-line); padding: 22px 8px; margin: 34px 0; }
     .wide { max-width: 1100px; margin: 26px auto; padding: 0 16px; }
-    .gallery { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 220px 220px; gap: 10px; }
-    .gallery .ph-box:first-child { grid-row: 1 / 3; }
+    .gallery { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 330px 330px; gap: 10px; }
+    .gallery .g:first-child { grid-row: 1 / 3; }
+    .g { margin: 0; position: relative; overflow: hidden; background: #222; }
+    .g img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .g figcaption, .cta-img figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 12px 8px; background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: #eee; font-family: 'Lato', sans-serif; font-size: 12px; line-height: 1.4; }
+    .g figcaption a, .cta-img figcaption a, .hero-credit a { color: #fff; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .hero-credit { position: absolute; right: 10px; top: 8px; font-family: 'Lato', sans-serif; font-size: 11px; color: #eee; text-shadow: 0 1px 2px #000; }
+    .cta-img { margin: 0; position: relative; min-height: 320px; }
+    .cta-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
     .cap { font-family: 'Lato', sans-serif; font-size: 13px; color: #888; margin-top: 8px; }
     .timeline { border-left: 2px solid var(--atp-red); margin: 10px 0 26px 6px; padding-left: 22px; }
     .timeline div { margin-bottom: 14px; }
@@ -310,7 +319,7 @@
     .ph { background: #fff4c2; color: #8a6d00; padding: 0 4px; }
     @media (max-width: 720px) {
       .hero h1 { font-size: 38px; } .fact { padding: 14px 16px; } .fact .n { font-size: 24px; }
-      .gallery { grid-template-columns: 1fr; grid-template-rows: 240px 160px 160px; } .gallery .ph-box:first-child { grid-row: auto; }
+      .gallery { grid-template-columns: 1fr; grid-template-rows: 380px 300px 300px; } .gallery .g:first-child { grid-row: auto; }
       .cta { grid-template-columns: 1fr; } .pull { font-size: 23px; }
     }
     @media (prefers-color-scheme: dark) { .demo-note { background: #3a3210; color: #f2e3a0; } .fact .l, .byline { color: #aaa; } }
@@ -319,7 +328,7 @@
   <script src="../../dark-mode.js"></script>
 </head>
 <body>
-  <div class="demo-note">Demo for discussion only, not linked from the magazine. Photos and the sponsor logo are placeholders; listing facts are from the @properties listing (MLS 12785200, updated Oct 26, 2026).</div>
+  <div class="demo-note">Demo for discussion only, not linked from the magazine. Building photos are Warren LeMay&rsquo;s (CC BY-SA 2.0); the interior photos and the sponsor logo would come from @properties. Listing facts are from the @properties listing (MLS 12785200, updated Oct 26, 2026).</div>
   <header>
     <div class="logo-container"><a href="../../index.html"><img src="../../logo.jpg" alt="Classic Chicago Magazine" style="max-width:390px;margin-left:auto;margin-right:auto"></a></div>
     <nav><div class="nav-inner"><a href="../../index.html">Home</a><a href="../architecture/">Architecture &amp; Historic Homes</a><button class="hamburger-btn" id="hamburger-btn" aria-label="More">&#9776;</button></div>
@@ -329,7 +338,8 @@
   <div class="sponsor-bar">Featured Residence &middot; Presented by <span class="mark"><b>@</b>properties logo</span></div>
 
   <section class="hero">
-    <div class="ph-box">Listing photo: the building at Astor and Goethe</div>
+    <img class="hero-img" src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877962374%29.jpg" alt="1301 North Astor Street, Philip Maher's 1929 Art Deco tower at Astor and Goethe">
+    <div class="hero-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852877962374%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></div>
     <div class="hero-text">
       <div class="kicker">Architecture &amp; Historic Homes &middot; The Gold Coast</div>
       <h1>A Residence at 1301 North Astor</h1>
@@ -368,11 +378,10 @@
 
     <div class="wide">
       <div class="gallery">
-        <div class="ph-box">Listing photo: the foyer and curved staircase</div>
-        <div class="ph-box">Listing photo: the living room</div>
-        <div class="ph-box">Listing photo: the Chinese Chippendale wallpaper</div>
+        <figure class="g"><img src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877223222%29.jpg" alt="The limestone facade of 1301 North Astor rising from Goethe Street"><figcaption>Maher&rsquo;s limestone piers draw the eye up all fifteen stories. Photo: <a href="https://commons.wikimedia.org/wiki/File:Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852877223222%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption></figure>
+        <figure class="g"><img src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852878182800%29.jpg" alt="1301 North Astor from Astor Street"><figcaption>From Astor Street. Photo: <a href="https://commons.wikimedia.org/wiki/File:Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852878182800%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption></figure>
+        <figure class="g"><img src="Stone%20Building%2C%20Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852877961234%29.jpg" alt="Philip Maher's 1931 cooperative across the corner"><figcaption>Maher&rsquo;s second co-op across the corner, completed in 1931. Photo: <a href="https://commons.wikimedia.org/wiki/File:Stone_Building%2C_Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852877961234%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption></figure>
       </div>
-      <p class="cap">Photos courtesy of @properties (20 photos on the listing; placeholders here).</p>
     </div>
 
     <article class="story">
@@ -385,12 +394,14 @@
       <h2>A Museum of Details</h2>
       <p>What sets the home apart is how much of the past it has kept. There are original African ebony and French ch&acirc;teau wood floors, carved woodwork, ornate fireplaces, Art Deco bathrooms and lighting, Delft tiles, and marble and granite throughout. Most remarkable of all, a door, a fireplace, paneling and millwork from Ulysses S. Grant&rsquo;s suite at the Palmer House Hotel were built into the rooms. Chicago magazine once named it among the five finest houses in the city.</p>
 
+      <p style="text-align:center;margin:30px 0"><a class="btn" href="https://www.atproperties.com/12785200/1301-n-astor-street-12-13-chicago-illinois-60610-nei" target="_blank" rel="noopener sponsored">See all 20 photos of the residence</a></p>
+
       <h2>The Neighborhood</h2>
       <p>Astor Street is the Gold Coast at its most elegant, a quiet run of mansions and prewar co-ops between Division Street and North Avenue. The lakefront is a block away, and Oak Street Beach and the Magnificent Mile are a short walk south.</p>
     </article>
 
     <section class="cta">
-      <div class="ph-box" style="background:repeating-linear-gradient(135deg,#2a2a2a 0 14px,#242424 14px 28px)">Listing photo or floor plan</div>
+      <figure class="cta-img"><img src="Astor%20Street%20and%20Goethe%20Street%2C%20Gold%20Coast%2C%20Chicago%2C%20IL%20%2852878250878%29.jpg" alt="1301 North Astor Street"><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Astor_Street_and_Goethe_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852878250878%29.jpg" target="_blank" rel="noopener">Warren LeMay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption></figure>
       <div class="cta-body">
         <div class="kicker" style="color:#d22630">@properties Christie&rsquo;s International Real Estate</div>
         <h3>Schedule a Private Showing</h3>
