@@ -67,6 +67,25 @@ module.exports = async (req, res) => {
     }
   }
 
+  // Comment spam: bots post straight to this endpoint without loading a page,
+  // so `Page` (filled by page script on current articles) and `article`
+  // (June 2026 forms) are both blank. March 2026 forms use `message` and are
+  // unaffected. Nov 5, 2026: 21 such posts in one burst.
+  const hasText = (v) => typeof v === 'string' && v.trim() !== '';
+  if (hasText(body.comment) && !hasText(body.Page) && !hasText(body.article)) {
+    return fakeSuccess(req, res, next);
+  }
+
+  // Link spam: an HTML/BBCode link, or two or more URLs, in a comment.
+  for (const field of ['comment', 'message']) {
+    const val = body[field];
+    if (typeof val !== 'string') continue;
+    const urlCount = (val.match(/(?:https?:\/\/|\bwww\.)\S+/gi) || []).length;
+    if (/<a\s|\[url[=\]]/i.test(val) || urlCount >= 2) {
+      return fakeSuccess(req, res, next);
+    }
+  }
+
   // If an email address was given, flag (don't reject) ones that are
   // malformed or whose domain has no mail servers — catches typos and
   // obviously fake addresses without blocking a genuine reader over a
