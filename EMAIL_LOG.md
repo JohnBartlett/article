@@ -1764,3 +1764,10 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 524 | Nov 5 11:25 AM | Ana `1a1acbec25d30f9d` | "Goddesses in the Machine: Silent Film Fashion" by Drew Björkstén: full laid-out text with links, cover + 6 numbered photos with captions (`COVER Goddess.jpeg`, `1 Ivory Dress.jpeg` … `6 Haunted Valley.jpg`). | ⏳ Nov 8 build |
 | 525 | Nov 2 4:50 PM | Reader (FormSubmit) `1a19e750ce9617e2` | Quick Vote Yes: Jefferson Park Dinner-Theater (older edition). | ⏳ editors tally |
 | 526 | Nov 5 5:14–9:18 AM | FormSubmit (21 messages, e.g. `1a1ab6afbc05f877`…`1a1ac4aae8aae7e8`) | Spam burst of Reader Comments (blank Page/Environment, porn links, SEO text). Not real readers. | ⬛ spam; consider a honeypot field on the form |
+
+### Session actions — 2026-11-05 (no email)
+| # | Date | From | Subject / content | Status |
+|---|---|---|---|---|
+| 527 | Nov 5 | Code (John's OK) | **Comment-form spam filter, live on dev endpoint.** `api/submit-form.js` now silently drops a `comment` with no `Page` and no `article` (bots posting directly; the #526 burst) and comments with an HTML/BBCode link or 2+ URLs. dev2 `04f6e15f`, dev `64f9639c`; manual deploy `article-pzmeiquls`, alias `article-git-dev` repointed. Tested on the deployment: blank-Page and link posts dropped, a labelled test comment (`1a1acf08717ed074`) arrived. master not updated (its copy is not used; Vercel serves the form). | ✅ live |
+| 528 | Nov 5 | Code | **Nov 8 prepped** (`b79bc080`): 7 stubs from Judy's Nov 3 list, DateBook and Astrochart copied (Nov 8 to Dec 5), homepage on Nov 8, Nov 1 landing page, Drew Björkstén bio, STATUS.md, future-articles. dev2 preview `article-m2k0s4m9b`, alias `article-dev2` set. | ✅; ⏳ email to Judy awaiting John |
+| 529 | Nov 5 | Code | **Live bug found:** Past Editions pages for Oct 4, 11, 18 and 25 show CSS comment text as every teaser on chicagoclassicmag.com. Cause: `build_edition_landing.py` matched `<p class=...>` inside a template CSS comment. Fixed on dev2 (`b79bc080`); production not yet fixed. | ⏳ hotfix to dev/master needs John's OK |
