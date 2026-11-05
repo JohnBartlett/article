@@ -30,8 +30,10 @@ def article_meta(edition, slug):
     if not img:
         img = find(r'<img[^>]+class="[^"]*hero[^"]*"[^>]+src="([^"]+)"')
     # first substantial body paragraph as teaser
+    # Search <body> only: the template's CSS comments contain literal "<p class=...>" text.
+    body = h[h.find('<body'):] if '<body' in h else h
     teaser = ''
-    for m in re.finditer(r'<p[^>]*>(.*?)</p>', h, re.S):
+    for m in re.finditer(r'<p[^>]*>(.*?)</p>', body, re.S):
         text = re.sub(r'<[^>]+>', '', m.group(1)).strip()
         if len(text) > 80 and not text.startswith('By '):
             teaser = text
