@@ -1779,10 +1779,10 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
-| 530 | Nov 5 2:53 PM | Ana `1a1adb43367db1f9` | "Chicago's Cultural Stadium: Falling in Love With Chicago All Over Again" by Judy: full laid-out text, cover + 3 numbered captioned photos (`COVER Cultural Stadium.jpeg`, `1 Donna Lasinski.jpeg`, `2 Koi Pond.jpeg`, `3 Light Up.jpeg`). Judy's Nov 4 cover was `7+Arttists+7+Streets+4.jpeg` (#523): which cover? | ⏳ Nov 8 build |
+| 530 | Nov 5 3:53 PM | Ana `1a1adb43367db1f9` | "Chicago's Cultural Stadium: Falling in Love With Chicago All Over Again" by Judy: full laid-out text, cover + 3 numbered captioned photos (`COVER Cultural Stadium.jpeg`, `1 Donna Lasinski.jpeg`, `2 Koi Pond.jpeg`, `3 Light Up.jpeg`). Judy's Nov 4 cover was `7+Arttists+7+Streets+4.jpeg` (#523): which cover? | ⏳ Nov 8 build |
 | 531 | Nov 6 5:07 AM | Sig `1a1b08b318c312cd` | "Cokes' Installation": update on her next piece, "Tony Cokes: On Boredom" (Art Institute, Bluhm Family Terrace). Blast information to follow. | ⏳ next week (Nov 15) |
 | 532 | Nov 6 5:27 / 5:49 AM | Judy `1a1b09cfcd594922`, Sig `1a1b0b1872ded911` | Re Cokes: Judy "thrilled to have it in the magazine next week"; Sig thanks her. | ✅ no action |
 | 533 | Nov 6 5:25 AM | Judy `1a1b09b8d4999b81` fwd Fabrizio | "Fwd: Checking in": if John has Fabrizio's article "we can go ahead and run on Sunday. Did you receive it?" Ana's two articles are in; Annie's (Prentice) and Emma's (Gold Coast) still missing. Fabrizio himself does not expect to be in the next edition. Conflicts with her Nov 3 list of 7 (#521), which held him to next week. | ⏳ reply to Judy; in or held? |
 | 534 | Nov 6 6:00 AM | Fabrizio Paco `1a1b0bbc38b78ee5` | "A Weekend at the Physical Media Fair": text with inline links, cover + 3 numbered photos (`COVER newspaper.jpg`, `1 art installation.JPG`, `2 media swap.JPG`, `3 people in line.JPG`). | ⏳ build once in/held is decided |
 | 535 | Nov 5 | Readers (FormSubmit) `1a1ad1c9054ee26a`, `1a1ad6558e9c0c79`, `1a1ad70c13f6cb6c`, `1a1adcd6a1fc553e` | 4 Quick Votes Yes: Breakthrough Ball Preview. | ⏳ editors tally |
-| 536 | Nov 5 12:47 PM | FormSubmit `1a1ace51b29d6026` | Spam Reader Comment (blank Page, porn link). Arrived before the #527 filter test; no spam since. | ⬛ spam |
+| 536 | Nov 5 12:07 PM | FormSubmit `1a1ace51b29d6026` | Spam Reader Comment (blank Page, porn link). Arrived before the #527 filter test; no spam since. | ⬛ spam |
