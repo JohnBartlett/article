@@ -1791,7 +1791,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 ### Check — 2026-11-07 ET (branch dev2; Gmail connector, date searches after:2026/11/05–06 compared to internalDate; cutoff epoch 1793985231; this check began epoch 1794063749)
 - Local Gmail API token fails with `invalid_grant` (refresh token revoked/expired); searches done through the Gmail connector. Attachment and Drive downloads by `tools/pull_msg.py` / `tools/fetch_drive.py` need a fresh token (`tools/get_gmail_token.py`).
 - Queries: Tier 1 `from:(...)` incl. Adrian, Tier 2 keywords (category-filtered), `cc:/to:judycbross`, named senders (Jill Lowe, Fabrizio, Marcy), reader forms, sent mail, Libbet/Drive shares.
-- Found: 3 contributor submissions, 2 Judy replies, 1 earlier Libbet email missed by the Nov 6 check (her address is not in the skill's Tier 1 filter). Reader forms: none since Nov 5 (no spam since the #527 filter). Texts: no magazine-related texts since the cutoff (29 messages, none matching). Calls/voicemail: not readable; ask John.
+- Found: 3 contributor submissions, 2 Judy replies, 1 earlier Libbet email missed by the Nov 6 check (her address is not in the skill's Tier 1 filter). Reader forms: none since Nov 5 (no spam since the #527 filter). Texts: no magazine-related texts since the cutoff (29 messages, none matching). Calls/voicemail: none (John, Nov 7).
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
