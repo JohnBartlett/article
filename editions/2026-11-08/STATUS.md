@@ -39,7 +39,7 @@ All seven articles built with photos (`fc71e865`); verify_edition 7 Ready, editi
 
 ## Blockers
 
-- **Fabrizio's Physical Media Fair piece:** Nov 8 (as an eighth article) or Nov 15? Judy's Nov 6 email and her Nov 3 list of seven disagree.
+- **Fabrizio's Physical Media Fair piece:** Nov 8 (as an eighth article) or Nov 15? Judy's Nov 6 email and her Nov 3 list of seven disagree. Asked Judy Nov 7 (`1a1b6a1e94108976`, #546), with the typo and small-photo questions.
 - **Small photos (#80):** Cultural Stadium `1 Donna Lasinski.jpeg` (387 px) and `2 Koi Pond.jpeg` (241 px); Prentice photos 4, 8 and 10 (416 px, from Annie's layout); Silent Film `5 Gish.jpg` (820 px). Built as sent; ask for larger files if Judy wants them replaced.
 - **Jill's photos** come only from her PDF (no originals sent), saved as `peach-000.jpg` … `peach-006.png`.
 - **Jackson's "Woods People" image** is on a Drive link not shared with John; the copy in the build comes from his PDF.
