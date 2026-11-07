@@ -1811,7 +1811,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 
 ### Check — 2026-11-07 afternoon ET (branch dev2; Gmail API, date searches after:2026/11/06 compared to internalDate; cutoff epoch 1794063749; this check began epoch 1794088045)
 - Queries: Tier 1 `from:(...)` (incl. Libbet, Jill, Fabrizio, Adrian, Victoria), Tier 2 keywords (category-filtered), `cc:/to:judycbross`, reader forms, sent mail.
-- Found: 1 Judy reply, 1 unsent draft to Libbet (first logged as sent). Reader forms: none since Nov 5. Texts: 6 since the cutoff, none magazine-related. Calls/voicemail: asked John.
+- Found: 1 Judy reply, 1 unsent draft to Libbet (first logged as sent). Reader forms: none since Nov 5. Texts: 6 since the cutoff, none magazine-related. Calls/voicemail: none (John, Nov 7).
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
