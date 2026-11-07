@@ -1,6 +1,6 @@
 # November 8, 2026 Edition — Status
 
-_Updated: 2026-11-06_
+_Updated: 2026-11-07 (afternoon)_
 
 Skeleton prepped Nov 5: seven stubs, DateBook and Astrochart copied from Nov 1, homepage pointed at Nov 8. Five pieces are fully in hand (Cultural Stadium, Silent Film, David Sweet, Jill Lowe, Jackson LeJeune); two are waiting on text (Prentice, Gold Coast).
 
@@ -16,6 +16,7 @@ Nav chain order (hero → last):
 5. `david-sweet-yd3` — New Business Poised to Guide Student-Athletes to Best Division III Choices by David A. F. Sweet
 6. `jill-lowe-ice-cream` — Where to Get It by Jill Lowe
 7. `lejeune-wildwood` — Wildwood Review: A Spectacular Visual Feast by Jackson LeJeune
+8. `fabrizio-physical-media-fair` — A Weekend at the Physical Media Fair by Fabrizio E. Paco (added by Judy Nov 7, `1a1b7c0f1c36e680`, #548)
 
 ## Lineup
 
@@ -28,6 +29,7 @@ Nav chain order (hero → last):
 | 5 | david-sweet-yd3 | New Business Poised to Guide Student-Athletes to Best Division III Choices | David A. F. Sweet | Judy to John |
 | 6 | jill-lowe-ice-cream | Where to Get It | Jill Lowe | Jill to John |
 | 7 | lejeune-wildwood | Wildwood Review: A Spectacular Visual Feast | Jackson LeJeune | Judy to John |
+| 8 | fabrizio-physical-media-fair | A Weekend at the Physical Media Fair | Fabrizio E. Paco | Fabrizio to John |
 
 ## Build — 2026-11-07
 
@@ -39,24 +41,27 @@ All seven articles built with photos (`fc71e865`); verify_edition 7 Ready, editi
 
 ## Blockers
 
-- **Fabrizio's Physical Media Fair piece:** Nov 8 (as an eighth article) or Nov 15? Judy's Nov 6 email and her Nov 3 list of seven disagree. Asked Judy Nov 7 (`1a1b6a1e94108976`, #546), with the typo and small-photo questions.
-- **Small photos (#80):** Cultural Stadium `1 Donna Lasinski.jpeg` (387 px) and `2 Koi Pond.jpeg` (241 px); Prentice photos 4, 8 and 10 (416 px, from Annie's layout); Silent Film `5 Gish.jpg` (820 px). Built as sent; ask for larger files if Judy wants them replaced.
+- **Small photos (#80):** Cultural Stadium `1 Donna Lasinski.jpeg` (387 px) and `2 Koi Pond.jpeg` (241 px); Prentice photos 4, 8 and 10 (416 px, from Annie's layout); Silent Film `5 Gish.jpg` (820 px). Built as sent; Judy Nov 7 (#548): Cultural Stadium won't send better ones, go with what we have; "all sounds fine".
 - **Jill's photos** come only from her PDF (no originals sent), saved as `peach-000.jpg` … `peach-006.png`.
 - **Jackson's "Woods People" image** is on a Drive link not shared with John; the copy in the build comes from his PDF.
 
+## Build — 2026-11-07 afternoon
+
+Judy (#548): fix the typos, add Fabrizio. Fixed the five typos she was asked about (#546). Built Fabrizio's piece as the eighth article after Wildwood: text verbatim (word diff clean), cover plus photos 1–3 with his captions, 8 links made from his bracketed URLs (Kino Lorber `srsltid` tracking parameter dropped, #70), category "Film". Added his Articles popup on about.html (he had none, also missing his Oct 18 piece). verify_edition 8 Ready.
+
 ## Layout calls to confirm
+
+- Fabrizio: the captioned cover is placed at the top of the article as well as on the homepage card (he gave it a caption at the top of his text); category "Film" (his Oct 18 piece was "Museums").
 
 - David Sweet sent captions but no placement: Jennifer and Caleb at the top, the logo after the yd3.org paragraph, the Jennifer website photo mid-article.
 - Prentice category changed from the stub's "Architecture" to "Society"; homepage hero uses Judy's cover `mq-fop40thanniversarypreviews-106.jpeg` (Annie's photo 8 is a smaller copy of it, kept in the body).
 - Wildwood homepage card uses the poster (not in Jackson's PDF layout).
 
-## Source text to flag to Judy (left verbatim, #18)
+## Source text (#18)
 
-- Silent Film: "Bard GraduateCenter", "Here,“Two Gun Betty”", "which we have implied it its title".
-- Sweet: "Kenyon University" (Kenyon College?).
-- Gold Coast: "complex fetal condition."
-- Wildwood: "only serves to bolsters", and the fragment "Fairy tales, especially the Brothers’ Grimm “original” fairy tale canon."
-- Jill: "Delaware Food and Liqor" (the sign in her photo reads LIQUOR).
+Fixed Nov 7 with Judy's OK (#548): "Bard Graduate Center" (x2), "implied in its title", "Kenyon College", "serves to bolster", "Delaware Food and Liquor".
+
+Still verbatim, not raised with Judy: Silent Film "Here,“Two Gun Betty”"; Gold Coast "complex fetal condition."; Wildwood fragment "Fairy tales, especially the Brothers’ Grimm “original” fairy tale canon."; Fabrizio "employed at a video story" (store?), "distributer", "John Water’s" (Waters').
 
 ## Articles
 
@@ -69,6 +74,7 @@ All seven articles built with photos (`fc71e865`); verify_edition 7 Ready, editi
 | david-sweet-yd3 | New Business Poised to Guide Student-Athletes to Best Division III Choices | David A. F. Sweet | Ready | 4 on disk | `1a19d444dc9a2025`: text, 3 photos with captions |
 | jill-lowe-ice-cream | Where to Get It | Jill Lowe | Ready | 8 on disk | `1a187835ee3989b1`: `68) Where to get it - Peach icecream.pdf` (use `pdftotext -layout`, check link annotations, mistakes #43, #53) |
 | lejeune-wildwood | Wildwood Review: A Spectacular Visual Feast | Jackson LeJeune | Ready | 6 on disk | `1a1a851f5991be16` (Judy forward): text, PDF, 4 images (Battle, Hawk, Poster, Title). Judy asks if Jack needs to do anything more |
+| fabrizio-physical-media-fair | A Weekend at the Physical Media Fair | Fabrizio E. Paco | Ready | 5 on disk | `1a1b0bbc38b78ee5`: text with bracketed URLs, `COVER newspaper.jpg` + photos 1–3 with captions |
 | datebook | DateBook | Annie Delfosse | Copied from Nov 1 | — | Runs to Dec 12; no past months to remove |
 | daily-star-november | Astrochart | Victoria Martin | Copied from Nov 1 | — | Nov 1-7 removed; runs Nov 8 to Dec 5 |
 
