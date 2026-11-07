@@ -62,13 +62,13 @@ All seven articles built with photos (`fc71e865`); verify_edition 7 Ready, editi
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| friends-of-prentice | Friends of Prentice | To confirm | Placeholder | Cover only | Cover `mq-fop40thanniversarypreviews-106.jpeg` (`1a1a335b0abdf363`); caption "Board Member Shannon Flavin, Executive Director Kristen E. Field" (`1a1a2c9202d75b15`) |
-| chicago-cultural-stadium | Chicago's Cultural Stadium: Falling in Love With Chicago All Over Again | Judy Carmack Bross | Placeholder | In email | Ana `1a1adb43367db1f9`: text, `COVER Cultural Stadium.jpeg` (same image as Judy's `7+Arttists+7+Streets+4.jpeg`, fingerprint 0) + photos 1-3 with captions |
-| goddesses-silent-film | Goddesses in the Machine: Silent Film Fashion | Drew Björkstén | Placeholder | In email | Ana `1a1acbec25d30f9d`: text with links, `COVER Goddess.jpeg` + photos 1-6 with captions. Bio `1a1a1d6558f89c71` (added to about.html) |
-| gold-coast-fashion-show | Gold Coast Fashion Show | Judy Carmack Bross | Placeholder | Cover only | Cover `6 - Rachel Pasquini, Kacky Fetzer, Emily Flaherty, Liz Fetzer, and Alona Gornick.jpeg` (`1a196d274334bab3`) |
-| david-sweet-yd3 | New Business Poised to Guide Student-Athletes to Best Division III Choices | David A. F. Sweet | Placeholder | In email | `1a19d444dc9a2025`: text, 3 photos with captions |
-| jill-lowe-ice-cream | Where to Get It | Jill Lowe | Placeholder | In PDF | `1a187835ee3989b1`: `68) Where to get it - Peach icecream.pdf` (use `pdftotext -layout`, check link annotations, mistakes #43, #53) |
-| lejeune-wildwood | Wildwood Review: A Spectacular Visual Feast | Jackson LeJeune | Placeholder | In email | `1a1a851f5991be16` (Judy forward): text, PDF, 4 images (Battle, Hawk, Poster, Title). Judy asks if Jack needs to do anything more |
+| friends-of-prentice | Friends of Prentice Celebrates 40 Years of Women’s Healthcare | Judy Carmack Bross | Ready | 14 on disk | Cover `mq-fop40thanniversarypreviews-106.jpeg` (`1a1a335b0abdf363`); caption "Board Member Shannon Flavin, Executive Director Kristen E. Field" (`1a1a2c9202d75b15`) |
+| chicago-cultural-stadium | Chicago’s Cultural Stadium: Falling in Love With Chicago All Over Again | Judy Carmack Bross | Ready | 5 on disk | Ana `1a1adb43367db1f9`: text, `COVER Cultural Stadium.jpeg` (same image as Judy's `7+Arttists+7+Streets+4.jpeg`, fingerprint 0) + photos 1-3 with captions |
+| goddesses-silent-film | Goddesses in the Machine: Silent Film Fashion | Drew Björkstén | Ready | 8 on disk | Ana `1a1acbec25d30f9d`: text with links, `COVER Goddess.jpeg` + photos 1-6 with captions. Bio `1a1a1d6558f89c71` (added to about.html) |
+| gold-coast-fashion-show | 600 Guests Celebrate the 70th Gold Coast Fashion Show | Judy Carmack Bross | Ready | 14 on disk | Cover `6 - Rachel Pasquini, Kacky Fetzer, Emily Flaherty, Liz Fetzer, and Alona Gornick.jpeg` (`1a196d274334bab3`) |
+| david-sweet-yd3 | New Business Poised to Guide Student-Athletes to Best Division III Choices | David A. F. Sweet | Ready | 4 on disk | `1a19d444dc9a2025`: text, 3 photos with captions |
+| jill-lowe-ice-cream | Where to Get It | Jill Lowe | Ready | 8 on disk | `1a187835ee3989b1`: `68) Where to get it - Peach icecream.pdf` (use `pdftotext -layout`, check link annotations, mistakes #43, #53) |
+| lejeune-wildwood | Wildwood Review: A Spectacular Visual Feast | Jackson LeJeune | Ready | 6 on disk | `1a1a851f5991be16` (Judy forward): text, PDF, 4 images (Battle, Hawk, Poster, Title). Judy asks if Jack needs to do anything more |
 | datebook | DateBook | Annie Delfosse | Copied from Nov 1 | — | Runs to Dec 12; no past months to remove |
 | daily-star-november | Astrochart | Victoria Martin | Copied from Nov 1 | — | Nov 1-7 removed; runs Nov 8 to Dec 5 |
 
