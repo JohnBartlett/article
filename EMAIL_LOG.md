@@ -1506,7 +1506,7 @@ Tier 2 keyword search (`after:2026/09/25`) returned 33 hits: Jack LeJeune's 4 me
 No new magazine email since the 1:10 PM ET check: 35 threads in the window, all newsletters, promotions or John's personal mail; zero from Judy, Ana, Annie, Emma, Sig or FormSubmit. Texts (read from chat.db, Oct 19 06:48 ET onward, magazine keywords only): one relevant inbound on Oct 21, 6:04 AM, praising Sig's story and John's layout of the Oct 18 edition. No lineup, assignment or photo texts. Calls/voicemail: not readable, not asked yet.
 
 ### Check — 2026-10-24 (branch dev2, cutoff epoch 1792781000; this check began epoch 1792849641)
-Texts (chat.db, magazine keywords): nothing relevant. Calls/voicemail: none (John, Nov 7).
+Texts (chat.db, magazine keywords): nothing relevant. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|------|------|-------------------|--------|
@@ -1531,7 +1531,7 @@ Texts (chat.db, magazine keywords since cutoff): none. Calls/voicemail: not read
 | 427 | Oct 24 | John to Emma, cc Judy `1a16fe1eb422c24a` | Sent (John approved): asks whether Susan's second "Photo 2" is Photo 4, and whether the other photos run uncaptioned and where each goes. Answers Judy's "should I check with Emma?" (#425) | 🔁 awaiting Emma |
 
 ### Check — 2026-10-24 (fourth check, branch dev2, cutoff epoch 1792878030; this check began epoch 1792889946)
-Texts (chat.db, magazine keywords): none. Calls/voicemail: none (John, Nov 7).
+Texts (chat.db, magazine keywords): none. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|------|------|-------------------|--------|
@@ -1577,42 +1577,42 @@ Texts (chat.db, magazine keywords): only a personal rental message; nothing to l
 | 448 | Oct 25 | FormSubmit comments (prod) | Letter from Lausanne Part II and Chez Baillagou: both comments empty (no text, no email). | ✅ nothing to log |
 
 ### Check — 2026-10-25 (eleventh check of the day, branch dev2, cutoff epoch 1792964087; this check began epoch 1792964987)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 449 | Oct 25 4:49 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Susan Aurinko, "My Silk Roads October 2026". | ✅ tallied (editors branch update later) |
 
 ### Check — 2026-10-25 (twelfth check of the day, branch dev2, cutoff epoch 1792965887; this check began epoch 1792966787)
-Texts: nothing magazine-related (one personal message, not logged). Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related (one personal message, not logged). Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 450 | Oct 25 5:05 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Chez Baillagou. | ✅ tallied (editors branch update later) |
 
 ### Check — 2026-10-25 (fourteenth check of the day, branch dev2, cutoff epoch 1792969486; this check began epoch 1792970386)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 451 | Oct 25 6:19 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Susan Aurinko, "My Silk Roads October 2026". | ✅ tallied (editors branch update later) |
 
 ### Check — 2026-10-25 (fifteenth check of the day, branch dev2, cutoff epoch 1792970386; this check began epoch 1792971287)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 452 | Oct 25 6:30 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Chez Baillagou. | ✅ tallied (editors branch update later) |
 
 ### Check — 2026-10-25 (seventeenth check of the day, branch dev2, cutoff epoch 1792973086; this check began epoch 1792973987)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
 | 453 | Oct 25 7:14 PM CT | FormSubmit vote (prod) | Quick Vote Yes: Letter from Lausanne: Part I (Oct 18 edition). | ✅ tallied (editors branch update later) |
 
 ### Check — 2026-10-26 (first check of the day, branch dev2, cutoff epoch 1792988361 for votes; lineup found at epoch 1793009087; this check began epoch 1793009989)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1620,7 +1620,7 @@ Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
 
 ### Check — 2026-10-29 (John asked about Libbet; Gmail search "Libbet newer_than:7d" found a message the sender filter had missed, check began epoch 1793301586)
 
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1633,7 +1633,7 @@ Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
 | 457 | Oct 31 AM CT | John (forward `1a191c94e26d68c3`) to Annie `aedelfosse1@gmail.com`, Cc Judy | Forwarded the #456 reply to Libbet with a short note, because #456 Cc'd `annie.b.breton@gmail.com` and Annie may not have received it at her usual address. | ✅ sent |
 
 ### Check — 2026-10-31 (John said Victoria had sent the chart; a wider search `from:viccimartin@gmail.com newer_than:5d` found two Oct 30 emails the quarter-hour checks had reported as nothing; search epoch 1793447722)
-Texts: not re-queried for this entry. Calls/voicemail: none (John, Nov 7).
+Texts: not re-queried for this entry. Calls/voicemail: not readable; ask John.
 
 | # | Date | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1642,7 +1642,7 @@ Texts: not re-queried for this entry. Calls/voicemail: none (John, Nov 7).
 
 ### Check — 2026-10-31 (catch-up after a search fault; John said Judy sent a second order; epoch 1793447722+)
 **Fault found:** Gmail searches written as `after:<epoch>` have returned `{}` since about Oct 28 even though mail was there; the same query with `after:YYYY/MM/DD` or `newer_than:Nd` finds it. About 45 "quiet" quarter-hour checks from Oct 28 to Oct 31 were wrong. Everything below arrived in that window and had not been logged. Fix: search by date (`after:2026/10/28`), then compare each message's internalDate with the cutoff. (CLAUDE.md #73 says to use epoch; that needs correcting.) Texts were queried separately and were not affected.
-Texts: not re-queried for this entry. Calls/voicemail: none (John, Nov 7).
+Texts: not re-queried for this entry. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1666,28 +1666,28 @@ Texts: not re-queried for this entry. Calls/voicemail: none (John, Nov 7).
 | 477 | Oct 31 12:21 AM | FormSubmit `1a19067be47e1057` to `subscribe@2ccmag.com` | "Action Required: Activate FormSubmit" for the subscribe form. The form was activated Jul 13; an activation request now is unexpected. Not clicked. | ⏳ John to decide |
 
 ### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793448285; this check began epoch 1793449186)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 478 | Oct 31 7:15 AM | FormSubmit vote (prod) | Quick Vote Yes: A Closet Looking for a Home (May 31 edition). | ✅ tallied later |
 
 ### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793449186; this check began epoch 1793450085)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 479 | Oct 31 7:23 AM | Judy `1a191ea1193dea56` to John | "Checking in": "it looks like you have all the articles. Let me know if you are missing anything. Please change anything in the lineup that you think would look better in another order." UPSed checks yesterday and asks John to say if she is still behind (arrive Monday). Leaving tomorrow (Sun Nov 1) for LA to see a family member. Offers help. Not true that everything is in: Sig's Graham article, Drake's revision, Annie's DateBook and the Chicagoan cover are still missing. | ⏳ **reply owed** (money question #467 plus missing items and lineup OK) |
 
 ### Check — 2026-10-31 (date search after:2026/10/31; cutoff epoch 1793454585; this check began epoch 1793455486)
-Texts: nothing magazine-related. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 480 | Oct 31 8:52 AM | Judy `1a1923bba84887ff` to John, Cc Libbet and Annie D. (`aedelfosse1@gmail.com`) | Reply in "Help on photos": thanks John for the update and "this fine recommendation." Says she **mistakenly used the address of the wrong Annie** on her lineup emails and has written to "Annie Breton" to say so. So `annie.b.breton@gmail.com` (and `anniebbreton@gmail.com`) is NOT Annie Delfosse; Annie D. is `aedelfosse1@gmail.com`. That means #454 and #462 (Judy's lineups) never reached Annie D. through that address, and John's #456 reply to Libbet was Cc'd to that other person. Correct Annie address: `aedelfosse1@gmail.com`. Remove `annie.b.breton@gmail.com` from the check filter. | ✅ read; no reply needed; correct the Cc list on future mail |
 
 ### Check — 2026-10-31 10:17 AM CT (date search after:2026/10/30 plus wide newer_than:2d; cutoff epoch 1793455486; this check began epoch 1793459815)
-Texts: nothing magazine-related since the cutoff. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1709,7 +1709,7 @@ Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable;
 | 490 | Oct 31 | John to Judy | "My new address for payment": John moved Wed Oct 28; asks Judy to use the new address; her Friday Oct 30 UPS checks went to the old address, John will collect them Monday. Sent with John's approval. Her "am I behind?" question, Editor's Page idea and lineup order are still unanswered. | ✅ sent; ⏳ other replies owed |
 
 ### Check — 2026-10-31 evening (second; date search after:2026/10/31 compared to internalDate; cutoff epoch 1793483828; this check began epoch 1793488227)
-Texts: nothing magazine-related since the cutoff. Calls/voicemail: none (John, Nov 7).
+Texts: nothing magazine-related since the cutoff. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1729,7 +1729,7 @@ Texts: nothing magazine-related since the cutoff. Calls/voicemail: none (John, N
 | 500 | Nov 2 | John to Judy | "@properties: a sample proposal and demo pages" (via gmail_api.py, new thread): links to the dev2 demos (proposal, architecture section, 1301 Astor feature); asks when Suzette Morton Davidson bought the apartment and who the third owner is, and how her @properties conversation went. Demos are dev2-only (demos/ stripped on stage). | ⏳ Judy's reply |
 
 ### Check — 2026-11-02 (per-sender searches after:2026/11/01; cutoff epoch 1793488227; this check began epoch 1793657488)
-Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemail: none (John, Nov 7).
+Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemail: not readable; ask John.
 | 501 | Nov 1 | Judy `1a1949eb5e1996c1` (reply-all to the Nov 1 live notice) | "It looks fabulous, with thanks to all." Praise only. | ✅ read |
 | 502 | Nov 1 | Judy `1a196d8e74bedf93` to Annie, Emma, Ana, John | "The November 8th issue", first lineup draft (8 pieces). Superseded by `1a19d68884379d88`. | ✅ superseded |
 | 503 | Nov 1 | Judy `1a196d274334bab3` to John, Emma | Cover photo for the Gold Coast Fashion Show (Nov 8): `6 - Rachel Pasquini, Kacky Fetzer, Emily Flaherty, Liz Fetzer, and Alona Gornick.jpeg`. Story and layout from Emma. | ⏳ Nov 8 build |
@@ -1745,7 +1745,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 ### Check — 2026-11-05 12:26 PM ET (branch dev2; date searches after:2026/11/01 compared to internalDate; cutoff epoch 1793657488; this check began epoch 1793899570)
 - Queries: Tier 1 `from:(...)`, Tier 2 keywords (category-filtered), `cc:/to:judycbross`, named senders (Jill Lowe, Fabrizio, Gagan Saini, Marcy), LeJeune, FormSubmit, sanity `from:judycbross@aol.com newer_than:4d`; per-sender follow-ups for Jill, Annie, Emma, Prentice, Jackson, Fabrizio.
 - Found: 13 Tier 1 messages, 1 Quick Vote, 21 spam Reader Comments, 1 earlier email missed by prior checks (Jill, Oct 29).
-- Texts: Nov 3 reminder to Judy (already #510); Nov 3 a texter asked whether two iPhone photos carry location and whether they can turn location off for submissions only (photo-privacy thread). Calls/voicemail: none (John, Nov 7).
+- Texts: Nov 3 reminder to Judy (already #510); Nov 3 a texter asked whether two iPhone photos carry location and whether they can turn location off for submissions only (photo-privacy thread). Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1775,7 +1775,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 ### Check — 2026-11-06 ET (branch dev2; date searches after:2026/11/04 compared to internalDate; cutoff epoch 1793899570; this check began epoch 1793985231)
 - Queries: Tier 1 `from:(...)` incl. Adrian, Tier 2 keywords (category-filtered), `cc:/to:judycbross`, named senders (Jill Lowe, Fabrizio, Marcy, Sweet, LeJeune), FormSubmit.
 - Found: 5 Tier 1 messages, 1 contributor email copied to Judy (Fabrizio), 4 Quick Votes, 1 spam Reader Comment (before the #527 filter test; none since).
-- Texts: read from chat.db, no magazine-related texts since the cutoff. Calls/voicemail: none (John, Nov 7).
+- Texts: read from chat.db, no magazine-related texts since the cutoff. Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
@@ -1791,7 +1791,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 ### Check — 2026-11-07 ET (branch dev2; Gmail connector, date searches after:2026/11/05–06 compared to internalDate; cutoff epoch 1793985231; this check began epoch 1794063749)
 - Local Gmail API token fails with `invalid_grant` (refresh token revoked/expired); searches done through the Gmail connector. Attachment and Drive downloads by `tools/pull_msg.py` / `tools/fetch_drive.py` need a fresh token (`tools/get_gmail_token.py`).
 - Queries: Tier 1 `from:(...)` incl. Adrian, Tier 2 keywords (category-filtered), `cc:/to:judycbross`, named senders (Jill Lowe, Fabrizio, Marcy), reader forms, sent mail, Libbet/Drive shares.
-- Found: 3 contributor submissions, 2 Judy replies, 1 earlier Libbet email missed by the Nov 6 check (her address is not in the skill's Tier 1 filter). Reader forms: none since Nov 5 (no spam since the #527 filter). Texts: no magazine-related texts since the cutoff (29 messages, none matching). Calls/voicemail: none (John, Nov 7).
+- Found: 3 contributor submissions, 2 Judy replies, 1 earlier Libbet email missed by the Nov 6 check (her address is not in the skill's Tier 1 filter). Reader forms: none since Nov 5 (no spam since the #527 filter). Texts: no magazine-related texts since the cutoff (29 messages, none matching). Calls/voicemail: not readable; ask John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
