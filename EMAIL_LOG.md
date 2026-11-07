@@ -1808,3 +1808,12 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 544 | Nov 7 | Code (John's OK) | Gmail API token renewed: OAuth consent completed in Chrome on the Mac (John remote), new refresh token in `~/.gmail-mcp/credentials.json` (old files kept as `.bak`). `brew install poppler` (pdftotext, pdftoppm, pdfimages were missing). | ✅ |
 | 545 | Nov 7 | Code | **Nov 8 built:** all seven articles with photos, nav thumbnails, homepage cards and teasers, about.html popups (`fc71e865`). Covers matched by image: Ana's Silent Film cover = Judy's mannequin, photo 1 = Judy's top photo; Stadium and Gold Coast covers = Judy's. dev2 preview `article-fzkjae0u2`, alias `article-dev2` set. Closes #512, #518, #519, #520, #522, #523, #524, #530, #541, #542. | ✅; ⏳ Fabrizio (#533/#534), stage and publish |
 | 546 | Nov 7 | John to Judy `1a1b6a1e94108976` | Re "Fwd: Checking in": Fabrizio received; Nov 8 as eighth article or Nov 15? All seven Nov 8 articles built. Asked whether to correct five source typos (Silent Film x2, Sweet, Wildwood, Jill) and whether to request larger photos (Stadium 2, Prentice 3). | ✅ sent; ⏳ Judy's answers |
+
+### Check — 2026-11-07 afternoon ET (branch dev2; Gmail API, date searches after:2026/11/06 compared to internalDate; cutoff epoch 1794063749; this check began epoch 1794088045)
+- Queries: Tier 1 `from:(...)` (incl. Libbet, Jill, Fabrizio, Adrian, Victoria), Tier 2 keywords (category-filtered), `cc:/to:judycbross`, reader forms, sent mail.
+- Found: 1 Judy reply, 1 sent reply to Libbet. Reader forms: none since Nov 5. Texts: 6 since the cutoff, none magazine-related. Calls/voicemail: asked John.
+
+| # | Date (CT) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 547 | Nov 7 12:04 PM | John to Libbet `1a1b72f3f2167b4a` | Re "Toronto story file": body is only "Hi Libbet," and the signature, quoting her Nov 5 email. Looks sent before it was written. | ⏳ ask John |
+| 548 | Nov 7 2:43 PM | Judy `1a1b7c0f1c36e680` | Re "Checking in" (answers #546): fix the typos; **add Fabrizio to Nov 8**; Cultural Stadium won't send better photos, go with what we have; "all sounds fine". | ⏳ typos, Fabrizio build |
