@@ -13,7 +13,8 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — article content and photos (intern, coordinator)
 - Sig (`sigalina@aol.com`) — article submissions
 - Victoria Martin (`viccimartin@gmail.com`) — monthly Astro Chart / Daily Star content (Word doc attachment). **Added 2026-08-29** after her Sept chart (sent Aug 26) was missed by a full check-emails pass and only surfaced when John asked directly — she wasn't in this list before.
-- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing (not currently in tier1 search)
+- Adrian Naves (`niceguyfatz@gmail.com`) — layout and writing
+- Libbet (Elizabeth Dunlop Richter, `erichter5453@gmail.com`), Jill Lowe (`jill.lowe@mac.com`), Fabrizio E. Paco (`fabrizioepaco@outlook.com`) — writers who email John directly. Added Nov 7, 2026: Jill's Oct 29 and Libbet's Nov 5 emails were missed because they were not in this filter. Libbet uploads photos to the LIBBET Drive folder (`1YwqdFGp2CpAsqGTnjMkKV3vYvvymM_HK`); list it when she mentions photos.
 
 **Not in tier1 search:**
 - Marcy Carmack (`marcycarmack@icloud.com`) — writer/contributor; caught by tier2 keyword search
@@ -49,7 +50,7 @@ token = get_access_token()
 
 # Tier 1 — known addresses, only after last processed date
 tier1_messages = search_messages(token,
-    f"from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com) after:{after_date}")
+    f"from:(judycbross@aol.com OR judycbross@icloud.com OR aedelfosse1@gmail.com OR anabaca8@gmail.com OR emuhl2@uic.edu OR muhlemane2@gmail.com OR sigalina@aol.com OR viccimartin@gmail.com OR niceguyfatz@gmail.com OR erichter5453@gmail.com OR jill.lowe@mac.com OR fabrizioepaco@outlook.com) after:{after_date}")
 
 # Tier 2 — keyword search for writers (no is:unread — read state is meaningless,
 # John may have opened emails in Gmail already; dedupe against EMAIL_LOG.md msg IDs)

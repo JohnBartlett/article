@@ -31,12 +31,13 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- **Friends of Prentice** (Annie) — article text. Not received. Cover and caption in hand from Judy.
-- **Gold Coast Fashion Show** (Emma) — laid-out story and photos. Not received. Cover in hand from Judy.
+- **Friends of Prentice** (Annie) — text received Nov 7 (`1a1b5080fb9057bd`): "Friends of Prentice Celebrates 40 Years of Women's Healthcare" by Judy Carmack Bross, 12 captioned photos as Drive links. Photo 8's caption matches Judy's cover `mq-fop40thanniversarypreviews-106.jpeg`; compare before placing (#68).
+- **Gold Coast Fashion Show** (Emma) — text received Nov 7 (`1a1b49f0bcf37491`): "600 Guests Celebrate the 70th Gold Coast Fashion Show" by Judy Carmack Bross, photos 1–6 attached, 7–13 on Drive, all captioned. "Photo 2/ Cover" matches Judy's cover.
 
 ## Blockers
 
-- **Friends of Prentice byline.** No lineup names the writer (Annie is the coordinator). Ask Judy or Annie.
+- ~~Friends of Prentice byline.~~ Resolved Nov 7: Judy Carmack Bross (Annie's layout).
+- **Downloads blocked:** the local Gmail token returns `invalid_grant`; run `tools/get_gmail_token.py` before pulling attachments or Drive photos.
 - **Fabrizio's "A Weekend at the Physical Media Fair"** arrived Nov 6 (`1a1b0bbc38b78ee5`; receipt sent, #537). Judy (Nov 6) says run it Sunday if we have it; her Nov 3 list of seven held it to next week. Eighth article Nov 8, or Nov 15? Asked Judy.
 - **Lead article.** Judy's list puts Friends of Prentice first, and she wrote "Maybe our lead article?" Confirm.
 - **Jill Lowe's title.** Working title "Where to Get It"; her email reads "Where to get it / Seasonal ice-cream especially peach". Take the title from the PDF at build (mistake #61).
