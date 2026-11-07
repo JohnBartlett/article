@@ -9,7 +9,7 @@ Skeleton prepped Nov 5: seven stubs, DateBook and Astrochart copied from Nov 1, 
 Supersedes `1a196d8e74bedf93` (Nov 1) and `1a19d68884379d88` (Nov 2). Francesco Bianchini's Argentina piece held to next week.
 
 Nav chain order (hero → last):
-1. `friends-of-prentice` — Friends of Prentice (author to confirm)
+1. `friends-of-prentice` — Friends of Prentice Celebrates 40 Years of Women's Healthcare by Judy Carmack Bross
 2. `chicago-cultural-stadium` — Chicago Cultural Stadium by Judy Carmack Bross
 3. `goddesses-silent-film` — Goddesses in the Machine: Silent Film Fashion by Drew Björkstén
 4. `gold-coast-fashion-show` — Gold Coast Fashion Show by Judy Carmack Bross
@@ -21,7 +21,7 @@ Nav chain order (hero → last):
 
 | Order | Slug | Title | Author | Coordinator |
 |---|---|---|---|---|
-| 1 | friends-of-prentice | Friends of Prentice | To confirm | Annie |
+| 1 | friends-of-prentice | Friends of Prentice Celebrates 40 Years of Women's Healthcare | Judy Carmack Bross | Annie |
 | 2 | chicago-cultural-stadium | Chicago Cultural Stadium | Judy Carmack Bross | Ana (editing) |
 | 3 | goddesses-silent-film | Goddesses in the Machine: Silent Film Fashion | Drew Björkstén | Ana |
 | 4 | gold-coast-fashion-show | Gold Coast Fashion Show | Judy Carmack Bross | Emma |
