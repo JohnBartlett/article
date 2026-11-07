@@ -29,18 +29,34 @@ Nav chain order (hero → last):
 | 6 | jill-lowe-ice-cream | Where to Get It | Jill Lowe | Jill to John |
 | 7 | lejeune-wildwood | Wildwood Review: A Spectacular Visual Feast | Jackson LeJeune | Judy to John |
 
+## Build — 2026-11-07
+
+All seven articles built with photos (`fc71e865`); verify_edition 7 Ready, edition_checks clean, content_audit 2 expected flags. Local Gmail token renewed Nov 7 (OAuth consent in Chrome on the Mac, John's OK). Titles taken from the sources (#61): Prentice, Cultural Stadium and Gold Coast changed from working titles.
+
 ## Pending Deliveries
 
-- **Friends of Prentice** (Annie) — text received Nov 7 (`1a1b5080fb9057bd`): "Friends of Prentice Celebrates 40 Years of Women's Healthcare" by Judy Carmack Bross, 12 captioned photos as Drive links. Photo 8's caption matches Judy's cover `mq-fop40thanniversarypreviews-106.jpeg`; compare before placing (#68).
-- **Gold Coast Fashion Show** (Emma) — text received Nov 7 (`1a1b49f0bcf37491`): "600 Guests Celebrate the 70th Gold Coast Fashion Show" by Judy Carmack Bross, photos 1–6 attached, 7–13 on Drive, all captioned. "Photo 2/ Cover" matches Judy's cover.
+- None for the seven articles.
 
 ## Blockers
 
-- ~~Friends of Prentice byline.~~ Resolved Nov 7: Judy Carmack Bross (Annie's layout).
-- **Downloads blocked:** the local Gmail token returns `invalid_grant`; run `tools/get_gmail_token.py` before pulling attachments or Drive photos.
-- **Fabrizio's "A Weekend at the Physical Media Fair"** arrived Nov 6 (`1a1b0bbc38b78ee5`; receipt sent, #537). Judy (Nov 6) says run it Sunday if we have it; her Nov 3 list of seven held it to next week. Eighth article Nov 8, or Nov 15? Asked Judy.
-- **Lead article.** Judy's list puts Friends of Prentice first, and she wrote "Maybe our lead article?" Confirm.
-- **Jill Lowe's title.** Working title "Where to Get It"; her email reads "Where to get it / Seasonal ice-cream especially peach". Take the title from the PDF at build (mistake #61).
+- **Fabrizio's Physical Media Fair piece:** Nov 8 (as an eighth article) or Nov 15? Judy's Nov 6 email and her Nov 3 list of seven disagree.
+- **Small photos (#80):** Cultural Stadium `1 Donna Lasinski.jpeg` (387 px) and `2 Koi Pond.jpeg` (241 px); Prentice photos 4, 8 and 10 (416 px, from Annie's layout); Silent Film `5 Gish.jpg` (820 px). Built as sent; ask for larger files if Judy wants them replaced.
+- **Jill's photos** come only from her PDF (no originals sent), saved as `peach-000.jpg` … `peach-006.png`.
+- **Jackson's "Woods People" image** is on a Drive link not shared with John; the copy in the build comes from his PDF.
+
+## Layout calls to confirm
+
+- David Sweet sent captions but no placement: Jennifer and Caleb at the top, the logo after the yd3.org paragraph, the Jennifer website photo mid-article.
+- Prentice category changed from the stub's "Architecture" to "Society"; homepage hero uses Judy's cover `mq-fop40thanniversarypreviews-106.jpeg` (Annie's photo 8 is a smaller copy of it, kept in the body).
+- Wildwood homepage card uses the poster (not in Jackson's PDF layout).
+
+## Source text to flag to Judy (left verbatim, #18)
+
+- Silent Film: "Bard GraduateCenter", "Here,“Two Gun Betty”", "which we have implied it its title".
+- Sweet: "Kenyon University" (Kenyon College?).
+- Gold Coast: "complex fetal condition."
+- Wildwood: "only serves to bolsters", and the fragment "Fairy tales, especially the Brothers’ Grimm “original” fairy tale canon."
+- Jill: "Delaware Food and Liqor" (the sign in her photo reads LIQUOR).
 
 ## Articles
 
