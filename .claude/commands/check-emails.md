@@ -17,7 +17,7 @@ This skill runs independently of the edition cycle — it feeds into whichever p
 
 **Not in tier1 search:**
 - Marcy Carmack (`marcycarmack@icloud.com`) — writer/contributor; caught by tier2 keyword search
-- FormSubmit (`submissions@formsubmit.co`) — reader votes/comments; checked only during `/send-update` stats run, not here
+- Reader forms (`Classic Chicago Forms <john.bartlett@gmail.com>`, from `api/submit-form.js`, not FormSubmit; CLAUDE.md #82) — reader votes/comments. FormSubmit (`submissions@formsubmit.co`) now sends only New Subscriber emails
 
 ### Tier 2 — Unknown writers (keyword search)
 - Search recent emails mentioning "Classic Chicago" or "article" from senders not in Tier 1
@@ -126,7 +126,7 @@ python3 tools/pull_msg.py <message-id> <scratch-dir>   # plain.txt, body.html, a
 - Report sender + subject for review
 - Apply only if content is unambiguous and sender is a known contributor writing from an unexpected address
 
-### FormSubmit — votes and comments
+### Reader forms — votes and comments
 Search for votes since the last update date noted in `editors/stats.html` (check the data-note line):
 
 ```

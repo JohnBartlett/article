@@ -152,7 +152,7 @@ Skills run in this order each week:
 
 | Phase | Skill | Purpose |
 |---|---|---|
-| 0 | `/check-emails` | Run at session start: check Judy's emails and FormSubmit votes; apply changes; feeds into whichever phase is active |
+| 0 | `/check-emails` | Run at session start: check Judy's emails, texts, and reader votes/comments; apply changes; feeds into whichever phase is active |
 | 1 | `/prep-edition` | When Judy sends article list: create folder skeleton, stubs, nav chain, homepage shell, editors pages — before any content arrives |
 | 2 | `/new-edition` | Fill in articles and photos as contributor emails arrive; runs repeatedly until all articles are Ready |
 | 3 | `/edition-checks` | Quality gate before staging: fix dark-mode, nav-thumbs, about.html popups, "Our Writers" popups, verify nav chain |
@@ -501,6 +501,10 @@ Every article must have a documented message ID (e.g., `19db1b467e7a53dd`). Crea
 
 81. **When a contributor says "I sent it," ask which address before calling it missing.** Drake Boehm sent Portage Park on Oct 15, 2026 to john@classicchicagomag.com, which was not forwarded to john.bartlett@gmail.com (the domain had no MX records, so mail bounced), and it was listed as not received for three days until he forwarded it. Forwarding john@classicchicagomag.com → john.bartlett@gmail.com was set up in Squarespace Domains on Nov 2, 2026 (Mailgun MX records); other addresses on that domain are accepted by the mail server but not forwarded anywhere. If someone says they sent something and it isn't in this inbox, search their name in all folders (`in:anywhere`), then ask which address they used. When telling contributors where to send things (John, Nov 1, 2026): articles go to Judy; anything that must reach John directly goes to john.bartlett@gmail.com, never john@classicchicagomag.com.
 
+82. **Reader comments and votes go to `api/submit-form.js` on the Vercel dev deployment, not FormSubmit.** They arrive as "Classic Chicago Reader Comment/Quick Vote" emails from `Classic Chicago Forms <john.bartlett@gmail.com>`. A change to that file reaches readers only through a **dev** deploy (manual procedure in `/stage`), not master. Spam filter added Nov 5, 2026: it drops comments with no `Page`/`article` field or with link spam (an HTML/BBCode link, or two or more URLs), returning a fake success.
+
+83. **Generators that regex-scan article HTML must search `<body>` only.** The template's CSS comments contain literal `<p class=...>` text; `build_edition_landing.py` published that comment as the teaser on four live Past Editions pages (Oct 4–25, 2026), and none of the three audit scripts caught it.
+
 ### Recurring email workflow
 
 Run `/check-emails` to execute this workflow. Do it at the start of a session or when Judy may have sent instructions. A bare "Check" from John (Oct 25, 2026) means exactly this: check messages (texts) and emails.
@@ -512,9 +516,9 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 - Annie Delfosse (`aedelfosse1@gmail.com`) — DateBook updates, article content (e.g. Katherine Harvey's articles)
 - Ana Baca (`anabaca8@gmail.com`) — photos and article content for Philip Vidal's About the Town column
 - Emma Muhleman (`emuhl2@uic.edu`, `muhlemane2@gmail.com`) — her own article content/photos as a contributor, AND acts as production assistant for other writers (e.g. Bob Glaze) — when she sends a piece, check whether she's the named byline or just packaging someone else's finished work before assuming authorship (see mistake #56)
-- FormSubmit (`submissions@formsubmit.co` → `editor@2ccmag.com`) — reader comments and Quick Votes
+- Reader forms (`Classic Chicago Forms <john.bartlett@gmail.com>`, sent by `api/submit-form.js`; see #82) — reader comments and Quick Votes. FormSubmit (`submissions@formsubmit.co`) now carries only New Subscriber emails
 
-**What to expect from FormSubmit:**
+**What to expect from the reader forms:**
 - "Classic Chicago Reader Comment" — check the `comment` field; empty submissions are common (reader opened form, didn't type)
 - "Classic Chicago Quick Vote" — vote=Yes means reader liked the article; `Environment: dev2` = test, ignore
 - "New Subscriber" (to `subscribe@2ccmag.com`) — subscriber signups from the live subscribe form (active since Jul 13, 2026); log in `EMAIL_LOG.md` (no subscriber-list file exists yet)
