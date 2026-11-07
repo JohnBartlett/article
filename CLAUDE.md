@@ -527,7 +527,8 @@ Run `/check-emails` to execute this workflow. Do it at the start of a session or
 - If a comment raises an editorial concern (criticism of a feature, content question), also add it to `comments.html` under a "Reader Comments" section (this one does live on dev2)
 
 **Common bio locations in `about.html`:**
-- Judy and Megan: Our Team section
+- Judy, Megan and John: Our Team section
+- **About page placement:** Magazine Interns (Drake Boehm, Fabrizio E. Paco, Emma Muhleman) go in **Our Team**, with their articles popup on the team card, not in Our Writers. Decided by John, Nov 7, 2026.
 - Writers and curators: "Our Writers" section (renamed from "Our Writers This Week" 2026-08-29 — there is no separate rotating/permanent split; it's one flat grid of every contributor ever published, added to by `/edition-checks` each week and never pruned)
 - Annie Delfosse: `id="annie-delfosse"` (linked from DateBook page)
 
