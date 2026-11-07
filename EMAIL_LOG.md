@@ -1811,10 +1811,10 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 
 ### Check — 2026-11-07 afternoon ET (branch dev2; Gmail API, date searches after:2026/11/06 compared to internalDate; cutoff epoch 1794063749; this check began epoch 1794088045)
 - Queries: Tier 1 `from:(...)` (incl. Libbet, Jill, Fabrizio, Adrian, Victoria), Tier 2 keywords (category-filtered), `cc:/to:judycbross`, reader forms, sent mail.
-- Found: 1 Judy reply, 1 sent reply to Libbet. Reader forms: none since Nov 5. Texts: 6 since the cutoff, none magazine-related. Calls/voicemail: asked John.
+- Found: 1 Judy reply, 1 unsent draft to Libbet (first logged as sent). Reader forms: none since Nov 5. Texts: 6 since the cutoff, none magazine-related. Calls/voicemail: asked John.
 
 | # | Date (CT) | From | Subject / content | Status |
 |---|---|---|---|---|
-| 547 | Nov 7 12:04 PM | John to Libbet `1a1b72f3f2167b4a` | Re "Toronto story file": body is only "Hi Libbet," and the signature, quoting her Nov 5 email. Looks sent before it was written. | ⏳ ask John |
+| 547 | Nov 7 12:04 PM | Unsent **draft** to Libbet `1a1b72f3f2167b4a` | Re "Toronto story file": a Gmail draft (label DRAFT, never sent) holding only "Hi Libbet," and the signature. Not created by Claude Code (no Gmail draft/send calls this session). First logged in error as a sent reply: the `from:me` search returns drafts and the label wasn't checked. | ✅ nothing sent; draft left for John |
 | 548 | Nov 7 2:43 PM | Judy `1a1b7c0f1c36e680` | Re "Checking in" (answers #546): fix the typos; **add Fabrizio to Nov 8**; Cultural Stadium won't send better photos, go with what we have; "all sounds fine". | ✅ done (#549) |
 | 549 | Nov 7 | Code | Per #548: five typos fixed; **Fabrizio's "A Weekend at the Physical Media Fair" built** as the eighth Nov 8 article after Wildwood (`c8c47071`): text verbatim, cover + 3 photos captioned, 8 links from his bracketed URLs; homepage card; about.html Articles popup for him (had none). verify_edition 8 Ready. Preview `article-kmsbofuch`, alias `article-dev2` set. Closes #533, #534. | ✅; ⏳ stage and publish |
