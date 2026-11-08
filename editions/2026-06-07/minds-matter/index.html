@@ -319,5 +319,6 @@
   <script>
     (function(){var btn=document.getElementById('hamburger-btn');var menu=document.getElementById('hamburger-menu');if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('open');});document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){menu.classList.remove('open');}});}})();
   </script>
+<script>/* one submission per click: grey out Send once a comment is on its way (Nov 8, 2026) */document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.action||f.action.indexOf("/api/submit-form")<0)return;setTimeout(function(){if(e.defaultPrevented)return;var b=f.querySelector("button[type=submit],input[type=submit]");if(b){b.disabled=true;b.style.opacity="0.6";b.style.cursor="default";if(b.tagName==="BUTTON")b.textContent="Sending\u2026";else b.value="Sending\u2026";}},0);},true);</script>
 </body>
 </html>
