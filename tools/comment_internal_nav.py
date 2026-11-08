@@ -5,13 +5,15 @@ import os, re
 
 # Matches: <!-- dev2-only -->\n<div class="internal-nav">...</div>\n
 # and wraps it in <!-- dev2-only ... -->
+# The div may carry inline attributes (style=...) and any indentation (Nov 7, 2026: the
+# May 24 DateBook's styled nav was missed and reached dev).
 PATTERN = re.compile(
-    r'(  <!-- dev2-only -->)\s*\n(\s*<div class="internal-nav">.*?</div>)\s*\n',
+    r'([ \t]*)<!-- dev2-only -->\s*\n(\s*<div class="internal-nav"[^>]*>.*?</div>)[ \t]*\n',
     re.DOTALL
 )
 
 def replace(m):
-    return f'  <!-- dev2-only\n{m.group(2)}\n  -->\n'
+    return f'{m.group(1)}<!-- dev2-only\n{m.group(2)}\n{m.group(1)}-->\n'
 
 changed = []
 for dirpath, _, files in os.walk('.'):
