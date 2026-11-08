@@ -19,6 +19,18 @@ find editions/ -name "*.jpg" -o -name "*.jpeg" -o -name "*.JPG" | while read f; 
 ```
 Compress any hits before staging — Cloudflare will reject files over 25 MB.
 
+**No drift between dev2 and dev (CLAUDE.md #85):**
+```bash
+.venv/bin/python tools/branch_drift.py
+```
+Every "real content difference" or "file only on origin/dev" must be resolved first: put the right version on dev2, and patch dev directly when git will not carry a dev2 fix (the file counts as already merged).
+
+**No open log rows (CLAUDE.md #74):**
+```bash
+grep -n '⏳' EMAIL_LOG.md
+```
+Every ⏳ row since the last published edition must be resolved. Close rows that a later row already resolved (mark them ✅ with the closing row's number) before staging.
+
 **Tooling-only commits don't need staging:** If the only changes since last stage are to `.claude/commands/`, `CLAUDE.md`, `tools/`, or `_template/` (no article HTML, photos, or homepage changes), skip staging. Tooling changes are harmless on dev2 and will flow through naturally with the next edition's content.
 
 ## Step 1 — Switch to dev and merge

@@ -63,6 +63,19 @@ Fixed Nov 7 with Judy's OK (#548): "Bard Graduate Center" (x2), "implied in its 
 
 Still verbatim, not raised with Judy: Silent Film "Here,“Two Gun Betty”"; Gold Coast "complex fetal condition."; Wildwood fragment "Fairy tales, especially the Brothers’ Grimm “original” fairy tale canon."; Fabrizio "employed at a video story" (store?), "distributer", "John Water’s" (Waters').
 
+## Sources
+
+Read by `tools/source_audit.py` (#84). First ID = text source; later IDs = extra photo or caption emails.
+
+- friends-of-prentice: 1a1b5080fb9057bd, 1a1a335b0abdf363
+- chicago-cultural-stadium: 1a1adb43367db1f9
+- goddesses-silent-film: 1a1acbec25d30f9d, 1a1a1f45c2ec8949
+- gold-coast-fashion-show: 1a1b49f0bcf37491, 1a196d274334bab3
+- david-sweet-yd3: 1a19d444dc9a2025
+- jill-lowe-ice-cream: 1a187835ee3989b1
+- lejeune-wildwood: 1a1a851f5991be16
+- fabrizio-physical-media-fair: 1a1b0bbc38b78ee5
+
 ## Articles
 
 | Slug | Title | Author | HTML | Photos | Notes |

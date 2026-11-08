@@ -174,6 +174,15 @@ python3 tools/verify_edition.py YYYY-MM-DD
 Confirm actual state — content + photos — before claiming any article is Ready.
 Never mark an article Ready without running this.
 
+Then, with each article's message IDs in the edition `STATUS.md` `## Sources` section:
+
+```bash
+.venv/bin/python tools/source_audit.py YYYY-MM-DD      # source audit, CLAUDE.md #84
+.venv/bin/python tools/card_crops.py YYYY-MM-DD        # homepage crops, CLAUDE.md #86
+```
+
+Read every text, formatting, link, caption and photo difference the audit reports, and open every crop contact sheet. Report differences before fixing (contributor text is verbatim; layout labels, markers and approved typo fixes are expected).
+
 ## Step 10 — Update editors pages
 
 After each build pass:

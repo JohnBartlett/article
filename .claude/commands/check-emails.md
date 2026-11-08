@@ -77,6 +77,8 @@ python3 tools/pull_msg.py <message-id> <scratch-dir>   # plain.txt, body.html, a
 
 ## Step 2 — Process each email type
 
+**Messages from John:** a `from:me` search also returns drafts. Read each message's `labelIds`: `DRAFT` means unsent, so log it as a draft and never report it as a sent reply; only `SENT` is sent (CLAUDE.md #87).
+
 ### Judy — new article list for upcoming edition
 - This triggers `/prep-edition` — do not build stubs here, just report it
 - Note the edition date, article titles, authors, and any holds
