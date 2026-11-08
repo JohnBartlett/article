@@ -188,5 +188,6 @@
   var nextUrl='../../../index.html';
   document.addEventListener('keydown',function(e){var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable)return;if(e.key==='n'||e.key==='N'){window.location.href=nextUrl;}if(e.key==='p'||e.key==='P'){window.location.href=prevUrl;}if(e.key===' '||e.key==='PageDown'){e.preventDefault();window.scrollBy(0,window.innerHeight*0.85);}if(e.key==='PageUp'){e.preventDefault();window.scrollBy(0,-window.innerHeight*0.85);}});
 </script>
+<script>/* one submission per click: grey out Send once a comment is on its way (Nov 8, 2026) */document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.action||f.action.indexOf("/api/submit-form")<0)return;setTimeout(function(){if(e.defaultPrevented)return;var b=f.querySelector("button[type=submit],input[type=submit]");if(b){b.disabled=true;b.style.opacity="0.6";b.style.cursor="default";if(b.tagName==="BUTTON")b.textContent="Sending\u2026";else b.value="Sending\u2026";}},0);},true);</script>
 </body>
 </html>
