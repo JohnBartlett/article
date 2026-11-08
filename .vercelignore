@@ -19,5 +19,6 @@ editions/*/STATUS.md
 !vercel.json
 deploy.log
 john-article-ideas
+_archive
 editors
 .retrospective-cache

@@ -18,7 +18,7 @@ import sys
 
 INTERNAL = re.compile(
     r'^(CLAUDE\.md|tools/|\.claude/|EMAIL_LOG\.md|.*STATUS\.md|_template/|demos/|editors/|'
-    r'_attachment-staging/|john-article-ideas/|.*\.DS_Store$|requirements\.txt$|\.vercelignore$|\.github/)')
+    r'_attachment-staging/|john-article-ideas/|_archive/|.*\.DS_Store$|requirements\.txt$|\.vercelignore$|\.github/)')
 # lines allowed to differ: GA4 wrappers/body and internal-nav comment markers
 EXPECTED = re.compile(
     r'^\s*(<!--\s*dev2-only.*|-->|<!--\s*GA4[- ]disabled.*|</script>\s*-->|'
