@@ -388,12 +388,28 @@ def main():
     articles_by_author = {}  # author_id → [(edition, slug, title, cover_img)]
     skip_slugs = {'datebook', 'daily-star-april', 'daily-star-march', 'edgelord'}
 
+    # Only published articles get popup entries: linked from their edition's landing page
+    # or from the homepage. Unlinked copies (a multi-part article built early, an unused
+    # prep stub) would otherwise be re-added every run (Nov 7, 2026: July 12 Letter from
+    # Paris 2/3, May 10 Chicago Skyline, Sept 13 Pokemon).
+    root_home = (ROOT / 'index.html').read_text(encoding='utf-8', errors='replace')
+
+    def published(edition, slug):
+        landing = EDITIONS / edition / 'index.html'
+        if landing.exists():
+            t = landing.read_text(encoding='utf-8', errors='replace')
+            if re.search(rf'href="(\./)?{re.escape(slug)}/(index\.html)?"', t):
+                return True
+        return f'editions/{edition}/{slug}/' in root_home
+
     for edition_dir in sorted(EDITIONS.iterdir()):
         if not edition_dir.is_dir():
             continue
         edition = edition_dir.name
         for article_dir in sorted(edition_dir.iterdir()):
             if not article_dir.is_dir() or article_dir.name in skip_slugs:
+                continue
+            if not published(edition, article_dir.name):
                 continue
             article = article_dir / 'index.html'
             if not article.exists():
