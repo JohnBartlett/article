@@ -1831,7 +1831,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 ### Check — 2026-11-07 evening ET (branch dev2; Gmail API, date searches after:2026/11/07 compared to internalDate; cutoff epoch 1794088045; this check began epoch 1794104532)
 - Sources searched: Tier 1 addresses (plus Jackson LeJeune), to/cc Judy, Tier 2 keywords, reader forms, from:me (labelIds checked, #87)
 - Found: 0 Tier 1 or Tier 2 emails since the cutoff; 2 reader forms; 2 emails John sent himself from Gmail (plus the 5 already logged, #555–#558)
-- Texts: read from chat.db, 0 messages since the cutoff; calls/voicemail: asked John
+- Texts: read from chat.db, 0 messages since the cutoff; calls/voicemail: none (John, Nov 7)
 - Result: 1 real reader comment, 1 vote, nothing needing a build
 | 559 | Nov 7 5:48 PM | Reader (form) `1a1b832a05b22a5a` | Reader Comment on Breakthrough Ball Preview (Nov 1), prod, signed with an email: "Thanks again for your talented service for our board, Judy." | ⏳ reader-comments.html on editors; mention to Judy in the weekly update |
 | 560 | Nov 7 5:47 PM | Reader (form) `1a1b831a26a56f67` | Quick Vote Yes: Breakthrough Ball Preview (Nov 1), prod. | ⏳ editors tally |
