@@ -60,6 +60,20 @@ python3 tools/enable_ga4.py
 
 Verify the file count printed looks right (should match all HTML files in the repo).
 
+## Step 2a — Verify GA4 and internal-nav on the merged tree
+
+```bash
+python3 - <<'EOF'
+import re,subprocess
+fs=subprocess.run(['git','ls-files','*.html'],capture_output=True,text=True).stdout.split()
+strip=lambda f: re.sub(r'<!--.*?-->','',open(f,encoding='utf-8',errors='replace').read(),flags=re.S)
+print('GA4 still disabled:',[f for f in fs if 'GA4-disabled' in open(f,encoding='utf-8',errors='replace').read()])
+print('live internal-nav:',[f for f in fs if '<div class="internal-nav"' in strip(f)])
+EOF
+```
+
+Both lists must be empty. Master can carry leftovers from old hotfixes that no merge touches (Aug 23 Murray Bay, Nov 7, 2026); fix with `comment_internal_nav.py` / `enable_ga4.py` from dev2's `tools/` before pushing.
+
 ## Step 3 — Commit and push to master
 
 ```bash
@@ -77,7 +91,7 @@ Cloudflare detects the push and deploys automatically to `chicagoclassicmag.com`
 
 ## Step 4 — Send publication notification
 
-**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation. **Recipients (John's standing practice, confirmed Sept 26, 2026):** To Judy and Sig, Cc Emma, Annie and Ana. Send with `~/.claude/scripts/gmail_api.py` so the link isn't rewritten.
+**Ask the user "Should I send this or save it as a draft?" before sending — do not send automatically just because this step exists in the skill.** This mirrors the standing rule in CLAUDE.md (mistake #15). Draft the notification below, show it, and wait for confirmation. **Recipients (John's standing practice, confirmed Sept 26, 2026):** To Judy and Sig, Cc Emma, Annie and Ana. Send with `~/.claude/scripts/gmail_api.py` so the link isn't rewritten. Send only after Step 6 confirms the new edition is live (the homepage shows a new-edition link, checked with a cache-busting query), and open every link in the email on the live site first.
 
 ```python
 import sys; sys.path.insert(0, 'tools')

@@ -86,6 +86,12 @@ to:
 -->
 ```
 
+Verify the result, not the script's count. This must print 0:
+```bash
+git grep -l '<!-- dev2-only -->' -- '*.html' | wc -l
+```
+On Nov 7, 2026 the script reported 0 files changed while the May 24 DateBook's styled menu was still visible (the pattern has since been widened).
+
 ## Step 3 — Disable GA4 on dev
 
 ```bash
