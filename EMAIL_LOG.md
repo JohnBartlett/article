@@ -1890,3 +1890,4 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | # | Date (ET) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 588 | Nov 14 5:54 PM | Judy `1a1dc44e245a8c65` (to John, cc Francesco, Dan Blagg) | Re: Your Iguazú video: "Think this is marvelous, a great addition. Thank you John! This is a fine article and maybe a new opportunity for us!" Reply-all on the Francesco email, not on the Editors' Page email (#586). | ✅ noted; ⏳ Editors' Page note still awaiting her explicit OK |
+| 589 | Nov 14 | John (text to Sig) | Asked how the Liechtenstein credits (photos 2–7) should write the show title: "Tony Cokes/Let Yourself Be Free" or "Tony Cokes / Let Yourself Be Free" (her email wrapped at the slash; built as "Tony Cokes/ Let…"). | ⏳ awaiting Sig |
