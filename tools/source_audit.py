@@ -123,6 +123,17 @@ def text_to_html(t: str) -> str:
     return ''.join(f'<p>{H.escape(p)}</p>' for p in re.split(r'\n\s*\n', t))
 
 
+def docx_source(docx: str) -> str:
+    """Word document -> HTML with <b>/<i>/<a> kept (pandoc); embedded images dropped."""
+    r = subprocess.run(['pandoc', '-f', 'docx', '-t', 'html', '--wrap=none', docx],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        return ''
+    h = re.sub(r'<img[^>]*>', '', r.stdout)
+    return re.sub(r'</?(strong)>', lambda m: m.group(0).replace('strong', 'b'),
+                  re.sub(r'</?(em)>', lambda m: m.group(0).replace('em', 'i'), h))
+
+
 def pdf_source(pdf: str) -> str:
     """PDF -> HTML paragraphs with <b>/<i>/<a> kept, from pdftohtml's positioned XML.
 
@@ -272,6 +283,14 @@ def audit(slug: str, ids: list[str], ed: str, out: str, hdr: dict) -> None:
     pdf_html = pdf_source(pdfs[0]) if pdfs else None
     if pdf_html:
         cands.append((f'PDF {os.path.basename(pdfs[0])}', pdf_html))
+    for a in main['atts']:
+        if a.lower().endswith('.docx'):
+            dh = docx_source(f'{d}/{main["id"]}/atts/{a}')
+            if dh.strip():
+                cands.append((f'DOCX {a}', dh))
+    if not cands:
+        print('  ! no source text found (empty body, no PDF or DOCX)')
+        return
     words = {lab: len(norm(' '.join(b.text for b in blocks(h))).split()) for lab, h in cands}
     best = max(words.values()) if words else 0
     lab, src_html = next(((l, h) for l, h in cands if l == 'HTML body' and words[l] >= 0.8 * best),
@@ -393,7 +412,7 @@ def audit(slug: str, ids: list[str], ed: str, out: str, hdr: dict) -> None:
             print(f'  (non-image figure: {src["src"] if src else f.find(True).name}) — not compared')
             continue
         name = unquote(img['src'])
-        line = f'  {name[:44]:44} | {norm(cap.get_text()) if cap else "(no caption)"}'
+        line = f'  {name[:44]:44} | {norm(cap.get_text(" ")) if cap else "(no caption)"}'
         print(line[:230])
         path = f'{ROOT}/editions/{ed}/{slug}/{name}'
         if not os.path.exists(path) or not cands_fp:
