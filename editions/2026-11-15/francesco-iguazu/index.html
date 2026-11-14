@@ -272,6 +272,30 @@
       .article-intro { font-size: 16px; }
       .article-body p { font-size: 16px; }
     }
+    /* Video: make it read as a video, not a photo */
+    .video-wrap { position: relative; }
+    .video-badge {
+      position: absolute; top: 12px; left: 12px; pointer-events: none;
+      background: rgba(0, 0, 0, 0.7); color: #fff; padding: 5px 10px; border-radius: 3px;
+      font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .video-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 84px; height: 84px; border-radius: 50%; border: 3px solid #fff;
+      background: rgba(181, 28, 32, 0.9); cursor: pointer; padding: 0;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+    .video-play:hover, .video-play:focus-visible { background: #b51c20; }
+    .video-play span {
+      display: block; width: 0; height: 0; margin-left: 32px;
+      border-top: 16px solid transparent; border-bottom: 16px solid transparent; border-left: 26px solid #fff;
+    }
+    .video-wrap.playing .video-badge, .video-wrap.playing .video-play { display: none; }
+    @media (max-width: 500px) {
+      .video-play { width: 60px; height: 60px; top: 42%; }
+      .video-play span { margin-left: 22px; border-top-width: 12px; border-bottom-width: 12px; border-left-width: 19px; }
+    }
   </style>
   <script src="../../../dark-mode.js"></script>
 </head>
@@ -348,10 +372,14 @@
           <img src="103Осторожно5.jpeg" alt="Through the mist and roar">
           <figcaption>Through the mist and roar</figcaption>
         </figure>
-        <figure>
-          <video controls playsinline preload="metadata" style="width:100%; height:auto; display:block;">
-            <source src="VID20260607112600.mp4#t=0.1" type="video/mp4">
-          </video>
+        <figure class="video-figure">
+          <div class="video-wrap">
+            <video controls playsinline preload="metadata" poster="VID20260607112600-poster.jpg" style="width:100%; height:auto; display:block;">
+              <source src="VID20260607112600.mp4#t=0.1" type="video/mp4">
+            </video>
+            <span class="video-badge">Video &middot; with sound</span>
+            <button type="button" class="video-play" aria-label="Play video"><span></span></button>
+          </div>
           <figcaption>Video: Francesco Bianchini</figcaption>
         </figure>
         <p>I revived myself with a providential bowl of lentil soup and set off again along the walkways anchored to the living rock of the precipice, the metal beneath my feet vibrating with every step: above me, the green ceiling of the forest spilling down the walls; below, the churning river.</p>
@@ -554,5 +582,13 @@
   </script>
 
 <script>/* one submission per click: grey out Send once a comment is on its way (Nov 8, 2026) */document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.action||f.action.indexOf("/api/submit-form")<0)return;setTimeout(function(){if(e.defaultPrevented)return;var b=f.querySelector("button[type=submit],input[type=submit]");if(b){b.disabled=true;b.style.opacity="0.6";b.style.cursor="default";if(b.tagName==="BUTTON")b.textContent="Sending\u2026";else b.value="Sending\u2026";}},0);},true);</script>
+<script>
+  document.querySelectorAll('.video-wrap').forEach(function (w) {
+    var v = w.querySelector('video'), b = w.querySelector('.video-play');
+    b.addEventListener('click', function () { v.play(); });
+    v.addEventListener('play', function () { w.classList.add('playing'); });
+    v.addEventListener('ended', function () { w.classList.remove('playing'); });
+  });
+</script>
 </body>
 </html>
