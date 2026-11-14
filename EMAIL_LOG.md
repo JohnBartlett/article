@@ -1866,7 +1866,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 580 | Nov 7–14 | Reader forms (61), New Subscriber (3) | Quick Votes and Reader Comments, mostly Nov 8 articles; 3 subscriber signups. | ⏳ tally for the weekly update |
 | 581 | Nov 14 | Code (John: "Build the current edition") | **Nov 15 prepped and built:** 9 stubs in Judy's Nov 13 order, DateBook copied (title Nov 15; new entries next week per Judy), Astrochart Nov 15 to Dec 5; homepage hero Antiquarian, 8 cards; Nov 8 moved to Past Editions with its landing page, Oct 4 card dropped; root-page DateBook/Astrochart links updated. 8 articles built from sources (word diff clean against the local copies; Gmail token expired mid-session, so `source_audit.py` could not re-fetch). Open: Sig's article text, Antiquarian title and Photo 14 caption, Christmas Schooner photo, typo list for Judy (STATUS.md). | 🔁 |
 
-### Check — 2026-11-14 18:31 ET (branch dev2; Gmail API, date search after:2026/11/13 compared to internalDate; cutoff epoch 1794668543; this check began epoch 1794691875)
+### Check — 2026-11-14 16:31 ET (branch dev2; Gmail API, date search after:2026/11/13 compared to internalDate; cutoff epoch 1794668543; this check began epoch 1794691875)
 - Sources searched: every message since the cutoff (in:anywhere minus spam/trash), sorted by internalDate; magazine mail picked out by sender
 - Found: 12 Sig emails (text + 10 image/credit), 1 Judy, 2 reader forms; the rest personal or promotional (not logged)
 - Texts: read from chat.db, 36 since the cutoff, none magazine-related; calls/voicemail: ask John
@@ -1880,3 +1880,13 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 585 | Nov 14 2:39–2:40 PM | Reader forms `1a1db92d59fac77d` `1a1db92eb3714722` | Quick Vote Yes and an empty Reader Comment, both on Goddesses in the Machine (Nov 8), prod. | ✅ tally with #580 |
 | 586 | Nov 14 5:28 PM | John `1a1dc2e69d4465a7` (to Judy) + text to Judy | "Francesco's video, and an Editors' Page note for November 15": credits added to Francesco's article; asks her to approve John's Editors' Page note "Worth a Thousand Words, and Then Some" (first article with a video) for tomorrow. Text sent to Judy pointing her to the email. | ⏳ awaiting Judy's OK; note not yet on editorial.html |
 | 587 | Nov 14 5:30 PM | John `1a1dc2fa3504f699` (to Francesco, cc Judy, Dan Blagg) | "Your Iguazú video in \"Осторожно\" for November 15": video added with all seven photos and credited; author's review link (review/2026-11-15/francesco-iguazu/, built by `tools/author_review.py`); asks for changes before Sunday. Sent via gmail_api.py (new thread); Gmail draft deleted. | ⏳ awaiting Francesco |
+
+### Check — 2026-11-14 17:55 ET (branch dev2; Gmail API, targeted sender/keyword search after:2026/11/14 compared to internalDate; cutoff epoch 1794691875; this check began epoch 1794696875)
+- Sources searched: Tier 1 senders, Francesco and Dan Blagg, to/cc Judy, reader forms, New Subscriber, "Classic Chicago" and lineup keywords (38 candidates since Nov 14)
+- Found: 1 Judy reply; 3 John-sent (#584, #586, #587, already logged)
+- Texts: read from chat.db, 1 since the cutoff (John's text to Judy, #586); calls/voicemail: ask John
+- Result: Judy approves the video (on the Francesco thread); no answers yet on titles, Photo 14, book photo, typos or the Editors' Page note itself
+
+| # | Date (ET) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 588 | Nov 14 5:54 PM | Judy `1a1dc44e245a8c65` (to John, cc Francesco, Dan Blagg) | Re: Your Iguazú video: "Think this is marvelous, a great addition. Thank you John! This is a fine article and maybe a new opportunity for us!" Reply-all on the Francesco email, not on the Editors' Page email (#586). | ✅ noted; ⏳ Editors' Page note still awaiting her explicit OK |
