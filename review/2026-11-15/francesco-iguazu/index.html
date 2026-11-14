@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- GA4-disabled
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5J2HWKC0B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5J2HWKC0B1');
+  </script>
+  -->
+  <meta charset="UTF-8">
+  <title>Осторожно | Classic Chicago – Sunday Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 390px;
+      height: auto;
+    }
+
+    nav {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #d41f1f;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
+      padding: 5px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-inner a:hover {
+      color: #b51c20;
+      text-decoration: underline;
+    }
+
+    .article-wrapper {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b51c20;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    h1.article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #111;
+    }
+
+    .article-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #666;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 24px;
+    }
+
+    .article-meta a {
+      color: #b51c20;
+      text-decoration: none;
+    }
+
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .article-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .article-body .pullquote {
+      font-size: 22px;
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #b51c20;
+      padding: 10px 20px;
+      margin: 30px 0;
+    }
+
+    /* CCM interviews: each "CCM:" question is <p class="qa-question">, answer paragraphs are plain <p> */
+    .article-body .qa-question {
+      margin-top: 32px;
+      font-weight: 700;
+      border-left: 3px solid #b51c20;
+      padding-left: 12px;
+    }
+
+    .edition-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #b51c20;
+      text-decoration: none;
+      border-bottom: 1px dashed #b51c20;
+    }
+
+    .back-link:hover {
+      color: #d41f1f;
+      border-bottom: 1px solid #d41f1f;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 260px;
+    }
+
+    .nav-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-figure {
+      margin: 0 0 36px;
+    }
+
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figure {
+      margin: 36px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-figure figcaption,
+    figure figcaption {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #666;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; transition: opacity 0.3s; }
+    .social-links a:hover { opacity: 0.7; }
+    .social-links svg { width: 32px; height: 32px; fill: #fff; }
+
+    .copyright {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .hamburger-btn{background:none;border:none;cursor:pointer;font-size:22px;color:#d41f1f;padding:2px 8px;margin-left:10px;line-height:1;font-family:'Lato',sans-serif;}
+    .hamburger-menu{display:none;background:#fff;border-bottom:1px solid #eee;text-align:center;padding:10px 0;}
+    .hamburger-menu.open{display:block;}
+    .hamburger-menu a{font-family:'Lato',sans-serif;font-size:15px;font-weight:400;color:#d41f1f;text-decoration:none;text-transform:uppercase;display:inline-block;margin:0 15px;padding:5px 0;letter-spacing:0.05em;}
+    .internal-nav{background:#f9f5f0;border-bottom:1px solid #e0d8ce;padding:6px 0;text-align:center;font-family:'Lato',sans-serif;font-size:12px;}
+    .internal-nav a{color:#7a5c3a;text-decoration:none;margin:0 10px;text-transform:uppercase;letter-spacing:0.06em;}
+    .internal-nav a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      h1.article-title { font-size: 32px; }
+      .article-subtitle { font-size: 17px; }
+      .article-intro { font-size: 16px; }
+      .article-body p { font-size: 16px; }
+    }
+    /* Video: make it read as a video, not a photo */
+    .video-wrap { position: relative; }
+    .video-badge {
+      position: absolute; top: 12px; left: 12px; pointer-events: none;
+      background: rgba(0, 0, 0, 0.7); color: #fff; padding: 5px 10px; border-radius: 3px;
+      font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .video-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 84px; height: 84px; border-radius: 50%; border: 3px solid #fff;
+      background: rgba(181, 28, 32, 0.9); cursor: pointer; padding: 0;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+    .video-play:hover, .video-play:focus-visible { background: #b51c20; }
+    .video-play span {
+      display: block; width: 0; height: 0; margin-left: 32px;
+      border-top: 16px solid transparent; border-bottom: 16px solid transparent; border-left: 26px solid #fff;
+    }
+    .video-wrap.playing .video-badge, .video-wrap.playing .video-play { display: none; }
+    @media (max-width: 500px) {
+      .video-play { width: 60px; height: 60px; top: 42%; }
+      .video-play span { margin-left: 22px; border-top-width: 12px; border-bottom-width: 12px; border-left-width: 19px; }
+    }
+  </style>
+  <script src="../../../dark-mode.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="../../../logo.jpg" alt="Classic Chicago Magazine">
+    </div>
+  </header>
+
+  <div style="background:#fdf3e7; border-bottom:1px solid #e8d5bd; padding:12px 16px; text-align:center; font-family:'Lato',sans-serif; font-size:14px; color:#6b4e2e;"><strong>Author&rsquo;s review.</strong> This is your article as it will appear in the November 15, 2026 edition of Classic Chicago Magazine. It is not yet published; please do not share this link.</div>
+
+
+  <main>
+    <div class="article-wrapper">
+
+      <div class="article-category">Travel</div>
+
+      <h1 class="article-title">Осторожно</h1>
+
+      <div class="article-meta">By Francesco Bianchini &nbsp;&bull;&nbsp; November 15, 2026</div>
+
+      <div class="article-body">
+
+        <p>At half past four in the morning, unable to get back to sleep, I opened a chat on my phone. For some time I had been in the habit of using the app as a kind of talking notebook: for work, translation, thinking things through, but also to put my thoughts in order while travelling. What did I have to say at such an unusual hour—wrapped in the milky darkness of the room and flushed with a low-grade fever that seemed like nothing much but had refused to leave me for days—other than to give voice to my unease?</p>
+        <p>I lay still for a moment, straining to catch the slightest sound around me. The uncanny silence of the daytime had given way to a web of sounds barely distinguishable from one another. Heavy drops fell from the highest branches and pattered against the thick foliage of the undergrowth; tiny creatures buzzed beyond the mosquito screen; others—birds?—gave muted cries. None that I could connect with anything familiar.</p>
+        <p>Then I made a quick inventory of my physical condition: the temperature I had no way of taking, the throbbing at my temples. Should I get up and take the last Doliprane tablet I had left, or save it for an emergency? I coughed and cleared my throat and, rather than speak, whispered into the phone, afraid of breaking the perfect isolation in which I found myself.</p>
+        <p>Morning came and everything was different. A greenish aquarium light filtered through the windows and streaked the log walls. Cool, damp air from the night’s rain breathed through the mosquito screen. I was drenched in sweat, but the fever had gone. The headache and burning in my throat had also greatly subsided. I reached for my phone: on the screen were the few fragmented sentences I had dictated during my feverish outpouring. They broke off with the word:</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно1.jpeg" alt="My jungle refuge">
+          <figcaption>My jungle refuge</figcaption>
+        </figure>
+        <p>Осторожно<strong>.</strong></p>
+        <p>“What the hell is a Russian word doing here?” I typed.</p>
+        <p>“You’re the one who said it,” came the instant reply from the “notebook.” “Though I doubt you deliberately typed it in Russian at half past four in the morning in the Misiones forest (smiley face).”</p>
+        <p>I asked what it meant: something like “careful,” “with caution.” By then I was feeling much better, certainly less achy, but my voice was so dreadful that, I thought, the app’s speech recognition might conceivably have mistaken it for Russian. The idea that my nocturnal dictation had spontaneously produced a Russian word meaning “careful” during a night spent worrying about my health was so absurd as to sound invented.</p>
+        <p>There was something else. After dinner I had felt like watching <em>The Mission</em> again on my laptop, and its theme had echoed in my head for a long time while I lay awake. The scene of the climb, accompanied by the thunder of the waterfalls—in reality barely ten miles away as the crow flies—had played obsessively through my feverish mind.</p>
+        <p>I boiled some water and left the <em>yerba mate</em> to steep to soothe my throat. Then I got ready and stepped out of my bungalow into a morning dripping from every glossy xanthosoma leaf. It was June, close to the winter solstice in the Southern Hemisphere. Gone were the bitter mornings of Buenos Aires, which I had left only the day before; this was more like a bright day in May.</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно2.jpeg" alt="Reserva Selva Iryapú">
+          <figcaption>Reserva Selva Iryapú</figcaption>
+        </figure>
+        <p>Осторожно. That word, I reflected as the taxi drove through the Misiones forest, might be telling me to distrust first impressions. The fever, after all, had vanished. It had left me exhausted, yet willing to venture out. I thought of the hotel restaurant, whose intrusive background music had put me off, but where I had been served an expertly grilled <em>surubí</em>—that delicacy from the Paraná River basin—the night before. Then there was Puerto Iguazú itself, a destination I had kept in reserve till the last moment.</p>
+        <p>Through the taxi window I caught sight of Guaraní families: boys riding motorbikes, others playing football in the shirts of famous clubs, outside huts fitted with satellite dishes. The taxi driver left me at the entrance to the falls, after lavishing paternal advice on me about which trails to avoid if I was not to exhaust myself.</p>
+        <p>Осторожно<strong>.</strong> Cautiously, then, I set off along the walkways above the extraordinarily still waters of the Río Iguazú. On each island in the delta I stopped and sat beneath the woven canopy of cupay, ceibo and ingá trees, bromeliads clinging to the dripping branches. In daylight the forest lost some of its unsettling mystery. Now the sounds around me—discernible above the distant rumble of the great falls—belonged to the continuo of insects, to curious black-and-yellow birds, to plump creatures with long bushy tails and, as I drew closer to the maelstrom, to other dark birds, small sharp shadows slicing through the white cloud, utterly indifferent to the solemn roar that swallowed everything.</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно3.jpeg" alt="And quiet flows the Iguazú">
+          <figcaption>And quiet flows the Iguazú</figcaption>
+        </figure>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно4.jpeg" alt="King of the treetops: a plush-crested jay">
+          <figcaption>King of the treetops: a plush-crested jay</figcaption>
+        </figure>
+        <p>Until then, I had taken my time, pausing at every murmur. Then, the walls of water. I stepped into a silent, shouting crowd of raised screens, letting the spray claim my hair, clothes, and shoes.</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно5.jpeg" alt="Through the mist and roar">
+          <figcaption>Through the mist and roar</figcaption>
+        </figure>
+        <figure class="video-figure">
+          <div class="video-wrap">
+            <video controls playsinline preload="metadata" poster="../../../editions/2026-11-15/francesco-iguazu/VID20260607112600-poster.jpg" style="width:100%; height:auto; display:block;">
+              <source src="../../../editions/2026-11-15/francesco-iguazu/VID20260607112600.mp4#t=0.1" type="video/mp4">
+            </video>
+            <span class="video-badge">Video &middot; with sound</span>
+            <button type="button" class="video-play" aria-label="Play video"><span></span></button>
+          </div>
+          <figcaption>Video: Francesco Bianchini</figcaption>
+        </figure>
+        <p>I revived myself with a providential bowl of lentil soup and set off again along the walkways anchored to the living rock of the precipice, the metal beneath my feet vibrating with every step: above me, the green ceiling of the forest spilling down the walls; below, the churning river.</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно6.jpeg" alt="Where Argentina meets Brazil">
+          <figcaption>Where Argentina meets Brazil</figcaption>
+        </figure>
+        <p>A butterfly of an impossible blue fluttered around the feathery fronds of a slender palm and came to rest on the reddish bark of a tree.</p>
+        <figure>
+          <img src="../../../editions/2026-11-15/francesco-iguazu/103Осторожно7.jpeg" alt="At rest at last">
+          <figcaption>At rest at last</figcaption>
+        </figure>
+        <p>Осторожно<strong>.</strong> A much wiser word than it had seemed last night. It had acquired a meaning no dictionary could contain: no longer simply <em>be careful</em>, but something closer to <em>proceed, but know that you are vulnerable</em>.</p>
+        <p style="font-family:'Lato',sans-serif; font-size:13px; color:#999; text-align:center; margin-top:24px;">Photos and video by Francesco Bianchini.</p>
+
+      </div><!-- end article-body -->
+
+
+
+    </div><!-- end article-wrapper -->
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ClassicChicagoMagazine/" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://twitter.com/classicchimag" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/classicchicagomagazine/" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/classic_chicago/" target="_blank" title="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <div class="copyright">
+      COPYRIGHT &copy; Classic Chicago Magazine.<br>
+      All rights reserved.
+    </div>
+  </footer>
+
+
+
+<script>/* one submission per click: grey out Send once a comment is on its way (Nov 8, 2026) */document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.action||f.action.indexOf("/api/submit-form")<0)return;setTimeout(function(){if(e.defaultPrevented)return;var b=f.querySelector("button[type=submit],input[type=submit]");if(b){b.disabled=true;b.style.opacity="0.6";b.style.cursor="default";if(b.tagName==="BUTTON")b.textContent="Sending\u2026";else b.value="Sending\u2026";}},0);},true);</script>
+<script>
+  document.querySelectorAll('.video-wrap').forEach(function (w) {
+    var v = w.querySelector('video'), b = w.querySelector('.video-play');
+    b.addEventListener('click', function () { v.play(); });
+    v.addEventListener('play', function () { w.classList.add('playing'); });
+    v.addEventListener('ended', function () { w.classList.remove('playing'); });
+  });
+</script>
+</body>
+</html>
