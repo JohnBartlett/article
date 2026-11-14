@@ -583,11 +583,67 @@
 
 <script>/* one submission per click: grey out Send once a comment is on its way (Nov 8, 2026) */document.addEventListener("submit",function(e){var f=e.target;if(!f||!f.action||f.action.indexOf("/api/submit-form")<0)return;setTimeout(function(){if(e.defaultPrevented)return;var b=f.querySelector("button[type=submit],input[type=submit]");if(b){b.disabled=true;b.style.opacity="0.6";b.style.cursor="default";if(b.tagName==="BUTTON")b.textContent="Sending\u2026";else b.value="Sending\u2026";}},0);},true);</script>
 <script>
+  /* Video player + engagement tracking (Nov 14, 2026).
+     Every event goes to GA4 when gtag exists (production only; dev/dev2 have GA4 disabled), to window.dataLayer
+     always, and to the console on dev2/localhost for testing. Events: video_impression (50% in view),
+     video_play_button (overlay click), video_start (first play; method play_button|controls), video_resume,
+     video_pause, video_progress (10/25/50/75/90), video_complete, video_seek, video_mute, video_unmute,
+     video_fullscreen, video_pip, video_speed, video_error, video_watch_time (seconds watched, on leaving). */
   document.querySelectorAll('.video-wrap').forEach(function (w) {
     var v = w.querySelector('video'), b = w.querySelector('.video-play');
-    b.addEventListener('click', function () { v.play(); });
-    v.addEventListener('play', function () { w.classList.add('playing'); });
-    v.addEventListener('ended', function () { w.classList.remove('playing'); });
+    var src = (v.currentSrc || (v.querySelector('source') || {}).src || '').split('#')[0];
+    var name = src.split('/').pop();
+    var debug = /dev2|localhost|127\.0\.0\.1/.test(location.hostname);
+    var started = false, viaButton = false, marks = {}, lastSeek = 0, sentWatch = false;
+    function pct() { return v.duration ? Math.round(100 * v.currentTime / v.duration) : 0; }
+    function send(event, extra) {
+      var p = { video_title: name, video_url: src, video_duration: Math.round(v.duration || 0),
+                video_current_time: Math.round(v.currentTime || 0), video_percent: pct(), article: document.title };
+      for (var k in extra || {}) p[k] = extra[k];
+      if (typeof gtag === 'function') gtag('event', event, p);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: event }, p));
+      if (debug) console.log('[video]', event, p);
+    }
+    b.addEventListener('click', function () { viaButton = true; send('video_play_button'); v.play(); });
+    v.addEventListener('play', function () {
+      w.classList.add('playing');
+      if (!started) { started = true; send('video_start', { method: viaButton ? 'play_button' : 'controls' }); }
+      else send('video_resume');
+    });
+    v.addEventListener('pause', function () { if (!v.ended && !v.seeking) send('video_pause'); });
+    v.addEventListener('ended', function () { w.classList.remove('playing'); send('video_complete', { percent_watched: watchedPct() }); });
+    v.addEventListener('timeupdate', function () {
+      var p = watchedPct();  /* share actually played, so skipping ahead does not count as watching */
+      [10, 25, 50, 75, 90].forEach(function (m) { if (p >= m && !marks[m]) { marks[m] = 1; send('video_progress', { video_percent: m }); } });
+    });
+    v.addEventListener('seeked', function () {
+      if (!started) return;  /* the #t=0.1 start frame seeks once on load */
+      var t = Date.now(); if (t - lastSeek > 2000) { lastSeek = t; send('video_seek'); }
+    });
+    v.addEventListener('volumechange', function () { send(v.muted || v.volume === 0 ? 'video_mute' : 'video_unmute', { volume: Math.round(v.volume * 100) }); });
+    v.addEventListener('ratechange', function () { send('video_speed', { playback_rate: v.playbackRate }); });
+    v.addEventListener('error', function () { send('video_error', { error_code: v.error ? v.error.code : 0 }); }, true);
+    v.addEventListener('enterpictureinpicture', function () { send('video_pip'); });
+    v.addEventListener('webkitbeginfullscreen', function () { send('video_fullscreen', { method: 'ios' }); });
+    document.addEventListener('fullscreenchange', function () { if (document.fullscreenElement === v) send('video_fullscreen'); });
+    document.addEventListener('webkitfullscreenchange', function () { if (document.webkitFullscreenElement === v) send('video_fullscreen'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { send('video_impression'); io.disconnect(); } });
+      }, { threshold: 0.5 });
+      io.observe(w);
+    }
+    function watchedSecs() { var t = 0; for (var i = 0; i < v.played.length; i++) t += v.played.end(i) - v.played.start(i); return t; }
+    function watched() { return Math.round(watchedSecs()); }
+    function watchedPct() { return v.duration ? Math.min(100, Math.round(100 * watchedSecs() / v.duration)) : 0; }
+    function sendWatch() {
+      if (sentWatch || !started) return;
+      sentWatch = true;
+      send('video_watch_time', { seconds_watched: watched(), percent_watched: watchedPct(), transport_type: 'beacon' });
+    }
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') sendWatch(); });
+    window.addEventListener('pagehide', sendWatch);
   });
 </script>
 </body>
