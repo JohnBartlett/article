@@ -388,6 +388,10 @@ def audit(slug: str, ids: list[str], ed: str, out: str, hdr: dict) -> None:
     for f in body_el.find_all('figure'):
         img = f.find('img')
         cap = f.find('figcaption')
+        if img is None:
+            src = f.find('source')
+            print(f'  (non-image figure: {src["src"] if src else f.find(True).name}) — not compared')
+            continue
         name = unquote(img['src'])
         line = f'  {name[:44]:44} | {norm(cap.get_text()) if cap else "(no caption)"}'
         print(line[:230])
