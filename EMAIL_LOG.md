@@ -1865,3 +1865,16 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 579 | Nov 7 10:09 PM | Jackson LeJeune `1a1b9225d1fcacf4` | Thanks; asks for formatting tips for his submissions. | ⏳ reply owed (John) |
 | 580 | Nov 7–14 | Reader forms (61), New Subscriber (3) | Quick Votes and Reader Comments, mostly Nov 8 articles; 3 subscriber signups. | ⏳ tally for the weekly update |
 | 581 | Nov 14 | Code (John: "Build the current edition") | **Nov 15 prepped and built:** 9 stubs in Judy's Nov 13 order, DateBook copied (title Nov 15; new entries next week per Judy), Astrochart Nov 15 to Dec 5; homepage hero Antiquarian, 8 cards; Nov 8 moved to Past Editions with its landing page, Oct 4 card dropped; root-page DateBook/Astrochart links updated. 8 articles built from sources (word diff clean against the local copies; Gmail token expired mid-session, so `source_audit.py` could not re-fetch). Open: Sig's article text, Antiquarian title and Photo 14 caption, Christmas Schooner photo, typo list for Judy (STATUS.md). | 🔁 |
+
+### Check — 2026-11-14 18:31 ET (branch dev2; Gmail API, date search after:2026/11/13 compared to internalDate; cutoff epoch 1794668543; this check began epoch 1794691875)
+- Sources searched: every message since the cutoff (in:anywhere minus spam/trash), sorted by internalDate; magazine mail picked out by sender
+- Found: 12 Sig emails (text + 10 image/credit), 1 Judy, 2 reader forms; the rest personal or promotional (not logged)
+- Texts: read from chat.db, 36 since the cutoff, none magazine-related; calls/voicemail: ask John
+- Result: Sig's article text and 10 photos with credits arrived; building it
+
+| # | Date (ET) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 582 | Nov 14 2:53 PM | Sig `1a1db9fa0c8c3f25` | "Entire Text" (to Judy and John): article text headed "On Vocabulary" (Liechtenstein survey, Serra, Enwezor, then the Chicago "On Boredom" terrace show). Heading differs from the lineup title "Tony Cokes: On Boredom" (#61). | ⏳ build |
+| 583 | Nov 14 3:22–3:45 PM | Sig `1a1dbb9bda920995` `1a1dbbc3ce0e5fe2` `1a1dbbd8ff500e66` `1a1dbbfbdcb1501c` `1a1dbc17ff017725` `1a1dbc4a22bf87fa` `1a1dbc88cc255316` `1a1dbcb47d96578d` `1a1dbcdb29344933` `1a1dbcf56eeea37c` | "Image and credit 1–10": IMG_9599 (portrait, MacArthur), IMG_9669/9668/9667/9665/9663/9662 (Kunstmuseum Liechtenstein), IMG_9479/9437/9431 (Bluhm Terrace, S. Zetouni). No placement given; 9663–9669 are 1280 px. | ⏳ build |
+| 584 | Nov 14 1:16 PM | Judy `1a1db46fad608454` | "Let me know how I can be of help for this issue": anything you need for tomorrow. | ⏳ reply owed (John) |
+| 585 | Nov 14 2:39–2:40 PM | Reader forms `1a1db92d59fac77d` `1a1db92eb3714722` | Quick Vote Yes and an empty Reader Comment, both on Goddesses in the Machine (Nov 8), prod. | ✅ tally with #580 |
