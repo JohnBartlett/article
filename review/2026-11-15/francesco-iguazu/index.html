@@ -423,6 +423,7 @@
     var name = src.split('/').pop();
     var debug = /dev2|localhost|127\.0\.0\.1/.test(location.hostname);
     var started = false, viaButton = false, marks = {}, lastSeek = 0, sentWatch = false;
+    v.volume = 0.5;  /* start at half volume so the falls don't startle anyone (iPhones/iPads ignore this; their buttons decide) */
     function pct() { return v.duration ? Math.round(100 * v.currentTime / v.duration) : 0; }
     function send(event, extra) {
       var p = { video_title: name, video_url: src, video_duration: Math.round(v.duration || 0),
@@ -449,7 +450,9 @@
       if (!started) return;  /* the #t=0.1 start frame seeks once on load */
       var t = Date.now(); if (t - lastSeek > 2000) { lastSeek = t; send('video_seek'); }
     });
-    v.addEventListener('volumechange', function () { send(v.muted || v.volume === 0 ? 'video_mute' : 'video_unmute', { volume: Math.round(v.volume * 100) }); });
+    v.addEventListener('volumechange', function () {
+      if (!started && !v.muted && v.volume === 0.5) return;  /* our own 50% start setting, not a reader action */
+      send(v.muted || v.volume === 0 ? 'video_mute' : 'video_unmute', { volume: Math.round(v.volume * 100) }); });
     v.addEventListener('ratechange', function () { send('video_speed', { playback_rate: v.playbackRate }); });
     v.addEventListener('error', function () { send('video_error', { error_code: v.error ? v.error.code : 0 }); }, true);
     v.addEventListener('enterpictureinpicture', function () { send('video_pip'); });
