@@ -1891,3 +1891,12 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 |---|---|---|---|---|
 | 588 | Nov 14 5:54 PM | Judy `1a1dc44e245a8c65` (to John, cc Francesco, Dan Blagg) | Re: Your Iguazú video: "Think this is marvelous, a great addition. Thank you John! This is a fine article and maybe a new opportunity for us!" Reply-all on the Francesco email, not on the Editors' Page email (#586). | ✅ noted; ⏳ Editors' Page note still awaiting her explicit OK |
 | 589 | Nov 14 | John (text to Sig) | Asked how the Liechtenstein credits (photos 2–7) should write the show title: "Tony Cokes/Let Yourself Be Free" or "Tony Cokes / Let Yourself Be Free" (her email wrapped at the slash; built as "Tony Cokes/ Let…"). | ⏳ awaiting Sig |
+
+### Check — 2026-11-14 18:42 ET (loop, every 2 min until 7:30 PM; quickcheck.py, targeted senders after:2026/11/14 compared to internalDate; cutoff epoch 1794696875)
+- Found: 3 Judy emails (5:59–6:03 PM); texts: none incoming
+
+| # | Date (ET) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 590 | Nov 14 5:59 PM | Judy `1a1dc4a330192038` | Re: Let me know how I can be of help: "Yes on all counts. Definitely right about the Antiquarian title. Yes, no name caption of two women. I will find it and we can add later. Thank you for correcting the errors. Agree about Sig." Out at a hockey game tonight. | ✅ Antiquarian title and "On Vocabulary" kept; approved typos fixed across 7 articles and the homepage teaser (see STATUS.md) |
+| 591 | Nov 14 6:02 PM | Judy `1a1dc4c1a062968c` | Fwd from Sally Kalmbach: book photo IMG_5904.jpg, "The Christmas Tree Ship" by Carol Crane (the docx placement note says "The Christmas Schooner"). | ✅ placed in Kalmbach with the docx caption (Scheunemann → Schuenemann per #590) |
+| 592 | Nov 14 6:03 PM | Judy `1a1dc4db77d21dc1` | "Photo of 2 Antiquarians": will identify when posted. | ⏳ Photo 14 caption after publication |

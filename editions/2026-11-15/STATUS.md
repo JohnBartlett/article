@@ -35,14 +35,12 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- **Antiquarian Photo 14 caption** (Emma) — she gave it Photo 15's caption ("Curators Kit Maxwell and Jonathan Tavares"), but it shows two women; placed without a caption.
-- **The Christmas Schooner book photo** (Judy) — the Kalmbach docx calls for it with a caption; not received, so the photo and its caption are left out.
+- **Antiquarian Photo 14 caption** — Judy will identify the two women once the edition is posted (`1a1dc4db77d21dc1`); runs without a caption until then.
+- **Sig: Liechtenstein credit title** — texted Sig (#589) whether credits 2–7 read "Tony Cokes/Let Yourself Be Free" or "Tony Cokes / Let…"; built as "Tony Cokes/ Let…".
 
 ## Blockers
 
-- **Sig's title (#61):** her text is headed "On Vocabulary"; Judy's lineup calls it "Tony Cokes: On Boredom". Built as "On Vocabulary", following Sig's own headings on her last three pieces (Simply Water, Team Work, Grand Marquise). Needs Judy's or Sig's confirmation.
-- **Antiquarian title:** Emma's text starts ": 150 Years of Building on Traditions" (the part before the colon is missing); built as "Antiquarian Society: 150 Years of Building on Traditions" from her subject line. Needs Judy's confirmation.
-- **Typos for Judy (#18), all left verbatim:** listed under Source text below.
+- None. Judy confirmed the Antiquarian title and Sig's "On Vocabulary", and approved the typo list (`1a1dc4a330192038`, #590).
 
 ## Articles
 
@@ -56,13 +54,14 @@ Nav chain order (hero → last):
 | bob-glaze-elmwood-park | Exploring Little Italy West in Suburban Elmwood Park | Bob Glaze | Ready | 5 | Emma `1a1da6b6913e2d29`; "Photo 5 .jpg" filename kept with its space |
 | francesco-iguazu | Осторожно | Francesco Bianchini | Ready | 7 + video | `1a1bd7e34efa87bd` docx + 7 photos; video `1a1cfb1de9f21d1b` (.mov rewrapped to .mp4 with avconvert, same size); Judy: use both; no placement given — placed by the narrative |
 | libbet-toronto | A Getaway North of the Border | Elizabeth Dunlop Richter | Ready | 30 | docx `1a1b3bb5f4a1561b`; all originals from the LIBBET Drive folder except Picture1.jpg (peameal sign, 244×324, #80); ROM photo source still asked (#557); IMG_3551, IMG_3544, IMG_3571 unused |
-| kalmbach-holiday-tour | Sally Kalmbach: A Walking Tour to Highlight the Holidays | Judy Carmack Bross | Ready | 3 | docx `1a1d9a93ca075c30`; top photo pexels (Water Tower); both LUMA crèches with the docx caption; Sally portrait 192 px left out per Judy; card = crèche LUMA-4 (Judy's first choice); docx paragraph broken mid-sentence ("The tour" / "ends with") joined |
+| kalmbach-holiday-tour | Sally Kalmbach: A Walking Tour to Highlight the Holidays | Judy Carmack Bross | Ready | 4 | docx `1a1d9a93ca075c30`; top photo pexels (Water Tower); both LUMA crèches with the docx caption; Sally portrait 192 px left out per Judy; card = crèche LUMA-4 (Judy's first choice); book photo IMG_5904.jpg (The Christmas Tree Ship, Carol Crane; Sally via Judy `1a1dc4c1a062968c`) placed with the docx caption; docx paragraph broken mid-sentence ("The tour" / "ends with") joined |
 | datebook | DateBook | Annie Delfosse | Copied from Nov 8 | — | Judy: new entries next week |
 | daily-star-november | Astrochart | Victoria Martin | Copied from Nov 8 | — | Nov 8–14 removed; runs Nov 15 to Dec 5 |
 
 ## Source text (#18)
 
-Left verbatim, to list for Judy in one message:
+Judy approved the list below on Nov 14 ("Yes on all counts... Thank you for correcting the errors", #590); fixed Nov 14 except where no correction was proposed (Napoleana; "old-school featuring"; Toronto fragment; "decorative ... decorative"; Sig "the words are reading") and the book caption's "families, But" (not on the list sent to her), which stay verbatim.
+
 - Antiquarian: "150thanniversary"; "May Tay" (Tea); "Mrs. J. Young Scannon" (Scammon); "Napoleana"; "self- supportive"; "a 1897 tea"; Photo 10 caption `others”.`
 - David Sweet: "A head coaching prodigy at 32 when was hired" (when he was hired).
 - Sig Blast: "installlation". Sig article: "as post-conceptualist" (as a); "on the back of sign" (of the sign); "sign that is reading"; "Cokes's" and "Cokes’" both used; captions 8–10 "Installation view of at the Bluhm Family Terrace".
@@ -82,5 +81,5 @@ Read by `tools/source_audit.py` (#84). First ID = text source; later IDs = extra
 - bob-glaze-elmwood-park: 1a1da6b6913e2d29
 - francesco-iguazu: 1a1bd7e34efa87bd, 1a1cfb1de9f21d1b
 - libbet-toronto: 1a1b3bb5f4a1561b
-- kalmbach-holiday-tour: 1a1d9a93ca075c30, 1a1d9aa1fe964e15, 1a1d9ab8c4096016, 1a1d9abc38ff1794
+- kalmbach-holiday-tour: 1a1d9a93ca075c30, 1a1d9aa1fe964e15, 1a1d9ab8c4096016, 1a1d9abc38ff1794, 1a1dc4c1a062968c
 - sig-tony-cokes: 1a1db9fa0c8c3f25, 1a1dbb9bda920995, 1a1dbbc3ce0e5fe2, 1a1dbbd8ff500e66, 1a1dbbfbdcb1501c, 1a1dbc17ff017725, 1a1dbc4a22bf87fa, 1a1dbc88cc255316, 1a1dbcb47d96578d, 1a1dbcdb29344933, 1a1dbcf56eeea37c
