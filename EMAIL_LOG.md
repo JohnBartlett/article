@@ -1899,7 +1899,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 |---|---|---|---|---|
 | 590 | Nov 14 5:59 PM | Judy `1a1dc4a330192038` | Re: Let me know how I can be of help: "Yes on all counts. Definitely right about the Antiquarian title. Yes, no name caption of two women. I will find it and we can add later. Thank you for correcting the errors. Agree about Sig." Out at a hockey game tonight. | ✅ Antiquarian title and "On Vocabulary" kept; approved typos fixed across 7 articles and the homepage teaser (see STATUS.md) |
 | 591 | Nov 14 6:02 PM | Judy `1a1dc4c1a062968c` | Fwd from Sally Kalmbach: book photo IMG_5904.jpg, "The Christmas Tree Ship" by Carol Crane (the docx placement note says "The Christmas Schooner"). | ✅ placed in Kalmbach with the docx caption (Scheunemann → Schuenemann per #590) |
-| 592 | Nov 14 6:03 PM | Judy `1a1dc4db77d21dc1` | "Photo of 2 Antiquarians": will identify when posted. | ⏳ Photo 14 caption after publication |
+| 592 | Nov 14 6:03 PM | Judy `1a1dc4db77d21dc1` | "Photo of 2 Antiquarians": will identify when posted. | ✅ captioned (#604) |
 
 ### Check — 2026-11-14 19:14 ET (loop; quickcheck.py, texts since 19:12)
 | # | Date (ET) | From | Subject / content | Status |
@@ -1920,9 +1920,9 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | # | Date (ET) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 602 | Nov 14 10:18 PM | Judy `1a1dd36fadc680a8` | Re: Classic Chicago Writer Application (Oct 25 test submission): "Yes, I think you are right. It sounds fake." | ✅ no action |
-| 603 | Nov 14 10:23 PM | Judy `1a1dd3bd9844f936` | Antiquarian (live page): "switch the names Mary Gordon and Diana Senior—Diana is on the left"; a gap between Liz Stiffel's photo and her name. | ⏳ caption swap; gap resolved itself (#604) |
-| 604 | Nov 14 10:25 PM | Judy `1a1dd3d9f804e130` | Re: Nov 15 Is Live: "Last two women in the Antiquarians are Nancy Spain and Suzanne McCullagh. Gap went away between Liz Stiffel and her name." | ⏳ Photo 14 caption (closes #592) |
-| 605 | Nov 14 10:29 PM | Judy `1a1dd40b767918fc` | "Can we add 1 more Antiquarian photo at the end? Christine Tippens, and Elleanor Tippens": RFK_8006.jpeg, 1160×961. | ⏳ add after Photo 14 |
+| 603 | Nov 14 10:23 PM | Judy `1a1dd3bd9844f936` | Antiquarian (live page): "switch the names Mary Gordon and Diana Senior—Diana is on the left"; a gap between Liz Stiffel's photo and her name. | ✅ dev2 `309e6aad`: "Diana Senior and Mary Gordon"; gap resolved itself (#604); ⏳ live hotfix awaiting John |
+| 604 | Nov 14 10:25 PM | Judy `1a1dd3d9f804e130` | Re: Nov 15 Is Live: "Last two women in the Antiquarians are Nancy Spain and Suzanne McCullagh. Gap went away between Liz Stiffel and her name." | ✅ dev2: Photo 14 captioned (closes #592); ⏳ live hotfix awaiting John |
+| 605 | Nov 14 10:29 PM | Judy `1a1dd40b767918fc` | "Can we add 1 more Antiquarian photo at the end? Christine Tippens, and Elleanor Tippens": RFK_8006.jpeg, 1160×961. | ✅ dev2: added after Photo 14, captioned "Christine Tippens and Elleanor Tippens" (comma dropped; "Elleanor" kept as sent); ⏳ live hotfix awaiting John |
 | 606 | Nov 15 12:11 AM | Sig `1a1dd9e429eb6bcd` | Re: Nov 15 Is Live: "The edition is splendid and including a video is superb!" | ✅ no action |
 | 607 | Nov 15 1:18 AM | Francesco `1a1dddbc08b987c0` | Re: Your Iguazú video: "Everything looks wonderful"; no changes requested to the author's review. | ✅ approved; no hotfix needed |
-| 608 | Nov 14 7:54 PM – Nov 15 8:21 AM | Judy, Sig (texts) | Judy: "So happy to have this!" Sig: social texts, then 8:21 AM asks to change "Cokes’s" to "Cokes’" in 3 places (homepage teaser; "one of Cokes’s works"; "one of Cokes's freestanding signs"). | ⏳ apply (author's request) |
+| 608 | Nov 14 7:54 PM – Nov 15 8:21 AM | Judy, Sig (texts) | Judy: "So happy to have this!" Sig: social texts, then 8:21 AM asks to change "Cokes’s" to "Cokes’" in 3 places (homepage teaser; "one of Cokes’s works"; "one of Cokes's freestanding signs"). | ✅ dev2: all 3 changed; ⏳ live hotfix awaiting John |
