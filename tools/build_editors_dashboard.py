@@ -7,7 +7,7 @@ three-page split with one scrolling page:
 
     1. Edition Banner       — current edition date, preview link
     2. Article Status       — live-computed per-article status (from verify_edition.py)
-    3. Decisions Needed     — pending items / blockers, parsed from STATUS.md
+    3. To Do & Done        — pending items, blockers, to-dos and done items, parsed from STATUS.md
     4. Current Edition Spotlight, Votes & Comments, Edition History,
        All-Time Stats, Heritage Auctions Ad, Comment Leaderboard — reused
        from build_stats_page.py
@@ -80,7 +80,8 @@ def parse_status_md(edition_date):
                     })
 
     def md_bold_to_html(text):
-        return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        return re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
 
     def extract_bullets(section_name):
         m = re.search(rf'## {re.escape(section_name)}\n\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
@@ -92,6 +93,8 @@ def parse_status_md(edition_date):
         "lineup": lineup,
         "pending": extract_bullets("Pending Deliveries"),
         "blockers": extract_bullets("Blockers"),
+        "todo": extract_bullets("To Do"),
+        "done": extract_bullets("Done"),
     }
 
 
@@ -160,7 +163,7 @@ def build_article_status_section(edition_date, status_data):
 
 
 def build_decisions_section(status_data):
-    if not status_data or not (status_data["pending"] or status_data["blockers"]):
+    if not status_data or not any(status_data.get(k) for k in ("pending", "blockers", "todo", "done")):
         return '<p class="no-data">Nothing tracked — no STATUS.md pending items for this edition.</p>'
 
     html = ""
@@ -169,7 +172,14 @@ def build_decisions_section(status_data):
         html += f'<div style="margin-bottom:16px"><strong>Pending Deliveries</strong><ul style="padding-left:18px; margin-top:6px">{items}</ul></div>'
     if status_data["blockers"]:
         items = "".join(f'<li>{b}</li>' for b in status_data["blockers"])
-        html += f'<div><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px">{items}</ul></div>'
+        html += f'<div style="margin-bottom:16px"><strong class="red">Blockers</strong><ul style="padding-left:18px; margin-top:6px">{items}</ul></div>'
+    if status_data.get("todo"):
+        items = "".join(f'<li style="list-style:none; margin-left:-18px">&#9744; {t}</li>' for t in status_data["todo"])
+        html += f'<div style="margin-bottom:16px"><strong>To Do</strong><ul style="padding-left:18px; margin-top:6px">{items}</ul></div>'
+    if status_data.get("done"):
+        items = "".join(f'<li style="list-style:none; margin-left:-18px; color:#666">&#9745; {d}</li>' for d in status_data["done"])
+        html += (f'<details><summary style="cursor:pointer"><strong>Done</strong> ({len(status_data["done"])})</summary>'
+                 f'<ul style="padding-left:18px; margin-top:6px">{items}</ul></details>')
     return html
 
 
@@ -288,7 +298,7 @@ def main():
 
   <nav class="jump-links">
     <a href="#status">Article Status</a>
-    <a href="#decisions">Decisions Needed</a>
+    <a href="#decisions">To Do &amp; Done</a>
     <a href="#spotlight">Current Edition</a>
     <a href="#votes">Votes &amp; Comments</a>
     <a href="#video">Video Views</a>
@@ -304,7 +314,7 @@ def main():
   </section>
 
   <section id="decisions">
-    <h2>Decisions Needed</h2>
+    <h2>To Do &amp; Done</h2>
     {decisions_html}
   </section>
 

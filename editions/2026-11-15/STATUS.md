@@ -1,6 +1,8 @@
 # November 15, 2026 Edition — Status
 
-_Updated: 2026-11-14 evening_
+_Updated: 2026-11-15 morning_
+
+**PUBLISHED to production** Nov 14, 2026, 8:36 PM (master `4bf61b94`, #600); hotfix live Nov 15, 8:36 AM (master `b5e916bc`, #610).
 
 Prepped and built Nov 14 from the Nov 14 check (#565–#580). All nine articles built with photos; Sig's arrived Nov 14 afternoon (#582–#583) and was built that evening.
 
@@ -35,12 +37,33 @@ Nav chain order (hero → last):
 
 ## Pending Deliveries
 
-- **Antiquarian Photo 14 caption** — Judy will identify the two women once the edition is posted (`1a1dc4db77d21dc1`); runs without a caption until then.
-- **Sig: Liechtenstein credit title** — resolved: Sig "Whatever looks better" (#593); credits 2–7 read "Tony Cokes / Let Yourself Be Free".
+- None. Judy captioned Antiquarian Photo 14 (Nancy Spain and Suzanne McCullagh, #604).
 
 ## Blockers
 
-- None. Judy confirmed the Antiquarian title and Sig's "On Vocabulary", and approved the typo list (`1a1dc4a330192038`, #590).
+- None.
+
+## To Do
+
+- **Judy:** confirm the spelling "Elleanor Tippens" (new Antiquarian photo, #605); the caption keeps her spelling for now.
+- **Weekly update to Judy** (`/send-update`): reader votes and comments since Nov 7 (#580, plus #525, #535, #560), the reader comment thanking Judy on Breakthrough Ball (#559), and the first video numbers from the dashboard.
+- **Reply to Jackson LeJeune** with formatting tips for his submissions (#579).
+- **Add real reader comments** to reader-comments.html on the editors branch (#486, #511, #559).
+- **@properties ad:** John's call with Judy about the proposal (#499, #516).
+- **Sig's photo-location question** (her examples, and who tells photographers) is still unanswered (#515).
+- **Next edition (Nov 22):** waiting for Judy's lineup; the DateBook returns next week (Annie was ill, `1a1d9a4542b4da6e`).
+- **John:** add the dashboard password to the secrets vault (`secrets-edit`, needs Touch ID).
+- **Optional, offered:** add `keep_together.py` to `/edition-checks`; per-browser dedupe of votes and comments; fix the 320 px header overflow; strip the commented-out internal menu from older live pages.
+
+## Done
+
+- Nov 15 published Nov 14, 8:36 PM; all 11 pages, the video and the Editors' Page note confirmed live; publication notice sent to Judy and Sig (#600, #601).
+- Hotfix live Nov 15, 8:36 AM: Antiquarian captions "Diana Senior and Mary Gordon" and Photo 14 "Nancy Spain and Suzanne McCullagh", Tippens photo added at the end; "Cokes’" in 3 places per Sig (#603–#610).
+- Francesco approved his author's review; no changes (#607).
+- Reply to Libbet sent: story live, easier way to send photos, ROM photo credit (#609).
+- Editors dashboard: automatic refresh back on (#611), password login (#612), Video Views section (#613).
+- Judy's typo list applied across 7 articles and the homepage teaser (#590); Sig's credit titles set (#593); Kalmbach book photo placed (#591); ROM photo credited (#595); Bob Glaze ending trimmed (#599).
+- Editors' Page note "Worth a Thousand Words, and Then Some" posted with the edition.
 
 ## Articles
 
