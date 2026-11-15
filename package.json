@@ -1,5 +1,12 @@
 {
-  "name":"ccm-editors","private":true,"type":"module",
-  "dependencies":{"jose":"^5.9.6"},
-  "scripts":{"test":"node --test"}
+  "name": "ccm-editors",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "^3.11.3",
+    "jose": "^5.9.6"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
 }
