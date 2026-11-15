@@ -1913,3 +1913,16 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 599 | Nov 14 | Code (John: the bio line is clunky; chose "drop the line entirely") | Removed "To find out more… check out Bob's bio" from the Elmwood Park article; it now ends "I hope you enjoy exploring Elmwood Park." followed by the standard About the Author link (his bio carries globalphile.com). | ✅ dev2; restaged (#600) |
 | 600 | Nov 14 8:30 PM | Code (John: "publish it now") | **Nov 15 published to production:** master `4bf61b94` (merge of dev `3da3b477` on master `31fe9d95`, then GA4 re-enabled in 12 files). Pre-flight: no conflicts, no files over 25 MB, no submodules, no internal files, DateBook/Astrochart on 2026-11-15, GA4 live on all 11 Nov 15 pages, no live internal-nav. Pre-publish source audit (#84): all differences expected (approved typos, labels/markers, Bob Glaze ending, captions, credits). Judy had not reviewed the staging preview; John published on his own call. Live at 8:36 PM (homepage shows November 15; all 11 pages confirmed by title; video 200 video/mp4; Editors' Page note live at /editorial; GA4 live; EMAIL_LOG.md, CLAUDE.md, STATUS.md and review/ return the homepage fallback, #79). | ✅ confirmed live; ✅ publication notice sent (#601) |
 | 601 | Nov 14 | John `1a1dce466077d800` (to Judy, Sig; cc Emma, Annie, Ana) | "Classic Chicago Magazine: November 15 Edition Is Live": link to chicagoclassicmag.com; notes Francesco's video as the first article video. Sent via gmail_api.py (John approved); raw message checked (recipients, link not rewritten). | ✅ sent |
+
+### Check — 2026-11-15 08:24 ET (John: "Check"; quickcheck.py, mail and texts since 2026-11-14 19:31, cutoff epoch 1794702693)
+- Found: 5 Judy emails, 1 Sig email, 1 Francesco email; texts: Judy 1, Sig 6 (1 actionable)
+
+| # | Date (ET) | From | Subject / content | Status |
+|---|---|---|---|---|
+| 602 | Nov 14 10:18 PM | Judy `1a1dd36fadc680a8` | Re: Classic Chicago Writer Application (Oct 25 test submission): "Yes, I think you are right. It sounds fake." | ✅ no action |
+| 603 | Nov 14 10:23 PM | Judy `1a1dd3bd9844f936` | Antiquarian (live page): "switch the names Mary Gordon and Diana Senior—Diana is on the left"; a gap between Liz Stiffel's photo and her name. | ⏳ caption swap; gap resolved itself (#604) |
+| 604 | Nov 14 10:25 PM | Judy `1a1dd3d9f804e130` | Re: Nov 15 Is Live: "Last two women in the Antiquarians are Nancy Spain and Suzanne McCullagh. Gap went away between Liz Stiffel and her name." | ⏳ Photo 14 caption (closes #592) |
+| 605 | Nov 14 10:29 PM | Judy `1a1dd40b767918fc` | "Can we add 1 more Antiquarian photo at the end? Christine Tippens, and Elleanor Tippens": RFK_8006.jpeg, 1160×961. | ⏳ add after Photo 14 |
+| 606 | Nov 15 12:11 AM | Sig `1a1dd9e429eb6bcd` | Re: Nov 15 Is Live: "The edition is splendid and including a video is superb!" | ✅ no action |
+| 607 | Nov 15 1:18 AM | Francesco `1a1dddbc08b987c0` | Re: Your Iguazú video: "Everything looks wonderful"; no changes requested to the author's review. | ✅ approved; no hotfix needed |
+| 608 | Nov 14 7:54 PM – Nov 15 8:21 AM | Judy, Sig (texts) | Judy: "So happy to have this!" Sig: social texts, then 8:21 AM asks to change "Cokes’s" to "Cokes’" in 3 places (homepage teaser; "one of Cokes’s works"; "one of Cokes's freestanding signs"). | ⏳ apply (author's request) |
