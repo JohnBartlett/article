@@ -230,6 +230,9 @@ def main():
     print("  Fetching All-Time Stats…")
     s3 = bsp.build_section3(client, today_str)
 
+    print("  Fetching video views…")
+    s_video = bsp.build_video_section(client, today_str)
+
     print("  Fetching Heritage Auctions ad impressions…")
     s6 = bsp.build_section6(client, ga4_edition, today_str)
 
@@ -288,6 +291,7 @@ def main():
     <a href="#decisions">Decisions Needed</a>
     <a href="#spotlight">Current Edition</a>
     <a href="#votes">Votes &amp; Comments</a>
+    <a href="#video">Video Views</a>
     <a href="#history">Edition History</a>
     <a href="#alltime">All-Time Stats</a>
     <a href="#ha-ad">Heritage Auctions Ad</a>
@@ -312,6 +316,11 @@ def main():
   <section id="votes">
     <h2>Votes &amp; Comments — {ga4_ed_label}</h2>
     {s4}
+  </section>
+
+  <section id="video">
+    <h2>Video Views</h2>
+    {s_video}
   </section>
 
   <section id="history">

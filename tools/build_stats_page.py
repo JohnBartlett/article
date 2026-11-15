@@ -770,6 +770,156 @@ def build_section6(client, current_edition, today_str):
 
 
 # ---------------------------------------------------------------------------
+# Video views (Francesco's Iguazú video, Nov 15, 2026, and any later article video)
+# ---------------------------------------------------------------------------
+# The article's player sends GA4 events named video_* (see
+# editions/2026-11-15/francesco-iguazu/index.html). Custom definitions registered in GA4 on Nov 14, 2026:
+# dimensions customEvent:video_percent, customEvent:method, customEvent:article; metric customEvent:seconds_watched.
+# They only count from that date and GA4 reports lag about a day, so every breakdown degrades to a note.
+
+VIDEO_SINCE = "2026-11-14"
+VIDEO_OTHER_EVENTS = [
+    ("video_pause", "Pauses"), ("video_resume", "Resumes"), ("video_seek", "Skips (seek)"),
+    ("video_unmute", "Sound turned up/on"), ("video_mute", "Muted"), ("video_fullscreen", "Full screen"),
+    ("video_pip", "Picture-in-picture"), ("video_speed", "Speed changes"), ("video_error", "Playback errors"),
+]
+
+
+def _video_filter(event_name=None):
+    f = Filter(field_name="eventName",
+               string_filter=(Filter.StringFilter(value=event_name) if event_name
+                              else Filter.StringFilter(match_type="BEGINS_WITH", value="video_")))
+    return FilterExpression(filter=f)
+
+
+def _report(client, dims, metrics, start, end, flt, limit=200):
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        dimensions=[Dimension(name=d) for d in dims],
+        metrics=[Metric(name=m) for m in metrics],
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimension_filter=flt,
+        limit=limit,
+    )
+    return client.run_report(req).rows
+
+
+def fetch_video_events(client, start, end):
+    """{pagePath: {"title": str, "events": {eventName: (count, users)}}} for every page that sent video_* events."""
+    out = {}
+    for row in _report(client, ["pagePath", "pageTitle", "eventName"], ["eventCount", "totalUsers"],
+                       start, end, _video_filter()):
+        path, title, ev = (v.value for v in row.dimension_values)
+        page = out.setdefault(path, {"title": title, "events": {}})
+        c, u = (int(v.value) for v in row.metric_values)
+        oc, ou = page["events"].get(ev, (0, 0))
+        page["events"][ev] = (oc + c, max(ou, u))  # a page can appear under two titles; users can't be summed safely
+    return out
+
+
+def _video_breakdown(client, event, dim, start, end, path):
+    """{dimension value: users} for one video event on one page, or None if the custom dimension isn't queryable."""
+    flt = FilterExpression(and_group=FilterExpressionList(expressions=[
+        _video_filter(event),
+        FilterExpression(filter=Filter(field_name="pagePath", string_filter=Filter.StringFilter(value=path))),
+    ]))
+    try:
+        rows = _report(client, [dim], ["totalUsers"], start, end, flt)
+    except Exception as e:  # custom definition missing or not yet populated
+        print(f"    video breakdown {event}/{dim} unavailable: {e}")
+        return None
+    return {r.dimension_values[0].value: int(r.metric_values[0].value) for r in rows}
+
+
+def _video_seconds(client, start, end, path):
+    flt = FilterExpression(and_group=FilterExpressionList(expressions=[
+        _video_filter("video_watch_time"),
+        FilterExpression(filter=Filter(field_name="pagePath", string_filter=Filter.StringFilter(value=path))),
+    ]))
+    try:
+        rows = _report(client, [], ["customEvent:seconds_watched"], start, end, flt)
+    except Exception as e:
+        print(f"    video seconds unavailable: {e}")
+        return None
+    return int(float(rows[0].metric_values[0].value)) if rows else 0
+
+
+def _pct(n, d):
+    return f"{round(100 * n / d)}%" if d else "—"
+
+
+def _mmss(seconds):
+    return f"{seconds // 60}:{seconds % 60:02d}"
+
+
+def build_video_section(client, today_str):
+    """Video Views — one block per article page that has a video."""
+    try:
+        pages = fetch_video_events(client, VIDEO_SINCE, today_str)
+    except Exception as e:
+        print(f"    video events unavailable: {e}")
+        return '<p class="no-data">Video stats could not be loaded from GA4 this run.</p>'
+    if not pages:
+        return ('<p class="no-data">No video views recorded yet. Video events only fire on the live site, '
+                'and GA4 reports usually lag several hours to a day behind.</p>')
+
+    blocks = []
+    for path, page in sorted(pages.items(), key=lambda kv: -kv[1]["events"].get("video_start", (0, 0))[1]):
+        ev = page["events"]
+        seen = ev.get("video_impression", (0, 0))[1]
+        started = ev.get("video_start", (0, 0))[1]
+        plays = ev.get("video_start", (0, 0))[0]
+        finished = ev.get("video_complete", (0, 0))[1]
+        seconds = _video_seconds(client, VIDEO_SINCE, today_str, path)
+        title = page["title"].split(" | ")[0]
+
+        cards = "".join([
+            stat_card("Saw the Video", f"{seen:,}", "readers who scrolled to it"),
+            stat_card("Pressed Play", f"{started:,}", f"{_pct(started, seen)} of those who saw it · {plays:,} plays"),
+            stat_card("Watched to the End", f"{finished:,}", f"{_pct(finished, started)} of viewers"),
+            stat_card("Time Watched", _mmss(seconds) if seconds is not None else "—",
+                      (f"avg {_mmss(seconds // started)} per viewer" if seconds and started else "minutes:seconds, all viewers")),
+        ])
+
+        prog = _video_breakdown(client, "video_progress", "customEvent:video_percent", VIDEO_SINCE, today_str, path)
+        if prog:
+            steps = [("Started", started)] + [(f"{m}%", prog.get(str(m), 0)) for m in (10, 25, 50, 75, 90)] + [("End", finished)]
+            top = max([n for _, n in steps] + [1])
+            bars = "".join(
+                f'<tr><td>{lbl}</td><td><div style="background:#c41e3a;height:10px;border-radius:2px;'
+                f'width:{max(2, round(100 * n / top))}%"></div></td><td class="num">{n:,}</td></tr>'
+                for lbl, n in steps)
+            funnel = f"""
+    <h3>How Far Viewers Watched</h3>
+    <table><thead><tr><th>Reached</th><th style="width:60%"></th><th class="num">Viewers</th></tr></thead>
+      <tbody>{bars}</tbody></table>"""
+        else:
+            funnel = '<p class="no-data">How-far-watched breakdown not available yet (GA4 custom dimension still filling in).</p>'
+
+        meth = _video_breakdown(client, "video_start", "customEvent:method", VIDEO_SINCE, today_str, path)
+        labels = {"play_button": "Red play button", "controls": "Player controls"}
+        meth_html = ""
+        if meth:
+            meth_html = "<h3>How Viewers Started It</h3><table><tbody>" + "".join(
+                f'<tr><td>{labels.get(k, k)}</td><td class="num">{n:,}</td></tr>'
+                for k, n in sorted(meth.items(), key=lambda kv: -kv[1]) if k not in ("(not set)", "")) + "</tbody></table>"
+
+        others = "".join(
+            f'<tr><td>{lbl}</td><td class="num">{ev[e][0]:,}</td><td class="num">{ev[e][1]:,}</td></tr>'
+            for e, lbl in VIDEO_OTHER_EVENTS if e in ev)
+        other_html = (f"<h3>Other Interactions</h3><table><thead><tr><th>Action</th><th class=\"num\">Times</th>"
+                      f"<th class=\"num\">Readers</th></tr></thead><tbody>{others}</tbody></table>") if others else ""
+
+        blocks.append(f"""
+    <h3 style="margin-top:6px"><a href="https://chicagoclassicmag.com{path}" target="_blank">{title}</a></h3>
+    <div class="stat-row">{cards}</div>{funnel}{meth_html}{other_html}""")
+
+    return "\n".join(blocks) + (f'\n    <p class="no-data" style="margin-top:10px">Since {VIDEO_SINCE}. '
+                                'Readers are counted per event, so a reader who watched twice counts once. '
+                                'GA4 reports lag several hours to a day.</p>')
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
