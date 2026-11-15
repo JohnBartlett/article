@@ -256,7 +256,9 @@ def pub_start(edition_date_str):
     return (datetime.strptime(edition_date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
 
 
-PUSH_HOUR = 20  # editions go live around 8 PM Saturday, Eastern (GA4 property time)
+# Editions go live around 8 PM Saturday Eastern. The GA4 property clock is Central (Chicago): the Nov 15 edition was
+# pushed 8:28 PM ET and GA4 logged its first views in hour 19. So 8 PM Eastern = hour 19 in GA4.
+PUSH_HOUR = 19
 
 
 def since_push_filter(edition_date_str):
@@ -274,9 +276,10 @@ def log_first_edition_hour(client, edition_date_str):
         sat = pub_start(edition_date_str)
         r = run_report(client, sat, sat, dimensions=["dateHour"], metrics=["screenPageViews"],
                        filters=f"/editions/{edition_date_str}/", limit=24)
-        hours = sorted(row.dimension_values[0].value[-2:] for row in r.rows if int(row.metric_values[0].value) > 0)
-        print(f"    edition {edition_date_str}: first hour with views on {sat} (GA4 property time): "
-              f"{hours[0] if hours else 'none'} (PUSH_HOUR={PUSH_HOUR})")
+        hours = sorted((row.dimension_values[0].value[-2:], row.metric_values[0].value) for row in r.rows
+                       if int(row.metric_values[0].value) > 0)
+        print(f"    edition {edition_date_str}: views by hour on {sat} (GA4 property time, PUSH_HOUR={PUSH_HOUR}): "
+              + (", ".join(f"{h}h={v}" for h, v in hours) or "none"))
     except Exception as e:
         print(f"    first-hour check failed: {e}")
 
