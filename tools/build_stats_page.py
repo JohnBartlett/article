@@ -55,7 +55,8 @@ def ga4_client():
     return BetaAnalyticsDataClient()
 
 
-def run_report(client, start, end, dimensions=None, metrics=None, filters=None, limit=20, order_by_metric=None):
+def run_report(client, start, end, dimensions=None, metrics=None, filters=None, limit=20, order_by_metric=None,
+               extra_filter=None):
     req = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
         dimensions=[Dimension(name=d) for d in (dimensions or [])],
@@ -63,13 +64,20 @@ def run_report(client, start, end, dimensions=None, metrics=None, filters=None, 
         date_ranges=[DateRange(start_date=start, end_date=end)],
         limit=limit,
     )
+    exprs = []
     if filters:
-        req.dimension_filter = FilterExpression(
+        exprs.append(FilterExpression(
             filter=Filter(
                 field_name="pagePath",
                 string_filter=Filter.StringFilter(match_type="CONTAINS", value=filters)
             )
-        )
+        ))
+    if extra_filter is not None:
+        exprs.append(extra_filter)
+    if len(exprs) == 1:
+        req.dimension_filter = exprs[0]
+    elif exprs:
+        req.dimension_filter = FilterExpression(and_group=FilterExpressionList(expressions=exprs))
     if order_by_metric:
         req.order_bys = [OrderBy(metric=OrderBy.MetricOrderBy(metric_name=order_by_metric), desc=True)]
     return client.run_report(req)
@@ -99,13 +107,13 @@ def edition_label(edition_date_str):
     return d.strftime("%-m/%-d")
 
 
-def fetch_totals(client, start, end, path_filter=None):
+def fetch_totals(client, start, end, path_filter=None, extra_filter=None):
     """Return dict with activeUsers, newUsers, sessions, pageviews, avgEngagement."""
     r = run_report(client, start, end,
                    dimensions=[],
                    metrics=["activeUsers", "newUsers", "sessions",
                             "screenPageViews", "userEngagementDuration"],
-                   filters=path_filter)
+                   filters=path_filter, extra_filter=extra_filter)
     if not r.rows:
         return {"users": 0, "newUsers": 0, "sessions": 0, "pageviews": 0, "avgEngagement": "—"}
     row = r.rows[0]
@@ -145,12 +153,12 @@ def real_page(path):
     return None
 
 
-def fetch_top_articles(client, start, end, path_filter, limit=10):
+def fetch_top_articles(client, start, end, path_filter, limit=10, extra_filter=None):
     """Return list of {path, title, pageviews, users, avgTime} dicts, real pages only, merged per page."""
     r = run_report(client, start, end,
                    dimensions=["pagePath"],
                    metrics=["screenPageViews", "activeUsers", "userEngagementDuration", "sessions"],
-                   filters=path_filter,
+                   filters=path_filter, extra_filter=extra_filter,
                    order_by_metric="screenPageViews",
                    limit=max(50, limit * 4))
     merged = {}
@@ -246,6 +254,31 @@ def pub_start(edition_date_str):
     """First GA4 day of an edition: the Saturday before its Sunday date. John pushes each edition to production
     around 8 PM Saturday (Nov 15, 2026), so its launch traffic falls on the Saturday."""
     return (datetime.strptime(edition_date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+
+
+PUSH_HOUR = 20  # editions go live around 8 PM Saturday, Eastern (GA4 property time)
+
+
+def since_push_filter(edition_date_str):
+    """GA4 filter that drops the push Saturday's hours before PUSH_HOUR. Used as a filter (dateHour is not a report
+    dimension), so users and sessions stay de-duplicated across the whole range."""
+    sat = pub_start(edition_date_str).replace("-", "")
+    early = [f"{sat}{h:02d}" for h in range(PUSH_HOUR)]
+    return FilterExpression(not_expression=FilterExpression(filter=Filter(
+        field_name="dateHour", in_list_filter=Filter.InListFilter(values=early))))
+
+
+def log_first_edition_hour(client, edition_date_str):
+    """Log the first hour the edition's pages had views on push Saturday — checks GA4's clock agrees with PUSH_HOUR."""
+    try:
+        sat = pub_start(edition_date_str)
+        r = run_report(client, sat, sat, dimensions=["dateHour"], metrics=["screenPageViews"],
+                       filters=f"/editions/{edition_date_str}/", limit=24)
+        hours = sorted(row.dimension_values[0].value[-2:] for row in r.rows if int(row.metric_values[0].value) > 0)
+        print(f"    edition {edition_date_str}: first hour with views on {sat} (GA4 property time): "
+              f"{hours[0] if hours else 'none'} (PUSH_HOUR={PUSH_HOUR})")
+    except Exception as e:
+        print(f"    first-hour check failed: {e}")
 
 
 def edition_is_live(edition_date_str):
@@ -607,6 +640,10 @@ window.addEventListener('DOMContentLoaded', function() {
 """
 
 
+def _push_label(start):
+    return datetime.strptime(start, "%Y-%m-%d").strftime("%b %-d")
+
+
 def build_section1(client, current_edition, today_str):
     """Current Edition Spotlight."""
     ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%-m/%-d")
@@ -614,9 +651,11 @@ def build_section1(client, current_edition, today_str):
 
     today = fetch_totals(client, "today", "today")
     start = pub_start(current_edition)
-    site  = fetch_totals(client, start, today_str)
-    week  = fetch_totals(client, start, today_str, path_filter=path_filter)
-    top   = fetch_top_articles(client, start, today_str, path_filter, limit=8)
+    since = since_push_filter(current_edition)
+    log_first_edition_hour(client, current_edition)
+    site  = fetch_totals(client, start, today_str, extra_filter=since)
+    week  = fetch_totals(client, start, today_str, path_filter=path_filter, extra_filter=since)
+    top   = fetch_top_articles(client, start, today_str, path_filter, limit=8, extra_filter=since)
 
     today_cards = "".join([
         stat_card("Pageviews", f"{today['pageviews']:,}"),
@@ -647,15 +686,14 @@ def build_section1(client, current_edition, today_str):
     <h3>Today ({today_str}) — whole site</h3>
     <div class="stat-row">{today_cards}</div>
 
-    <h3>Since Publication ({start} – {today_str}) — whole site</h3>
+    <h3>Since Publication (Saturday {_push_label(start)}, 8 PM – now) — whole site</h3>
     <div class="stat-row">{site_cards}</div>
 
     <h3>Since Publication — this edition's articles only</h3>
     <div class="stat-row">{week_cards}</div>
     <p class="no-data">"Whole site" counts every page: homepage, DateBook, Astrochart, About and older editions.
     "This edition's articles" counts only pages under /editions/{current_edition}/, so it is always the smaller number.
-    Both start on the Saturday of the evening push ({start}); the whole-site figure also includes that Saturday's
-    visits before the push.</p>
+    Both count from 8 PM Eastern on the Saturday the edition went live.</p>
 
     <h3>Top Articles This Edition</h3>
     <table>
