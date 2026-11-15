@@ -1905,3 +1905,4 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | # | Date (ET) | From | Subject / content | Status |
 |---|---|---|---|---|
 | 593 | Nov 14 7:13 PM | Sig (text) | Reply to #589 on the credit title: "Whatever looks better." A second text (7:14) is social (a film she saw). | ✅ credits 2–7 now "Tony Cokes / Let Yourself Be Free" (spaced slash, CMOS for multi-word terms) |
+| 594 | Nov 14 | Code (John: "Stage it") | **Nov 15 staged:** dev `275a160b` (merge of dev2 `7f112fd6` in a temporary worktree). Pre-flight: no submodules, no files over 25 MB, `branch_drift.py` differences were all this week's dev2 updates (dev side only Nov 8 content), resolved ⏳ rows closed; internal nav commented (9 files, 0 live markers), GA4 already off (0 live scripts), internal files stripped (tools, _archive, review, STATUS.md), no live links to internal pages. Manual Vercel dev deploy started. | ⏳ dev preview alias; John to choose publish time |
