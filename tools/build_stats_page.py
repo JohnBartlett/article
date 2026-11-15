@@ -951,6 +951,94 @@ def build_video_section(client, today_str):
 
 
 # ---------------------------------------------------------------------------
+# How far readers got (read-depth.js, live from Nov 15, 2026)
+# ---------------------------------------------------------------------------
+# Article pages load /read-depth.js, which sends article_open and article_read_25/_50/_75/_100 (the bottom of the
+# screen passed that share of .article-body). The milestone is in the event name, so no custom definitions are
+# needed. Time reading is GA4's built-in userEngagementDuration (foreground time) per page, available for any date.
+
+READ_SINCE = "2026-11-15"
+READ_MARKS = [("article_read_25", "25%"), ("article_read_50", "Halfway"), ("article_read_75", "75%"),
+              ("article_read_100", "Finished")]
+
+
+def _path_prefix_filter(prefix):
+    return FilterExpression(filter=Filter(field_name="pagePath",
+                                          string_filter=Filter.StringFilter(match_type="BEGINS_WITH", value=prefix)))
+
+
+def fetch_read_depth(client, start, end, prefix):
+    """{pagePath: {eventName: users}} for article_* events on pages under prefix."""
+    flt = FilterExpression(and_group=FilterExpressionList(expressions=[
+        FilterExpression(filter=Filter(field_name="eventName",
+                                       string_filter=Filter.StringFilter(match_type="BEGINS_WITH", value="article_"))),
+        _path_prefix_filter(prefix),
+    ]))
+    out = {}
+    for row in _report(client, ["pagePath", "eventName"], ["totalUsers"], start, end, flt, limit=1000):
+        path, ev = (v.value for v in row.dimension_values)
+        real = real_page(path)
+        if not real:
+            continue
+        page = out.setdefault(real[0], {})
+        page[ev] = max(page.get(ev, 0), int(row.metric_values[0].value))  # /x and /x/ can both appear
+    return out
+
+
+def fetch_reading_time(client, start, end, prefix):
+    """{pagePath: (title, engaged seconds, active users)} for real pages under prefix."""
+    out = {}
+    for row in _report(client, ["pagePath"], ["userEngagementDuration", "activeUsers"], start, end,
+                       _path_prefix_filter(prefix), limit=500):
+        real = real_page(row.dimension_values[0].value)
+        if not real:
+            continue
+        path, title = real
+        secs, users = float(row.metric_values[0].value), int(row.metric_values[1].value)
+        _, os_, ou = out.get(path, (title, 0.0, 0))
+        out[path] = (title, os_ + secs, ou + users)
+    return out
+
+
+def build_reading_section(client, edition_date, today_str):
+    """How Far Readers Got — one row per article in the latest published edition."""
+    prefix = f"/editions/{edition_date}/"
+    skip = ("/datebook", "/daily-star")
+    try:
+        times = fetch_reading_time(client, edition_date, today_str, prefix)
+        depth = fetch_read_depth(client, max(READ_SINCE, edition_date), today_str, prefix)
+    except Exception as e:
+        print(f"    reading stats unavailable: {e}")
+        return '<p class="no-data">Reading stats could not be loaded from GA4 this run.</p>'
+    paths = [p for p in set(times) | set(depth) if p.rstrip("/") != prefix.rstrip("/") and not any(s in p for s in skip)]
+    if not paths:
+        return '<p class="no-data">No article reading recorded yet for this edition. GA4 reports lag several hours to a day.</p>'
+
+    def opened(p):
+        return depth.get(p, {}).get("article_open", 0)
+
+    rows = []
+    for p in sorted(paths, key=lambda p: (-opened(p), -times.get(p, ("", 0, 0))[2])):
+        title, secs, users = times.get(p, (slug_to_title(p), 0, 0))
+        title = title.split(" | ")[0]
+        d, o = depth.get(p, {}), opened(p)
+        cells = "".join(
+            f'<td class="num">{d.get(ev, 0):,}<br><span style="font-size:0.75rem;color:#999">{_pct(d.get(ev, 0), o)}</span></td>' if o
+            else '<td class="num">—</td>' for ev, _ in READ_MARKS)
+        avg = _mmss(int(secs // users)) if users else "—"
+        rows.append(f'<tr><td><a href="https://chicagoclassicmag.com{p}" target="_blank">{html_lib.escape(title)}</a></td>'
+                    f'<td class="num">{o:,}</td>{cells}<td class="num">{avg}</td></tr>')
+    head = "".join(f'<th class="num">{lbl}</th>' for _, lbl in READ_MARKS)
+    return f"""
+    <table><thead><tr><th>Article</th><th class="num">Opened</th>{head}<th class="num">Avg time reading</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody></table>
+    <p class="no-data" style="margin-top:10px">Opened, 25%, Halfway, 75% and Finished count readers since {READ_SINCE},
+    when tracking began; percentages are of readers who opened the article. "Finished" means they scrolled to its
+    last line. Avg time reading is time with the page open and in front, per reader (minutes:seconds), over the
+    whole edition. GA4 reports lag several hours to a day.</p>"""
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 

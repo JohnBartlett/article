@@ -243,6 +243,10 @@ def main():
     print("  Fetching video views…")
     s_video = bsp.build_video_section(client, today_str)
 
+    print("  Fetching read depth…")
+    s_read = (bsp.build_reading_section(client, ga4_edition, today_str) if ga4_edition
+              else '<p class="no-data">No published editions yet.</p>')
+
     print("  Fetching Heritage Auctions ad impressions…")
     s6 = bsp.build_section6(client, ga4_edition, today_str)
 
@@ -302,6 +306,7 @@ def main():
     <a href="#spotlight">Current Edition</a>
     <a href="#votes">Votes &amp; Comments</a>
     <a href="#video">Video Views</a>
+    <a href="#reading">How Far Readers Got</a>
     <a href="#history">Edition History</a>
     <a href="#alltime">All-Time Stats</a>
     <a href="#ha-ad">Heritage Auctions Ad</a>
@@ -331,6 +336,11 @@ def main():
   <section id="video">
     <h2>Video Views</h2>
     {s_video}
+  </section>
+
+  <section id="reading">
+    <h2>How Far Readers Got — {ga4_ed_label}</h2>
+    {s_read}
   </section>
 
   <section id="history">
