@@ -21,6 +21,8 @@ import sys
 import re
 import json
 import argparse
+import html as html_lib
+from pathlib import Path
 from datetime import datetime, timedelta, date
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -114,29 +116,54 @@ def fetch_totals(client, start, end, path_filter=None):
     }
 
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def real_page(path):
+    """(normalized path, title) when the path is a real page in the repo, else None.
+
+    Cloudflare serves the homepage, with status 200, for any address that doesn't exist (CLAUDE.md #79), and a
+    visitor or bot on such a copy follows its relative links into compounded addresses such as
+    /2026-03-15/writers/editions/editions/2026-11-15/openlands-luncheon. GA4 records those with the homepage's
+    title, so they showed up as "Classic Chicago – Sunday Edition" rows (Nov 15, 2026). Only addresses that
+    exist on disk count, and the name comes from the page's own <title>.
+    """
+    rel = path.split('?')[0].strip('/')
+    if '..' in rel:
+        return None
+    for cand, norm in ((REPO_ROOT / rel / 'index.html', '/' + rel + '/'), (REPO_ROOT / rel, '/' + rel)):
+        if rel and cand.is_file() and cand.suffix == '.html':
+            m = re.search(r'<title>(.*?)</title>', cand.read_text(encoding='utf-8', errors='replace'), re.S)
+            title = html_lib.unescape(m.group(1)).strip() if m else ''
+            return norm, re.sub(r'\s*\|\s*Classic Chicago.*$', '', title).strip() or slug_to_title(norm)
+    return None
+
+
 def fetch_top_articles(client, start, end, path_filter, limit=10):
-    """Return list of {path, title, pageviews, users, avgTime} dicts."""
+    """Return list of {path, title, pageviews, users, avgTime} dicts, real pages only, merged per page."""
     r = run_report(client, start, end,
-                   dimensions=["pagePath", "pageTitle"],
+                   dimensions=["pagePath"],
                    metrics=["screenPageViews", "activeUsers", "userEngagementDuration", "sessions"],
                    filters=path_filter,
                    order_by_metric="screenPageViews",
-                   limit=limit)
-    articles = []
+                   limit=max(50, limit * 4))
+    merged = {}
     for row in r.rows:
-        path  = row.dimension_values[0].value
-        title = row.dimension_values[1].value
-        pv    = int(row.metric_values[0].value)
-        users = int(row.metric_values[1].value)
-        eng   = float(row.metric_values[2].value)
-        sess  = int(row.metric_values[3].value) or 1
-        # Skip datebook / daily-star
+        path = row.dimension_values[0].value
         if any(x in path for x in ["/datebook/", "/daily-star", "/editors/"]):
             continue
-        # Clean title — strip " | Classic Chicago..." suffix
-        title = re.sub(r'\s*\|\s*Classic Chicago.*$', '', title).strip() or slug_to_title(path)
-        articles.append({"path": path, "title": title, "pageviews": pv, "users": users,
-                         "avgTime": fmt_duration(eng / sess)})
+        page = real_page(path)
+        if not page:
+            continue
+        norm, title = page
+        a = merged.setdefault(norm, {"path": norm, "title": title, "pageviews": 0, "users": 0, "eng": 0.0, "sess": 0})
+        a["pageviews"] += int(row.metric_values[0].value)
+        a["users"] += int(row.metric_values[1].value)  # "/x" and "/x/" rarely share a reader; close enough
+        a["eng"] += float(row.metric_values[2].value)
+        a["sess"] += int(row.metric_values[3].value)
+    articles = sorted(merged.values(), key=lambda a: -a["pageviews"])[:limit]
+    for a in articles:
+        a["avgTime"] = fmt_duration(a.pop("eng") / (a.pop("sess") or 1))
     return articles
 
 
@@ -195,14 +222,14 @@ def fetch_ha_ad_by_page(client, start, end, path_filter=None, limit=15):
         limit=limit,
     )
     r = client.run_report(req)
-    return [
-        {
-            "path": row.dimension_values[0].value,
-            "title": slug_to_title(row.dimension_values[0].value),
-            "impressions": int(row.metric_values[0].value),
-        }
-        for row in r.rows
-    ]
+    merged = {}
+    for row in r.rows:
+        page = real_page(row.dimension_values[0].value)  # skip homepage-fallback addresses (see real_page)
+        if not page:
+            continue
+        a = merged.setdefault(page[0], {"path": page[0], "title": page[1], "impressions": 0})
+        a["impressions"] += int(row.metric_values[0].value)
+    return sorted(merged.values(), key=lambda a: -a["impressions"])
 
 
 # ---------------------------------------------------------------------------
@@ -810,6 +837,10 @@ def fetch_video_events(client, start, end):
     for row in _report(client, ["pagePath", "pageTitle", "eventName"], ["eventCount", "totalUsers"],
                        start, end, _video_filter()):
         path, title, ev = (v.value for v in row.dimension_values)
+        real = real_page(path)
+        if not real:  # homepage-fallback address (see real_page); the player only exists on real pages
+            continue
+        path, title = real
         page = out.setdefault(path, {"title": title, "events": {}})
         c, u = (int(v.value) for v in row.metric_values)
         oc, ou = page["events"].get(ev, (0, 0))
