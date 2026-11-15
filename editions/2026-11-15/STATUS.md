@@ -36,7 +36,7 @@ Nav chain order (hero → last):
 ## Pending Deliveries
 
 - **Antiquarian Photo 14 caption** — Judy will identify the two women once the edition is posted (`1a1dc4db77d21dc1`); runs without a caption until then.
-- **Sig: Liechtenstein credit title** — texted Sig (#589) whether credits 2–7 read "Tony Cokes/Let Yourself Be Free" or "Tony Cokes / Let…"; built as "Tony Cokes/ Let…".
+- **Sig: Liechtenstein credit title** — resolved: Sig "Whatever looks better" (#593); credits 2–7 read "Tony Cokes / Let Yourself Be Free".
 
 ## Blockers
 
