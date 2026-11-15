@@ -457,7 +457,7 @@ def check_bylines(article_dirs):
             print(f"  \u2717 {d}: byline is not a link to about.html")
             problems = True
             continue
-        aid, name = by.group(1), by.group(2).strip()
+        aid, name = by.group(1), by.group(2).replace("&nbsp;", " ").replace("\xa0", " ").strip()  # keep_together.py nbsp
         about_link = re.search(r'about\.html#([a-z0-9-]+)"[^>]*>About the Author', h)
         if aid not in cards:
             print(f"  \u2717 {d}: about.html has no card with id {aid!r}")
