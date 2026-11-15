@@ -242,17 +242,36 @@ def fetch_ha_ad_by_page(client, start, end, path_filter=None, limit=15):
 # Detect edition dates from folder structure
 # ---------------------------------------------------------------------------
 
+def pub_start(edition_date_str):
+    """First GA4 day of an edition: the Saturday before its Sunday date. John pushes each edition to production
+    around 8 PM Saturday (Nov 15, 2026), so its launch traffic falls on the Saturday."""
+    return (datetime.strptime(edition_date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+
+
+def edition_is_live(edition_date_str):
+    """True if the production homepage already links this edition (it has been pushed). False on any error."""
+    import urllib.request
+    try:
+        url = f"https://chicagoclassicmag.com/?cb={int(time.time())}"
+        req = urllib.request.Request(url, headers={"User-Agent": "ccm-editors-dashboard", "Cache-Control": "no-cache"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return f"editions/{edition_date_str}/" in r.read().decode("utf-8", "replace")
+    except Exception as e:
+        print(f"    live check for {edition_date_str} failed: {e}")
+        return False
+
+
 def detect_editions(n=5):
-    """Return last n published edition dates (desc) — excludes future editions."""
+    """Return last n published edition dates (desc). An edition dated tomorrow counts once the production homepage
+    links it (the Saturday-night push); other future editions are excluded."""
     editions_dir = os.path.join(os.path.dirname(__file__), '..', 'editions')
     today = date.today()
-    dates = sorted(
-        [d for d in os.listdir(editions_dir)
-         if re.match(r'\d{4}-\d{2}-\d{2}$', d)
-         and datetime.strptime(d, "%Y-%m-%d").date() <= today],
-        reverse=True
-    )
-    return dates[:n]
+    all_dates = [d for d in os.listdir(editions_dir) if re.match(r'\d{4}-\d{2}-\d{2}$', d)]
+    dates = [d for d in all_dates if datetime.strptime(d, "%Y-%m-%d").date() <= today]
+    tomorrow = (today + timedelta(days=1)).strftime("%Y-%m-%d")
+    if tomorrow in all_dates and edition_is_live(tomorrow):
+        dates.append(tomorrow)
+    return sorted(dates, reverse=True)[:n]
 
 
 # ---------------------------------------------------------------------------
@@ -594,9 +613,10 @@ def build_section1(client, current_edition, today_str):
     path_filter = f"/editions/{current_edition}/"
 
     today = fetch_totals(client, "today", "today")
-    site  = fetch_totals(client, current_edition, today_str)
-    week  = fetch_totals(client, current_edition, today_str, path_filter=path_filter)
-    top   = fetch_top_articles(client, current_edition, today_str, path_filter, limit=8)
+    start = pub_start(current_edition)
+    site  = fetch_totals(client, start, today_str)
+    week  = fetch_totals(client, start, today_str, path_filter=path_filter)
+    top   = fetch_top_articles(client, start, today_str, path_filter, limit=8)
 
     today_cards = "".join([
         stat_card("Pageviews", f"{today['pageviews']:,}"),
@@ -627,13 +647,15 @@ def build_section1(client, current_edition, today_str):
     <h3>Today ({today_str}) — whole site</h3>
     <div class="stat-row">{today_cards}</div>
 
-    <h3>Since Publication ({current_edition} – {today_str}) — whole site</h3>
+    <h3>Since Publication ({start} – {today_str}) — whole site</h3>
     <div class="stat-row">{site_cards}</div>
 
     <h3>Since Publication — this edition's articles only</h3>
     <div class="stat-row">{week_cards}</div>
     <p class="no-data">"Whole site" counts every page: homepage, DateBook, Astrochart, About and older editions.
-    "This edition's articles" counts only pages under /editions/{current_edition}/, so it is always the smaller number.</p>
+    "This edition's articles" counts only pages under /editions/{current_edition}/, so it is always the smaller number.
+    Both start on the Saturday of the evening push ({start}); the whole-site figure also includes that Saturday's
+    visits before the push.</p>
 
     <h3>Top Articles This Edition</h3>
     <table>
@@ -649,13 +671,13 @@ def build_section2(client, editions_list, today_str):
 
     for i, ed in enumerate(editions_list[:4]):
         ed_date = ed
-        ed_end  = today_str if i == 0 else (
-            (datetime.strptime(editions_list[i-1], "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
-        )
+        start   = pub_start(ed)  # Saturday push through the Friday before the next edition's push
+        ed_end  = min(today_str, (datetime.strptime(editions_list[i-1], "%Y-%m-%d") - timedelta(days=2)).strftime("%Y-%m-%d")
+                      ) if i else today_str
         label = datetime.strptime(ed_date, "%Y-%m-%d").strftime("%-m/%-d")
         pf = f"/editions/{ed_date}/"
-        totals = fetch_totals(client, ed_date, ed_end, path_filter=pf)
-        top3   = fetch_top_articles(client, ed_date, ed_end, pf, limit=5)[:3]
+        totals = fetch_totals(client, start, ed_end, path_filter=pf)
+        top3   = fetch_top_articles(client, start, ed_end, pf, limit=5)[:3]
 
         is_current = "current" if i == 0 else ""
         current_tag = '<span class="red"> ← current</span>' if i == 0 else ""
@@ -783,7 +805,7 @@ def build_section6(client, current_edition, today_str):
                 '(GA4 is disabled on dev and dev2).</p>')
 
     last_30  = fetch_ha_ad_total(client, thirty_days_ago, today_str)
-    edition  = fetch_ha_ad_total(client, current_edition, today_str,
+    edition  = fetch_ha_ad_total(client, pub_start(current_edition), today_str,
                                  path_filter=f"/editions/{current_edition}/") if current_edition else 0
     by_page  = fetch_ha_ad_by_page(client, thirty_days_ago, today_str, limit=15)
 
@@ -1025,8 +1047,8 @@ def build_reading_section(client, edition_date, today_str):
     prefix = f"/editions/{edition_date}/"
     skip = ("/datebook", "/daily-star")
     try:
-        times = fetch_reading_time(client, edition_date, today_str, prefix)
-        depth = fetch_read_depth(client, max(READ_SINCE, edition_date), today_str, prefix)
+        times = fetch_reading_time(client, pub_start(edition_date), today_str, prefix)
+        depth = fetch_read_depth(client, max(READ_SINCE, pub_start(edition_date)), today_str, prefix)
     except Exception as e:
         print(f"    reading stats unavailable: {e}")
         return '<p class="no-data">Reading stats could not be loaded from GA4 this run.</p>'
