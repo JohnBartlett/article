@@ -594,6 +594,7 @@ def build_section1(client, current_edition, today_str):
     path_filter = f"/editions/{current_edition}/"
 
     today = fetch_totals(client, "today", "today")
+    site  = fetch_totals(client, current_edition, today_str)
     week  = fetch_totals(client, current_edition, today_str, path_filter=path_filter)
     top   = fetch_top_articles(client, current_edition, today_str, path_filter, limit=8)
 
@@ -604,8 +605,16 @@ def build_section1(client, current_edition, today_str):
         stat_card("Avg. Engagement", today['avgEngagement']),
     ])
 
+    site_cards = "".join([
+        stat_card("Pageviews", f"{site['pageviews']:,}"),
+        stat_card("Sessions",  f"{site['sessions']:,}"),
+        stat_card("Users",     f"{site['users']:,}"),
+        stat_card("New Users", f"{site['newUsers']:,}"),
+        stat_card("Avg. Engagement", site['avgEngagement']),
+    ])
+
     week_cards = "".join([
-        stat_card("Pageviews", f"{week['pageviews']:,}", "since publication"),
+        stat_card("Pageviews", f"{week['pageviews']:,}"),
         stat_card("Sessions",  f"{week['sessions']:,}"),
         stat_card("Users",     f"{week['users']:,}"),
         stat_card("New Users", f"{week['newUsers']:,}"),
@@ -615,11 +624,16 @@ def build_section1(client, current_edition, today_str):
     top_rows = "\n".join(article_row(a, i+1) for i, a in enumerate(top[:8]))
 
     return f"""
-    <h3>Today ({today_str})</h3>
+    <h3>Today ({today_str}) — whole site</h3>
     <div class="stat-row">{today_cards}</div>
 
-    <h3>Since Publication ({current_edition} – {today_str})</h3>
+    <h3>Since Publication ({current_edition} – {today_str}) — whole site</h3>
+    <div class="stat-row">{site_cards}</div>
+
+    <h3>Since Publication — this edition's articles only</h3>
     <div class="stat-row">{week_cards}</div>
+    <p class="no-data">"Whole site" counts every page: homepage, DateBook, Astrochart, About and older editions.
+    "This edition's articles" counts only pages under /editions/{current_edition}/, so it is always the smaller number.</p>
 
     <h3>Top Articles This Edition</h3>
     <table>
