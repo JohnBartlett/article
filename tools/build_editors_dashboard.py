@@ -23,6 +23,7 @@ Usage:
 """
 
 import os
+import time
 import sys
 import re
 import argparse
@@ -253,7 +254,7 @@ def main():
     print("  Building Comment Leaderboard…")
     s5 = bsp.build_section5(records)
 
-    generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
+    generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p ") + time.strftime("%Z")
     ed_label = datetime.strptime(prep_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
     ga4_ed_label = datetime.strptime(ga4_edition, "%Y-%m-%d").strftime("%B %-d, %Y") if ga4_edition else "—"
 

@@ -24,6 +24,12 @@ import argparse
 import html as html_lib
 from pathlib import Path
 from datetime import datetime, timedelta, date
+import time
+
+# The GitHub runner's clock is UTC; every date and time here ("today", which editions are published,
+# "Generated at") is meant as Chicago-desk Eastern time (John, Nov 15, 2026).
+os.environ["TZ"] = "America/New_York"
+time.tzset()
 
 sys.path.insert(0, os.path.dirname(__file__))
 
@@ -1085,7 +1091,7 @@ def main():
     print("  Fetching Section 6 (Heritage Auctions Ad)…")
     s6 = build_section6(client, current_edition, today_str)
 
-    generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p")
+    generated_at = datetime.now().strftime("%-m/%-d/%Y at %-I:%M %p ") + time.strftime("%Z")
     ed_label = datetime.strptime(current_edition, "%Y-%m-%d").strftime("%B %-d, %Y")
 
     ed_label_short = edition_label(current_edition)
