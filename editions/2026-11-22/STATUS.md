@@ -15,7 +15,7 @@ Nav chain order (hero → last):
 4. `cheryl-anderson-thanksgiving` — Thanksgiving by Cheryl Anderson
 5. `soma-roy-liliom` — A ticket to creativity and discovery by Soma Roy
 6. `warriors-dames-peoria` — Celebrating America 250 in Peoria with the Illinois Warriors and Colonial Dames by Judy Carmack Bross (Todd wrote it; Judy's byline at his request)
-7. `rob-murphy-asha-veal` — Between Lake Michigan and the Seine: Asha Iman Veal’s Chicago-Paris Life by Robert Murphy
+7. `rob-murphy-asha-veal` — Between Lake Michigan and the Seine: Asha Iman Veal’s Chicago-Paris Life by Rob Murphy
 8. DateBook — Annie Delfosse
 
 ## Lineup
@@ -28,7 +28,7 @@ Nav chain order (hero → last):
 | 4 | cheryl-anderson-thanksgiving | Thanksgiving | Cheryl Anderson | Judy to John |
 | 5 | soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Soma to John |
 | 6 | warriors-dames-peoria | Celebrating America 250 in Peoria with the Illinois Warriors and Colonial Dames | Judy Carmack Bross | Judy to John |
-| 7 | rob-murphy-asha-veal | Between Lake Michigan and the Seine: Asha Iman Veal’s Chicago-Paris Life | Robert Murphy | Judy to John |
+| 7 | rob-murphy-asha-veal | Between Lake Michigan and the Seine: Asha Iman Veal’s Chicago-Paris Life | Rob Murphy | Judy to John |
 
 ## Pending Deliveries
 
@@ -54,7 +54,7 @@ Nav chain order (hero → last):
 | cheryl-anderson-thanksgiving | Thanksgiving | Cheryl Anderson | Placeholder | — | Received: `1a1e10dfe4bfabe8` (thanksgiving.docx + one photo, 333 KB; check pixel size, #80). Title to come from the docx |
 | soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Placeholder | — | Received: `1a1f15116e8b53b2` (text in body, captions in red, cover + 18 numbered images). Earlier copy via Judy `1a1ee77a79aceadc` (photos shrunk; don't use) |
 | warriors-dames-peoria | Celebrating America 250 in Peoria… | Judy Carmack Bross | Placeholder | — | Received: `1a1e5450a3f4593c` (text in body, 24 photos). Cover: second John Morris photo by the tree |
-| rob-murphy-asha-veal | Between Lake Michigan and the Seine… | Robert Murphy | Placeholder | — | Received: `1a1ee6061944cc1d` (docx "FINAL 8OCT26" + Asha at the Louvre.jpeg) |
+| rob-murphy-asha-veal | Between Lake Michigan and the Seine… | Rob Murphy | Placeholder | — | Received: `1a1ee6061944cc1d` (docx "FINAL 8OCT26" + Asha at the Louvre.jpeg) |
 | datebook | DateBook | Annie Delfosse | Copied from Nov 15 | — | Date updated; awaiting Annie's update |
 | daily-star-november | Astrochart | Victoria Martin | Copied | — | Nov 22 – Dec 5 kept; Nov 1–21 removed |
 
