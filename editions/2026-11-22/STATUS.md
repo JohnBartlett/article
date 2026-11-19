@@ -1,8 +1,8 @@
 # November 22, 2026 Edition — Status
 
-_Updated: 2026-11-19_
+_Updated: 2026-11-19 (afternoon)_
 
-Skeleton prepped Nov 19 from Judy's revised lineup: seven article stubs and the DateBook. Text has arrived for four (Cheryl Anderson, Soma Roy, Peoria, Asha Veal); none built yet.
+Skeleton prepped Nov 19 from Judy's revised lineup: seven article stubs and the DateBook. Four built and Ready (Cheryl Anderson, Soma Roy, Peoria, Asha Veal); three still waiting on text.
 
 ## Judy's official lineup (`1a1ee7adf7686329`, received 2026-11-18)
 
@@ -51,12 +51,19 @@ Nav chain order (hero → last):
 | ryan-licht-sang-insights | Ryan Licht Sang INSIGHTS | Judy Carmack Bross | Placeholder | — | Cover from Judy `1a1e53b00354f50d`; text from Emma |
 | chicago-costume-committee | Chicago Costume Committee | Judy Carmack Bross | Placeholder | — | From Emma |
 | lake-forest-shop | The Lake Forest Shop | Judy Carmack Bross | Placeholder | — | From Ana; cover `1a1ea420e5987b96` |
-| cheryl-anderson-thanksgiving | Thanksgiving | Cheryl Anderson | Placeholder | — | Received: `1a1e10dfe4bfabe8` (thanksgiving.docx + one photo, 333 KB; check pixel size, #80). Title to come from the docx |
-| soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Placeholder | — | Received: `1a1f15116e8b53b2` (text in body, captions in red, cover + 18 numbered images). Earlier copy via Judy `1a1ee77a79aceadc` (photos shrunk; don't use) |
-| warriors-dames-peoria | Celebrating America 250 in Peoria… | Judy Carmack Bross | Placeholder | — | Received: `1a1e5450a3f4593c` (text in body, 24 photos). Cover: second John Morris photo by the tree |
-| rob-murphy-asha-veal | Between Lake Michigan and the Seine… | Dr. Rob Murphy | Placeholder | — | Received: `1a1ee6061944cc1d` (docx "FINAL 8OCT26" + Asha at the Louvre.jpeg) |
+| cheryl-anderson-thanksgiving | Thanksgiving | Cheryl Anderson | Ready | 1 | Built Nov 19 from the docx; no title in source ("Thanksgiving" for now); photo 961×998, no caption |
+| soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Ready | 18 + cover | Built Nov 19 from `1a1f15116e8b53b2`; captions from her red text; cover on card only |
+| warriors-dames-peoria | Celebrating America 250 in Peoria… | Judy Carmack Bross | Ready | 24 | Built Nov 19; each photo with its caption from the email; 8 rotated upright; cover IMG_2361.jpeg (John Morris by the oak); 21011.jpeg only 352×449 |
+| rob-murphy-asha-veal | Between Lake Michigan and the Seine… | Dr. Rob Murphy | Ready | 1 | Built Nov 19; 13 Q&A; byline "Dr. Rob Murphy" per docx; Louvre photo uncaptioned |
 | datebook | DateBook | Annie Delfosse | Copied from Nov 15 | — | Date updated; awaiting Annie's update |
 | daily-star-november | Astrochart | Victoria Martin | Copied | — | Nov 22 – Dec 5 kept; Nov 1–21 removed |
+
+## Questions for Judy (from the Nov 19 builds; nothing changed in contributor text)
+
+- Cheryl: no title supplied ("Thanksgiving" for now); photo is 961×998 (full size from Cheryl?); "joyance" left as written.
+- Soma: "Ethen Gallego" in text vs "Ethan" in the Image 10 caption; "Nine year old" (Nine-year-old); periods before closing quotes followed by "laughed/recalled/continued" (four places, CMOS uses commas); "custom sized" (custom-sized).
+- Rob/Asha: "say good morning to everyone you."; "That my home."; "repositing myself"; "Through the opportunities I in New York"; "because its’ ‘pretty,’"; "my MA master's thesis"; "Thank you very much telling us"; a paragraph that ends "But seriously,"; caption for the Louvre photo; byline "Dr. Rob Murphy" vs "Rob Murphy" (Oct 11).
+- Peoria: optional larger copy of 21011.jpeg (Sandy Boyce and Stephen Schwab, 352×449).
 
 ## Sources
 
