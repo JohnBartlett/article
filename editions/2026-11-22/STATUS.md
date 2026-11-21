@@ -1,6 +1,6 @@
 # November 22, 2026 Edition — Status
 
-_Updated: 2026-11-19 (afternoon)_
+_Updated: 2026-11-21_
 
 Skeleton prepped Nov 19 from Judy's revised lineup: seven article stubs and the DateBook. Four built and Ready (Cheryl Anderson, Soma Roy, Peoria, Asha Veal); three still waiting on text.
 
@@ -55,7 +55,9 @@ Nav chain order (hero → last):
 | soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Ready | 18 + cover | Built Nov 19 from `1a1f15116e8b53b2`; captions from her red text; cover on card only |
 | warriors-dames-peoria | Celebrating America 250 in Peoria… | Judy Carmack Bross | Ready | 24 | Built Nov 19; each photo with its caption from the email; 8 rotated upright; cover IMG_2361.jpeg (John Morris by the oak); 21011.jpeg only 352×449 |
 | rob-murphy-asha-veal | Between Lake Michigan and the Seine… | Dr. Rob Murphy | Ready | 1 | Built Nov 19; 13 Q&A; byline "Dr. Rob Murphy" per docx; Louvre photo uncaptioned |
-| datebook | DateBook | Annie Delfosse | Copied from Nov 15 | — | Date updated; awaiting Annie's update |
+| ray-conniff-christmas | A Ray Conniff Christmas, Back in Full Swing | Michelle Crowe | Ready | 3 | Built Nov 21; Judy's "Union Church" caption edit applied; the two choir attachments are byte-identical, so "the other photo of the Choir" (end of article) is missing; utm tag stripped from the Allegrezza link; bio added to about.html |
+| christkindlmarket | Christkindlmarket, Chicago’s Historic German Holiday Event, Returns | Drake Boehm | Ready | 7 + cover | Built Nov 21; cover on card only (no caption); cover and photos 1, 3, 4, 6 are 300–387 px (shown at natural size); category Neighborhoods |
+| datebook | DateBook | Annie Delfosse | Updated Nov 21 | — | Annie's Nov 21 update merged (8 new events + Looking Forward to 2027); existing events kept |
 | daily-star-november | Astrochart | Victoria Martin | Copied | — | Nov 22 – Dec 5 kept; Nov 1–21 removed |
 
 ## Questions for Judy (from the Nov 19 builds; nothing changed in contributor text)
@@ -71,6 +73,9 @@ Nav chain order (hero → last):
 - soma-roy-liliom: 1a1f15116e8b53b2
 - warriors-dames-peoria: 1a1e5450a3f4593c
 - rob-murphy-asha-veal: 1a1ee6061944cc1d
+- ray-conniff-christmas: 1a1f5d05ac9a2b1b, 1a1faca295b5ec7d
+- christkindlmarket: 1a1fceb10e668c9a
+- datebook: 1a1fd6c3ab12f724
 
 ## Notes
 
