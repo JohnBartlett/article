@@ -18,6 +18,10 @@ Nav chain order (hero → last):
 7. `rob-murphy-asha-veal` — Between Lake Michigan and the Seine: Asha Iman Veal’s Chicago-Paris Life by Rob Murphy
 8. DateBook — Annie Delfosse
 
+## Current order (Judy's Nov 20 proposal, `1a1faca295b5ec7d`; applied Nov 21)
+
+1. lake-forest-shop (hero) 2. rob-murphy-asha-veal 3. cheryl-anderson-thanksgiving 4. ryan-licht-sang-insights 5. chicago-costume-committee 6. ray-conniff-christmas 7. warriors-dames-peoria 8. soma-roy-liliom 9. christkindlmarket (added Nov 21 at Judy's request, not in her Nov 20 list; placed last). This answers the lead-story blocker.
+
 ## Lineup
 
 | Order | Slug | Title | Author | Coordinator |
