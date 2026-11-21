@@ -52,9 +52,9 @@ Nav chain order (hero → last):
 
 | Slug | Title | Author | HTML | Photos | Notes |
 |------|-------|--------|------|--------|-------|
-| ryan-licht-sang-insights | Ryan Licht Sang INSIGHTS | Judy Carmack Bross | Placeholder | — | Cover from Judy `1a1e53b00354f50d`; text from Emma |
-| chicago-costume-committee | Chicago Costume Committee | Judy Carmack Bross | Placeholder | — | From Emma |
-| lake-forest-shop | The Lake Forest Shop | Judy Carmack Bross | Placeholder | — | From Ana; cover `1a1ea420e5987b96` |
+| ryan-licht-sang-insights | The Ryan Licht Sang Foundation’s Standout Show “In a Mania” | Judy Carmack Bross | Ready | 11 | Built Nov 21 from Emma `1a1feadc043687a6`; photos from her Drive links (downloaded via Chrome, resized to 3000 px); photo 3 = card cover and also inline (captioned) |
+| chicago-costume-committee | Celebrating Style and Statesmanship at the Chicago History Museum | Judy Carmack Bross | Ready | 12 | Built Nov 21 from Emma `1a1fe9edeb8bc2a1`; image8 caption from Judy `1a1fed468f3a65d4`; image2 and image4 uncaptioned; IMG_4099 caption names two people, photo shows one woman with two costumed people (check) |
+| lake-forest-shop | Threads of Time: Remembering Ellen Stirling | Judy Carmack Bross | Ready | 7 + cover | Built Nov 21 from Ana `1a1f99fc3f3572d3`; title from her subject line (no title in body); COVER and 2 Margaret are the same file; Basedow/Bastedo/Bastedow spellings flagged |
 | cheryl-anderson-thanksgiving | Thanksgiving | Cheryl Anderson | Ready | 1 | Built Nov 19 from the docx; no title in source ("Thanksgiving" for now); photo 961×998, no caption |
 | soma-roy-liliom | A ticket to creativity and discovery | Soma Roy | Ready | 18 + cover | Built Nov 19 from `1a1f15116e8b53b2`; captions from her red text; cover on card only |
 | warriors-dames-peoria | Celebrating America 250 in Peoria… | Judy Carmack Bross | Ready | 24 | Built Nov 19; each photo with its caption from the email; 8 rotated upright; cover IMG_2361.jpeg (John Morris by the oak); 21011.jpeg only 352×449 |
@@ -80,6 +80,9 @@ Nav chain order (hero → last):
 - ray-conniff-christmas: 1a1f5d05ac9a2b1b, 1a1faca295b5ec7d
 - christkindlmarket: 1a1fceb10e668c9a
 - datebook: 1a1fd6c3ab12f724
+- lake-forest-shop: 1a1f99fc3f3572d3
+- chicago-costume-committee: 1a1fe9edeb8bc2a1, 1a1fed468f3a65d4
+- ryan-licht-sang-insights: 1a1feadc043687a6
 
 ## Notes
 
