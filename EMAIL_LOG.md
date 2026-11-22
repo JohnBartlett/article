@@ -2013,3 +2013,7 @@ No new magazine email or texts. Judy has not replied to #655 or #660.
 | 665 | Nov 21 11:29–11:35 PM | Reader forms (`1a20189eb499e61c`, `1a20185245adc80b`, `1a201842be902eaa`) | Comment on Peoria (praise, prod); comment and Yes vote on Nov 15 Toronto (prod). | Logged |
 | 666 | Nov 22 ~8:29 AM | Code (John: "push to production") | Hotfix of #662/#663: dev `dbe00e4e`, master `76973d12` (4 files; GA4 stays on, no internal files). Confirmed live by cache-busted fetch after about 6 minutes: Costume Council captions and name order, both Paris photos (200, correct sizes). Dev Vercel preview not redeployed. | ✅ Done; live notice sent (`1a2037fc43593c32`) |
 | 667 | Nov 22 ~8:40 AM | John → Judy, Sig (Cc Emma, Annie, Ana) | "Classic Chicago Magazine: November 22 Edition Is Live": went live last night; corrections made this morning (gmail_api.py, new thread, `1a2037fc43593c32`, labels SENT). | ✅ Sent |
+
+### Check — 2026-11-22 09:53 ET (John: "Check"; branch dev2; Gmail API after:2026/11/22 compared to internalDate, texts from Judy, Sig and the Judy+Emma group; cutoff epoch 1795353807; this check's start epoch 1795359201)
+
+No new magazine email or texts (only my own #667 live notice).
