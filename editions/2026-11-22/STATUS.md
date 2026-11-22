@@ -71,6 +71,19 @@ Nav chain order (hero → last):
 - Rob/Asha: "say good morning to everyone you."; "That my home."; "repositing myself"; "Through the opportunities I in New York"; "because its’ ‘pretty,’"; "my MA master's thesis"; "Thank you very much telling us"; a paragraph that ends "But seriously,"; caption for the Louvre photo; byline "Dr. Rob Murphy" vs "Rob Murphy" (Oct 11).
 - Peoria: optional larger copy of 21011.jpeg (Sandy Boyce and Stephen Schwab, 352×449).
 
+## John's decisions (2026-11-21 evening, before publishing; questions sent to Judy as `1a2008939c30f806`)
+
+- Cheryl: title changed to "The Season for Remembering"; "joyance" left.
+- Hero stays Lake Forest Shop; Asha photo on Rob's card only.
+- Louvre photo caption: "Asha Iman Veal at the Louvre".
+- Byline stays "Dr. Rob Murphy".
+- Ray Conniff: publish without the missing second choir photo.
+- Lake Forest: "Bastedo"/"Bastedow" changed to "Basedow".
+- Chicago History Museum: IMG_4099 caption removed (named two people not in the photo).
+- Typos, clear ones only: Soma (Ethen→Ethan, Nine-year-old, custom-sized, four periods→commas before laughed/recalled/continued); Rob (That's my home, repositioning, it's, "for telling us"). Left as written: "everyone you.", "the opportunities I in New York", "MA master's", "But seriously,".
+- Small photos run as they are.
+- source_audit.py could not run after these edits: gmail_api.py token revoked (invalid_grant).
+
 ## Sources
 
 - cheryl-anderson-thanksgiving: 1a1e10dfe4bfabe8
