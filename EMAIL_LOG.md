@@ -2002,3 +2002,12 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 
 No new magazine email or texts. Judy has not replied to #655 or #660.
 | 661 | Nov 21 ~8:45 PM | Code (John: "push to production") | Published Nov 22 to master (`65071cb4`; merge plus GA4 re-enabled in 12 files). Live on chicagoclassicmag.com after about 3.5 minutes: homepage shows November 22, 2026; all 9 articles, DateBook and Astrochart confirmed by title; GA4 live; internal nav hidden; EMAIL_LOG.md/CLAUDE.md/STATUS.md serve the homepage fallback, not their contents. Published before Judy replied to #660; her changes, if any, go out as a hotfix. | ⏳ live notice to team (ask send/draft) |
+
+### Check — 2026-11-22 08:23 ET (John: "Check"; branch dev2; Gmail API after:2026/11/21 compared to internalDate, texts from Judy, Sig and the Judy+Emma group; cutoff epoch 1795310518; this check's start epoch 1795353807)
+
+| # | Date | From | Item | Status |
+|---|---|---|---|---|
+| 662 | Nov 21 9:57–10:11 PM | Judy (3 emails `1a2012fc5648ea8e`, `1a201339ff042402`, `1a2013f00fa66d4c`; text 10:15 PM) | Costume Council fixes, sent after publish: caption for image2.jpeg (Ginger Stanciel and Danny Dunson); img_4099 caption "Karen Zupko with friends in period costumes."; image14 swap first and fourth names (Tanner Branson first, Adam Gilgour fourth). Photos byte/fingerprint-matched to the published files. | Applied on dev2; ⏳ hotfix to master (ask) |
+| 663 | Nov 21 10:22–10:35 PM | Judy (`1a201472037f1a8d`, `1a2014849fb7c5eb`, `1a2014927ff05118`, `1a20149eafd984b6`, `1a2014c7425add10`, `1a20152a853c92ce`) | Rob Murphy photos: Luxembourg Gardens (near end) and "Walking home on a peaceful night" (neighborhood passage) are "the only ones we have to use"; Dior Museum dresses also sent, no place in text. Says the issue looks wonderful. | Two photos added on dev2 (Luxembourg caption taken from her subject line); Dior left out; ⏳ hotfix to master (ask) |
+| 664 | Nov 22 6:08 AM | Judy (`1a202f19fdf932bc`) | Tentative Nov 29 lineup: 1 Julie Mathias (Ana), 2 Sig (direct to John), 3 Driehaus Gala (Emma), 4 Rob Murphy on Ed Hall (Ana), 5 Michelle Crowe Nutcracker (Annie), 6 Scott Holleran tribute (Judy), 7 David Sweet Mother's Trust Foundation (Judy), 8 possibly one more. | ⏳ prep Nov 29 when ready |
+| 665 | Nov 21 11:29–11:35 PM | Reader forms (`1a20189eb499e61c`, `1a20185245adc80b`, `1a201842be902eaa`) | Comment on Peoria (praise, prod); comment and Yes vote on Nov 15 Toronto (prod). | Logged |
