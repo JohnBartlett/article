@@ -1997,3 +1997,7 @@ Texts: nothing from Judy, Sig or the Judy+Emma group in 48 hours. Calls/voicemai
 | 658 | Nov 21 5:55 PM | Judy (text) | Going to dinner at 5:30, back later; will look at anything John needs as soon as she is home. | ✅ no action (questions #655 already sent) |
 | 659 | Nov 21 evening | Code (John: "let's push from dev2 to dev") | Staged Nov 22 to dev (`d0f5931a`): internal nav hidden, GA4 off, internal files stripped. Manual Vercel deploy `article-qok0p84mp` aliased to article-git-dev; home shows November 22, 2026, pages load, EMAIL_LOG.md/CLAUDE.md/STATUS.md return 404. Not published to master (John: hold). | ⏳ publish when John says |
 | 660 | Nov 21 evening | John `1a200c3a0e8b3f42` (to Judy) | "Classic Chicago: November 22 update, staged for your review": staging link; John's decisions on #655 (Cheryl title "The Season for Remembering", Lake Forest lead, Louvre caption, Dr. Rob Murphy byline, one choir photo, Basedow, IMG_4099 caption removed, clear typos fixed); changes welcome tonight or in the morning. Sent via Gmail connector (John: "And the email to Judy"). | ⏳ Judy's changes, if any |
+
+### Check — 2026-11-21 20:22 ET (John: "Check"; branch dev2; Gmail API after:2026/11/21 compared to internalDate, texts from Judy, Sig and the Judy+Emma group; cutoff epoch 1795306657; this check's start epoch 1795310518)
+
+No new magazine email or texts. Judy has not replied to #655 or #660.
